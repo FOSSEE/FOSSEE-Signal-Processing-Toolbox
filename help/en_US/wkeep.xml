@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from wkeep.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="wkeep" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>wkeep</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y]=wkeep(x,l)
+   [y]=wkeep(x,l,opt)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> Real, complex or string type input vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>l:</term>
+      <listitem><para> Length of matrix required</para></listitem></varlistentry>
+   <varlistentry><term>opt:</term>
+      <listitem><para> Character input to determine which side to extract from</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+[y]=wkeep(x,l) extracts a vector of length l from the centre of input vector x.
+[y]=wkeep(x,l,opt) extracts vector based on opt which could be 'l','r' or 'c' (left, right or central).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    [y]=wkeep([1 2 3;4 5 6],[2 2])
+y=  1   2
+2.    [y]=wkeep([1 2 3 4 5 6],3,'r')
+y=  4   5   6
+   ]]></programlisting>
+</refsection>
+</refentry>

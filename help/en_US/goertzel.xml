@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from goertzel.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="goertzel" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>goertzel</refname>
+    <refpurpose>Computes DFT using the second order Goertzel Algorithm</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   Y = goertzel(X,INDVEC,DIM)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+goertzel(X,INDVEC)
+Computes the DFT of X at indices INDVEC using the second order algorithm along
+the first non-singleton dimension. Elements of INDVEC must be positive integers
+less than the length of the first non-singleton dimension. If INDVEC is empty
+the DFT is computed at all indices along the first non-singleton dimension
+goertzel(X,INDVEC,DIM)
+Implements the algorithm along dimension DIM
+In general goertzel is slower than fft when computing the DFT for all indices
+along a particular dimension. However it is computationally more efficient when
+the DFT at only a subset of indices is desired
+Example
+x=rand(1,5)
+x  =
+   </para>
+   <para>
+0.6283918    0.8497452    0.6857310    0.8782165    0.0683740
+y=goertzel(x,2);
+y  =
+   </para>
+   <para>
+- 0.3531539 - 0.6299881i
+Author
+Ankur Mallick
+References
+Goertzel, G. (January 1958), "An Algorithm for the Evaluation of Finite Trigonometric Series", American Mathematical Monthly 65 (1): 34–35, doi:10.2307/2310304
+</para>
+</refsection>
+</refentry>

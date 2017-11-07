@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sgolay.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sgolay" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sgolay</refname>
+    <refpurpose>This function computes the filter coefficients for all Savitzsky-Golay smoothing filters.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   F = sgolay (p, n)
+   F = sgolay (p, n, m)
+   F = sgolay (p, n, m, ts)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>p:</term>
+      <listitem><para> polynomial</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> odd integer value, larger than polynomial p</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> positive integer less than 2^31 or logical</para></listitem></varlistentry>
+   <varlistentry><term>ts:</term>
+      <listitem><para> real or complex value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function computes the filter coefficients for all Savitzsky-Golay smoothing filters of order p for length n (odd).
+m can be used in order to get directly the mth derivative; ts is a scaling factor.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = sgolay(1,3,0)
+y =
+0.83333   0.33333  -0.16667
+0.33333   0.33333   0.33333
+-0.16667   0.33333   0.83333
+   ]]></programlisting>
+</refsection>
+</refentry>

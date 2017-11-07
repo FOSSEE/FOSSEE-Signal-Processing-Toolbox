@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from poly2ac.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="poly2ac" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>poly2ac</refname>
+    <refpurpose>Convert prediction polynomial to autocorrelation sequence.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   R = poly2ac(a,efinal)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> input prediction polynomial with 1st element 1 (if not, poly2ac normalizes it to 1 before proceeding).</para></listitem></varlistentry>
+   <varlistentry><term>efinal:</term>
+      <listitem><para> input prediction error</para></listitem></varlistentry>
+   <varlistentry><term>r:</term>
+      <listitem><para> output autocorrelation sequence</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function obtains the underlying autocorrelation sequence that would best fit a linear prediction filter described by the
+denominator polynomial and the numerator scaling. The filter is H(z) = efinal/(a(1) + a(2) x z a(3) x z^2 ... a(n) x z^n-1)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1.0000 0.4288 0.76 0.0404 -0.02];
+efinal = 0.2;           // Step prediction error
+r = poly2ac(a,efinal)   // Autocorrelation sequence
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ac2poly">ac2poly</link></member>
+   <member><link linkend="poly2rc">poly2rc</link></member>
+   <member><link linkend="rc2poly">rc2poly</link></member>
+   <member><link linkend="rc2ac">rc2ac</link></member>
+   <member><link linkend="ac2rc">ac2rc</link></member>
+   <member><link linkend="Author:">Parthe Pandit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>S. Kay, Modern Spectral Estimation, Prentice Hall, N.J., 1987, Chapter 6.</para>
+</refsection>
+</refentry>

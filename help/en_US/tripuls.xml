@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from tripuls.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="tripuls" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>tripuls</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y] = tripuls(t)
+   [y] = tripuls(t,w)
+   [y] = tripuls(t,w,skew)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> real or complex number</para></listitem></varlistentry>
+   <varlistentry><term>skew:</term>
+      <listitem><para> real number, -1 &lt;= s &lt;= 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a triangular pulse which is sampled at times t over the interval [-w/2,w/2]. The value of skew lies between -1
+and 1.
+The value of skew represents the relative placement of the peak in the given width.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+tripuls([0, .5, .6, 1], 0.9)
+ans =
+1   0   0   0
+This function is being called from Octave
+   ]]></programlisting>
+</refsection>
+</refentry>

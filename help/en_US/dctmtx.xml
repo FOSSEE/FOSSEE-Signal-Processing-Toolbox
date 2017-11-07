@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from dctmtx.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="dctmtx" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>dctmtx</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y]=dctmtx(n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Real scalar integer greater than or equal to 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+dctmtx(n) returns a Discrete cosine transform matrix of order n-by-n. It is useful for jpeg image compression. D*A is the DCT of the columns of A and D'*A is the inverse DCT of the columns of A (when A is n-by-n).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    dctmtx(2)
+ans = [0.70711   0.70711;   0.70711  -0.70711]
+2.    dctmtx(3)
+ans = [5.7735e-01   5.7735e-01   5.7735e-01;
+7.0711e-01   4.9996e-17  -7.0711e-01;
+4.0825e-01  -8.1650e-01   4.0825e-01]
+   ]]></programlisting>
+</refsection>
+</refentry>

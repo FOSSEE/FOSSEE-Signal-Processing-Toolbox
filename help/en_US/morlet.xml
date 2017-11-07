@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from morlet.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="morlet" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>morlet</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [psi,x]= morlet(lb,ub,n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>lb:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>ub:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Real strictly positive scalar number</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+This function returns values of the Morlet wavelet in the specified interval for all the sample points.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    [a,b]=morlet(1,2,3)
+a =    [0.17205   0.11254  -0.11356]
+b =    [1.0000   1.5000   2.0000]
+2.    [a,b]=morlet([1 2 3],[1 2 3],1)
+a =    [0.1720498;  -0.1135560;  -0.0084394]
+b =    [1;   2;   3]
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,100 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>cell2sos</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="cconv.html">&lt;&lt; cconv</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="cheb1ord.html">cheb1ord &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; cell2sos</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">cell2sos</h1>
+    <p class="refpurpose">Converts a cell array to a second order section matrix</p></div>
+
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">s=cell2sos(c) converts a a cell array c = { {B1},{A1}, {B2},{A2}, ... {BL},{AL}}
+to an L-by-6 second-order-section matrix s given by:
+s =   [B1 A1
+B2 A2
+...
+BL AL]
+numerator vector Bi and denominator vector Ai contains the coefficients of a
+linear or quadratic polynomial. If the polynomial is linear, the coefficients
+zero-padded on the right.
+[s,g]=cell2sos(c) estimates the gain from the leading term of the cell array
+c={ {[g1,g2]},{B1},{A1}, {B2},{A2}, ... {BL},{AL}} to give g=g1/g2 as the gain
+Example
+c=cell(1,5);</p>
+   <p class="para">c(1,1).entries=[2, 1];</p>
+   <p class="para">c(1,2).entries=rand(1,3);</p>
+   <p class="para">c(1,3).entries=rand(1,3);</p>
+   <p class="para">c(1,4).entries=rand(1,3);</p>
+   <p class="para">c(1,5).entries=rand(1,3);</p>
+   <p class="para">c  =
+column 1 to 3</p>
+   <p class="para">![2,1]  [0.2113249,0.7560439,0.0002211]  [0.3303271,0.6653811,0.6283918]  !</p>
+   <p class="para">column 4 to 5</p>
+   <p class="para">![0.8497452,0.6857310,0.8782165]  [0.0683740,0.5608486,0.6623569]  !
+[s,g]=cell2sos(c);
+s  =</p>
+   <p class="para">column 1 to 5</p>
+   <p class="para">0.2113249    0.7560439    0.0002211    0.3303271    0.6653811
+0.8497452    0.6857310    0.8782165    0.0683740    0.5608486</p>
+   <p class="para">column 6</p>
+   <p class="para">0.6283918
+0.6623569</p>
+   <p class="para">g  =</p>
+   <p class="para">2.
+Author
+Ankur Mallick</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="cconv.html">&lt;&lt; cconv</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="cheb1ord.html">cheb1ord &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

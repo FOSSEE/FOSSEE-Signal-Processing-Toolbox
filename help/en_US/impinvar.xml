@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from impinvar.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="impinvar" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>impinvar</refname>
+    <refpurpose>This function converts analog filter with coefficients b and a to digital, conserving impulse response.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [b, a] = impinvar (b, a)
+   [b, a] = impinvar (b, a, fs)
+   [b, a] = impinvar (b, a, fs, tol)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> real or complex valued scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> real or complex valued scalar or vector, order should be greater than b</para></listitem></varlistentry>
+   <varlistentry><term>fs:</term>
+      <listitem><para> real or complex value, default value 1Hz</para></listitem></varlistentry>
+   <varlistentry><term>tol:</term>
+      <listitem><para> real or complex value, default value 0.0001</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function converts analog filter with coefficients b and a to digital, conserving impulse response.
+This function does the inverse of impinvar.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+b =  0.0081000
+a = [2.0000000,   0.56435378,   0.4572792,   0.00705544,   0.091000]
+[ay,by] = impinvar(b,a,10)
+ay =
+0.0000e+00   7.5293e-08   2.9902e-07   7.4238e-08
+by =
+1.00000  -3.96992   5.91203  -3.91428   0.97218
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sos2zp.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sos2zp" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sos2zp</refname>
+    <refpurpose>This function converts series second-order sections to zeros, poles, and gains (pole residues).</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   z = sos2zp (sos)
+   z = sos2zp (sos, g)
+   [z, p] = sos2zp (...)
+   [z, p, k] = sos2zp (...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>sos:</term>
+      <listitem><para> matrix of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para> real or complex value, default value is 1</para></listitem></varlistentry>
+   <varlistentry><term>z:</term>
+      <listitem><para> column vector</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> column vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function converts series second-order sections to zeros, poles, and gains (pole residues).
+The input is the sos matrix and the second parameter is the overall gain, default value of which is 1.
+The outputs are z, p, k. z and p are column vectors containing zeros and poles respectively, and k is the overall gain.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a,b,c]=sos2zp([1,2,3,4,5,6])
+a =
+-1.0000 + 1.4142i
+-1.0000 - 1.4142i
+b =
+-0.6250 + 1.0533i
+-0.6250 - 1.0533i
+c =  1
+   ]]></programlisting>
+</refsection>
+</refentry>

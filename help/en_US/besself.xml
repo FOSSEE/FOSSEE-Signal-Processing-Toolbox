@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from besself.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="besself" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>besself</refname>
+    <refpurpose>This function generates a Bessel filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [a, b] = besself(n, w)
+   [a, b] = besself (n, w, "high")
+   [a, b, c] = besself (…)
+   [a, b, c, d] = besself (…)
+   […] = besself (…, "z")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> positive real value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function generates a Bessel filter. The default is a Laplace space (s) filter.
+The third parameter takes in high or low, the default value being low. The cutoff is pi*Wc radians.
+[z,p,g] = besself(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+[...] = besself(...,’z’) returns a discrete space (Z) filter. w must be less than 1.
+[a,b,c,d] = besself(...) returns state-space matrices.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a,b]=besself(2,3,"low")
+a =  9.0000
+b =
+1.0000   5.1962   9.0000
+   ]]></programlisting>
+</refsection>
+</refentry>

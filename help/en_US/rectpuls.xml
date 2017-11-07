@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rectpuls.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rectpuls" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rectpuls</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y]=rectpuls(t)
+   [y]=rectpuls(t,w)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+y = rectpuls(t) returns a continuous, aperiodic, unity-height rectangular pulse depending upon input t, centered about t=0 and having default width of 1.
+y = rectpuls(t,w) generates a rectangle of width w.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    rectpuls([10 100 1000 13 839],27)
+ans =   1   0   0   1   0
+2.    rectpuls([1000 1000 100 100])
+ans =   0   0   0   0
+   ]]></programlisting>
+</refsection>
+</refentry>

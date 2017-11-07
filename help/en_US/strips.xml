@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from strips.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="strips" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>strips</refname>
+    <refpurpose>Plots vector or matrix in strips</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   strips(x);
+   strips(x,sd);
+   strips(x,sd,fs);
+   strips(x,sd,fs,scale);
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+strips(x)
+Plots a vector x in horizontal strips of length 250
+If x is a matrix, it plots each column of x on a separate strip with the leftmost
+column as the topmost strip
+strips(x,sd)
+Plots x in strips of length sd samples each
+strips(x,sd,fs)
+Plots x in strips of duration sd seconds with sampling frequency fs (in Hz)
+strips(x,sd,fs,scale)
+Plots x in strips as above, and scales the vertical axis by scale
+If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
+If x has complex entries, only the real part of those entries are considered
+Author
+Ankur Mallick
+</para>
+</refsection>
+</refentry>

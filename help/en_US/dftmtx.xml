@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from dftmtx.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="dftmtx" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>dftmtx</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [d]=dftmtx(n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Real positive scalar number</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    dftmtx(3)
+ans =   1.00000 + 0.00000i   1.00000 + 0.00000i   1.00000 + 0.00000i
+1.00000 + 0.00000i  -0.50000 - 0.86603i  -0.50000 + 0.86603i
+1.00000 - 0.00000i  -0.50000 + 0.86603i  -0.50000 - 0.86603i
+   ]]></programlisting>
+</refsection>
+</refentry>

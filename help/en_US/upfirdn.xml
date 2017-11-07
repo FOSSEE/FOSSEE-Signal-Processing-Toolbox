@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from upfirdn.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="upfirdn" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>upfirdn</refname>
+    <refpurpose>This function upsamples the input data, applies the FIR filter and then downsamples it.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = upfirdn (x, h, p, q)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>h:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>q:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function upsamples the input data in the matrix by a factor of n. Then the upsampled data is FIR filtered. After this, the resultant is downsampled.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+upfirdn([1,2,3],2,3,5)
+ans  =
+
+2.    0.
+   ]]></programlisting>
+</refsection>
+</refentry>

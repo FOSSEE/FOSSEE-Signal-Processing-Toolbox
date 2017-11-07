@@ -1,0 +1,125 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>pmusic</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="phasez.html">&lt;&lt; phasez</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="poly2ac.html">poly2ac &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; pmusic</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">pmusic</h1>
+    <p class="refpurpose">Psuedospectrum using MUSIC algorithm</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">w</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">w</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">,</span><span class="default">w</span><span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">w</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">,</span><span class="default">nfft</span><span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">w</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">,</span><span class="default">nfft</span><span class="default">,</span><span class="default">fs</span><span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">w</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">,</span><span class="default">f</span><span class="default">,</span><span class="default">fs</span><span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">f</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(...,</span>&#0039;<span class="default">corr</span>&#0039;<span class="default">)</span>
+<span class="default">[</span><span class="default">S</span><span class="default">,</span><span class="default">f</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">p</span><span class="default">,</span><span class="default">nfft</span><span class="default">,</span><span class="default">fs</span><span class="default">,</span><span class="default">nwin</span><span class="default">,</span><span class="default">noverlap</span><span class="default">)</span>
+<span class="default">[...] = </span><span class="functionid">pmusic</span><span class="default">(...,</span><span class="default">freqrange</span><span class="default">)</span>
+<span class="default">[...,</span><span class="default">v</span><span class="default">,</span><span class="default">e</span><span class="default">] = </span><span class="functionid">pmusic</span><span class="default">(...)</span>
+
+<span class="default">Parameters</span><span class="default">:</span>
+<span class="default">x</span><span class="default"> - </span><span class="default">int</span><span class="default">|</span><span class="default">double</span><span class="default"> - </span><span class="default">vector</span><span class="default">|</span><span class="default">matrix</span>
+<span class="default">Input</span> <span class="default">signal</span><span class="default">. </span><span class="default">In</span> <span class="default">case</span> <span class="default">of</span> <span class="default">a</span> <span class="default">matrix</span><span class="default">, </span><span class="default">each</span> <span class="default">row</span> <span class="default">of</span> <span class="default">x</span> <span class="default">represents</span> <span class="default">a</span>
+<span class="default">seperate</span> <span class="default">observation</span> <span class="default">of</span> <span class="default">the</span> <span class="default">signal</span><span class="default">. </span><span class="default">If</span> &#0039;<span class="default">corr</span>&#0039; <span class="default">flag</span> <span class="default">is</span> <span class="default">specified</span><span class="default">,</span>
+<span class="default">then</span> <span class="default">x</span> <span class="default">is</span> <span class="default">the</span> <span class="default">correlation</span> <span class="default">matrix</span><span class="default">.</span>
+<span class="default">If</span> <span class="default">w</span> <span class="default">is</span> <span class="default">not</span> <span class="default">specified</span> <span class="default">in</span> <span class="default">the</span> <span class="default">input</span><span class="default">, </span><span class="default">it</span> <span class="default">is</span> <span class="default">determined</span> <span class="default">by</span> <span class="default">the</span>
+<span class="default">algorithm</span><span class="default">. </span><span class="default">If</span> <span class="default">x</span> <span class="default">is</span> <span class="default">real</span> <span class="default">valued</span><span class="default">, </span><span class="default">then</span> <span class="default">range</span> <span class="default">of</span> <span class="default">w</span> <span class="default">is</span><span class="default"> [0, </span><span class="default">pi</span><span class="default">].</span>
+<span class="default">Otherwise</span><span class="default">, </span><span class="default">the</span> <span class="default">range</span> <span class="default">of</span> <span class="default">w</span> <span class="default">is</span><span class="default"> [0, 2</span><span class="default">pi</span><span class="default">)</span>
+<span class="default">p</span><span class="default"> - </span><span class="default">int</span><span class="default">|</span><span class="default">double</span><span class="default"> - </span><span class="default">scalar</span><span class="default">|</span><span class="default">vector</span>
+<span class="default">p</span><span class="default">(1) </span><span class="default">is</span> <span class="default">the</span> <span class="default">dimension</span> <span class="default">of</span> <span class="default">the</span> <span class="default">signal</span> <span class="default">subspace</span>
+<span class="default">p</span><span class="default">(2), </span><span class="default">if</span> <span class="default">specified</span><span class="default">, </span><span class="default">represents</span> <span class="default">a</span> <span class="default">threshold</span> <span class="default">that</span> <span class="default">is</span> <span class="default">multiplied</span> <span class="default">by</span>
+<span class="default">the</span> <span class="default">smallest</span> <span class="default">estimated</span> <span class="default">eigenvalue</span> <span class="default">of</span> <span class="default">the</span> <span class="default">signal</span>&#0039;<span class="default">s</span> <span class="default">correlation</span> <span class="default">matrix</span><span class="default">.</span>
+<span class="default">w</span><span class="default"> - </span><span class="default">int</span><span class="default">|</span><span class="default">double</span><span class="default"> - </span><span class="default">vector</span>
+<span class="default">w</span> <span class="default">is</span> <span class="default">the</span> <span class="default">vector</span> <span class="default">of</span> <span class="default">normalized</span> <span class="default">frequencies</span> <span class="default">over</span> <span class="default">which</span> <span class="default">the</span>
+<span class="default">pseuspectrogram</span> <span class="default">is</span> <span class="default">to</span> <span class="default">be</span> <span class="default">computed</span><span class="default">.</span>
+<span class="default">nfft</span><span class="default"> - </span><span class="default">int</span><span class="default"> - </span><span class="default">scalar</span><span class="default"> (</span><span class="default">Default</span><span class="default"> = 256)</span>
+<span class="default">Length</span> <span class="default">of</span> <span class="default">the</span> <span class="default">fft</span> <span class="default">used</span> <span class="default">to</span> <span class="default">compute</span> <span class="default">pseudospectrum</span><span class="default">. </span><span class="default">The</span> <span class="default">length</span> <span class="default">of</span> <span class="default">S</span>
+<span class="default">(</span><span class="default">and</span> <span class="default">hence</span> <span class="default">w</span><span class="default">/</span><span class="default">f</span><span class="default">) </span><span class="default">depends</span> <span class="default">on</span> <span class="default">the</span> <span class="default">type</span> <span class="default">of</span> <span class="default">values</span> <span class="default">in</span> <span class="default">x</span> <span class="default">and</span> <span class="default">nfft</span><span class="default">.</span>
+<span class="default">If</span> <span class="default">x</span> <span class="default">is</span> <span class="default">real</span><span class="default">, </span><span class="default">length</span> <span class="default">of</span> <span class="default">s</span> <span class="default">is</span><span class="default"> (</span><span class="default">nfft</span><span class="default">/</span><span class="default">2 + 1) {</span><span class="default">Range</span> <span class="default">of</span> <span class="default">w</span><span class="default"> = [0, </span><span class="default">pi</span><span class="default">]} </span><span class="default">if</span>
+<span class="default">nfft</span> <span class="default">is</span> <span class="default">even</span> <span class="default">and</span><span class="default"> (</span><span class="default">nfft</span><span class="default">+1)</span><span class="default">/</span><span class="default">2 {</span><span class="default">Range</span> <span class="default">of</span> <span class="default">w</span><span class="default"> = [0, </span><span class="default">pi</span><span class="default">)} </span><span class="default">otherwise</span><span class="default">.</span>
+<span class="default">If</span> <span class="default">x</span> <span class="default">is</span> <span class="default">complex</span><span class="default">, </span><span class="default">length</span> <span class="default">of</span> <span class="default">s</span> <span class="default">is</span> <span class="default">nfft</span><span class="default">.</span>
+<span class="default">fs</span><span class="default"> - </span><span class="default">int</span><span class="default">|</span><span class="default">double</span><span class="default"> - </span><span class="default">scalar</span><span class="default"> (</span><span class="default">Default</span><span class="default"> = 1)</span>
+<span class="default">Sampling</span> <span class="default">rate</span><span class="default">. </span><span class="default">Used</span> <span class="default">to</span> <span class="default">convert</span> <span class="default">the</span> <span class="default">normalized</span> <span class="default">frequencies</span><span class="default"> (</span><span class="default">w</span><span class="default">) </span><span class="default">to</span>
+<span class="default">actual</span> <span class="default">values</span><span class="default"> (</span><span class="default">f</span><span class="default">) </span><span class="default">and</span> <span class="default">vice</span><span class="default">-</span><span class="default">versa</span><span class="default">.</span>
+<span class="default">nwin</span><span class="default"> - </span><span class="default">int</span><span class="default">|</span><span class="default">double</span><span class="default"> - </span><span class="default">scalar</span><span class="default"> (</span><span class="default">int</span> <span class="default">only</span><span class="default">)|</span><span class="default">vector</span><span class="default"> (</span><span class="default">Default</span><span class="default"> = 2*</span><span class="default">p</span><span class="default">(1))</span>
+<span class="default">If</span> <span class="default">nwin</span> <span class="default">is</span> <span class="default">scalar</span><span class="default">, </span><span class="default">it</span> <span class="default">is</span> <span class="default">the</span> <span class="default">length</span> <span class="default">of</span> <span class="default">the</span> <span class="default">rectangular</span> <span class="default">window</span><span class="default">.</span>
+<span class="default">Otherwise</span><span class="default">, </span><span class="default">the</span> <span class="default">vector</span> <span class="default">input</span> <span class="default">is</span> <span class="default">considered</span> <span class="default">as</span> <span class="default">the</span> <span class="default">window</span> <span class="default">coefficients</span><span class="default">.</span>
+<span class="default">Not</span> <span class="default">used</span> <span class="default">if</span> &#0039;<span class="default">corr</span>&#0039; <span class="default">flag</span> <span class="default">present</span><span class="default">.</span>
+<span class="default">If</span> <span class="default">x</span> <span class="default">is</span> <span class="default">a</span> <span class="default">vector</span><span class="default">, </span><span class="default">windowing</span> <span class="default">not</span> <span class="default">done</span> <span class="default">in</span> <span class="default">nwin</span> <span class="default">in</span> <span class="default">scalar</span><span class="default">. </span><span class="default">If</span> <span class="default">x</span> <span class="default">is</span> <span class="default">a</span>
+<span class="default">matrix</span><span class="default">,</span>
+<span class="default">noverlap</span><span class="default"> - </span><span class="default">int</span><span class="default"> - </span><span class="default">scalar</span><span class="default"> (</span><span class="default">Default</span><span class="default"> = </span><span class="default">nwin</span><span class="default">-1)</span>
+<span class="default">number</span> <span class="default">of</span> <span class="default">points</span> <span class="default">by</span> <span class="default">which</span> <span class="default">successive</span> <span class="default">windows</span> <span class="default">overlap</span><span class="default">. </span><span class="default">noverlap</span> <span class="default">not</span>
+<span class="default">used</span> <span class="default">if</span> <span class="default">x</span> <span class="default">is</span> <span class="default">a</span> <span class="default">matrix</span>
+<span class="default">freqrange</span><span class="default"> - </span><span class="default">string</span>
+<span class="default">The</span> <span class="default">range</span> <span class="default">of</span> <span class="default">frequencies</span> <span class="default">over</span> <span class="default">which</span> <span class="default">the</span> <span class="default">pseudospetrogram</span> <span class="default">is</span>
+<span class="default">computed</span><span class="default">. </span><span class="default">Three</span> <span class="default">possible</span> <span class="default">values</span><span class="default"> - </span>&#0039;<span class="default">onesided</span>&#0039;<span class="default">, </span>&#0039;<span class="default">twosided</span>&#0039;<span class="default">, </span>&#0039;<span class="default">centered</span>&#0039;
+&#0039;<span class="default">corr</span>&#0039; <span class="default">flag</span>
+<span class="default">Presence</span> <span class="default">indicates</span> <span class="default">that</span> <span class="default">the</span> <span class="default">primary</span> <span class="default">input</span> <span class="default">x</span> <span class="default">is</span> <span class="default">actually</span> <span class="default">a</span>
+<span class="default">correlation</span> <span class="default">matrix</span>
+
+<span class="default">Examples</span><span class="default">:</span>
+<span class="default">TODO</span><span class="default">:</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">See also</h3>
+   <ul class="itemizedlist"><li class="member"><a href="scilab://pburg" class="link">| peig | periodogram | pmtm | prony | pwelch | rooteig | rootmusic</a></li></ul></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Ayush Baid</li>
+   <li class="member">References</li>
+   <li class="member">[1] Petre Stoica and Randolph Moses, Introduction To Spectral</li>
+   <li class="member">Analysis, Prentice-Hall, 1997, pg. 15</li>
+   <li class="member">[2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.</li>
+   <li class="member">2nd Ed., Macmillan, 1988.</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="phasez.html">&lt;&lt; phasez</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="poly2ac.html">poly2ac &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

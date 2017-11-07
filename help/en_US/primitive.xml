@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from primitive.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="primitive" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>primitive</refname>
+    <refpurpose>This function calculates the primitive of a given function supplied as input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = primitive(f, t)
+   y = primitive(f, t, x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>f:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>t:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function calculates the primitive of a given function supplied as input.
+The second parameter t is a vector at which the output is evaluated (at the points t). This vector should be ascending and ordered.
+The function approximates the primitive (indefinite integral) of the univariate function handle f with constant of integration x.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+primitive([1,4,5],3,9)
+ans  =
+9.
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from impzlength.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="impzlength" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>impzlength</refname>
+    <refpurpose>Impulse response length</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   len = impzlength(b, a, tol)
+   returns the impulse response length for the causal discrete-time filter
+   with the transfer function coefficients for numerator and denominator in
+   a and b respectively. For stable IIR filters, len is the effective length
+   impulse response length, i.e. the length after which the response is
+   essentially zero
+   len = impzlength(sos)
+   returns the impulse response length of the filter specified by second
+   order sections matrix. sos is a Kx6 matrix, where K is the number of
+   sections. Each row of the sos matrix corresponds to a second order
+   biquad filter
+   len = impzlength(__, tol)
+   specifies a tolerance for estimating the effective impulse response
+   length in case of an IIR filter. By default, tol is 5e-5. Increasing tol
+   leads to shorter len and vice-versa
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1) Low pass IIR filter with pole at 0.9
+b = 1;
+a = [1 -0.9];
+len = impzlength(b,a);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="designfilt">| digitalFilter | impz | zp2sos</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

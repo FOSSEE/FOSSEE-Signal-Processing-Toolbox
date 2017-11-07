@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from blackman.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="blackman" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>blackman</refname>
+    <refpurpose>Generates a Blackman window</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   w=blackman(N)
+   w=blackman(N,sflag)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+w=blackman(N) returns an N-point symmetric Blackman window in a column vector w
+w=blackman(N,sflag)
+Returns an N point Blackman window using the type of sampling specified by sflag
+sflag can be either 'symmetric' (default) or 'periodic' (used in spectral analysis)
+Example
+w=blackman(4)
+w  =
+   </para>
+   <para>
+- 1.388D-17
+0.63
+0.63
+- 1.388D-17
+Author
+Ankur Mallick
+References
+[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
+</para>
+</refsection>
+</refentry>

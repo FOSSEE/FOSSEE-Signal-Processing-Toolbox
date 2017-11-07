@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fwhm.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fwhm" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fwhm</refname>
+    <refpurpose>This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   f = fwhm (y)
+   f = fwhm (x, y)
+   f = fwhm (…, "zero")
+   f = fwhm (…, "min")
+   f = fwhm (…, "alevel", level)
+   f = fwhm (…, "rlevel", level)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>y:</term>
+      <listitem><para> vector or matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+</refentry>

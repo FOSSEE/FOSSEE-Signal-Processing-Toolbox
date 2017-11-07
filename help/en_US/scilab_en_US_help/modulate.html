@@ -1,0 +1,104 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>modulate</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="midcross.html">&lt;&lt; midcross</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="morlet.html">morlet &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; modulate</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">modulate</h1>
+    <p class="refpurpose">Modulates signal according to the modulation method</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">y</span><span class="default">=</span><span class="functionid">modulate</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">fc</span><span class="default">,</span><span class="default">fs</span><span class="default">,</span><span class="default">method</span><span class="default">,</span><span class="default">opt</span><span class="default">)</span>
+<span class="default">[</span><span class="default">y</span><span class="default">,</span><span class="default">t</span><span class="default">]=</span><span class="functionid">modulate</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">fc</span><span class="default">,</span><span class="default">fs</span><span class="default">,</span><span class="default">method</span><span class="default">,</span><span class="default">opt</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">[y,t]=modulate(x,fc,fs,method,opt)
+Returns the modulated vector y and the time vector &#0039;t&#0039;
+Modulation is performed according to the following table
+METHOD              MODULATION SCHEME
+&#0039;am&#0039;,      Amplitude modulation, double side-band, suppressed carrier
+&#0039;amdsb-sc&#0039; opt not used. This is the default method.
+&#0039;amdsb-tc&#0039; Amplitude modulation, double side-band, transmitted carrier
+opt is a scalar subtracted from x before multiplying x
+with the carrier wave.  It defaults to min(min(x)) so that
+the input signal after offset is always non-negative
+&#0039;amssb&#0039;    Amplitude modulation, single side-band
+OPT not used.
+&#0039;fm&#0039;       Frequency modulation
+opt is the constant of frequency modulation.
+opt = (fc/fs)*2*pi/max(max(abs(x))) by default
+&#0039;pm&#0039;       Phase modulation
+OPT is the constant of phase modulation.
+opt = pi/max(max(abs(x))) by default
+Phase lies between -pi and +pi
+&#0039;pwm&#0039;      Pulse width modulation
+opt=&#0039;left&#0039; corresponds to left justified pulses.
+opt=&#0039;centered&#0039; correspondes to centered pulses.
+The default value of opt is &#0039;left&#0039;.
+&#0039;ppm&#0039;      Pulse position modulation
+opt is a scalar between 0 and 1 which specifies the pulse
+width in fractions of the carrier period with default value 0.1.
+&#0039;qam&#0039;       Quadrature amplitude modulation
+opt is a matrix of the same size as X which is modulated in
+quadrature with x.</p>
+   <p class="para">If x is a matrix, its columns are modulated.
+Example
+y  =</p>
+   <p class="para">1.    1.    0.    0.
+Author
+Ankur Mallick</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="midcross.html">&lt;&lt; midcross</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="morlet.html">morlet &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

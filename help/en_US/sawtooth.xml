@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sawtooth.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sawtooth" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sawtooth</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y]=sawtooth(t)
+   [y]=sawtooth(t,width)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> Real valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>width:</term>
+      <listitem><para> Real number between 0 and 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+This function returns a sawtooth wave with period 2*pi with +1/-1 as the maximum and minimum values for elements of t. If width is specified, it determines where the maximum is in the interval [0,2*pi].
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    sawtooth([1 2 3 4 5],0.5)
+ans =  [-0.36338   0.27324   0.90986   0.45352  -0.18310]
+2.    sawtooth([1 2; 4 5])
+ans =  [-0.68169  -0.36338;   0.27324   0.59155]
+   ]]></programlisting>
+</refsection>
+</refentry>

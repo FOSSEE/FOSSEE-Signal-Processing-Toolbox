@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rssq.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rssq" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rssq</refname>
+    <refpurpose>This function calculates the square root of the sum of values of input vector IN.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   OUT=rssq(IN)
+   OUT=rssq(IN,orientation)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>in:</term>
+      <listitem><para>Vector or Matrix of real or complex elements.</para></listitem></varlistentry>
+   <varlistentry><term>orientation:</term>
+      <listitem><para> A string with possible values "r", "c" or "m" or numericals such as '1' or '2',giving the dimension along which the rssq value is to be calculated.</para></listitem></varlistentry>
+   <varlistentry><term>out:</term>
+      <listitem><para>A scalar with real value when input is a vector.When input is a matrix, out is the root sum squared  value along the orientation specified or the default one when not specified.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+For vector as input, the output is real valued scalar containing the rssq value. The rssq value can be calculated by taking the square root of the squared sum of the elements.
+If the input IN is a matrix, the output of function is rssq value of each column stored in a row vector OUT.
+   </para>
+   <para>
+When the elements of IN are COMPLEX, the absolute value of the element is used to calculate the output.
+When the orientation is not specified for N dimensional array, it is taken as the index of the first dimension of IN that is greater than 1 and calculation is done along that orientation.
+   </para>
+   <para>
+When the orientation is specified the output is calculated along that dimension.
+The orientation can be specified as 1 for rssq value of columns of matrix IN or as r.
+For rssq value of rows of matrix orientation should be 2 or c.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+To calculate rssq of a vector:
+IN=[2 4 6]
+OUT=rssq(IN)
+The output is 7.4833148
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+To calculate rssq of rows of matrix:
+IN=[1 3 5;2 4 6;7 8 9]
+OUT=rssq(IN,2)
+The output should be OUT=
+5.9160798
+7.4833148
+13.928388
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+To calculate rssq of a columns of complex matrix:
+
+IN=[5+%i*3 2+%i*4; 3+%i*6 1+%i*2]
+OUT=rssq(IN,1)
+The output should be OUT= 8.8881944 5.
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="abs">abs</link></member>
+   <member><link linkend="mean">mean</link></member>
+   <member><link linkend="sqrt">sqrt</link></member>
+   <member><link linkend="isempty">isempty</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Indira Askaukar</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>Matlab help document.</para>
+</refsection>
+</refentry>

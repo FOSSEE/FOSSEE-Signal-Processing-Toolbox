@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from vco.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="vco" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>vco</refname>
+    <refpurpose>Voltage Controlled Oscillator</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y=vco(x,fc,fs)
+   y=vco(x,[fmin fmax],fs)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+y=vco(x,fc,fs)
+Creates a frequency modulated cosine wave y whose frequency varies as the magnitude of x
+x lies in [-1,1]. x=-1 corresponds to a frequency of 0, x=0 corresponds to a frequency of fc
+and x=1 corresponds to a frequency of 2fc.
+y=vco(x,[fmin fmax],fs)
+Scales the frequency range so that x=-1 corresponds to a frequency of fmin and
+x=1 corresponds to a frequency of fmax
+If x is a matrix the same operation is performed on the columns on x
+Size of y is the same as the size of x
+Example
+x=rand()
+x  =
+   </para>
+   <para>
+0.2113249
+y=vco(x,2000,8000)
+y  =
+   </para>
+   <para>
+0.9454092
+Author
+Ankur Mallick
+</para>
+</refsection>
+</refentry>

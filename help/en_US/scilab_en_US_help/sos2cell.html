@@ -1,0 +1,96 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>sos2cell</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="slewrate.html">&lt;&lt; slewrate</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="sos2ss.html">sos2ss &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; sos2cell</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">sos2cell</h1>
+    <p class="refpurpose">Converts a second order section matrix to a cell array</p></div>
+
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">c=sos2cell(s) converts an L-by-6 second-order-section matrix s given by:
+s =   [B1 A1
+B2 A2
+...
+BL AL]
+to a cell array c = { {B1},{A1}, {B2},{A2}, ... {BL},{AL}} where each
+numerator vector Bi and denominator vector Ai contains the coefficients of a
+linear or quadratic polynomial. If the polynomial is linear, the coefficients
+zero-padded on the right
+c=sos2cell(s,g) adds a leading gain term to the start of the cell array as:
+c={ {[g,1]},{B1},{A1}, {B2},{A2}, ... {BL},{AL}}
+Example
+s=rand(2,6)
+s  =</p>
+   <p class="para"></p>
+   <p class="para">column 1 to 5</p>
+   <p class="para">0.0437334    0.2639556    0.2806498    0.7783129    0.1121355
+0.4818509    0.4148104    0.1280058    0.2119030    0.6856896</p>
+   <p class="para">column 6</p>
+   <p class="para">0.1531217
+0.6970851</p>
+   <p class="para">sos2cell(s,2)
+ans  =</p>
+   <p class="para"></p>
+   <p class="para"></p>
+   <p class="para">column 1 to 3</p>
+   <p class="para">![2,1]  [0.0437334,0.2639556,0.2806498]  [0.7783129,0.1121355,0.1531217]  !</p>
+   <p class="para">column 4 to 5</p>
+   <p class="para">![0.4818509,0.4148104,0.1280058]  [0.2119030,0.6856896,0.6970851]  !
+Author
+Ankur Mallick</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="slewrate.html">&lt;&lt; slewrate</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="sos2ss.html">sos2ss &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

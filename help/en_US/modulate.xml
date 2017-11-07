@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from modulate.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="modulate" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>modulate</refname>
+    <refpurpose>Modulates signal according to the modulation method</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y=modulate(x,fc,fs,method,opt)
+   [y,t]=modulate(x,fc,fs,method,opt)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[y,t]=modulate(x,fc,fs,method,opt)
+Returns the modulated vector y and the time vector 't'
+Modulation is performed according to the following table
+METHOD              MODULATION SCHEME
+'am',      Amplitude modulation, double side-band, suppressed carrier
+'amdsb-sc' opt not used. This is the default method.
+'amdsb-tc' Amplitude modulation, double side-band, transmitted carrier
+opt is a scalar subtracted from x before multiplying x
+with the carrier wave.  It defaults to min(min(x)) so that
+the input signal after offset is always non-negative
+'amssb'    Amplitude modulation, single side-band
+OPT not used.
+'fm'       Frequency modulation
+opt is the constant of frequency modulation.
+opt = (fc/fs)*2*pi/max(max(abs(x))) by default
+'pm'       Phase modulation
+OPT is the constant of phase modulation.
+opt = pi/max(max(abs(x))) by default
+Phase lies between -pi and +pi
+'pwm'      Pulse width modulation
+opt='left' corresponds to left justified pulses.
+opt='centered' correspondes to centered pulses.
+The default value of opt is 'left'.
+'ppm'      Pulse position modulation
+opt is a scalar between 0 and 1 which specifies the pulse
+width in fractions of the carrier period with default value 0.1.
+'qam'       Quadrature amplitude modulation
+opt is a matrix of the same size as X which is modulated in
+quadrature with x.
+   </para>
+   <para>
+If x is a matrix, its columns are modulated.
+Example
+y  =
+   </para>
+   <para>
+1.    1.    0.    0.
+Author
+Ankur Mallick
+</para>
+</refsection>
+</refentry>

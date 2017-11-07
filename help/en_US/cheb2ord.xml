@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheb2ord.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheb2ord" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheb2ord</refname>
+    <refpurpose>This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   n = cheb2ord(Wp, Ws, Rp, Rs)
+   [n, Wc] = cheb2ord(Wp, Ws, Rp, Rs)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Wp:</term>
+      <listitem><para> scalar or vector of length 2, all elements must be in the range [0,1]</para></listitem></varlistentry>
+   <varlistentry><term>Ws:</term>
+      <listitem><para> scalar or vector of length 2, all elements must be in the range [0,1]</para></listitem></varlistentry>
+   <varlistentry><term>Rp:</term>
+      <listitem><para> real value</para></listitem></varlistentry>
+   <varlistentry><term>Rs:</term>
+      <listitem><para> real value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.
+Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
+Frequencies are normalized to the Nyquist frequency in the range [0,1].
+Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
+If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
+If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
+If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+cheb2ord([0.25,0.3],[0.2,0.8],0.3,0.4)
+ans =  1
+   ]]></programlisting>
+</refsection>
+</refentry>

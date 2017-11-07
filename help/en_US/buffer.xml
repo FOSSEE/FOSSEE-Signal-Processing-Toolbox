@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from buffer.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="buffer" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>buffer</refname>
+    <refpurpose>This function buffers the given data into a matrix of signal frames</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y] = buffer (x, n)
+   [y] = buffer (x, n, p)
+   [y] = buffer (x, n, p)
+   [y, z, opt] = buffer (...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> Data to be buffered</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Positive integer equal to number of rows in the produced data buffer</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Integer less than n, default value 0</para></listitem></varlistentry>
+   <varlistentry><term>opt:</term>
+      <listitem><para> In case of overlap, it can be a vector of length p or the string "nodelay", In case of underlap, it is an integer between 0 and p</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function buffers the given data into a matrix of signal frames
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+buffer(1,3,2)
+ans =
+0   0
+0   1
+1   0
+This function is being called from Octave
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from hann.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="hann" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>hann</refname>
+    <refpurpose>This function returns the filter coefficients of a Hanning window.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   w = hann(m)
+   w = hann(m, "symmteric")
+   w = hann(m, "periodic")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>m:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>opt:</term>
+      <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function returns the filter coefficients of a Hanning window of length m supplied as input, to the output vector w.
+The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+hann(6,"symmetric")
+ans  =
+0.
+0.3454915
+0.9045085
+0.9045085
+0.3454915
+0.
+   ]]></programlisting>
+</refsection>
+</refentry>

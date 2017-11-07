@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from is2rc.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="is2rc" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>is2rc</refname>
+    <refpurpose>Convert inverse sine parameters to reflection coefficients</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   K = is2rc(isin)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>isin:</term>
+      <listitem><para> input inverse sine parameters. Needs to be an array real numbers</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> output reflection coefficients  corresponding to the reflection coefficients in input</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns a vector of reflection coefficients from a vector of inverse sine parameters
+output array has k(i) = sin(pi/2*isin(i))
+   </para>
+   <para>
+Example
+k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+isin = rc2is(k)      //Gives inverse sine parameters
+k_dash = is2rc(isin)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="rc2is">rc2is</link></member>
+   <member><link linkend="rc2poly">rc2poly</link></member>
+   <member><link linkend="rc2ac">rc2ac</link></member>
+   <member><link linkend="rc2lar">rc2lar</link></member>
+   <member><link linkend="Author">Author</link></member>
+   <member><link linkend="Parthe">Pandit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>J.R. Deller, J.G. Proakis, J.H.L. Hansen, "Discrete-Time Processing of Speech Signals", Prentice Hall, Section 7.4.5</para>
+</refsection>
+</refentry>

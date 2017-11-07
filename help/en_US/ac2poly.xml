@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ac2poly.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ac2poly" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ac2poly</refname>
+    <refpurpose>Convert autocorrelation sequence to polynomial of prediction filter</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   a = ac2poly(r)
+   [a,e] = ac2poly(r)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>r:</term>
+      <listitem><para> Autocorrelation sequence to be represented with an FIR linear prediction filter</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> Output polynomial representing the linear prediction filter e/(a(1) + a(2)z + a(3)z^2 .. a(N)z^N-1)</para></listitem></varlistentry>
+   <varlistentry><term>e:</term>
+      <listitem><para> Output scaling for the lienar prediction filter</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function ac2poly() finds the best fit polynomial for FIR linear prediction filter a, corresponding to the autocorrelation sequence r. a is the same length as r, and is normalized with the first element. So a(1) = 1.
+   </para>
+   <para>
+Author
+Parthe Pandit
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>Kay, Steven M. Modern Spectral Estimation. Englewood Cliffs, NJ: Prentice-Hall, 1988.</para>
+</refsection>
+</refentry>

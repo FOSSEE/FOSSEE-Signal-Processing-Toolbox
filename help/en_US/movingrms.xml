@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from movingrms.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="movingrms" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>movingrms</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [rmsx,w]=movingrms(x,w,rc,Fs=1)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+   <varlistentry><term>rc:</term>
+      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+   <varlistentry><term>Fs:</term>
+      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+The signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    [a,b]=movingrms ([4.4 94 1;-2 5i 5],1,-2)
+a =    0.91237   17.71929    0.96254
+0.91237   17.71929    0.96254
+b =   0.18877
+0.18877
+2.    [a,b]=movingrms ([4.4 94 1;-2 5i 5],1,-2,2)
+a =   4.8332   93.8669    5.0990
+4.8332   93.8669    5.0990
+b =   1
+1
+   ]]></programlisting>
+</refsection>
+</refentry>

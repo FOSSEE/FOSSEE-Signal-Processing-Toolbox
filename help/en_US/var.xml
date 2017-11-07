@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from var.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="var" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>var</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y=var(x)
+   y=var(x,w)
+   y=var(x,w,dim)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> a vector or matrix.</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> weight vector W of length X, or may take the value of 0 and 1. The default value is 0. Consider only non-negative values.</para></listitem></varlistentry>
+   <varlistentry><term>dim:</term>
+      <listitem><para> consider the variance along the dimension of X. 1 for clumun wise variamce and 2 for row wise variance.</para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para> returns the variance of the values in X.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+</refentry>

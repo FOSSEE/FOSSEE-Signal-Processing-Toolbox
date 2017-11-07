@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fracshift.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fracshift" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fracshift</refname>
+    <refpurpose>This function shifts the series x supplied as input argument by a number of samples d.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = fracshift(x, d)
+   y = fracshift(x, d, h)
+   [y, h] = fracshift(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>d:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>h:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function shifts the series x supplied as input argument by a number of samples d.
+The third parameter is the interpolator, which is designed with a Kaiser-windowed sinecard by default, if not supplied.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+fracshift([1,2,3],5)
+ans  =
+1.    2.    3.
+   ]]></programlisting>
+</refsection>
+</refentry>

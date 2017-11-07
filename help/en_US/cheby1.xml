@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheby1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheby1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheby1</refname>
+    <refpurpose>This function generates a Chebyshev type I filter with rp dB of passband ripple.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [a, b] = cheby1 (n, rp, w)
+   [a, b] = cheby1 (n, rp, w, "high")
+   [a, b] = cheby1 (n, rp, [wl, wh])
+   [a, b] = cheby1 (n, rp, [wl, wh], "stop")
+   [a, b, c] = cheby1 (…)
+   [a, b, c, d] = cheby1 (…)
+   […] = cheby1 (…, "s")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>rp:</term>
+      <listitem><para> non negative scalar value</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> vector, all elements must be in the range [0,1]</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function generates a Chebyshev type I filter with rp dB of passband ripple.
+The fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
+[b, a] = cheby1(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
+[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
+[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+[...] = cheby1(...,’s’) returns a Laplace space filter, w can be larger than 1.
+[a,b,c,d] = cheby1(...) returns state-space matrices.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a,b,c]=cheby1(2,6,0.7,"high")
+a =
+1   1
+b =
+-0.62915 + 0.55372i  -0.62915 - 0.55372i
+c =  0.055649
+   ]]></programlisting>
+</refsection>
+</refentry>

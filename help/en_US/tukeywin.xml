@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from tukeywin.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="tukeywin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>tukeywin</refname>
+    <refpurpose>This function returns the filter coefficients of a Tukey window.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   w = tukeywin (m)
+   w = tukeywin (m, r)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>m:</term>
+      <listitem><para> positive integer</para></listitem></varlistentry>
+   <varlistentry><term>r:</term>
+      <listitem><para> positive real number, between 0 and 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function returns the filter coefficients of a Tukey window of length m supplied as input, to the output vector w.
+The second parameter r defines the ratio between the constant and cosine section and its value has to be between 0 and 1, with default value 0.5.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+tukeywin(5, 2)
+ans  =
+0.
+0.5
+1.
+0.5
+0.
+   ]]></programlisting>
+</refsection>
+</refentry>

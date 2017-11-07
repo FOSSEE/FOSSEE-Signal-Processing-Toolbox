@@ -1,0 +1,89 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>impinvar</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="iirlp2mb.html">&lt;&lt; iirlp2mb</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="impz.html">impz &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; impinvar</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">impinvar</h1>
+    <p class="refpurpose">This function converts analog filter with coefficients b and a to digital, conserving impulse response.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">impinvar</span><span class="default"> (</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">impinvar</span><span class="default"> (</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">fs</span><span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">impinvar</span><span class="default"> (</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">fs</span><span class="default">, </span><span class="default">tol</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">b:</span>
+      <dd><p class="para">real or complex valued scalar or vector</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">real or complex valued scalar or vector, order should be greater than b</p></dd></dt>
+   <dt><span class="term">fs:</span>
+      <dd><p class="para">real or complex value, default value 1Hz</p></dd></dt>
+   <dt><span class="term">tol:</span>
+      <dd><p class="para">real or complex value, default value 0.0001</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+This function converts analog filter with coefficients b and a to digital, conserving impulse response.
+This function does the inverse of impinvar.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">b</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">0.0081000</span>
+<span class="scilabid">a</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">2.0000000</span><span class="scilabdefault">,</span>   <span class="scilabnumber">0.56435378</span><span class="scilabdefault">,</span>   <span class="scilabnumber">0.4572792</span><span class="scilabdefault">,</span>   <span class="scilabnumber">0.00705544</span><span class="scilabdefault">,</span>   <span class="scilabnumber">0.091000</span><span class="scilabopenclose">]</span>
+<span class="scilabopenclose">[</span><span class="scilabid">ay</span><span class="scilabdefault">,</span><span class="scilabid">by</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">impinvar</span><span class="scilabopenclose">(</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ay</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">0.0000e+00</span>   <span class="scilabnumber">7.5293e-08</span>   <span class="scilabnumber">2.9902e-07</span>   <span class="scilabnumber">7.4238e-08</span>
+<span class="scilabid">by</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">1.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">3.96992</span>   <span class="scilabnumber">5.91203</span>  <span class="scilaboperator">-</span><span class="scilabnumber">3.91428</span>   <span class="scilabnumber">0.97218</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="iirlp2mb.html">&lt;&lt; iirlp2mb</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="impz.html">impz &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from lpc.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="lpc" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>lpc</refname>
+    <refpurpose>Linear prediction filter coefficients</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [a,g] = lpc(x)
+   [a,g] = lpc(x,p)
+   
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[a,g] = lpc(x,p)
+Determines the coefficients of a pth order forward linear predictor
+filter by minimizing the squared error. If p is unspecified, a
+default value of length(x)-1 is used.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> double</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> int, natural number, scalar</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> double</para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para> double</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1)
+noise = randn(20000,1);
+x = filter(1,[1 1/5 1/3 1/4],noise);
+x = x(15904:20000);
+[a,g] = lpc(x,3);
+
+
+References
+[1] Hayes, Monson H. Statistical digital signal processing and modeling.
+John Wiley & Sons, 2009, pg. 220
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="aryule">| levinson | prony | pyulear | stmcb</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

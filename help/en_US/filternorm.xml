@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from filternorm.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="filternorm" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>filternorm</refname>
+    <refpurpose>Calculates the L-2 norm or L-infinity norm of a digital filter</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   L = filternorm(b,a)
+   L = filternorm(b,a,pnorm)
+   L = filternorm(b,a,2,tol)
+   
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> The filter numerator coefficients.</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> The filter denominator coefficients.</para></listitem></varlistentry>
+   <varlistentry><term>pnorm:</term>
+      <listitem><para> The L-norm to be calculated. The values accepted are 2 (L2 norm) or %inf (L-infinity norm). Default value is 2.</para></listitem></varlistentry>
+   <varlistentry><term>tol:</term>
+      <listitem><para> The tolerance of the L-2 norm to be calculated. If tol not specified, it defaults to 10^(-8). tol must be a positive scalar</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// 1) L-2 norm of an IIR filter with tol = 10^(-10)
+b = [-3 2];
+a = [1 -0.5];
+L = filternorm(b, a, 2, 10d-10);
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="norm">norm</link></member>
+   <member><link linkend="zp2sos">zp2sos</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from zp2sos.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="zp2sos" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>zp2sos</refname>
+    <refpurpose>This function converts filter poles and zeros to second-order sections.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [sos] = zp2sos(z)
+   [sos] = zp2sos(z, p)
+   [sos] = zp2sos(z, p, k)
+   [sos, g] = zp2sos(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>z:</term>
+      <listitem><para> column vector</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> column vector</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> real or complex value, default value is 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function converts filter poles and zeros to second-order sections.
+The first and second parameters are column vectors containing zeros and poles. The third parameter is the overall filter gain, the default value of which is 1.
+The output is the sos matrix and the overall gain.
+If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+zp2sos([1, 2, 3], 2, 6)
+ans =
+6  -18   12    1   -2    0
+1   -3    0    1    0    0
+   ]]></programlisting>
+</refsection>
+</refentry>

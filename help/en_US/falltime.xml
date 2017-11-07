@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from falltime.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="falltime" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>falltime</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   r=falltime(x)
+   r=falltime(x, t)
+   r=falltime(x, Fs)
+   r=falltime(x, t, 'PercentReferenceLevels', N )
+   r=falltime(x, t, 'Tolerance', M)
+   r=falltime(x, t,'StateLevels', O)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, Fs)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, t)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, t, 'PercentReferenceLevels', N )
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t, 'Tolerance', M)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t,'StateLevels', O)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t,'StateLevels', O, 'fig', on or off)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real vector.</para></listitem></varlistentry>
+   <varlistentry><term>Fs:</term>
+      <listitem><para> specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.</para></listitem></varlistentry>
+   <varlistentry><term>t:</term>
+      <listitem><para> defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.</para></listitem></varlistentry>
+   <varlistentry><term>PercentReferenceLevels:</term>
+      <listitem><para> specify the percentreferenceleves as a percentage, default value of N is [10 90].</para></listitem></varlistentry>
+   <varlistentry><term>Tolerance:</term>
+      <listitem><para> define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem></varlistentry>
+   <varlistentry><term>StateLevels:</term>
+      <listitem><para>  define the lower and upper state levels as two element real vector.</para></listitem></varlistentry>
+   <varlistentry><term>fig:</term>
+      <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem></varlistentry>
+   <varlistentry><term>f:</term>
+      <listitem><para> return fall time of negative-going bilevel waveform transitions X.</para></listitem></varlistentry>
+   <varlistentry><term>lowercrossvalue:</term>
+      <listitem><para> return the lowerc cross value.</para></listitem></varlistentry>
+   <varlistentry><term>uppercrossvalue:</term>
+      <listitem><para> return the upper cross value.</para></listitem></varlistentry>
+   <varlistentry><term>lowerreference:</term>
+      <listitem><para> return lower reference value corrosponding to lower percent reference value.</para></listitem></varlistentry>
+   <varlistentry><term>upperreference:</term>
+      <listitem><para> return upper reference value corrosponding to upper percent reference value.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+</refentry>

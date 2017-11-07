@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from shanwavf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="shanwavf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>shanwavf</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [psi,x]=shanwavf(lb,ub,n,fb,fc)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>lb:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>ub:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Real valued integer strictly positive</para></listitem></varlistentry>
+   <varlistentry><term>fb:</term>
+      <listitem><para> Real or complex valued vector or matrix, strictly positive value for scalar input</para></listitem></varlistentry>
+   <varlistentry><term>fc:</term>
+      <listitem><para> Real or complex valued vector or matrix, strictly positive value for scalar input</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+This function implements the complex Shannon wavelet function and returns the value obtained. The complex Shannon wavelet is defined by a bandwidth parameter FB, a wavelet center frequency FC on an N point regular grid in the interval [LB,UB].
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    [a,b]=shanwavf (2,8,3,1,6)
+a =   [-3.8982e-17 + 1.1457e-31i   3.8982e-17 - 8.4040e-31i  -3.8982e-17 + 4.5829e-31i]
+b =   [2   5   8]
+2.    [a,b]=shanwavf(1,2,1,[2,2;i,2],[-1,2;-i,i])
+a =   [-5.5128e-17 - 2.7005e-32i  -5.5128e-17 + 5.4010e-32i;
+8.6404e+06 + 8.6404e+06i  -1.9225e-22 - 0.0000e+00i]
+b =  2
+   ]]></programlisting>
+</refsection>
+</refentry>

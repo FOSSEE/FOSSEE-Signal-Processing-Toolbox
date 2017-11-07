@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arburg.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arburg" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arburg</refname>
+    <refpurpose>This function calculates coefficients of an autoregressive (AR) model of complex data.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   a = arburg(x, poles)
+   a = arburg(x, poles, criterion)
+   [a, v] = arburg(...)
+   [a, v, k] = arburg(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> vector of real or complex numbers, of length &gt; 2</para></listitem></varlistentry>
+   <varlistentry><term>poles:</term>
+      <listitem><para> positive integer value &lt; length(x) - 2</para></listitem></varlistentry>
+   <varlistentry><term>criterion:</term>
+      <listitem><para> string value, takes in "AKICc", "KIC", "AICc", "AIC" and "FPE", default it not using a model-selection criterion</para></listitem></varlistentry>
+   <varlistentry><term>a, v, k:</term>
+      <listitem><para> Output variables</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function calculates coefficients of an autoregressive (AR) model of complex data x using the whitening lattice-filter method of Burg.
+The first argument is the data sampled. The second argument is the number of poles in the model (or limit in case a criterion is supplied).
+The third parameter takes in the criterion to limit the number of poles. The acceptable values are "AIC", "AKICc", "KIC", "AICc" which are based on information theory.
+Output variable a is a list of P+1 autoregression coefficients.
+Output variable v is the mean square of residual noise from the whitening operation of the Burg lattice filter.
+Output variable k corresponds to the reflection coefficients defining the lattice-filter embodiment of the model.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+arburg([1,2,3,4,5],2)
+ans =
+1.00000  -1.86391   0.95710
+   ]]></programlisting>
+</refsection>
+</refentry>

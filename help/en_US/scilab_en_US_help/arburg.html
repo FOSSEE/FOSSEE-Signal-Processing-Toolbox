@@ -1,0 +1,90 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>arburg</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="arParEst.html">&lt;&lt; arParEst</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="arcov.html">arcov &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a> &gt; arburg</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">arburg</h1>
+    <p class="refpurpose">This function calculates coefficients of an autoregressive (AR) model of complex data.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">a</span><span class="default"> = </span><span class="functionid">arburg</span><span class="default">(</span><span class="default">x</span><span class="default">, </span><span class="default">poles</span><span class="default">)</span>
+<span class="default">a</span><span class="default"> = </span><span class="functionid">arburg</span><span class="default">(</span><span class="default">x</span><span class="default">, </span><span class="default">poles</span><span class="default">, </span><span class="default">criterion</span><span class="default">)</span>
+<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">v</span><span class="default">] = </span><span class="functionid">arburg</span><span class="default">(...)</span>
+<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">v</span><span class="default">, </span><span class="default">k</span><span class="default">] = </span><span class="functionid">arburg</span><span class="default">(...)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x:</span>
+      <dd><p class="para">vector of real or complex numbers, of length &gt; 2</p></dd></dt>
+   <dt><span class="term">poles:</span>
+      <dd><p class="para">positive integer value &lt; length(x) - 2</p></dd></dt>
+   <dt><span class="term">criterion:</span>
+      <dd><p class="para">string value, takes in &#0034;AKICc&#0034;, &#0034;KIC&#0034;, &#0034;AICc&#0034;, &#0034;AIC&#0034; and &#0034;FPE&#0034;, default it not using a model-selection criterion</p></dd></dt>
+   <dt><span class="term">a, v, k:</span>
+      <dd><p class="para">Output variables</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+This function calculates coefficients of an autoregressive (AR) model of complex data x using the whitening lattice-filter method of Burg.
+The first argument is the data sampled. The second argument is the number of poles in the model (or limit in case a criterion is supplied).
+The third parameter takes in the criterion to limit the number of poles. The acceptable values are &#0034;AIC&#0034;, &#0034;AKICc&#0034;, &#0034;KIC&#0034;, &#0034;AICc&#0034; which are based on information theory.
+Output variable a is a list of P+1 autoregression coefficients.
+Output variable v is the mean square of residual noise from the whitening operation of the Burg lattice filter.
+Output variable k corresponds to the reflection coefficients defining the lattice-filter embodiment of the model.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">arburg</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">1.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1.86391</span>   <span class="scilabnumber">0.95710</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="arParEst.html">&lt;&lt; arParEst</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_be19baaac84b122b8ad501d34462f5bf.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="arcov.html">arcov &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

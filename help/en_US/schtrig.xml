@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from schtrig.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="schtrig" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>schtrig</refname>
+    <refpurpose>This function implements a multisignal Schmitt triggers with lev levels supplied as input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   v = schtrig (x, lev)
+   v = schtrig (x, lev, rs)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> vector or matrix of real numbers</para></listitem></varlistentry>
+   <varlistentry><term>lev:</term>
+      <listitem><para> real number</para></listitem></varlistentry>
+   <varlistentry><term>rs:</term>
+      <listitem><para> default value 1</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function implements a multisignal Schmitt triggers with lev levels supplied as input.
+The argument 1 is a matrix (or a vector) and this trigger works along its first dimension.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+schtrig([0.2,-3,5],-4)
+ans  =
+0.    0.    1.
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from window.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="window" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>window</refname>
+    <refpurpose>This function creates an m-point window from the function f given as input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   w = window(f, m)
+   w = window(f, m, opts)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>f:</term>
+      <listitem><para> string value</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>opts:</term>
+      <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function creates an m-point window from the function f given as input, in the output vector w.
+f can take any valid function as a string, for example "blackmanharris".
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+window("hanning",5)
+ans  =
+0.
+0.5
+1.
+0.5
+0.
+   ]]></programlisting>
+</refsection>
+</refentry>

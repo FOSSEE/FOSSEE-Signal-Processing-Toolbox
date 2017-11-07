@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from filtic.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="filtic" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>filtic</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   zf = filtic (b, a, y)
+   zf = filtic (b, a, y, x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>x:</term>
+      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function finds the initial conditions for the delays in the transposed direct-form II filter implementation.
+The vectors b and a represent the numerator and denominator coefficients of the filter's transfer function.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+filtic([i,1,-i,5], [1,2,3i], [0.8i,7,9])
+ans =
+0.00000 - 22.60000i
+2.40000 +  0.00000i
+0.00000 +  0.00000i
+This function is being called from Octave
+   ]]></programlisting>
+</refsection>
+</refentry>

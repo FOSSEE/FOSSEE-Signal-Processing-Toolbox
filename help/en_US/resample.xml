@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from resample.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="resample" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>resample</refname>
+    <refpurpose>This function resamples in the input sequence x supplied by a factor of p/q.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = resample(x, p, q)
+   y = resample(x, p, q, h)
+   [y, h] = resample(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> scalar, vector or matrix of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>q:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>h:</term>
+      <listitem><para> scalar, vector or matrix of real or complex numbers</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function resamples in the input sequence x supplied by a factor of p/q. If x is a matrix, then every column is resampled.hange the sample rate of x by a factor of p/q.
+This is performed using a polyphase algorithm. The impulse response h, given as parameter 4, of the antialiasing filter is either specified or designed with a Kaiser-windowed sinecard.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+resample(1,2,3)
+ans =  0.66667
+   ]]></programlisting>
+</refsection>
+</refentry>

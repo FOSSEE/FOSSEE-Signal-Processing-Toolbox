@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from residuez.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="residuez" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>residuez</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [r,p,f,m]=residuez(b,a)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function
+It compute the PFE of filter H(z)= B(z)/A(z) where inputs b and a are vectors specifying the digital filter.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.    [a,b,c,d]=residuez([i 2i 3i; -4 1 4i],[1 2 3])
+a =  [0.6262 - 1.4412i;  -0.4039 + 1.4658i]
+b =  [-1.0000 - 1.4142i;  -1.0000 + 1.4142i]
+c =  [-0.22222 - 0.97531i   0.33333 + 0.51852i   0.00000 - 0.11111i;   0.00000 - 1.33333i]
+d =   1
+   ]]></programlisting>
+</refsection>
+</refentry>

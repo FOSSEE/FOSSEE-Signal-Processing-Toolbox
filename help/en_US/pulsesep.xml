@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pulsesep.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pulsesep" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pulsesep</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   s=pulsesep(x)
+   s=pulsesep(x, Fs)
+   s=pulsesep(x, t)
+   s=pulsesep (x, t, 'Polarity', pol)
+   s=pulsesep(x, t, 'MidPercentReferenceLevel', N )
+   s=pulsesep(x, t, 'Tolerance', M)
+   s=pulsesep(x, t,'StateLevels', [O 1])
+   </synopsis>
+</refsynopsisdiv>
+</refentry>

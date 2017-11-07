@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from latc2tf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="latc2tf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>latc2tf</refname>
+    <refpurpose>Convert lattice filter parameters to transfer function coefficients</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[num,den] = latc2tf(k,v)
+Finds the transfer function of the IIR filter from the lattice
+coefficients k and ladder coefficients v.
+[num,den] = latc2tf(k,'iiroption')
+Finds the transfer function of the allpass or allpole (specified by
+the iiroption flag) IIR filter.
+num = latc2tf(k,'firoption')
+Finds the transfer function of the FIR filter from the lattice
+coefficients k. The firoption flag specifies the type of the FIR
+filter (can be 'min, 'max', or 'FIR')
+   </para>
+   <para>
+Parameters:
+k - double - vector
+Lattice coefficients
+Lattice coefficients for FIR/IIR filter. Can be real or complex.
+v - double - vector
+Ladder coefficients
+Ladder coefficients for IIR filters. Can be real or complex.
+iiroption - string flag - 'allpole', or 'allpass'
+Specification of the type if IIR filter
+firoption - string flag - 'min', 'max', or 'FIR' (default)
+Speficication of the type of FIR filter
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1) FIR filter
+k1 = [1/2 1/2 1/4];
+[num1,den1] = latc2tf(k1);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="latcfilt">| tf2latc</link></member>
+   <member><link linkend="References">References</link></member>
+   <member><link linkend="[1]">J.G. Proakis, D.G. Manolakis, Digital Signal Processing,</link></member>
+   <member><link linkend="3rd">ed., Prentice Hall, N.J., 1996, Chapter 7.</link></member>
+   <member><link linkend="[2]">S. K. Mitra, Digital Signal Processing, A Computer</link></member>
+   <member><link linkend="Based">Approach, McGraw-Hill, N.Y., 1998, Chapter 6.</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

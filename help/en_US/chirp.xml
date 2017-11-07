@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from chirp.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="chirp" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>chirp</refname>
+    <refpurpose>This function evaluates a chirp signal at time t.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = chirp(t)
+   y = chirp(t, f0)
+   y = chirp(t, f0, t1)
+   y = chirp(t, f0, t1, f1)
+   y = chirp(t, f0, t1, f1, frm)
+   y = chirp(t, f0, t1, f1, frm, phse)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> vector</para></listitem></varlistentry>
+   <varlistentry><term>f0:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>t1:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>f1:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>frm:</term>
+      <listitem><para> string value, takes in "linear", "quadratic", "logarithmic"</para></listitem></varlistentry>
+   <varlistentry><term>phse:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function evaluates a chirp signal at time t. A chirp signal is a frequency swept cosine wave.
+The first argument is a vector of times to evaluate the chirp signal, second argument is the frequency at t=0, third argument is time t1 and fourth argument is frequency at t1.
+The fifth argument is the form which takes in values "linear", "quadratic" and "logarithmic", the sixth argument gives the phase shift at t=0.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+chirp([4,3,2,1],4,5,0.9)
+ans  =
+column 1 to 3
+0.9685832    0.2486899    0.0627905
+column 4
+- 0.3681246
+   ]]></programlisting>
+</refsection>
+</refentry>

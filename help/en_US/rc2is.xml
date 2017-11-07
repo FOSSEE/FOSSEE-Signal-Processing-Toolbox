@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rc2is.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rc2is" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rc2is</refname>
+    <refpurpose>Convert reflection coefficients to inverse sine parameters</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   isin = rc2is(K)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>k:</term>
+      <listitem><para> input reflection coefficients. Needs to be an array of real numbers between -1 and 1</para></listitem></varlistentry>
+   <varlistentry><term>isin:</term>
+      <listitem><para> inverse sine parameters corresponding to the reflection coefficients in input</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns the inverse sine parameters corresponding to the input reflection coefficients K.
+output array has isin(i) = 2/pi*asin(k(i))
+   </para>
+   <para>
+Example
+k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+isin = rc2is(k)      //Gives inverse sine parameters
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="is2rc">is2rc</link></member>
+   <member><link linkend="rc2poly">rc2poly</link></member>
+   <member><link linkend="rc2ac">rc2ac</link></member>
+   <member><link linkend="rc2lar">rc2lar</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>J.R. Deller, J.G. Proakis, J.H.L. Hansen, "Discrete-Time Processing of Speech Signals", Prentice Hall, Section 7.4.5</para>
+   <para>modified function to handle char i/p and also changed error statements to match those of MATLAB by Debdeep Dey</para>
+   <para>convert char i/p to their respective ascii values</para>
+</refsection>
+</refentry>

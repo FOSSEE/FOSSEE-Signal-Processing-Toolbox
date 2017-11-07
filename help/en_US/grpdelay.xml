@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from grpdelay.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="grpdelay" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>grpdelay</refname>
+    <refpurpose>This function computes the group delay of a filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   gd = grpdelay(b)
+   gd = grpdelay(b, a)
+   gd = grpdelay(b, a, nfft)
+   gd = grpdelay(b, a, nfft, whole)
+   gd = grpdelay(b, a, nfft, whole, Fs)
+   [gd, w] = grpdelay(...)
+   </synopsis>
+</refsynopsisdiv>
+</refentry>

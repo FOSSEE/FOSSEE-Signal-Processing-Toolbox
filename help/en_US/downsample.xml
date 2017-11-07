@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from downsample.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="downsample" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>downsample</refname>
+    <refpurpose>This function downsamples the signal by selecting every nth element.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = downsample (x, n)
+   y = downsample (x, n, phase)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> scalar, vector or matrix of real or complex numbers</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> real number or vector</para></listitem></varlistentry>
+   <varlistentry><term>phase:</term>
+      <listitem><para> integer value, 0 &lt;= phase &lt;= (n - 1), default value 0, or logical</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function downsamples the signal by selecting every nth element supplied as parameter 2. If x is a matrix, the function downsamples every column.
+If the phase is specified, every nth element is selected starting from the sample phase. The default phase is 0.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+downsample([1,2,4],2)
+ans  =
+1.    4.
+   ]]></programlisting>
+</refsection>
+</refentry>

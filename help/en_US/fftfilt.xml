@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fftfilt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fftfilt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fftfilt</refname>
+    <refpurpose>Performs FFT-based FIR filtering using overlap-add method</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real|complex numbers -  vector|matrix</para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> real|complex numbers - vector|matrix</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> positive integer</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+y = fftfilt(b,x) filters the data in vector x with the filter described
+by coefficient vector b.
+y = fftfilt(b,x,n) uses n to determine the length of the FFT.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1) Filtering a sine wave
+x = sin(1:2000);
+b = [1 1/2];
+y = fftfilt(b,x);
+2) Multiple filters (1,1/3) and (1/4,1/5);
+x = sin(1:2000);
+b = [1 1/4;1/3 1/5];
+y = fftfilt(b,x);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

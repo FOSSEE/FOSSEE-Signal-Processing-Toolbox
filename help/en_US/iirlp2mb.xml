@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from iirlp2mb.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="iirlp2mb" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>iirlp2mb</refname>
+    <refpurpose>This function does IIR Low Pass Filter to Multiband Filter Transformation.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [Num, Den, AllpassNum, AllpassDen] = iirlp2mb(B, A, Wo, Wt)
+   [Num, Den, AllpassNum, AllpassDen] = iirlp2mb(B, A, Wo, Wt, Pass)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>B:</term>
+      <listitem><para> real or complex value</para></listitem></varlistentry>
+   <varlistentry><term>A:</term>
+      <listitem><para> real or complex value</para></listitem></varlistentry>
+   <varlistentry><term>Wo:</term>
+      <listitem><para> scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>Wt:</term>
+      <listitem><para> scalar or vector, elements must be monotonically increasing and &gt;= 0 and &lt;= 1.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function does IIR Low Pass Filter to Multiband Filter Transformation.
+The first two parameters give the numerator and denominator of the prototype low pass filter.
+The third parameter is the normalized angular frequency/pi to be transformed.
+The fourth parameter is the normalized angular frequency/pi target vector.
+The first two output variables are the numerator and denominator of the transformed filter.
+The third and fourth output variables are the numerator and denominator of the allpass transform.
+The fifth parameter can have values pass or stop, default value is pass.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+iirlp2mb(5,9,0.3,0.4)
+ans =  0.55556
+   ]]></programlisting>
+</refsection>
+</refentry>

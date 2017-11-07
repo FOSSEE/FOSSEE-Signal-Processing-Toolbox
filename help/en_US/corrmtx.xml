@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from corrmtx.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="corrmtx" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>corrmtx</refname>
+    <refpurpose>Generate data matrix for autocorrelation matrix estimation</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   X = corrmtx(x,m)
+   [X,R] = corrmtx(x,m)
+   X = corrmtx(x,m,s)
+   [X,R] = corrmtx(x,m,s)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> input vector of size N for which correlation matrix of size m is to be calculated</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> size of correlation matrix to be computed. Positive integer strictly smaller than the length of the input x</para></listitem></varlistentry>
+   <varlistentry><term>X:</term>
+      <listitem><para> data matrix as specified according to the input 'method'</para></listitem></varlistentry>
+   <varlistentry><term>s:</term>
+      <listitem><para> method for type of output matrix X</para></listitem></varlistentry>
+   <varlistentry><term>'autocorrelation':</term>
+      <listitem><para> (default) X is the (n + m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the leng    th-n data vector x, derived using prewindowed and postwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
+   <varlistentry><term>'prewindowed':</term>
+      <listitem><para> X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x,     derived using prewindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
+   <varlistentry><term>'postwindowed':</term>
+      <listitem><para> X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x    , derived using postwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
+   <varlistentry><term>'covariance':</term>
+      <listitem><para> X is the (n – m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vect    or x, derived using nonwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
+   <varlistentry><term>'modified':</term>
+      <listitem><para> X is the 2(n – m)-by-(m + 1) modified rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n d    ata vector x, derived using forward and backward prediction error estimates, based on an mth-order prediction error model.</para></listitem></varlistentry>
+   <varlistentry><term>R:</term>
+      <listitem><para> (m + 1)-by-(m + 1) autocorrelation matrix estimate calculated as X'*X</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Consider the generic matrix X below
+_                _
+| x(1) ..........0 |
+| :      .       : |
+| :       .      : |
+| x(m+1).......x(1)|
+| :      .       : |
+| :       .      : |
+X = | x(n-m).....x(m+1)|
+| :      .       : |
+| :       .      : |
+| x(n).......x(n-m)|
+| :      .       : |
+| :       .      : |
+|_0 ..........x(n)_|
+--
+For different inputs of string s the output would vary ass described below
+'autocorrelation' — (default) X = X, above.
+'prewindowed' — X is the n-by-(m + 1) submatrix of X whose first row is [x(1) … 0] and whose last row is [x(n) … x(n – m)]
+'postwindowed' — X is the n-by-(m + 1) submatrix of X whose first row is [x(m + 1) … x(1)] and whose last row is [0 … x(n)]
+'covariance' — X is the (n – m)-by-(m + 1) submatrix of X whose first row is [x(m + 1) … x(1)] and whose last row is [x(n) … x(n – m)]
+'modified' — X is the 2(n – m)-by-(m + 1) matrix X_mod shown below
+_                _
+| x(m+1) ......x(1)|
+| :      .       : |
+| :       .      : |
+| x(n-m).....x(m+1)|
+| :      .       : |
+| :       .      : |
+| x(n).......x(n-m)|
+X_mod= | x*(1).....x*(m+1)|
+| :      .       : |
+| :       .      : |
+| x*(m+1)...x*(n-m)|
+| :      .       : |
+| :       .      : |
+|_x*(n-m) ...x*(n)_|
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="peig">peig</link></member>
+   <member><link linkend="pmusic">pmusic</link></member>
+   <member><link linkend="rooteig">rooteig</link></member>
+   <member><link linkend="rootmusic">rootmusic</link></member>
+   <member><link linkend="xcorr">xcorr</link></member>
+   <member><link linkend="Author:">Author:</link></member>
+   <member><link linkend="Parthe">Pandit</link></member>
+   <member><link linkend="Bilbligraphy">Bilbligraphy</link></member>
+   <member><link linkend="Marple,">S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</link></member>
+   </simplelist>
+</refsection>
+</refentry>

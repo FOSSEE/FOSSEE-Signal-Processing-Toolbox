@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from statelevels.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="statelevels" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>statelevels</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   levels=statelevels(x, nbins, method, bounds)
+   [levels histogram]=statelevels(x, nbins, method, bounds)
+   [levels histogram bins]=statelevels(x, nbins, method, bounds)
+   [levels histogram bins]=statelevels(x, nbins, method, bounds, 'fig', On or Off)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real vector</para></listitem></varlistentry>
+   <varlistentry><term>nbins:</term>
+      <listitem><para> number of histogram bins to use in the histogram as a positive scalar, where the default value is 100</para></listitem></varlistentry>
+   <varlistentry><term>method:</term>
+      <listitem><para> method to estimate the statelevels using specified METHOD as one of 'mean' or 'mode', where the  default value is 'mode'</para></listitem></varlistentry>
+   <varlistentry><term>bounds:</term>
+      <listitem><para> specify the lower and upper bound for the histogram as a two-element row vector</para></listitem></varlistentry>
+   <varlistentry><term>fig:</term>
+      <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem></varlistentry>
+   <varlistentry><term>levels:</term>
+      <listitem><para> return lower and upper level values</para></listitem></varlistentry>
+   <varlistentry><term>histogram:</term>
+      <listitem><para> return histogram values</para></listitem></varlistentry>
+   <varlistentry><term>bins:</term>
+      <listitem><para> return binlevels values</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=[1.2, 5, 10, -20, 12]
+nbins=10
+method='mode'
+bounds=[1 10]
+levels=statelevels(x, nbins, method, bounds)
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
+</refentry>

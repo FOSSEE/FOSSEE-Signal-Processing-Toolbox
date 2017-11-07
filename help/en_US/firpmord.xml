@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from firpmord.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="firpmord" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>firpmord</refname>
+    <refpurpose>Parks-McClennan optimal FIR filter order estimation</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>f:</term>
+      <listitem><para> double - positive - vector</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> double - positive - vector</para></listitem></varlistentry>
+   <varlistentry><term>dev:</term>
+      <listitem><para> double - positive - vector</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> int - scalar</para></listitem></varlistentry>
+   <varlistentry><term>fo:</term>
+      <listitem><para> double - positive - vector</para></listitem></varlistentry>
+   <varlistentry><term>ao:</term>
+      <listitem><para> double - positive - vector</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> double - vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[1] A low-pass filter
+f = [1500 2000];        // frequency edges for bands
+a = [1 0];              // desired amplitude for each band
+dev = [0.01 0.1];       // Acceptable deviation for each band
+fs = 8000;              // Sampling frequency
+[n,fo,ao,w] = firpmord(f,a,dev,fs);
+
+[2] A bandstop filter
+f = [1000 1800 2400 3000];
+a = [1 0 0.5];
+dev = [0.01 0.1 0.03];
+fs = 8000;
+[n,fo,ao,w] = firpmord(f,a,dev,fs);
+
+
+References
+[1] Rabiner, Lawrence R., and Bernard Gold. "Theory and application of
+digital signal processing." Englewood Cliffs, NJ, Prentice-Hall, Inc.,
+1975. 777 p. 156-7 (1975).
+[2] Rabiner, Lawrence R., and Otto Herrmann. "The predictability of certain
+optimum finite-impulse-response digital filters." Circuit Theory,
+IEEE Transactions on 20.4 (1973): 401-408.
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+</refentry>

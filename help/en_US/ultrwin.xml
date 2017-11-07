@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ultrwin.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ultrwin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ultrwin</refname>
+    <refpurpose>This function returns the coefficients of an Ultraspherical window.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   w = ultrwin (m, mu, par)
+   w = ultrwin (m, mu, par, key)
+   w = ultrwin (m, mu, par, key, norm)
+   [w, xmu] = ultrwin (...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>m:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>mu:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>par:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>key:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>norm:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function returns the coefficients of an Ultraspherical window of length m supplied as input, to the output vector w.
+The second parameter controls the ratio between side lobe to side lobe of the window's Fourier transform.
+The third parameter controls the ratio between main lobe width to side lobe. The default value is beta.
+The value of xmu is also returned for given beta, att or latt.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+ultrwin(3,-0.4,0.5)
+ans  =
+- 1.
+1.
+- 1.
+   ]]></programlisting>
+</refsection>
+</refentry>

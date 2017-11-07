@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from peig.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="peig" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>peig</refname>
+    <refpurpose>Psuedospectrum using the eigenvector method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [S,w] = peig(x,p)
+   [S,w] = peig(x,p,w)
+   [S,w] = peig(x,p,nfft)
+   [S,w] = peig(x,p,nfft,fs)
+   [S,w] = peig(x,p,f,fs)
+   [S,f] = peig(...,'corr')
+   [S,f] = peig(x,p,nfft,fs,nwin,noverlap)
+   [...] = peig(...,freqrange)
+   [...,v,e] = peig(...)
+   
+   Parameters:
+   x - int|double - vector|matrix
+   Input signal. In case of a matrix, each row of x represents a
+   seperate observation of the signal. If 'corr' flag is specified,
+   then x is the correlation matrix.
+   If w is not specified in the input, it is determined by the
+   algorithm. If x is real valued, then range of w is [0, pi].
+   Otherwise, the range of w is [0, 2pi)
+   p - int|double - scalar|vector
+   p(1) is the dimension of the signal subspace
+   p(2), if specified, represents a threshold that is multiplied by
+   the smallest estimated eigenvalue of the signal's correlation matrix.
+   w - int|double - vector
+   w is the vector of normalized frequencies over which the
+   pseuspectrogram is to be computed.
+   nfft - int - scalar (Default = 256)
+   Length of the fft used to compute pseudospectrum. The length of S
+   (and hence w/f) depends on the type of values in x and nfft.
+   If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if
+   nfft is even and (nfft+1)/2 {Range of w = [0, pi)} otherwise.
+   If x is complex, length of s is nfft.
+   fs - int|double - scalar (Default = 1)
+   Sampling rate. Used to convert the normalized frequencies (w) to
+   actual values (f) and vice-versa.
+   nwin - int|double - scalar (int only)|vector (Default = 2*p(1))
+   If nwin is scalar, it is the length of the rectangular window.
+   Otherwise, the vector input is considered as the window coefficients.
+   Not used if 'corr' flag present.
+   If x is a vector, windowing not done in nwin in scalar. If x is a
+   matrix,
+   noverlap - int - scalar (Default = nwin-1)
+   number of points by which successive windows overlap. noverlap not
+   used if x is a matrix
+   freqrange - string
+   The range of frequencies over which the pseudospetrogram is
+   computed. Three possible values - 'onesided', 'twosided', 'centered'
+   'corr' flag
+   Presence indicates that the primary input x is actually a
+   correlation matrix
+   
+   Examples:
+   TODO:
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="rooteig">| pmusic | pmtm | pcov | pmcov | pburg | pyulear | pwelch | corrmtx</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   <member>References</member>
+   <member>[1] Petre Stoica and Randolph Moses, Introduction To Spectral</member>
+   <member>Analysis, Prentice-Hall, 1997, pg. 15</member>
+   <member>[2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.</member>
+   <member>2nd Ed., Macmillan, 1988.</member>
+   </simplelist>
+</refsection>
+</refentry>

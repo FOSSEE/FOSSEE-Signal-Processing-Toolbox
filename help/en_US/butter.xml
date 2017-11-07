@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from butter.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="butter" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>butter</refname>
+    <refpurpose>This function generates a Butterworth filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [a, b] = butter (n, w)
+   [a, b] = butter (n, w, "high")
+   [a, b] = butter (n, [wl, wh])
+   [b, a] = butter (n, [wl, wh], "stop")
+   [a, b, c] = butter (…)
+   [a, b, c, d] = butter (…)
+   […] = butter (…, "s")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> positive integer value</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> positive real value, w in the range [0,1]</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function generates a Butterworth filter. Default is a discrete space (Z) filter.
+The third parameter takes in low or high, default value is low. The cutoff is pi*Wc radians.
+[b,a] = butter(n, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
+[b,a] = butter(n, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
+[z,p,g] = butter(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+[...] = butter(...,’s’) returns a Laplace space filter, w can be larger than 1.
+[a,b,c,d] = butter(...) returns state-space matrices.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a,b]=butter(3, 0.7)
+a =
+0.37445   1.12336   1.12336   0.37445
+b =
+1.00000   1.16192   0.69594   0.13776
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pulstran.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pulstran" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pulstran</refname>
+    <refpurpose>This function generates the signal y = sum(func(t+d,...)) for each d.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = pulstran (t, d, func, ...)
+   y = pulstran (t, d, p)
+   y = pulstran (t, d, p, fs)
+   y = pulstran (t, d, p, Ffs, meth)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>d:</term>
+      <listitem><para> vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>fs:</term>
+      <listitem><para> default value 1Hz</para></listitem></varlistentry>
+   <varlistentry><term>func:</term>
+      <listitem><para> function which accepts vector (of times)</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function generates the signal y = sum(func(t+d,...)) for each d. If d is a matrix of two columns, the first column is the delay d and the second column is the amplitude a, and y = sum(a*func(t+d)) for each d, a. Here, func is a function which accepts a vector of times.
+If a pulse shape sampled at frequency Fs (default 1 Hz) is supplied instead of a function name, an interpolated version of the pulse is added at each delay d.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+pulstran([0.5,9,8,7],[4,6],[-7,0.5])
+ans  =
+0.    0.    0.    0.5
+   ]]></programlisting>
+</refsection>
+</refentry>

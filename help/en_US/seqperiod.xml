@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from seqperiod.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="seqperiod" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>seqperiod</refname>
+    <refpurpose>Calculates the period of a sequence</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [p,num]=seqperiod(x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> A vector matrix or n-dimensional array</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[p,num]=seqperiod(x)
+Returns an integer p such that x(1:p) is the smallest subsequence that repeats in x
+The number of times the subsequence repeats is returned in num (may not be an integer)
+Repetitions may be incomplete at the end of the sequence but no breaks are permitted between repetitions
+If there is no subsequence that repeats in x then p=length(x)
+If x is a matrix or n-dimesnional array, the function operates along the first non-singleton dimension of x
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [4 0 1 5;
+1 1 2 5;
+2 0 3 5;
+3 1 1 5];
+p = seqperiod(x)
+p  =
+
+4.    2.    3.    1.
+A=zeros(4,1,4);
+A(:,1,:)=x;
+p1=seqperiod(A);
+p1  =
+
+(:,:,1)
+
+4.
+(:,:,2)
+
+2.
+(:,:,3)
+
+3.
+(:,:,4)
+
+1.
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
+</refsection>
+</refentry>

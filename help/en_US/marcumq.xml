@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from marcumq.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="marcumq" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>marcumq</refname>
+    <refpurpose>This function computes the generalized Marcum Q function of order m with noncentrality parameter a and argument b.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   q = marcumq (a, b)
+   q = marcumq (a, b, m)
+   q = marcumq (a, b, m, tol)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> default value 1</para></listitem></varlistentry>
+   <varlistentry><term>tol:</term>
+      <listitem><para> default value eps</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function computes the generalized Marcum Q function of order m with noncentrality parameter a and argument b.
+The third argument m is the order, which by default is 1.
+The fourth argument tol is the tolerance, which by default is eps.
+If input arguments are vectors which correspond in size and degree, the output is a table of values.
+This function calculates Marcum’s Q function using the infinite Bessel series, which is truncated when the relative error is less than the specified tolerance.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+marcumq([1,2,3],4)
+ans  =
+0.0028895    0.0341348    0.1965122
+   ]]></programlisting>
+</refsection>
+</refentry>
