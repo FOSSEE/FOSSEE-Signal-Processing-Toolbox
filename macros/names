@@ -32,6 +32,7 @@ convmtx
 corrmtx
 cummax
 cummin
+czt
 db
 db2pow
 dctmtx
@@ -39,6 +40,7 @@ decimate
 dftmtx
 diric
 downsample
+dst1
 dutycycle
 ellip
 ellipord
@@ -56,6 +58,7 @@ flattopwin
 fracshift
 fwhm
 fwhmjlt
+fwht
 gauspuls
 gaussdesign
 gaussian
@@ -65,13 +68,17 @@ goertzel
 grpdelay
 hann
 helperHarmonicDistortionAmplifier
+hilbert1
 icceps
+ifht
+ifwht
 iirlp2mb
 impinvar
 impz
 impzlength
 interp
 intfilt
+invfreq
 invimpinvar
 is2rc
 isallpass
@@ -131,6 +138,7 @@ rc2ac
 rc2is
 rc2lar
 rc2poly
+rceps
 rcosdesign
 rectpuls
 rectwin
