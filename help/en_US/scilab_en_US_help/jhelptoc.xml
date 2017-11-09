@@ -2,7 +2,11 @@
 <!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
 <tocitem target="index" text="FOSSEE Signal Processing Toolbox">
+<<<<<<< HEAD
 <tocitem target="section_5118e822ecc2888aa80042108de4932e" text="FOSSEE Signal Processing Toolbox">
+=======
+<tocitem target="section_cc2bc01c47967d47fcf3507a91d572ba" text="FOSSEE Signal Processing Toolbox">
+>>>>>>> 3f916032cc0b2efdeafb838dd10e1141ead2cb27
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
