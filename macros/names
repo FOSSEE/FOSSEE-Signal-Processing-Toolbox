@@ -17,6 +17,7 @@ boxcar
 buffer
 butter
 buttord
+cceps
 cconv
 cell2sos
 cheb1ord
@@ -46,6 +47,7 @@ enbw
 eqtflength
 falltime
 fftfilt
+fht
 filternorm
 filtfilt
 filtic
@@ -66,6 +68,9 @@ grpdelay
 hann
 helperHarmonicDistortionAmplifier
 icceps
+idct1
+idct2
+idst1
 iirlp2mb
 impinvar
 impz
@@ -152,6 +157,7 @@ sgolay
 sgolayfilt
 shanwavf
 shiftdata
+sigmoid_train
 slewrate
 sos2cell
 sos2ss
@@ -188,6 +194,7 @@ window
 wkeep
 wrev
 xcorr2
+xcov1
 zerocrossing
 zp2sos
 zplane
