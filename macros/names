@@ -71,15 +71,13 @@ grpdelay
 hann
 helperHarmonicDistortionAmplifier
 hilbert1
+hurst
 icceps
-<<<<<<< HEAD
-ifht
-ifwht
-=======
 idct1
 idct2
 idst1
->>>>>>> 3f916032cc0b2efdeafb838dd10e1141ead2cb27
+ifht
+ifwht
 iirlp2mb
 impinvar
 impz
@@ -150,6 +148,7 @@ rceps
 rcosdesign
 rectpuls
 rectwin
+remez1
 resample
 residued
 residuez
@@ -169,6 +168,8 @@ sgolayfilt
 shanwavf
 shiftdata
 sigmoid_train
+sinetone
+sinewave
 slewrate
 sos2cell
 sos2ss
@@ -177,11 +178,16 @@ sos2zp
 sosbreak
 sosfilt
 specgram
+spectral_adf
+spectral_xdf
+spencer
 ss2sos
 statelevels
+stft
 stmcb
 strips
 subspaceMethodsInputParser
+synthesis
 tf2sos
 tf2zp
 tf2zpk
@@ -206,6 +212,7 @@ wkeep
 wrev
 xcorr2
 xcov1
+yulewalker
 zerocrossing
 zp2sos
 zplane
