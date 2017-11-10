@@ -1,6 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book [
 <!--Begin Entities-->
+<<<<<<< HEAD
+<!ENTITY a81320b4221ec0c937db241f3f09761d9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2poly.xml">
+<!ENTITY a96531f053d1d3aca0c8998446e7ba88a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2rc.xml">
+<!ENTITY a44e8c63cbbbfce58373a4d528cc59bda SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/arParEst.xml">
+<!ENTITY a44baa1c529b4c2034108849f08147667 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/arburg.xml">
+<!ENTITY a64ecf6e721160dfb163621e4a3a00d0f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/arcov.xml">
+<!ENTITY aff6d91054f11396fab566c3b7097e225 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/armcov.xml">
+<!ENTITY a8128572f33478b9c8c764de03cf89fc4 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/aryule.xml">
+<!ENTITY a782c9cd4d7dad9d24a672148080e384c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/barthannwin.xml">
+<!ENTITY a0be563c94e1e42b7735567091463661e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/bartlett.xml">
+<!ENTITY a4b0f0cf49b01fcbb7aedef41c40d0e25 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/besself.xml">
+<!ENTITY a8ee66630c6b42252d90d4304e8af282c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/bitrevorder.xml">
+<!ENTITY a1c12c9e7e5cac759289269fdedd8905c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackman.xml">
+<!ENTITY a029443469c6628757ecf658204c40f45 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackmanharris.xml">
+<!ENTITY a73a177320474a25b6b9c42ed2409895a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackmannuttall.xml">
+<!ENTITY a6f9d33b92c0e5f71e2f83bffbea97f58 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/bohmanwin.xml">
+<!ENTITY a62ed1363186685b47656c8a5790efa44 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/boxcar.xml">
+<!ENTITY a9558e8614d7f439a08d4332c74eb1118 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/buffer.xml">
+<!ENTITY a7c579640b7fb009b1613e4a9e6a3acb6 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/butter.xml">
+<!ENTITY aec6a38aa439b8a6c26a7d2ada787095f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/buttord.xml">
+<!ENTITY a3c7785a5dca1c2ff0bcb54385411d26c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cconv.xml">
+<!ENTITY aa7ee14bf521256b990217ff8fdfd1c4f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cell2sos.xml">
+<!ENTITY adbfd2762e8949c7d9277a546b59fee44 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb1ord.xml">
+<!ENTITY a92cf35397a3f0f935f69fa0c6b980916 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb2ord.xml">
+<!ENTITY a144520c3e437156f61bc5c85aff56360 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/chebwin.xml">
+<!ENTITY aab22c36671d7c1054db5e4e91ff34ca9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheby1.xml">
+<!ENTITY a38bcbc23ee3dff9a39209eed62398675 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheby2.xml">
+<!ENTITY a07382031f7c37c171b8f596adb3241ae SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/check.xml">
+<!ENTITY aa2141aba98a93cb5ebec123c977cb0d4 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/chirp.xml">
+<!ENTITY a9aa47349954b7dc555e77d5c07750bc6 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/clustersegment.xml">
+<!ENTITY ad68b63f69616e4938c5df2b8f4a6ea29 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cmorwavf.xml">
+<!ENTITY a832131d9fca85cf0fc67ebaa7860a244 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/convmtx.xml">
+<!ENTITY ab9c573f1ed86c7c9107542791f010509 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/corrmtx.xml">
+<!ENTITY a3dd640289cc33aa91c9b93ef38ae3588 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cummax.xml">
+<!ENTITY ac80b8635538da5f44037be6c1355e0cd SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/cummin.xml">
+<!ENTITY ab46eb5d7f458e4c97c25dc101934e55a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/db.xml">
+<!ENTITY a9a3d5508d4be2587fffb07c4fea873a1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/db2pow.xml">
+<!ENTITY a9c0646c3d801e6dbf40cb2bfd0f48184 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/dctmtx.xml">
+<!ENTITY ae610966e7222fa2f7bd10ba3020b0397 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/decimate.xml">
+<!ENTITY ad910f20157813b38f3dd0037664fab4d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/dftmtx.xml">
+<!ENTITY a9f1a602ceb9c4f04cdb362869689ad5b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/diric.xml">
+<!ENTITY a34c0df6ea3acf72e8be0c3aadf06b3f9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/downsample.xml">
+<!ENTITY a6c480dc7966fa1256fccca6a2a607ea5 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/dutycycle.xml">
+<!ENTITY ad43a01be488312784bce7fa20f5fda45 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellip.xml">
+<!ENTITY a2475a47e5ba8f7128e2b8d07a807d1b7 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellipord.xml">
+<!ENTITY a6a5628da371f54e68e600dc33be952e8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/enbw.xml">
+<!ENTITY abb6a4d7c3064262f17ab739f011c3a4a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/eqtflength.xml">
+<!ENTITY a448d7adf3da3286f51f6a94bea63663d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/falltime.xml">
+<!ENTITY a3d7d87fbbc65bfd3e6fdf8bc8f48be6e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftfilt.xml">
+<!ENTITY afe92108055741cc536bf66798f641a5e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/filternorm.xml">
+<!ENTITY a6da3c55e120d9ad84b38f937a1440569 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtfilt.xml">
+<!ENTITY a1cb4e24a853af62bb07857799af1b5a9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtic.xml">
+<!ENTITY a2db9d9caff7a7a3eb135b4bc6e9ebe96 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtord.xml">
+<!ENTITY a983dde98de76617e105fb2a1b1165e9d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/firpmord.xml">
+<!ENTITY a1653c1101bb7f7f90ad5c793094c3011 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/firtype.xml">
+<!ENTITY a9cd28a49bceabf9d6a5ae48efc168636 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/flattopwin.xml">
+<!ENTITY ac2d9926417a46b72d2c3ce6be1f719c3 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/fracshift.xml">
+<!ENTITY a77e06b63ac5f175d8106b4e43014b6da SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhm.xml">
+<!ENTITY a33f0777e49b0d0506ae19c244104c179 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhmjlt.xml">
+<!ENTITY af7def142da08407766b1ec9a0a940863 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/gauspuls.xml">
+<!ENTITY a1c243694467789e5c3b41db26ea136b8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/gaussdesign.xml">
+<!ENTITY aed386f5f60012f9148f8a7239f8922dd SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/gaussian.xml">
+<!ENTITY a891fefd8a1c82376c748c0dc0df9d198 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/gausswin.xml">
+<!ENTITY a377e22d7852a5b8231f663f2e392cec8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/gmonopuls.xml">
+<!ENTITY a1f500f91aba02eeb51c8756038367f06 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/goertzel.xml">
+<!ENTITY ac9b5a24449247693afe12d4a0a89cb29 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/grpdelay.xml">
+<!ENTITY a74b3b666e222dd6fdc8cfa967a275919 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/hann.xml">
+<!ENTITY a58a65df48c1f5e0fb455ce5ae740b4d2 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/helperHarmonicDistortionAmplifier.xml">
+<!ENTITY a460a1e1ff357ce3430e9e399628fa02c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/icceps.xml">
+<!ENTITY a62cc46ed8d95b0239e4df0552679ea1d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/iirlp2mb.xml">
+<!ENTITY aa188901e0117ab660ea457598988f6c9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/impinvar.xml">
+<!ENTITY a44f003ed5aa29cbfd3cefa414436788d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/impz.xml">
+<!ENTITY a7524abc02ec73e4e52e0aa32f70a48c7 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/impzlength.xml">
+<!ENTITY a49a9e3c3edb127efa41460df3ae0b246 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/interp.xml">
+<!ENTITY ad0ea8d615c238f00d56a94edffed11d2 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/intfilt.xml">
+<!ENTITY aa5fea5e37e2362f8cc508f80fb61e1a4 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/invimpinvar.xml">
+<!ENTITY a6738f22afa4d9b2fec50f876ed64f1c3 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/is2rc.xml">
+<!ENTITY aa81b94c5cbb0d9bdbcf323aa37a1c434 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/isallpass.xml">
+<!ENTITY a6331d2a5505b25f3a0a10372e9498048 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/isfir.xml">
+<!ENTITY a234451d6304052dfc82c4ebf1780f111 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/islinphase.xml">
+<!ENTITY ad008841ad94a185e99ca801b29a57cd1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ismaxphase.xml">
+<!ENTITY a7b4993c8297a6696cc70e771f9914a77 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/isminphase.xml">
+<!ENTITY ad9c3b7bc150ac1452720b8ffe09e98b6 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/isstable.xml">
+<!ENTITY a529cf543ec9712c89d8d996913ef7ec1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/kaiser.xml">
+<!ENTITY a7661f5463a17550a94594b08eb000091 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/lar2rc.xml">
+<!ENTITY a8d87a3061cb6a7f81eb9a5d01ec17708 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/latc2tf.xml">
+<!ENTITY ab7c7ba24125e211f115a6bc397dcc611 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/latcfilt.xml">
+<!ENTITY aedf625d258dae2c80e8d080faa15af97 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/latcfilt1.xml">
+<!ENTITY a28cbb1579bb1a8b7ff1f8a7298903a4c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/levdown.xml">
+<!ENTITY a9a5a0bc20aed91cae617c9790d48fe6c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/levin.xml">
+<!ENTITY a14d1f8898ae6d0cf35d36090fee051dd SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/levinson.xml">
+<!ENTITY a1512f2a5e444460c235d54e222ce4daa SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/lpc.xml">
+<!ENTITY a458feffd7c5784d2792fd8b1fdfe1f44 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/lsf2poly.xml">
+<!ENTITY aa2d218c02d2b53e0c7d66311f36c9411 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/mag2db.xml">
+<!ENTITY ad25cb64a691e47028cd003be90f1d23f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/marcumq.xml">
+<!ENTITY ae3cbac09593d3eaf17f348d2d7645f67 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/medfilt1.xml">
+<!ENTITY a461f16f33c0e5f37627562ea269d7f66 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/mexihat.xml">
+<!ENTITY ace1d508b89612ef556c7078b667ccb34 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/meyeraux.xml">
+<!ENTITY aefe308bcd9cc7eafb9f3b1ade901b3f0 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/midcross.xml">
+<!ENTITY aae06b7642cb3c5492582151280eb9c2a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/modulate.xml">
+<!ENTITY a14172f88fa51c76d8e3cd44b7ff9da3b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/morlet.xml">
+<!ENTITY aa1bdfdcec9d37ca8fde8f1a5eccf335e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/movingrms.xml">
+<!ENTITY ae3e1f82c6bb377a1b604310d59879657 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/musicBase.xml">
+<!ENTITY ac7f0bf1229be88336dd19bec79f8592e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/nnls.xml">
+<!ENTITY a533f1756737a76c7ebbf4582981dc178 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/nuttallwin.xml">
+<!ENTITY a37a0158758c25b87b25ccc1aee6a119c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/parzenwin.xml">
+<!ENTITY ad89e66ee263fe203686f31a3eab8e64d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pchip.xml">
+<!ENTITY aa5c4ca6eec759599ed43523a388348ad SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pchips.xml">
+<!ENTITY a200605149beb0f3b5d8a88a3d53b2f71 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/peak2peak.xml">
+<!ENTITY ad6130e215a78d84270aafbc379fbb725 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/peak2rms.xml">
+<!ENTITY a29bbe646f6f6d50c069111ae091e7d36 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/peig.xml">
+<!ENTITY a4c3953ad493b988d8a2031523ffb8306 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/periodogram.xml">
+<!ENTITY a57cdc6361f8d7ec335fee1025821ddbf SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/phaseInputParseAs_ab.xml">
+<!ENTITY a73c75ecee2fc8c8806f9453525a315b1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/phaseInputParseAs_sos.xml">
+<!ENTITY a07f88832ddbb2555bc16dad1013ac1ce SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/phasedelay.xml">
+<!ENTITY aaab9e849a0c6df4118262e2b70e5239f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/phasez.xml">
+<!ENTITY a1895630a74dcb37a874ee12f6223bb12 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pmusic.xml">
+<!ENTITY ad5c5b14d0f159728636ed4ae71f93c61 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2ac.xml">
+<!ENTITY a0234889afd64e3141d5dc97aae93301f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2lsf.xml">
+<!ENTITY ae7862a7e6a0e7c690bf77d42fb1990fe SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2rc.xml">
+<!ENTITY af650c852b25f278335bc10007d1a19dc SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/polyscale.xml">
+<!ENTITY a05778f15bdfe8a90f4ddf1a5b638716f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/polystab.xml">
+<!ENTITY aa0361fd95c4451f669fa98bb1f65dc98 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/polyval.xml">
+<!ENTITY a023072b316f7e0395c6360455642039f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pow2db.xml">
+<!ENTITY a3bd0d50aa0e0ff26b0b7c5b81bcbc6b3 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/primitive.xml">
+<!ENTITY a35739b7b800c14c46e81e85ef462b634 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/prony.xml">
+<!ENTITY aa1b619c50f30a27be49e3b3d538c394b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulseperiod.xml">
+<!ENTITY ad0b592048d2a5108ef1573e46915e2b9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulsesep.xml">
+<!ENTITY a209518e7ca8192917e531c32767128f4 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulsewidth.xml">
+<!ENTITY a45703911489b3f971198165f76d6d8c0 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulstran.xml">
+<!ENTITY a9a588475c9fdfec3b0d524d2f91956a1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2ac.xml">
+<!ENTITY a6a345bdf977080572f9bb157e316fa56 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2is.xml">
+<!ENTITY adfc7a13f2757703644a280fda363f5d3 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2lar.xml">
+<!ENTITY a84d04841d921ac252697bd6d913f6e07 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2poly.xml">
+<!ENTITY adb76827a846fe886ed6ce90b95f07d8f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rcosdesign.xml">
+<!ENTITY a040edc92d4048494ec65abb4c47a6e7c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rectpuls.xml">
+<!ENTITY a84e9fc45acaeb7c1afa74420873f7b8b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rectwin.xml">
+<!ENTITY afb654b0f7ed9a4d6af43c3042d878008 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/resample.xml">
+<!ENTITY aedffe76610b2bc050432fea9879d2c82 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/residued.xml">
+<!ENTITY a78b3ed60769c10149c518c3117b14fe5 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/residuez.xml">
+<!ENTITY a7ca3d45ac7c8237b3144b3fe631a0c68 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/risetime.xml">
+<!ENTITY a7ca94f3b7fef68630e0cb23f4fd3d25b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rlevinson.xml">
+<!ENTITY a59e83100e6dffc0baad33cbf8a84522a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rms.xml">
+<!ENTITY a336e17feee76e01b014e835286066137 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rooteig.xml">
+<!ENTITY aaf4d652584b9190343fb99d3a8801e5f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rootmusic.xml">
+<!ENTITY a5edcc4e7812e65d3274082c4e5d7d57f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/rssq.xml">
+<!ENTITY aa8c18c42efbf08189242a6819ddeb9ec SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sampled2continuous.xml">
+<!ENTITY af9bc3ae414d07aa5e0b83d8204da216f SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sawtooth.xml">
+<!ENTITY a58d8825cb2b40fb02d1fb623474b3680 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/schtrig.xml">
+<!ENTITY afe070e546eba011714d6130f15bf7eeb SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/schurrc.xml">
+<!ENTITY ade2e0f651396ca918685cd60ad2e1f69 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/seqperiod.xml">
+<!ENTITY af670a413ac46b05b04fb1eeb295cc187 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sgolay.xml">
+<!ENTITY a871ae6b17028eb52e68e6bc124576f0c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sgolayfilt.xml">
+<!ENTITY af828ad07b10f88b94815cf6d13dcf2a8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/shanwavf.xml">
+<!ENTITY a6dfa16868c80a256207c2def9e0f68a6 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/shiftdata.xml">
+<!ENTITY a458311d776cf15b4ead98bf47848744e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/slewrate.xml">
+<!ENTITY a0356f690ddd41c1bb4421b15c2e0fdc4 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2cell.xml">
+<!ENTITY a33cd8ef570f585eadb34a40825f2b396 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2ss.xml">
+<!ENTITY a30c4ef20404fdd5a7231680a2c48a975 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2tf.xml">
+<!ENTITY a3b38fcb714749c7e04190fb456a70dd9 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2zp.xml">
+<!ENTITY afb2aecd6bef384074ea28729e7e1fde8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sosbreak.xml">
+<!ENTITY a43d84cf894173760ed78bcd0173e5eb1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/sosfilt.xml">
+<!ENTITY abd98a1a18a270aa31a679ba6e48a6f8c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/specgram.xml">
+<!ENTITY adfe42afbecc43cec13b71504e2ee9f7b SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ss2sos.xml">
+<!ENTITY ae42ba4458c126de0d0d8449858c32174 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/statelevels.xml">
+<!ENTITY a45a0dbae444ccba87b80be7d73a9a317 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/stmcb.xml">
+<!ENTITY a2a3cdd1656da19c8bcccf108c810ed46 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/strips.xml">
+<!ENTITY ae8bb2ea49f71ca2170c7b25396b53c36 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/subspaceMethodsInputParser.xml">
+<!ENTITY a754944658572078c603d41eb799c03dc SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2sos.xml">
+<!ENTITY a16514a248c077408c45a820a305e5c12 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zp.xml">
+<!ENTITY a596bc775e258db66e6a9361e23f6a110 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zpk.xml">
+<!ENTITY ae3ee0ed5769293d96b4e2e86059e914a SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/transpose.xml">
+<!ENTITY a3db7534139a84881841b932fa2ec83d6 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/trial_iirlp2mb.xml">
+<!ENTITY ac4b200defab1e9badb41fc727f69d855 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/triang.xml">
+<!ENTITY ac2ac4b1a32cde37dad46545278811713 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/tripuls.xml">
+<!ENTITY a0b5130b45748b78cd3b88cedd32115c5 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/truth.xml">
+<!ENTITY adef7e0c625980f5162fab5e605854ed3 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/tukeywin.xml">
+<!ENTITY a34f7952b78461d49fe96810e4c408ffe SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/udecode.xml">
+<!ENTITY ab7a062edf13c87523ae9e41490bc9930 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/uencode.xml">
+<!ENTITY a8d792ca9bc2521d93c827374ae2c94ce SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/ultrwin.xml">
+<!ENTITY af5b25c45ca00380e898962f27713ee01 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/unshiftdata.xml">
+<!ENTITY ac8d05194fb0af9dcd1e5f35e20129757 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/upfirdn.xml">
+<!ENTITY ae616b427e6925e3fc00469ef4532e624 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/upsample.xml">
+<!ENTITY a815233915f392f428567c0381e5ac245 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/upsamplefill.xml">
+<!ENTITY a8127816d1698afb2025103f44be38859 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/var.xml">
+<!ENTITY a0a5ed325e4ef3aa7ba8d66ae953d9092 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/vco.xml">
+<!ENTITY a18288f217fcfa5b28647d2b86a3a288e SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/welchwin.xml">
+<!ENTITY aa10dc0e867636bb5905df2147e7fa8a1 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/window.xml">
+<!ENTITY a739bb681c1778aebc6a112c9b4ebcc4c SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/wkeep.xml">
+<!ENTITY a974a3174dedaa833258ab42d577abd9d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/wrev.xml">
+<!ENTITY a7d306b5dfd9ec60077d737d8a4a6b843 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/xcorr2.xml">
+<!ENTITY a383c86e12eaf73e96e722b32e61c3386 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/zerocrossing.xml">
+<!ENTITY aecd6b297822f6189d821d9ef476689d8 SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2sos.xml">
+<!ENTITY a38385ae55e569d27d4af576de7685f2d SYSTEM "/home/brijeshcr/Documents/Fossee_Toolboxes/FOSSEE-Signal-Processing-Toolbox/help/en_US/zplane.xml">
+=======
 <!ENTITY a231328952124a7e187905e71aaf9cee0 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2poly.xml">
 <!ENTITY acc27042e738d175d1131be40ac8443e4 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2rc.xml">
 <!ENTITY a00c7c9f2a0021ff13869dce3b90df38c SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arParEst.xml">
@@ -194,6 +389,7 @@
 <!ENTITY a07861a28f3bed2170e83949b6e2c3809 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/zerocrossing.xml">
 <!ENTITY a99676709afd29b9c0701a4ca0e97365e SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2sos.xml">
 <!ENTITY a61b6ccda9c51a7fb92674a98fd9f358a SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/zplane.xml">
+>>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 <!--End Entities-->
 ]>
 <book version="5.0-subset Scilab" xml:lang="en_US"
@@ -208,6 +404,203 @@
     <title>FOSSEE Signal Processing Toolbox</title>
   </info>
 
+<<<<<<< HEAD
+<part xml:id='section_234c65355e471cd38bd717d720add7db'>
+<title>FOSSEE Signal Processing Toolbox</title>
+&a81320b4221ec0c937db241f3f09761d9;
+&a96531f053d1d3aca0c8998446e7ba88a;
+&a44e8c63cbbbfce58373a4d528cc59bda;
+&a44baa1c529b4c2034108849f08147667;
+&a64ecf6e721160dfb163621e4a3a00d0f;
+&aff6d91054f11396fab566c3b7097e225;
+&a8128572f33478b9c8c764de03cf89fc4;
+&a782c9cd4d7dad9d24a672148080e384c;
+&a0be563c94e1e42b7735567091463661e;
+&a4b0f0cf49b01fcbb7aedef41c40d0e25;
+&a8ee66630c6b42252d90d4304e8af282c;
+&a1c12c9e7e5cac759289269fdedd8905c;
+&a029443469c6628757ecf658204c40f45;
+&a73a177320474a25b6b9c42ed2409895a;
+&a6f9d33b92c0e5f71e2f83bffbea97f58;
+&a62ed1363186685b47656c8a5790efa44;
+&a9558e8614d7f439a08d4332c74eb1118;
+&a7c579640b7fb009b1613e4a9e6a3acb6;
+&aec6a38aa439b8a6c26a7d2ada787095f;
+&a3c7785a5dca1c2ff0bcb54385411d26c;
+&aa7ee14bf521256b990217ff8fdfd1c4f;
+&adbfd2762e8949c7d9277a546b59fee44;
+&a92cf35397a3f0f935f69fa0c6b980916;
+&a144520c3e437156f61bc5c85aff56360;
+&aab22c36671d7c1054db5e4e91ff34ca9;
+&a38bcbc23ee3dff9a39209eed62398675;
+&a07382031f7c37c171b8f596adb3241ae;
+&aa2141aba98a93cb5ebec123c977cb0d4;
+&a9aa47349954b7dc555e77d5c07750bc6;
+&ad68b63f69616e4938c5df2b8f4a6ea29;
+&a832131d9fca85cf0fc67ebaa7860a244;
+&ab9c573f1ed86c7c9107542791f010509;
+&a3dd640289cc33aa91c9b93ef38ae3588;
+&ac80b8635538da5f44037be6c1355e0cd;
+&ab46eb5d7f458e4c97c25dc101934e55a;
+&a9a3d5508d4be2587fffb07c4fea873a1;
+&a9c0646c3d801e6dbf40cb2bfd0f48184;
+&ae610966e7222fa2f7bd10ba3020b0397;
+&ad910f20157813b38f3dd0037664fab4d;
+&a9f1a602ceb9c4f04cdb362869689ad5b;
+&a34c0df6ea3acf72e8be0c3aadf06b3f9;
+&a6c480dc7966fa1256fccca6a2a607ea5;
+&ad43a01be488312784bce7fa20f5fda45;
+&a2475a47e5ba8f7128e2b8d07a807d1b7;
+&a6a5628da371f54e68e600dc33be952e8;
+&abb6a4d7c3064262f17ab739f011c3a4a;
+&a448d7adf3da3286f51f6a94bea63663d;
+&a3d7d87fbbc65bfd3e6fdf8bc8f48be6e;
+&afe92108055741cc536bf66798f641a5e;
+&a6da3c55e120d9ad84b38f937a1440569;
+&a1cb4e24a853af62bb07857799af1b5a9;
+&a2db9d9caff7a7a3eb135b4bc6e9ebe96;
+&a983dde98de76617e105fb2a1b1165e9d;
+&a1653c1101bb7f7f90ad5c793094c3011;
+&a9cd28a49bceabf9d6a5ae48efc168636;
+&ac2d9926417a46b72d2c3ce6be1f719c3;
+&a77e06b63ac5f175d8106b4e43014b6da;
+&a33f0777e49b0d0506ae19c244104c179;
+&af7def142da08407766b1ec9a0a940863;
+&a1c243694467789e5c3b41db26ea136b8;
+&aed386f5f60012f9148f8a7239f8922dd;
+&a891fefd8a1c82376c748c0dc0df9d198;
+&a377e22d7852a5b8231f663f2e392cec8;
+&a1f500f91aba02eeb51c8756038367f06;
+&ac9b5a24449247693afe12d4a0a89cb29;
+&a74b3b666e222dd6fdc8cfa967a275919;
+&a58a65df48c1f5e0fb455ce5ae740b4d2;
+&a460a1e1ff357ce3430e9e399628fa02c;
+&a62cc46ed8d95b0239e4df0552679ea1d;
+&aa188901e0117ab660ea457598988f6c9;
+&a44f003ed5aa29cbfd3cefa414436788d;
+&a7524abc02ec73e4e52e0aa32f70a48c7;
+&a49a9e3c3edb127efa41460df3ae0b246;
+&ad0ea8d615c238f00d56a94edffed11d2;
+&aa5fea5e37e2362f8cc508f80fb61e1a4;
+&a6738f22afa4d9b2fec50f876ed64f1c3;
+&aa81b94c5cbb0d9bdbcf323aa37a1c434;
+&a6331d2a5505b25f3a0a10372e9498048;
+&a234451d6304052dfc82c4ebf1780f111;
+&ad008841ad94a185e99ca801b29a57cd1;
+&a7b4993c8297a6696cc70e771f9914a77;
+&ad9c3b7bc150ac1452720b8ffe09e98b6;
+&a529cf543ec9712c89d8d996913ef7ec1;
+&a7661f5463a17550a94594b08eb000091;
+&a8d87a3061cb6a7f81eb9a5d01ec17708;
+&ab7c7ba24125e211f115a6bc397dcc611;
+&aedf625d258dae2c80e8d080faa15af97;
+&a28cbb1579bb1a8b7ff1f8a7298903a4c;
+&a9a5a0bc20aed91cae617c9790d48fe6c;
+&a14d1f8898ae6d0cf35d36090fee051dd;
+&a1512f2a5e444460c235d54e222ce4daa;
+&a458feffd7c5784d2792fd8b1fdfe1f44;
+&aa2d218c02d2b53e0c7d66311f36c9411;
+&ad25cb64a691e47028cd003be90f1d23f;
+&ae3cbac09593d3eaf17f348d2d7645f67;
+&a461f16f33c0e5f37627562ea269d7f66;
+&ace1d508b89612ef556c7078b667ccb34;
+&aefe308bcd9cc7eafb9f3b1ade901b3f0;
+&aae06b7642cb3c5492582151280eb9c2a;
+&a14172f88fa51c76d8e3cd44b7ff9da3b;
+&aa1bdfdcec9d37ca8fde8f1a5eccf335e;
+&ae3e1f82c6bb377a1b604310d59879657;
+&ac7f0bf1229be88336dd19bec79f8592e;
+&a533f1756737a76c7ebbf4582981dc178;
+&a37a0158758c25b87b25ccc1aee6a119c;
+&ad89e66ee263fe203686f31a3eab8e64d;
+&aa5c4ca6eec759599ed43523a388348ad;
+&a200605149beb0f3b5d8a88a3d53b2f71;
+&ad6130e215a78d84270aafbc379fbb725;
+&a29bbe646f6f6d50c069111ae091e7d36;
+&a4c3953ad493b988d8a2031523ffb8306;
+&a57cdc6361f8d7ec335fee1025821ddbf;
+&a73c75ecee2fc8c8806f9453525a315b1;
+&a07f88832ddbb2555bc16dad1013ac1ce;
+&aaab9e849a0c6df4118262e2b70e5239f;
+&a1895630a74dcb37a874ee12f6223bb12;
+&ad5c5b14d0f159728636ed4ae71f93c61;
+&a0234889afd64e3141d5dc97aae93301f;
+&ae7862a7e6a0e7c690bf77d42fb1990fe;
+&af650c852b25f278335bc10007d1a19dc;
+&a05778f15bdfe8a90f4ddf1a5b638716f;
+&aa0361fd95c4451f669fa98bb1f65dc98;
+&a023072b316f7e0395c6360455642039f;
+&a3bd0d50aa0e0ff26b0b7c5b81bcbc6b3;
+&a35739b7b800c14c46e81e85ef462b634;
+&aa1b619c50f30a27be49e3b3d538c394b;
+&ad0b592048d2a5108ef1573e46915e2b9;
+&a209518e7ca8192917e531c32767128f4;
+&a45703911489b3f971198165f76d6d8c0;
+&a9a588475c9fdfec3b0d524d2f91956a1;
+&a6a345bdf977080572f9bb157e316fa56;
+&adfc7a13f2757703644a280fda363f5d3;
+&a84d04841d921ac252697bd6d913f6e07;
+&adb76827a846fe886ed6ce90b95f07d8f;
+&a040edc92d4048494ec65abb4c47a6e7c;
+&a84e9fc45acaeb7c1afa74420873f7b8b;
+&afb654b0f7ed9a4d6af43c3042d878008;
+&aedffe76610b2bc050432fea9879d2c82;
+&a78b3ed60769c10149c518c3117b14fe5;
+&a7ca3d45ac7c8237b3144b3fe631a0c68;
+&a7ca94f3b7fef68630e0cb23f4fd3d25b;
+&a59e83100e6dffc0baad33cbf8a84522a;
+&a336e17feee76e01b014e835286066137;
+&aaf4d652584b9190343fb99d3a8801e5f;
+&a5edcc4e7812e65d3274082c4e5d7d57f;
+&aa8c18c42efbf08189242a6819ddeb9ec;
+&af9bc3ae414d07aa5e0b83d8204da216f;
+&a58d8825cb2b40fb02d1fb623474b3680;
+&afe070e546eba011714d6130f15bf7eeb;
+&ade2e0f651396ca918685cd60ad2e1f69;
+&af670a413ac46b05b04fb1eeb295cc187;
+&a871ae6b17028eb52e68e6bc124576f0c;
+&af828ad07b10f88b94815cf6d13dcf2a8;
+&a6dfa16868c80a256207c2def9e0f68a6;
+&a458311d776cf15b4ead98bf47848744e;
+&a0356f690ddd41c1bb4421b15c2e0fdc4;
+&a33cd8ef570f585eadb34a40825f2b396;
+&a30c4ef20404fdd5a7231680a2c48a975;
+&a3b38fcb714749c7e04190fb456a70dd9;
+&afb2aecd6bef384074ea28729e7e1fde8;
+&a43d84cf894173760ed78bcd0173e5eb1;
+&abd98a1a18a270aa31a679ba6e48a6f8c;
+&adfe42afbecc43cec13b71504e2ee9f7b;
+&ae42ba4458c126de0d0d8449858c32174;
+&a45a0dbae444ccba87b80be7d73a9a317;
+&a2a3cdd1656da19c8bcccf108c810ed46;
+&ae8bb2ea49f71ca2170c7b25396b53c36;
+&a754944658572078c603d41eb799c03dc;
+&a16514a248c077408c45a820a305e5c12;
+&a596bc775e258db66e6a9361e23f6a110;
+&ae3ee0ed5769293d96b4e2e86059e914a;
+&a3db7534139a84881841b932fa2ec83d6;
+&ac4b200defab1e9badb41fc727f69d855;
+&ac2ac4b1a32cde37dad46545278811713;
+&a0b5130b45748b78cd3b88cedd32115c5;
+&adef7e0c625980f5162fab5e605854ed3;
+&a34f7952b78461d49fe96810e4c408ffe;
+&ab7a062edf13c87523ae9e41490bc9930;
+&a8d792ca9bc2521d93c827374ae2c94ce;
+&af5b25c45ca00380e898962f27713ee01;
+&ac8d05194fb0af9dcd1e5f35e20129757;
+&ae616b427e6925e3fc00469ef4532e624;
+&a815233915f392f428567c0381e5ac245;
+&a8127816d1698afb2025103f44be38859;
+&a0a5ed325e4ef3aa7ba8d66ae953d9092;
+&a18288f217fcfa5b28647d2b86a3a288e;
+&aa10dc0e867636bb5905df2147e7fa8a1;
+&a739bb681c1778aebc6a112c9b4ebcc4c;
+&a974a3174dedaa833258ab42d577abd9d;
+&a7d306b5dfd9ec60077d737d8a4a6b843;
+&a383c86e12eaf73e96e722b32e61c3386;
+&aecd6b297822f6189d821d9ef476689d8;
+&a38385ae55e569d27d4af576de7685f2d;
+=======
 <part xml:id='section_5118e822ecc2888aa80042108de4932e'>
 <title>FOSSEE Signal Processing Toolbox</title>
 &a231328952124a7e187905e71aaf9cee0;
@@ -403,5 +796,6 @@
 &a07861a28f3bed2170e83949b6e2c3809;
 &a99676709afd29b9c0701a4ca0e97365e;
 &a61b6ccda9c51a7fb92674a98fd9f358a;
+>>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 </part>
 </book>
