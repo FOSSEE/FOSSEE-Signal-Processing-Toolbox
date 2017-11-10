@@ -19,6 +19,7 @@ buffer
 buttap
 butter
 buttord
+cceps
 cconv
 cell2sos
 cheb
@@ -38,6 +39,7 @@ corrmtx
 cplxreal
 cummax
 cummin
+czt
 db
 db2pow
 dctmtx
@@ -45,6 +47,7 @@ decimate
 dftmtx
 diric
 downsample
+dst1
 dutycycle
 ellip
 ellipap
@@ -55,6 +58,7 @@ falltime
 fft
 fft2
 fftfilt
+fht
 filternorm
 filtfilt
 filtic
@@ -66,6 +70,7 @@ fracshift
 freqs
 fwhm
 fwhmjlt
+fwht
 gauspuls
 gaussdesign
 gaussian
@@ -75,15 +80,26 @@ goertzel
 grpdelay
 hann
 helperHarmonicDistortionAmplifier
+hilbert1
+hurst
 icceps
+<<<<<<< HEAD
 ifft
 ifft2
+=======
+idct1
+idct2
+idst1
+ifht
+ifwht
+>>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 iirlp2mb
 impinvar
 impz
 impzlength
 interp
 intfilt
+invfreq
 invimpinvar
 is2rc
 isallpass
@@ -145,9 +161,11 @@ rc2ac
 rc2is
 rc2lar
 rc2poly
+rceps
 rcosdesign
 rectpuls
 rectwin
+remez1
 resample
 residued
 residuez
@@ -166,6 +184,9 @@ sgolay
 sgolayfilt
 shanwavf
 shiftdata
+sigmoid_train
+sinetone
+sinewave
 slewrate
 sos2cell
 sos2ss
@@ -174,11 +195,16 @@ sos2zp
 sosbreak
 sosfilt
 specgram
+spectral_adf
+spectral_xdf
+spencer
 ss2sos
 statelevels
+stft
 stmcb
 strips
 subspaceMethodsInputParser
+synthesis
 tf2sos
 tf2zp
 tf2zpk
@@ -203,6 +229,8 @@ window
 wkeep
 wrev
 xcorr2
+xcov1
+yulewalker
 zerocrossing
 zp2sos
 zp2ss
