@@ -79,6 +79,7 @@ gmonopuls
 goertzel
 grpdelay
 hann
+hanning
 helperHarmonicDistortionAmplifier
 hilbert1
 hurst
