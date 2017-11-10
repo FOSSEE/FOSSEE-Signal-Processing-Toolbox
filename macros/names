@@ -7,6 +7,7 @@ armcov
 aryule
 barthannwin
 bartlett
+besselap
 besself
 bitrevorder
 blackman
@@ -15,12 +16,16 @@ blackmannuttall
 bohmanwin
 boxcar
 buffer
+buttap
 butter
 buttord
 cceps
 cconv
 cell2sos
+cheb
+cheb1ap
 cheb1ord
+cheb2ap
 cheb2ord
 chebwin
 cheby1
@@ -31,6 +36,7 @@ clustersegment
 cmorwavf
 convmtx
 corrmtx
+cplxreal
 cummax
 cummin
 czt
@@ -44,10 +50,13 @@ downsample
 dst1
 dutycycle
 ellip
+ellipap
 ellipord
 enbw
 eqtflength
 falltime
+fft
+fft2
 fftfilt
 fht
 filternorm
@@ -58,6 +67,7 @@ firpmord
 firtype
 flattopwin
 fracshift
+freqs
 fwhm
 fwhmjlt
 fwht
@@ -73,11 +83,16 @@ helperHarmonicDistortionAmplifier
 hilbert1
 hurst
 icceps
+<<<<<<< HEAD
+ifft
+ifft2
+=======
 idct1
 idct2
 idst1
 ifht
 ifwht
+>>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 iirlp2mb
 impinvar
 impz
@@ -113,6 +128,7 @@ modulate
 morlet
 movingrms
 musicBase
+ncauer
 nnls
 nuttallwin
 parzenwin
@@ -120,6 +136,7 @@ pchip
 pchips
 peak2peak
 peak2rms
+pei_tseng_notch
 peig
 periodogram
 phaseInputParseAs_ab
@@ -206,6 +223,7 @@ upsample
 upsamplefill
 var
 vco
+wconv
 welchwin
 window
 wkeep
@@ -215,4 +233,6 @@ xcov1
 yulewalker
 zerocrossing
 zp2sos
+zp2ss
+zp2tf
 zplane
