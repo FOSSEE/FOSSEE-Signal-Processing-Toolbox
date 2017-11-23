@@ -84,16 +84,13 @@ helperHarmonicDistortionAmplifier
 hilbert1
 hurst
 icceps
-<<<<<<< HEAD
-ifft
-ifft2
-=======
 idct1
 idct2
 idst1
+ifft
+ifft2
 ifht
 ifwht
->>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 iirlp2mb
 impinvar
 impz

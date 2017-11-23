@@ -2,11 +2,7 @@
 <!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
 <map version="1.0">
 <mapID target="index" url="index.html"/>
-<<<<<<< HEAD
-<mapID target="section_234c65355e471cd38bd717d720add7db" url="section_234c65355e471cd38bd717d720add7db.html"/>
-=======
 <mapID target="section_5118e822ecc2888aa80042108de4932e" url="section_5118e822ecc2888aa80042108de4932e.html"/>
->>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 <mapID target="ac2poly" url="ac2poly.html"/>
 <mapID target="ac2rc" url="ac2rc.html"/>
 <mapID target="arParEst" url="arParEst.html"/>
