@@ -46,6 +46,8 @@
    <title>Description</title>
    <para>
 This is an Octave function.
+   </para>
+   <para>
 This function fits an AR (p)-model with Yule-Walker estimates.
 The first argument is the data vector which is to be estimated.
 Output variable a gives the AR coefficients, v gives the variance of the white noise and k gives the reflection coefficients to be used in the lattice filter.

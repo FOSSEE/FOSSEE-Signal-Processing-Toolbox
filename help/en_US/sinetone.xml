@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sinetone.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sinetone" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sinetone</refname>
+    <refpurpose>Return a sinetone of the input</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y= sinetone(FREQ)
+   y= sinetone(FREQ, RATE)
+   y= sinetone(FREQ, RATE, SEC)
+   y= sinetone(FREQ, RATE, SEC, AMPL)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>FREQ:</term>
+      <listitem><para> frequency of sinetone</para></listitem></varlistentry>
+   <varlistentry><term>RATE:</term>
+      <listitem><para> Sampling rate</para></listitem></varlistentry>
+   <varlistentry><term>SEC:</term>
+      <listitem><para> Length in seconds</para></listitem></varlistentry>
+   <varlistentry><term>AMPL:</term>
+      <listitem><para> Amplitude</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return a sinetone of frequency FREQ with a length of SEC seconds atsampling rate RATE and with amplitude AMPL.The arguments FREQ and AMPL may be vectors of common size.The defaults are RATE = 8000, SEC = 1, and AMPL = 64.
+</para>
+</refsection>
+</refentry>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fwht.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fwht" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fwht</refname>
+    <refpurpose>Compute the Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   fwht (x)
+   fwht (x, n)
+   fwht (x, n, order)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real or complex valued scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> x is truncated or extended to have length n</para></listitem></varlistentry>
+   <varlistentry><term>order:</term>
+      <listitem><para> Specification of order in which coefficients should be arranged</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute the Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm. If the input is a matrix, the FWHT is calculated along the columns of x.
+   </para>
+   <para>
+The number of elements of x must be a power of 2; if not, the input will be extended and filled with zeros. If a second argument is given, the input is truncated or extended to have length n.
+   </para>
+   <para>
+The third argument specifies the order in which the returned Walsh-Hadamard transform coefficients should be arranged. The order may be any of the following strings:
+   </para>
+   <para>
+"sequency"
+The coefficients are returned in sequency order. This is the default if order is not given.
+   </para>
+   <para>
+"hadamard"
+The coefficients are returned in Hadamard order.
+   </para>
+   <para>
+"dyadic"
+The coefficients are returned in Gray code order.
+</para>
+</refsection>
+</refentry>

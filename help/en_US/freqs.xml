@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from freqs.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="freqs" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>freqs</refname>
+    <refpurpose>Compute the s-plane frequency response of the IIR filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   h = freqs (b, a, w)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> vector containing the coefficients of the numerator of the filter.</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> vector containing the coefficients of the denominator of the filter.</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> vector containing frequencies</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It computes the s-plane frequency response of the IIR filter B(s)/A(s) as H = polyval(B,j*W)./polyval(A,j*W).
+If called with no output argument, a plot of magnitude and phase are displayed.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+B = [1 2];
+A = [1 1];
+w = linspace(0,4,128);
+freqs(B,A,w);
+   ]]></programlisting>
+</refsection>
+</refentry>

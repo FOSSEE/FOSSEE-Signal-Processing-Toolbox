@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from zp2ss.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="zp2ss" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>zp2ss</refname>
+    <refpurpose>Converts zeros / poles to state space.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [a, b, c, d] = zp2ss (z, p, k)
+   [a, b, c] = zp2ss (z, p, k)
+   [a, b] = zp2ss (z, p, k)
+   a = zp2ss (z, p, k)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>z:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> Leading coefficient</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> State space parameter</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> State space parameter</para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> State space parameter</para></listitem></varlistentry>
+   <varlistentry><term>c:</term>
+      <listitem><para> State space parameter</para></listitem></varlistentry>
+   <varlistentry><term>d:</term>
+      <listitem><para> State space parameter</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It converts zeros / poles to state space.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+z = [1 2 3]
+p = [4 5 6]
+k = 5
+[a, b, c, d] = zp2ss (z, p, k)
+a =
+
+-0.00000    0.00000   -1.20000
+-10.00000    0.00000   -7.40000
+0.00000   10.00000   15.00000
+
+b =
+
+-5.7000
+-31.5000
+45.0000
+
+c =
+
+0.00000   0.00000   1.00000
+
+d =  5
+   ]]></programlisting>
+</refsection>
+</refentry>

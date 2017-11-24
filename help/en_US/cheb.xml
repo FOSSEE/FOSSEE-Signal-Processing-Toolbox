@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheb.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheb" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheb</refname>
+    <refpurpose>Calculates the nth-order Chebyshev polynomial at the point x.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   cheb(n, x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Filter order</para></listitem></varlistentry>
+   <varlistentry><term>x:</term>
+      <listitem><para> Point at which the Chebyshev polynomial is calculater.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Equation for Chebyshev polynomial is
+/ cos(n acos(x),    |x| &lt;= 1
+Tn(x) = |
+\ cosh(n acosh(x),  |x| &gt; 1
+   </para>
+   <para>
+x can also be a vector. In that case the output will also be a vector of same size as x.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1 2 3 4]
+cheb(10, x)
+ans =
+
+1.0000e+00   2.6209e+05   2.2620e+07   4.5747e+08
+   ]]></programlisting>
+</refsection>
+</refentry>
