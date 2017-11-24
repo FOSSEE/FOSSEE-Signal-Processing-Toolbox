@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from hilbert1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="hilbert1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>hilbert1</refname>
+    <refpurpose>Analytic extension of real valued signal.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   h= hilbert1(f)
+   h= hilbert1(f,N)
+   h= hilbert1(f,N,dim)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>f:</term>
+      <listitem><para> real or complex valued scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>N:</term>
+      <listitem><para> The result will have length N</para></listitem></varlistentry>
+   <varlistentry><term>dim :</term>
+      <listitem><para> It analyses the input in this dimension</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+h = hilbert (f) computes the extension of the real valued signal f to an analytic signal. If f is a matrix, the transformation is applied to each column. For N-D arrays, the transformation is applied to the first non-singleton dimension.
+   </para>
+   <para>
+real (h) contains the original signal f. imag (h) contains the Hilbert transform of f.
+   </para>
+   <para>
+hilbert1 (f, N) does the same using a length N Hilbert transform. The result will also have length N.
+   </para>
+   <para>
+hilbert1 (f, [], dim) or hilbert1 (f, N, dim) does the same along dimension dim.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+## notice that the imaginary signal is phase-shifted 90 degrees
+t=linspace(0,10,256);
+z = hilbert1(sin(2*pi*0.5*t));
+grid on; plot(t,real(z),';real;',t,imag(z),';imag;');
+   ]]></programlisting>
+</refsection>
+</refentry>

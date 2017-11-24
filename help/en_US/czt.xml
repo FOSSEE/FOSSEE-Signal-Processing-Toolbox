@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from czt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="czt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>czt</refname>
+    <refpurpose>Chirp Z Transform</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   czt (x)
+   czt (x, m)
+   czt (x, m, w)
+   czt (x, m, w, a)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> Input scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> Total Number of steps</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para> ratio between points in each step</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> point in the complex plane</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Chirp z-transform. Compute the frequency response starting at a and stepping by w for m steps. a is a point in the complex plane, and w is the ratio between points in each step (i.e., radius increases exponentially, and angle increases linearly).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+m = 32;                               ## number of points desired
+w = exp(-j*2*pi*(f2-f1)/((m-1)*Fs));  ## freq. step of f2-f1/m
+a = exp(j*2*pi*f1/Fs);                ## starting at frequency f1
+y = czt(x, m, w, a);
+   ]]></programlisting>
+</refsection>
+</refentry>

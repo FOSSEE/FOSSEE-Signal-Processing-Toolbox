@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pei_tseng_notch.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pei_tseng_notch" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pei_tseng_notch</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [b, a] = pei_tseng_notch (frequencies, bandwidths)
+   b = pei_tseng_notch (frequencies, bandwidths)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>frequencies:</term>
+      <listitem><para> filter frequencies</para></listitem></varlistentry>
+   <varlistentry><term>bandwidths:</term>
+      <listitem><para> bandwidths to be used with filter</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It return coefficients for an IIR notch-filter with one or more filter frequencies and according bandwidths. The filter is based on a all pass filter that performs phasereversal at filter frequencies.
+This leads to removal of those frequencies of the original and phase-distorted signal.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sf = 800; sf2 = sf/2;
+data=[[1;zeros(sf-1,1)],sinetone(49,sf,1,1),sinetone(50,sf,1,1),sinetone(51,sf,1,1)];
+[b,a]=pei_tseng_notch ( 50 / sf2, 2/sf2 )
+b =
+
+0.99213  -1.83322   0.99213
+
+a =
+
+1.00000  -1.83322   0.98426
+   ]]></programlisting>
+</refsection>
+</refentry>
