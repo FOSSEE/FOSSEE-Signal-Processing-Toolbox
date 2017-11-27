@@ -13,7 +13,7 @@ function b = remez1(n,f,a, varargin)
 //ftype:is "bandpass", "hilbert" or "differentiator"
 //griddensity:determines how accurately the filter will be constructed. The minimum value is 16, but higher numbers are slower to compute.
 //Description
-//Frequency is in the range (0, 1), with 1 being the Nyquist frequency.
+// Frequency is in the range (0, 1), with 1 being the Nyquist frequency.
 
 funcprot(0);
 rhs= argn(2);
