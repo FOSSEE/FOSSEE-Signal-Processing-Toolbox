@@ -2,7 +2,7 @@
 <!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
 <tocitem target="index" text="FOSSEE Signal Processing Toolbox">
-<tocitem target="section_cc2bc01c47967d47fcf3507a91d572ba" text="FOSSEE Signal Processing Toolbox">
+<tocitem target="section_5118e822ecc2888aa80042108de4932e" text="FOSSEE Signal Processing Toolbox">
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
@@ -12,6 +12,7 @@
 <tocitem target="aryule" text="aryule"/>
 <tocitem target="barthannwin" text="barthannwin"/>
 <tocitem target="bartlett" text="bartlett"/>
+<tocitem target="besselap" text="besselap"/>
 <tocitem target="besself" text="besself"/>
 <tocitem target="bitrevorder" text="bitrevorder"/>
 <tocitem target="blackman" text="blackman"/>
@@ -20,11 +21,16 @@
 <tocitem target="bohmanwin" text="bohmanwin"/>
 <tocitem target="boxcar" text="boxcar"/>
 <tocitem target="buffer" text="buffer"/>
+<tocitem target="buttap" text="buttap"/>
 <tocitem target="butter" text="butter"/>
 <tocitem target="buttord" text="buttord"/>
+<tocitem target="cceps" text="cceps"/>
 <tocitem target="cconv" text="cconv"/>
 <tocitem target="cell2sos" text="cell2sos"/>
+<tocitem target="cheb" text="cheb"/>
+<tocitem target="cheb1ap" text="cheb1ap"/>
 <tocitem target="cheb1ord" text="cheb1ord"/>
+<tocitem target="cheb2ap" text="cheb2ap"/>
 <tocitem target="cheb2ord" text="cheb2ord"/>
 <tocitem target="chebwin" text="chebwin"/>
 <tocitem target="cheby1" text="cheby1"/>
@@ -35,8 +41,10 @@
 <tocitem target="cmorwavf" text="cmorwavf"/>
 <tocitem target="convmtx" text="convmtx"/>
 <tocitem target="corrmtx" text="corrmtx"/>
+<tocitem target="cplxreal" text="cplxreal"/>
 <tocitem target="cummax" text="cummax"/>
 <tocitem target="cummin" text="cummin"/>
+<tocitem target="czt" text="czt"/>
 <tocitem target="db" text="db"/>
 <tocitem target="db2pow" text="db2pow"/>
 <tocitem target="dctmtx" text="dctmtx"/>
@@ -44,13 +52,18 @@
 <tocitem target="dftmtx" text="dftmtx"/>
 <tocitem target="diric" text="diric"/>
 <tocitem target="downsample" text="downsample"/>
+<tocitem target="dst1" text="dst1"/>
 <tocitem target="dutycycle" text="dutycycle"/>
 <tocitem target="ellip" text="ellip"/>
+<tocitem target="ellipap" text="ellipap"/>
 <tocitem target="ellipord" text="ellipord"/>
 <tocitem target="enbw" text="enbw"/>
 <tocitem target="eqtflength" text="eqtflength"/>
 <tocitem target="falltime" text="falltime"/>
+<tocitem target="fft" text="fft"/>
+<tocitem target="fft2" text="fft2"/>
 <tocitem target="fftfilt" text="fftfilt"/>
+<tocitem target="fht" text="fht"/>
 <tocitem target="filternorm" text="filternorm"/>
 <tocitem target="filtfilt" text="filtfilt"/>
 <tocitem target="filtic" text="filtic"/>
@@ -59,8 +72,10 @@
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
+<tocitem target="freqs" text="freqs"/>
 <tocitem target="fwhm" text="fwhm"/>
 <tocitem target="fwhmjlt" text="fwhmjlt"/>
+<tocitem target="fwht" text="fwht"/>
 <tocitem target="gauspuls" text="gauspuls"/>
 <tocitem target="gaussdesign" text="gaussdesign"/>
 <tocitem target="gaussian" text="gaussian"/>
@@ -69,14 +84,25 @@
 <tocitem target="goertzel" text="goertzel"/>
 <tocitem target="grpdelay" text="grpdelay"/>
 <tocitem target="hann" text="hann"/>
+<tocitem target="hanning" text="hanning"/>
 <tocitem target="helperHarmonicDistortionAmplifier" text="helperHarmonicDistortionAmplifier"/>
+<tocitem target="hilbert1" text="hilbert1"/>
+<tocitem target="hurst" text="hurst"/>
 <tocitem target="icceps" text="icceps"/>
+<tocitem target="idct1" text="idct1"/>
+<tocitem target="idct2" text="idct2"/>
+<tocitem target="idst1" text="idst1"/>
+<tocitem target="ifft" text="ifft"/>
+<tocitem target="ifft2" text="ifft2"/>
+<tocitem target="ifht" text="ifht"/>
+<tocitem target="ifwht" text="ifwht"/>
 <tocitem target="iirlp2mb" text="iirlp2mb"/>
 <tocitem target="impinvar" text="impinvar"/>
 <tocitem target="impz" text="impz"/>
 <tocitem target="impzlength" text="impzlength"/>
 <tocitem target="interp" text="interp"/>
 <tocitem target="intfilt" text="intfilt"/>
+<tocitem target="invfreq" text="invfreq"/>
 <tocitem target="invimpinvar" text="invimpinvar"/>
 <tocitem target="is2rc" text="is2rc"/>
 <tocitem target="isallpass" text="isallpass"/>
@@ -105,6 +131,7 @@
 <tocitem target="morlet" text="morlet"/>
 <tocitem target="movingrms" text="movingrms"/>
 <tocitem target="musicBase" text="musicBase"/>
+<tocitem target="ncauer" text="ncauer"/>
 <tocitem target="nnls" text="nnls"/>
 <tocitem target="nuttallwin" text="nuttallwin"/>
 <tocitem target="parzenwin" text="parzenwin"/>
@@ -112,6 +139,7 @@
 <tocitem target="pchips" text="pchips"/>
 <tocitem target="peak2peak" text="peak2peak"/>
 <tocitem target="peak2rms" text="peak2rms"/>
+<tocitem target="pei_tseng_notch" text="pei_tseng_notch"/>
 <tocitem target="peig" text="peig"/>
 <tocitem target="periodogram" text="periodogram"/>
 <tocitem target="phaseInputParseAs_ab" text="phaseInputParseAs_ab"/>
@@ -136,9 +164,11 @@
 <tocitem target="rc2is" text="rc2is"/>
 <tocitem target="rc2lar" text="rc2lar"/>
 <tocitem target="rc2poly" text="rc2poly"/>
+<tocitem target="rceps" text="rceps"/>
 <tocitem target="rcosdesign" text="rcosdesign"/>
 <tocitem target="rectpuls" text="rectpuls"/>
 <tocitem target="rectwin" text="rectwin"/>
+<tocitem target="remez1" text="remez1"/>
 <tocitem target="resample" text="resample"/>
 <tocitem target="residued" text="residued"/>
 <tocitem target="residuez" text="residuez"/>
@@ -157,6 +187,9 @@
 <tocitem target="sgolayfilt" text="sgolayfilt"/>
 <tocitem target="shanwavf" text="shanwavf"/>
 <tocitem target="shiftdata" text="shiftdata"/>
+<tocitem target="sigmoid_train" text="sigmoid_train"/>
+<tocitem target="sinetone" text="sinetone"/>
+<tocitem target="sinewave" text="sinewave"/>
 <tocitem target="slewrate" text="slewrate"/>
 <tocitem target="sos2cell" text="sos2cell"/>
 <tocitem target="sos2ss" text="sos2ss"/>
@@ -165,11 +198,16 @@
 <tocitem target="sosbreak" text="sosbreak"/>
 <tocitem target="sosfilt" text="sosfilt"/>
 <tocitem target="specgram" text="specgram"/>
+<tocitem target="spectral_adf" text="spectral_adf"/>
+<tocitem target="spectral_xdf" text="spectral_xdf"/>
+<tocitem target="spencer" text="spencer"/>
 <tocitem target="ss2sos" text="ss2sos"/>
 <tocitem target="statelevels" text="statelevels"/>
+<tocitem target="stft" text="stft"/>
 <tocitem target="stmcb" text="stmcb"/>
 <tocitem target="strips" text="strips"/>
 <tocitem target="subspaceMethodsInputParser" text="subspaceMethodsInputParser"/>
+<tocitem target="synthesis" text="synthesis"/>
 <tocitem target="tf2sos" text="tf2sos"/>
 <tocitem target="tf2zp" text="tf2zp"/>
 <tocitem target="tf2zpk" text="tf2zpk"/>
@@ -188,13 +226,18 @@
 <tocitem target="upsamplefill" text="upsamplefill"/>
 <tocitem target="var" text="var"/>
 <tocitem target="vco" text="vco"/>
+<tocitem target="wconv" text="wconv"/>
 <tocitem target="welchwin" text="welchwin"/>
 <tocitem target="window" text="window"/>
 <tocitem target="wkeep" text="wkeep"/>
 <tocitem target="wrev" text="wrev"/>
 <tocitem target="xcorr2" text="xcorr2"/>
+<tocitem target="xcov1" text="xcov1"/>
+<tocitem target="yulewalker" text="yulewalker"/>
 <tocitem target="zerocrossing" text="zerocrossing"/>
 <tocitem target="zp2sos" text="zp2sos"/>
+<tocitem target="zp2ss" text="zp2ss"/>
+<tocitem target="zp2tf" text="zp2tf"/>
 <tocitem target="zplane" text="zplane"/>
 </tocitem>
 </tocitem>

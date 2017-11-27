@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rceps.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rceps" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rceps</refname>
+    <refpurpose>Produce the cepstrum of the signal x, and if desired, the minimum phase reconstruction of the signal x.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y, xm] = rceps(x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real or complex vector input</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+f0 = 70; Fs = 10000;                   # 100 Hz fundamental, 10kHz sampling rate
+a = poly (0.985 * exp (1i*pi*[0.1, -0.1, 0.3, -0.3])); # two formants
+s = 0.005 * randn (1024, 1);           # Noise excitation signal
+s(1:Fs/f0:length(s)) = 1;              # Impulse glottal wave
+x = filter (1, a, s);                  # Speech signal in x
+[y, xm] = rceps (x .* hanning (1024)); # cepstrum and min phase reconstruction
+   ]]></programlisting>
+</refsection>
+</refentry>

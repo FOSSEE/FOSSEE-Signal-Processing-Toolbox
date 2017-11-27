@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>ac2rc</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Convert autocorrelation sequence to reflection coefficients.</refpurpose>
   </refnamediv>
 
 
@@ -26,6 +26,33 @@
    <synopsis>
    k = ac2rc(R)
    [k,R0] = ac2rc(R)
+   
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>R:</term>
+      <listitem><para> The input autocorrelation sequence. If r is a matrix, each column of r is treated as a separate signal.</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> Returns the reflection coefficients</para></listitem></varlistentry>
+   <varlistentry><term>R0:</term>
+      <listitem><para> the zero lag autocorrelation, R0, based on the autocorrelation sequence, R.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+X = [7 6 5 8 3 6 8 7 5 2 4 7 4 3 2 5 4 9 5 3 5 7 3 9 4 1 2 0 5 4 8 6 4 6 5 3];
+[k,R0] = ac2rc(X)
+or t=[2 5 6; 8 6 5; 8 9 4]
+[k,R0] = ac2rc(t)
+
+Author
+Jitendra Singh
+
+   ]]></programlisting>
+</refsection>
 </refentry>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from spectral_xdf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="spectral_xdf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>spectral_xdf</refname>
+    <refpurpose>Return the spectral density estimator given a data vector X, window name WIN, and bandwidth, B.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   spectral_xdf(X)
+   spectral_xdf(X, WIN)
+   spectral_xdf(X, WIN, B)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Data Vector</para></listitem></varlistentry>
+   <varlistentry><term>WIN:</term>
+      <listitem><para> Window names</para></listitem></varlistentry>
+   <varlistentry><term>B:</term>
+      <listitem><para> Bandwidth</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the spectral density estimator given a data vector X, window name WIN, and bandwidth, B.
+The window name, e.g., "triangle" or "rectangle" is used to search for a function called 'WIN_lw'.
+If WIN is omitted, the triangle window is used.
+If B is omitted, '1 / sqrt (length (X))' is used.
+</para>
+</refsection>
+</refentry>

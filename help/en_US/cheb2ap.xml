@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheb2ap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheb2ap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheb2ap</refname>
+    <refpurpose>This function designs a lowpass analog Chebyshev type II filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [z, p, g] = cheb2ap (n, Rs)
+   [z, p] = cheb2ap (n, Rs)
+   p = cheb2ap (n, Rs)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Filter Order</para></listitem></varlistentry>
+   <varlistentry><term>Rs:</term>
+      <listitem><para> Stopband attenuation</para></listitem></varlistentry>
+   <varlistentry><term>z:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para> Gain</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This function designs a lowpass analog Chebyshev type II filter of nth order and with a stopband attenuation of Rs.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+   ]]></programlisting>
+</refsection>
+</refentry>
