@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from xcov1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="xcov1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>xcov1</refname>
+    <refpurpose>Compute covariance at various lags [=correlation(x-mean(x),y-mean(y))].</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [R, lag] = xcov (X)
+   ... = xcov (X, Y)
+   ... = xcov (..., maxlag)
+   ... = xcov (..., scale)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Input vector</para></listitem></varlistentry>
+   <varlistentry><term>Y:</term>
+      <listitem><para> if specified, compute cross-covariance between X and Y, otherwise compute autocovariance of X.</para></listitem></varlistentry>
+   <varlistentry><term>maxlag:</term>
+      <listitem><para> is specified, use lag range [-maxlag:maxlag], otherwise use range [-n+1:n-1].</para></listitem></varlistentry>
+   <varlistentry><term>scale:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>'biased':</term>
+      <listitem><para> for covariance=raw/N,</para></listitem></varlistentry>
+   <varlistentry><term>'unbiased':</term>
+      <listitem><para> for covariance=raw/(N-|lag|),</para></listitem></varlistentry>
+   <varlistentry><term>'coeff':</term>
+      <listitem><para> for covariance=raw/(covariance at lag 0),</para></listitem></varlistentry>
+   <varlistentry><term>'none':</term>
+      <listitem><para> for covariance=raw</para></listitem></varlistentry>
+   <varlistentry><term>'none':</term>
+      <listitem><para> is the default.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute covariance at various lags [=correlation(x-mean(x),y-mean(y))]. Returns the covariance for each lag in the range, plus an optional vector of lags.
+</para>
+</refsection>
+</refentry>

@@ -22,6 +22,7 @@
 <tocitem target="buffer" text="buffer"/>
 <tocitem target="butter" text="butter"/>
 <tocitem target="buttord" text="buttord"/>
+<tocitem target="cceps" text="cceps"/>
 <tocitem target="cconv" text="cconv"/>
 <tocitem target="cell2sos" text="cell2sos"/>
 <tocitem target="cheb1ord" text="cheb1ord"/>
@@ -104,6 +105,7 @@
 <tocitem target="modulate" text="modulate"/>
 <tocitem target="morlet" text="morlet"/>
 <tocitem target="movingrms" text="movingrms"/>
+<tocitem target="mscohere" text="mscohere"/>
 <tocitem target="musicBase" text="musicBase"/>
 <tocitem target="nnls" text="nnls"/>
 <tocitem target="nuttallwin" text="nuttallwin"/>
@@ -193,6 +195,7 @@
 <tocitem target="wkeep" text="wkeep"/>
 <tocitem target="wrev" text="wrev"/>
 <tocitem target="xcorr2" text="xcorr2"/>
+<tocitem target="xcov1" text="xcov1"/>
 <tocitem target="zerocrossing" text="zerocrossing"/>
 <tocitem target="zp2sos" text="zp2sos"/>
 <tocitem target="zplane" text="zplane"/>

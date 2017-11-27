@@ -22,6 +22,7 @@
 <mapID target="buffer" url="buffer.html"/>
 <mapID target="butter" url="butter.html"/>
 <mapID target="buttord" url="buttord.html"/>
+<mapID target="cceps" url="cceps.html"/>
 <mapID target="cconv" url="cconv.html"/>
 <mapID target="cell2sos" url="cell2sos.html"/>
 <mapID target="cheb1ord" url="cheb1ord.html"/>
@@ -104,6 +105,7 @@
 <mapID target="modulate" url="modulate.html"/>
 <mapID target="morlet" url="morlet.html"/>
 <mapID target="movingrms" url="movingrms.html"/>
+<mapID target="mscohere" url="mscohere.html"/>
 <mapID target="musicBase" url="musicBase.html"/>
 <mapID target="nnls" url="nnls.html"/>
 <mapID target="nuttallwin" url="nuttallwin.html"/>
@@ -193,6 +195,7 @@
 <mapID target="wkeep" url="wkeep.html"/>
 <mapID target="wrev" url="wrev.html"/>
 <mapID target="xcorr2" url="xcorr2.html"/>
+<mapID target="xcov1" url="xcov1.html"/>
 <mapID target="zerocrossing" url="zerocrossing.html"/>
 <mapID target="zp2sos" url="zp2sos.html"/>
 <mapID target="zplane" url="zplane.html"/>

@@ -1,5 +1,10 @@
 function y = cceps (x,correct)
-
+//Return the complex cepstrum of the vector x
+//Calling Sequence
+//cceps (x)
+//cceps(x, correct)
+//Description
+//This function return the complex cepstrum of the vector x. If the optional argument correct has the value 1, a correction method is applied. The default is not to do this.
 funcprot(0);
 //
 rhs = argn(2)

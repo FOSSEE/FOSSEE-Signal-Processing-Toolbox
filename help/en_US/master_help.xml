@@ -20,6 +20,7 @@
 <!ENTITY ac9bfbd0f547b9f7951782fffc297ce8f SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/buffer.xml">
 <!ENTITY a92ca529f2e4c50ecbb42fe6ac66b4ad7 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/butter.xml">
 <!ENTITY aac95818ba66b9133270a9b65f48f4512 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/buttord.xml">
+<!ENTITY a90ab60d82d7a54f62db9da2aa96abb62 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/cceps.xml">
 <!ENTITY acc531aceceaba9ba5f63feb980982703 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/cconv.xml">
 <!ENTITY a9763f77681100b2386601412d6c68a45 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/cell2sos.xml">
 <!ENTITY a2e5fe5c92463618e3ac3eb6184a6514c SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb1ord.xml">
@@ -102,6 +103,7 @@
 <!ENTITY a8b754f3c797b791b0773a17091b92d47 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/modulate.xml">
 <!ENTITY a4409d7ece46667d2c6c236a19699a2db SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/morlet.xml">
 <!ENTITY aae7674d788c35e75f2a52af92dc855bc SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/movingrms.xml">
+<!ENTITY ab4b637128ca75fb1cef24e3cba016008 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/mscohere.xml">
 <!ENTITY a7022b9d1c7c194f27b1dd6bc4e093697 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/musicBase.xml">
 <!ENTITY aef8e0226f6126afb2453e659221e7330 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/nnls.xml">
 <!ENTITY aecbf6dfa1f6fa4c17585ac7e4eff69ef SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/nuttallwin.xml">
@@ -191,6 +193,7 @@
 <!ENTITY ae56b79980853d5c39cda79745ad43e1c SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/wkeep.xml">
 <!ENTITY afb072dbcb7e8025a801eb32f37a69dfb SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/wrev.xml">
 <!ENTITY a9cce784055276e298cf721d8e269c31c SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/xcorr2.xml">
+<!ENTITY a4fefe2dc30b34efba778dabc938cfb1a SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/xcov1.xml">
 <!ENTITY ad84d3dcc40317a06780d4e68cbec8db0 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/zerocrossing.xml">
 <!ENTITY a522ad212c78230cdbad7a4a0d8daaadd SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2sos.xml">
 <!ENTITY ad0a91e7320d3da715c8e58990f5397a4 SYSTEM "/home/tushar/Documents/IITB/Toolbox/FOSSEE-Signal-Processing-Toolbox/help/en_US/zplane.xml">
@@ -229,6 +232,7 @@
 &ac9bfbd0f547b9f7951782fffc297ce8f;
 &a92ca529f2e4c50ecbb42fe6ac66b4ad7;
 &aac95818ba66b9133270a9b65f48f4512;
+&a90ab60d82d7a54f62db9da2aa96abb62;
 &acc531aceceaba9ba5f63feb980982703;
 &a9763f77681100b2386601412d6c68a45;
 &a2e5fe5c92463618e3ac3eb6184a6514c;
@@ -311,6 +315,7 @@
 &a8b754f3c797b791b0773a17091b92d47;
 &a4409d7ece46667d2c6c236a19699a2db;
 &aae7674d788c35e75f2a52af92dc855bc;
+&ab4b637128ca75fb1cef24e3cba016008;
 &a7022b9d1c7c194f27b1dd6bc4e093697;
 &aef8e0226f6126afb2453e659221e7330;
 &aecbf6dfa1f6fa4c17585ac7e4eff69ef;
@@ -400,6 +405,7 @@
 &ae56b79980853d5c39cda79745ad43e1c;
 &afb072dbcb7e8025a801eb32f37a69dfb;
 &a9cce784055276e298cf721d8e269c31c;
+&a4fefe2dc30b34efba778dabc938cfb1a;
 &ad84d3dcc40317a06780d4e68cbec8db0;
 &a522ad212c78230cdbad7a4a0d8daaadd;
 &ad0a91e7320d3da715c8e58990f5397a4;
