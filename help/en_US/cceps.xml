@@ -17,7 +17,22 @@
 
   <refnamediv>
     <refname>cceps</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Return the complex cepstrum of the vector x</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   cceps (x)
+   cceps(x, correct)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function return the complex cepstrum of the vector x. If the optional argument correct has the value 1, a correction method is applied. The default is not to do this.
+</para>
+</refsection>
 </refentry>

@@ -5,6 +5,7 @@ arburg
 arcov
 armcov
 aryule
+autoreg_matrix
 barthannwin
 bartlett
 besselap
@@ -52,6 +53,7 @@ downsample
 dst1
 durbinlevinson
 dutycycle
+dwt
 ellip
 ellipap
 ellipord
@@ -60,13 +62,18 @@ eqtflength
 falltime
 fft
 fft2
+fftconv
 fftfilt
-fftshift1
+fftn
 fht
+filter1
+filter2
 filternorm
 filtfilt
 filtic
 filtord
+fir1
+fir2
 firpmord
 firtype
 flattopwin
@@ -132,6 +139,7 @@ midcross
 modulate
 morlet
 movingrms
+mscohere
 musicBase
 ncauer
 nnls
@@ -223,6 +231,7 @@ udecode
 uencode
 ultrwin
 unshiftdata
+unwrap2
 upfirdn
 upsample
 upsamplefill

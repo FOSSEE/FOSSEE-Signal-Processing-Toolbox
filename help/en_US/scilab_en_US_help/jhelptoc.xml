@@ -130,6 +130,7 @@
 <tocitem target="modulate" text="modulate"/>
 <tocitem target="morlet" text="morlet"/>
 <tocitem target="movingrms" text="movingrms"/>
+<tocitem target="mscohere" text="mscohere"/>
 <tocitem target="musicBase" text="musicBase"/>
 <tocitem target="ncauer" text="ncauer"/>
 <tocitem target="nnls" text="nnls"/>

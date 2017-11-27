@@ -130,6 +130,7 @@
 <mapID target="modulate" url="modulate.html"/>
 <mapID target="morlet" url="morlet.html"/>
 <mapID target="movingrms" url="movingrms.html"/>
+<mapID target="mscohere" url="mscohere.html"/>
 <mapID target="musicBase" url="musicBase.html"/>
 <mapID target="ncauer" url="ncauer.html"/>
 <mapID target="nnls" url="nnls.html"/>
