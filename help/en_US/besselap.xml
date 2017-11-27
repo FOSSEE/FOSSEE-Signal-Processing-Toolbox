@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from besselap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="besselap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>besselap</refname>
+    <refpurpose>Return bessel analog filter prototype.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [zero, pole, gain] = besselap (n)
+   [zero, pole] = besselap (n)
+   zero = besselap (n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Filter Order</para></listitem></varlistentry>
+   <varlistentry><term>zero:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>pole:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>gain:</term>
+      <listitem><para> Gain</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It Return bessel analog filter prototype of nth order.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[zero, pole, gain] = besselap (5)
+zero = [](0x0)
+pole =
+
+-0.59058 + 0.90721i
+-0.59058 - 0.90721i
+-0.92644 + 0.00000i
+-0.85155 + 0.44272i
+-0.85155 - 0.44272i
+
+gain =  1
+   ]]></programlisting>
+</refsection>
+</refentry>

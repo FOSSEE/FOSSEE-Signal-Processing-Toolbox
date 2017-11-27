@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from remez1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="remez1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>remez1</refname>
+    <refpurpose>Parks-McClellan optimal FIR filter design</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   b = remez1 (n, f, a)
+   b = remez1 (n, f, a, w)
+   b = remez1 (n, f, a, w, ftype)
+   b = remez1 (n, f, a, w, ftype, griddensity)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> gives the number of taps in the returned filter</para></listitem></varlistentry>
+   <varlistentry><term>f:</term>
+      <listitem><para>gives frequency at the band edges [b1 e1 b2 e2 b3 e3 …]</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para>gives amplitude at the band edges [a(b1) a(e1) a(b2) a(e2) …]</para></listitem></varlistentry>
+   <varlistentry><term>w:</term>
+      <listitem><para>gives weighting applied to each band</para></listitem></varlistentry>
+   <varlistentry><term>ftype:</term>
+      <listitem><para>is "bandpass", "hilbert" or "differentiator"</para></listitem></varlistentry>
+   <varlistentry><term>griddensity:</term>
+      <listitem><para>determines how accurately the filter will be constructed. The minimum value is 16, but higher numbers are slower to compute.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Frequency is in the range (0, 1), with 1 being the Nyquist frequency.
+</para>
+</refsection>
+</refentry>

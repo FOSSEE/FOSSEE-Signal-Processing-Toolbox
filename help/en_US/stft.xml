@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from stft.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="stft" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>stft</refname>
+    <refpurpose>Compute the short-time Fourier transform of the vector X</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   Y = stft (X)
+   Y = stft (X, WIN_SIZE)
+   Y = stft (X, WIN_SIZE, INC)
+   Y = stft (X, WIN_SIZE, INC, NUM_COEF)
+   Y = stft (X, WIN_SIZE, INC, NUM_COEF, WIN_TYPE)
+   [Y,C] = stft (X)
+   [Y,C] = stft (X, WIN_SIZE)
+   [Y,C] = stft (X, WIN_SIZE, INC)
+   [Y,C] = stft (X, WIN_SIZE, INC, NUM_COEF)
+   [Y,C] = stft (X, WIN_SIZE, INC, NUM_COEF, WIN_TYPE)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Real scalar or vector</para></listitem></varlistentry>
+   <varlistentry><term>WIN_SIZE:</term>
+      <listitem><para> Size of the window used</para></listitem></varlistentry>
+   <varlistentry><term>INC:</term>
+      <listitem><para> Increment</para></listitem></varlistentry>
+   <varlistentry><term>WIN_TYPE:</term>
+      <listitem><para> Type of window</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute the short-time Fourier transform of the vector X with NUM_COEF coefficients by applying a window of WIN_SIZE data points and an increment of INC points.
+   </para>
+   <para>
+Before computing the Fourier transform, one of the following windows is applied:
+   </para>
+   <para>
+"hanning" -&gt; win_type = 1
+   </para>
+   <para>
+"hamming" -&gt; win_type = 2
+   </para>
+   <para>
+"rectangle" -&gt; win_type = 3
+   </para>
+   <para>
+The window names can be passed as strings or by the WIN_TYPE number.
+   </para>
+   <para>
+The following defaults are used for unspecified arguments:WIN_SIZE= 80, INC = 24, NUM_COEF = 64, and WIN_TYPE = 1.
+   </para>
+   <para>
+Y = stft (X, ...)' returns the absolute values of the Fourier coefficients according to the NUM_COEF positive frequencies.
+   </para>
+   <para>
+'[Y, C] = stft (x, ...)' returns the entire STFT-matrix Y and a 3-element vector C containing the window size, increment, and window type, which is needed by the 'synthesis' function.
+</para>
+</refsection>
+</refentry>

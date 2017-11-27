@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ellipap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ellipap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ellipap</refname>
+    <refpurpose>Designs a lowpass analog elliptic filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [z, p, g] = ellipap (n, Rp, Rs)
+   [z, p] = ellipap (n, Rp, Rs)
+   z = ellipap (n, Rp, Rs)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Filter Order</para></listitem></varlistentry>
+   <varlistentry><term>Rp:</term>
+      <listitem><para> Peak-to-peak passband ripple</para></listitem></varlistentry>
+   <varlistentry><term>Rs:</term>
+      <listitem><para> Stopband attenuation</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It designs a lowpass analog elliptic filter of nth order, with a Peak-to-peak passband ripple of Rp and a stopband attenuation of Rs.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[z, p, g] = ellipap (5, 10, 10)
+z =
+
+0.0000 + 2.5546i   0.0000 + 1.6835i  -0.0000 - 2.5546i  -0.0000 - 1.6835i
+
+p =
+
+-0.05243 + 0.63524i  -0.01633 + 0.96289i  -0.05243 - 0.63524i  -0.01633 - 0.96289i  -0.07369 + 0.00000i
+
+g =  0.0015012
+   ]]></programlisting>
+</refsection>
+</refentry>
