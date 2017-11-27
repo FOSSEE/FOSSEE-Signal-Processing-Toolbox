@@ -24,6 +24,6 @@ end
 
 select (rhs)
 	case 3 then
-		y = callOctave("freqs",b, a, w)
+		h = callOctave("freqs",b, a, w)
 	end
 endfunction

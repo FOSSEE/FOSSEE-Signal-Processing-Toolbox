@@ -45,10 +45,13 @@ db
 db2pow
 dctmtx
 decimate
+detrend1
 dftmtx
+diffpara
 diric
 downsample
 dst1
+durbinlevinson
 dutycycle
 dwt
 ellip
@@ -75,6 +78,7 @@ firpmord
 firtype
 flattopwin
 fracshift
+fractdiff
 freqs
 fwhm
 fwhmjlt
@@ -86,6 +90,7 @@ gausswin
 gmonopuls
 goertzel
 grpdelay
+hamming
 hann
 hanning
 helperHarmonicDistortionAmplifier
@@ -97,7 +102,7 @@ idct2
 idst1
 ifft
 ifft2
-ifftn
+ifftshift1
 ifht
 ifwht
 iirlp2mb

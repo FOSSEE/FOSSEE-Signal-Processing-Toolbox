@@ -1,6 +1,4 @@
-function y = hanning(m, varargin)
-	
-
+function y = hamming(m, varargin)
 funcprot(0);
 rhs= argn(2);
 if(rhs <1 | rhs>2)
@@ -9,8 +7,8 @@ end
 
 select(rhs)
 	case 1 then
-		y= callOctave("hanning", m);
+		y= callOctave("hamming", m);
 	case 2 then
-		y= callOctave("hanning", m , varargin(1));
+		y= callOctave("hamming", m , varargin(1));
 end
 endfunction
