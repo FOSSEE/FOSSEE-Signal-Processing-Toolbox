@@ -65,6 +65,7 @@ fft2
 fftconv
 fftfilt
 fftn
+fftshift1
 fht
 filter1
 filter2
@@ -102,6 +103,7 @@ idct2
 idst1
 ifft
 ifft2
+ifftn
 ifftshift1
 ifht
 ifwht

@@ -83,6 +83,7 @@
 <tocitem target="gmonopuls" text="gmonopuls"/>
 <tocitem target="goertzel" text="goertzel"/>
 <tocitem target="grpdelay" text="grpdelay"/>
+<tocitem target="hamming" text="hamming"/>
 <tocitem target="hann" text="hann"/>
 <tocitem target="hanning" text="hanning"/>
 <tocitem target="helperHarmonicDistortionAmplifier" text="helperHarmonicDistortionAmplifier"/>

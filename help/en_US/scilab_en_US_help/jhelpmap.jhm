@@ -83,6 +83,7 @@
 <mapID target="gmonopuls" url="gmonopuls.html"/>
 <mapID target="goertzel" url="goertzel.html"/>
 <mapID target="grpdelay" url="grpdelay.html"/>
+<mapID target="hamming" url="hamming.html"/>
 <mapID target="hann" url="hann.html"/>
 <mapID target="hanning" url="hanning.html"/>
 <mapID target="helperHarmonicDistortionAmplifier" url="helperHarmonicDistortionAmplifier.html"/>
