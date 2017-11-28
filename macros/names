@@ -1,7 +1,9 @@
 ac2poly
 ac2rc
 arParEst
+ar_psd
 arburg
+arch_test
 arcov
 armcov
 aryule
@@ -10,6 +12,7 @@ barthannwin
 bartlett
 besselap
 besself
+bilinear
 bitrevorder
 blackman
 blackmanharris
@@ -35,6 +38,7 @@ check
 chirp
 clustersegment
 cmorwavf
+cohere
 convmtx
 corrmtx
 cplxreal

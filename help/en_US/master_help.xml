@@ -5,6 +5,7 @@
 <!ENTITY acc27042e738d175d1131be40ac8443e4 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2rc.xml">
 <!ENTITY a00c7c9f2a0021ff13869dce3b90df38c SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arParEst.xml">
 <!ENTITY a2801dc954ec6ac2e1c314367aab7316b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arburg.xml">
+<!ENTITY a1495e32bc54c2e2975785e8e2e4521bd SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arch_test.xml">
 <!ENTITY aa86636858e7127f17b93747fc8f3ec30 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arcov.xml">
 <!ENTITY a2804cc9a113729444d60d8cf3c14b554 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/armcov.xml">
 <!ENTITY a78af20f681c48f8ec298b379b34418b7 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/aryule.xml">
@@ -47,6 +48,7 @@
 <!ENTITY a012dc78292d46d1a6bfdd411607796ae SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/db2pow.xml">
 <!ENTITY a4c9381ac38659e2e9ccdf89e9aec08f9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/dctmtx.xml">
 <!ENTITY a732f6e560fa62dcfe2137f94ce0b812b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/decimate.xml">
+<!ENTITY aead61bf67b6895372794be69a80b5ab9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/detrend1.xml">
 <!ENTITY a8e9030fad0ea16388695b20a07e04334 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/dftmtx.xml">
 <!ENTITY a3ffbb42a185eaf6b62029b6efc883d6b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/diric.xml">
 <!ENTITY ac93a3534190eae2db767de3935ad4fbc SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/downsample.xml">
@@ -259,6 +261,7 @@
 &acc27042e738d175d1131be40ac8443e4;
 &a00c7c9f2a0021ff13869dce3b90df38c;
 &a2801dc954ec6ac2e1c314367aab7316b;
+&a1495e32bc54c2e2975785e8e2e4521bd;
 &aa86636858e7127f17b93747fc8f3ec30;
 &a2804cc9a113729444d60d8cf3c14b554;
 &a78af20f681c48f8ec298b379b34418b7;
@@ -301,6 +304,7 @@
 &a012dc78292d46d1a6bfdd411607796ae;
 &a4c9381ac38659e2e9ccdf89e9aec08f9;
 &a732f6e560fa62dcfe2137f94ce0b812b;
+&aead61bf67b6895372794be69a80b5ab9;
 &a8e9030fad0ea16388695b20a07e04334;
 &a3ffbb42a185eaf6b62029b6efc883d6b;
 &ac93a3534190eae2db767de3935ad4fbc;

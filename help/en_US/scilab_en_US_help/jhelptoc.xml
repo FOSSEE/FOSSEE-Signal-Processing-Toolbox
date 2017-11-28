@@ -7,6 +7,7 @@
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
 <tocitem target="arburg" text="arburg"/>
+<tocitem target="arch_test" text="arch_test"/>
 <tocitem target="arcov" text="arcov"/>
 <tocitem target="armcov" text="armcov"/>
 <tocitem target="aryule" text="aryule"/>
@@ -49,6 +50,7 @@
 <tocitem target="db2pow" text="db2pow"/>
 <tocitem target="dctmtx" text="dctmtx"/>
 <tocitem target="decimate" text="decimate"/>
+<tocitem target="detrend1" text="detrend1"/>
 <tocitem target="dftmtx" text="dftmtx"/>
 <tocitem target="diric" text="diric"/>
 <tocitem target="downsample" text="downsample"/>

@@ -7,6 +7,7 @@
 <mapID target="ac2rc" url="ac2rc.html"/>
 <mapID target="arParEst" url="arParEst.html"/>
 <mapID target="arburg" url="arburg.html"/>
+<mapID target="arch_test" url="arch_test.html"/>
 <mapID target="arcov" url="arcov.html"/>
 <mapID target="armcov" url="armcov.html"/>
 <mapID target="aryule" url="aryule.html"/>
@@ -49,6 +50,7 @@
 <mapID target="db2pow" url="db2pow.html"/>
 <mapID target="dctmtx" url="dctmtx.html"/>
 <mapID target="decimate" url="decimate.html"/>
+<mapID target="detrend1" url="detrend1.html"/>
 <mapID target="dftmtx" url="dftmtx.html"/>
 <mapID target="diric" url="diric.html"/>
 <mapID target="downsample" url="downsample.html"/>
