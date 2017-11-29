@@ -4,6 +4,7 @@
 <!ENTITY a231328952124a7e187905e71aaf9cee0 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2poly.xml">
 <!ENTITY acc27042e738d175d1131be40ac8443e4 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2rc.xml">
 <!ENTITY a00c7c9f2a0021ff13869dce3b90df38c SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arParEst.xml">
+<!ENTITY a85e6512c560e0bf936c3beeaa098c6c9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ar_psd.xml">
 <!ENTITY a2801dc954ec6ac2e1c314367aab7316b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arburg.xml">
 <!ENTITY a1495e32bc54c2e2975785e8e2e4521bd SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arch_test.xml">
 <!ENTITY aa86636858e7127f17b93747fc8f3ec30 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/arcov.xml">
@@ -13,6 +14,7 @@
 <!ENTITY af8a337c857d4b373e49c0032acb1370f SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/bartlett.xml">
 <!ENTITY a8db037e6c34a1ac0f7db27577e08e15d SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/besselap.xml">
 <!ENTITY a31f48c823b3b36a8c44e96ff54eaf66a SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/besself.xml">
+<!ENTITY a1f0975c78250aac81c6d5a79d8c93eab SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/bilinear.xml">
 <!ENTITY a4965260600d5ae3055dc940551b4155a SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/bitrevorder.xml">
 <!ENTITY a203e8f0f36fcdb6d7dab204312a41134 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackman.xml">
 <!ENTITY a33562ce8ee2b64f5e49f771f94e64714 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackmanharris.xml">
@@ -38,6 +40,7 @@
 <!ENTITY a1dc032779f7ba8e8f69e8f79dfb144d5 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/chirp.xml">
 <!ENTITY a5bf1548e6f5419396992c7e5fee10e44 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/clustersegment.xml">
 <!ENTITY a675cd787aff166461d9e9da55d591875 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/cmorwavf.xml">
+<!ENTITY a2b41713030e0a16e3e381cc96ff62544 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/cohere.xml">
 <!ENTITY adc56a73851265426ed0c3db40f3a0d2e SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/convmtx.xml">
 <!ENTITY a3d40cac540363daecb58818938d2b1d3 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/corrmtx.xml">
 <!ENTITY ad2840257a4ded4da25428645e8a8fd22 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/cplxreal.xml">
@@ -50,9 +53,11 @@
 <!ENTITY a732f6e560fa62dcfe2137f94ce0b812b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/decimate.xml">
 <!ENTITY aead61bf67b6895372794be69a80b5ab9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/detrend1.xml">
 <!ENTITY a8e9030fad0ea16388695b20a07e04334 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/dftmtx.xml">
+<!ENTITY a1d56d414b955dad7a64ae7c13171931e SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/diffpara.xml">
 <!ENTITY a3ffbb42a185eaf6b62029b6efc883d6b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/diric.xml">
 <!ENTITY ac93a3534190eae2db767de3935ad4fbc SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/downsample.xml">
 <!ENTITY afe6460b06ca50c9c2d156ea6806d2ed9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/dst1.xml">
+<!ENTITY a227944d1935a789cec8341413d58151d SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/durbinlevinson.xml">
 <!ENTITY a52aa309fac8ef71cd8d143ac51969fe0 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/dutycycle.xml">
 <!ENTITY aa0ecb21a4fba74cd96dd91d64d4f13ef SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellip.xml">
 <!ENTITY a54ce5c2d68eb85b370486a8657432e59 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellipap.xml">
@@ -63,6 +68,7 @@
 <!ENTITY a61dce7ba646ca92aaf5a1ba090aa25e4 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fft.xml">
 <!ENTITY ad146f651e2b3ae0f2c4548c9d31b9324 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fft2.xml">
 <!ENTITY a093a9f733664f253ef62c57cbfd1f345 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftfilt.xml">
+<!ENTITY ac1d05174ad6903658715873090e2337d SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftshift1.xml">
 <!ENTITY ad9f3946f61509aa68a6555cc8e1e89c4 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fht.xml">
 <!ENTITY a0b5dd6bfc7c995741ff59cb1f2e6bd9d SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/filternorm.xml">
 <!ENTITY a6f9f6be023cda42def4540ebe4a826ad SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtfilt.xml">
@@ -72,6 +78,7 @@
 <!ENTITY a94e89cc06baa492675fb0ba33b84c454 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/firtype.xml">
 <!ENTITY a19950da21e14157b78311a84cf566c31 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/flattopwin.xml">
 <!ENTITY a997024f7f60a0e9b5b06fb25b4549196 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fracshift.xml">
+<!ENTITY a36e682243b9d539831279ec2794d4dcf SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fractdiff.xml">
 <!ENTITY a60063fcaf779858435eab52d0438f7c0 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/freqs.xml">
 <!ENTITY a5b1b81f5a27ba264b58d0ede7bf40d6e SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhm.xml">
 <!ENTITY aaa8fd7d64f02100f0ff4b9f5a601b502 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhmjlt.xml">
@@ -95,6 +102,7 @@
 <!ENTITY a6fd54fa41c0d83b890ecda9094cd757f SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/idst1.xml">
 <!ENTITY a9a5ec7990aa1e0ee187582dfea2e2f18 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifft.xml">
 <!ENTITY a6c98b32822a438724a01bbbc3c6e8972 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifft2.xml">
+<!ENTITY ac144cb9b3a31dd3325159821e24eac51 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifftshift1.xml">
 <!ENTITY a414728f3a3bc742adaead017680e9eb1 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifht.xml">
 <!ENTITY a2992435e7a3da65808422b5922e44afd SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifwht.xml">
 <!ENTITY a056e2f09f5221e8999a0fea1c1fa878d SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/iirlp2mb.xml">
@@ -260,6 +268,7 @@
 &a231328952124a7e187905e71aaf9cee0;
 &acc27042e738d175d1131be40ac8443e4;
 &a00c7c9f2a0021ff13869dce3b90df38c;
+&a85e6512c560e0bf936c3beeaa098c6c9;
 &a2801dc954ec6ac2e1c314367aab7316b;
 &a1495e32bc54c2e2975785e8e2e4521bd;
 &aa86636858e7127f17b93747fc8f3ec30;
@@ -269,6 +278,7 @@
 &af8a337c857d4b373e49c0032acb1370f;
 &a8db037e6c34a1ac0f7db27577e08e15d;
 &a31f48c823b3b36a8c44e96ff54eaf66a;
+&a1f0975c78250aac81c6d5a79d8c93eab;
 &a4965260600d5ae3055dc940551b4155a;
 &a203e8f0f36fcdb6d7dab204312a41134;
 &a33562ce8ee2b64f5e49f771f94e64714;
@@ -294,6 +304,7 @@
 &a1dc032779f7ba8e8f69e8f79dfb144d5;
 &a5bf1548e6f5419396992c7e5fee10e44;
 &a675cd787aff166461d9e9da55d591875;
+&a2b41713030e0a16e3e381cc96ff62544;
 &adc56a73851265426ed0c3db40f3a0d2e;
 &a3d40cac540363daecb58818938d2b1d3;
 &ad2840257a4ded4da25428645e8a8fd22;
@@ -306,9 +317,11 @@
 &a732f6e560fa62dcfe2137f94ce0b812b;
 &aead61bf67b6895372794be69a80b5ab9;
 &a8e9030fad0ea16388695b20a07e04334;
+&a1d56d414b955dad7a64ae7c13171931e;
 &a3ffbb42a185eaf6b62029b6efc883d6b;
 &ac93a3534190eae2db767de3935ad4fbc;
 &afe6460b06ca50c9c2d156ea6806d2ed9;
+&a227944d1935a789cec8341413d58151d;
 &a52aa309fac8ef71cd8d143ac51969fe0;
 &aa0ecb21a4fba74cd96dd91d64d4f13ef;
 &a54ce5c2d68eb85b370486a8657432e59;
@@ -319,6 +332,7 @@
 &a61dce7ba646ca92aaf5a1ba090aa25e4;
 &ad146f651e2b3ae0f2c4548c9d31b9324;
 &a093a9f733664f253ef62c57cbfd1f345;
+&ac1d05174ad6903658715873090e2337d;
 &ad9f3946f61509aa68a6555cc8e1e89c4;
 &a0b5dd6bfc7c995741ff59cb1f2e6bd9d;
 &a6f9f6be023cda42def4540ebe4a826ad;
@@ -328,6 +342,7 @@
 &a94e89cc06baa492675fb0ba33b84c454;
 &a19950da21e14157b78311a84cf566c31;
 &a997024f7f60a0e9b5b06fb25b4549196;
+&a36e682243b9d539831279ec2794d4dcf;
 &a60063fcaf779858435eab52d0438f7c0;
 &a5b1b81f5a27ba264b58d0ede7bf40d6e;
 &aaa8fd7d64f02100f0ff4b9f5a601b502;
@@ -351,6 +366,7 @@
 &a6fd54fa41c0d83b890ecda9094cd757f;
 &a9a5ec7990aa1e0ee187582dfea2e2f18;
 &a6c98b32822a438724a01bbbc3c6e8972;
+&ac144cb9b3a31dd3325159821e24eac51;
 &a414728f3a3bc742adaead017680e9eb1;
 &a2992435e7a3da65808422b5922e44afd;
 &a056e2f09f5221e8999a0fea1c1fa878d;

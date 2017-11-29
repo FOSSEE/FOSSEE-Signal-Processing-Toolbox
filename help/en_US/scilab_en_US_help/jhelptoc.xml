@@ -6,6 +6,7 @@
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
+<tocitem target="ar_psd" text="ar_psd"/>
 <tocitem target="arburg" text="arburg"/>
 <tocitem target="arch_test" text="arch_test"/>
 <tocitem target="arcov" text="arcov"/>
@@ -15,6 +16,7 @@
 <tocitem target="bartlett" text="bartlett"/>
 <tocitem target="besselap" text="besselap"/>
 <tocitem target="besself" text="besself"/>
+<tocitem target="bilinear" text="bilinear"/>
 <tocitem target="bitrevorder" text="bitrevorder"/>
 <tocitem target="blackman" text="blackman"/>
 <tocitem target="blackmanharris" text="blackmanharris"/>
@@ -40,6 +42,7 @@
 <tocitem target="chirp" text="chirp"/>
 <tocitem target="clustersegment" text="clustersegment"/>
 <tocitem target="cmorwavf" text="cmorwavf"/>
+<tocitem target="cohere" text="cohere"/>
 <tocitem target="convmtx" text="convmtx"/>
 <tocitem target="corrmtx" text="corrmtx"/>
 <tocitem target="cplxreal" text="cplxreal"/>
@@ -52,9 +55,11 @@
 <tocitem target="decimate" text="decimate"/>
 <tocitem target="detrend1" text="detrend1"/>
 <tocitem target="dftmtx" text="dftmtx"/>
+<tocitem target="diffpara" text="diffpara"/>
 <tocitem target="diric" text="diric"/>
 <tocitem target="downsample" text="downsample"/>
 <tocitem target="dst1" text="dst1"/>
+<tocitem target="durbinlevinson" text="durbinlevinson"/>
 <tocitem target="dutycycle" text="dutycycle"/>
 <tocitem target="ellip" text="ellip"/>
 <tocitem target="ellipap" text="ellipap"/>
@@ -65,6 +70,7 @@
 <tocitem target="fft" text="fft"/>
 <tocitem target="fft2" text="fft2"/>
 <tocitem target="fftfilt" text="fftfilt"/>
+<tocitem target="fftshift1" text="fftshift1"/>
 <tocitem target="fht" text="fht"/>
 <tocitem target="filternorm" text="filternorm"/>
 <tocitem target="filtfilt" text="filtfilt"/>
@@ -74,6 +80,7 @@
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
+<tocitem target="fractdiff" text="fractdiff"/>
 <tocitem target="freqs" text="freqs"/>
 <tocitem target="fwhm" text="fwhm"/>
 <tocitem target="fwhmjlt" text="fwhmjlt"/>
@@ -97,6 +104,7 @@
 <tocitem target="idst1" text="idst1"/>
 <tocitem target="ifft" text="ifft"/>
 <tocitem target="ifft2" text="ifft2"/>
+<tocitem target="ifftshift1" text="ifftshift1"/>
 <tocitem target="ifht" text="ifht"/>
 <tocitem target="ifwht" text="ifwht"/>
 <tocitem target="iirlp2mb" text="iirlp2mb"/>
