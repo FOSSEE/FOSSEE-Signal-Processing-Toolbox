@@ -221,6 +221,7 @@
 <!ENTITY a74b148e7e471bd9f170cd4dc3087d2c9 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2sos.xml">
 <!ENTITY a243b79cdb976d4f432450ea744ca236c SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zp.xml">
 <!ENTITY a9187ccad1c55b5cd1a5a900b17f2104b SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zpk.xml">
+<!ENTITY a62d4009c826ca50e7466327e7eaa3dde SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/tfe.xml">
 <!ENTITY a805a0ed4cae04e01f29ecf5f82345622 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/transpose.xml">
 <!ENTITY a6e3552f90470c430b16dca28da599068 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/trial_iirlp2mb.xml">
 <!ENTITY aff0a00518280d05c9d58a7de46b1b160 SYSTEM "/home/abhinav/Documents/IITB/Repos/FOSSEE-Signal-Processing-Toolbox/help/en_US/triang.xml">
@@ -485,6 +486,7 @@
 &a74b148e7e471bd9f170cd4dc3087d2c9;
 &a243b79cdb976d4f432450ea744ca236c;
 &a9187ccad1c55b5cd1a5a900b17f2104b;
+&a62d4009c826ca50e7466327e7eaa3dde;
 &a805a0ed4cae04e01f29ecf5f82345622;
 &a6e3552f90470c430b16dca28da599068;
 &aff0a00518280d05c9d58a7de46b1b160;
