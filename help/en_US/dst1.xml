@@ -17,7 +17,31 @@
 
   <refnamediv>
     <refname>dst1</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Computes the type I discrete sine transform of x</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y= dst1(x)
+   y= dst1(x,n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> real or complex valued vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Computes the type I discrete sine transform of x. If n is given, then x is padded or trimmed to length n before computing the transform. If x is a matrix, compute the transform along the columns of the the matrix.
+</para>
+</refsection>
 </refentry>

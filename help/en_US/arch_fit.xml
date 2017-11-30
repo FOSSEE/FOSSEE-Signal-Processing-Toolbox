@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arch_fit.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arch_fit" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arch_fit</refname>
+    <refpurpose>This functions fits an ARCH regression model to the time series Y using the scoring algorithm in Engle's original ARCH paper.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [A, B] = arch_fit (Y, X, P, ITER, GAMMA, A0, B0)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Fit an ARCH regression model to the time series Y using the scoring algorithm in Engle's original ARCH paper.
+   </para>
+   <para>
+The model is
+   </para>
+   <para>
+y(t) = b(1) * x(t,1) + ... + b(k) * x(t,k) + e(t),
+h(t) = a(1) + a(2) * e(t-1)^2 + ... + a(p+1) * e(t-p)^2
+   </para>
+   <para>
+in which e(t) is N(0, h(t)), given a time-series vector Y up to time t-1 and a matrix of (ordinary) regressors X up to t. The order of the regression of the residual variance is specified by P.
+   </para>
+   <para>
+If invoked as 'arch_fit (Y, K, P)' with a positive integer K, fit an ARCH(K, P) process, i.e., do the above with the t-th row of X given by
+   </para>
+   <para>
+[1, y(t-1), ..., y(t-k)]
+   </para>
+   <para>
+Optionally, one can specify the number of iterations ITER, the updating factor GAMMA, and initial values a0 and b0 for the scoring algorithm.
+</para>
+</refsection>
+</refentry>

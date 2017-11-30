@@ -17,7 +17,37 @@
 
   <refnamediv>
     <refname>sinewave</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Return an M-element vector with I-th element given by 'sin(2* pi *(I+D-1)/N).'</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y= sinewave(M)
+   y= sinewave(M,N)
+   y= sinewave(M,N,D)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>M:</term>
+      <listitem><para> Input vector</para></listitem></varlistentry>
+   <varlistentry><term>N:</term>
+      <listitem><para> The default value for N is M</para></listitem></varlistentry>
+   <varlistentry><term>D:</term>
+      <listitem><para> The default value for D is 0</para></listitem></varlistentry>
+   <varlistentry><term>AMPL:</term>
+      <listitem><para> Amplitude</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return an M-element vector with I-th element given by 'sin(2* pi *(I+D-1)/N).'
+</para>
+</refsection>
 </refentry>

@@ -17,7 +17,33 @@
 
   <refnamediv>
     <refname>synthesis</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Compute a signal from its short-time Fourier transform</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   X= synthesis(Y,C)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Y:</term>
+      <listitem><para> Shirt-time fourier transform</para></listitem></varlistentry>
+   <varlistentry><term>C:</term>
+      <listitem><para> 3-element vector C specifying window size, increment, window type.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute a signal from its short-time Fourier transform Y and a 3-element vector C specifying window size, increment, and window type.
+The values Y and C can be derived by
+[Y, C] = stft (X , ...)
+</para>
+</refsection>
 </refentry>

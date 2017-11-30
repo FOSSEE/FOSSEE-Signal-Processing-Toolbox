@@ -2,11 +2,11 @@
 
 <!--
  *
- * This help file was generated from ifft21.sci using help_from_sci().
+ * This help file was generated from ifft2.sci using help_from_sci().
  *
  -->
 
-<refentry version="5.0-subset Scilab" xml:id="ifft21" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="ifft2" xml:lang="en"
           xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
           xmlns:db="http://docbook.org/ns/docbook">
 
   <refnamediv>
-    <refname>ifft21</refname>
+    <refname>ifft2</refname>
     <refpurpose>Calculates the inverse two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</refpurpose>
   </refnamediv>
 
@@ -56,7 +56,7 @@ If A is a multi-dimensional matrix, each two-dimensional sub-matrix of A is trea
 x = [1 2 3; 4 5 6; 7 8 9]
 m = 4
 n = 4
-ifft21 (A, m, n)
+ifft2 (A, m, n)
 ans =
 
 2.81250 + 0.00000i  -0.37500 + 0.93750i   0.93750 + 0.00000i  -0.37500 - 0.93750i

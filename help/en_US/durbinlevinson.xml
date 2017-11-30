@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from durbinlevinson.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="durbinlevinson" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>durbinlevinson</refname>
+    <refpurpose>Perform one step of the Durbin-Levinson algorithm..</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   durbinlevinson (C);
+   durbinlevinson (C, OLDPHI);
+   durbinlevinson (C, OLDPHI, OLDV);
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>C:</term>
+      <listitem><para> The vector C specifies the autocovariances '[gamma_0, ..., gamma_t]' from lag 0 to T.</para></listitem></varlistentry>
+   <varlistentry><term>OLDPHI:</term>
+      <listitem><para> It specifies the coefficients based on C(T-1).</para></listitem></varlistentry>
+   <varlistentry><term>OLDV:</term>
+      <listitem><para> It specifies the corresponding error.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Perform one step of the Durbin-Levinson.
+If OLDPHI and OLDV are omitted, all steps from 1 to T of the algorithm are performed.
+</para>
+</refsection>
+</refentry>

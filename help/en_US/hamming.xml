@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from hamming.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="hamming" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>hamming</refname>
+    <refpurpose>Return the filter coefficients of a Hamming window of length M</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   hamming (M)
+   hamming (M, "periodic")
+   hamming (M, "symmetric")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>M:</term>
+      <listitem><para> real scalar, which will be the length of hamming window</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the filter coefficients of a Hamming window of length M.
+If the optional argument "periodic" is given, the periodic form of the window is returned.  This is equivalent to the window of length M+1 with the last coefficient removed.  The optional argument "symmetric" is equivalent to not specifying a second argument.
+</para>
+</refsection>
+</refentry>

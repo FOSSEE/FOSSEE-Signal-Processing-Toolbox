@@ -17,7 +17,29 @@
 
   <refnamediv>
     <refname>spencer</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Return Spencer's 15 point moving average of each column of X.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   spencer(X)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Real scalar or vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return Spencer's 15 point moving average of each column of X.
+</para>
+</refsection>
 </refentry>

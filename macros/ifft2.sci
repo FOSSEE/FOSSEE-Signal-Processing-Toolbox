@@ -1,4 +1,4 @@
-function res = ifft21 (A, m, n)
+function res = ifft2 (A, m, n)
 //Calculates the inverse two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
 //Calling Sequence
 //ifft2 (A, m, n)
@@ -15,7 +15,7 @@ function res = ifft21 (A, m, n)
 //x = [1 2 3; 4 5 6; 7 8 9]
 //m = 4
 //n = 4
-//ifft21 (A, m, n)
+//ifft2 (A, m, n)
 //ans =
 //
 //   2.81250 + 0.00000i  -0.37500 + 0.93750i   0.93750 + 0.00000i  -0.37500 - 0.93750i

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cpsd.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cpsd" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cpsd</refname>
+    <refpurpose>This function estimates cross power spectrum of data x and y by the Welch (1967) periodogram/FFT method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [PXX, FREQ] = cpsd(X, Y)
+   [...] = cpsd(X, Y, WINDOW)
+   [...] = cpsd(X, Y, WINDOW, OVERLAP)
+   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT)
+   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT, FS)
+   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT, FS, RANGE)
+   cpsd(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X, Y:</term>
+      <listitem><para> Matrix or integer</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Estimate cross power spectrum of data X and Y by the Welch (1967) periodogram/FFT method.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a, b] = cpsd([1,2,3],[4,5,6])
+ans =
+b  =
+0.
+0.25
+0.5
+a  =
+2.7804939
+4.4785583 + 1.0743784i
+0.7729851
+   ]]></programlisting>
+</refsection>
+</refentry>

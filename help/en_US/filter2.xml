@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from filter2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="filter2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>filter2</refname>
+    <refpurpose>Apply the 2-D FIR filter B to X.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   Y = filter2(B, X)
+   Y = filter2(B, X, SHAPE)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>B, X:</term>
+      <listitem><para> Matrix</para></listitem></varlistentry>
+   <varlistentry><term>SHAPE:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>'full':</term>
+      <listitem><para>  pad X with zeros on all sides before filtering.</para></listitem></varlistentry>
+   <varlistentry><term>'same':</term>
+      <listitem><para> unpadded X (default)</para></listitem></varlistentry>
+   <varlistentry><term>'valid':</term>
+      <listitem><para> trim X after filtering so edge effects are no included.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function applies the 2-D FIR filter B to X. If the argument SHAPE is specified, return an array of the desired shape.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+filter2([1,3], [4,5])
+ans =
+19.    5.
+   ]]></programlisting>
+</refsection>
+</refentry>

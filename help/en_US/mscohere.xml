@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from mscohere.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="mscohere" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>mscohere</refname>
+    <refpurpose>It estimate (mean square) coherence of signals x and y.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [Pxx, freq] = mscohere (x, y)
+   [Pxx, freq] = mscohere (x, y, window)
+   [Pxx, freq] = mscohere (x, y, window, overlap)
+   [Pxx, freq] = mscohere (x, y, window, overlap, Nfft)
+   [Pxx, freq] = mscohere (x, y, window, overlap, Nfft, Fs)
+   [Pxx, freq] = mscohere (x, y, window, overlap, Nfft, Fs, range)
+   mscohere (...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function estimate (mean square) coherence of signals x and y.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[Pxx, freq] = mscohere(4,5)
+ans =
+PXX =
+Nan
+1
+FREQ =
+0
+0.5
+   ]]></programlisting>
+</refsection>
+</refentry>
