@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arma_rnd.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arma_rnd" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arma_rnd</refname>
+    <refpurpose>Return a simulation of the ARMA model.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   arma_rnd (a, b, v, t, n)
+   arma_rnd (a, b, v, t)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> vector</para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> vector</para></listitem></varlistentry>
+   <varlistentry><term>v:</term>
+      <listitem><para> Variance</para></listitem></varlistentry>
+   <varlistentry><term>t:</term>
+      <listitem><para> Length of output vector</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Number of dummy x(i) used for initialization</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+The ARMA model is defined by
+   </para>
+   <para>
+x(n) = a(1) * x(n-1) + … + a(k) * x(n-k)
++ e(n) + b(1) * e(n-1) + … + b(l) * e(n-l)
+in which k is the length of vector a, l is the length of vector b and e is Gaussian white noise with variance v. The function returns a vector of length t.
+   </para>
+   <para>
+The optional parameter n gives the number of dummy x(i) used for initialization, i.e., a sequence of length t+n is generated and x(n+1:t+n) is returned. If n is omitted, n = 100 is used.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1 2 3 4 5];
+b = [7; 8; 9; 10; 11];
+v = 10;
+t = 5;
+n = 100;
+arma_rnd (a, b, v, t, n)
+ans =
+
+-1.6176e+05
+-4.1663e+05
+-1.0732e+06
+-2.7648e+06
+-7.1221e+06
+   ]]></programlisting>
+</refsection>
+</refentry>

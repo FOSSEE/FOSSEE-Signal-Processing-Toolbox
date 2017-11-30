@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from invfreqs.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="invfreqs" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>invfreqs</refname>
+    <refpurpose>Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [B,A,C] = invfreqs(H,F,nB,nA,W,iter,tol,trace)
+   [B,A,C] = invfreqs(H,F,nB,nA,W)
+   [B,A,C] = invfreqs(H,F,nB,nA)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>H:</term>
+      <listitem><para> desired complex frequency response.</para></listitem></varlistentry>
+   <varlistentry><term>F:</term>
+      <listitem><para> frequency (must be same length as H).</para></listitem></varlistentry>
+   <varlistentry><term>nB:</term>
+      <listitem><para> order of the numerator polynomial B.</para></listitem></varlistentry>
+   <varlistentry><term>nA:</term>
+      <listitem><para> order of the denominator polynomial A.</para></listitem></varlistentry>
+   <varlistentry><term>W:</term>
+      <listitem><para> vector of weights (must be same length as F).</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.
+Optionally, the fit-errors can be weighted vs frequency according to the weights W.
+Note: all the guts are in invfreq.m
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+B = [1/2 1];
+A = [1 1];
+w = linspace(0,4,128);
+H = freqs(B,A,w);
+[Bh,Ah, C] = invfreqs(H,w,1,1);
+Bh =
+
+0.50000   1.00000
+
+Ah =
+
+1.0000   1.0000
+
+C =   -3.0964e-15
+   ]]></programlisting>
+</refsection>
+</refentry>

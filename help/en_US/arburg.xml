@@ -49,7 +49,11 @@
    <title>Description</title>
    <para>
 This is an Octave function.
+   </para>
+   <para>
 This function calculates coefficients of an autoregressive (AR) model of complex data x using the whitening lattice-filter method of Burg.
+   </para>
+   <para>
 The first argument is the data sampled. The second argument is the number of poles in the model (or limit in case a criterion is supplied).
 The third parameter takes in the criterion to limit the number of poles. The acceptable values are "AIC", "AKICc", "KIC", "AICc" which are based on information theory.
 Output variable a is a list of P+1 autoregression coefficients.

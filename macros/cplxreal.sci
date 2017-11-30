@@ -14,6 +14,11 @@ function [zc, zr] = cplxreal (z, thresh)
 //This is an Octave function.
 //Every complex element of z is expected to have a complex-conjugate elsewhere in z. From the pair of complex-conjugates, the one with the negative imaginary part is removed.
 //If the magnitude of the imaginary part of an element is less than the thresh, it is declared as real.  
+//Examples
+//[zc, zr] = cplxreal([1 2 3+i 4 3-i 5])
+//zc =  3 + 1i
+//zr =
+//   1   2   4   5
 funcprot(0);
 lhs = argn(1)
 rhs = argn(2)

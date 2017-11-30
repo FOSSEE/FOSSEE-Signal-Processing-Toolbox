@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cplxreal.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cplxreal" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cplxreal</refname>
+    <refpurpose>Function to divide vector z into complex and real elements, removing the one of each complex conjugate pair.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [zc, zr] = cplxreal (z, thresh)
+   [zc, zr] = cplxreal (z)
+   zc = cplxreal (z, thresh)
+   zc = cplxreal (z)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>z:</term>
+      <listitem><para> vector of complex numbers.</para></listitem></varlistentry>
+   <varlistentry><term>thresh:</term>
+      <listitem><para> tolerance for comparisons.</para></listitem></varlistentry>
+   <varlistentry><term>zc:</term>
+      <listitem><para> vector containing the elements of z that have positive imaginary parts.</para></listitem></varlistentry>
+   <varlistentry><term>zr:</term>
+      <listitem><para> vector containing the elements of z that are real.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Every complex element of z is expected to have a complex-conjugate elsewhere in z. From the pair of complex-conjugates, the one with the negative imaginary part is removed.
+If the magnitude of the imaginary part of an element is less than the thresh, it is declared as real.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[zc, zr] = cplxreal([1 2 3+i 4 3-i 5])
+zc =  3 + 1i
+zr =
+1   2   4   5
+   ]]></programlisting>
+</refsection>
+</refentry>

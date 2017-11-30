@@ -2,7 +2,9 @@ ac2poly
 ac2rc
 arParEst
 arburg
+arch_rnd
 arcov
+arma_rnd
 armcov
 aryule
 barthannwin
@@ -32,6 +34,7 @@ cheby1
 cheby2
 check
 chirp
+cl2bp
 clustersegment
 cmorwavf
 convmtx
@@ -55,9 +58,10 @@ ellipord
 enbw
 eqtflength
 falltime
-fft
-fft2
+fft1
+fft21
 fftfilt
+fftw1
 fht
 filternorm
 filtfilt
@@ -83,16 +87,13 @@ helperHarmonicDistortionAmplifier
 hilbert1
 hurst
 icceps
-<<<<<<< HEAD
-ifft
-ifft2
-=======
 idct1
 idct2
 idst1
+ifft1
+ifft21
 ifht
 ifwht
->>>>>>> 9f6962b19c4a5fa76f7525a72faabb1b754712ad
 iirlp2mb
 impinvar
 impz
@@ -100,6 +101,8 @@ impzlength
 interp
 intfilt
 invfreq
+invfreqs
+invfreqz
 invimpinvar
 is2rc
 isallpass
@@ -109,6 +112,7 @@ ismaxphase
 isminphase
 isstable
 kaiser
+kaiserord
 lar2rc
 latc2tf
 latcfilt
@@ -132,6 +136,7 @@ ncauer
 nnls
 nuttallwin
 parzenwin
+pburg
 pchip
 pchips
 peak2peak
@@ -157,6 +162,8 @@ pulseperiod
 pulsesep
 pulsewidth
 pulstran
+pyulear
+qp_kaiser
 rc2ac
 rc2is
 rc2lar
@@ -180,6 +187,7 @@ sawtooth
 schtrig
 schurrc
 seqperiod
+sftrans
 sgolay
 sgolayfilt
 shanwavf
@@ -208,6 +216,7 @@ synthesis
 tf2sos
 tf2zp
 tf2zpk
+tfestimate
 transpose
 trial_iirlp2mb
 triang
@@ -228,6 +237,7 @@ welchwin
 window
 wkeep
 wrev
+xcorr1
 xcorr2
 xcov1
 yulewalker

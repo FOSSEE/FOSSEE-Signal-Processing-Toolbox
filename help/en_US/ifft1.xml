@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ifft1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ifft1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ifft1</refname>
+    <refpurpose>Calculates the inverse discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   ifft (x, n, dim)
+   ifft (x, n)
+   ifft (x)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> input matrix</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Specifies the number of elements of x to be used</para></listitem></varlistentry>
+   <varlistentry><term>dim:</term>
+      <listitem><para> Specifies the dimention of the matrix along which the inverse FFT is performed</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+</para>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+The inverse FFT is calculated along the first non-singleton dimension of the array. Thus, inverse FFT is computed for each column of x.
+   </para>
+   <para>
+n is an integer specifying the number of elements of x to use. If n is larger than dimention along. which the inverse FFT is calculated, then x is resized and padded with zeros.
+Similarly, if n is smaller, then x is truncated.
+   </para>
+   <para>
+dim is an integer specifying the dimension of the matrix along which the inverse FFT is performed.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1 2 3; 4 5 6; 7 8 9]
+n = 3
+dim = 2
+ifft1 (x, n, dim)
+ans =
+
+2.00000 + 0.00000i  -0.50000 - 0.28868i  -0.50000 + 0.28868i
+5.00000 + 0.00000i  -0.50000 - 0.28868i  -0.50000 + 0.28868i
+8.00000 + 0.00000i  -0.50000 - 0.28868i  -0.50000 + 0.28868i
+   ]]></programlisting>
+</refsection>
+</refentry>

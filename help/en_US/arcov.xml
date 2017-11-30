@@ -17,7 +17,29 @@
 
   <refnamediv>
     <refname>arcov</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Autoregressive all-pole model parameters — covariance method</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   a = arcov(x,p)
+   [a,e] = arcov(x,p)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> contains normalized estimates of the AR system parameters, A(z), in descending powers of z.</para></listitem></varlistentry>
+   <varlistentry><term>e:</term>
+      <listitem><para> variance estimate of the white noise input to the AR model</para></listitem></varlistentry>
+   <varlistentry><term>x:</term>
+      <listitem><para> is the input signal</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> is the order of the auto regressive model</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
 </refentry>

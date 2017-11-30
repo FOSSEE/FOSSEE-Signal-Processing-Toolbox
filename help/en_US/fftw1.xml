@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fftw1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fftw1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fftw1</refname>
+    <refpurpose>Manage FFTW wisdom data.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   method = fftw ("planner")
+   fftw ("planner", method)
+   wisdom = fftw ("dwisdom")
+   fftw ("dwisdom", wisdom)
+   fftw ("threads", nthreads)
+   nthreads = fftw ("threads")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Wisdom data can be used to significantly accelerate the calculation of the FFTs, but implies an initial cost in its calculation. When the FFTW libraries are initialized, they read a system wide wisdom
+file (typically in /etc/fftw/wisdom), allowing wisdom to be shared between applications other than Octave. Alternatively, the fftw function can be used to import wisdom. For example,
+   </para>
+   <para>
+wisdom = fftw ("dwisdom")
+will save the existing wisdom used by Octave to the string wisdom. This string can then be saved to a file and restored using the save and load commands respectively. This existing wisdom can be re
+imported as follows
+   </para>
+   <para>
+fftw ("dwisdom", wisdom)
+If wisdom is an empty string, then the wisdom used is cleared.
+   </para>
+   <para>
+During the calculation of Fourier transforms further wisdom is generated. The fashion in which this wisdom is generated is also controlled by the fftw function. There are five different manners in which
+the wisdom can be treated:
+   </para>
+   <para>
+"estimate"
+Specifies that no run-time measurement of the optimal means of calculating a particular is performed, and a simple heuristic is used to pick a (probably sub-optimal) plan. The advantage of this method
+is that there is little or no overhead in the generation of the plan, which is appropriate for a Fourier transform that will be calculated once.
+   </para>
+   <para>
+"measure"
+In this case a range of algorithms to perform the transform is considered and the best is selected based on their execution time.
+   </para>
+   <para>
+"patient"
+Similar to "measure", but a wider range of algorithms is considered.
+   </para>
+   <para>
+"exhaustive"
+Like "measure", but all possible algorithms that may be used to treat the transform are considered.
+   </para>
+   <para>
+"hybrid"
+As run-time measurement of the algorithm can be expensive, this is a compromise where "measure" is used for transforms up to the size of 8192 and beyond that the "estimate" method is used.
+   </para>
+   <para>
+The default method is "estimate". The current method can be queried with
+   </para>
+   <para>
+method = fftw ("planner")
+or set by using
+   </para>
+   <para>
+fftw ("planner", method)
+</para>
+</refsection>
+</refentry>

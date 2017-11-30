@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sftrans.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sftrans" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sftrans</refname>
+    <refpurpose>Transform band edges of a generic lowpass filter (cutoff at W=1) represented in splane zero-pole-gain form.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
+   [Sz, Sp] = sftrans (Sz, Sp, Sg, W, stop)
+   [Sz] = sftrans (Sz, Sp, Sg, W, stop)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Sz:</term>
+      <listitem><para> Zeros.</para></listitem></varlistentry>
+   <varlistentry><term>Sp:</term>
+      <listitem><para> Poles.</para></listitem></varlistentry>
+   <varlistentry><term>Sg:</term>
+      <listitem><para> Gain.</para></listitem></varlistentry>
+   <varlistentry><term>W:</term>
+      <listitem><para> Edge of target filter.</para></listitem></varlistentry>
+   <varlistentry><term>stop:</term>
+      <listitem><para> True for high pass and band stop filters or false for low pass and band pass filters.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros
+individually. The following table summarizes the transformation:
+   </para>
+   <para>
+Transform         Zero at x                  Pole at x
+----------------  -------------------------  ------------------------
+Low Pass          zero: Fc x/C               pole: Fc x/C
+S -&gt; C S/Fc       gain: C/Fc                 gain: Fc/C
+----------------  -------------------------  ------------------------
+High Pass         zero: Fc C/x               pole: Fc C/x
+S -&gt; C Fc/S       pole: 0                    zero: 0
+gain: -x                   gain: -1/x
+----------------  -------------------------  ------------------------
+Band Pass         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
+S^2+FhFl   pole: 0                    zero: 0
+S -&gt; C --------   gain: C/(Fh-Fl)            gain: (Fh-Fl)/C
+S(Fh-Fl)   b=x/C (Fh-Fl)/2            b=x/C (Fh-Fl)/2
+----------------  -------------------------  ------------------------
+Band Stop         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
+S(Fh-Fl)   pole: +-sqrt(-FhFl)        zero: +-sqrt(-FhFl)
+S -&gt; C --------   gain: -x                   gain: -1/x
+S^2+FhFl   b=C/x (Fh-Fl)/2            b=C/x (Fh-Fl)/2
+----------------  -------------------------  ------------------------
+Bilinear          zero: (2+xT)/(2-xT)        pole: (2+xT)/(2-xT)
+2 z-1        pole: -1                   zero: -1
+S -&gt; - ---        gain: (2-xT)/T             gain: (2-xT)/T
+T z+1
+----------------  -------------------------  ------------------------
+   </para>
+   <para>
+where C is the cutoff frequency of the initial lowpass filter, Fc is the edge of the target low/high pass filter and [Fl,Fh] are the edges of the target band pass/stop filter. With abundant tedious
+algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:
+   </para>
+   <para>
+H(S)=g prod(S-Xi)/prod(S-Xj)
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[Sz, Sp, Sg] = sftrans (5, 10, 15, 20, 30)
+Sz =  4
+Sp =  2
+Sg =  7.5000
+   ]]></programlisting>
+</refsection>
+</refentry>

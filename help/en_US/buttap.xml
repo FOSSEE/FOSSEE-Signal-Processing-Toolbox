@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from buttap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="buttap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>buttap</refname>
+    <refpurpose>Design a lowpass analog Butterworth filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   z = buttap (n)
+   [z, p] = buttap (n)
+   [z, p, g] = buttap (n)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>n:</term>
+      <listitem><para> Filter Order</para></listitem></varlistentry>
+   <varlistentry><term>z:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para> Gain</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It designs a lowpass analog Butterworth filter of nth order.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[z, p, g] = buttap (5)
+z = [](0x0)
+p =
+
+-0.30902 + 0.95106i  -0.80902 + 0.58779i  -1.00000 + 0.00000i  -0.80902 - 0.58779i  -0.30902 - 0.95106i
+
+g =  1
+   ]]></programlisting>
+</refsection>
+</refentry>
