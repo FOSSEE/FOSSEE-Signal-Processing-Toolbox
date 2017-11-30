@@ -53,4 +53,14 @@ Every complex element of z is expected to have a complex-conjugate elsewhere in 
 If the magnitude of the imaginary part of an element is less than the thresh, it is declared as real.
 </para>
 </refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[zc, zr] = cplxreal([1 2 3+i 4 3-i 5])
+zc =  3 + 1i
+zr =
+1   2   4   5
+   ]]></programlisting>
+</refsection>
 </refentry>

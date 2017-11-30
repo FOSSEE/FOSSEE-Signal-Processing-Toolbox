@@ -8,9 +8,11 @@
 <tocitem target="arParEst" text="arParEst"/>
 <tocitem target="ar_psd" text="ar_psd"/>
 <tocitem target="arburg" text="arburg"/>
+<tocitem target="arch_rnd" text="arch_rnd"/>
 <tocitem target="arch_test" text="arch_test"/>
 <tocitem target="arch_fit" text="arch_fit"/>
 <tocitem target="arcov" text="arcov"/>
+<tocitem target="arma_rnd" text="arma_rnd"/>
 <tocitem target="armcov" text="armcov"/>
 <tocitem target="aryule" text="aryule"/>
 <tocitem target="autoreg_matrix" text="autoreg_matrix"/>
@@ -42,6 +44,7 @@
 <tocitem target="cheby2" text="cheby2"/>
 <tocitem target="check" text="check"/>
 <tocitem target="chirp" text="chirp"/>
+<tocitem target="cl2bp" text="cl2bp"/>
 <tocitem target="clustersegment" text="clustersegment"/>
 <tocitem target="cmorwavf" text="cmorwavf"/>
 <tocitem target="cohere" text="cohere"/>
@@ -71,10 +74,12 @@
 <tocitem target="enbw" text="enbw"/>
 <tocitem target="eqtflength" text="eqtflength"/>
 <tocitem target="falltime" text="falltime"/>
-<tocitem target="fft" text="fft"/>
-<tocitem target="fft2" text="fft2"/>
+<tocitem target="fft1" text="fft1"/>
+<tocitem target="fft21" text="fft21"/>
 <tocitem target="fftconv" text="fftconv"/>
 <tocitem target="fftfilt" text="fftfilt"/>
+<tocitem target="fftw1" text="fftw1"/>
+<tocitem target="fht" text="fht"/>
 <tocitem target="fftshift1" text="fftshift1"/>
 <tocitem target="fftn" text="fftn"/>
 <tocitem target="fht" text="fht"/>
@@ -91,6 +96,7 @@
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
+<tocitem target="freqs" text="freqs"/>
 <tocitem target="fractdiff" text="fractdiff"/>
 <tocitem target="freqs" text="freqs"/>
 <tocitem target="freqz" text="freqz"/>
@@ -114,6 +120,10 @@
 <tocitem target="idct1" text="idct1"/>
 <tocitem target="idct2" text="idct2"/>
 <tocitem target="idst1" text="idst1"/>
+<tocitem target="ifft1" text="ifft1"/>
+<tocitem target="ifft21" text="ifft21"/>
+<tocitem target="ifht" text="ifht"/>
+<tocitem target="ifwht" text="ifwht"/>
 <tocitem target="ifft" text="ifft"/>
 <tocitem target="ifft2" text="ifft2"/>
 <tocitem target="ifftshift1" text="ifftshift1"/>
@@ -127,6 +137,8 @@
 <tocitem target="interp" text="interp"/>
 <tocitem target="intfilt" text="intfilt"/>
 <tocitem target="invfreq" text="invfreq"/>
+<tocitem target="invfreqs" text="invfreqs"/>
+<tocitem target="invfreqz" text="invfreqz"/>
 <tocitem target="invimpinvar" text="invimpinvar"/>
 <tocitem target="is2rc" text="is2rc"/>
 <tocitem target="isallpass" text="isallpass"/>
@@ -136,6 +148,7 @@
 <tocitem target="isminphase" text="isminphase"/>
 <tocitem target="isstable" text="isstable"/>
 <tocitem target="kaiser" text="kaiser"/>
+<tocitem target="kaiserord" text="kaiserord"/>
 <tocitem target="lar2rc" text="lar2rc"/>
 <tocitem target="latc2tf" text="latc2tf"/>
 <tocitem target="latcfilt" text="latcfilt"/>
@@ -160,6 +173,7 @@
 <tocitem target="nnls" text="nnls"/>
 <tocitem target="nuttallwin" text="nuttallwin"/>
 <tocitem target="parzenwin" text="parzenwin"/>
+<tocitem target="pburg" text="pburg"/>
 <tocitem target="pchip" text="pchip"/>
 <tocitem target="pchips" text="pchips"/>
 <tocitem target="peak2peak" text="peak2peak"/>
@@ -185,7 +199,9 @@
 <tocitem target="pulsesep" text="pulsesep"/>
 <tocitem target="pulsewidth" text="pulsewidth"/>
 <tocitem target="pulstran" text="pulstran"/>
+<tocitem target="pyulear" text="pyulear"/>
 <tocitem target="pwelch" text="pwelch"/>
+<tocitem target="qp_kaiser" text="qp_kaiser"/>
 <tocitem target="rc2ac" text="rc2ac"/>
 <tocitem target="rc2is" text="rc2is"/>
 <tocitem target="rc2lar" text="rc2lar"/>
@@ -209,6 +225,7 @@
 <tocitem target="schtrig" text="schtrig"/>
 <tocitem target="schurrc" text="schurrc"/>
 <tocitem target="seqperiod" text="seqperiod"/>
+<tocitem target="sftrans" text="sftrans"/>
 <tocitem target="sgolay" text="sgolay"/>
 <tocitem target="sgolayfilt" text="sgolayfilt"/>
 <tocitem target="shanwavf" text="shanwavf"/>
@@ -237,6 +254,7 @@
 <tocitem target="tf2sos" text="tf2sos"/>
 <tocitem target="tf2zp" text="tf2zp"/>
 <tocitem target="tf2zpk" text="tf2zpk"/>
+<tocitem target="tfestimate" text="tfestimate"/>
 <tocitem target="tfe" text="tfe"/>
 <tocitem target="transpose" text="transpose"/>
 <tocitem target="trial_iirlp2mb" text="trial_iirlp2mb"/>
@@ -259,6 +277,7 @@
 <tocitem target="window" text="window"/>
 <tocitem target="wkeep" text="wkeep"/>
 <tocitem target="wrev" text="wrev"/>
+<tocitem target="xcorr1" text="xcorr1"/>
 <tocitem target="xcorr2" text="xcorr2"/>
 <tocitem target="xcov1" text="xcov1"/>
 <tocitem target="yulewalker" text="yulewalker"/>

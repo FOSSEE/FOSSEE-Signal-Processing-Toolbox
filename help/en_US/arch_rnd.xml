@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arch_rnd.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arch_rnd" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arch_rnd</refname>
+    <refpurpose>Simulate an ARCH sequence of length t with AR coefficients b and CH coefficients a.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   arch_rnd (a, b, t)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> CH coefficients</para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> AR coefficients</para></listitem></varlistentry>
+   <varlistentry><term>t:</term>
+      <listitem><para> Length of ARCH sequence</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It Simulates an ARCH sequence of length t with AR coefficients b and CH coefficients a.
+The result y(t) follows the model
+   </para>
+   <para>
+y(t) = b(1) + b(2) * y(t-1) + … + b(lb) * y(t-lb+1) + e(t),
+where e(t), given y up to time t-1, is N(0, h(t)), with
+   </para>
+   <para>
+h(t) = a(1) + a(2) * e(t-1)^2 + … + a(la) * e(t-la+1)^2
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1 2 3 4 5];
+b = [7 8 9 10];
+arch_rnd (a, b, t)
+ans =
+
+6.1037e+00
+5.7294e+01
+5.7390e+02
+6.3063e+03
+6.8695e+04
+   ]]></programlisting>
+</refsection>
+</refentry>

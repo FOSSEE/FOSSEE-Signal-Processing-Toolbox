@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cl2bp.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cl2bp" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cl2bp</refname>
+    <refpurpose>Constrained L2 bandpass FIR filter design.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   h = cl2bp (m, w1, w2, up, lo, gridsize)
+   h = cl2bp (m, w1, w2, up, lo)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>m:</term>
+      <listitem><para> degree of cosine polynomial, i.e. the number of output coefficients will be m*2+1</para></listitem></varlistentry>
+   <varlistentry><term>w1 and w2:</term>
+      <listitem><para> bandpass filter cutoffs in the range 0 &lt;= w1 &lt; w2 &lt;= pi, where pi is the Nyquist frequency</para></listitem></varlistentry>
+   <varlistentry><term>up:</term>
+      <listitem><para> vector of 3 upper bounds for [stopband1, passband, stopband2]</para></listitem></varlistentry>
+   <varlistentry><term>lo:</term>
+      <listitem><para> vector of 3 lower bounds for [stopband1, passband, stopband2]</para></listitem></varlistentry>
+   <varlistentry><term>gridsize:</term>
+      <listitem><para> search grid size; larger values may improve accuracy, but greatly increase calculation time.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Constrained L2 bandpass FIR filter design. Compared to remez, it offers implicit specification of transition bands, a higher likelihood of convergence, and an error criterion combining features of both L2 and Chebyshev approaches.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+h = cl2bp(5, 0.3*pi, 0.6*pi, [0.02, 1.02, 0.02], [-0.02, 0.98, -0.02], 2^11)
+h =
+
+0.038311
+0.082289
+-0.086163
+-0.226006
+0.047851
+0.307434
+0.047851
+-0.226006
+-0.086163
+0.082289
+0.038311
+   ]]></programlisting>
+</refsection>
+</refentry>

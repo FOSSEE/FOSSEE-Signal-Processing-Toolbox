@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from qp_kaiser.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="qp_kaiser" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>qp_kaiser</refname>
+    <refpurpose>Computes a finite impulse response (FIR) filter for use with a quasi-perfect reconstruction polyphase-network filter bank.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   qp_kaiser (nb, at, linear)
+   qp_kaiser (nb, at)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>nb:</term>
+      <listitem><para> Number of bands</para></listitem></varlistentry>
+   <varlistentry><term>at:</term>
+      <listitem><para> Attenuation</para></listitem></varlistentry>
+   <varlistentry><term>linear:</term>
+      <listitem><para> When not zero, minimum-phase calculation is omitted.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+This version utilizes a Kaiser window to shape the frequency response of the designed filter. Tha number nb of bands and the desired attenuation at in the stop-band are given as parameters.
+   </para>
+   <para>
+The Kaiser window is multiplied by the ideal impulse response h(n)=a.sinc(a.n) and converted to its minimum-phase version by means of a Hilbert transform.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+qp_kaiser (5, 5, 1)
+ans =
+
+0.11591   0.25606   0.25606   0.25606   0.11591
+   ]]></programlisting>
+</refsection>
+</refentry>

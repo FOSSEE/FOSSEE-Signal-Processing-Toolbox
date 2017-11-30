@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from xcorr1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="xcorr1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>xcorr1</refname>
+    <refpurpose>Estimates the cross-correlation.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [R, lag] = xcorr1 (X, Y, maxlag, scale)
+   [R, lag] = xcorr1 (X, Y, maxlag)
+   [R, lag] = xcorr1 (X, Y)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> [non-empty; real or complex; vector or matrix] data.</para></listitem></varlistentry>
+   <varlistentry><term>Y:</term>
+      <listitem><para> [real or complex vector] data.</para></listitem></varlistentry>
+   <varlistentry><term>maxlag:</term>
+      <listitem><para> [integer scalar] maximum correlation lag If omitted, the default value is N-1, where N is the greater of the lengths of X and Y or, if X is a matrix, the number of rows in X.</para></listitem></varlistentry>
+   <varlistentry><term>scale:</term>
+      <listitem><para> [character string] specifies the type of scaling applied to the correlation vector (or matrix). is one of:</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Estimate the cross correlation R_xy(k) of vector arguments X and Y or, if Y is omitted, estimate autocorrelation R_xx(k) of vector X, for a range of lags k specified by argument "maxlag". If X is a
+matrix, each column of X is correlated with itself and every other column.
+   </para>
+   <para>
+The cross-correlation estimate between vectors "x" and "y" (of length N) for lag "k" is given by
+   </para>
+   <para>
+N
+R_xy(k) = sum x_{i+k} conj(y_i),
+i=1
+   </para>
+   <para>
+where data not provided (for example x(-1), y(N+1)) is zero. Note the definition of cross-correlation given above. To compute a cross-correlation consistent with the field of statistics, see xcov.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[R, lag] = xcorr1 ( [5 5], [2 2], 2, 'biased' )
+
+R =
+
+0    5   10    5    0
+
+lag =
+
+-2  -1   0   1   2
+   ]]></programlisting>
+</refsection>
+</refentry>

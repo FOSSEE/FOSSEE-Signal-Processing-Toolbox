@@ -1,4 +1,4 @@
-function res =  fft (x, n, dim)
+function res =  fft1 (x, n, dim)
 //Calculates the discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.
 //Calling Sequence
 //fft (x, n, dim)
@@ -20,7 +20,7 @@ function res =  fft (x, n, dim)
 //x = [1 2 3; 4 5 6; 7 8 9]
 //n = 3
 //dim = 2
-//fft (x, n, dim)
+//fft1 (x, n, dim)
 //ans =
 //
 //    6.0000 +  0.0000i   -1.5000 +  0.8660i   -1.5000 -  0.8660i

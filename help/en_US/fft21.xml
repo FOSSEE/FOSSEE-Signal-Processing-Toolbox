@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fft21.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fft21" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fft21</refname>
+    <refpurpose>Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   fft2 (A, m, n)
+   fft2 (A)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>A:</term>
+      <listitem><para> input matrix</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> number of rows of A to be used</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> number of columns of A to be used</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+It performs two-dimentional FFT on the matrix A. m and n may be used specify the number of rows and columns of A to use. If either of these is larger than the size of A, A is resized and padded with zeros.
+If A is a multi-dimensional matrix, each two-dimensional sub-matrix of A is treated separately.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1 2 3; 4 5 6; 7 8 9]
+m = 4
+n = 4
+fft21 (A, m, n)
+ans =
+
+45 +  0i   -6 - 15i   15 +  0i   -6 + 15i
+-18 - 15i   -5 +  8i   -6 -  5i    5 -  4i
+15 +  0i   -2 -  5i    5 +  0i   -2 +  5i
+-18 + 15i    5 +  4i   -6 +  5i   -5 -  8i
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -3,9 +3,11 @@ ac2rc
 arParEst
 ar_psd
 arburg
+arch_rnd
 arch_test
 arch_fit
 arcov
+arma_rnd
 armcov
 aryule
 autoreg_matrix
@@ -37,6 +39,7 @@ cheby1
 cheby2
 check
 chirp
+cl2bp
 clustersegment
 cmorwavf
 cohere
@@ -66,10 +69,11 @@ ellipord
 enbw
 eqtflength
 falltime
-fft
-fft2
+fft1
+fft21
 fftconv
 fftfilt
+fftw1
 fftn
 fftshift1
 fht
@@ -109,8 +113,8 @@ icceps
 idct1
 idct2
 idst1
-ifft
-ifft2
+ifft1
+ifft21
 ifftn
 ifftshift1
 ifht
@@ -122,6 +126,8 @@ impzlength
 interp
 intfilt
 invfreq
+invfreqs
+invfreqz
 invimpinvar
 is2rc
 isallpass
@@ -131,6 +137,7 @@ ismaxphase
 isminphase
 isstable
 kaiser
+kaiserord
 lar2rc
 latc2tf
 latcfilt
@@ -155,6 +162,7 @@ ncauer
 nnls
 nuttallwin
 parzenwin
+pburg
 pchip
 pchips
 peak2peak
@@ -180,7 +188,9 @@ pulseperiod
 pulsesep
 pulsewidth
 pulstran
+pyulear
 pwelch
+qp_kaiser
 rc2ac
 rc2is
 rc2lar
@@ -204,6 +214,7 @@ sawtooth
 schtrig
 schurrc
 seqperiod
+sftrans
 sgolay
 sgolayfilt
 shanwavf
@@ -232,6 +243,7 @@ synthesis
 tf2sos
 tf2zp
 tf2zpk
+tfestimate
 tfe
 transpose
 trial_iirlp2mb
@@ -254,6 +266,7 @@ welchwin
 window
 wkeep
 wrev
+xcorr1
 xcorr2
 xcov1
 yulewalker
