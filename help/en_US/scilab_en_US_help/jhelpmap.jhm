@@ -2,16 +2,18 @@
 <!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
 <map version="1.0">
 <mapID target="index" url="index.html"/>
-<mapID target="section_5118e822ecc2888aa80042108de4932e" url="section_5118e822ecc2888aa80042108de4932e.html"/>
+<mapID target="section_cc2bc01c47967d47fcf3507a91d572ba" url="section_cc2bc01c47967d47fcf3507a91d572ba.html"/>
 <mapID target="ac2poly" url="ac2poly.html"/>
 <mapID target="ac2rc" url="ac2rc.html"/>
 <mapID target="arParEst" url="arParEst.html"/>
 <mapID target="ar_psd" url="ar_psd.html"/>
 <mapID target="arburg" url="arburg.html"/>
 <mapID target="arch_test" url="arch_test.html"/>
+<mapID target="arch_fit" url="arch_fit.html"/>
 <mapID target="arcov" url="arcov.html"/>
 <mapID target="armcov" url="armcov.html"/>
 <mapID target="aryule" url="aryule.html"/>
+<mapID target="autoreg_matrix" url="autoreg_matrix.html"/>
 <mapID target="barthannwin" url="barthannwin.html"/>
 <mapID target="bartlett" url="bartlett.html"/>
 <mapID target="besselap" url="besselap.html"/>
@@ -46,6 +48,7 @@
 <mapID target="convmtx" url="convmtx.html"/>
 <mapID target="corrmtx" url="corrmtx.html"/>
 <mapID target="cplxreal" url="cplxreal.html"/>
+<mapID target="cpsd" url="cpsd.html"/>
 <mapID target="cummax" url="cummax.html"/>
 <mapID target="cummin" url="cummin.html"/>
 <mapID target="czt" url="czt.html"/>
@@ -61,6 +64,7 @@
 <mapID target="dst1" url="dst1.html"/>
 <mapID target="durbinlevinson" url="durbinlevinson.html"/>
 <mapID target="dutycycle" url="dutycycle.html"/>
+<mapID target="dwt" url="dwt.html"/>
 <mapID target="ellip" url="ellip.html"/>
 <mapID target="ellipap" url="ellipap.html"/>
 <mapID target="ellipord" url="ellipord.html"/>
@@ -69,19 +73,27 @@
 <mapID target="falltime" url="falltime.html"/>
 <mapID target="fft" url="fft.html"/>
 <mapID target="fft2" url="fft2.html"/>
+<mapID target="fftconv" url="fftconv.html"/>
 <mapID target="fftfilt" url="fftfilt.html"/>
 <mapID target="fftshift1" url="fftshift1.html"/>
+<mapID target="fftn" url="fftn.html"/>
 <mapID target="fht" url="fht.html"/>
+<mapID target="filter1" url="filter1.html"/>
+<mapID target="filter2" url="filter2.html"/>
 <mapID target="filternorm" url="filternorm.html"/>
 <mapID target="filtfilt" url="filtfilt.html"/>
 <mapID target="filtic" url="filtic.html"/>
 <mapID target="filtord" url="filtord.html"/>
+<mapID target="findpeaks" url="findpeaks.html"/>
+<mapID target="fir1" url="fir1.html"/>
+<mapID target="fir2" url="fir2.html"/>
 <mapID target="firpmord" url="firpmord.html"/>
 <mapID target="firtype" url="firtype.html"/>
 <mapID target="flattopwin" url="flattopwin.html"/>
 <mapID target="fracshift" url="fracshift.html"/>
 <mapID target="fractdiff" url="fractdiff.html"/>
 <mapID target="freqs" url="freqs.html"/>
+<mapID target="freqz" url="freqz.html"/>
 <mapID target="fwhm" url="fwhm.html"/>
 <mapID target="fwhmjlt" url="fwhmjlt.html"/>
 <mapID target="fwht" url="fwht.html"/>
@@ -105,6 +117,7 @@
 <mapID target="ifft" url="ifft.html"/>
 <mapID target="ifft2" url="ifft2.html"/>
 <mapID target="ifftshift1" url="ifftshift1.html"/>
+<mapID target="ifftn" url="ifftn.html"/>
 <mapID target="ifht" url="ifht.html"/>
 <mapID target="ifwht" url="ifwht.html"/>
 <mapID target="iirlp2mb" url="iirlp2mb.html"/>
@@ -172,6 +185,7 @@
 <mapID target="pulsesep" url="pulsesep.html"/>
 <mapID target="pulsewidth" url="pulsewidth.html"/>
 <mapID target="pulstran" url="pulstran.html"/>
+<mapID target="pwelch" url="pwelch.html"/>
 <mapID target="rc2ac" url="rc2ac.html"/>
 <mapID target="rc2is" url="rc2is.html"/>
 <mapID target="rc2lar" url="rc2lar.html"/>
@@ -234,6 +248,7 @@
 <mapID target="uencode" url="uencode.html"/>
 <mapID target="ultrwin" url="ultrwin.html"/>
 <mapID target="unshiftdata" url="unshiftdata.html"/>
+<mapID target="unwrap2" url="unwrap2.html"/>
 <mapID target="upfirdn" url="upfirdn.html"/>
 <mapID target="upsample" url="upsample.html"/>
 <mapID target="upsamplefill" url="upsamplefill.html"/>

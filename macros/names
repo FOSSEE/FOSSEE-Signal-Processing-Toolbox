@@ -4,6 +4,7 @@ arParEst
 ar_psd
 arburg
 arch_test
+arch_fit
 arcov
 armcov
 aryule
@@ -42,6 +43,7 @@ cohere
 convmtx
 corrmtx
 cplxreal
+cpsd
 cummax
 cummin
 czt
@@ -77,6 +79,7 @@ filternorm
 filtfilt
 filtic
 filtord
+findpeaks
 fir1
 fir2
 firpmord
@@ -85,6 +88,7 @@ flattopwin
 fracshift
 fractdiff
 freqs
+freqz
 fwhm
 fwhmjlt
 fwht
@@ -176,6 +180,7 @@ pulseperiod
 pulsesep
 pulsewidth
 pulstran
+pwelch
 rc2ac
 rc2is
 rc2lar

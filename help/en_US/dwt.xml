@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from dwt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="dwt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>dwt</refname>
+    <refpurpose>Discrete wavelet transform (1D)</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [U, V] = dwt(X, WNAME)
+   [U, V] = dwt(X, HP, GP)
+   [U, V] = dwt(X, HP, GP,...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Inputs:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>X:</term>
+      <listitem><para> Signal Vector.</para></listitem></varlistentry>
+   <varlistentry><term>WNAME:</term>
+      <listitem><para> Wavelet name.</para></listitem></varlistentry>
+   <varlistentry><term>HP:</term>
+      <listitem><para> Coefficients of low-pass decomposition FIR filter.</para></listitem></varlistentry>
+   <varlistentry><term>GP:</term>
+      <listitem><para> Coefficients of high-pass decomposition FIR filter.</para></listitem></varlistentry>
+   <varlistentry><term>Outputs:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>U:</term>
+      <listitem><para> Signal vector of average, approximation.</para></listitem></varlistentry>
+   <varlistentry><term>V:</term>
+      <listitem><para> Signal vector of difference, detail.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function calculates the discrete wavelet transform (1D).
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -17,7 +17,40 @@
 
   <refnamediv>
     <refname>sigmoid_train</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>Evaluate a train of sigmoid functions at T.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = sigmoid_train(t, ranges, rc)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> integer</para></listitem></varlistentry>
+   <varlistentry><term>ranges:</term>
+      <listitem><para> matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The number and duration of each sigmoid is determined from RANGES. Each row of RANGES represents a real interval, e.g.  if sigmoid 'i' starts at 't=0.1' and ends at 't=0.5', then 'RANGES(i,:) = [0.1 0.5]'.  The input RC is an array that defines the rising and falling time constants of each sigmoid.  Its size must equal the size of RANGES.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sigmoid_train(0.1,[1:3],4)
+ans =
+0.27375
+   ]]></programlisting>
+</refsection>
 </refentry>

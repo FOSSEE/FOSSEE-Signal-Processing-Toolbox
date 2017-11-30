@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fir2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fir2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fir2</refname>
+    <refpurpose>Produce an order N FIR filter with arbitrary frequency response M over frequency bands F, returning the N+1 filter coefficients in B.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   B = fir2(N, F, M)
+   B = fir2(N, F, M, GRID_N)
+   B = fir1(N, F, M, GRID_N, RAMP_N)
+   B = fir1(N, F, M, GRID_N, RAMP_N, WINDOW)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>N:</term>
+      <listitem><para> Integer</para></listitem></varlistentry>
+   <varlistentry><term>F, M:</term>
+      <listitem><para> Vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Produce an order N FIR filter with arbitrary frequency response M over frequency bands F, returning the N+1 filter coefficients in B. The vector F specifies the frequency band edges of the filter response and M specifies the magnitude response at each frequency.
+   </para>
+   <para>
+The vector F must be nondecreasing over the range [0,1], and the first and last elements must be 0 and 1, respectively. A discontinuous jump in the frequency response can be specified by duplicating a band edge in F with different values in M.
+   </para>
+   <para>
+The resolution over which the frequency response is evaluated can be controlled with the GRID_N argument. The default is 512 or the next larger power of 2 greater than the filter length.
+   </para>
+   <para>
+The band transition width for discontinuities can be controlled with the RAMP_N argument. The default is GRID_N/25. Larger values will result in wider band transitions but better stopband rejection.
+   </para>
+   <para>
+An optional shaping WINDOW can be given as a vector with length N+1. If not specified, a Hamming window of length N+1 is used.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+fir2 (10, [0, 0.5, 1], [1, 2, 3])
+ans =
+-0.00130   0.00000  -0.01792   0.00000  -0.36968   2.00000  -0.36968   0.00000  -0.01792   0.00000  -0.00130
+   ]]></programlisting>
+</refsection>
+</refentry>
