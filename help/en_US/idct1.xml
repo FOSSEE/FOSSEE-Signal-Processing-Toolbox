@@ -17,7 +17,41 @@
 
   <refnamediv>
     <refname>idct1</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>Compute the inverse discrete cosine transform of input.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   Y = idct1(X)
+   Y = idct1(X, N)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Matrix or integer</para></listitem></varlistentry>
+   <varlistentry><term>N:</term>
+      <listitem><para> If N is given, then X is padded or trimmed to length N before computing the transform.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the inverse discrete cosine transform of input X.  If N is given, then X is padded or trimmed to length N before computing the transform.  If X is a matrix, compute the transform along the columns of the the matrix.  The transform is faster if X is real-valued and even length.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+idct1([1,3,6])
+ans =
+5.1481604  - 4.3216292    0.9055197
+   ]]></programlisting>
+</refsection>
 </refentry>

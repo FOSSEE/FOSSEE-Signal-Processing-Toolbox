@@ -2,6 +2,7 @@ ac2poly
 ac2rc
 arParEst
 arburg
+arch_fit
 arcov
 armcov
 aryule
@@ -38,6 +39,7 @@ cmorwavf
 convmtx
 corrmtx
 cplxreal
+cpsd
 cummax
 cummin
 czt
@@ -65,6 +67,7 @@ fft2
 fftconv
 fftfilt
 fftn
+fftshift1
 fht
 filter1
 filter2
@@ -72,6 +75,7 @@ filternorm
 filtfilt
 filtic
 filtord
+findpeaks
 fir1
 fir2
 firpmord
@@ -80,6 +84,7 @@ flattopwin
 fracshift
 fractdiff
 freqs
+freqz
 fwhm
 fwhmjlt
 fwht
@@ -102,6 +107,7 @@ idct2
 idst1
 ifft
 ifft2
+ifftn
 ifftshift1
 ifht
 ifwht
@@ -170,6 +176,7 @@ pulseperiod
 pulsesep
 pulsewidth
 pulstran
+pwelch
 rc2ac
 rc2is
 rc2lar

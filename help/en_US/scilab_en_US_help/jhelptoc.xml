@@ -2,14 +2,16 @@
 <!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
 <tocitem target="index" text="FOSSEE Signal Processing Toolbox">
-<tocitem target="section_5118e822ecc2888aa80042108de4932e" text="FOSSEE Signal Processing Toolbox">
+<tocitem target="section_cc2bc01c47967d47fcf3507a91d572ba" text="FOSSEE Signal Processing Toolbox">
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
 <tocitem target="arburg" text="arburg"/>
+<tocitem target="arch_fit" text="arch_fit"/>
 <tocitem target="arcov" text="arcov"/>
 <tocitem target="armcov" text="armcov"/>
 <tocitem target="aryule" text="aryule"/>
+<tocitem target="autoreg_matrix" text="autoreg_matrix"/>
 <tocitem target="barthannwin" text="barthannwin"/>
 <tocitem target="bartlett" text="bartlett"/>
 <tocitem target="besselap" text="besselap"/>
@@ -42,6 +44,7 @@
 <tocitem target="convmtx" text="convmtx"/>
 <tocitem target="corrmtx" text="corrmtx"/>
 <tocitem target="cplxreal" text="cplxreal"/>
+<tocitem target="cpsd" text="cpsd"/>
 <tocitem target="cummax" text="cummax"/>
 <tocitem target="cummin" text="cummin"/>
 <tocitem target="czt" text="czt"/>
@@ -54,6 +57,7 @@
 <tocitem target="downsample" text="downsample"/>
 <tocitem target="dst1" text="dst1"/>
 <tocitem target="dutycycle" text="dutycycle"/>
+<tocitem target="dwt" text="dwt"/>
 <tocitem target="ellip" text="ellip"/>
 <tocitem target="ellipap" text="ellipap"/>
 <tocitem target="ellipord" text="ellipord"/>
@@ -62,17 +66,25 @@
 <tocitem target="falltime" text="falltime"/>
 <tocitem target="fft" text="fft"/>
 <tocitem target="fft2" text="fft2"/>
+<tocitem target="fftconv" text="fftconv"/>
 <tocitem target="fftfilt" text="fftfilt"/>
+<tocitem target="fftn" text="fftn"/>
 <tocitem target="fht" text="fht"/>
+<tocitem target="filter1" text="filter1"/>
+<tocitem target="filter2" text="filter2"/>
 <tocitem target="filternorm" text="filternorm"/>
 <tocitem target="filtfilt" text="filtfilt"/>
 <tocitem target="filtic" text="filtic"/>
 <tocitem target="filtord" text="filtord"/>
+<tocitem target="findpeaks" text="findpeaks"/>
+<tocitem target="fir1" text="fir1"/>
+<tocitem target="fir2" text="fir2"/>
 <tocitem target="firpmord" text="firpmord"/>
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
 <tocitem target="freqs" text="freqs"/>
+<tocitem target="freqz" text="freqz"/>
 <tocitem target="fwhm" text="fwhm"/>
 <tocitem target="fwhmjlt" text="fwhmjlt"/>
 <tocitem target="fwht" text="fwht"/>
@@ -94,6 +106,7 @@
 <tocitem target="idst1" text="idst1"/>
 <tocitem target="ifft" text="ifft"/>
 <tocitem target="ifft2" text="ifft2"/>
+<tocitem target="ifftn" text="ifftn"/>
 <tocitem target="ifht" text="ifht"/>
 <tocitem target="ifwht" text="ifwht"/>
 <tocitem target="iirlp2mb" text="iirlp2mb"/>
@@ -161,6 +174,7 @@
 <tocitem target="pulsesep" text="pulsesep"/>
 <tocitem target="pulsewidth" text="pulsewidth"/>
 <tocitem target="pulstran" text="pulstran"/>
+<tocitem target="pwelch" text="pwelch"/>
 <tocitem target="rc2ac" text="rc2ac"/>
 <tocitem target="rc2is" text="rc2is"/>
 <tocitem target="rc2lar" text="rc2lar"/>
@@ -222,6 +236,7 @@
 <tocitem target="uencode" text="uencode"/>
 <tocitem target="ultrwin" text="ultrwin"/>
 <tocitem target="unshiftdata" text="unshiftdata"/>
+<tocitem target="unwrap2" text="unwrap2"/>
 <tocitem target="upfirdn" text="upfirdn"/>
 <tocitem target="upsample" text="upsample"/>
 <tocitem target="upsamplefill" text="upsamplefill"/>

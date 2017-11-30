@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fir1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fir1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fir1</refname>
+    <refpurpose>Produce an order N FIR filter with the given frequency cutoff, returning the N+1 filter coefficients in B.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   B = fir1(N, W)
+   B = fir1(N, W, TYPE)
+   B = fir1(N, W, TYPE, WINDOW)
+   B = fir1(N, W, TYPE, WINDOW, NOSCALE)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>N:</term>
+      <listitem><para> Integer</para></listitem></varlistentry>
+   <varlistentry><term>W:</term>
+      <listitem><para> Integer or Vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Produce an order N FIR filter with the given frequency cutoff W, returning the N+1 filter coefficients in B. If W is a scalar, it specifies the frequency cutoff for a lowpass or highpass filter. If W is a two-element vector, the two values specify the edges of a bandpass or bandstop filter. If W is an N-element vector, each value specifies a band edge of a multiband pass/stop filter.
+   </para>
+   <para>
+The filter TYPE can be specified with one of the following strings: "low", "high", "stop", "pass", "bandpass", "DC-0", or "DC-1". The default is "low" is W is a scalar, "pass" if W is a pair, or "DC-0" if W is a vector with more than 2 elements.
+   </para>
+   <para>
+An optional shaping WINDOW can be given as a vector with length N+1. If not specified, a Hamming window of length N+1 is used.
+   </para>
+   <para>
+With the option "noscale", the filter coefficients are not normalized. The default is to normalize the filter such that the magnitude response of the center of the first passband is 1.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+fir1 (5, 0.4)
+ans =
+9.2762e-05   9.5482e-02   4.0443e-01   4.0443e-01   9.5482e-02   9.2762e-05
+   ]]></programlisting>
+</refsection>
+</refentry>

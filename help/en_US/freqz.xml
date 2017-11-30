@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from freqz.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="freqz" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>freqz</refname>
+    <refpurpose>This function returns the complex frequency response H of the rational IIR filter whose numerator and denominator coefficients are B and A, respectively.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [H, W] = freqz(B, A, N, "whole")
+   [H, W] = freqz(B)
+   [H, W] = freqz(B, A)
+   [H, W] = freqz(B, A, N)
+   H = freqz(B, A, W)
+   [H, W] = freqz(..., FS)
+   freqz(...)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>B, A, N:</term>
+      <listitem><para> Integer or Vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the complex frequency response H of the rational IIR filter whose numerator and denominator coefficients are B and A, respectively.
+   </para>
+   <para>
+The response is evaluated at N angular frequencies between 0 and 2*pi.
+   </para>
+   <para>
+The output value W is a vector of the frequencies.
+   </para>
+   <para>
+If A is omitted, the denominator is assumed to be 1 (this corresponds to a simple FIR filter).
+   </para>
+   <para>
+If N is omitted, a value of 512 is assumed. For fastest computation, N should factor into a small number of small primes.
+   </para>
+   <para>
+If the fourth argument, "whole", is omitted the response is evaluated at frequencies between 0 and pi.
+   </para>
+   <para>
+'freqz (B, A, W)'
+   </para>
+   <para>
+Evaluate the response at the specific frequencies in the vector W. The values for W are measured in radians.
+   </para>
+   <para>
+'[...] = freqz (..., FS)'
+   </para>
+   <para>
+Return frequencies in Hz instead of radians assuming a sampling rate FS. If you are evaluating the response at specific frequencies W, those frequencies should be requested in Hz rather than radians.
+   </para>
+   <para>
+'freqz (...)'
+   </para>
+   <para>
+Plot the magnitude and phase response of H rather than returning them.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+H = freqz([1,2,3], [4,3], [1,2,5])
+ans =
+0.4164716 - 0.5976772i  - 0.4107690 - 0.2430335i    0.1761948 + 0.6273032i
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pwelch.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pwelch" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pwelch</refname>
+    <refpurpose>Estimate power spectral density of data "x" by the Welch (1967) periodogram/FFT method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [spectra,freq] = pwelch(x, window, overlap, Nfft, Fs, range, plot_type, detrend, sloppy)
+   [spectra,freq] = pwelch(x, y, window, overlap, Nfft, Fs, range, plot_type, detrend, sloppy, results)
+   [spectra,Pxx_ci,freq] = pwelch(x, window, overlap, Nfft, Fs, conf, range, plot_type, detrend, sloppy)
+   [spectra,Pxx_ci,freq] = pwelch(x, y, window, overlap, Nfft, Fs, conf, range, plot_type, detrend, sloppy, results)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> [non-empty vector] system-input time-series data</para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para> [non-empty vector] system-output time-series data</para></listitem></varlistentry>
+   <varlistentry><term>window:</term>
+      <listitem><para> [real vector] of window-function values between 0 and 1; the data segment has the same length as the window. Default window shape is Hamming. [integer scalar] length of each data segment.  The default value is window=sqrt(length(x)) rounded up to the nearest integer power of 2; see 'sloppy' argument.</para></listitem></varlistentry>
+   <varlistentry><term>overlap:</term>
+      <listitem><para> [real scalar] segment overlap expressed as a multiple of window or segment length. 0 &lt;= overlap &lt; 1, The default is overlap=0.5 .</para></listitem></varlistentry>
+   <varlistentry><term>Nfft:</term>
+      <listitem><para> [integer scalar] Length of FFT.  The default is the length of the "window" vector or has the same value as the scalar "window" argument.  If Nfft is larger than the segment length, "seg_len", the data segment is padded with "Nfft-seg_len" zeros.  The default is no padding. Nfft values smaller than the length of the data segment (or window) are ignored silently.</para></listitem></varlistentry>
+   <varlistentry><term>Fs:</term>
+      <listitem><para>[real scalar] sampling frequency (Hertz); default=1.0</para></listitem></varlistentry>
+   <varlistentry><term>conf:</term>
+      <listitem><para> [real scalar] confidence level between 0 and 1.  Confidence intervals of the spectral density are estimated from scatter in the periodograms and are returned as Pxx_ci. Pxx_ci(:,1) is the lower bound of the confidence interval and Pxx_ci(:,2) is the upper bound.  If there are three return values, or conf is an empty matrix, confidence intervals are calculated for conf=0.95 . If conf is zero or is not given, confidence intervals are not calculated. Confidence intervals can be obtained only for the power spectral density of x; nothing else.</para></listitem></varlistentry>
+   <varlistentry><term>range:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>'half',  'onesided' :</term>
+      <listitem><para> frequency range of the spectrum is zero up to but not including Fs/2.  Power from negative frequencies is added to the positive side of the spectrum, but not at zero or Nyquist (Fs/2) frequencies.  This keeps power equal in time and spectral domains.  See reference [2].</para></listitem></varlistentry>
+   <varlistentry><term>'whole', 'twosided' :</term>
+      <listitem><para> frequency range of the spectrum is -Fs/2 to Fs/2, with negative frequencies stored in "wrap around" order after the positive frequencies; e.g. frequencies for a 10-point 'twosided' spectrum are 0 0.1 0.2 0.3 0.4 0.5 -0.4 -0.3 -0.2 -0.1</para></listitem></varlistentry>
+   <varlistentry><term>'shift', 'centerdc' :</term>
+      <listitem><para> same as 'whole' but with the first half of the spectrum swapped with second half to put the zero-frequency value in the middle. (See "help fftshift". If data (x and y) are real, the default range is 'half', otherwise default range is 'whole'.</para></listitem></varlistentry>
+   <varlistentry><term>plot_type:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>'plot', 'semilogx', 'semilogy', 'loglog', 'squared' or 'db':</term>
+      <listitem><para> specifies the type of plot.  The default is 'plot', which means linear-linear axes. 'squared' is the same as 'plot'. 'dB' plots "10*log10(psd)".  This argument is ignored and a spectrum is not plotted if the caller requires a returned value.</para></listitem></varlistentry>
+   <varlistentry><term>detrend:</term>
+      <listitem><para> 'no-strip', 'none' -- do NOT remove mean value from the data 'short', 'mean' -- remove the mean value of each segment from each segment of the data.</para></listitem></varlistentry>
+   <varlistentry><term>sloppy:</term>
+      <listitem><para> FFT length is rounded up to the nearest integer power of 2 by zero padding.  FFT length is adjusted after addition of padding by explicit Nfft argument. The default is to use exactly the FFT and window.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Estimate power spectral density of data "x" by the Welch (1967) periodogram/FFT method. The data is divided into segments.  If "window" is a vector, each segment has the same length as "window" and is multiplied by "window" before (optional) zero-padding and calculation of its periodogram. If "window" is a scalar, each segment has a length of "window" and a Hamming window is used. The spectral density is the mean of the periodograms, scaled so that area under the spectrum is the same as the mean square of the data.  This equivalence is supposed to be exact, but in practice there is a mismatch of up to 0.5% when comparing area under a periodogram with the mean square of the data.
+</para>
+</refsection>
+</refentry>

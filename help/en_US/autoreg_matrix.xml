@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from autoreg_matrix.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="autoreg_matrix" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>autoreg_matrix</refname>
+    <refpurpose>Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   autoreg_matrix(Y, K)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>Y:</term>
+      <listitem><para> Vector</para></listitem></varlistentry>
+   <varlistentry><term>K:</term>
+      <listitem><para> Scalar or Vector</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.
+   </para>
+   <para>
+In other words, for T &gt; K, '[1, Y(T-1), ..., Y(T-K)]' is the t-th row of the result.
+   </para>
+   <para>
+The resulting matrix may be used as a regressor matrix in autoregressions.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+autoreg_matrix([1,2,3],2)
+ans =
+1.    0.    0.
+1.    1.    0.
+1.    2.    1.
+   ]]></programlisting>
+</refsection>
+</refentry>

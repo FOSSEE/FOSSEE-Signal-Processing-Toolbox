@@ -17,7 +17,39 @@
 
   <refnamediv>
     <refname>fht</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>The Function calculates the Fast Hartley Transform of real input.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   M = fht (D)
+   M = fht (D, N)
+   M = fht (D, N, DIM)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function calculates the Fast Hartley transform of real input D. If D is a matrix, the Hartley transform is calculated along the columns by default.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+fht(1:4)
+ans =
+10   -4   -2   0
+This function is being called from Octave.
+   ]]></programlisting>
+</refsection>
 </refentry>
