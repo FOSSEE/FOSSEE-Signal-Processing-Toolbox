@@ -1,4 +1,4 @@
-function res =  ifft (x, n, dim)
+function res =  ifft1 (x, n, dim)
 //Calculates the inverse discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.
 //Calling Sequence
 //ifft (x, n, dim)
@@ -22,7 +22,7 @@ function res =  ifft (x, n, dim)
 //x = [1 2 3; 4 5 6; 7 8 9]
 //n = 3
 //dim = 2
-//ifft (x, n, dim)
+//ifft1 (x, n, dim)
 //ans =
 //
 //   2.00000 + 0.00000i  -0.50000 - 0.28868i  -0.50000 + 0.28868i

@@ -1,0 +1,84 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>filter2</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="filter1.html">&lt;&lt; filter1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="filternorm.html">filternorm &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; filter2</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">filter2</h1>
+    <p class="refpurpose">Apply the 2-D FIR filter B to X.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">Y</span><span class="default"> = </span><span class="functionid">filter2</span><span class="default">(</span><span class="default">B</span><span class="default">, </span><span class="default">X</span><span class="default">)</span>
+<span class="default">Y</span><span class="default"> = </span><span class="functionid">filter2</span><span class="default">(</span><span class="default">B</span><span class="default">, </span><span class="default">X</span><span class="default">, </span><span class="default">SHAPE</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">B, X:</span>
+      <dd><p class="para">Matrix</p></dd></dt>
+   <dt><span class="term">SHAPE:</span>
+      <dd><p class="para"></p></dd></dt>
+   <dt><span class="term">&#0039;full&#0039;:</span>
+      <dd><p class="para">pad X with zeros on all sides before filtering.</p></dd></dt>
+   <dt><span class="term">&#0039;same&#0039;:</span>
+      <dd><p class="para">unpadded X (default)</p></dd></dt>
+   <dt><span class="term">&#0039;valid&#0039;:</span>
+      <dd><p class="para">trim X after filtering so edge effects are no included.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This function applies the 2-D FIR filter B to X. If the argument SHAPE is specified, return an array of the desired shape.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">filter2</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">19.</span>    <span class="scilabnumber">5.</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="filter1.html">&lt;&lt; filter1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="filternorm.html">filternorm &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

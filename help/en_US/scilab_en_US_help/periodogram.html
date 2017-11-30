@@ -1,0 +1,84 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>periodogram</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="peig.html">&lt;&lt; peig</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="phaseInputParseAs_ab.html">phaseInputParseAs_ab &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; periodogram</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">periodogram</h1>
+    <p class="refpurpose">Return the periodogram (Power Spectral Density) of X</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">PXX</span><span class="default">, </span><span class="default">W</span><span class="default">] = </span><span class="functionid">periodogram</span><span class="default"> (</span><span class="default">X</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PXX</span><span class="default">, </span><span class="default">W</span><span class="default">] = </span><span class="functionid">periodogram</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PXX</span><span class="default">, </span><span class="default">W</span><span class="default">] = </span><span class="functionid">periodogram</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN</span><span class="default">, </span><span class="default">NFFT</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PXX</span><span class="default">, </span><span class="default">W</span><span class="default">] = </span><span class="functionid">periodogram</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN</span><span class="default">, </span><span class="default">NFFT</span><span class="default">, </span><span class="default">FS</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PXX</span><span class="default">, </span><span class="default">W</span><span class="default">] = </span><span class="functionid">periodogram</span><span class="default"> (..., </span>&#0034;<span class="default">RANGE</span>&#0034;<span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">X:</span>
+      <dd><p class="para">data vector.  If X is real-valued a one-sided spectrum is estimated. If X is complex-valued, or &#0034;RANGE&#0034; specifies &#0034;twosided&#0034;, the full spectrum is estimated.</p></dd></dt>
+   <dt><span class="term">WIN:</span>
+      <dd><p class="para">window weight data.  If window is empty or unspecified a default rectangular window is used.  Otherwise, the window is applied to the signal (&#0039;X .* WIN&#0039;) before computing th periodogram.  The window data must be a vector of the same length as X.</p></dd></dt>
+   <dt><span class="term">NFFT:</span>
+      <dd><p class="para">number of frequency bins.  The default is 256 or the next higher power of 2 greater than the length of X (&#0039;max (256,2.^nextpow2 (length (x)))&#0039;).  If NFFT is greater than the length of the input then X will be zero-padded to the length of NFFT.</p></dd></dt>
+   <dt><span class="term">FS:</span>
+      <dd><p class="para">sampling rate.  The default is 1.</p></dd></dt>
+   <dt><span class="term">RANGE:</span>
+      <dd><p class="para">range of spectrum.  &#0034;onesided&#0034; computes spectrum from [0..nfft/2+1].&#0034;twosided&#0034; computes spectrum from [0..nfft-1].</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">The optional second output W are the normalized angular frequencies.  For a one-sided calculation W is in the range [0, pi]. If NFFT is even and [0, pi) if NFFT is odd.  Similarly, for a two-sided calculation W is in the range [0, 2*pi] or [0, 2*pi)depending on NFFT.</p>
+   <p class="para">If a sampling frequency is specified, FS, then the output frequencies F will be in the range [0, FS/2] or [0, FS/2) for one-sided calculations. For two-sided calculations the range will be [0, FS).</p>
+   <p class="para">When called with no outputs the periodogram is immediately plotted in the current figure window.</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="peig.html">&lt;&lt; peig</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="phaseInputParseAs_ab.html">phaseInputParseAs_ab &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>findpeaks</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="filtord.html">&lt;&lt; filtord</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="fir1.html">fir1 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; findpeaks</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">findpeaks</h1>
+    <p class="refpurpose">This function find peaks on DATA.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">PKS</span><span class="default">, </span><span class="default">LOC</span><span class="default">, </span><span class="default">EXTRA</span><span class="default">] = </span><span class="functionid">findpeaks</span><span class="default">(</span><span class="default">DATA</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PKS</span><span class="default">, </span><span class="default">LOC</span><span class="default">, </span><span class="default">EXTRA</span><span class="default">] = </span><span class="functionid">findpeaks</span><span class="default">(..., </span><span class="default">PROPERTY</span><span class="default">, </span><span class="default">VALUE</span><span class="default">)</span>
+<span class="default">[</span><span class="default">PKS</span><span class="default">, </span><span class="default">LOC</span><span class="default">, </span><span class="default">EXTRA</span><span class="default">] = </span><span class="functionid">findpeaks</span><span class="default">(..., </span>&#0034;<span class="default">DoubleSided</span>&#0034;<span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Peaks of a positive array of data are defined as local maxima. For double-sided data, they are maxima of the positive part and minima of the negative part. DATA is expected to be a single column vector.</p>
+   <p class="para">The function returns the value of DATA at the peaks in PKS. The index indicating their position is returned in LOC.</p>
+   <p class="para">The third output argument is a structure with additional information:</p>
+   <p class="para">&#0034;parabol&#0034;:
+A structure containing the parabola fitted to each returned peak. The structure has two fields, &#0034;x&#0034; and &#0034;pp&#0034;. The field &#0034;pp&#0034; contains the coefficients of the 2nd degree polynomial and &#0034;x&#0034; the extrema of the intercal here it was fitted.</p>
+   <p class="para">&#0034;height&#0034;:
+The estimated height of the returned peaks (in units of DATA).</p>
+   <p class="para">&#0034;baseline&#0034;:
+The height at which the roots of the returned peaks were calculated (in units of DATA).</p>
+   <p class="para">&#0034;roots&#0034;:
+The abscissa values (in index units) at which the parabola fitted to each of the returned peaks crosses the &#0034;baseline&#0034; value. The width of the peak is calculated by &#0039;diff(roots)&#0039;.</p>
+   <p class="para">This function accepts property-value pair given in the list below:</p>
+   <p class="para">&#0034;MinPeakHeight&#0034;:
+Minimum peak height (positive scalar). Only peaks that exceed this value will be returned. For data taking positive and negative values use the option &#0034;DoubleSided&#0034;. Default value &#0039;2*std (abs (detrend (data,0)))&#0039;.</p>
+   <p class="para">&#0034;MinPeakDistance&#0034;:
+Minimum separation between (positive integer). Peaks separated by less than this distance are considered a single peak.  This distance is also used to fit a second order polynomial to the peaks to estimate their width, therefore it acts as a smoothing parameter.  Default value 4.</p>
+   <p class="para">&#0034;MinPeakWidth&#0034;:
+Minimum width of peaks (positive integer). The width of the peaks is estimated using a parabola fitted to the neighborhood of each peak.  The neighborhood size is equal to the value of &#0034;MinPeakDistance&#0034;. The width is evaluated at the half height of the peak with baseline at &#0034;MinPeakHeight&#0034;. Default value 2.</p>
+   <p class="para">&#0034;DoubleSided&#0034;:
+Tells the function that data takes positive and negative values. The base-line for the peaks is taken as the mean value of the function.  This is equivalent as passing the absolute value of the data after removing the mean.</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="filtord.html">&lt;&lt; filtord</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="fir1.html">fir1 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

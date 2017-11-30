@@ -6,9 +6,13 @@
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
+<tocitem target="ar_psd" text="ar_psd"/>
 <tocitem target="arburg" text="arburg"/>
 <tocitem target="arch_fit" text="arch_fit"/>
+<tocitem target="arch_rnd" text="arch_rnd"/>
+<tocitem target="arch_test" text="arch_test"/>
 <tocitem target="arcov" text="arcov"/>
+<tocitem target="arma_rnd" text="arma_rnd"/>
 <tocitem target="armcov" text="armcov"/>
 <tocitem target="aryule" text="aryule"/>
 <tocitem target="autoreg_matrix" text="autoreg_matrix"/>
@@ -16,6 +20,7 @@
 <tocitem target="bartlett" text="bartlett"/>
 <tocitem target="besselap" text="besselap"/>
 <tocitem target="besself" text="besself"/>
+<tocitem target="bilinear" text="bilinear"/>
 <tocitem target="bitrevorder" text="bitrevorder"/>
 <tocitem target="blackman" text="blackman"/>
 <tocitem target="blackmanharris" text="blackmanharris"/>
@@ -39,8 +44,10 @@
 <tocitem target="cheby2" text="cheby2"/>
 <tocitem target="check" text="check"/>
 <tocitem target="chirp" text="chirp"/>
+<tocitem target="cl2bp" text="cl2bp"/>
 <tocitem target="clustersegment" text="clustersegment"/>
 <tocitem target="cmorwavf" text="cmorwavf"/>
+<tocitem target="cohere" text="cohere"/>
 <tocitem target="convmtx" text="convmtx"/>
 <tocitem target="corrmtx" text="corrmtx"/>
 <tocitem target="cplxreal" text="cplxreal"/>
@@ -52,10 +59,13 @@
 <tocitem target="db2pow" text="db2pow"/>
 <tocitem target="dctmtx" text="dctmtx"/>
 <tocitem target="decimate" text="decimate"/>
+<tocitem target="detrend1" text="detrend1"/>
 <tocitem target="dftmtx" text="dftmtx"/>
+<tocitem target="diffpara" text="diffpara"/>
 <tocitem target="diric" text="diric"/>
 <tocitem target="downsample" text="downsample"/>
 <tocitem target="dst1" text="dst1"/>
+<tocitem target="durbinlevinson" text="durbinlevinson"/>
 <tocitem target="dutycycle" text="dutycycle"/>
 <tocitem target="dwt" text="dwt"/>
 <tocitem target="ellip" text="ellip"/>
@@ -65,10 +75,14 @@
 <tocitem target="eqtflength" text="eqtflength"/>
 <tocitem target="falltime" text="falltime"/>
 <tocitem target="fft" text="fft"/>
+<tocitem target="fft1" text="fft1"/>
 <tocitem target="fft2" text="fft2"/>
+<tocitem target="fft21" text="fft21"/>
 <tocitem target="fftconv" text="fftconv"/>
 <tocitem target="fftfilt" text="fftfilt"/>
 <tocitem target="fftn" text="fftn"/>
+<tocitem target="fftshift1" text="fftshift1"/>
+<tocitem target="fftw1" text="fftw1"/>
 <tocitem target="fht" text="fht"/>
 <tocitem target="filter1" text="filter1"/>
 <tocitem target="filter2" text="filter2"/>
@@ -83,6 +97,7 @@
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
+<tocitem target="fractdiff" text="fractdiff"/>
 <tocitem target="freqs" text="freqs"/>
 <tocitem target="freqz" text="freqz"/>
 <tocitem target="fwhm" text="fwhm"/>
@@ -95,6 +110,7 @@
 <tocitem target="gmonopuls" text="gmonopuls"/>
 <tocitem target="goertzel" text="goertzel"/>
 <tocitem target="grpdelay" text="grpdelay"/>
+<tocitem target="hamming" text="hamming"/>
 <tocitem target="hann" text="hann"/>
 <tocitem target="hanning" text="hanning"/>
 <tocitem target="helperHarmonicDistortionAmplifier" text="helperHarmonicDistortionAmplifier"/>
@@ -105,8 +121,10 @@
 <tocitem target="idct2" text="idct2"/>
 <tocitem target="idst1" text="idst1"/>
 <tocitem target="ifft" text="ifft"/>
+<tocitem target="ifft1" text="ifft1"/>
 <tocitem target="ifft2" text="ifft2"/>
 <tocitem target="ifftn" text="ifftn"/>
+<tocitem target="ifftshift1" text="ifftshift1"/>
 <tocitem target="ifht" text="ifht"/>
 <tocitem target="ifwht" text="ifwht"/>
 <tocitem target="iirlp2mb" text="iirlp2mb"/>
@@ -116,6 +134,8 @@
 <tocitem target="interp" text="interp"/>
 <tocitem target="intfilt" text="intfilt"/>
 <tocitem target="invfreq" text="invfreq"/>
+<tocitem target="invfreqs" text="invfreqs"/>
+<tocitem target="invfreqz" text="invfreqz"/>
 <tocitem target="invimpinvar" text="invimpinvar"/>
 <tocitem target="is2rc" text="is2rc"/>
 <tocitem target="isallpass" text="isallpass"/>
@@ -125,6 +145,7 @@
 <tocitem target="isminphase" text="isminphase"/>
 <tocitem target="isstable" text="isstable"/>
 <tocitem target="kaiser" text="kaiser"/>
+<tocitem target="kaiserord" text="kaiserord"/>
 <tocitem target="lar2rc" text="lar2rc"/>
 <tocitem target="latc2tf" text="latc2tf"/>
 <tocitem target="latcfilt" text="latcfilt"/>
@@ -149,6 +170,7 @@
 <tocitem target="nnls" text="nnls"/>
 <tocitem target="nuttallwin" text="nuttallwin"/>
 <tocitem target="parzenwin" text="parzenwin"/>
+<tocitem target="pburg" text="pburg"/>
 <tocitem target="pchip" text="pchip"/>
 <tocitem target="pchips" text="pchips"/>
 <tocitem target="peak2peak" text="peak2peak"/>
@@ -175,6 +197,8 @@
 <tocitem target="pulsewidth" text="pulsewidth"/>
 <tocitem target="pulstran" text="pulstran"/>
 <tocitem target="pwelch" text="pwelch"/>
+<tocitem target="pyulear" text="pyulear"/>
+<tocitem target="qp_kaiser" text="qp_kaiser"/>
 <tocitem target="rc2ac" text="rc2ac"/>
 <tocitem target="rc2is" text="rc2is"/>
 <tocitem target="rc2lar" text="rc2lar"/>
@@ -198,6 +222,7 @@
 <tocitem target="schtrig" text="schtrig"/>
 <tocitem target="schurrc" text="schurrc"/>
 <tocitem target="seqperiod" text="seqperiod"/>
+<tocitem target="sftrans" text="sftrans"/>
 <tocitem target="sgolay" text="sgolay"/>
 <tocitem target="sgolayfilt" text="sgolayfilt"/>
 <tocitem target="shanwavf" text="shanwavf"/>
@@ -226,6 +251,8 @@
 <tocitem target="tf2sos" text="tf2sos"/>
 <tocitem target="tf2zp" text="tf2zp"/>
 <tocitem target="tf2zpk" text="tf2zpk"/>
+<tocitem target="tfe" text="tfe"/>
+<tocitem target="tfestimate" text="tfestimate"/>
 <tocitem target="transpose" text="transpose"/>
 <tocitem target="trial_iirlp2mb" text="trial_iirlp2mb"/>
 <tocitem target="triang" text="triang"/>
@@ -247,6 +274,7 @@
 <tocitem target="window" text="window"/>
 <tocitem target="wkeep" text="wkeep"/>
 <tocitem target="wrev" text="wrev"/>
+<tocitem target="xcorr1" text="xcorr1"/>
 <tocitem target="xcorr2" text="xcorr2"/>
 <tocitem target="xcov1" text="xcov1"/>
 <tocitem target="yulewalker" text="yulewalker"/>

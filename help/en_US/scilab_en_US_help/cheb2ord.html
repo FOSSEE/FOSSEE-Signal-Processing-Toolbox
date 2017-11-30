@@ -1,0 +1,88 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>cheb2ord</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="cheb2ap.html">&lt;&lt; cheb2ap</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="chebwin.html">chebwin &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; cheb2ord</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">cheb2ord</h1>
+    <p class="refpurpose">This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">n</span><span class="default"> = </span><span class="functionid">cheb2ord</span><span class="default">(</span><span class="default">Wp</span><span class="default">, </span><span class="default">Ws</span><span class="default">, </span><span class="default">Rp</span><span class="default">, </span><span class="default">Rs</span><span class="default">)</span>
+<span class="default">[</span><span class="default">n</span><span class="default">, </span><span class="default">Wc</span><span class="default">] = </span><span class="functionid">cheb2ord</span><span class="default">(</span><span class="default">Wp</span><span class="default">, </span><span class="default">Ws</span><span class="default">, </span><span class="default">Rp</span><span class="default">, </span><span class="default">Rs</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">Wp:</span>
+      <dd><p class="para">scalar or vector of length 2, all elements must be in the range [0,1]</p></dd></dt>
+   <dt><span class="term">Ws:</span>
+      <dd><p class="para">scalar or vector of length 2, all elements must be in the range [0,1]</p></dd></dt>
+   <dt><span class="term">Rp:</span>
+      <dd><p class="para">real value</p></dd></dt>
+   <dt><span class="term">Rs:</span>
+      <dd><p class="para">real value</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.
+Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
+Frequencies are normalized to the Nyquist frequency in the range [0,1].
+Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
+If ws&gt;wp then the filter is a low pass filter. If wp&gt;ws, then the filter is a high pass filter.
+If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
+If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">cheb2ord</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">0.25</span><span class="scilabdefault">,</span><span class="scilabnumber">0.3</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabnumber">0.2</span><span class="scilabdefault">,</span><span class="scilabnumber">0.8</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">0.3</span><span class="scilabdefault">,</span><span class="scilabnumber">0.4</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">1</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="cheb2ap.html">&lt;&lt; cheb2ap</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="chebwin.html">chebwin &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

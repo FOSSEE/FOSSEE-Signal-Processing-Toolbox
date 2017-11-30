@@ -1,0 +1,80 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>pyulear</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="pwelch.html">&lt;&lt; pwelch</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="qp_kaiser.html">qp_kaiser &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; pyulear</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">pyulear</h1>
+    <p class="refpurpose"></p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">psd</span><span class="default">,</span><span class="default">f_out</span><span class="default">] = </span><span class="functionid">pyulear</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">poles</span><span class="default">,</span><span class="default">freq</span><span class="default">,</span><span class="default">Fs</span><span class="default">,</span><span class="default">range</span><span class="default">,</span><span class="default">method</span><span class="default">,</span><span class="default">plot_type</span><span class="default">)</span>
+<span class="default">All</span> <span class="default">but</span> <span class="default">the</span> <span class="default">first</span> <span class="default">two</span> <span class="default">arguments</span> <span class="default">are</span> <span class="default">optional</span> <span class="default">and</span> <span class="default">may</span> <span class="default">be</span> <span class="default">empty</span><span class="default">.</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x:</span>
+      <dd><p class="para">[vector] sampled data</p></dd></dt>
+   <dt><span class="term">poles:</span>
+      <dd><p class="para">[integer scalar] required number of poles of the AR model</p></dd></dt>
+   <dt><span class="term">freq:</span>
+      <dd><p class="para">[real vector] frequencies at which power spectral density is calculated [integer scalar] number of uniformly distributed frequency values at which spectral density is calculated.    [default=256]</p></dd></dt>
+   <dt><span class="term">Fs:</span>
+      <dd><p class="para">[real scalar] sampling frequency (Hertz) [default=1]</p></dd></dt>
+   <dt><span class="term">range:</span>
+      <dd><p class="para">&#0039;half&#0039;,  &#0039;onesided&#0039; : frequency range of the spectrum is from zero up to but not including sample_f/2.  Power from negative frequencies is added to the positive side of the spectrum.   &#0039;whole&#0039;, &#0039;twosided&#0039; : frequency range of the spectrum is -sample_f/2 to sample_f/2, with negative frequencies stored in &#0034;wrap around&#0034; order after the positive frequencies; e.g. frequencies for a 10-point &#0039;twosided&#0039; spectrum are 0 0.1 0.2 0.3 0.4 0.5 -0.4 -0.3 -0.2 -0.1 &#0039;shift&#0039;, &#0039;centerdc&#0039; : same as &#0039;whole&#0039; but with the first half of the spectrum swapped with second half to put the zero-frequency value in the middle. (See &#0034;help fftshift&#0034;. If &#0034;freq&#0034; is vector, &#0039;shift&#0039; is ignored. If model coefficients &#0034;ar_coeffs&#0034; are real, the default range is &#0039;half&#0039;, otherwise default range is &#0039;whole&#0039;.</p></dd></dt>
+   <dt><span class="term">method:</span>
+      <dd><p class="para">&#0039;fft&#0039;:  use FFT to calculate power spectral density. &#0039;poly&#0039;: calculate spectral density as a polynomial of 1/z N.B. this argument is ignored if the &#0034;freq&#0034; argument is a vector.  The default is &#0039;poly&#0039; unless the &#0034;freq&#0034; argument is an integer power of 2.</p></dd></dt>
+   <dt><span class="term">plot_type:</span>
+      <dd><p class="para">&#0039;plot&#0039;, &#0039;semilogx&#0039;, &#0039;semilogy&#0039;, &#0039;loglog&#0039;, &#0039;squared&#0039; or &#0039;db&#0039; specifies the type of plot.  The default is &#0039;plot&#0039;, which means linear-linear axes. &#0039;squared&#0039; is the same as &#0039;plot&#0039;. &#0039;dB&#0039; plots &#0034;10*log10(psd)&#0034;.  This argument is ignored and a spectrum is not plotted if the caller requires a returned value.</p></dd></dt></dl></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="pwelch.html">&lt;&lt; pwelch</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="qp_kaiser.html">qp_kaiser &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

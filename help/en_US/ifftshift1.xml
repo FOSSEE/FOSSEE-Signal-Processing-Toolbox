@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ifftshift1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ifftshift1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ifftshift1</refname>
+    <refpurpose>Undo the action of the 'fftshift1' function.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   ifftshift1 (X)
+   ifftshift1 (X, DIM)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para>It is a vector of N elements corresponding to time samples</para></listitem></varlistentry>
+   <varlistentry><term>DIM:</term>
+      <listitem><para> The optional DIM argument can be used to limit the dimension along which the permutation occurs</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Undo the action of the 'fftshift1' function.
+   </para>
+   <para>
+For even length X, 'fftshift1' is its own inverse, but odd lengths differ slightly.
+</para>
+</refsection>
+</refentry>

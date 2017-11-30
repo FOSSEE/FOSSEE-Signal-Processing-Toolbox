@@ -1,0 +1,83 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>fir1</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="findpeaks.html">&lt;&lt; findpeaks</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="fir2.html">fir2 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; fir1</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">fir1</h1>
+    <p class="refpurpose">Produce an order N FIR filter with the given frequency cutoff, returning the N+1 filter coefficients in B.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">B</span><span class="default"> = </span><span class="functionid">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">W</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="functionid">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">TYPE</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="functionid">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">TYPE</span><span class="default">, </span><span class="default">WINDOW</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="functionid">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">TYPE</span><span class="default">, </span><span class="default">WINDOW</span><span class="default">, </span><span class="default">NOSCALE</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">N:</span>
+      <dd><p class="para">Integer</p></dd></dt>
+   <dt><span class="term">W:</span>
+      <dd><p class="para">Integer or Vector</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Produce an order N FIR filter with the given frequency cutoff W, returning the N+1 filter coefficients in B. If W is a scalar, it specifies the frequency cutoff for a lowpass or highpass filter. If W is a two-element vector, the two values specify the edges of a bandpass or bandstop filter. If W is an N-element vector, each value specifies a band edge of a multiband pass/stop filter.</p>
+   <p class="para">The filter TYPE can be specified with one of the following strings: &#0034;low&#0034;, &#0034;high&#0034;, &#0034;stop&#0034;, &#0034;pass&#0034;, &#0034;bandpass&#0034;, &#0034;DC-0&#0034;, or &#0034;DC-1&#0034;. The default is &#0034;low&#0034; is W is a scalar, &#0034;pass&#0034; if W is a pair, or &#0034;DC-0&#0034; if W is a vector with more than 2 elements.</p>
+   <p class="para">An optional shaping WINDOW can be given as a vector with length N+1. If not specified, a Hamming window of length N+1 is used.</p>
+   <p class="para">With the option &#0034;noscale&#0034;, the filter coefficients are not normalized. The default is to normalize the filter such that the magnitude response of the center of the first passband is 1.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">fir1</span> <span class="scilabopenclose">(</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.4</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">9.2762e-05</span>   <span class="scilabnumber">9.5482e-02</span>   <span class="scilabnumber">4.0443e-01</span>   <span class="scilabnumber">4.0443e-01</span>   <span class="scilabnumber">9.5482e-02</span>   <span class="scilabnumber">9.2762e-05</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="findpeaks.html">&lt;&lt; findpeaks</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="fir2.html">fir2 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

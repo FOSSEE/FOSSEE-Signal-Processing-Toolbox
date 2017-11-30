@@ -1,0 +1,87 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>invfreq</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="intfilt.html">&lt;&lt; intfilt</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="invfreqs.html">invfreqs &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; invfreq</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">invfreq</h1>
+    <p class="refpurpose">Calculates inverse frequency vectors</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">B</span><span class="default">,</span><span class="default">A</span><span class="default">] = </span><span class="functionid">invfreq</span><span class="default">(</span><span class="default">H</span><span class="default">,</span><span class="default">F</span><span class="default">,</span><span class="default">nB</span><span class="default">,</span><span class="default">nA</span><span class="default">)</span>
+<span class="default">[</span><span class="default">B</span><span class="default">,</span><span class="default">A</span><span class="default">] = </span><span class="functionid">invfreq</span><span class="default">(</span><span class="default">H</span><span class="default">,</span><span class="default">F</span><span class="default">,</span><span class="default">nB</span><span class="default">,</span><span class="default">nA</span><span class="default">,</span><span class="default">W</span><span class="default">)</span>
+<span class="default">[</span><span class="default">B</span><span class="default">,</span><span class="default">A</span><span class="default">] = </span><span class="functionid">invfreq</span><span class="default">(</span><span class="default">H</span><span class="default">,</span><span class="default">F</span><span class="default">,</span><span class="default">nB</span><span class="default">,</span><span class="default">nA</span><span class="default">,</span><span class="default">W</span><span class="default">,[],[],</span><span class="default">plane</span><span class="default">)</span>
+<span class="default">[</span><span class="default">B</span><span class="default">,</span><span class="default">A</span><span class="default">] = </span><span class="functionid">invfreq</span><span class="default">(</span><span class="default">H</span><span class="default">,</span><span class="default">F</span><span class="default">,</span><span class="default">nB</span><span class="default">,</span><span class="default">nA</span><span class="default">,</span><span class="default">W</span><span class="default">,</span><span class="default">iter</span><span class="default">,</span><span class="default">tol</span><span class="default">,</span><span class="default">plane</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">H:</span>
+      <dd><p class="para">desired complex frequency response,It is assumed that A and B are real polynomials, hence H is one-sided.</p></dd></dt>
+   <dt><span class="term">F:</span>
+      <dd><p class="para">vector of frequency samples in radians</p></dd></dt>
+   <dt><span class="term">nA:</span>
+      <dd><p class="para">order of denominator polynomial A</p></dd></dt>
+   <dt><span class="term">nB:</span>
+      <dd><p class="para">order of numerator polynomial B</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Fit filter B(z)/A(z) or B(s)/A(s) to complex frequency response at frequency points F. A and B are real polynomial coefficients of order nA and nB respectively.  Optionally, the fit-errors can be weighted vs frequency according to the weights W. Also, the transform plane can be specified as either &#0039;s&#0039; for continuous time or &#0039;z&#0039; for discrete time. &#0039;z&#0039; is chosen by default.  Eventually, Steiglitz-McBride iterations will be specified by iter and tol.</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">B</span><span class="scilabdefault">,</span><span class="scilabid">A</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">butter</span><span class="scilabopenclose">(</span><span class="scilabnumber">12</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilaboperator">/</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">H</span><span class="scilabdefault">,</span><span class="scilabid">w</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">freqz</span><span class="scilabopenclose">(</span><span class="scilabid">B</span><span class="scilabdefault">,</span><span class="scilabid">A</span><span class="scilabdefault">,</span><span class="scilabnumber">128</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">Bh</span><span class="scilabdefault">,</span><span class="scilabid">Ah</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">invfreq</span><span class="scilabopenclose">(</span><span class="scilabid">H</span><span class="scilabdefault">,</span><span class="scilabid">F</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">Hh</span> <span class="scilaboperator">=</span> <span class="scilabid">freqz</span><span class="scilabopenclose">(</span><span class="scilabid">Bh</span><span class="scilabdefault">,</span><span class="scilabid">Ah</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabcommand" href="scilab://disp">disp</a><span class="scilabopenclose">(</span><a class="scilabcommand" href="scilab://sprintf">sprintf</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">||frequency response error|| = %f</span><span class="scilabstring">&#0039;</span><span class="scilabdefault">,</span><a class="scilabcommand" href="scilab://norm">norm</a><span class="scilabopenclose">(</span><span class="scilabid">H</span><span class="scilaboperator">-</span><span class="scilabid">Hh</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="intfilt.html">&lt;&lt; intfilt</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="invfreqs.html">invfreqs &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

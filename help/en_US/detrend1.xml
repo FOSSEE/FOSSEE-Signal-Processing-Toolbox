@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from detrend1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="detrend1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>detrend1</refname>
+    <refpurpose>This function removes the best fit of a polynomial of order P from the data X</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   detrend1(X,P)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Input vecor or matrix.</para></listitem></varlistentry>
+   <varlistentry><term>P:</term>
+      <listitem><para> The order of polnomial</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+If X is a vector, 'detrend1(X, P)' removes the best fit of apolynomial of order P from the data X.If X is a matrix, 'detrend1(X, P)' does the same for each column in X.
+   </para>
+   <para>
+The second argument P is optional.  If it is not specified, a value of 1 is assumed.  This corresponds to removing a linear trend.
+The order of the polynomial can also be given as a string, in which case P must be either "constant" (corresponds to 'P=0') or "linear"(corresponds to 'P=1')
+</para>
+</refsection>
+</refentry>

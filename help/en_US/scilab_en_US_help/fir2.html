@@ -1,0 +1,84 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>fir2</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="fir1.html">&lt;&lt; fir1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="firpmord.html">firpmord &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; fir2</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">fir2</h1>
+    <p class="refpurpose">Produce an order N FIR filter with arbitrary frequency response M over frequency bands F, returning the N+1 filter coefficients in B.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">B</span><span class="default"> = </span><span class="functionid">fir2</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">F</span><span class="default">, </span><span class="default">M</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="functionid">fir2</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">F</span><span class="default">, </span><span class="default">M</span><span class="default">, </span><span class="default">GRID_N</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="default">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">F</span><span class="default">, </span><span class="default">M</span><span class="default">, </span><span class="default">GRID_N</span><span class="default">, </span><span class="default">RAMP_N</span><span class="default">)</span>
+<span class="default">B</span><span class="default"> = </span><span class="default">fir1</span><span class="default">(</span><span class="default">N</span><span class="default">, </span><span class="default">F</span><span class="default">, </span><span class="default">M</span><span class="default">, </span><span class="default">GRID_N</span><span class="default">, </span><span class="default">RAMP_N</span><span class="default">, </span><span class="default">WINDOW</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">N:</span>
+      <dd><p class="para">Integer</p></dd></dt>
+   <dt><span class="term">F, M:</span>
+      <dd><p class="para">Vector</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Produce an order N FIR filter with arbitrary frequency response M over frequency bands F, returning the N+1 filter coefficients in B. The vector F specifies the frequency band edges of the filter response and M specifies the magnitude response at each frequency.</p>
+   <p class="para">The vector F must be nondecreasing over the range [0,1], and the first and last elements must be 0 and 1, respectively. A discontinuous jump in the frequency response can be specified by duplicating a band edge in F with different values in M.</p>
+   <p class="para">The resolution over which the frequency response is evaluated can be controlled with the GRID_N argument. The default is 512 or the next larger power of 2 greater than the filter length.</p>
+   <p class="para">The band transition width for discontinuities can be controlled with the RAMP_N argument. The default is GRID_N/25. Larger values will result in wider band transitions but better stopband rejection.</p>
+   <p class="para">An optional shaping WINDOW can be given as a vector with length N+1. If not specified, a Hamming window of length N+1 is used.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">fir2</span> <span class="scilabopenclose">(</span><span class="scilabnumber">10</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.5</span><span class="scilabdefault">,</span> <span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">0.00130</span>   <span class="scilabnumber">0.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.01792</span>   <span class="scilabnumber">0.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.36968</span>   <span class="scilabnumber">2.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.36968</span>   <span class="scilabnumber">0.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.01792</span>   <span class="scilabnumber">0.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.00130</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="fir1.html">&lt;&lt; fir1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="firpmord.html">firpmord &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

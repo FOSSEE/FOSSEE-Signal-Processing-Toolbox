@@ -1,0 +1,85 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>strips</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="stmcb.html">&lt;&lt; stmcb</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="subspaceMethodsInputParser.html">subspaceMethodsInputParser &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; strips</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">strips</h1>
+    <p class="refpurpose">Plots vector or matrix in strips</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="functionid">strips</span><span class="default">(</span><span class="default">x</span><span class="default">);</span>
+<span class="functionid">strips</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">sd</span><span class="default">);</span>
+<span class="functionid">strips</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">sd</span><span class="default">,</span><span class="default">fs</span><span class="default">);</span>
+<span class="functionid">strips</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">sd</span><span class="default">,</span><span class="default">fs</span><span class="default">,</span><span class="default">scale</span><span class="default">);</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">strips(x)
+Plots a vector x in horizontal strips of length 250
+If x is a matrix, it plots each column of x on a separate strip with the leftmost
+column as the topmost strip
+strips(x,sd)
+Plots x in strips of length sd samples each
+strips(x,sd,fs)
+Plots x in strips of duration sd seconds with sampling frequency fs (in Hz)
+strips(x,sd,fs,scale)
+Plots x in strips as above, and scales the vertical axis by scale
+If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
+If x has complex entries, only the real part of those entries are considered
+Author
+Ankur Mallick</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="stmcb.html">&lt;&lt; stmcb</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="subspaceMethodsInputParser.html">subspaceMethodsInputParser &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

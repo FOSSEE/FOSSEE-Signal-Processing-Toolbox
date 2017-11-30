@@ -1,0 +1,89 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>xcov1</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="xcorr2.html">&lt;&lt; xcorr2</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="yulewalker.html">yulewalker &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; xcov1</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">xcov1</h1>
+    <p class="refpurpose">Compute covariance at various lags [=correlation(x-mean(x),y-mean(y))].</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">R</span><span class="default">, </span><span class="default">lag</span><span class="default">] = </span><span class="default">xcov</span><span class="default"> (</span><span class="default">X</span><span class="default">)</span>
+<span class="default">... = </span><span class="default">xcov</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">Y</span><span class="default">)</span>
+<span class="default">... = </span><span class="default">xcov</span><span class="default"> (..., </span><span class="default">maxlag</span><span class="default">)</span>
+<span class="default">... = </span><span class="default">xcov</span><span class="default"> (..., </span><span class="default">scale</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">X:</span>
+      <dd><p class="para">Input vector</p></dd></dt>
+   <dt><span class="term">Y:</span>
+      <dd><p class="para">if specified, compute cross-covariance between X and Y, otherwise compute autocovariance of X.</p></dd></dt>
+   <dt><span class="term">maxlag:</span>
+      <dd><p class="para">is specified, use lag range [-maxlag:maxlag], otherwise use range [-n+1:n-1].</p></dd></dt>
+   <dt><span class="term">scale:</span>
+      <dd><p class="para"></p></dd></dt>
+   <dt><span class="term">&#0039;biased&#0039;:</span>
+      <dd><p class="para">for covariance=raw/N,</p></dd></dt>
+   <dt><span class="term">&#0039;unbiased&#0039;:</span>
+      <dd><p class="para">for covariance=raw/(N-|lag|),</p></dd></dt>
+   <dt><span class="term">&#0039;coeff&#0039;:</span>
+      <dd><p class="para">for covariance=raw/(covariance at lag 0),</p></dd></dt>
+   <dt><span class="term">&#0039;none&#0039;:</span>
+      <dd><p class="para">for covariance=raw</p></dd></dt>
+   <dt><span class="term">&#0039;none&#0039;:</span>
+      <dd><p class="para">is the default.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Compute covariance at various lags [=correlation(x-mean(x),y-mean(y))]. Returns the covariance for each lag in the range, plus an optional vector of lags.</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="xcorr2.html">&lt;&lt; xcorr2</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="yulewalker.html">yulewalker &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

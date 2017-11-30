@@ -1,9 +1,13 @@
 ac2poly
 ac2rc
 arParEst
+ar_psd
 arburg
 arch_fit
+arch_rnd
+arch_test
 arcov
+arma_rnd
 armcov
 aryule
 autoreg_matrix
@@ -11,6 +15,7 @@ barthannwin
 bartlett
 besselap
 besself
+bilinear
 bitrevorder
 blackman
 blackmanharris
@@ -34,8 +39,10 @@ cheby1
 cheby2
 check
 chirp
+cl2bp
 clustersegment
 cmorwavf
+cohere
 convmtx
 corrmtx
 cplxreal
@@ -62,12 +69,13 @@ ellipord
 enbw
 eqtflength
 falltime
-fft
-fft2
+fft1
+fft21
 fftconv
 fftfilt
 fftn
 fftshift1
+fftw1
 fht
 filter1
 filter2
@@ -105,7 +113,7 @@ icceps
 idct1
 idct2
 idst1
-ifft
+ifft1
 ifft2
 ifftn
 ifftshift1
@@ -118,6 +126,8 @@ impzlength
 interp
 intfilt
 invfreq
+invfreqs
+invfreqz
 invimpinvar
 is2rc
 isallpass
@@ -127,6 +137,7 @@ ismaxphase
 isminphase
 isstable
 kaiser
+kaiserord
 lar2rc
 latc2tf
 latcfilt
@@ -151,6 +162,7 @@ ncauer
 nnls
 nuttallwin
 parzenwin
+pburg
 pchip
 pchips
 peak2peak
@@ -177,6 +189,8 @@ pulsesep
 pulsewidth
 pulstran
 pwelch
+pyulear
+qp_kaiser
 rc2ac
 rc2is
 rc2lar
@@ -200,6 +214,7 @@ sawtooth
 schtrig
 schurrc
 seqperiod
+sftrans
 sgolay
 sgolayfilt
 shanwavf
@@ -228,6 +243,8 @@ synthesis
 tf2sos
 tf2zp
 tf2zpk
+tfe
+tfestimate
 transpose
 trial_iirlp2mb
 triang
@@ -249,6 +266,7 @@ welchwin
 window
 wkeep
 wrev
+xcorr1
 xcorr2
 xcov1
 yulewalker

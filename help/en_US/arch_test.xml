@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arch_test.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arch_test" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arch_test</refname>
+    <refpurpose>perform a Lagrange Multiplier (LM) test of thenull hypothesis of no conditional heteroscedascity against the alternative of CH(P)</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   arch_test(Y,X,P)
+   PVAL = arch_test(Y,X,P)
+   [PVAL, LM]= arch_test(Y,X,P)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>P:</term>
+      <listitem><para> Degrees of freedom</para></listitem></varlistentry>
+   <varlistentry><term>PVAL:</term>
+      <listitem><para>PVAL is the p-value (1 minus the CDF of this distribution at LM) of the test</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+perform a Lagrange Multiplier (LM) test of thenull hypothesis of no conditional heteroscedascity against the alternative of CH(P).
+   </para>
+   <para>
+I.e., the model is
+   </para>
+   <para>
+y(t) = b(1) * x(t,1) + ... + b(k) * x(t,k) + e(t),
+   </para>
+   <para>
+given Y up to t-1 and X up to t, e(t) is N(0, h(t)) with
+   </para>
+   <para>
+h(t) = v + a(1) * e(t-1)^2 + ... + a(p) *e(t-p)^2, and the null is a(1) == ... == a(p) == 0.
+   </para>
+   <para>
+If the second argument is a scalar integer, k,perform the sametest in a linear autoregression model of orderk, i.e., with
+   </para>
+   <para>
+[1, y(t-1), ..., y(t-K)] as the t-th row of X.
+   </para>
+   <para>
+Under the null, LM approximatel has a chisquare distribution with P degrees of freedom and PVAL is the p-value (1 minus the CDF of this distribution at LM) of the test.
+   </para>
+   <para>
+If no output argument is given, the p-value is displayed.
+</para>
+</refsection>
+</refentry>

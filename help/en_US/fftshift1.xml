@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fftshift1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fftshift1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fftshift1</refname>
+    <refpurpose>Perform a shift of the vector X, for use with the 'fft1' and 'ifft1' functions, in order the move the frequency 0 to the center of the vector or matrix.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   fftshift1 (X)
+   fftshift1 (X, DIM)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para>It is a vector of N elements corresponding to time samples</para></listitem></varlistentry>
+   <varlistentry><term>DIM:</term>
+      <listitem><para> The optional DIM argument can be used to limit the dimension along which the permutation occurs</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+Perform a shift of the vector X, for use with the 'fft1' and 'ifft1' functions, in order the move the frequency 0 to the center of the vector or matrix.
+   </para>
+   <para>
+If X is a vector of N elements corresponding to N time samples spaced by dt, then 'fftshift1 (fft1 (X))' corresponds to frequencies
+   </para>
+   <para>
+f = [ -(ceil((N-1)/2):-1:1)*df 0 (1:floor((N-1)/2))*df ]
+   </para>
+   <para>
+where df = 1 / dt.
+   </para>
+   <para>
+If X is a matrix, the same holds for rows and columns.  If X is an array, then the same holds along each dimension.
+   </para>
+   <para>
+The optional DIM argument can be used to limit the dimension along
+</para>
+</refsection>
+</refentry>

@@ -6,9 +6,13 @@
 <mapID target="ac2poly" url="ac2poly.html"/>
 <mapID target="ac2rc" url="ac2rc.html"/>
 <mapID target="arParEst" url="arParEst.html"/>
+<mapID target="ar_psd" url="ar_psd.html"/>
 <mapID target="arburg" url="arburg.html"/>
 <mapID target="arch_fit" url="arch_fit.html"/>
+<mapID target="arch_rnd" url="arch_rnd.html"/>
+<mapID target="arch_test" url="arch_test.html"/>
 <mapID target="arcov" url="arcov.html"/>
+<mapID target="arma_rnd" url="arma_rnd.html"/>
 <mapID target="armcov" url="armcov.html"/>
 <mapID target="aryule" url="aryule.html"/>
 <mapID target="autoreg_matrix" url="autoreg_matrix.html"/>
@@ -16,6 +20,7 @@
 <mapID target="bartlett" url="bartlett.html"/>
 <mapID target="besselap" url="besselap.html"/>
 <mapID target="besself" url="besself.html"/>
+<mapID target="bilinear" url="bilinear.html"/>
 <mapID target="bitrevorder" url="bitrevorder.html"/>
 <mapID target="blackman" url="blackman.html"/>
 <mapID target="blackmanharris" url="blackmanharris.html"/>
@@ -39,8 +44,10 @@
 <mapID target="cheby2" url="cheby2.html"/>
 <mapID target="check" url="check.html"/>
 <mapID target="chirp" url="chirp.html"/>
+<mapID target="cl2bp" url="cl2bp.html"/>
 <mapID target="clustersegment" url="clustersegment.html"/>
 <mapID target="cmorwavf" url="cmorwavf.html"/>
+<mapID target="cohere" url="cohere.html"/>
 <mapID target="convmtx" url="convmtx.html"/>
 <mapID target="corrmtx" url="corrmtx.html"/>
 <mapID target="cplxreal" url="cplxreal.html"/>
@@ -52,10 +59,13 @@
 <mapID target="db2pow" url="db2pow.html"/>
 <mapID target="dctmtx" url="dctmtx.html"/>
 <mapID target="decimate" url="decimate.html"/>
+<mapID target="detrend1" url="detrend1.html"/>
 <mapID target="dftmtx" url="dftmtx.html"/>
+<mapID target="diffpara" url="diffpara.html"/>
 <mapID target="diric" url="diric.html"/>
 <mapID target="downsample" url="downsample.html"/>
 <mapID target="dst1" url="dst1.html"/>
+<mapID target="durbinlevinson" url="durbinlevinson.html"/>
 <mapID target="dutycycle" url="dutycycle.html"/>
 <mapID target="dwt" url="dwt.html"/>
 <mapID target="ellip" url="ellip.html"/>
@@ -65,10 +75,14 @@
 <mapID target="eqtflength" url="eqtflength.html"/>
 <mapID target="falltime" url="falltime.html"/>
 <mapID target="fft" url="fft.html"/>
+<mapID target="fft1" url="fft1.html"/>
 <mapID target="fft2" url="fft2.html"/>
+<mapID target="fft21" url="fft21.html"/>
 <mapID target="fftconv" url="fftconv.html"/>
 <mapID target="fftfilt" url="fftfilt.html"/>
 <mapID target="fftn" url="fftn.html"/>
+<mapID target="fftshift1" url="fftshift1.html"/>
+<mapID target="fftw1" url="fftw1.html"/>
 <mapID target="fht" url="fht.html"/>
 <mapID target="filter1" url="filter1.html"/>
 <mapID target="filter2" url="filter2.html"/>
@@ -83,6 +97,7 @@
 <mapID target="firtype" url="firtype.html"/>
 <mapID target="flattopwin" url="flattopwin.html"/>
 <mapID target="fracshift" url="fracshift.html"/>
+<mapID target="fractdiff" url="fractdiff.html"/>
 <mapID target="freqs" url="freqs.html"/>
 <mapID target="freqz" url="freqz.html"/>
 <mapID target="fwhm" url="fwhm.html"/>
@@ -95,6 +110,7 @@
 <mapID target="gmonopuls" url="gmonopuls.html"/>
 <mapID target="goertzel" url="goertzel.html"/>
 <mapID target="grpdelay" url="grpdelay.html"/>
+<mapID target="hamming" url="hamming.html"/>
 <mapID target="hann" url="hann.html"/>
 <mapID target="hanning" url="hanning.html"/>
 <mapID target="helperHarmonicDistortionAmplifier" url="helperHarmonicDistortionAmplifier.html"/>
@@ -105,8 +121,10 @@
 <mapID target="idct2" url="idct2.html"/>
 <mapID target="idst1" url="idst1.html"/>
 <mapID target="ifft" url="ifft.html"/>
+<mapID target="ifft1" url="ifft1.html"/>
 <mapID target="ifft2" url="ifft2.html"/>
 <mapID target="ifftn" url="ifftn.html"/>
+<mapID target="ifftshift1" url="ifftshift1.html"/>
 <mapID target="ifht" url="ifht.html"/>
 <mapID target="ifwht" url="ifwht.html"/>
 <mapID target="iirlp2mb" url="iirlp2mb.html"/>
@@ -116,6 +134,8 @@
 <mapID target="interp" url="interp.html"/>
 <mapID target="intfilt" url="intfilt.html"/>
 <mapID target="invfreq" url="invfreq.html"/>
+<mapID target="invfreqs" url="invfreqs.html"/>
+<mapID target="invfreqz" url="invfreqz.html"/>
 <mapID target="invimpinvar" url="invimpinvar.html"/>
 <mapID target="is2rc" url="is2rc.html"/>
 <mapID target="isallpass" url="isallpass.html"/>
@@ -125,6 +145,7 @@
 <mapID target="isminphase" url="isminphase.html"/>
 <mapID target="isstable" url="isstable.html"/>
 <mapID target="kaiser" url="kaiser.html"/>
+<mapID target="kaiserord" url="kaiserord.html"/>
 <mapID target="lar2rc" url="lar2rc.html"/>
 <mapID target="latc2tf" url="latc2tf.html"/>
 <mapID target="latcfilt" url="latcfilt.html"/>
@@ -149,6 +170,7 @@
 <mapID target="nnls" url="nnls.html"/>
 <mapID target="nuttallwin" url="nuttallwin.html"/>
 <mapID target="parzenwin" url="parzenwin.html"/>
+<mapID target="pburg" url="pburg.html"/>
 <mapID target="pchip" url="pchip.html"/>
 <mapID target="pchips" url="pchips.html"/>
 <mapID target="peak2peak" url="peak2peak.html"/>
@@ -175,6 +197,8 @@
 <mapID target="pulsewidth" url="pulsewidth.html"/>
 <mapID target="pulstran" url="pulstran.html"/>
 <mapID target="pwelch" url="pwelch.html"/>
+<mapID target="pyulear" url="pyulear.html"/>
+<mapID target="qp_kaiser" url="qp_kaiser.html"/>
 <mapID target="rc2ac" url="rc2ac.html"/>
 <mapID target="rc2is" url="rc2is.html"/>
 <mapID target="rc2lar" url="rc2lar.html"/>
@@ -198,6 +222,7 @@
 <mapID target="schtrig" url="schtrig.html"/>
 <mapID target="schurrc" url="schurrc.html"/>
 <mapID target="seqperiod" url="seqperiod.html"/>
+<mapID target="sftrans" url="sftrans.html"/>
 <mapID target="sgolay" url="sgolay.html"/>
 <mapID target="sgolayfilt" url="sgolayfilt.html"/>
 <mapID target="shanwavf" url="shanwavf.html"/>
@@ -226,6 +251,8 @@
 <mapID target="tf2sos" url="tf2sos.html"/>
 <mapID target="tf2zp" url="tf2zp.html"/>
 <mapID target="tf2zpk" url="tf2zpk.html"/>
+<mapID target="tfe" url="tfe.html"/>
+<mapID target="tfestimate" url="tfestimate.html"/>
 <mapID target="transpose" url="transpose.html"/>
 <mapID target="trial_iirlp2mb" url="trial_iirlp2mb.html"/>
 <mapID target="triang" url="triang.html"/>
@@ -247,6 +274,7 @@
 <mapID target="window" url="window.html"/>
 <mapID target="wkeep" url="wkeep.html"/>
 <mapID target="wrev" url="wrev.html"/>
+<mapID target="xcorr1" url="xcorr1.html"/>
 <mapID target="xcorr2" url="xcorr2.html"/>
 <mapID target="xcov1" url="xcov1.html"/>
 <mapID target="yulewalker" url="yulewalker.html"/>

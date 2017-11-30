@@ -1,0 +1,82 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ifht</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="ifftshift1.html">&lt;&lt; ifftshift1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="ifwht.html">ifwht &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; ifht</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">ifht</h1>
+    <p class="refpurpose">Calculate the inverse Fast Hartley Transform of real input D</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">m</span><span class="default">= </span><span class="functionid">ifht</span><span class="default"> (</span><span class="default">d</span><span class="default">)</span>
+<span class="default">m</span><span class="default">= </span><span class="functionid">ifht</span><span class="default"> (</span><span class="default">d</span><span class="default">,</span><span class="default">n</span><span class="default">)</span>
+<span class="default">m</span><span class="default">= </span><span class="functionid">ifht</span><span class="default"> (</span><span class="default">d</span><span class="default">,</span><span class="default">n</span><span class="default">,</span><span class="default">dim</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">d:</span>
+      <dd><p class="para">real or complex valued scalar or vector</p></dd></dt>
+   <dt><span class="term">n:</span>
+      <dd><p class="para">Similar to the options of FFT function</p></dd></dt>
+   <dt><span class="term">dim:</span>
+      <dd><p class="para">Similar to the options of FFT function</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Calculate the inverse Fast Hartley Transform of real input d. If d is a matrix, the inverse Hartley transform is calculated along the columns by default. The options n and dim are similar to the options of FFT function.</p>
+   <p class="para">The forward and inverse Hartley transforms are the same (except for a scale factor of 1/N for the inverse hartley transform), but implemented using different functions.</p>
+   <p class="para">The definition of the forward hartley transform for vector d, m[K] = 1/N \sum_{i=0}^{N-1} d[i]*(cos[K*2*pi*i/N] + sin[K*2*pi*i/N]), for 0 &lt;= K &lt; N. m[K] = 1/N \sum_{i=0}^{N-1} d[i]*CAS[K*i], for 0 &lt;= K &lt; N.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">ifht</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span> <span class="scilabspecial">:</span> <span class="scilabnumber">4</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ifht</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="ifftshift1.html">&lt;&lt; ifftshift1</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="ifwht.html">ifwht &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

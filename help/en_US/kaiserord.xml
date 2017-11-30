@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from kaiserord.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="kaiserord" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>kaiserord</refname>
+    <refpurpose>Return the parameters needed to produce a filter of the desired specification from a Kaiser window.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [n, Wn, beta, ftype] = kaiserord (f, m, dev, fs)
+   […] = kaiserord (f, m, dev, fs)
+   […] = kaiserord (f, m, dev)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>f:</term>
+      <listitem><para> Pairs of frequency band edges.</para></listitem></varlistentry>
+   <varlistentry><term>m:</term>
+      <listitem><para> Magnitude response for each band.</para></listitem></varlistentry>
+   <varlistentry><term>dev:</term>
+      <listitem><para> Deviation of the filter.</para></listitem></varlistentry>
+   <varlistentry><term>fs:</term>
+      <listitem><para> Sampling rate.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+The vector f contains pairs of frequency band edges in the range [0,1]. The vector m specifies the magnitude response for each band. The values of m must be zero for all stop bands and must have the
+same magnitude for all pass bands. The deviation of the filter dev can be specified as a scalar or a vector of the same length as m. The optional sampling rate fs can be used to indicate that f is in
+Hz in the range [0,fs/2].
+   </para>
+   <para>
+The returned value n is the required order of the filter (the length of the filter minus 1). The vector Wn contains the band edges of the filter suitable for passing to fir1. The value beta is the
+parameter of the Kaiser window of length n+1 to shape the filter. The string ftype contains the type of filter to specify to fir1.
+   </para>
+   <para>
+The Kaiser window parameters n and beta are computed from the relation between ripple (A=-20*log10(dev)) and transition width (dw in radians) discovered empirically by Kaiser:
+   </para>
+   <para>
+   </para>
+   <para>
+/ 0.1102(A-8.7)                        A &gt; 50
+beta = | 0.5842(A-21)^0.4 + 0.07886(A-21)     21 &lt;= A &lt;= 50
+\ 0.0                                  A &lt; 21
+   </para>
+   <para>
+n = (A-8)/(2.285 dw)
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[n, w, beta, ftype] = kaiserord ([1000, 1200], [1, 0], [0.05, 0.05], 11025)
+n =  1
+w =  1100
+beta =  1.5099
+ftype = low
+   ]]></programlisting>
+</refsection>
+</refentry>

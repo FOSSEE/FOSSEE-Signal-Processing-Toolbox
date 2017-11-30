@@ -1,0 +1,83 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>remez1</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="rectwin.html">&lt;&lt; rectwin</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="resample.html">resample &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; remez1</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">remez1</h1>
+    <p class="refpurpose">Parks-McClellan optimal FIR filter design</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">b</span><span class="default"> = </span><span class="functionid">remez1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">f</span><span class="default">, </span><span class="default">a</span><span class="default">)</span>
+<span class="default">b</span><span class="default"> = </span><span class="functionid">remez1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">f</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">w</span><span class="default">)</span>
+<span class="default">b</span><span class="default"> = </span><span class="functionid">remez1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">f</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">w</span><span class="default">, </span><span class="default">ftype</span><span class="default">)</span>
+<span class="default">b</span><span class="default"> = </span><span class="functionid">remez1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">f</span><span class="default">, </span><span class="default">a</span><span class="default">, </span><span class="default">w</span><span class="default">, </span><span class="default">ftype</span><span class="default">, </span><span class="default">griddensity</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">n:</span>
+      <dd><p class="para">gives the number of taps in the returned filter</p></dd></dt>
+   <dt><span class="term">f:</span>
+      <dd><p class="para">gives frequency at the band edges [b1 e1 b2 e2 b3 e3 …]</p></dd></dt>
+   <dt><span class="term">a:</span>
+      <dd><p class="para">gives amplitude at the band edges [a(b1) a(e1) a(b2) a(e2) …]</p></dd></dt>
+   <dt><span class="term">w:</span>
+      <dd><p class="para">gives weighting applied to each band</p></dd></dt>
+   <dt><span class="term">ftype:</span>
+      <dd><p class="para">is &#0034;bandpass&#0034;, &#0034;hilbert&#0034; or &#0034;differentiator&#0034;</p></dd></dt>
+   <dt><span class="term">griddensity:</span>
+      <dd><p class="para">determines how accurately the filter will be constructed. The minimum value is 16, but higher numbers are slower to compute.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Frequency is in the range (0, 1), with 1 being the Nyquist frequency.</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="rectwin.html">&lt;&lt; rectwin</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="resample.html">resample &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

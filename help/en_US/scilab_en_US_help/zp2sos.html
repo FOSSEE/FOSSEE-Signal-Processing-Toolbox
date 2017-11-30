@@ -1,0 +1,87 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>zp2sos</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="zerocrossing.html">&lt;&lt; zerocrossing</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="zp2ss.html">zp2ss &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; zp2sos</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">zp2sos</h1>
+    <p class="refpurpose">This function converts filter poles and zeros to second-order sections.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">sos</span><span class="default">] = </span><span class="functionid">zp2sos</span><span class="default">(</span><span class="default">z</span><span class="default">)</span>
+<span class="default">[</span><span class="default">sos</span><span class="default">] = </span><span class="functionid">zp2sos</span><span class="default">(</span><span class="default">z</span><span class="default">, </span><span class="default">p</span><span class="default">)</span>
+<span class="default">[</span><span class="default">sos</span><span class="default">] = </span><span class="functionid">zp2sos</span><span class="default">(</span><span class="default">z</span><span class="default">, </span><span class="default">p</span><span class="default">, </span><span class="default">k</span><span class="default">)</span>
+<span class="default">[</span><span class="default">sos</span><span class="default">, </span><span class="default">g</span><span class="default">] = </span><span class="functionid">zp2sos</span><span class="default">(...)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">z:</span>
+      <dd><p class="para">column vector</p></dd></dt>
+   <dt><span class="term">p:</span>
+      <dd><p class="para">column vector</p></dd></dt>
+   <dt><span class="term">k:</span>
+      <dd><p class="para">real or complex value, default value is 1</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+This function converts filter poles and zeros to second-order sections.
+The first and second parameters are column vectors containing zeros and poles. The third parameter is the overall filter gain, the default value of which is 1.
+The output is the sos matrix and the overall gain.
+If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">zp2sos</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilabdefault">,</span> <span class="scilabnumber">6</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+<span class="scilabnumber">6</span>  <span class="scilaboperator">-</span><span class="scilabnumber">18</span>   <span class="scilabnumber">12</span>    <span class="scilabnumber">1</span>   <span class="scilaboperator">-</span><span class="scilabnumber">2</span>    <span class="scilabnumber">0</span>
+<span class="scilabnumber">1</span>   <span class="scilaboperator">-</span><span class="scilabnumber">3</span>    <span class="scilabnumber">0</span>    <span class="scilabnumber">1</span>    <span class="scilabnumber">0</span>    <span class="scilabnumber">0</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="zerocrossing.html">&lt;&lt; zerocrossing</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="zp2ss.html">zp2ss &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

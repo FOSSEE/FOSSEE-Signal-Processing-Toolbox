@@ -1,4 +1,4 @@
-function res = fft2 (A, m, n)
+function res = fft21 (A, m, n)
 //Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
 //Calling Sequence
 //fft2 (A, m, n)
@@ -15,7 +15,7 @@ function res = fft2 (A, m, n)
 //x = [1 2 3; 4 5 6; 7 8 9]
 //m = 4
 //n = 4
-//fft2 (A, m, n)
+//fft21 (A, m, n)
 //ans =
 //
 //   45 +  0i   -6 - 15i   15 +  0i   -6 + 15i

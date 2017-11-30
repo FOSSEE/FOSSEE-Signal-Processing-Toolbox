@@ -1,0 +1,99 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>arma_rnd</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="arcov.html">&lt;&lt; arcov</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="armcov.html">armcov &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; arma_rnd</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">arma_rnd</h1>
+    <p class="refpurpose">Return a simulation of the ARMA model.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="functionid">arma_rnd</span><span class="default"> (</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">v</span><span class="default">, </span><span class="default">t</span><span class="default">, </span><span class="default">n</span><span class="default">)</span>
+<span class="functionid">arma_rnd</span><span class="default"> (</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">v</span><span class="default">, </span><span class="default">t</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">a:</span>
+      <dd><p class="para">vector</p></dd></dt>
+   <dt><span class="term">b:</span>
+      <dd><p class="para">vector</p></dd></dt>
+   <dt><span class="term">v:</span>
+      <dd><p class="para">Variance</p></dd></dt>
+   <dt><span class="term">t:</span>
+      <dd><p class="para">Length of output vector</p></dd></dt>
+   <dt><span class="term">n:</span>
+      <dd><p class="para">Number of dummy x(i) used for initialization</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+The ARMA model is defined by</p>
+   <p class="para">x(n) = a(1) * x(n-1) + … + a(k) * x(n-k)
++ e(n) + b(1) * e(n-1) + … + b(l) * e(n-l)
+in which k is the length of vector a, l is the length of vector b and e is Gaussian white noise with variance v. The function returns a vector of length t.</p>
+   <p class="para">The optional parameter n gives the number of dummy x(i) used for initialization, i.e., a sequence of length t+n is generated and x(n+1:t+n) is returned. If n is omitted, n = 100 is used.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">a</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">2</span> <span class="scilabnumber">3</span> <span class="scilabnumber">4</span> <span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">b</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">7</span><span class="scilabdefault">;</span> <span class="scilabnumber">8</span><span class="scilabdefault">;</span> <span class="scilabnumber">9</span><span class="scilabdefault">;</span> <span class="scilabnumber">10</span><span class="scilabdefault">;</span> <span class="scilabnumber">11</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">v</span> <span class="scilaboperator">=</span> <span class="scilabnumber">10</span><span class="scilabdefault">;</span>
+<span class="scilabid">t</span> <span class="scilaboperator">=</span> <span class="scilabnumber">5</span><span class="scilabdefault">;</span>
+<span class="scilabid">n</span> <span class="scilaboperator">=</span> <span class="scilabnumber">100</span><span class="scilabdefault">;</span>
+<span class="scilabid">arma_rnd</span> <span class="scilabopenclose">(</span><span class="scilabid">a</span><span class="scilabdefault">,</span> <span class="scilabid">b</span><span class="scilabdefault">,</span> <span class="scilabid">v</span><span class="scilabdefault">,</span> <span class="scilabid">t</span><span class="scilabdefault">,</span> <span class="scilabid">n</span><span class="scilabopenclose">)</span>
+<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
+
+<span class="scilaboperator">-</span><span class="scilabnumber">1.6176e+05</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">4.1663e+05</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">1.0732e+06</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">2.7648e+06</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">7.1221e+06</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="arcov.html">&lt;&lt; arcov</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="armcov.html">armcov &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

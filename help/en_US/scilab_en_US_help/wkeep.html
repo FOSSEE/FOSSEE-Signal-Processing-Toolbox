@@ -1,0 +1,83 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>wkeep</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="window.html">&lt;&lt; window</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="wrev.html">wrev &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; wkeep</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">wkeep</h1>
+    <p class="refpurpose"></p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">y</span><span class="default">]=</span><span class="functionid">wkeep</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">l</span><span class="default">)</span>
+<span class="default">[</span><span class="default">y</span><span class="default">]=</span><span class="functionid">wkeep</span><span class="default">(</span><span class="default">x</span><span class="default">,</span><span class="default">l</span><span class="default">,</span><span class="default">opt</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">x:</span>
+      <dd><p class="para">Real, complex or string type input vector or matrix</p></dd></dt>
+   <dt><span class="term">l:</span>
+      <dd><p class="para">Length of matrix required</p></dd></dt>
+   <dt><span class="term">opt:</span>
+      <dd><p class="para">Character input to determine which side to extract from</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function
+[y]=wkeep(x,l) extracts a vector of length l from the centre of input vector x.
+[y]=wkeep(x,l,opt) extracts vector based on opt which could be &#0039;l&#0039;,&#0039;r&#0039; or &#0039;c&#0039; (left, right or central).</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1.</span>    <span class="scilabopenclose">[</span><span class="scilabid">y</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">wkeep</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">2</span> <span class="scilabnumber">3</span><span class="scilabdefault">;</span><span class="scilabnumber">4</span> <span class="scilabnumber">5</span> <span class="scilabnumber">6</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabopenclose">[</span><span class="scilabnumber">2</span> <span class="scilabnumber">2</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
+<span class="scilabid">y</span><span class="scilaboperator">=</span>  <span class="scilabnumber">1</span>   <span class="scilabnumber">2</span>
+<span class="scilabnumber">2.</span>    <span class="scilabopenclose">[</span><span class="scilabid">y</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">wkeep</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">2</span> <span class="scilabnumber">3</span> <span class="scilabnumber">4</span> <span class="scilabnumber">5</span> <span class="scilabnumber">6</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabstring">&#0039;</span><span class="scilabstring">r</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span>
+<span class="scilabid">y</span><span class="scilaboperator">=</span>  <span class="scilabnumber">4</span>   <span class="scilabnumber">5</span>   <span class="scilabnumber">6</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="window.html">&lt;&lt; window</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="wrev.html">wrev &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

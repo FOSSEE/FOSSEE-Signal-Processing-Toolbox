@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from diffpara.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="diffpara" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>diffpara</refname>
+    <refpurpose>Return the estimator D for the differencing parameter of an integrated time series</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [D, DD] = diffpara (X)
+   [D, DD] = diffpara (X, A)
+   [D, DD] = diffpara (X, A, B)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para> Input scalar or vector.</para></listitem></varlistentry>
+   <varlistentry><term>DD:</term>
+      <listitem><para>The estimators for all frequencies in the intervals described above.</para></listitem></varlistentry>
+   <varlistentry><term>D:</term>
+      <listitem><para>The mean of DD</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the estimator D for the differencing parameter of an integrated time series.
+   </para>
+   <para>
+The frequencies from [2*pi*a/t, 2*pi*b/T] are used for the estimation. If B is omitted, the interval [2*pi/T, 2*pi*a/T] is used.  If both B and A are omitted then a = 0.5 * sqrt (T) and b = 1.5 * sqrt (T) is used, where T is the sample size.  If X is a matrix, the differencing parameter of each column is estimated.
+   </para>
+   <para>
+The estimators for all frequencies in the intervals described above is returned in DD.
+   </para>
+   <para>
+The value of D is simply the mean of DD.
+</para>
+</refsection>
+</refentry>

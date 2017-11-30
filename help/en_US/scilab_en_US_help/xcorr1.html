@@ -1,0 +1,96 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>xcorr1</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="wrev.html">&lt;&lt; wrev</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="xcorr2.html">xcorr2 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; xcorr1</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">xcorr1</h1>
+    <p class="refpurpose">Estimates the cross-correlation.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">R</span><span class="default">, </span><span class="default">lag</span><span class="default">] = </span><span class="functionid">xcorr1</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">Y</span><span class="default">, </span><span class="default">maxlag</span><span class="default">, </span><span class="default">scale</span><span class="default">)</span>
+<span class="default">[</span><span class="default">R</span><span class="default">, </span><span class="default">lag</span><span class="default">] = </span><span class="functionid">xcorr1</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">Y</span><span class="default">, </span><span class="default">maxlag</span><span class="default">)</span>
+<span class="default">[</span><span class="default">R</span><span class="default">, </span><span class="default">lag</span><span class="default">] = </span><span class="functionid">xcorr1</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">Y</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">X:</span>
+      <dd><p class="para">[non-empty; real or complex; vector or matrix] data.</p></dd></dt>
+   <dt><span class="term">Y:</span>
+      <dd><p class="para">[real or complex vector] data.</p></dd></dt>
+   <dt><span class="term">maxlag:</span>
+      <dd><p class="para">[integer scalar] maximum correlation lag If omitted, the default value is N-1, where N is the greater of the lengths of X and Y or, if X is a matrix, the number of rows in X.</p></dd></dt>
+   <dt><span class="term">scale:</span>
+      <dd><p class="para">[character string] specifies the type of scaling applied to the correlation vector (or matrix). is one of:</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+Estimate the cross correlation R_xy(k) of vector arguments X and Y or, if Y is omitted, estimate autocorrelation R_xx(k) of vector X, for a range of lags k specified by argument &#0034;maxlag&#0034;. If X is a
+matrix, each column of X is correlated with itself and every other column.</p>
+   <p class="para">The cross-correlation estimate between vectors &#0034;x&#0034; and &#0034;y&#0034; (of length N) for lag &#0034;k&#0034; is given by</p>
+   <p class="para">N
+R_xy(k) = sum x_{i+k} conj(y_i),
+i=1</p>
+   <p class="para">where data not provided (for example x(-1), y(N+1)) is zero. Note the definition of cross-correlation given above. To compute a cross-correlation consistent with the field of statistics, see xcov.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">R</span><span class="scilabdefault">,</span> <span class="scilabid">lag</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">xcorr1</span> <span class="scilabopenclose">(</span> <span class="scilabopenclose">[</span><span class="scilabnumber">5</span> <span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">2</span> <span class="scilabnumber">2</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0039;</span><span class="scilabstring">biased</span><span class="scilabstring">&#0039;</span> <span class="scilabopenclose">)</span>
+
+<span class="scilabid">R</span> <span class="scilaboperator">=</span>
+
+<span class="scilabnumber">0</span>    <span class="scilabnumber">5</span>   <span class="scilabnumber">10</span>    <span class="scilabnumber">5</span>    <span class="scilabnumber">0</span>
+
+<span class="scilabid">lag</span> <span class="scilaboperator">=</span>
+
+<span class="scilaboperator">-</span><span class="scilabnumber">2</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1</span>   <span class="scilabnumber">0</span>   <span class="scilabnumber">1</span>   <span class="scilabnumber">2</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="wrev.html">&lt;&lt; wrev</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="xcorr2.html">xcorr2 &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

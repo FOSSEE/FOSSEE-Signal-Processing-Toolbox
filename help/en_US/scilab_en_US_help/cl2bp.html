@@ -1,0 +1,96 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>cl2bp</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="chirp.html">&lt;&lt; chirp</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="clustersegment.html">clustersegment &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; cl2bp</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">cl2bp</h1>
+    <p class="refpurpose">Constrained L2 bandpass FIR filter design.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">h</span><span class="default"> = </span><span class="functionid">cl2bp</span><span class="default"> (</span><span class="default">m</span><span class="default">, </span><span class="default">w1</span><span class="default">, </span><span class="default">w2</span><span class="default">, </span><span class="default">up</span><span class="default">, </span><span class="default">lo</span><span class="default">, </span><span class="default">gridsize</span><span class="default">)</span>
+<span class="default">h</span><span class="default"> = </span><span class="functionid">cl2bp</span><span class="default"> (</span><span class="default">m</span><span class="default">, </span><span class="default">w1</span><span class="default">, </span><span class="default">w2</span><span class="default">, </span><span class="default">up</span><span class="default">, </span><span class="default">lo</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">m:</span>
+      <dd><p class="para">degree of cosine polynomial, i.e. the number of output coefficients will be m*2+1</p></dd></dt>
+   <dt><span class="term">w1 and w2:</span>
+      <dd><p class="para">bandpass filter cutoffs in the range 0 &lt;= w1 &lt; w2 &lt;= pi, where pi is the Nyquist frequency</p></dd></dt>
+   <dt><span class="term">up:</span>
+      <dd><p class="para">vector of 3 upper bounds for [stopband1, passband, stopband2]</p></dd></dt>
+   <dt><span class="term">lo:</span>
+      <dd><p class="para">vector of 3 lower bounds for [stopband1, passband, stopband2]</p></dd></dt>
+   <dt><span class="term">gridsize:</span>
+      <dd><p class="para">search grid size; larger values may improve accuracy, but greatly increase calculation time.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+Constrained L2 bandpass FIR filter design. Compared to remez, it offers implicit specification of transition bands, a higher likelihood of convergence, and an error criterion combining features of both L2 and Chebyshev approaches.</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">h</span> <span class="scilaboperator">=</span> <span class="scilabid">cl2bp</span><span class="scilabopenclose">(</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.3</span><span class="scilaboperator">*</span><span class="scilabid">pi</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.6</span><span class="scilaboperator">*</span><span class="scilabid">pi</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.02</span><span class="scilabdefault">,</span> <span class="scilabnumber">1.02</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.02</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilaboperator">-</span><span class="scilabnumber">0.02</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.98</span><span class="scilabdefault">,</span> <span class="scilaboperator">-</span><span class="scilabnumber">0.02</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span> <span class="scilabnumber">2</span><span class="scilaboperator">^</span><span class="scilabnumber">11</span><span class="scilabopenclose">)</span>
+<span class="scilabid">h</span> <span class="scilaboperator">=</span>
+
+<span class="scilabnumber">0.038311</span>
+<span class="scilabnumber">0.082289</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">0.086163</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">0.226006</span>
+<span class="scilabnumber">0.047851</span>
+<span class="scilabnumber">0.307434</span>
+<span class="scilabnumber">0.047851</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">0.226006</span>
+<span class="scilaboperator">-</span><span class="scilabnumber">0.086163</span>
+<span class="scilabnumber">0.082289</span>
+<span class="scilabnumber">0.038311</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="chirp.html">&lt;&lt; chirp</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="clustersegment.html">clustersegment &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

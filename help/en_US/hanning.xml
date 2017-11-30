@@ -17,7 +17,32 @@
 
   <refnamediv>
     <refname>hanning</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Return the filter coefficients of a Hanning window of length M</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   hanning (M)
+   hanning (M, "periodic")
+   hanning (M, "symmetric")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>M:</term>
+      <listitem><para> real scalar, which will be the length of hanning window</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the filter coefficients of a Hanning window of length M.
+If the optional argument "periodic" is given, the periodic form of the window is returned.  This is equivalent to the window of length M+1 with the last coefficient removed.  The optional argument "symmetric" is equivalent to not specifying a second argument.
+</para>
+</refsection>
 </refentry>

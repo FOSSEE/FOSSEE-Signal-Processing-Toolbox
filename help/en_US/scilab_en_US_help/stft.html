@@ -1,0 +1,93 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>stft</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="statelevels.html">&lt;&lt; statelevels</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="stmcb.html">stmcb &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; stft</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">stft</h1>
+    <p class="refpurpose">Compute the short-time Fourier transform of the vector X</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">Y</span><span class="default"> = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">)</span>
+<span class="default">Y</span><span class="default"> = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">)</span>
+<span class="default">Y</span><span class="default"> = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">)</span>
+<span class="default">Y</span><span class="default"> = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">, </span><span class="default">NUM_COEF</span><span class="default">)</span>
+<span class="default">Y</span><span class="default"> = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">, </span><span class="default">NUM_COEF</span><span class="default">, </span><span class="default">WIN_TYPE</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Y</span><span class="default">,</span><span class="default">C</span><span class="default">] = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Y</span><span class="default">,</span><span class="default">C</span><span class="default">] = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Y</span><span class="default">,</span><span class="default">C</span><span class="default">] = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Y</span><span class="default">,</span><span class="default">C</span><span class="default">] = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">, </span><span class="default">NUM_COEF</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Y</span><span class="default">,</span><span class="default">C</span><span class="default">] = </span><span class="functionid">stft</span><span class="default"> (</span><span class="default">X</span><span class="default">, </span><span class="default">WIN_SIZE</span><span class="default">, </span><span class="default">INC</span><span class="default">, </span><span class="default">NUM_COEF</span><span class="default">, </span><span class="default">WIN_TYPE</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">X:</span>
+      <dd><p class="para">Real scalar or vector</p></dd></dt>
+   <dt><span class="term">WIN_SIZE:</span>
+      <dd><p class="para">Size of the window used</p></dd></dt>
+   <dt><span class="term">INC:</span>
+      <dd><p class="para">Increment</p></dd></dt>
+   <dt><span class="term">WIN_TYPE:</span>
+      <dd><p class="para">Type of window</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Compute the short-time Fourier transform of the vector X with NUM_COEF coefficients by applying a window of WIN_SIZE data points and an increment of INC points.</p>
+   <p class="para">Before computing the Fourier transform, one of the following windows is applied:</p>
+   <p class="para">&#0034;hanning&#0034; -&gt; win_type = 1</p>
+   <p class="para">&#0034;hamming&#0034; -&gt; win_type = 2</p>
+   <p class="para">&#0034;rectangle&#0034; -&gt; win_type = 3</p>
+   <p class="para">The window names can be passed as strings or by the WIN_TYPE number.</p>
+   <p class="para">The following defaults are used for unspecified arguments:WIN_SIZE= 80, INC = 24, NUM_COEF = 64, and WIN_TYPE = 1.</p>
+   <p class="para">Y = stft (X, ...)&#0039; returns the absolute values of the Fourier coefficients according to the NUM_COEF positive frequencies.</p>
+   <p class="para">&#0039;[Y, C] = stft (x, ...)&#0039; returns the entire STFT-matrix Y and a 3-element vector C containing the window size, increment, and window type, which is needed by the &#0039;synthesis&#0039; function.</p></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="statelevels.html">&lt;&lt; statelevels</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="stmcb.html">stmcb &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

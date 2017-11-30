@@ -1,0 +1,115 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>sftrans</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="seqperiod.html">&lt;&lt; seqperiod</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="sgolay.html">sgolay &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; <a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a> &gt; sftrans</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">sftrans</h1>
+    <p class="refpurpose">Transform band edges of a generic lowpass filter (cutoff at W=1) represented in splane zero-pole-gain form.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">Sz</span><span class="default">, </span><span class="default">Sp</span><span class="default">, </span><span class="default">Sg</span><span class="default">] = </span><span class="functionid">sftrans</span><span class="default"> (</span><span class="default">Sz</span><span class="default">, </span><span class="default">Sp</span><span class="default">, </span><span class="default">Sg</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">stop</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Sz</span><span class="default">, </span><span class="default">Sp</span><span class="default">] = </span><span class="functionid">sftrans</span><span class="default"> (</span><span class="default">Sz</span><span class="default">, </span><span class="default">Sp</span><span class="default">, </span><span class="default">Sg</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">stop</span><span class="default">)</span>
+<span class="default">[</span><span class="default">Sz</span><span class="default">] = </span><span class="functionid">sftrans</span><span class="default"> (</span><span class="default">Sz</span><span class="default">, </span><span class="default">Sp</span><span class="default">, </span><span class="default">Sg</span><span class="default">, </span><span class="default">W</span><span class="default">, </span><span class="default">stop</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">Sz:</span>
+      <dd><p class="para">Zeros.</p></dd></dt>
+   <dt><span class="term">Sp:</span>
+      <dd><p class="para">Poles.</p></dd></dt>
+   <dt><span class="term">Sg:</span>
+      <dd><p class="para">Gain.</p></dd></dt>
+   <dt><span class="term">W:</span>
+      <dd><p class="para">Edge of target filter.</p></dd></dt>
+   <dt><span class="term">stop:</span>
+      <dd><p class="para">True for high pass and band stop filters or false for low pass and band pass filters.</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This is an Octave function.
+Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros
+individually. The following table summarizes the transformation:</p>
+   <p class="para">Transform         Zero at x                  Pole at x
+----------------  -------------------------  ------------------------
+Low Pass          zero: Fc x/C               pole: Fc x/C
+S -&gt; C S/Fc       gain: C/Fc                 gain: Fc/C
+----------------  -------------------------  ------------------------
+High Pass         zero: Fc C/x               pole: Fc C/x
+S -&gt; C Fc/S       pole: 0                    zero: 0
+gain: -x                   gain: -1/x
+----------------  -------------------------  ------------------------
+Band Pass         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
+S^2+FhFl   pole: 0                    zero: 0
+S -&gt; C --------   gain: C/(Fh-Fl)            gain: (Fh-Fl)/C
+S(Fh-Fl)   b=x/C (Fh-Fl)/2            b=x/C (Fh-Fl)/2
+----------------  -------------------------  ------------------------
+Band Stop         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
+S(Fh-Fl)   pole: +-sqrt(-FhFl)        zero: +-sqrt(-FhFl)
+S -&gt; C --------   gain: -x                   gain: -1/x
+S^2+FhFl   b=C/x (Fh-Fl)/2            b=C/x (Fh-Fl)/2
+----------------  -------------------------  ------------------------
+Bilinear          zero: (2+xT)/(2-xT)        pole: (2+xT)/(2-xT)
+2 z-1        pole: -1                   zero: -1
+S -&gt; - ---        gain: (2-xT)/T             gain: (2-xT)/T
+T z+1
+----------------  -------------------------  ------------------------</p>
+   <p class="para">where C is the cutoff frequency of the initial lowpass filter, Fc is the edge of the target low/high pass filter and [Fl,Fh] are the edges of the target band pass/stop filter. With abundant tedious
+algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:</p>
+   <p class="para">H(S)=g prod(S-Xi)/prod(S-Xj)</p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">Sz</span><span class="scilabdefault">,</span> <span class="scilabid">Sp</span><span class="scilabdefault">,</span> <span class="scilabid">Sg</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">sftrans</span> <span class="scilabopenclose">(</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span> <span class="scilabnumber">10</span><span class="scilabdefault">,</span> <span class="scilabnumber">15</span><span class="scilabdefault">,</span> <span class="scilabnumber">20</span><span class="scilabdefault">,</span> <span class="scilabnumber">30</span><span class="scilabopenclose">)</span>
+<span class="scilabid">Sz</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">4</span>
+<span class="scilabid">Sp</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">2</span>
+<span class="scilabid">Sg</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">7.5000</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="seqperiod.html">&lt;&lt; seqperiod</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_cc2bc01c47967d47fcf3507a91d572ba.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="sgolay.html">sgolay &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>
