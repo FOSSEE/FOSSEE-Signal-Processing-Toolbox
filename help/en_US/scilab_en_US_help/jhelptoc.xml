@@ -6,7 +6,9 @@
 <tocitem target="ac2poly" text="ac2poly"/>
 <tocitem target="ac2rc" text="ac2rc"/>
 <tocitem target="arParEst" text="arParEst"/>
+<tocitem target="ar_psd" text="ar_psd"/>
 <tocitem target="arburg" text="arburg"/>
+<tocitem target="arch_test" text="arch_test"/>
 <tocitem target="arch_fit" text="arch_fit"/>
 <tocitem target="arcov" text="arcov"/>
 <tocitem target="armcov" text="armcov"/>
@@ -16,6 +18,7 @@
 <tocitem target="bartlett" text="bartlett"/>
 <tocitem target="besselap" text="besselap"/>
 <tocitem target="besself" text="besself"/>
+<tocitem target="bilinear" text="bilinear"/>
 <tocitem target="bitrevorder" text="bitrevorder"/>
 <tocitem target="blackman" text="blackman"/>
 <tocitem target="blackmanharris" text="blackmanharris"/>
@@ -41,6 +44,7 @@
 <tocitem target="chirp" text="chirp"/>
 <tocitem target="clustersegment" text="clustersegment"/>
 <tocitem target="cmorwavf" text="cmorwavf"/>
+<tocitem target="cohere" text="cohere"/>
 <tocitem target="convmtx" text="convmtx"/>
 <tocitem target="corrmtx" text="corrmtx"/>
 <tocitem target="cplxreal" text="cplxreal"/>
@@ -52,10 +56,13 @@
 <tocitem target="db2pow" text="db2pow"/>
 <tocitem target="dctmtx" text="dctmtx"/>
 <tocitem target="decimate" text="decimate"/>
+<tocitem target="detrend1" text="detrend1"/>
 <tocitem target="dftmtx" text="dftmtx"/>
+<tocitem target="diffpara" text="diffpara"/>
 <tocitem target="diric" text="diric"/>
 <tocitem target="downsample" text="downsample"/>
 <tocitem target="dst1" text="dst1"/>
+<tocitem target="durbinlevinson" text="durbinlevinson"/>
 <tocitem target="dutycycle" text="dutycycle"/>
 <tocitem target="dwt" text="dwt"/>
 <tocitem target="ellip" text="ellip"/>
@@ -68,6 +75,7 @@
 <tocitem target="fft2" text="fft2"/>
 <tocitem target="fftconv" text="fftconv"/>
 <tocitem target="fftfilt" text="fftfilt"/>
+<tocitem target="fftshift1" text="fftshift1"/>
 <tocitem target="fftn" text="fftn"/>
 <tocitem target="fht" text="fht"/>
 <tocitem target="filter1" text="filter1"/>
@@ -83,6 +91,7 @@
 <tocitem target="firtype" text="firtype"/>
 <tocitem target="flattopwin" text="flattopwin"/>
 <tocitem target="fracshift" text="fracshift"/>
+<tocitem target="fractdiff" text="fractdiff"/>
 <tocitem target="freqs" text="freqs"/>
 <tocitem target="freqz" text="freqz"/>
 <tocitem target="fwhm" text="fwhm"/>
@@ -95,6 +104,7 @@
 <tocitem target="gmonopuls" text="gmonopuls"/>
 <tocitem target="goertzel" text="goertzel"/>
 <tocitem target="grpdelay" text="grpdelay"/>
+<tocitem target="hamming" text="hamming"/>
 <tocitem target="hann" text="hann"/>
 <tocitem target="hanning" text="hanning"/>
 <tocitem target="helperHarmonicDistortionAmplifier" text="helperHarmonicDistortionAmplifier"/>
@@ -106,6 +116,7 @@
 <tocitem target="idst1" text="idst1"/>
 <tocitem target="ifft" text="ifft"/>
 <tocitem target="ifft2" text="ifft2"/>
+<tocitem target="ifftshift1" text="ifftshift1"/>
 <tocitem target="ifftn" text="ifftn"/>
 <tocitem target="ifht" text="ifht"/>
 <tocitem target="ifwht" text="ifwht"/>
@@ -226,6 +237,7 @@
 <tocitem target="tf2sos" text="tf2sos"/>
 <tocitem target="tf2zp" text="tf2zp"/>
 <tocitem target="tf2zpk" text="tf2zpk"/>
+<tocitem target="tfe" text="tfe"/>
 <tocitem target="transpose" text="transpose"/>
 <tocitem target="trial_iirlp2mb" text="trial_iirlp2mb"/>
 <tocitem target="triang" text="triang"/>

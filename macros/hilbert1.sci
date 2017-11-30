@@ -9,7 +9,7 @@ function h= hilbert1(f, varargin)
 //N: The result will have length N
 //dim : It analyses the input in this dimension
 //Description
-//h = hilbert (f) computes the extension of the real valued signal f to an analytic signal. If f is a matrix, the transformation is applied to each column. For N-D arrays, the transformation is applied to the first non-singleton dimension.
+//h = hilbert1 (f) computes the extension of the real valued signal f to an analytic signal. If f is a matrix, the transformation is applied to each column. For N-D arrays, the transformation is applied to the first non-singleton dimension.
 //
 //real (h) contains the original signal f. imag (h) contains the Hilbert transform of f.
 //
