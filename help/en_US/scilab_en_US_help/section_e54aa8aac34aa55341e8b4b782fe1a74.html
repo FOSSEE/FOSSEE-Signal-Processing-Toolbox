@@ -1,0 +1,1729 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="index.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Signal Processing Toolbox</a> &gt;&gt; FOSSEE Signal Processing Toolbox</span>
+
+    <br /><br />
+    <h3 class="title-part">FOSSEE Signal Processing Toolbox</h3>
+<ul class="list-chapter"><li><a href="ac2poly.html" class="refentry">ac2poly</a> &#8212; <span class="refentry-description">Convert autocorrelation sequence to polynomial of prediction filter</span></li>
+
+
+
+
+
+<li><a href="ac2rc.html" class="refentry">ac2rc</a> &#8212; <span class="refentry-description">Convert autocorrelation sequence to reflection coefficients.</span></li>
+
+
+
+
+
+<li><a href="arParEst.html" class="refentry">arParEst</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="ar_psd.html" class="refentry">ar_psd</a> &#8212; <span class="refentry-description">Calculate the power spectrum of the autoregressive model</span></li>
+
+
+
+
+
+<li><a href="arburg.html" class="refentry">arburg</a> &#8212; <span class="refentry-description">This function calculates coefficients of an autoregressive (AR) model of complex data.</span></li>
+
+
+
+
+
+<li><a href="arch_fit.html" class="refentry">arch_fit</a> &#8212; <span class="refentry-description">This functions fits an ARCH regression model to the time series Y using the scoring algorithm in Engle&#0039;s original ARCH paper.</span></li>
+
+
+
+
+
+<li><a href="arch_rnd.html" class="refentry">arch_rnd</a> &#8212; <span class="refentry-description">Simulate an ARCH sequence of length t with AR coefficients b and CH coefficients a.</span></li>
+
+
+
+
+
+<li><a href="arch_test.html" class="refentry">arch_test</a> &#8212; <span class="refentry-description">perform a Lagrange Multiplier (LM) test of thenull hypothesis of no conditional heteroscedascity against the alternative of CH(P)</span></li>
+
+
+
+
+
+<li><a href="arcov.html" class="refentry">arcov</a> &#8212; <span class="refentry-description">Autoregressive all-pole model parameters — covariance method</span></li>
+
+
+
+
+
+<li><a href="arma_rnd.html" class="refentry">arma_rnd</a> &#8212; <span class="refentry-description">Return a simulation of the ARMA model.</span></li>
+
+
+
+
+
+<li><a href="armcov.html" class="refentry">armcov</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="aryule.html" class="refentry">aryule</a> &#8212; <span class="refentry-description">This function fits an AR (p)-model with Yule-Walker estimates.</span></li>
+
+
+
+
+
+<li><a href="autoreg_matrix.html" class="refentry">autoreg_matrix</a> &#8212; <span class="refentry-description">Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.</span></li>
+
+
+
+
+
+<li><a href="barthannwin.html" class="refentry">barthannwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a modified Bartlett-Hann window.</span></li>
+
+
+
+
+
+<li><a href="bartlett.html" class="refentry">bartlett</a> &#8212; <span class="refentry-description">Generates a Bartlett window</span></li>
+
+
+
+
+
+<li><a href="besselap.html" class="refentry">besselap</a> &#8212; <span class="refentry-description">Return bessel analog filter prototype.</span></li>
+
+
+
+
+
+<li><a href="besself.html" class="refentry">besself</a> &#8212; <span class="refentry-description">This function generates a Bessel filter.</span></li>
+
+
+
+
+
+<li><a href="bilinear.html" class="refentry">bilinear</a> &#8212; <span class="refentry-description">Transform a s-plane filter specification into a z-plane specification</span></li>
+
+
+
+
+
+<li><a href="bitrevorder.html" class="refentry">bitrevorder</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="blackman.html" class="refentry">blackman</a> &#8212; <span class="refentry-description">Generates a Blackman window</span></li>
+
+
+
+
+
+<li><a href="blackmanharris.html" class="refentry">blackmanharris</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Blackman-Harris window.</span></li>
+
+
+
+
+
+<li><a href="blackmannuttall.html" class="refentry">blackmannuttall</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Blackman-Nuttall window.</span></li>
+
+
+
+
+
+<li><a href="bohmanwin.html" class="refentry">bohmanwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Bohman window.</span></li>
+
+
+
+
+
+<li><a href="boxcar.html" class="refentry">boxcar</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a rectangular window.</span></li>
+
+
+
+
+
+<li><a href="buffer.html" class="refentry">buffer</a> &#8212; <span class="refentry-description">This function buffers the given data into a matrix of signal frames</span></li>
+
+
+
+
+
+<li><a href="buttap.html" class="refentry">buttap</a> &#8212; <span class="refentry-description">Design a lowpass analog Butterworth filter.</span></li>
+
+
+
+
+
+<li><a href="butter.html" class="refentry">butter</a> &#8212; <span class="refentry-description">This function generates a Butterworth filter.</span></li>
+
+
+
+
+
+<li><a href="buttord.html" class="refentry">buttord</a> &#8212; <span class="refentry-description">/This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.</span></li>
+
+
+
+
+
+<li><a href="cceps.html" class="refentry">cceps</a> &#8212; <span class="refentry-description">Return the complex cepstrum of the vector x</span></li>
+
+
+
+
+
+<li><a href="cconv.html" class="refentry">cconv</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="cell2sos.html" class="refentry">cell2sos</a> &#8212; <span class="refentry-description">Converts a cell array to a second order section matrix</span></li>
+
+
+
+
+
+<li><a href="cheb.html" class="refentry">cheb</a> &#8212; <span class="refentry-description">Calculates the nth-order Chebyshev polynomial at the point x.</span></li>
+
+
+
+
+
+<li><a href="cheb1ap.html" class="refentry">cheb1ap</a> &#8212; <span class="refentry-description">This function designs a lowpass analog Chebyshev type I filter.</span></li>
+
+
+
+
+
+<li><a href="cheb1ord.html" class="refentry">cheb1ord</a> &#8212; <span class="refentry-description">This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.</span></li>
+
+
+
+
+
+<li><a href="cheb2ap.html" class="refentry">cheb2ap</a> &#8212; <span class="refentry-description">This function designs a lowpass analog Chebyshev type II filter.</span></li>
+
+
+
+
+
+<li><a href="cheb2ord.html" class="refentry">cheb2ord</a> &#8212; <span class="refentry-description">This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.</span></li>
+
+
+
+
+
+<li><a href="chebwin.html" class="refentry">chebwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Dolph-Chebyshev window.</span></li>
+
+
+
+
+
+<li><a href="cheby1.html" class="refentry">cheby1</a> &#8212; <span class="refentry-description">This function generates a Chebyshev type I filter with rp dB of passband ripple.</span></li>
+
+
+
+
+
+<li><a href="cheby2.html" class="refentry">cheby2</a> &#8212; <span class="refentry-description">This function generates a Chebyshev type II filter with rs dB of stopband attenuation.</span></li>
+
+
+
+
+
+<li><a href="check.html" class="refentry">check</a> &#8212; <span class="refentry-description">funcprot(0);</span></li>
+
+
+
+
+
+<li><a href="chirp.html" class="refentry">chirp</a> &#8212; <span class="refentry-description">This function evaluates a chirp signal at time t.</span></li>
+
+
+
+
+
+<li><a href="cl2bp.html" class="refentry">cl2bp</a> &#8212; <span class="refentry-description">Constrained L2 bandpass FIR filter design.</span></li>
+
+
+
+
+
+<li><a href="clustersegment.html" class="refentry">clustersegment</a> &#8212; <span class="refentry-description">This function calculates boundary indexes of clusters of 1’s.</span></li>
+
+
+
+
+
+<li><a href="cmorwavf.html" class="refentry">cmorwavf</a> &#8212; <span class="refentry-description">funcprot(0);</span></li>
+
+
+
+
+
+<li><a href="cohere.html" class="refentry">cohere</a> &#8212; <span class="refentry-description">Estimate (mean square) coherence of signals &#0034;x&#0034; and &#0034;y&#0034;</span></li>
+
+
+
+
+
+<li><a href="convmtx.html" class="refentry">convmtx</a> &#8212; <span class="refentry-description">n=double(n);</span></li>
+
+
+
+
+
+<li><a href="corrmtx.html" class="refentry">corrmtx</a> &#8212; <span class="refentry-description">Generate data matrix for autocorrelation matrix estimation</span></li>
+
+
+
+
+
+<li><a href="cplxreal.html" class="refentry">cplxreal</a> &#8212; <span class="refentry-description">Function to divide vector z into complex and real elements, removing the one of each complex conjugate pair.</span></li>
+
+
+
+
+
+<li><a href="cpsd.html" class="refentry">cpsd</a> &#8212; <span class="refentry-description">This function estimates cross power spectrum of data x and y by the Welch (1967) periodogram/FFT method.</span></li>
+
+
+
+
+
+<li><a href="cummax.html" class="refentry">cummax</a> &#8212; <span class="refentry-description">Cumulative maximum</span></li>
+
+
+
+
+
+<li><a href="cummin.html" class="refentry">cummin</a> &#8212; <span class="refentry-description">Cumulative minimum</span></li>
+
+
+
+
+
+<li><a href="czt.html" class="refentry">czt</a> &#8212; <span class="refentry-description">Chirp Z Transform</span></li>
+
+
+
+
+
+<li><a href="db.html" class="refentry">db</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="db2pow.html" class="refentry">db2pow</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="dctmtx.html" class="refentry">dctmtx</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="decimate.html" class="refentry">decimate</a> &#8212; <span class="refentry-description">rhs = argn(2)</span></li>
+
+
+
+
+
+<li><a href="detrend1.html" class="refentry">detrend1</a> &#8212; <span class="refentry-description">This function removes the best fit of a polynomial of order P from the data X</span></li>
+
+
+
+
+
+<li><a href="dftmtx.html" class="refentry">dftmtx</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="diffpara.html" class="refentry">diffpara</a> &#8212; <span class="refentry-description">Return the estimator D for the differencing parameter of an integrated time series</span></li>
+
+
+
+
+
+<li><a href="diric.html" class="refentry">diric</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="downsample.html" class="refentry">downsample</a> &#8212; <span class="refentry-description">This function downsamples the signal by selecting every nth element.</span></li>
+
+
+
+
+
+<li><a href="dst1.html" class="refentry">dst1</a> &#8212; <span class="refentry-description">Computes the type I discrete sine transform of x</span></li>
+
+
+
+
+
+<li><a href="durbinlevinson.html" class="refentry">durbinlevinson</a> &#8212; <span class="refentry-description">Perform one step of the Durbin-Levinson algorithm..</span></li>
+
+
+
+
+
+<li><a href="dutycycle.html" class="refentry">dutycycle</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="dwt.html" class="refentry">dwt</a> &#8212; <span class="refentry-description">Discrete wavelet transform (1D)</span></li>
+
+
+
+
+
+<li><a href="ellip.html" class="refentry">ellip</a> &#8212; <span class="refentry-description">This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.</span></li>
+
+
+
+
+
+<li><a href="ellipap.html" class="refentry">ellipap</a> &#8212; <span class="refentry-description">Designs a lowpass analog elliptic filter.</span></li>
+
+
+
+
+
+<li><a href="ellipord.html" class="refentry">ellipord</a> &#8212; <span class="refentry-description">This function computes the minimum filter order of an elliptic filter with the desired response characteristics.</span></li>
+
+
+
+
+
+<li><a href="enbw.html" class="refentry">enbw</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="eqtflength.html" class="refentry">eqtflength</a> &#8212; <span class="refentry-description">Modifies the input vector to give output vectors of the same length</span></li>
+
+
+
+
+
+<li><a href="falltime.html" class="refentry">falltime</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="fft.html" class="refentry">fft</a> &#8212; <span class="refentry-description">Calculates the discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="fft1.html" class="refentry">fft1</a> &#8212; <span class="refentry-description">Calculates the discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="fft2.html" class="refentry">fft2</a> &#8212; <span class="refentry-description">Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="fft21.html" class="refentry">fft21</a> &#8212; <span class="refentry-description">Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="fftconv.html" class="refentry">fftconv</a> &#8212; <span class="refentry-description">Convolve two vectors using the FFT for computation.</span></li>
+
+
+
+
+
+<li><a href="fftfilt.html" class="refentry">fftfilt</a> &#8212; <span class="refentry-description">Performs FFT-based FIR filtering using overlap-add method</span></li>
+
+
+
+
+
+<li><a href="fftn.html" class="refentry">fftn</a> &#8212; <span class="refentry-description">This function computes the N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.</span></li>
+
+
+
+
+
+<li><a href="fftshift1.html" class="refentry">fftshift1</a> &#8212; <span class="refentry-description">Perform a shift of the vector X, for use with the &#0039;fft1&#0039; and &#0039;ifft1&#0039; functions, in order the move the frequency 0 to the center of the vector or matrix.</span></li>
+
+
+
+
+
+<li><a href="fftw1.html" class="refentry">fftw1</a> &#8212; <span class="refentry-description">Manage FFTW wisdom data.</span></li>
+
+
+
+
+
+<li><a href="fht.html" class="refentry">fht</a> &#8212; <span class="refentry-description">The Function calculates the Fast Hartley Transform of real input.</span></li>
+
+
+
+
+
+<li><a href="filter1.html" class="refentry">filter1</a> &#8212; <span class="refentry-description">Apply a 1-D digital filter to the data X.</span></li>
+
+
+
+
+
+<li><a href="filter2.html" class="refentry">filter2</a> &#8212; <span class="refentry-description">Apply the 2-D FIR filter B to X.</span></li>
+
+
+
+
+
+<li><a href="filternorm.html" class="refentry">filternorm</a> &#8212; <span class="refentry-description">Calculates the L-2 norm or L-infinity norm of a digital filter</span></li>
+
+
+
+
+
+<li><a href="filtfilt.html" class="refentry">filtfilt</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="filtic.html" class="refentry">filtic</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="filtord.html" class="refentry">filtord</a> &#8212; <span class="refentry-description">and denominator coefficients, a.</span></li>
+
+
+
+
+
+<li><a href="findpeaks.html" class="refentry">findpeaks</a> &#8212; <span class="refentry-description">This function find peaks on DATA.</span></li>
+
+
+
+
+
+<li><a href="fir1.html" class="refentry">fir1</a> &#8212; <span class="refentry-description">Produce an order N FIR filter with the given frequency cutoff, returning the N+1 filter coefficients in B.</span></li>
+
+
+
+
+
+<li><a href="fir2.html" class="refentry">fir2</a> &#8212; <span class="refentry-description">Produce an order N FIR filter with arbitrary frequency response M over frequency bands F, returning the N+1 filter coefficients in B.</span></li>
+
+
+
+
+
+<li><a href="firpmord.html" class="refentry">firpmord</a> &#8212; <span class="refentry-description">Parks-McClennan optimal FIR filter order estimation</span></li>
+
+
+
+
+
+<li><a href="firtype.html" class="refentry">firtype</a> &#8212; <span class="refentry-description">if (type(b)~=1) then</span></li>
+
+
+
+
+
+<li><a href="flattopwin.html" class="refentry">flattopwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Flat Top window.</span></li>
+
+
+
+
+
+<li><a href="fracshift.html" class="refentry">fracshift</a> &#8212; <span class="refentry-description">This function shifts the series x supplied as input argument by a number of samples d.</span></li>
+
+
+
+
+
+<li><a href="fractdiff.html" class="refentry">fractdiff</a> &#8212; <span class="refentry-description">Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.</span></li>
+
+
+
+
+
+<li><a href="freqs.html" class="refentry">freqs</a> &#8212; <span class="refentry-description">Compute the s-plane frequency response of the IIR filter.</span></li>
+
+
+
+
+
+<li><a href="freqz.html" class="refentry">freqz</a> &#8212; <span class="refentry-description">This function returns the complex frequency response H of the rational IIR filter whose numerator and denominator coefficients are B and A, respectively.</span></li>
+
+
+
+
+
+<li><a href="fwhm.html" class="refentry">fwhm</a> &#8212; <span class="refentry-description">This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.</span></li>
+
+
+
+
+
+<li><a href="fwhmjlt.html" class="refentry">fwhmjlt</a> &#8212; <span class="refentry-description">rhs = argn(2)</span></li>
+
+
+
+
+
+<li><a href="fwht.html" class="refentry">fwht</a> &#8212; <span class="refentry-description">Compute the Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm</span></li>
+
+
+
+
+
+<li><a href="gauspuls.html" class="refentry">gauspuls</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="gaussdesign.html" class="refentry">gaussdesign</a> &#8212; <span class="refentry-description">GAUSSDESIGN designs a Gaussian pulse-shaping filter which is a low pass FIR</span></li>
+
+
+
+
+
+<li><a href="gaussian.html" class="refentry">gaussian</a> &#8212; <span class="refentry-description">This function returns a Gaussian convolution window.</span></li>
+
+
+
+
+
+<li><a href="gausswin.html" class="refentry">gausswin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Gaussian window.</span></li>
+
+
+
+
+
+<li><a href="gmonopuls.html" class="refentry">gmonopuls</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="goertzel.html" class="refentry">goertzel</a> &#8212; <span class="refentry-description">Computes DFT using the second order Goertzel Algorithm</span></li>
+
+
+
+
+
+<li><a href="grpdelay.html" class="refentry">grpdelay</a> &#8212; <span class="refentry-description">This function computes the group delay of a filter.</span></li>
+
+
+
+
+
+<li><a href="hamming.html" class="refentry">hamming</a> &#8212; <span class="refentry-description">Return the filter coefficients of a Hamming window of length M</span></li>
+
+
+
+
+
+<li><a href="hann.html" class="refentry">hann</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Hanning window.</span></li>
+
+
+
+
+
+<li><a href="hanning.html" class="refentry">hanning</a> &#8212; <span class="refentry-description">Return the filter coefficients of a Hanning window of length M</span></li>
+
+
+
+
+
+<li><a href="helperHarmonicDistortionAmplifier.html" class="refentry">helperHarmonicDistortionAmplifier</a> &#8212; <span class="refentry-description">helperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m</span></li>
+
+
+
+
+
+<li><a href="hilbert1.html" class="refentry">hilbert1</a> &#8212; <span class="refentry-description">Analytic extension of real valued signal.</span></li>
+
+
+
+
+
+<li><a href="hurst.html" class="refentry">hurst</a> &#8212; <span class="refentry-description">Estimate the Hurst parameter of sample X via the rescaled r statistic.</span></li>
+
+
+
+
+
+<li><a href="icceps.html" class="refentry">icceps</a> &#8212; <span class="refentry-description">ICCEPS computes the inverse cepstrum of a real-valued input. This spectrum</span></li>
+
+
+
+
+
+<li><a href="idct1.html" class="refentry">idct1</a> &#8212; <span class="refentry-description">Compute the inverse discrete cosine transform of input.</span></li>
+
+
+
+
+
+<li><a href="idct2.html" class="refentry">idct2</a> &#8212; <span class="refentry-description">This function computes the inverse 2-D discrete cosine transform of input matrix.</span></li>
+
+
+
+
+
+<li><a href="idst1.html" class="refentry">idst1</a> &#8212; <span class="refentry-description">This function computes the inverse type I discrete sine transform.</span></li>
+
+
+
+
+
+<li><a href="ifft.html" class="refentry">ifft</a> &#8212; <span class="refentry-description">Calculates the inverse discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="ifft1.html" class="refentry">ifft1</a> &#8212; <span class="refentry-description">Calculates the inverse discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="ifft2.html" class="refentry">ifft2</a> &#8212; <span class="refentry-description">Calculates the inverse two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</span></li>
+
+
+
+
+
+<li><a href="ifftn.html" class="refentry">ifftn</a> &#8212; <span class="refentry-description">Compute the inverse N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.</span></li>
+
+
+
+
+
+<li><a href="ifftshift1.html" class="refentry">ifftshift1</a> &#8212; <span class="refentry-description">Undo the action of the &#0039;fftshift1&#0039; function.</span></li>
+
+
+
+
+
+<li><a href="ifht.html" class="refentry">ifht</a> &#8212; <span class="refentry-description">Calculate the inverse Fast Hartley Transform of real input D</span></li>
+
+
+
+
+
+<li><a href="ifwht.html" class="refentry">ifwht</a> &#8212; <span class="refentry-description">Compute the inverse Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm</span></li>
+
+
+
+
+
+<li><a href="iirlp2mb.html" class="refentry">iirlp2mb</a> &#8212; <span class="refentry-description">This function does IIR Low Pass Filter to Multiband Filter Transformation.</span></li>
+
+
+
+
+
+<li><a href="impinvar.html" class="refentry">impinvar</a> &#8212; <span class="refentry-description">This function converts analog filter with coefficients b and a to digital, conserving impulse response.</span></li>
+
+
+
+
+
+<li><a href="impz.html" class="refentry">impz</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="impzlength.html" class="refentry">impzlength</a> &#8212; <span class="refentry-description">Impulse response length</span></li>
+
+
+
+
+
+<li><a href="interp.html" class="refentry">interp</a> &#8212; <span class="refentry-description">function y = interp(x, q, n, Wc)</span></li>
+
+
+
+
+
+<li><a href="intfilt.html" class="refentry">intfilt</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="invfreq.html" class="refentry">invfreq</a> &#8212; <span class="refentry-description">Calculates inverse frequency vectors</span></li>
+
+
+
+
+
+<li><a href="invfreqs.html" class="refentry">invfreqs</a> &#8212; <span class="refentry-description">Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.</span></li>
+
+
+
+
+
+<li><a href="invfreqz.html" class="refentry">invfreqz</a> &#8212; <span class="refentry-description">Fit filter B(z)/A(z)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.</span></li>
+
+
+
+
+
+<li><a href="invimpinvar.html" class="refentry">invimpinvar</a> &#8212; <span class="refentry-description">This function converts digital filter with coefficients b and a to analog, conserving impulse response.</span></li>
+
+
+
+
+
+<li><a href="is2rc.html" class="refentry">is2rc</a> &#8212; <span class="refentry-description">Convert inverse sine parameters to reflection coefficients</span></li>
+
+
+
+
+
+<li><a href="isallpass.html" class="refentry">isallpass</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="isfir.html" class="refentry">isfir</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="islinphase.html" class="refentry">islinphase</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="ismaxphase.html" class="refentry">ismaxphase</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="isminphase.html" class="refentry">isminphase</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="isstable.html" class="refentry">isstable</a> &#8212; <span class="refentry-description">SOS matrix corresponds to [bi(1) bi(2) bi(3) ai(1) ai(2) ai(3)].</span></li>
+
+
+
+
+
+<li><a href="kaiser.html" class="refentry">kaiser</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Kaiser window.</span></li>
+
+
+
+
+
+<li><a href="kaiserord.html" class="refentry">kaiserord</a> &#8212; <span class="refentry-description">Return the parameters needed to produce a filter of the desired specification from a Kaiser window.</span></li>
+
+
+
+
+
+<li><a href="lar2rc.html" class="refentry">lar2rc</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="latc2tf.html" class="refentry">latc2tf</a> &#8212; <span class="refentry-description">Convert lattice filter parameters to transfer function coefficients</span></li>
+
+
+
+
+
+<li><a href="latcfilt.html" class="refentry">latcfilt</a> &#8212; <span class="refentry-description">function [f,g,zo]=latcfilt(k,x,v,zi,dim)</span></li>
+
+
+
+
+
+<li><a href="latcfilt1.html" class="refentry">latcfilt1</a> &#8212; <span class="refentry-description">function [f,g,zo]=latcfilt1(k,v,x,zi)</span></li>
+
+
+
+
+
+<li><a href="levdown.html" class="refentry">levdown</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="levin.html" class="refentry">levin</a> &#8212; <span class="refentry-description">[ar,sigma2,rc]=lev(r)</span></li>
+
+
+
+
+
+<li><a href="levinson.html" class="refentry">levinson</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="lpc.html" class="refentry">lpc</a> &#8212; <span class="refentry-description">Linear prediction filter coefficients</span></li>
+
+
+
+
+
+<li><a href="lsf2poly.html" class="refentry">lsf2poly</a> &#8212; <span class="refentry-description">lsf2poly function  convert line spectral frequencies to prediction polynomial.</span></li>
+
+
+
+
+
+<li><a href="mag2db.html" class="refentry">mag2db</a> &#8212; <span class="refentry-description">funcprot(0);</span></li>
+
+
+
+
+
+<li><a href="marcumq.html" class="refentry">marcumq</a> &#8212; <span class="refentry-description">This function computes the generalized Marcum Q function of order m with noncentrality parameter a and argument b.</span></li>
+
+
+
+
+
+<li><a href="medfilt1.html" class="refentry">medfilt1</a> &#8212; <span class="refentry-description">1D median filtering</span></li>
+
+
+
+
+
+<li><a href="mexihat.html" class="refentry">mexihat</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="meyeraux.html" class="refentry">meyeraux</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="midcross.html" class="refentry">midcross</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="modulate.html" class="refentry">modulate</a> &#8212; <span class="refentry-description">Modulates signal according to the modulation method</span></li>
+
+
+
+
+
+<li><a href="morlet.html" class="refentry">morlet</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="movingrms.html" class="refentry">movingrms</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="mscohere.html" class="refentry">mscohere</a> &#8212; <span class="refentry-description">It estimate (mean square) coherence of signals x and y.</span></li>
+
+
+
+
+
+<li><a href="musicBase.html" class="refentry">musicBase</a> &#8212; <span class="refentry-description">Implements the core of the MUSIC algorithm</span></li>
+
+
+
+
+
+<li><a href="ncauer.html" class="refentry">ncauer</a> &#8212; <span class="refentry-description">Analog prototype for Cauer filter.</span></li>
+
+
+
+
+
+<li><a href="nnls.html" class="refentry">nnls</a> &#8212; <span class="refentry-description">Non Negative Least Squares (nnls) for Ex=f with the constraint x&gt;=0</span></li>
+
+
+
+
+
+<li><a href="nuttallwin.html" class="refentry">nuttallwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Blackman-Harris window.</span></li>
+
+
+
+
+
+<li><a href="parzenwin.html" class="refentry">parzenwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Parzen window.</span></li>
+
+
+
+
+
+<li><a href="pburg.html" class="refentry">pburg</a> &#8212; <span class="refentry-description">Calculate Burg maximum-entropy power spectral density.</span></li>
+
+
+
+
+
+<li><a href="pchip.html" class="refentry">pchip</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pchips.html" class="refentry">pchips</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="peak2peak.html" class="refentry">peak2peak</a> &#8212; <span class="refentry-description">funcprot(0);</span></li>
+
+
+
+
+
+<li><a href="peak2rms.html" class="refentry">peak2rms</a> &#8212; <span class="refentry-description">This function calculates the ratio of peak magnitude to the Root Mean Square(RMS) value.</span></li>
+
+
+
+
+
+<li><a href="pei_tseng_notch.html" class="refentry">pei_tseng_notch</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="peig.html" class="refentry">peig</a> &#8212; <span class="refentry-description">Psuedospectrum using the eigenvector method.</span></li>
+
+
+
+
+
+<li><a href="periodogram.html" class="refentry">periodogram</a> &#8212; <span class="refentry-description">Return the periodogram (Power Spectral Density) of X</span></li>
+
+
+
+
+
+<li><a href="phaseInputParseAs_ab.html" class="refentry">phaseInputParseAs_ab</a> &#8212; <span class="refentry-description">fs=0;</span></li>
+
+
+
+
+
+<li><a href="phaseInputParseAs_sos.html" class="refentry">phaseInputParseAs_sos</a> &#8212; <span class="refentry-description">fs=0;</span></li>
+
+
+
+
+
+<li><a href="phasedelay.html" class="refentry">phasedelay</a> &#8212; <span class="refentry-description">cas variable is 2 if sos form is involved and 1 if direct rational form is given</span></li>
+
+
+
+
+
+<li><a href="phasez.html" class="refentry">phasez</a> &#8212; <span class="refentry-description">cas variable is 2 if sos form is involved and 1 if direct rational form is given</span></li>
+
+
+
+
+
+<li><a href="pmusic.html" class="refentry">pmusic</a> &#8212; <span class="refentry-description">Psuedospectrum using MUSIC algorithm</span></li>
+
+
+
+
+
+<li><a href="poly2ac.html" class="refentry">poly2ac</a> &#8212; <span class="refentry-description">Convert prediction polynomial to autocorrelation sequence.</span></li>
+
+
+
+
+
+<li><a href="poly2lsf.html" class="refentry">poly2lsf</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="poly2rc.html" class="refentry">poly2rc</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="polyscale.html" class="refentry">polyscale</a> &#8212; <span class="refentry-description">errcheck1</span></li>
+
+
+
+
+
+<li><a href="polystab.html" class="refentry">polystab</a> &#8212; <span class="refentry-description">This function stabilizes the polynomial transfer function.</span></li>
+
+
+
+
+
+<li><a href="polyval.html" class="refentry">polyval</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pow2db.html" class="refentry">pow2db</a> &#8212; <span class="refentry-description">rhs = argn(2)</span></li>
+
+
+
+
+
+<li><a href="primitive.html" class="refentry">primitive</a> &#8212; <span class="refentry-description">This function calculates the primitive of a given function supplied as input.</span></li>
+
+
+
+
+
+<li><a href="prony.html" class="refentry">prony</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pulseperiod.html" class="refentry">pulseperiod</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pulsesep.html" class="refentry">pulsesep</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pulsewidth.html" class="refentry">pulsewidth</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="pulstran.html" class="refentry">pulstran</a> &#8212; <span class="refentry-description">This function generates the signal y = sum(func(t+d,...)) for each d.</span></li>
+
+
+
+
+
+<li><a href="pwelch.html" class="refentry">pwelch</a> &#8212; <span class="refentry-description">Estimate power spectral density of data &#0034;x&#0034; by the Welch (1967) periodogram/FFT method.</span></li>
+
+
+
+
+
+<li><a href="pyulear.html" class="refentry">pyulear</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="qp_kaiser.html" class="refentry">qp_kaiser</a> &#8212; <span class="refentry-description">Computes a finite impulse response (FIR) filter for use with a quasi-perfect reconstruction polyphase-network filter bank.</span></li>
+
+
+
+
+
+<li><a href="rc2ac.html" class="refentry">rc2ac</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rc2is.html" class="refentry">rc2is</a> &#8212; <span class="refentry-description">Convert reflection coefficients to inverse sine parameters</span></li>
+
+
+
+
+
+<li><a href="rc2lar.html" class="refentry">rc2lar</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rc2poly.html" class="refentry">rc2poly</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rceps.html" class="refentry">rceps</a> &#8212; <span class="refentry-description">Produce the cepstrum of the signal x, and if desired, the minimum phase reconstruction of the signal x.</span></li>
+
+
+
+
+
+<li><a href="rcosdesign.html" class="refentry">rcosdesign</a> &#8212; <span class="refentry-description">RCOSDESIGN computes the raised cosine FIR filter</span></li>
+
+
+
+
+
+<li><a href="rectpuls.html" class="refentry">rectpuls</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rectwin.html" class="refentry">rectwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a rectangular window.</span></li>
+
+
+
+
+
+<li><a href="remez1.html" class="refentry">remez1</a> &#8212; <span class="refentry-description">Parks-McClellan optimal FIR filter design</span></li>
+
+
+
+
+
+<li><a href="resample.html" class="refentry">resample</a> &#8212; <span class="refentry-description">This function resamples in the input sequence x supplied by a factor of p/q.</span></li>
+
+
+
+
+
+<li><a href="residued.html" class="refentry">residued</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="residuez.html" class="refentry">residuez</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="risetime.html" class="refentry">risetime</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rlevinson.html" class="refentry">rlevinson</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="rms.html" class="refentry">rms</a> &#8212; <span class="refentry-description">convert i/p values to their ascii values if they are of type char</span></li>
+
+
+
+
+
+<li><a href="rooteig.html" class="refentry">rooteig</a> &#8212; <span class="refentry-description">Frequencies and power of sinusoids using eigenvector algorithm</span></li>
+
+
+
+
+
+<li><a href="rootmusic.html" class="refentry">rootmusic</a> &#8212; <span class="refentry-description">Frequencies and power of sinusoids using the root MUSIC algorithm</span></li>
+
+
+
+
+
+<li><a href="rssq.html" class="refentry">rssq</a> &#8212; <span class="refentry-description">This function calculates the square root of the sum of values of input vector IN.</span></li>
+
+
+
+
+
+<li><a href="sampled2continuous.html" class="refentry">sampled2continuous</a> &#8212; <span class="refentry-description">This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.</span></li>
+
+
+
+
+
+<li><a href="sawtooth.html" class="refentry">sawtooth</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="schtrig.html" class="refentry">schtrig</a> &#8212; <span class="refentry-description">This function implements a multisignal Schmitt triggers with lev levels supplied as input.</span></li>
+
+
+
+
+
+<li><a href="schurrc.html" class="refentry">schurrc</a> &#8212; <span class="refentry-description">narginchk(1,1,argn(2));</span></li>
+
+
+
+
+
+<li><a href="seqperiod.html" class="refentry">seqperiod</a> &#8212; <span class="refentry-description">Calculates the period of a sequence</span></li>
+
+
+
+
+
+<li><a href="sftrans.html" class="refentry">sftrans</a> &#8212; <span class="refentry-description">Transform band edges of a generic lowpass filter (cutoff at W=1) represented in splane zero-pole-gain form.</span></li>
+
+
+
+
+
+<li><a href="sgolay.html" class="refentry">sgolay</a> &#8212; <span class="refentry-description">This function computes the filter coefficients for all Savitzsky-Golay smoothing filters.</span></li>
+
+
+
+
+
+<li><a href="sgolayfilt.html" class="refentry">sgolayfilt</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="shanwavf.html" class="refentry">shanwavf</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="shiftdata.html" class="refentry">shiftdata</a> &#8212; <span class="refentry-description">Shifts data by rearranging dimensions</span></li>
+
+
+
+
+
+<li><a href="sigmoid_train.html" class="refentry">sigmoid_train</a> &#8212; <span class="refentry-description">Evaluate a train of sigmoid functions at T.</span></li>
+
+
+
+
+
+<li><a href="sinetone.html" class="refentry">sinetone</a> &#8212; <span class="refentry-description">Return a sinetone of the input</span></li>
+
+
+
+
+
+<li><a href="sinewave.html" class="refentry">sinewave</a> &#8212; <span class="refentry-description">Return an M-element vector with I-th element given by &#0039;sin(2* pi *(I+D-1)/N).&#0039;</span></li>
+
+
+
+
+
+<li><a href="slewrate.html" class="refentry">slewrate</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="sos2cell.html" class="refentry">sos2cell</a> &#8212; <span class="refentry-description">Converts a second order section matrix to a cell array</span></li>
+
+
+
+
+
+<li><a href="sos2ss.html" class="refentry">sos2ss</a> &#8212; <span class="refentry-description">[nargout,nargin]=argn();</span></li>
+
+
+
+
+
+<li><a href="sos2tf.html" class="refentry">sos2tf</a> &#8212; <span class="refentry-description">This function converts series second-order sections to direct H(z) = B(z)/A(z) form.</span></li>
+
+
+
+
+
+<li><a href="sos2zp.html" class="refentry">sos2zp</a> &#8212; <span class="refentry-description">This function converts series second-order sections to zeros, poles, and gains (pole residues).</span></li>
+
+
+
+
+
+<li><a href="sosbreak.html" class="refentry">sosbreak</a> &#8212; <span class="refentry-description">function for breaking a polynomial in second order polynomials (and an extra linear)</span></li>
+
+
+
+
+
+<li><a href="sosfilt.html" class="refentry">sosfilt</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="specgram.html" class="refentry">specgram</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="spectral_adf.html" class="refentry">spectral_adf</a> &#8212; <span class="refentry-description">Return the spectral density estimator given a vector of autocovariances C, window name WIN, and bandwidth, B.</span></li>
+
+
+
+
+
+<li><a href="spectral_xdf.html" class="refentry">spectral_xdf</a> &#8212; <span class="refentry-description">Return the spectral density estimator given a data vector X, window name WIN, and bandwidth, B.</span></li>
+
+
+
+
+
+<li><a href="spencer.html" class="refentry">spencer</a> &#8212; <span class="refentry-description">Return Spencer&#0039;s 15 point moving average of each column of X.</span></li>
+
+
+
+
+
+<li><a href="ss2sos.html" class="refentry">ss2sos</a> &#8212; <span class="refentry-description">not taking if, order and scale as input since they do not seem useful</span></li>
+
+
+
+
+
+<li><a href="statelevels.html" class="refentry">statelevels</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="stft.html" class="refentry">stft</a> &#8212; <span class="refentry-description">Compute the short-time Fourier transform of the vector X</span></li>
+
+
+
+
+
+<li><a href="stmcb.html" class="refentry">stmcb</a> &#8212; <span class="refentry-description">function [b,a] = stmcb( x, u_in, q, p, niter, a_in )</span></li>
+
+
+
+
+
+<li><a href="strips.html" class="refentry">strips</a> &#8212; <span class="refentry-description">Plots vector or matrix in strips</span></li>
+
+
+
+
+
+<li><a href="subspaceMethodsInputParser.html" class="refentry">subspaceMethodsInputParser</a> &#8212; <span class="refentry-description">Input parser to be used by pmusic and peig</span></li>
+
+
+
+
+
+<li><a href="synthesis.html" class="refentry">synthesis</a> &#8212; <span class="refentry-description">Compute a signal from its short-time Fourier transform</span></li>
+
+
+
+
+
+<li><a href="tf2sos.html" class="refentry">tf2sos</a> &#8212; <span class="refentry-description">This function converts direct-form filter coefficients to series second-order sections.</span></li>
+
+
+
+
+
+<li><a href="tf2zp.html" class="refentry">tf2zp</a> &#8212; <span class="refentry-description">[z,p,k]= tf2zp(b,a);</span></li>
+
+
+
+
+
+<li><a href="tf2zpk.html" class="refentry">tf2zpk</a> &#8212; <span class="refentry-description">form</span></li>
+
+
+
+
+
+<li><a href="tfe.html" class="refentry">tfe</a> &#8212; <span class="refentry-description">Estimate transfer function of system with input &#0034;x&#0034; and output &#0034;y&#0034;. Use the Welch (1967) periodogram/FFT method.</span></li>
+
+
+
+
+
+<li><a href="tfestimate.html" class="refentry">tfestimate</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="transpose.html" class="refentry">transpose</a> &#8212; <span class="refentry-description">funcprot(0);</span></li>
+
+
+
+
+
+<li><a href="trial_iirlp2mb.html" class="refentry">trial_iirlp2mb</a> &#8212; <span class="refentry-description">B = varargin(1)</span></li>
+
+
+
+
+
+<li><a href="triang.html" class="refentry">triang</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a triangular window.</span></li>
+
+
+
+
+
+<li><a href="tripuls.html" class="refentry">tripuls</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="truth.html" class="refentry">truth</a> &#8212; <span class="refentry-description">y = %t</span></li>
+
+
+
+
+
+<li><a href="tukeywin.html" class="refentry">tukeywin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Tukey window.</span></li>
+
+
+
+
+
+<li><a href="udecode.html" class="refentry">udecode</a> &#8212; <span class="refentry-description">Decodes the input uniformly quantized values</span></li>
+
+
+
+
+
+<li><a href="uencode.html" class="refentry">uencode</a> &#8212; <span class="refentry-description">Performs uniform quantization of the input into 2^n levels</span></li>
+
+
+
+
+
+<li><a href="ultrwin.html" class="refentry">ultrwin</a> &#8212; <span class="refentry-description">This function returns the coefficients of an Ultraspherical window.</span></li>
+
+
+
+
+
+<li><a href="unshiftdata.html" class="refentry">unshiftdata</a> &#8212; <span class="refentry-description">Inverts the effect of shiftdata</span></li>
+
+
+
+
+
+<li><a href="unwrap2.html" class="refentry">unwrap2</a> &#8212; <span class="refentry-description">Unwrap radian phases by adding or subtracting multiples of 2*pi.</span></li>
+
+
+
+
+
+<li><a href="upfirdn.html" class="refentry">upfirdn</a> &#8212; <span class="refentry-description">This function upsamples the input data, applies the FIR filter and then downsamples it.</span></li>
+
+
+
+
+
+<li><a href="upsample.html" class="refentry">upsample</a> &#8212; <span class="refentry-description">This function upsamples the signal, inserting n-1 zeros between every element.</span></li>
+
+
+
+
+
+<li><a href="upsamplefill.html" class="refentry">upsamplefill</a> &#8212; <span class="refentry-description">This function upsamples a vector interleaving given values or copies of the vector elements.</span></li>
+
+
+
+
+
+<li><a href="var.html" class="refentry">var</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="vco.html" class="refentry">vco</a> &#8212; <span class="refentry-description">Voltage Controlled Oscillator</span></li>
+
+
+
+
+
+<li><a href="wconv.html" class="refentry">wconv</a> &#8212; <span class="refentry-description">Performs 1D or 2D convolution.</span></li>
+
+
+
+
+
+<li><a href="welchwin.html" class="refentry">welchwin</a> &#8212; <span class="refentry-description">This function returns the filter coefficients of a Welch window.</span></li>
+
+
+
+
+
+<li><a href="window.html" class="refentry">window</a> &#8212; <span class="refentry-description">This function creates an m-point window from the function f given as input.</span></li>
+
+
+
+
+
+<li><a href="wkeep.html" class="refentry">wkeep</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="wrev.html" class="refentry">wrev</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="xcorr1.html" class="refentry">xcorr1</a> &#8212; <span class="refentry-description">Estimates the cross-correlation.</span></li>
+
+
+
+
+
+<li><a href="xcorr2.html" class="refentry">xcorr2</a> &#8212; <span class="refentry-description"></span></li>
+
+
+
+
+
+<li><a href="xcov1.html" class="refentry">xcov1</a> &#8212; <span class="refentry-description">Compute covariance at various lags [=correlation(x-mean(x),y-mean(y))].</span></li>
+
+
+
+
+
+<li><a href="yulewalker.html" class="refentry">yulewalker</a> &#8212; <span class="refentry-description">Fit an AR (p)-model with Yule-Walker estimates given a vector C of autocovariances &#0039;[gamma_0, ..., gamma_p]&#0039;.</span></li>
+
+
+
+
+
+<li><a href="zerocrossing.html" class="refentry">zerocrossing</a> &#8212; <span class="refentry-description">This function estimates the points at which a given waveform crosses the x-axis.</span></li>
+
+
+
+
+
+<li><a href="zp2sos.html" class="refentry">zp2sos</a> &#8212; <span class="refentry-description">This function converts filter poles and zeros to second-order sections.</span></li>
+
+
+
+
+
+<li><a href="zp2ss.html" class="refentry">zp2ss</a> &#8212; <span class="refentry-description">Converts zeros / poles to state space.</span></li>
+
+
+
+
+
+<li><a href="zp2tf.html" class="refentry">zp2tf</a> &#8212; <span class="refentry-description">Converts zeros / poles to a transfer function.</span></li>
+
+
+
+
+
+<li><a href="zplane.html" class="refentry">zplane</a> &#8212; <span class="refentry-description">funcprot(0);</span></li></ul>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="index.html">FOSSEE Signal Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>
