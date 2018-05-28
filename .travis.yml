@@ -2,4 +2,5 @@ language: scilab
 
 before_install:
  - sudo apt-get install scilab
+ - scilab -nwni -f test.sce
 
