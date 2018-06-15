@@ -2,6 +2,7 @@ language: scilab
 
 before_install:
  - sudo apt-get install scilab
+ - sudo apt-get install octave
  - wget http://scilab.in/scilab_toolbox/download_codes/FOSSEE_Scilab_Octave_Interface_Toolbox.tar.gz
  - tar -xf FOSSEE_Scilab_Octave_Interface_Toolbox.tar.gz 
 
