@@ -1,1 +1,6 @@
 *~
+/help/en_US/master_help.xml
+/help/en_US/scilab_en_US_help/
+/jar/scilab_en_US_help.jar
+/macros/*.bin
+/macros/lib
