@@ -1,6 +1,27 @@
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
 function typ=firtype(b)
+//This function identifies Type of linear phase FIR filter
+
+//Calling Sequence
+//t = firtype(b)
+
+//Parameters
+//t: type of an FIR filter
+//b: Filter coefficients
+
+//Description
+//t = firtype(b) determines the type, t, of an FIR filter with coefficients b. t can be 1, 2, 3, or 4. The filter must be real and have linear phase.
+
+//Examples
+//b=[9.2762e-05   9.5482e-02   4.0443e-01   4.0443e-01   9.5482e-02   9.2762e-05]
+//firtype(b)
+//Output : 2
+
+//b=[-1 -2 0 2 1]
+//firtype(b)
+//Output : 3
+
     if (type(b)~=1) then
         error('check input type');
     end

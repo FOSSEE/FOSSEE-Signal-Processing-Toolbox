@@ -13,7 +13,7 @@ function zf = filtic (b, a, y, x)
 //This function finds the initial conditions for the delays in the transposed direct-form II filter implementation.
 //The vectors b and a represent the numerator and denominator coefficients of the filter's transfer function. 
 //Examples
-//filtic([i,1,-i,5], [1,2,3i], [0.8i,7,9])
+//filtic([%i,1,-%i,5], [1,2,3*%i], [0.8*%i,7,9])
 //ans =
 //    0.00000 - 22.60000i
 //    2.40000 +  0.00000i
@@ -34,4 +34,3 @@ case 4 then
 zf = callOctave("filtic",b,a,y,x)
 end
 endfunction
-

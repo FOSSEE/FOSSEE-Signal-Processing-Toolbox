@@ -31,10 +31,13 @@ end
 
 	select(rhs)
 	case 2 then
-	[b, a] = callOctave("impinvar",b,a)
+//	[b, a] = callOctave("impinvar",b,a)
+	[b_out, a_out] = callOctave("impinvar",b,a)
 	case 3 then
-	[b, a] = callOctave("impinvar",b,a,fs)
+//	[b, a] = callOctave("impinvar",b,a,fs)
+	[b_out, a_out] = callOctave("impinvar",b,a,fs)
 	case 4 then
-	[b, a] = callOctave("impinvar",b,a,fs,tol)
+//	[b, a] = callOctave("impinvar",b,a,fs,tol)
+	[b_out, a_out] = callOctave("impinvar",b,a,fs,tol)
 	end
 endfunction

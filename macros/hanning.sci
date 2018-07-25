@@ -1,25 +1,33 @@
-function y = hanning(m, varargin)
-//Return the filter coefficients of a Hanning window of length M
-//Calling Sequence
-//hanning (M)
-//hanning (M, "periodic")
-//hanning (M, "symmetric")
-//Parameters 
-//M: real scalar, which will be the length of hanning window
-//Description
-//Return the filter coefficients of a Hanning window of length M.
-//If the optional argument "periodic" is given, the periodic form of the window is returned.  This is equivalent to the window of length M+1 with the last coefficient removed.  The optional argument "symmetric" is equivalent to not specifying a second argument.	
+function c = hanning (m, opt)
 
-funcprot(0);
-rhs= argn(2);
-if(rhs <1 | rhs>2)
-error("Wrong number of Input parameters");
-end
+ funcprot(0);
+    rhs= argn(2);
 
-select(rhs)
-	case 1 then
-		y= callOctave("hanning", m);
-	case 2 then
-		y= callOctave("hanning", m , varargin(1));
-end
+  if (rhs < 1 | rhs > 2)
+     error("Wrong Number of input arguments");
+  end
+
+  if (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
+    error ("hanning: M must be a positive integer");
+  end
+
+  N = m - 1;
+  if (rhs == 2)
+    select (opt)
+      case "periodic"
+        N = m;
+      case "symmetric"
+        //Default option, same as no option specified.
+      else
+        error ('hanning: window type must be either periodic or symmetric");
+    end
+  end
+
+  if (m == 1)
+    c = 1;
+  else
+    m = m - 1;
+    c = 0.5 - 0.5 * cos (2 * %pi * (0 : m)' / N);
+  end
+
 endfunction

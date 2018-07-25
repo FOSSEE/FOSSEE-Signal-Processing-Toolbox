@@ -17,7 +17,40 @@
 
   <refnamediv>
     <refname>fwhmjlt</refname>
-    <refpurpose>rhs = argn(2)</refpurpose>
+    <refpurpose>This function Computes peak full-width at half maximum</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  f = fwhm (y)
+  f = fwhm (x, y)
+  f = fwhm (…, "zero")
+  f = fwhm (…, "min")
+  f = fwhm (…, "alevel", level)
+  f = fwhm (…, "rlevel", level)
+   </synopsis>
+</refsynopsisdiv>
+
+
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute peak full-width at half maximum (FWHM) or at another level of peak maximum for vector or matrix    data y, optionally sampled as y(x). If y is a matrix, return FWHM for each column as a row vector.<para></para>The default option "zero" computes fwhm at half maximum, i.e. 0.5*max(y). The option "min" computes fwhm at the middle curve, i.e. 0.5*(min(y)+max(y)). <para></para>The option "rlevel" computes full-width at the given relative level of peak profile<para></para>The option "alevel" computes full-width at the given absolute level of y.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+t=-50:0.01:50;
+y=(1/(2*sqrt(2*%pi)))*exp(-(t.^2)/8);
+z=fwhmjlt(y)
+//Expected Output
+//470.96442
+   ]]></programlisting>
+</refsection>
+
 
 </refentry>

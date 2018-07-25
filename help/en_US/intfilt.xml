@@ -17,7 +17,63 @@
 
   <refnamediv>
     <refname>intfilt</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>The "intfilt" function estimate Interpolated FIR Filter Design</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   h=intfilt(R,L,freqmult)
+   [h a]=intfilt(R,L,freqmult)
+
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>R:</term>
+      <listitem><para> Samples.   It should be numeric</para></listitem></varlistentry>
+   <varlistentry><term>L:</term>
+      <listitem><para> bandlimited interpolation samples. It must be nonzero.</para></listitem></varlistentry>
+   <varlistentry><term>freqmult:</term>
+      <listitem><para> bandlimitedness of ALPHA times the Nyquist frequency. It can be numeric or character ('B' or 'L', B is length (N+1)*L-1 for N odd and (N+1)*L for N even) </para></listitem></varlistentry>
+
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+"h=intfilt(R,L,freqmult)" designs a linear phase FIR filter. This function does ideal bandlimited interpolation using the nearest 2*L nonzero samples, when used on a sequence inserted with l-1 consecutive zeros between every l samples. It assumes an original bandlimitedness of "freqmult" times the Nyquist frequency.
+</para>
+</refsection>
+
+<refsection>
+   <title>Example 1</title>
+   <programlisting role="example"><![CDATA[
+h1=intfilt(2,3,'l');
+//EXPECTED OUTPUT :
+// -0.0625    0.    0.5625    1.    0.5625    0.  -0.0625
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Example 2</title>
+   <programlisting role="example"><![CDATA[
+h1=intfilt(4,1,1);
+//EXPECTED OUTPUT :
+// 0.3001054    0.6366198    0.9003163    1.    0.9003163    0.6366198    0.3001054
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 
 </refentry>

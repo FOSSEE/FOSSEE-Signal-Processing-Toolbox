@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>fwht</refname>
-    <refpurpose>Compute the Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm</refpurpose>
+    <refpurpose>Compute the Walsh-Hadamard transform of x using the Fast Walsh-Hadamard Transform (FWHT) algorithm..</refpurpose>
   </refnamediv>
 
 

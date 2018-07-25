@@ -25,7 +25,7 @@
    <title>Calling Sequence</title>
    <synopsis>
    K = is2rc(isin)
-   
+
    </synopsis>
 </refsynopsisdiv>
 
@@ -42,17 +42,23 @@
 <refsection>
    <title>Description</title>
    <para>
-This function returns a vector of reflection coefficients from a vector of inverse sine parameters
-output array has k(i) = sin(pi/2*isin(i))
-   </para>
-   <para>
-Example
-k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
-isin = rc2is(k)      //Gives inverse sine parameters
-k_dash = is2rc(isin)
+This function returns a vector of reflection coefficients from a vector of inverse sine parameters.<para></para>output array has k(i) = sin(pi/2*isin(i))
+
    </para>
    <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Example 1</title>
+   <programlisting role="example"><![CDATA[
+ k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+ isin = rc2is(k)      //Gives inverse sine parameters
+ k_dash = is2rc(isin)
+// EXPECTED OUTPUT :
+//isin    =   [0.1999886    0.8727832    0.0019735   0.0052203 -0.0052203 ]
+//k_dash =[0.309    0.9801    0.0031    0.0082  - 0.0082]
+   ]]></programlisting>
 </refsection>
 
 <refsection>
@@ -62,8 +68,14 @@ k_dash = is2rc(isin)
    <member><link linkend="rc2poly">rc2poly</link></member>
    <member><link linkend="rc2ac">rc2ac</link></member>
    <member><link linkend="rc2lar">rc2lar</link></member>
-   <member><link linkend="Author">Author</link></member>
-   <member><link linkend="Parthe">Pandit</link></member>
+
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
    </simplelist>
 </refsection>
 

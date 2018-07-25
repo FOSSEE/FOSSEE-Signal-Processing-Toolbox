@@ -56,11 +56,11 @@ This function buffers the given data into a matrix of signal frames
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 buffer(1,3,2)
-ans =
-0   0
-0   1
-1   0
-This function is being called from Octave
+//ans =
+//0   0
+//0   1
+//1   0
+//This function is being called from Octave
    ]]></programlisting>
 </refsection>
 </refentry>

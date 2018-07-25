@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from helperHarmonicDistortion.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="helperHarmonicDistortion" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>helperHarmonicDistortion</refname>
+    <refpurpose>helperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   outputVoltage=helperHarmonicDistortion(inputVoltage)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>inputVmax:</term>
+      <listitem><para> Maximum operating voltage times the sinusoidal signal.</para></listitem></varlistentry>
+
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Analizing the harmonic distortion of a weakly non-linear system in the presence of noise....
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+VmaxPk = 2;
+Fi = 2000;
+Fs = 44.1e3;
+Tstop = 50e-3;
+t = 0:1/Fs:Tstop;
+inputVmax = VmaxPk*sin(2*%pi*Fi*t);
+outputVmax = helperHarmonicDistortion(inputVmax);
+plot(t, outputVmax)
+replot([0,-2.5,0.005,2.5])
+xlabel('Time')
+ylabel('Output Voltage')
+title('Amplifier output')
+   ]]></programlisting>
+   <scilab:image>
+        VmaxPk = 2;
+	Fi = 2000;
+	Fs = 44.1e3;
+	Tstop = 50e-3;
+	t = 0:1/Fs:Tstop;
+	inputVmax = VmaxPk*sin(2*%pi*Fi*t);
+	outputVmax = helperHarmonicDistortion(inputVmax);
+	plot(t, outputVmax)
+	replot([0,-2.5,0.005,2.5])
+	xlabel('Time')
+	ylabel('Output Voltage')
+	title('Amplifier output')
+   </scilab:image>
+
+</refsection>
+
+
+</refentry>

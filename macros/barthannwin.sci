@@ -1,28 +1,25 @@
-function y = barthannwin(m)
-//This function returns the filter coefficients of a modified Bartlett-Hann window.
-//Calling Sequence
-//y = barthannwin(m)
-//Parameters 
-//m: positive integer value
-//y: output variable, vector of real numbers
-//Description
-//This is an Octave function.
-//This function returns the filter coefficients of a modified Bartlett Hann window of length m supplied as input, to the output vector y.
-//Examples
-//barthannwin(4)
-//ans  =
-//    0.    
-//    0.73  
-//    0.73  
-//    0.    
+function w = barthannwin (m)
 
-funcprot(0);
-rhs = argn(2)
-if(rhs~=1)
-error("Wrong number of input arguments.")
-end
+ funcprot(0);
+    rhs= argn(2);
 
-y = callOctave("barthannwin",m)
+  if (rhs ~= 1)
+     error("Wrong Number of input arguments");
+  end
+
+  if (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
+    error ("barthannwin: M must be a positive integer");
+  end
+
+
+   if (m == 1)
+    w = 1;
+  else
+    N = m - 1;
+    n = 0:N;
+
+    w = 0.62 -0.48.*abs(n./(m-1) - 0.5)+0.38*cos(2.*%pi*(n./(m-1)-0.5));
+    w = w';
+  end
 
 endfunction
-

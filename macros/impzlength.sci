@@ -6,7 +6,7 @@ function len = impzlength (b, varargin)
 // len = impzlength(b, a, tol)
 // 		returns the impulse response length for the causal discrete-time filter 
 //		with the transfer function coefficients for numerator and denominator in 
-//		a and b respectively. For stable IIR filters, len is the effective length
+//		b and a respectively. For stable IIR filters, len is the effective length
 //		impulse response length, i.e. the length after which the response is
 //		essentially zero
 // len = impzlength(sos)
@@ -34,8 +34,17 @@ function len = impzlength (b, varargin)
 // 1) Low pass IIR filter with pole at 0.9
 // 		b = 1;
 //		a = [1 -0.9];
-//		len = impzlength(b,a);
+//		len = impzlength(b,a)
+//OUTPUT :
+//                   len=93
 // 
+//2) High pass IIR filter with pole at -0.5
+// 		b = 1;
+//		a = [1 0.5];
+//		len = impzlength(b,a)
+//OUTPUT :
+//                   len=14
+
 // See also
 // designfilt | digitalFilter | impz | zp2sos
 //

@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>filtfilt</refname>
-    <refpurpose></refpurpose>
+    <refpurpose> Zero phase digital filtering </refpurpose>
   </refnamediv>
 
 
@@ -51,8 +51,9 @@ In theory, it forwards and reverse filters the signal and corrects phase distort
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    [a,b]=filtfilt (1,2i,[i -4 0])
-a =   [0.00000 - 0.25000i   1.00000 + 0.00000i   0.00000 + 0.00000i]
+1.    [a]=filtfilt (1,2i,[i -4 0])
+//Expected output
+//a =   [-0.25i   1   0]
    ]]></programlisting>
 </refsection>
 </refentry>

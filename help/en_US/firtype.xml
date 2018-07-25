@@ -17,7 +17,47 @@
 
   <refnamediv>
     <refname>firtype</refname>
-    <refpurpose>if (type(b)~=1) then</refpurpose>
+    <refpurpose> This function identifies Type of linear phase FIR filter
+</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   t=firtype(b)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>t:</term>
+      <listitem><para> type of an FIR filter </para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> Filter coefficients</para></listitem></varlistentry>
+
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+"t = firtype(b)" determines the type, t, of an FIR filter with      coefficients b. </para><para>"t" can be 1, 2, 3, or 4. </para><para>
+The filter must be real and have linear phase.
+
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+b=[9.2762e-05   9.5482e-02   4.0443e-01   4.0443e-01   9.5482e-02   9.2762e-05]
+firtype(b)
+//Expected Output
+//2
+   ]]></programlisting>
+</refsection>
+
+
 
 </refentry>
