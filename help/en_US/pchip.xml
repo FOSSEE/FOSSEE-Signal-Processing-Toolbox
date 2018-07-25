@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>pchip</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function returns piecewise cubic hermite interpolating polynomial.</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   d=pchip(x,y)
+   d= pchip(x,y,xx)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> points at which the function is defined</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>y:</term>
+      <listitem><para> function of variable x</para><para>Note that the lengths of x and y should be the same.</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>xx:</term>
+      <listitem><para> points of interpolation</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>d:</term>
+      <listitem><para>  vector of interpolantant at xx
+</para></listitem></varlistentry>
+   </variablelist>
+
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+ x=[0 1 2 3 4 5]
+ y=[1 0 1 0 1 0]
+ xx=linspace(0,5,800)
+ v=pchip(x, y)
+ v=pchip(x,y,xx)
+ plot(x,y,xx,v,'o')
+   ]]></programlisting>
+
+<scilab:image>
+
+ x=[0 1 2 3 4 5]
+ y=[1 0 1 0 1 0]
+ xx=linspace(0,5,800)
+ v=pchip(x, y)
+ v=pchip(x,y,xx)
+ plot(x,y,xx,v,'o')
+</scilab:image>
+
+</refsection>
+
+
+
+
+
 
 </refentry>

@@ -19,5 +19,54 @@
     <refname>sosbreak</refname>
     <refpurpose>function for breaking a polynomial in second order polynomials (and an extra linear)</refpurpose>
   </refnamediv>
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  [zerosort,g]=sosbreak(p)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>p:</term>
+      <listitem><para>-the input polynomial.</para></listitem></varlistentry>
+   <varlistentry><term>zerosort:</term>
+      <listitem><para>-the array of the broken polynomials </para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para>the interger multiple obtained after breaking the polynomial</para></listitem></varlistentry>
+
+
+
+</variablelist>
+
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+v=[1+4*%s+6*%s^2+4*%s^3+%s^4];
+[zerosort,g]=sosbreak(v);
+//OUTPUT:
+// g  =1.
+ //zerosort  =
+ //   zerosort(1)
+//           2
+// 1 + 2s + s
+// zerosort(2)
+//                  2
+//1.0000000 + 2s + s
+
+   ]]></programlisting>
+</refsection>
+
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+</simplelist>
+</refsection>
+
 
 </refentry>

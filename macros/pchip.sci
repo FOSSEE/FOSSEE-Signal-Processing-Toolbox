@@ -9,21 +9,22 @@ function v = pchip(x,y,xx)
     
 // Parameters
 // x: a vector
-// y: is Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal length(X).
+// y: if Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal length(X).
 // xx: Points for interpolation
 // v: vector of interpolantant at xx
     
-// Examples
+//// Examples
 // x=[0 1 2 3 4 5]
 // y=[1 0 1 0 1 0]
-// xx=linspace(0:10,800)
+// xx=linspace(0,5,800)
 // v=pchip(x, y) 
 // v=pchip(x,y,xx)
-// See also
+//plot(x,y,xx,v,'o')
+
  // Authors
 // Jitendra Singh
 
-// execute function "pchips" prior executing this function
+// NOTE:execute function "pchips" prior executing this function
         
 
 if argn(2)==3 & ~isreal(xx)
@@ -132,7 +133,4 @@ v = matrix(v,[dd,sizexx]);
    
 end
     
-    endfunction
-
-
-
+endfunction

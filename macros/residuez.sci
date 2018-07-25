@@ -1,25 +1,62 @@
-function [r,p,f,m]=residuez(b,a)
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+//
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Author:[insert name]
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 
-// Compute the partial fraction expansion(PFE) of filter H(z) = B(z)/A(z).
-// Calling Sequence
-//	[r,p,f,m]=residuez(b,a)
-// Parameters
-//	b: Real or complex valued vector or matrix
-//	a: Real or complex valued vector or matrix
-// Description
-//	This is an Octave function
-//	It compute the PFE of filter H(z)= B(z)/A(z) where inputs b and a are vectors specifying the digital filter.
-// Examples
-// 1.	[a,b,c,d]=residuez([i 2i 3i; -4 1 4i],[1 2 3])
-//	a =  [0.6262 - 1.4412i;  -0.4039 + 1.4658i]
-//	b =  [-1.0000 - 1.4142i;  -1.0000 + 1.4142i]
-//	c =  [-0.22222 - 0.97531i   0.33333 + 0.51852i   0.00000 - 0.11111i;   0.00000 - 1.33333i]
-//	d =   1
+  function [r, p, f, m] = residuez(B, A, tol)
 
-funcprot(0);
-rhs=argn(2);
-if (rhs<2) then
-	error ("Wrong number of input arguments.")
-else	[r,p,f,m]=callOctave("residuez",b,a)
-end
+  // RESIDUEZ - return residues, poles, and FIR part of B(z)/A(z)
+  //
+  // Let nb = length(b), na = length(a), and N=na-1 = no. of poles.
+  // If nb<na, then f will be empty, and the returned filter is
+  //
+  //             r(1)                      r(N)
+  // H(z) = ----------------  + ... + ----------------- = R(z)
+  //        [ 1-p(1)/z ]^m(1)         [ 1-p(N)/z ]^m(N)
+  //
+  // If, on the other hand, nb >= na, the FIR part f will not be empty.
+  // Let M = nb-na+1 = order of f = length(f)-1). Then the returned filter is
+  //
+  // H(z) = f(1) + f(2)/z + f(3)/z^2 + ... + f(M+1)/z^M + R(z)
+  //
+  // where R(z) is the parallel one-pole filter bank defined above.
+  // Note, in particular, that the impulse-response of the one-pole
+  // filter bank is in parallel with that of the the FIR part.  This can
+  // be wasteful when matching the initial impulse response is important,
+  // since F(z) can already match the first N terms of the impulse
+  // response. To obtain a decomposition in which the impulse response of
+  // the IIR part R(z) starts after that of the FIR part F(z), use RESIDUED.
+  //
+
+  //NOTE that the polynomials 'b' and 'a' should have real coefficients(because of the function 'filter' used in polyval)
+  //Testcase
+  //B=[1 1 1]; A=[1 -2 1];
+  //[r,p,f,m] = residuez(B,A)
+  //OUTPUT:
+  //r=[0;3]
+  //p=[1;1]
+  //f=1
+  //e=[1;2]
+
+
+
+ [nargout,nargin]=argn();
+ if nargin<3
+     warning("tolerance ignored");
+ end
+ NUM = B(:)'; DEN = A(:)';
+ // Matlab's residue does not return m (since it is implied by p):
+ [r,p,f,m]=residue(conj(mtlb_fliplr(NUM)),conj(mtlb_fliplr(DEN)));
+ p = 1 ./ p;
+ r = r .* ((-p) .^m);
+ if f
+     f = conj(mtlb_fliplr(f));
+ end
+
 endfunction

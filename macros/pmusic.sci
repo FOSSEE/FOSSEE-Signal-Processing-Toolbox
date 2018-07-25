@@ -16,47 +16,61 @@ function varargout = pmusic(varargin)
     //
     // Parameters:
     // x - int|double - vector|matrix
-    //      Input signal. In case of a matrix, each row of x represents a 
-    //      seperate observation of the signal. If 'corr' flag is specified, 
+    //      Input signal. In case of a matrix, each row of x represents a
+    //      seperate observation of the signal. If 'corr' flag is specified,
     //      then x is the correlation matrix.
-    //      If w is not specified in the input, it is determined by the 
-    //      algorithm. If x is real valued, then range of w is [0, pi]. 
+    //      If w is not specified in the input, it is determined by the
+    //      algorithm. If x is real valued, then range of w is [0, pi].
     //      Otherwise, the range of w is [0, 2pi)
     // p - int|double - scalar|vector
     //      p(1) is the dimension of the signal subspace
-    //      p(2), if specified, represents a threshold that is multiplied by 
+    //      p(2), if specified, represents a threshold that is multiplied by
     //      the smallest estimated eigenvalue of the signal's correlation matrix.
     // w - int|double - vector
-    //      w is the vector of normalized frequencies over which the 
+    //      w is the vector of normalized frequencies over which the
     //      pseuspectrogram is to be computed.
     // nfft - int - scalar (Default = 256)
     //      Length of the fft used to compute pseudospectrum. The length of S
     //      (and hence w/f) depends on the type of values in x and nfft.
-    //      If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if 
+    //      If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if
     //      nfft is even and (nfft+1)/2 {Range of w = [0, pi)} otherwise.
     //      If x is complex, length of s is nfft.
     // fs - int|double - scalar (Default = 1)
-    //      Sampling rate. Used to convert the normalized frequencies (w) to 
+    //      Sampling rate. Used to convert the normalized frequencies (w) to
     //      actual values (f) and vice-versa.
     // nwin - int|double - scalar (int only)|vector (Default = 2*p(1))
     //      If nwin is scalar, it is the length of the rectangular window.
     //      Otherwise, the vector input is considered as the window coefficients.
     //      Not used if 'corr' flag present.
-    //      If x is a vector, windowing not done in nwin in scalar. If x is a 
-    //      matrix, 
+    //      If x is a vector, windowing not done in nwin in scalar. If x is a
+    //      matrix,
     // noverlap - int - scalar (Default = nwin-1)
-    //      number of points by which successive windows overlap. noverlap not 
+    //      number of points by which successive windows overlap. noverlap not
     //      used if x is a matrix
     // freqrange - string
-    //      The range of frequencies over which the pseudospetrogram is 
+    //      The range of frequencies over which the pseudospetrogram is
     //      computed. Three possible values - 'onesided', 'twosided', 'centered'
     // 'corr' flag
-    //      Presence indicates that the primary input x is actually a 
+    //      Presence indicates that the primary input x is actually a
     //      correlation matrix
     //
     // Examples:
-    // TODO:
     //
+    //Ex1:
+    //n = 0:199;
+    //x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
+    //[S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
+    //plot(w,S);.........to see the plot of psuedospectrum estimate of x vs frequencies w
+
+//    //Ex2:
+//    n = 0:199;
+//    x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;
+//    [S,w]=pmusic(x,2,16,1)        //where x: [1x200 constant]   p: 2   w: [0x0 constant]   nfft: 16   fs: 1
+  // OUTPUT:
+//S=[2.6425624,5.7475005,77.148221,1.5296243,0.4725347,0.2848481,0.2508128,0.2731036,0.2950648];
+//w=[0,0.0625,0.125,0.1875,0.25,0.3125,0.375,0.4375,0.5];
+   //NOTE EXECUTE FUNCTIONS subspaceMethodsInputParser.sci AND musicBase.sci  PRIOR EXECUTING THIS        FUNCTION
+   //
     // See also
     // pburg | peig | periodogram | pmtm | prony | pwelch | rooteig | rootmusic
     //
@@ -66,16 +80,16 @@ function varargout = pmusic(varargin)
     // References
     // [1] Petre Stoica and Randolph Moses, Introduction To Spectral
     //     Analysis, Prentice-Hall, 1997, pg. 15
-    // [2] S. J. Orfanidis, Optimum Signal Processing. An Introduction. 
+    // [2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.
     //     2nd Ed., Macmillan, 1988.
-    
+
     funcprot(0);
-    
-    exec('subspaceMethodsInputParser.sci',-1);
-    exec('musicBase.sci',-1);
-    
+
+    //exec /home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/subspaceMethodsInputParser.sci
+    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/musicBase.sci',-1);
+
     [numOutArgs,numInArgs] = argn(0);
-    
+
     // check number of output arguments
     if numOutArgs~=2 & numOutArgs~=4 then
         msg = "pmusic: Wrong number of output argument; 2 or 4 expected";
@@ -84,20 +98,20 @@ function varargout = pmusic(varargin)
 
     // ("**start**");
     [data, msg, err_num] = subspaceMethodsInputParser(varargin);
-    
+
     if length(msg)==0 then
         // no error occured
     else
         error(err_num, "pmusic: " + msg);
     end
-    
-    //disp(data);
+
+   // disp(data);
 
     [musicData,msg] = musicBase(data);
-    
+
     //disp(musicData);
     //disp(musicData.noiseEigenvects);
-    //disp(musicData.signalEigenvects);    
+    //disp(musicData.signalEigenvects);
 
     if length(msg)~=0 then
         error(msg);
@@ -107,24 +121,24 @@ function varargout = pmusic(varargin)
     // computing the pseudospectrum
     [S,f] = pseudospectrum(musicData.noiseEigenvects, ...
     musicData.eigenvals,data.w,data.nfft, data.fs, data.freqrange,data.isFsSpecified);
-        
+
     v = musicData.noiseEigenvects;
     e = musicData.eigenvals;
-    
+
     varargout = list(S,f,v,e);
-    
+
     // plot if requested
     if numOutArgs==0 then
         pow = 10*log10(S);
         figure()
         plot(f,pow);
-        
+
         if data.isFsSpecified then
             xlabel('Frequency (Hz)');
         else
             xlabel('Normalized Frequency (*pi rad/sample)');
         end
-        
+
         ylabel('Power (dB)');
         title('Pseudospectrum Estimate via MUSIC');
     end
@@ -133,16 +147,16 @@ endfunction
 
 function [pspec,w] = pseudospectrum(noiseEigenvects, eigenvals, freqvector, ...
     nfft, fs, freqrange,isFsSpecified)
-    // disp("noise eigenvects in pseudospectrum - ");
-    // disp(noiseEigenvects);
+   // disp("noise eigenvects in pseudospectrum - ");
+    //disp(noiseEigenvects);
     weights = ones(1,size(noiseEigenvects,2));
 
     denominator = 0;
-    
+
     isFreqGiven = %F;
 
     for i=1:size(noiseEigenvects,2);
-        // disp("looping in pseudospectrum");
+      //  disp("looping in pseudospectrum");
         if isempty(freqvector) then
             [h,w] = computeFreqResponseByFFT(noiseEigenvects(:,i),nfft,fs,...
                             isFsSpecified);
@@ -152,15 +166,15 @@ function [pspec,w] = pseudospectrum(noiseEigenvects, eigenvals, freqvector, ...
             isFreqGiven = %T;
         end
         denominator = denominator + (abs(h).^2)./weights(i);
-        // disp(h(1:10));
+        //disp(h(1:10));
     end
-    
-    // disp(denominator(1:5));
+
+   // disp(denominator(1:5));
     // computing pseudospectrum pspec
     pspec = 1.0 ./ denominator;
     // converting to column vector
     pspec = pspec(:);
-    
+
     if ~isFreqGiven then
         // correcting the range of pspec according to the user specification
         if strcmpi(freqrange, 'onesided')==0 then
@@ -172,11 +186,11 @@ function [pspec,w] = pseudospectrum(noiseEigenvects, eigenvals, freqvector, ...
             end
             pspec = pspec(range);
             w = w(range);
-            
+
         elseif strcmpi(freqrange,'centered')==0 then
             // convert two sided spectrum to centered
             rem = modulo(nfft,2);
-            
+
             if rem then
                 idx = [(nfft+1)/2+1:nfft 1:(nfft+1)/2];
             else
@@ -184,7 +198,7 @@ function [pspec,w] = pseudospectrum(noiseEigenvects, eigenvals, freqvector, ...
             end
             pspec = pspec(idx);
             w = w(range);
-            
+
             if rem then
                 w(1:(nfft-1)/2) = w(1:(nfft-1)/2) - fs;
             else
@@ -196,8 +210,8 @@ function [pspec,w] = pseudospectrum(noiseEigenvects, eigenvals, freqvector, ...
 endfunction
 
 function [h,w] = computeFreqResponseByFFT(b,n,fs,isFsSpecified)
-    // returns the frequency response (h) and the corresponding frequency 
-    // values (w) for a digital filter with numerator b. The evaluation of the 
+    // returns the frequency response (h) and the corresponding frequency
+    // values (w) for a digital filter with numerator b. The evaluation of the
     // frequency response is done at n points in [0,fs) using fft algorithm
     //
     // Similar to MATLAB's freqz(b,a,n,'whole',fs)
@@ -207,10 +221,10 @@ function [h,w] = computeFreqResponseByFFT(b,n,fs,isFsSpecified)
     w = linspace(0,2*%pi,n+1)';
     w($) = [];
     w(1) = 0;   // forcing the first frequency to be 0
-    
+
     // forcing b and a to be column vectors
     b = b(:);
-    
+
     // zero padding for fft
     zeroPadLength = n - length(b);
     zeroPad = zeros(zeroPadLength,1);
@@ -218,36 +232,35 @@ function [h,w] = computeFreqResponseByFFT(b,n,fs,isFsSpecified)
 
 
     h = fft(b);
-    
+
     if isFsSpecified then
         w = w*fs/(2*%pi);
     end
-    
+
 endfunction
+
 
 function [h,w] = computeFreqResponseByPolyEval(b,f,fs,isFsSpecified)
     // returns the frequency response (h) for a digital filter with numerator b.
     // The evaluation of the frequency response is done at frequency values f
-    
-    // disp(f);
-    // disp(isFsSpecified);
-    
+
+    //disp(f);
+    //disp(isFsSpecified);
+
     f = f(:);
     b = b(:);
-    
+
     n = length(b);
     powerMatrix = zeros(length(f),n);
     powerMatrix(:,1) = 1;
     for i=2:n
         powerMatrix(:,i) = exp(f*(-i+1)*%i);
     end
-    
+
     h = powerMatrix*b;
-    
+
     if isFsSpecified then
         w = f * fs/(2*%pi);
     end
-     
+
 endfunction
-
-

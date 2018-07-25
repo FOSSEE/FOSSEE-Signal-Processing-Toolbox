@@ -1,4 +1,6 @@
 // Date of creation: 19 Dec, 2015
+
+
 function [outputData,msg] = musicBase(inputData)
     // Implements the core of the MUSIC algorithm
     // Used by pmusic and rootmusic algorithm
@@ -14,7 +16,7 @@ function [outputData,msg] = musicBase(inputData)
             inputData.isWindowSpecified);
     
     
-    // disp("eigenvects in musicBase");
+    //disp("eigenvects in musicBase");
     // disp(eigenvects);        
     // disp("eigenvals in musicBase");
     // disp(eigenvals);
@@ -66,7 +68,7 @@ function [eigenvects,eigenvals,msg] = computeEig(x,isCorrFlag, windowLength, nov
         eigenvects = eigenvects(:,order);
     else
         if xIsMatrix then
-            // TODO: check for dimenion constraints
+            // TODO: check for dimension constraints
         else
             // x is vector
             Lx = length(x);

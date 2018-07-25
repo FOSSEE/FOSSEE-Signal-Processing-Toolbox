@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from residue.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="residue" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>residue</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+ [r, p, k, e] = residue (b, a)
+ [b, a] = residue (r, p, k)
+ [b, a] = residue (r, p, k, e)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The first calling form computes the partial fraction expansion for the quotient of the polynomials, b and a.
+This function works for transfer functions which are proper fractions.
+NOTE that the polynomials 'b' and 'a' should have real coefficients(because of the function 'filter' used in polyval)
+</para>
+<para>The second and the third calling forms perform the inverse operation of the first calling form.</para>
+<para>
+<latex>
+\begin{eqnarray}
+\frac{B(s)}{A(s)}=\sum_{m=1}^{M}\frac{r(m)}{(s-p(m))^{e(m)}}+\sum_{i=1}^{N}k(i)*{s^{N-i}}
+\end{eqnarray}
+</latex>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+1.
+b = [1, 1, 1];
+a = [1, -5, 8, -4];
+ [r, p, k, e] = residue (b, a)
+//    result r = [-2; 7; 3]
+//    result p = [2; 2; 1]
+//    result k = [](0x0)
+//    result e = [1; 2; 1]
+   ]]></programlisting>
+</refsection>
+</refentry>

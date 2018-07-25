@@ -34,18 +34,27 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function
+
 This function returns samples of the Gaussian monopulse of amplitude unity.
 </para>
 </refsection>
 
 <refsection>
-   <title>Examples</title>
+   <title>Example 1.</title>
    <programlisting role="example"><![CDATA[
-1.    gmonopuls([1 2 3],0.1)
-ans= 0.85036   0.94070   0.52591
-2.    gmonopuls([1 2 3])
-ans= 0 0 0
+    gmonopuls([1 2 3],0.1)
+//ans= 0.85036   0.94070   0.52591
+
    ]]></programlisting>
 </refsection>
+
+<refsection>
+   <title>Example 2.</title>
+   <programlisting role="example"><![CDATA[
+
+  gmonopuls([1 2 3],[])
+//ans= 0 0 0
+   ]]></programlisting>
+</refsection>
+
 </refentry>

@@ -17,7 +17,54 @@
 
   <refnamediv>
     <refname>polyval</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>returns the value of a polynomial of degree n evaluated at x. y = polyval(p,x,[],mu) or [y,delta] = polyval(p,x,S,mu) use x^=(x−μ1)/μ2 in place of x.
+In this equation, μ1=mean(x)and μ2=std(x). The centering and scaling parameters mu = [μ1,μ2] is optional </refpurpose>
   </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  y= polyval(p,x)
+ [y,delta] = polyval(p,x,S)
+   </synopsis>
+</refsynopsisdiv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>p:</term>
+      <listitem><para>  vector of length n+1 whose elements are the coefficients in descending powers of the polynomial to be evaluated.</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> -can be a matrix or a vector. In either case, polyval evaluates p at each element of x.</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+<varlistentry><term>delta:</term>
+      <listitem><para>-is an estimate of the standard deviation of the error in predicting a future observation at x by p(x). </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+p = [3 2 1];
+y=polyval(p,[5 7 9])
+//EXPECTED OUTPUT:
+//y=  86  162  262
+
+
+   ]]></programlisting>
+</refsection>
+
+
+
+
+
+
+
 
 </refentry>

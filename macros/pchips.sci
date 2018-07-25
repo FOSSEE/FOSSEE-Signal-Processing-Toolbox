@@ -1,27 +1,40 @@
 function d = pchips(x,y,delta)
 
+//Piecewise Cubic Hermite Interpolating Polynomial (PCHIP)
+//Parameters
+// x: a vector
+// y: is Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal
+//length(X).
 
+// delta: Points for interpolation
+// d: vector of interpolantant at delta
+//Examples:
+//x = -3:3;
+//y = [-1 -1 -1 0 1 1 1];
+//xq1 = -3:.01:3;
+//v=pchips(x,y,xq1)
+//
    n = length(x);
 
-   if n==2  
+   if n==2
       d = repmat(delta(1),size(y));
-      
+
   else
 
 
    d = zeros(size(y));
-  
+
    k = find(sign(delta(1:n-2)).*sign(delta(2:n-1)) > 0);
- 
+
 
    h = diff(x);
    hs = h(k)+h(k+1);
    w1 = (h(k)+hs)./(3*hs);
    w2 = (hs+h(k+1))./(3*hs);
-   
+
    if ~isempty (k) then
-  
-   
+
+
    del_mx = max(abs(delta(k)), abs(delta(k+1)));
    del_mn = min(abs(delta(k)), abs(delta(k+1)));
    d(k+1) = del_mn./conj(w1.*(delta(k)./del_mx) + w2.*(delta(k+1)./del_mx));
@@ -40,10 +53,10 @@ function d = pchips(x,y,delta)
       d(n) = 3*delta(n-1);
    end
    end
-   
-   
-   
-   
+
+
+
+
    end
-   
+
    endfunction

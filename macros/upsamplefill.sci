@@ -1,10 +1,10 @@
-function y = upsamplefill (x, w, cpy)
+function y = upsamplefill (x, v, c)
 //This function upsamples a vector interleaving given values or copies of the vector elements.
 //Calling Sequence
-//y = upsamplefill (x, w)
+//
 //y = upsamplefill (x, w, cpy)
-//Parameters 
-//x: scalar, vector or matrix of real or complex numbers 
+//Parameters
+//x: scalar, vector or matrix of real or complex numbers
 //w: scalar or vector of real or complex values
 //cpy: can take in "true" or "false", default is false
 //Description
@@ -13,20 +13,67 @@ function y = upsamplefill (x, w, cpy)
 //The second argument has the values in the vector w that are placed in between the elements of x.
 //The third argument, if true, means that w should be scalar and that each value in x repeated w times.
 //Examples
-//upsamplefill([0.4,0.5],7)
-//ans  =
-//    0.4    7.    0.5    7. 
-funcprot(0);
-rhs = argn(2)
 
-if(rhs<2 | rhs>3)
-error("Wrong number of input arguments.")
-end
+//1.upsamplefill([1,3,5],2,%f)
+//ans:1.    1.    1.    3.    3.    3.    5.    5.    5.
 
-	select(rhs)
-	case 2 then
-	y = callOctave("upsamplefill", x, w)
-	case 3 then
-	y = callOctave("upsamplefill", x, w, cpy)
-	end
+//2.upsamplefill([1,3,5],2,%t)
+//ans:1.    2.    3.    2.    5.    2.
+
+
+
+
+  if argn(2)<2
+    error("wrong no. of input arguments")
+  end
+
+  [nr,nc] = size (x);
+  if c==%f
+
+    if  (nr==1 | nc==1)
+
+      y = kron (x(:), ones(v+1,1));
+      if nr == 1
+        y = y.';
+      end
+
+    else
+
+      y = kron (x, ones(v+1,1));
+
+    end
+
+    return
+
+  else
+
+  //Assumes 'v' row or column vector
+    n = length(v) + 1;
+    N = n*nr;
+
+    if (nr==1 | nc==1)
+
+      N        = N*nc;
+      idx      = 1:n:N;
+      idx_c    = setdiff (1:N, 1:n:N);
+      y        = zeros (N,1);
+      y(idx) = x';
+      y(idx_c) = repmat (v(:), max(nr,nc), 1);
+
+      if nr == 1
+        y = y.';
+      end
+
+    else
+
+      idx      = 1:n:N;
+      idx_c    = setdiff(1:N,1:n:N);
+      y        = zeros (N,nc);
+      y(idx,:)   = x';
+
+      y(idx_c,:) = repmat (v(:), nr, nc);
+
+    end
+  end
+
 endfunction

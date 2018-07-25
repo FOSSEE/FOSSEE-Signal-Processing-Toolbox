@@ -28,20 +28,94 @@
    [w,pow] = rootmusic(x,p)
    [f,pow] = rootmusc(...,fs)
    [w,pow] = rootmusic(...,'corr')
-   
+
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>Examples:</term>
-      <listitem><para> </para></listitem></varlistentry>
-   <varlistentry><term>1) 3 complex exponentials:</term>
-      <listitem><para> </para></listitem></varlistentry>
-   <varlistentry><term>n=0:</term>
-      <listitem><para>99;</para></listitem></varlistentry>
+   <varlistentry><term>x:</term>
+      <listitem><para>  int|double - vector|matrix</para>
+<para>Input signal. In case of a matrix, each row of x represents a
+   seperate observation of the signal. If 'corr' flag is specified,
+   then x is the correlation matrix.
+   If w is not specified in the input, it is determined by the
+   algorithm. If x is real valued, then range of w is [0, pi].
+   Otherwise, the range of w is [0, 2pi)</para>
+</listitem></varlistentry>
    </variablelist>
+
+<variablelist>
+   <varlistentry><term>p:</term>
+      <listitem><para> int|double - scalar|vector</para>
+<para>p(1) is the dimension of the signal subspace
+   p(2), if specified, represents a threshold that is multiplied by
+   the smallest estimated eigenvalue of the signal's correlation matrix.</para>
+
+</listitem></varlistentry>
+   </variablelist>
+
+<variablelist>
+<varlistentry><term>w:</term>
+      <listitem><para> int|double - vector</para>
+<para>w is the vector of normalized frequencies over which the
+   pseuspectrogram is to be computed.</para>
+
+</listitem></varlistentry>
+
+</variablelist>
+
+
+<variablelist>
+<varlistentry><term>pow:</term>
+      <listitem><para>  the estimated absolute value squared amplitudes of the sinusoids at the frequencies w.</para>
+
+</listitem></varlistentry>
+
+</variablelist>
+
+<variablelist>
+<varlistentry><term>fs:</term>
+      <listitem><para> int|double - scalar (Default = 1)</para>
+<para>Sampling rate. Used to convert the normalized frequencies (w) to
+   actual values (f) and vice-versa.</para>
+
+</listitem></varlistentry>
+
+</variablelist>
+
+
+<variablelist>
+<varlistentry><term>corr:</term>
+      <listitem><para>  If specified, x is interpreted as a correlation matrix rather than a matrix of the signal data. For x to be a correlation matrix, x must be a square matrix and all its eigenvalues must be nonnegative.</para>
+
+</listitem></varlistentry>
+
+</variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+<para>W = rootmusic(X,P) returns the frequencies in radians/sample for the P complex exponentials (sinusoids) that make up the signal X.
+
+The input X is specified either as:</para>
+
+  <para>  A row or column vector representing one observation of the signal
+
+     </para>
+<para>A rectangular array for which each row of x represents a separate observation of the signal (for example, each row is one output of an array of sensors, as in array processing), such that x'*x is an estimate of the correlation matrix</para>
+</refsection>
+
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+n=0:99;
+s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
+[A,R]=corrmtx(s,12,'mod');
+[W,P] = rootmusic(R,3,'corr');
+   ]]></programlisting>
 </refsection>
 
 <refsection>

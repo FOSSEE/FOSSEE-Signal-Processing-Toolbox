@@ -9,9 +9,13 @@ function lsf=poly2lsf(a)
 // k: define the prediction polynomial.
 // lsf: returns corresponding line spectral frequencies.
 // Examples
-//X = [0.5 0.3 0.8 0.9 0.4 0.05];
+//
+//EXAMPLE
+//X=[1 0.6149 0.9899 0 0.0031 -0.0082]
 // lsf = poly2lsf(X)
-// See also
+//EXPECTED OUTPUT:
+//lsf  =0.7841731  1.5605415  1.8776459  1.8984313  2.3592523
+
 //
 // Author
 // Jitendra Singh
@@ -59,17 +63,17 @@ if (p-fix(p./2).*2)~=0 then  // Odd order
     na = length(aa);
     if na > n
         P = 0;
-        
+
     else
         P= filter(pp, aa, [1 zeros(1,n-na)]);
         if m ~= 1
             P = P(:);
         end
     end
-    
+
     Q = qq;
 else          // Even order
-    
+
     aa=[1 -1];
     [m,n] = size(pp);
     n = max(m,n);
@@ -77,29 +81,29 @@ else          // Even order
     (aa);
     if na > n
         P = 0;
-        
+
     else
         P= filter(pp, aa, [1 zeros(1,n-na)]);
-        if m ~= 1 
+        if m ~= 1
             P = P(:);
         end
     end
-    
+
     aa=[1 1];
     [m,n] = size(qq);
     n = max(m,n);
     na = length(aa);
-    
+
     if na > n
         Q = 0;
-        
+
     else
         Q= filter(qq, aa, [1 zeros(1,n-na)]);
         if m ~= 1
             Q = Q(:);
         end
     end
-    
+
 end
 
 r_p  = roots(P); r_q  = roots(Q);

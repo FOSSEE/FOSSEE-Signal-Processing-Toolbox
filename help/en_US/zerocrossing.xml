@@ -17,14 +17,14 @@
 
   <refnamediv>
     <refname>zerocrossing</refname>
-    <refpurpose>This function estimates the points at which a given waveform crosses the x-axis.</refpurpose>
+    <refpurpose>This function estimates the points at which a given waveform y=y(x) crosses the x-axis using linear interpolation. </refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   x = zerocrossing (w, y)
+   w = zerocrossing (x, y)
    </synopsis>
 </refsynopsisdiv>
 
@@ -32,25 +32,42 @@
    <title>Parameters</title>
    <variablelist>
    <varlistentry><term>w:</term>
-      <listitem><para> </para></listitem></varlistentry>
+      <listitem><para>vector of points at which the function y(x) crosses x-axis. </para></listitem></varlistentry>
    <varlistentry><term>y:</term>
-      <listitem><para> </para></listitem></varlistentry>
+      <listitem><para> The dependant variable,y(x)</para></listitem></varlistentry>
    <varlistentry><term>x:</term>
-      <listitem><para> </para></listitem></varlistentry>
+      <listitem><para> The independant variable</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function estimates the points at which a given waveform y = y(w) crosses the x-axis. It uses linear interpolation.
+This function estimates the points at which a given waveform y = y(x) crosses the x-axis. It uses linear interpolation.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
+x = linspace(0,1,100);
+y = 2*sin(2*%pi*x);
+x0= zerocrossing(x,y);
+//ans:
+// x0  =  0.    0.5	1.0	1.5
+y0=interp1(x,y,x0)
+plot(x,y,x0,y0,'x')
+
    ]]></programlisting>
+
+<scilab:image>
+x = linspace(0,2,200);
+y = 2*sin(2*%pi*x);
+x0= zerocrossing(x,y);
+y0=interp1(x,y,x0)
+plot(x,y,x0,y0,'x')
+
+</scilab:image>
+
 </refsection>
 </refentry>

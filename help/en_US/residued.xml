@@ -41,19 +41,35 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-Similar to the "residuez" function. The difference being in the function "residuez", the IIR part (poles p and residues r) is driven in parallel with the FIR part(f) whereas in the function "residued", the IIR part is driven by the output of the FIR part. In signal modeling applications, this structure can be more accurate.
+Similar to the "residuez" function. The difference being in the function "residuez", the IIR part (poles p and residues r) is driven in parallel with the FIR part(f) whereas in the function "residued", the IIR part is driven by the output of the FIR part. In signal modeling applications, this structure can be more accurate.NOTE that the polynomials 'b' and 'a' should have real coefficients(because of the function 'filter' used in polyval). This function works for transfer functions which are proper fractions.
+</para>
+<para>
+<latex>
+\begin{eqnarray}
+\frac{B(s)}{A(s)}=\sum_{m=1}^{M}\frac{r(m)}{(s-p(m))^{e(m)}}+\sum_{i=1}^{N}k(i)*{s^{N-i}}
+\end{eqnarray}
+</latex>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    [a,b,c,d]=residued([1 i;3 -4],[1 2; 3 4])
-a =  [ 0.19405 - 1.31377i;   0.08329 + 0.99163i;  -0.27734 + 0.32215i]
-b =  [ -0.10184 - 1.19167i;  -0.10184 + 1.19167i;  -2.79632 - 0.00000i]
-c =  1
-d =  [ 1 ; 1 ; 1]
+1.
+B=[1 1 ]; A=[1 -2 1];
+ [r,p,f,m] = residued(B,A)
+//OUTPUT
+//r =
+//  -1
+//   2
+//p =
+//   1
+//   1
+//
+//f = [](0x0)
+//e =
+//   1
+//   2
    ]]></programlisting>
 </refsection>
 </refentry>
