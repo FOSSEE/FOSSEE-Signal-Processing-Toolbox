@@ -7,6 +7,13 @@ function inv_ceps = icceps(input, remv_samp)
 // Outputs: 
 //      inv_ceps: Inverse cepstrum output
 
+//Example
+//xhat=[ 2.2428   -0.0420   -0.0210    0.0045    0.0366    0.0788    0.1386    0.2327    0.4114    0.9249]
+//icc = icceps(xhat,2);
+//round(icc)
+//OUTPUT:
+//  2   3   4   5   6   7   8   9   10  1
+
 // Check validity of number of inout arguments
 checkNArgin(1,3, argn(2));
     

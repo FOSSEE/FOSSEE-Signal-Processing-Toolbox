@@ -2,11 +2,11 @@
 
 <!--
  *
- * This help file was generated from interp.sci using help_from_sci().
+ * This help file was generated from oct_interp.sci using help_from_sci().
  *
  -->
 
-<refentry version="5.0-subset Scilab" xml:id="interp" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="oct_interp" xml:lang="en"
           xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
           xmlns:db="http://docbook.org/ns/docbook">
 
   <refnamediv>
-    <refname>interp</refname>
+    <refname>oct_interp</refname>
     <refpurpose>function y = interp(x, q, n, Wc)</refpurpose>
   </refnamediv>
 

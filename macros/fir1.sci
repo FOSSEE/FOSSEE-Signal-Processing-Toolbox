@@ -1,39 +1,114 @@
-function B = fir1(N, W, varargin)
-//Produce an order N FIR filter with the given frequency cutoff, returning the N+1 filter coefficients in B.
-//Calling Sequence
-//B = fir1(N, W)
-//B = fir1(N, W, TYPE)
-//B = fir1(N, W, TYPE, WINDOW)
-//B = fir1(N, W, TYPE, WINDOW, NOSCALE)
-//Parameters
-//N: Integer
-//W: Integer or Vector
-//Description
-// Produce an order N FIR filter with the given frequency cutoff W, returning the N+1 filter coefficients in B. If W is a scalar, it specifies the frequency cutoff for a lowpass or highpass filter. If W is a two-element vector, the two values specify the edges of a bandpass or bandstop filter. If W is an N-element vector, each value specifies a band edge of a multiband pass/stop filter.
-//
-//The filter TYPE can be specified with one of the following strings: "low", "high", "stop", "pass", "bandpass", "DC-0", or "DC-1". The default is "low" is W is a scalar, "pass" if W is a pair, or "DC-0" if W is a vector with more than 2 elements.
-//
-//An optional shaping WINDOW can be given as a vector with length N+1. If not specified, a Hamming window of length N+1 is used.
-//
-//With the option "noscale", the filter coefficients are not normalized. The default is to normalize the filter such that the magnitude response of the center of the first passband is 1.
-//Examples
-// fir1 (5, 0.4)
-//ans = 
-//        9.2762e-05   9.5482e-02   4.0443e-01   4.0443e-01   9.5482e-02   9.2762e-05 
-funcprot(0);
-rhs = argn(2);
-if(rhs<2 | rhs>5)
-error("Wrong number of input arguments.");
+function b = fir1(n, w, varargin)
+
+    funcprot(0);
+    if argn(2) < 2 | argn(2) > 5
+        error("Wrong Number of input arguments");
+    end
+
+    // Assign default window, filter type and scale.
+    // If single band edge, the first band defaults to a pass band to
+    // create a lowpass filter.  If multiple band edges, the first band
+    // defaults to a stop band so that the two band case defaults to a
+    // band pass filter.  Ick.
+
+    window_in  = [];
+    scale   = 1;
+    ftype   = bool2s(length(w)==1);
+
+
+    for i=1:length(varargin)
+        arg = varargin(i);
+        if (type(arg)==10)
+            arg=convstr(arg,"l");
+        end
+        if isempty(arg)
+            continue;
+        end
+
+        select arg
+        case 'low' then ftype  = 1; case 'stop' then ftype  = 1; case 'dc-1' then ftype  = 1;
+        case 'high' then ftype  = 0; case 'pass' then ftype  = 0; case 'bandpass' then ftype  = 0; case 'dc-0' then ftype  = 0;
+        case 'scale' then scale=1;
+        case 'noscale' then scale=0;
+        else window_in=arg;
+        end
+    end
+
+    // build response function according to fir2 requirements
+    bands = length(w)+1;
+    f = zeros(1,2*bands);
+    f(2*bands)=1;
+    f(2:2:2*bands-1) = w;
+    f(3:2:2*bands-1) = w;
+    m = zeros(1,2*bands);
+    m(1:2:2*bands) = modulo([1:bands]-(1-ftype),2);
+    m(2:2:2*bands) = m(1:2:2*bands);
+
+
+
+
+    //Increment the order if the final band is a pass band.  Something
+    // about having a nyquist frequency of zero causing problems.
+    //
+    if modulo(n,2)==1 & m(2*bands)==1,
+        warning("n must be even for highpass and bandstop filters. Incrementing.");
+        n = n+1;
+        if isvector(window_in) & isreal(window_in) & ~(type(window_in)==10)
+            // Extend the window using interpolation
+            M = length(window_in);
+            if M == 1,
+                window_in = [window_in; window_in];
+            elseif M < 4
+                window_in = interp1(linspace(0,1,M),window_in,linspace(0,1,M+1),'linear');
+            else
+                window_in = interp1(linspace(0,1,M),window_in,linspace(0,1,M+1),'spline');
+            end
+        end
+    end
+
+    // compute the filter
+    b = fir2(n, f, m, [], 2, window_in);
+
+    // normalize filter magnitude
+    if scale == 1
+        // find the middle of the first band edge
+        // find the frequency of the normalizing gain
+        if m(1) == 1
+            // if the first band is a passband, use DC gain
+            w_o = 0;
+        elseif f(4) == 1
+            // for a highpass filter,
+            // use the gain at half the sample frequency
+            w_o = 1;
+        else
+            // otherwise, use the gain at the center
+            // frequency of the first passband
+            w_o = f(3) + (f(4)-f(3))/2;
+        end
+
+        // compute |h(w_o)|^-1
+
+        if ~(isvector(b) | isempty(b))  // Check input is a vector
+            error('Invalid');
+        end
+
+        x=exp(-1*%i*%pi*w_o)
+//        z=[1 -exp(-1*%i*%pi*w_o)];
+        disp(x)
+        nc = length(b);
+       if(isscalar(x) &  nc>0 & (x~=%inf) & or(b(:)~=%inf))
+            // Make it scream for scalar x.  Polynomial evaluation can be
+            // implemented as a recursive digital filter.
+            q=b;
+            k = filter(1,[1 -real(x)],q);
+            k=k(nc);
+        end
+        k=abs(k);
+        renorm = 1/k
+
+
+    // normalize the filter
+    b = renorm*b;
 end
 
-	select(rhs)
-	case 2 then
-	B = callOctave("fir1", N, W);
-        case 3 then
-        B = callOctave("fir1", N, W, varargin(1));
-        case 4 then
-        B = callOctave("fir1", N, W, varargin(1), varargin(2));
-        case 5 then
-        B = callOctave("fir1", N, W, varargin(1), varargin(2), varargin(3));
-	end
 endfunction

@@ -1,37 +1,43 @@
 function w = chebwin (m, at)
-//This function returns the filter coefficients of a Dolph-Chebyshev window.
-//Calling Sequence
-//w = chebwin (m)
-//w = chebwin (m, at)
-//Parameters 
-//m: positive integer value
-//at: real scalar value 
-//w: output variable, vector of real numbers 
-//Description
-//This is an Octave function.
-//This function returns the filter coefficients of a Dolph-Chebyshev window of length m supplied as input, to the output vector w. 
-//The second parameter is the stop band attenuation of the Fourier transform in dB. The default value is 100 dB.  
-//Examples
-//chebwin(7)
-//ans  =
-//    0.0565041  
-//    0.3166085  
-//    0.7601208  
-//    1.         
-//    0.7601208  
-//    0.3166085  
-//    0.0565041 
 
-rhs = argn(2)
-if(rhs<1 | rhs>2)
-error("Wrong number of input arguments.")
-end
-select(rhs)
-case 1 then
-w = callOctave("chebwin",m)
-case 2 then
-w = callOctave("chebwin",m,at)
-end
+ funcprot(0);
+    rhs= argn(2);
+
+  if (rhs < 1 | rhs > 2)
+    error("Wrong Number of input arguments");
+  elseif (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
+    error ("chebwin: M must be a positive integer");
+  elseif (rhs == 1)
+    at = 100;
+  elseif (~ (isscalar (at) & isreal(at)))
+    error ("chebwin: AT must be a real scalar");
+  end
+
+  if (m == 1)
+    w = 1;
+  else
+    // beta calculation
+    gamma = 10^(-at/20);
+    beta = cosh(1/(m-1) * acosh(1/gamma));
+    // freq. scale
+    k = (0:m-1);
+    x = beta*cos(%pi*k/m);
+    // Chebyshev window (freq. domain)
+    p = cheb(m-1, x);
+    // inverse Fourier transform
+    if (modulo(m,2))
+      w = real(fft(p));
+      M = (m+1)/2;
+      w = w(1:M)/w(1);
+      w = [w(M:-1:2) w]';
+    else
+      //half-sample delay (even order)
+      p = p.*exp(%i*%pi/m * (0:m-1));
+      w = real(fft(p));
+      M = m/2+1;
+      w = w/w(2);
+      w = [w(M:-1:2) w(2:M)]';
+    end
+  end
+
 endfunction
-
-

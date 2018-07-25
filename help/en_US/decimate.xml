@@ -17,7 +17,63 @@
 
   <refnamediv>
     <refname>decimate</refname>
-    <refpurpose>rhs = argn(2)</refpurpose>
+    <refpurpose>Decimation — decrease sample rate by integer factor</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   y = decimate(x,q)
+   y = decimate(x,q,n)
+   y = decimate (…, "fir")
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> input sequence</para></listitem></varlistentry>
+   <varlistentry><term>q:</term>
+      <listitem><para> reduction factor </para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> filter order</para></listitem></varlistentry>
+   <varlistentry><term>ftype:</term>
+      <listitem><para> filter type: iir or fir</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+y = decimate(x,q) reduces the sample rate of x, the input signal, by a factor of q.
+By default, an order n Chebyshev type I filter is used. If n is not specified, the default is 8.
+If the optional argument "fir" is given, an order n FIR filter is used, with a default order of 30 if n is not given.
+Note that q must be an integer for this rate change method.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+t = 0:.00025:1;
+x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
+y = decimate(x,4);
+subplot(211)
+plot2d3((0:120),x(1:121))
+subplot(212)
+plot2d3((0:30),y(1:31))
+   ]]></programlisting>
+
+</refsection>
+
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+
 
 </refentry>

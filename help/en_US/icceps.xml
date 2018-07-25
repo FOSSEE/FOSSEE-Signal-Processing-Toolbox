@@ -20,4 +20,43 @@
     <refpurpose>ICCEPS computes the inverse cepstrum of a real-valued input. This spectrum</refpurpose>
   </refnamediv>
 
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   inv_ceps = icceps(xhat,remv_samp)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>remv_samp:</term>
+      <listitem><para> Number of samples of delay to be removed </para></listitem></varlistentry>
+   <varlistentry><term>xhat:</term>
+      <listitem><para> real valued input </para></listitem></varlistentry>
+   <varlistentry><term>inv_ceps:</term>
+      <listitem><para> Inverse cepstrum output </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+inv_ceps = icceps(xhat,remv_samp) returns the inverse complex cepstrum of the real data sequence "xhat", removing "remv_samp" samples of delay. If "xhat" was obtained with cceps(x), then the amount of delay that was added to x was the element of round(unwrap(angle(fft(x)))/pi) corresponding to π radians.
+
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+xhat=[ 2.2428   -0.0420   -0.0210    0.0045    0.0366    0.0788    0.1386    0.2327    0.4114    0.9249]
+icc = icceps(xhat,2);
+round(icc)
+//EXPECTED OUTPUT:
+//  2   3   4   5   6   7   8   9   10   1
+
+   ]]></programlisting>
+</refsection>
+
 </refentry>
