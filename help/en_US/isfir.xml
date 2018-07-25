@@ -17,7 +17,60 @@
 
   <refnamediv>
     <refname>isfir</refname>
-    <refpurpose>[nargout,nargin]=argn();</refpurpose>
+    <refpurpose> Determines whether given system function is FIR or not</refpurpose>
+    <para> </para>
   </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   fir = isfir(b,a)
+   fir = isfir(sos)
+   </synopsis>
+    <para> </para>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b</term>
+      <listitem><para> Coefficients of numerator polynomial of system function </para></listitem></varlistentry>
+   <varlistentry><term>a</term>
+      <listitem><para> Coefficients of denumerator polynomial of system function</para></listitem></varlistentry>
+   <varlistentry><term>sos</term>
+      <listitem><para> Second order section matrix of order Kx6 </para></listitem></varlistentry>
+   <varlistentry><term>fir</term>
+      <listitem><para> This function returns logical 1 if system is FIR (fir = 1) </para> <para> Otherwise it returns logical 0 (fir = 0)</para></listitem></varlistentry>
+   </variablelist>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para> This function takes input a System function in terms of numerator and denumerator coefficients or in second order section (sos) matrix and checks for system having Finite Impulse Response (FIR) or not </para>
+<para> </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <para>Checking given system function is FIR or not</para>
+   <para>
+    <latex>
+      \begin{eqnarray}
+      H(z) = 1 - z^{-1} + z^{-2}
+      \end{eqnarray}
+    </latex>
+   </para>
+    <para> </para>
+
+   <programlisting role="example"><![CDATA[
+b = [1 -1 1] ;
+a = 1 ;
+f = isfir(b,a) //This is an example of FIR system function, hence output will be f = 1
+]]></programlisting>
+</refsection>
+
+
 
 </refentry>

@@ -1,7 +1,35 @@
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
+
+// This function checks whether given system function is FIR or not
+
+//. Calling Sequence
+// fir = isfir(b,a)
+// fir = isfir(sos)
+
+// Input Parameters
+// a -->denumerator coefficient matrix
+// b --> numerator coefficient matrix
+// sos --> second order split matrix
+// Output parameter
+// fir --> fir == 1 if system is FIR , fir == 0 if system is not FIR
+
+//Description
+// This function take a system function (in terms of denumerator and numerator coefficient matrix or in term of second order split (sos) matrix) as input and checks
+
+//Example
+// 1.)
+// fir = isfir([1 -1 1], 1)
+//-->fir = isfir([1 -1 1],1)
+// fir  =
+//
+//    1.
+
+//Conclusion : Output of above example is fir = 1 this means system is FIR
+
 function fir=isfir(varargin)
     [nargout,nargin]=argn();
+// checking for input in terms of numerator (b) and denumerator (a) coefficient matrices
     if (nargin==2) then
         a=varargin(1);
         b=varargin(2);
@@ -29,6 +57,7 @@ function fir=isfir(varargin)
         elseif n~=1 then
             error('check input dimension');
         end
+//Checking for input in terms of second orer split (sos) matrix
     elseif (nargin==1) then
         sos=varargin(1);
         if type(sos)~=1 then

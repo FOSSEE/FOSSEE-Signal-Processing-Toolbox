@@ -17,7 +17,62 @@
 
   <refnamediv>
     <refname>islinphase</refname>
-    <refpurpose>[nargout,nargin]=argn();</refpurpose>
+    <refpurpose>Checks given system function is linearphase or not</refpurpose>
+    <para> </para>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   flag = islinphase(b,a)
+   flag = islinphase(sos)
+   flag = islinphase(...,tol)
+   </synopsis>
+    <para> </para>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>b</term>
+      <listitem><para> Coefficients of numerator polynomial of system function </para></listitem></varlistentry>
+   <varlistentry><term>a</term>
+      <listitem><para> Coefficients of denumerator polynomial of system function</para></listitem></varlistentry>
+   <varlistentry><term>sos</term>
+      <listitem><para> Second order section matrix of order Kx6 </para></listitem></varlistentry>
+   <varlistentry><term>tol</term>
+      <listitem><para> Tolerence in similarities between two numbers in phase response </para></listitem></varlistentry>
+   <varlistentry><term>flag</term>
+      <listitem><para> This function returns logical 1 if system is linear phase (flag = 1) </para> <para> Otherwise it returns logical 0 (flag = 0)</para></listitem></varlistentry>
+   </variablelist>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para> This function takes input a System function in terms of numerator and denumerator coefficients or in second order section (sos) matrix and checks for system having Linear Phase Response or not </para>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+
+   <para>Checking given system function is linear-phase or not</para>
+   <para>
+    <latex>
+      \begin{eqnarray}
+      H(z) = z^{-1} + 2 z^{-2} + 2 z^{-3} + z^{-4}
+      \end{eqnarray}
+    </latex>
+   </para>
+    <para> </para>
+
+   <programlisting role="example"><![CDATA[
+b = [0 1 2 2 1 0] ; //Numerator polynomial coefficients
+a = 1 ; //Denumerator polynomial coefficients
+flag = islinphase(b,a) //This is an example of Symmetric FIR Filter which is Linear Phase, hence it will give output : flag = 1
+]]></programlisting>
+</refsection>
+
 
 </refentry>

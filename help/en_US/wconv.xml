@@ -33,20 +33,26 @@
    <title>Parameters</title>
    <variablelist>
    <varlistentry><term>type:</term>
-      <listitem><para> convolution type.</para></listitem></varlistentry>
+      <listitem><para> convolution type.</para>
+      <para> * 1 or "1" for 1D convolution.</para>
+      <para> * 2 or "2" for 2D convolution.</para>
+	    </listitem></varlistentry>
    <varlistentry><term>x:</term>
       <listitem><para> Signal vector or matrix.</para></listitem></varlistentry>
    <varlistentry><term>f:</term>
       <listitem><para> FIR filter coefficients.</para></listitem></varlistentry>
    <varlistentry><term>shape:</term>
-      <listitem><para> Shape.</para></listitem></varlistentry>
+      <listitem>
+      <para> * "full", computes the full one/two-dimensional convolution. It is the default value.</para>
+      <para> * "same",  computes the central part of the convolution of the same size as x.</para>
+      <para> * "valid",  computes the convolution parts without the zero-padding of x.</para>
+      </listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 It performs 1D or 2D convolution between the signal x and the filter coefficients f.
 </para>
 </refsection>
@@ -54,11 +60,17 @@ It performs 1D or 2D convolution between the signal x and the filter coefficient
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1 2 3 4 5]
-b = [7 8 9 10]
-wconv(1,a,b)
-ans =
-7    22    46    80   114   106    85    50
+a = [1 2 3 4 5];
+b = [7 8 9 10];
+wconv(1, a, b)
    ]]></programlisting>
 </refsection>
+
+ <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
+	    </simplelist>
+  </refsection>
+
 </refentry>

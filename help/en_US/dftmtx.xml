@@ -17,14 +17,14 @@
 
   <refnamediv>
     <refname>dftmtx</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Computes n-by-n Discrete Fourier transformation matrix. </refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   [d]=dftmtx(n)
+   d = dftmtx(n)
    </synopsis>
 </refsynopsisdiv>
 
@@ -39,7 +39,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function
 This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).
 </para>
 </refsection>
@@ -47,10 +46,15 @@ This fuction gives a complex matrix of values whose product with a vector produc
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    dftmtx(3)
-ans =   1.00000 + 0.00000i   1.00000 + 0.00000i   1.00000 + 0.00000i
-1.00000 + 0.00000i  -0.50000 - 0.86603i  -0.50000 + 0.86603i
-1.00000 - 0.00000i  -0.50000 + 0.86603i  -0.50000 - 0.86603i
+d = dftmtx(4)
    ]]></programlisting>
 </refsection>
+
+<refsection>
+<title>Modified by :</title>
+<simplelist type="vert">
+<member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
+    </simplelist>
+</refsection>
+
 </refentry>

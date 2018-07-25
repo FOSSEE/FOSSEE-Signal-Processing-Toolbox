@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from circshift.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="circshift" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>circshift</refname>
+    <refpurpose>Shifts array/matrix circularly</refpurpose>
+    <para> </para>
+  </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+R = circshift(M, d)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>M , R :</term>
+      <listitem><para> vector or matrix of any data type</para></listitem></varlistentry>
+   <varlistentry><term>d :</term>
+      <listitem><para> vector of integers. d(i) is the shift to be applied to the M's components along its ith dimension.</para>for example d = [0 n] will shift element n position along column<para></para></listitem></varlistentry>
+   </variablelist>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+circularly shifts by d(i) positions components of M along its ith dimensions
+</para>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Example : 1</title>
+   <programlisting role="example"><![CDATA[
+ M = [1 2 3 4];
+ circshift(M, [0 1])
+   ]]></programlisting>
+</refsection>
+
+</refentry>

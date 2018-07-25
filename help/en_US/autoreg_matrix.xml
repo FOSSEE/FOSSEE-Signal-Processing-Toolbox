@@ -54,11 +54,11 @@ The resulting matrix may be used as a regressor matrix in autoregressions.
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-autoreg_matrix([1,2,3],2)
-ans =
-1.    0.    0.
-1.    1.    0.
-1.    2.    1.
+
+Y = [1,2,3] ;
+K = 2 ;
+autoreg_matrix(Y,K)
+
    ]]></programlisting>
 </refsection>
 </refentry>

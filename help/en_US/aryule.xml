@@ -37,29 +37,29 @@
       <listitem><para> vector of real or complex numbers, length &gt; 2</para></listitem></varlistentry>
    <varlistentry><term>p:</term>
       <listitem><para> positive integer value &lt; length(x) - 1</para></listitem></varlistentry>
-   <varlistentry><term>a, v, k:</term>
-      <listitem><para> Output variables</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para> gives the AR coefficients </para></listitem></varlistentry>
+   <varlistentry><term>v:</term>
+      <listitem><para> gives the variance of the white noise, </para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> gives the reflection coefficients to be used in the lattice filter</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-   </para>
-   <para>
 This function fits an AR (p)-model with Yule-Walker estimates.
 The first argument is the data vector which is to be estimated.
-Output variable a gives the AR coefficients, v gives the variance of the white noise and k gives the reflection coefficients to be used in the lattice filter.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-aryule([1,2,3,4,5],2)
-ans  =
-1.  - 0.8140351    0.1192982
+x = [1,2,3,4,5] ;
+poles = 2 ;
+arburg(x,poles)
    ]]></programlisting>
 </refsection>
 </refentry>

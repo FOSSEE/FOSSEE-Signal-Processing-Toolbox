@@ -13,21 +13,23 @@ function [ar, sigma2,rc] = levin(r);
 //    //  ar     :Auto-Regressive model parameters
 //    //  sigma2 :Scale constant
 //    //  rc     :Reflection coefficients
+
+// Example :
 if length(r)==1 then
     ar=1;
     sigma2=r;
     rc=[];
     else
-    
+
 
 
     ar = 0;
     aj(1) = 1;
-    ej = r(1);  
+    ej = r(1);
     rc = [];
      p=length(r)-1
- 
-   
+
+
     for j=1:p,
         aj1 = zeros(j+1, 1);
         aj1(1) = 1;
@@ -38,21 +40,21 @@ if length(r)==1 then
         if ej==0  then
             lambdaj1=%nan
         else
-            lambdaj1 = -gammaj/ej; 
+            lambdaj1 = -gammaj/ej;
         end
-       
+
         rc=[rc; lambdaj1];
-    
+
         for i=2:j,
             aj1(i) = aj(i)+lambdaj1*(aj(j-i+2)');
         end
         aj1(j+1) = lambdaj1;
         ej1 = ej*(1-abs(lambdaj1)^2);
-     
+
         aj = aj1;
         ar = aj1;
         ej = ej1;
     end
     sigma2 = sqrt(ej1);
     end
-    endfunction
+endfunction

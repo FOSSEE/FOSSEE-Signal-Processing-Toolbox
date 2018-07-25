@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>cheb1ap</refname>
-    <refpurpose>This function designs a lowpass analog Chebyshev type I filter.</refpurpose>
+    <refpurpose>Produces a lowpass analog Chebyshev type I prototype filter.</refpurpose>
   </refnamediv>
 
 
@@ -25,8 +25,6 @@
    <title>Calling Sequence</title>
    <synopsis>
    [z, p, g] = cheb1ap (n, Rp)
-   [z, p] = cheb1ap (n, Rp)
-   p = cheb1ap (n, Rp)
    </synopsis>
 </refsynopsisdiv>
 
@@ -36,7 +34,7 @@
    <varlistentry><term>n:</term>
       <listitem><para> Filter Order</para></listitem></varlistentry>
    <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple</para></listitem></varlistentry>
+      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
    <varlistentry><term>z:</term>
       <listitem><para> Zeros</para></listitem></varlistentry>
    <varlistentry><term>p:</term>
@@ -49,27 +47,25 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-It designs a lowpass analog Chebyshev type I filter of nth order and with a Peak-to-peak passband ripple of Rp.
+It gives a lowpass analog Chebyshev type I prototype filter of nth order and with a Peak-to-peak passband ripple of Rp.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[z, p, g] = cheb1ap (10, 20)
-z = [](0x0)
-p =
-
-Columns 1 through 6:
-
--0.00157 - 0.98774i  -0.00456 - 0.89105i  -0.00709 - 0.70714i  -0.00894 - 0.45401i  -0.00991 - 0.15644i  -0.00991 + 0.15644i
-
-Columns 7 through 10:
-
--0.00894 + 0.45401i  -0.00709 + 0.70714i  -0.00456 + 0.89105i  -0.00157 + 0.98774i
-
-g =  1.9630e-04 - 6.3527e-22i
+n = 10 ;
+Rp = 3 ;
+[z, p, g] = cheb1ap (n, Rp)
    ]]></programlisting>
 </refsection>
+
+  <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Sonu Sharma, RGIT Mumbai</member>
+      <member>FOSSEE, IIT Bombay</member>
+    </simplelist>
+  </refsection>
+
 </refentry>

@@ -17,7 +17,8 @@
 
   <refnamediv>
     <refname>sigmoid_train</refname>
-    <refpurpose>Evaluate a train of sigmoid functions at T.</refpurpose>
+    <refpurpose>Evaluate a train of sigmoid functions at t.</refpurpose>
+    <para> </para>
   </refnamediv>
 
 
@@ -35,6 +36,8 @@
       <listitem><para> integer</para></listitem></varlistentry>
    <varlistentry><term>ranges:</term>
       <listitem><para> matrix</para></listitem></varlistentry>
+   <varlistentry><term>rc:</term>
+      <listitem><para> time constant (scalar)</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
@@ -49,8 +52,6 @@ The number and duration of each sigmoid is determined from RANGES. Each row of R
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 sigmoid_train(0.1,[1:3],4)
-ans =
-0.27375
    ]]></programlisting>
 </refsection>
 </refentry>

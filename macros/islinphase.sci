@@ -1,12 +1,27 @@
 //islinphase Determine whether filter has linear phase
 
-// Calling Syntax
+// Calling Syntax and Parameter description
 //flag = islinphase(b,a)
+//takes input as numerator and denumerator coefficint matrices and returns flag =1 if filter is linear phase else return flag = 0
+
 //flag = islinphase(sos)
+//takes input as K x 6 second order split (sos) matrix and returns flag =1 if filter is linear phase else returns flag =0
+
 //flag = islinphase(...,tol)
+// tol -->this takes tolerence in similarities between two numbers in phase respose
+
+//Example :
+//flag = islinphase([0 1 2 2 1 0],1)
+//Output:
+//flag  =
+
+//    1.
+
+//conclusion : output of above example is flag = 1 means filter is linear phase which must be as example is of symmetric linear phase fir filter
 
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
+
 function islin=islinphase(varargin)
     [nargout,nargin]=argn();
     if (nargin==2) then
@@ -130,5 +145,5 @@ function islin=islinphase(varargin)
     else
         islin=0;
     end
-    
+
 endfunction

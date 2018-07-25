@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>sftrans</refname>
-    <refpurpose>Transform band edges of a generic lowpass filter (cutoff at W=1) represented in splane zero-pole-gain form.</refpurpose>
+    <refpurpose>Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Frequency Transformation in Analog domain).</refpurpose>
   </refnamediv>
 
 
@@ -42,59 +42,39 @@
    <varlistentry><term>W:</term>
       <listitem><para> Edge of target filter.</para></listitem></varlistentry>
    <varlistentry><term>stop:</term>
-      <listitem><para> True for high pass and band stop filters or false for low pass and band pass filters.</para></listitem></varlistentry>
+      <listitem><para> True(%T or 1) for high pass and band stop filters or false (%F or 0) for low pass and band pass filters.</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros
-individually. The following table summarizes the transformation:
-   </para>
-   <para>
-Transform         Zero at x                  Pole at x
-----------------  -------------------------  ------------------------
-Low Pass          zero: Fc x/C               pole: Fc x/C
-S -&gt; C S/Fc       gain: C/Fc                 gain: Fc/C
-----------------  -------------------------  ------------------------
-High Pass         zero: Fc C/x               pole: Fc C/x
-S -&gt; C Fc/S       pole: 0                    zero: 0
-gain: -x                   gain: -1/x
-----------------  -------------------------  ------------------------
-Band Pass         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
-S^2+FhFl   pole: 0                    zero: 0
-S -&gt; C --------   gain: C/(Fh-Fl)            gain: (Fh-Fl)/C
-S(Fh-Fl)   b=x/C (Fh-Fl)/2            b=x/C (Fh-Fl)/2
-----------------  -------------------------  ------------------------
-Band Stop         zero: b +- sqrt(b^2-FhFl)  pole: b +- sqrt(b^2-FhFl)
-S(Fh-Fl)   pole: +-sqrt(-FhFl)        zero: +-sqrt(-FhFl)
-S -&gt; C --------   gain: -x                   gain: -1/x
-S^2+FhFl   b=C/x (Fh-Fl)/2            b=C/x (Fh-Fl)/2
-----------------  -------------------------  ------------------------
-Bilinear          zero: (2+xT)/(2-xT)        pole: (2+xT)/(2-xT)
-2 z-1        pole: -1                   zero: -1
-S -&gt; - ---        gain: (2-xT)/T             gain: (2-xT)/T
-T z+1
-----------------  -------------------------  ------------------------
-   </para>
-   <para>
-where C is the cutoff frequency of the initial lowpass filter, Fc is the edge of the target low/high pass filter and [Fl,Fh] are the edges of the target band pass/stop filter. With abundant tedious
-algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:
-   </para>
-   <para>
-H(S)=g prod(S-Xi)/prod(S-Xj)
-</para>
+Given a low pass filter represented by poles and zeros in the splane, can be converted into a </para>
+<para> low pass (having diffrent cutoff frequency),</para>
+<para> high pass,</para>
+<para> band pass,</para>
+<para> band stop.</para>
+<para> by transforming each of the poles and zeros individually.</para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[Sz, Sp, Sg] = sftrans (5, 10, 15, 20, 30)
-Sz =  4
-Sp =  2
-Sg =  7.5000
+Sz = [1 2 3];
+Sp = [4 5 6];
+Sg = 15;
+W = 20;
+stop = %T;
+[Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
+
    ]]></programlisting>
 </refsection>
+
+<refsection>
+<title>Modified by :</title>
+<simplelist type="vert">
+<member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
+    </simplelist>
+</refsection>
+
 </refentry>

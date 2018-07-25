@@ -17,7 +17,56 @@
 
   <refnamediv>
     <refname>tf2zp</refname>
-    <refpurpose>[z,p,k]= tf2zp(b,a);</refpurpose>
+    <refpurpose>Transfer function to zero pole conversion</refpurpose>
   </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [z p k] = tf2zp(num, den)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>z:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>k:</term>
+      <listitem><para> Leading coefficient (Gain)</para></listitem></varlistentry>
+   <varlistentry><term>Num:</term>
+      <listitem><para> Numerator coefficients of the transfer function</para></listitem></varlistentry>
+   <varlistentry><term>den:</term>
+      <listitem><para> Denomenator coefficients of the transfer function</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+It converts transfer function representation to zeros / poles representation.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+b = [1 2 3]
+a = [4 5 6]
+[z, p, k] = zp2tf(b, a)
+
+   ]]></programlisting>
+</refsection>
+
+  <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Debdeep Dey (FOSSEE, IIT Bombay)</member>
+      <member>MODIFIED BY: Sonu Sharma (fellow at FOSSEE, IIT Bombay)</member>
+	    </simplelist>
+  </refsection>
+
 
 </refentry>
