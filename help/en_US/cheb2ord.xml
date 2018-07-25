@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>cheb2ord</refname>
-    <refpurpose>This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.</refpurpose>
+    <refpurpose>Minimum filter order of a digital Chebyshev type II filter with the desired response characteristics. </refpurpose>
   </refnamediv>
 
 
@@ -25,7 +25,7 @@
    <title>Calling Sequence</title>
    <synopsis>
    n = cheb2ord(Wp, Ws, Rp, Rs)
-   [n, Wc] = cheb2ord(Wp, Ws, Rp, Rs)
+   [n, Ws] = cheb2ord(Wp, Ws, Rp, Rs)
    </synopsis>
 </refsynopsisdiv>
 
@@ -33,35 +33,47 @@
    <title>Parameters</title>
    <variablelist>
    <varlistentry><term>Wp:</term>
-      <listitem><para> scalar or vector of length 2, all elements must be in the range [0,1]</para></listitem></varlistentry>
+      <listitem><para> scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]</para></listitem></varlistentry>
    <varlistentry><term>Ws:</term>
-      <listitem><para> scalar or vector of length 2, all elements must be in the range [0,1]</para></listitem></varlistentry>
+      <listitem><para> scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]</para></listitem></varlistentry>
    <varlistentry><term>Rp:</term>
-      <listitem><para> real value</para></listitem></varlistentry>
+      <listitem><para> passband ripple in dB.</para></listitem></varlistentry>
    <varlistentry><term>Rs:</term>
-      <listitem><para> real value</para></listitem></varlistentry>
+      <listitem><para> stopband attenuation in dB.</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Minimum order of filter satisfying given specs.</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.
-Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
-Frequencies are normalized to the Nyquist frequency in the range [0,1].
-Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
-If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
-If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
-If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
+This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.</para>
+<para>Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.</para>
+<para>Frequencies are normalized to the Nyquist frequency in the range [0,1].</para>
+<para>Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.</para>
+<para>If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.</para>
+<para>If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.</para>
+<para>If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-cheb2ord([0.25,0.3],[0.2,0.8],0.3,0.4)
-ans =  1
+    Wp = 40/500;
+    Ws = 150/500;
+    Rp = 3;
+    Rs = 60;
+    [n,Ws] = cheb2ord(Wp,Ws,Rp,Rs)
    ]]></programlisting>
 </refsection>
+
+<refsection>
+<title>Modified by :</title>
+<simplelist type="vert">
+<member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
+    </simplelist>
+</refsection>
+
 </refentry>

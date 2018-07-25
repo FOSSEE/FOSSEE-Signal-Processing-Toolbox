@@ -17,20 +17,85 @@
 
   <refnamediv>
     <refname>pulsewidth</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate pulse width of real vector x.</refpurpose>
+    <para> </para>
   </refnamediv>
-
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   w=pulsewidth(x)
-   w=pulsewidth(x, Fs)
-   w=pulsewidth(x, t)
-   w=pulsewidth (x, t, 'Polarity', pol)
-   w=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
-   w=pulsewidth(x, t, 'Tolerance', M)
-   w=pulsewidth(x, t,'StateLevels', O)
+     p=pulsewidth(x)
+     p=pulsewidth(x, Fs)
+     p=pulsewidth(x, t)
+     p=pulsewidth (x, t, 'Polarity', pol)
+     p=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
+     p=pulsewidth(x, t, 'Tolerance', M)
+     p=pulsewidth(x, t,'StateLevels', O)
+     [p initialcross finalcross nextcross midreference]=pulsewidth(x)
+     [p initialcross finalcross nextcross midreference]=pulsewidth(x, t)
+     [p initialcross finalcross nextcross midreference]=pulsewidth(x, t)
+     [p initialcross finalcross nextcross midreference]=pulsewidth(x, t, 'Polarity', pol)
+     [p initialcross finalcross nextcross midreference]=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
+     [p initialcross finalcross nextcross midreference]= pulsewidth(x, t, 'Tolerance', M)
+     [p initialcross finalcross nextcross midreference]= pulsewidth(x, t,'StateLevels', O)
+     [p initialcross finalcross nextcross midreference]= pulsewidth(x, t,'StateLevels', O, 'fig', f)
    </synopsis>
+    <para> </para>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x</term>
+      <listitem><para> : real input vector </para></listitem></varlistentry>
+   <varlistentry><term>Fs</term>
+      <listitem><para> : specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero. </para></listitem></varlistentry>
+   <varlistentry><term>t</term>
+      <listitem><para> : defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.</para></listitem></varlistentry>
+   <varlistentry><term> 'Polarity',  pol</term>
+      <listitem><para> : pol specify the polarity of the pulse as either 'positive' or 'negative', where the default value is 'positive'</para></listitem></varlistentry>
+   <varlistentry><term> 'MidPercentReferenceLevel', N </term>
+      <listitem><para> : specify the mid percent reference leves as a percentage, default value of N is 50.</para></listitem></varlistentry>
+   <varlistentry><term> 'Tolerance', M </term>
+      <listitem><para> : define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem></varlistentry>
+   <varlistentry><term>'StateLevels', O</term>
+      <listitem><para> : O define the lower and upper state levels as two element real vector.</para></listitem></varlistentry>
+   <varlistentry><term> 'fig', f</term>
+      <listitem><para> : f specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem></varlistentry>
+
+   <varlistentry><term> p </term>
+      <listitem><para> : returns a vector of difference between the mid-crossings of the initial transition of each positive-polarity pulse and the next positive-going transition </para></listitem></varlistentry>
+   <varlistentry><term> initialcross </term>
+      <listitem><para> : returns a vector of initial cross values of bilevel waveform transitions x.</para></listitem></varlistentry>
+   <varlistentry><term> finalcross </term>
+      <listitem><para> : returns a vector of final cross values of bilevel waveform transitions x.</para></listitem></varlistentry>
+   <varlistentry><term> nextcross </term>
+      <listitem><para> : returns a vector of next cross values of bilevel waveform transitions x. </para></listitem></varlistentry>
+   <varlistentry><term> midreference </term>
+      <listitem><para> : return mid reference value corrosponding to mid percent reference value. </para></listitem></varlistentry>
+</variablelist>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Examples </title>
+
+   <programlisting role="example"><![CDATA[
+
+    x = fscanfMat("macros/pulsedata_x.txt");  //Importing samples of pulse
+    t = fscanfMat("macros/pulsedata_t.txt");
+    clf                                       //clearing plot history
+    p = pulsewidth(x,t,'fig','ON')           // Detremining pulse width and ploting it
+
+]]></programlisting>
+
+<scilab:image>
+    x = [0.    0.0108    0.0367  -0.0452    0.0172    0.0064  -0.0262  -0.0087    0.0069  0.0716    0.0554  -0.027    0.0607    5.0145    4.9987    5.0143    4.9959  4.9975    5.0298    0.0282    0.0283    0.0134  -0.0241    0.0143    0.0326  0.0098    0.0207    0.0145  -0.0061    0.0059  -0.0157    0.0178  -0.0229  4.9786];
+    t = [0.    0.025    0.05    0.075    0.1    0.125    0.15    0.175    0.2    0.225  0.25    0.275    0.3    0.325    0.35    0.375    0.4    0.425    0.45    0.475  0.5    0.525    0.55    0.575    0.6    0.625    0.65    0.675    0.7    0.725  0.75    0.775    0.8    0.825  ];
+    clf
+    p = pulsewidth(x,t,'fig','ON')
+</scilab:image>
+
+</refsection>
+
 </refentry>

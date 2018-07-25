@@ -48,12 +48,16 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 The ARMA model is defined by
    </para>
    <para>
-x(n) = a(1) * x(n-1) + … + a(k) * x(n-k)
-+ e(n) + b(1) * e(n-1) + … + b(l) * e(n-l)
+   <latex>
+   \begin{eqnarray}
+x(n) = a(1) * x(n-1) + … + a(k) * x(n-k) + e(n) + b(1) * e(n-1) + … + b(l) * e(n-l)
+   \end{eqnarray}
+   </latex>
+</para>
+<para>
 in which k is the length of vector a, l is the length of vector b and e is Gaussian white noise with variance v. The function returns a vector of length t.
    </para>
    <para>
@@ -70,13 +74,7 @@ v = 10;
 t = 5;
 n = 100;
 arma_rnd (a, b, v, t, n)
-ans =
 
--1.6176e+05
--4.1663e+05
--1.0732e+06
--2.7648e+06
--7.1221e+06
    ]]></programlisting>
 </refsection>
 </refentry>

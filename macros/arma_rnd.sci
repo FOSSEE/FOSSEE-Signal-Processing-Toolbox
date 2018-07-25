@@ -1,14 +1,16 @@
-function res = arma_rnd (a, b, v, t, n)
 //Return a simulation of the ARMA model.
+
 //Calling Sequence
 //arma_rnd (a, b, v, t, n)
 //arma_rnd (a, b, v, t)
-//Parameters 
+
+//Parameters
 //a: vector
 //b: vector
 //v: Variance
 //t: Length of output vector
 //n: Number of dummy x(i) used for initialization
+
 //Description
 //This is an Octave function.
 //The ARMA model is defined by
@@ -18,35 +20,81 @@ function res = arma_rnd (a, b, v, t, n)
 //in which k is the length of vector a, l is the length of vector b and e is Gaussian white noise with variance v. The function returns a vector of length t.
 //
 //The optional parameter n gives the number of dummy x(i) used for initialization, i.e., a sequence of length t+n is generated and x(n+1:t+n) is returned. If n is omitted, n = 100 is used.
+
 //Examples
 //a = [1 2 3 4 5];
-//b = [7; 8; 9; 10; 11];
+//b = [7 8 9 10 11];
 //v = 10;
 //t = 5;
 //n = 100;
 //arma_rnd (a, b, v, t, n)
-//ans =
+//Output :
+// ans  =
 //
-//  -1.6176e+05
-//  -4.1663e+05
-//  -1.0732e+06
-//  -2.7648e+06
-//  -7.1221e+06
+//    61400.907
+//    158177.11
+//    407440.29
+//    1049604.
+//    2703841.3
 
-funcprot(0);
-lhs = argn(1)
-rhs = argn(2)
-if (rhs < 5 | rhs > 6)
-error("Wrong number of input arguments.")
-end
 
-select(rhs)
-	
-	case 5 then
-	res = callOctave("arma_rnd",a, b, v, t)
+//function res = arma_rnd (a, b, v, t, n)
+//funcprot(0);
+//lhs = argn(1)
+//rhs = argn(2)
+//if (rhs < 5 | rhs > 6)
+//error("Wrong number of input arguments.")
+//end
+//
+//select(rhs)
+//
+//	case 5 then
+//	res = callOctave("arma_rnd",a, b, v, t)
+//
+//	case 6 then
+//	res = callOctave("arma_rnd",a, b, v, t, n)
+//
+//	end
+//endfunction
 
-	case 6 then
-	res = callOctave("arma_rnd",a, b, v, t, n)
+function x = arma_rnd (a, b, v, t, n)
 
-	end
+  funcprot();
+  [nargout,nargin] = argn() ;
+
+  if (nargin == 4)
+    n = 100;
+  elseif (nargin == 5)
+    if (~ isscalar (n))
+      error ("arma_rnd: N must be a scalar");
+    end
+  else
+    error("arma_rnd: invalid input");
+  end
+
+  if ((min (size (a)) > 1) | (min (size (b)) > 1))
+    error ("arma_rnd: A and B must not be matrices");
+  end
+
+  if (~ isscalar (t))
+    error ("arma_rnd: T must be a scalar");
+  end
+
+  ar = length (a);
+  br = length (b);
+
+  a = matrix (a, ar, 1);
+  b = matrix (b, br, 1);
+
+  // Apply our notational convention.
+  a = [1; -a];
+  b = [1; b];
+
+  n = min (n, ar + br);
+
+  e = sqrt (v) * rand(t + n, 1);
+
+  x = filter (b, a, e);
+  x = x(n + 1 : t + n);
+
 endfunction

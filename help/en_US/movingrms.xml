@@ -17,52 +17,54 @@
 
   <refnamediv>
     <refname>movingrms</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Find moving RMS value of signal in x</refpurpose>
+    <para> </para>
   </refnamediv>
 
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   [rmsx,w]=movingrms(x,w,rc,Fs=1)
+   [rmsx,w]=movingrms(x,width,risetime)
+   [rmsx,w]=movingrms(x,width,risetime,Fs)
    </synopsis>
+    <para> </para>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
    <varlistentry><term>x:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
+      <listitem><para> (Real or complex valued vector or matrix) Input signal samples</para></listitem></varlistentry>
+   <varlistentry><term>width:</term>
       <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
-   <varlistentry><term>rc:</term>
+   <varlistentry><term>risetime:</term>
       <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
    <varlistentry><term>Fs:</term>
-      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+      <listitem><para> (Real or complex scalar value) Smapling frequency</para></listitem></varlistentry>
    </variablelist>
+    <para> </para>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-The signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
+In this function signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
 </para>
+    <para> </para>
 </refsection>
 
 <refsection>
-   <title>Examples</title>
+   <title>Example : 1</title>
    <programlisting role="example"><![CDATA[
-1.    [a,b]=movingrms ([4.4 94 1;-2 5i 5],1,-2)
-a =    0.91237   17.71929    0.96254
-0.91237   17.71929    0.96254
-b =   0.18877
-0.18877
-2.    [a,b]=movingrms ([4.4 94 1;-2 5i 5],1,-2,2)
-a =   4.8332   93.8669    5.0990
-4.8332   93.8669    5.0990
-b =   1
-1
+[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2) // moving rms with default value of Fs = 1
+   ]]></programlisting>
+
+<title>Example : 2</title>
+   <programlisting role="example"><![CDATA[
+[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2,2)// moving rms with value of Fs = 2
+
    ]]></programlisting>
 </refsection>
+
 </refentry>

@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>ellipap</refname>
-    <refpurpose>Designs a lowpass analog elliptic filter.</refpurpose>
+    <refpurpose>Produces a lowpass analog elliptic prototype filter.</refpurpose>
   </refnamediv>
 
 
@@ -25,8 +25,6 @@
    <title>Calling Sequence</title>
    <synopsis>
    [z, p, g] = ellipap (n, Rp, Rs)
-   [z, p] = ellipap (n, Rp, Rs)
-   z = ellipap (n, Rp, Rs)
    </synopsis>
 </refsynopsisdiv>
 
@@ -36,33 +34,41 @@
    <varlistentry><term>n:</term>
       <listitem><para> Filter Order</para></listitem></varlistentry>
    <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple</para></listitem></varlistentry>
+      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
    <varlistentry><term>Rs:</term>
-      <listitem><para> Stopband attenuation</para></listitem></varlistentry>
+      <listitem><para> Stopband attenuation in dB</para></listitem></varlistentry>
+   <varlistentry><term>z:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>p:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>g:</term>
+      <listitem><para> Gain</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-It designs a lowpass analog elliptic filter of nth order, with a Peak-to-peak passband ripple of Rp and a stopband attenuation of Rs.
+It gives a lowpass analog elliptic prototype filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[z, p, g] = ellipap (5, 10, 10)
-z =
-
-0.0000 + 2.5546i   0.0000 + 1.6835i  -0.0000 - 2.5546i  -0.0000 - 1.6835i
-
-p =
-
--0.05243 + 0.63524i  -0.01633 + 0.96289i  -0.05243 - 0.63524i  -0.01633 - 0.96289i  -0.07369 + 0.00000i
-
-g =  0.0015012
+n = 4;
+Rp = 3;
+Rs = 10;
+[z, p, g] = ellipap (n, Rp, Rs)
    ]]></programlisting>
 </refsection>
+
+  <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Sonu Sharma, RGIT Mumbai</member>
+      <member>FOSSEE, IIT Bombay</member>
+    </simplelist>
+  </refsection>
+
 </refentry>

@@ -1,22 +1,26 @@
 function [w, xmu] = ultrwin (m, mu, par, key, norm)
 //This function returns the coefficients of an Ultraspherical window.
+
 //Calling Sequence
 //w = ultrwin (m, mu, par)
 //w = ultrwin (m, mu, par, key)
 //w = ultrwin (m, mu, par, key, norm)
 //[w, xmu] = ultrwin (...)
+
 //Parameters 
 //m: positive integer value
 //mu:
 //par:
 //key:
 //norm:
+
 //Description
 //This is an Octave function.
 //This function returns the coefficients of an Ultraspherical window of length m supplied as input, to the output vector w. 
 //The second parameter controls the ratio between side lobe to side lobe of the window's Fourier transform. 
 //The third parameter controls the ratio between main lobe width to side lobe. The default value is beta.
 //The value of xmu is also returned for given beta, att or latt.
+
 //Examples
 //ultrwin(3,-0.4,0.5)
 //ans  =

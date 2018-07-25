@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from postpad.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="postpad" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>postpad</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+    Y = postpad (X, L)
+    Y = postpad (X, L, C)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>X:</term>
+      <listitem><para>Input vector or matrix of real numbers.</para></listitem></varlistentry>
+   <varlistentry><term>L:</term>
+      <listitem><para> The length of the final postpadded sequence.</para></listitem></varlistentry>
+   <varlistentry><term>C:</term>
+      <listitem><para>number used for postpadding.</para></listitem></varlistentry>
+   <varlistentry><term>Y:</term>
+      <listitem><para>Output</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+    Append the scalar value C to the vector X until it is of length L.
+   </para>
+   <para>
+    If C is not given, a value of 0 is used.
+   </para>
+   <para>
+    If 'length (X) > L', elements from the end of X are removed until a vector of length L is obtained.
+   </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+    x = [1 2 3];
+    L = 6;
+    y = postpad(x, L)
+   ]]></programlisting>
+</refsection>
+
+ <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
+	    </simplelist>
+  </refsection>
+
+</refentry>

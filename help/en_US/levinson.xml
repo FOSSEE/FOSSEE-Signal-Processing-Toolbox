@@ -17,7 +17,81 @@
 
   <refnamediv>
     <refname>levinson</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Levinson-Durbin Recurssion Algorithm</refpurpose>
+    <para> </para>
   </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+a = levinson(r)
+a = levinson(r,n)
+[a,e] = levinson(r,n)
+[a,e,k] = levinson(r,n)
+   </synopsis>
+    <para> </para>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>r</term>
+      <listitem><para> Real or complex deterministic autocorrelation sequence input </para></listitem></varlistentry>
+   <varlistentry><term>a</term>
+      <listitem><para> Coefficients of length(r)-1 order Autoregressive linear process </para></listitem></varlistentry>
+   <varlistentry><term>n</term>
+      <listitem><para> Order of autoregressive model (default value is length(r)-1 , if n is not given)</para></listitem></varlistentry>
+   <varlistentry><term>e</term>
+      <listitem><para> Prediction error of order n</para></listitem></varlistentry>
+   <varlistentry><term>k</term>
+      <listitem><para> Reflection coefficient vector of length n</para></listitem></varlistentry>
+   </variablelist>
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para> The Levinson-Durbin recursion algorithm is used for finding an all-pole IIR filter with a given deterministic autocorrelation sequence (r) </para>
+
+   <para>
+    <latex>
+      \begin{eqnarray}
+      H(z) = \frac{1}{1+a(2)z^{-1}+a(3)z^{-2} + ... +a(n+1)z^{-n}}
+      \end{eqnarray}
+    </latex>
+   </para>
+
+    <para> </para>
+</refsection>
+
+<refsection>
+   <title>Examples </title>
+   <para> Estimate the coefficients of an autoregressive process given by equation </para>
+
+   <para>
+    <latex>
+      \begin{eqnarray}
+      x(n) = 0.1x(n-1) - 0.8x(n-2) + w(n)
+      \end{eqnarray}
+    </latex>
+   </para>
+    <para> </para>
+
+   <programlisting role="example"><![CDATA[
+
+a = [1 0.1 -0.8];
+
+v = 0.4; //variance, v=0.4
+w = sqrt(v)*rand(15000,1,"normal");
+x = filter(1,a,w);
+
+[r,lg] = xcorr(x,'biased');
+r(lg<0) = [];
+
+ar = levinson(r,length(a)-1) //coefficients of autoregressive process
+
+]]></programlisting>
+</refsection>
 
 </refentry>

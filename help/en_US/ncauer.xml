@@ -25,8 +25,6 @@
    <title>Calling Sequence</title>
    <synopsis>
    [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-   [Zz, Zp] = ncauer(Rp, Rs, n)
-   Zz = ncauer(Rp, Rs, n)
    </synopsis>
 </refsynopsisdiv>
 
@@ -36,36 +34,45 @@
    <varlistentry><term>n:</term>
       <listitem><para> Filter Order</para></listitem></varlistentry>
    <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple</para></listitem></varlistentry>
+      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
    <varlistentry><term>Rs:</term>
-      <listitem><para> Stopband attenuation</para></listitem></varlistentry>
+      <listitem><para> Stopband attenuation in dB</para></listitem></varlistentry>
+   <varlistentry><term>Zz:</term>
+      <listitem><para> Zeros</para></listitem></varlistentry>
+   <varlistentry><term>Zp:</term>
+      <listitem><para> Poles</para></listitem></varlistentry>
+   <varlistentry><term>Zg:</term>
+      <listitem><para> Gain</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-It designs an analog prototype for Cauer filter of nth order, with a Peak-to-peak passband ripple of Rp and a stopband attenuation of Rs.
+It gives an analog prototype for Cauer filter (elliptic filter) of nth order, with a Peak-to-peak passband ripple of Rp and a stopband attenuation of Rs.
 </para>
+<para>
+This function is same as ellipap() only order of input argument is different,</para>
+ <para> This function is only for octave compatibility only </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-n = 5;
-Rp = 5;
-Rs = 5;
+n = 4;
+Rp = 3;
+Rs = 10;
 [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-Zz =
 
-0.0000 + 2.5546i   0.0000 + 1.6835i  -0.0000 - 2.5546i  -0.0000 - 1.6835i
-
-Zp =
-
--0.10199 + 0.64039i  -0.03168 + 0.96777i  -0.10199 - 0.64039i  -0.03168 - 0.96777i  -0.14368 + 0.00000i
-
-Zg =  0.0030628
    ]]></programlisting>
 </refsection>
+
+  <refsection>
+    <title>Authors</title>
+    <simplelist type="vert">
+      <member>Sonu Sharma, RGIT Mumbai</member>
+      <member>FOSSEE, IIT Bombay</member>
+    </simplelist>
+  </refsection>
+
 </refentry>

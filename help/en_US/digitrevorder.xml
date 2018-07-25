@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from digitrevorder.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="digitrevorder" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>digitrevorder</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [y,i] = digitrevorder(x,r)
+   y = digitrevorder(x,r)
+   </synopsis>
+    <para> </para>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> Vector of real or complex values</para></listitem></varlistentry>
+   <varlistentry><term>r:</term>
+      <listitem><para> radix / base </para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para> input vector in bit reverse order</para></listitem></varlistentry>
+   <varlistentry><term>i:</term>
+      <listitem><para> indices after bit reversing </para></listitem></varlistentry>
+    <para> </para>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns the input data after reversing the digits of the indices and reordering the elements of the input array.
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [%i,1,3,6*%i] ;
+r = 2 ;
+[y i]=digitrevorder(x, r)
+   ]]></programlisting>
+</refsection>
+
+</refentry>
