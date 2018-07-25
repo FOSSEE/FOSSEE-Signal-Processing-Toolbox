@@ -1,4 +1,4 @@
-function x = nnls(E,f,x)
+function [x,w] = nnls(E,f)
     // Non Negative Least Squares (nnls) for Ex=f with the constraint x>=0
     
     // Reference 

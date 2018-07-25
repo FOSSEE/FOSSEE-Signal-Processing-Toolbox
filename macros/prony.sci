@@ -7,15 +7,31 @@
 //    na=number of poles
 //Reference : T.W. Parks and C.S. Burrus, Digital Filter Design,
 //       John Wiley and Sons, 1987, p226.
-//Author 
+//Author
 //Debdeep Dey
+//EXAMPLE 1:
+//V=filter([1,1],[1,1,2],[1 zeros(1,31)]);//gives the impulse response of filter with the mentioned coefficients
+//[b,a]=prony(V,1,2)
+//
+//OUTPUT:a  =   1.    1.    2.//denominator coefficients
+ //b  =  1.    1. //numerator coefficients
+
+//EXAMPLE2:
+//V=filter([1,2],[1,2,3,4],[1 zeros(1,31)]);
+ //[b,a]=prony(V,1,3)
+//a  = 1.    2.    3.    4.  //denominato coefficients
+//b  = 1.    2. //numerator coefficients
+
+
+
+
 function [b,a]=prony(h,nb,na)
 
 K = length(h)-1;
 M=double(nb);
 N=double(na);
 //zero-pad input if necessary
-if K <= max(M,N) then     
+if K <= max(M,N) then
         K = max(M,N)+1;
         h(K+1) = 0;
 end
@@ -36,4 +52,3 @@ a = [1; -H2\h1].';
 b = c*a*H1.';
 
 endfunction
-

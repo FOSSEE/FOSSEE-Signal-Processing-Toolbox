@@ -24,9 +24,9 @@ function y = fftfilt(b, x, varargin)
     //
     // Examples
     // 1) Filtering a sine wave
-    //      x = sin(1:2000);
-    //      b = [1 1/2];
-    //      y = fftfilt(b,x);
+//          x = sin(1:2000);
+//          b = [1 1/2];
+//          y = fftfilt(b,x);
     // 2) Multiple filters (1,1/3) and (1/4,1/5);
     //      x = sin(1:2000);
     //      b = [1 1/4;1/3 1/5];
@@ -202,6 +202,3 @@ function y = fftfilt(b, x, varargin)
     
 
 endfunction
-
-
-

@@ -7,7 +7,7 @@ function out = peak2rms(in,orientation)
 //
 //Parameters
 //in:Vector or Matrix of real or complex elements.
-//orientation: A string with possible values "r", "c" or "m" giving the dimension along which the peak2rms value is to be calculated. 
+//orientation: A string with possible values "r", "c" or "m" giving the dimension along which the peak2rms value is to be calculated.
 //out:A scalar with real value when input is a vector.When input is a matrix, out is the peak magnitude to RMS  value along the orientation specified or the default one when not specified.
 //
 //Description
@@ -31,16 +31,17 @@ function out = peak2rms(in,orientation)
 //IN=[6 19 10 25]
 //OUT=peak2rms(IN)
 //The output is OUT=
-    // 1.4638501  
-    //1.3887301  
-    //1.119186 
+    // 1.4927036
 //
 //Examples
-//To calculate peak2rms of rows of matrix:
+////To calculate peak2rms of rows of matrix:
 //IN=[1 3 5;2 4 6;7 8 9]
 //OUT=peak2rms(IN,2)
 //The output is
-   //OUT= 1.3719887
+   //OUT= 1.4638501
+    //1.3887301
+    //1.119186
+
 //
 //Examples
 //To calculate peak magnitude to RMS value of sinusoid:
@@ -51,10 +52,10 @@ function out = peak2rms(in,orientation)
 //The output is
    //OUT= 1.3719887
 //See also
-//abs 
+//abs
 //mean
-// max 
-//sqrt 
+// max
+//sqrt
 //isempty
 //
 //Authors
@@ -62,16 +63,17 @@ function out = peak2rms(in,orientation)
 //
 //Bibliography
 //Matlab help document.
-//Modified to accept char i/p 
+//Modified to accept char i/p
 //MOdified function to match MATLAB input arguments
 //Now for calculating the values of ratio of peak to RMS  of columns of matrix use peak2rms(in,1)
 //And for calculates the values of ratio of peak to RMS  of rows of matrix.  use peak2rms(in,2)
 //Updated help comments accordingly
 //MOdifications done by by Debdeep Dey
-    if(type(in)=10) then //if i/p is of type char convert it to its ascii value
+    //if(type(in)=10) then      //condition checking error,for equality it is '=='
+      if(type(in)==10)
         in=ascii(in);
     end
-     
+
     if argn(2)==1
         //calculating the Root Mean Square value
     a=abs(in)
@@ -80,7 +82,7 @@ function out = peak2rms(in,orientation)
     rmsvalue=sqrt(s)
     peak = max(abs(in),"m")
     rmsq = rmsvalue
-  
+
 else
     //Calculation of the RMS value
     if orientation==1 then
@@ -88,14 +90,14 @@ else
     else
         orient='c';
     end
-    
+
     a=abs(in)
     a=a.^2
     s=mean(a,orient)
     rmsvalue=sqrt(s)
    [peak,k] = max(abs(in),orient)
     rmsq = rmsvalue
-  
+
 end
     //Calculation of Ratio of peak to the Root Mean square value
 if isempty(peak)

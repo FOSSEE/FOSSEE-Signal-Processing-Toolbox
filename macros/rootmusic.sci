@@ -13,12 +13,12 @@ function [w,pow] = rootmusic(x,p,varargin)
     //      Input signal.
     //      If x is a vector, then it reprsenets one realization of the signal.
     //      If x is a matrix, then each row represents a separate observation of
-    //      the signal. 
+    //      the signal.
     // p - int|double - scalar|2 element vector
-    //      p(1) is the signal subspace dimension and hence the number of 
+    //      p(1) is the signal subspace dimension and hence the number of
     //      complex exponentials in x.
-    //      p(2), if specified, represents a threshold that is multiplied by 
-    //      the smallest estimated eigenvalue of the signal's correlation 
+    //      p(2), if specified, represents a threshold that is multiplied by
+    //      the smallest estimated eigenvalue of the signal's correlation
     //      matrix.
     // fs - int|double - scalar
     //      Sampling frequency (in Hz)
@@ -26,16 +26,31 @@ function [w,pow] = rootmusic(x,p,varargin)
     //      to 1 Hz
     // 'corr' flag
     //      If specified, x is interpreted as a correlation matrix rather than
-    //      a matrix of the signal data. For x to be a correlation matrix, 
-    //      x must be a square matrix and all its eigenvalues must be 
+    //      a matrix of the signal data. For x to be a correlation matrix,
+    //      x must be a square matrix and all its eigenvalues must be
     //      nonnegative
     //
     // Examples:
     //      1) 3 complex exponentials:
     //
-    //          n=0:99;   
-    //          s=exp(1i*pi/2*n)+2*exp(1i*pi/4*n)+exp(1i*pi/3*n)+randn(1,100);  
-    //          [W,P] = rootmusic(s,3);
+//              n=0:99;
+//   s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
+// [A,R]=corrmtx(s,12,'mod');
+// [W,P] = rootmusic(R,3,'corr');
+
+
+// //2)
+// n=0:99;
+// s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n);
+//  [A,R]=corrmtx(s,12,'mod');
+// [W,P] = rootmusic(R,3,'corr');
+
+ //EXPECTED OUTPUT:
+ //W = 0.7738111    1.5690374    1.0426234
+ //P  =377.4255    103.18124    123.86659
+
+
+
     //
     // Author
     // Ayush
@@ -44,7 +59,7 @@ function [w,pow] = rootmusic(x,p,varargin)
     // corrmtx | peig | pmusic | rooteig
     //
     // References
-    // 1) Monson H. Hayes, Statistical Digital Signal Processing And Modeling, 
+    // 1) Monson H. Hayes, Statistical Digital Signal Processing And Modeling,
     // Wiley & Sons, Inc, [Section 8.6.3]
     //
     //
@@ -52,49 +67,49 @@ function [w,pow] = rootmusic(x,p,varargin)
     // w - double - vector
     //      Estimated frequencies of the complex sinusoids
     // pow - double - vector
-    //      estimated absolute value squared amplitudes of the sinusoids at 
-    //      the frequencies w 
+    //      estimated absolute value squared amplitudes of the sinusoids at
+    //      the frequencies w
     //
-    
+
     funcprot(0);
-    
-    exec('musicBase.sci',-1);
-    exec('nnls.sci',-1);  
-    
-    
+
+    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/musicBase.sci',-1);
+    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/nnls.sci',-1);
+
+
     // **** checking the number of input and output arguments ****
-    
+
     [numOutArgs, numInArgs] = argn(0);
-    
+
     if numOutArgs~=1 & numOutArgs~=2 then
         error(78,"rootmusic");
     end
-    
+
     if numInArgs<1 | numInArgs>4 then
         error(77,"rootmusic");
     end
-    
-    
+
+
     // **** parsing the input arguments ****
     isFsSpecified = %F;
     fs = [];
-    
+
     varargLength = length(varargin);
     // searching for the 'corr' flag
     isCorrFlag = %F;
-    
+
     if varargLength==0 then
         stringIndices = [];
     else
         stringIndices = find(type(varargin(1:varargLength))==10);
     end
-    
+
     if ~isempty(stringIndices) then
         // ignoring all other strings except the corr flag
         isCorrFlag = or(strcmpi(varargin(stringIndices),"corr")==0);
         varargin(stringIndices) = [];
     end
-    
+
     // varargin can have only an entry for fs
     if length(varargin)==1 then
         fs = varargin(1);
@@ -107,13 +122,13 @@ function [w,pow] = rootmusic(x,p,varargin)
             isFsSpecified = %T;
         elseif length(fs)>1 then
             msg = "rootmusic: Wrong type for argument #4 (fs); Positive scalar expected";
-            error(msg,10084); 
+            error(msg,10084);
         end
     elseif length(varargin)>1 then
         msg = "rootmusic: Wrong type for argument #4 (fs); Positive scalar expected";
-        error(msg,10084);     
+        error(msg,10084);
     end
-    
+
     // extracting primary input x/R
     primaryInput = x;
 
@@ -142,7 +157,7 @@ function [w,pow] = rootmusic(x,p,varargin)
     end
     // first argument of p must be an integer
     if ~IsIntOrDouble(p(1),%T) then
-        msg = "rootmusic: Wrong input argument #2 p(1); " + ... 
+        msg = "rootmusic: Wrong input argument #2 p(1); " + ...
             "positive integer expected";
         error(msg,10036);
         return
@@ -153,10 +168,10 @@ function [w,pow] = rootmusic(x,p,varargin)
     if length(p)==2 then
         if ~IsIntOrDouble(p(2),%F) then
             msg = "rootmusic: Wrong type for argument #2 p(2); must be a scalar";
-            error(msg,10053); 
+            error(msg,10053);
         end
     end
-    
+
     isXReal = isreal(x)
     if ~isCorrFlag then
         // check that p(1) should be even if x is real
@@ -167,8 +182,8 @@ function [w,pow] = rootmusic(x,p,varargin)
         end
     end
 
-    
-    
+
+
     // **** calling pmusic ****
     data= struct();
     data.x = primaryInput;
@@ -184,7 +199,7 @@ function [w,pow] = rootmusic(x,p,varargin)
     data.isFsSpecified = isFsSpecified;
     data.freqrange = "twosided";
 
-    
+
 
     [outData,msg] = musicBase(data);
     if length(msg)~=0 then
@@ -192,52 +207,52 @@ function [w,pow] = rootmusic(x,p,varargin)
         msg = "rootmusic: "+msg
         error(msg);
     end
-    
+
     pEffective = outData.pEffective;
     eigenvals = outData.eigenvals;
-    
+
     w = computeFreqs(outData.noiseEigenvects,pEffective,%f,eigenvals);
-    
+
     if isempty(w) then
         // assign all frequency and powers as -nan
         w = %nan*(1:pEffective)';
         pow = w;
         return;
     end
-         
-    
+
+
     // **** Estimating the variance of the noise ****
     // Estimate is the mean of the eigenvalues belonging to the noise subspace
     sigma_noise = mean(eigenvals(pEffective+1:$));
-    
+
     pow = computePower(outData.signalEigenvects,eigenvals,w,pEffective,...
                 sigma_noise,isXReal);
-                
-                
+
+
     // is fs is specified, convert normailized frequencies to actual frequencies
     if isFsSpecified then
         w = w*fs/(2*%pi);
     end
-    
-    
+
+
 endfunction
 
 function w = computeFreqs(noiseEigenvects,pEffective,EVFlag,eigenvals)
-    // Computes the frequencies of the complex sinusoids using the roots of 
+    // Computes the frequencies of the complex sinusoids using the roots of
     // the polynomial formed with the noise eigenvectors
     //
     // Parameters
-    // noiseEigenvects - 
+    // noiseEigenvects -
     //      A matrix where noise eigenvectors are represented by each column
-    // pEffective - 
+    // pEffective -
     //      The effective dimension of the signal subspace
-    // EVFlag - 
+    // EVFlag -
     //      Flag to indicate weighting to be used for rooteig
-    // eigenvals - 
+    // eigenvals -
     //      Eigenvals of the correlation matrix
     //
     // Output arguments
-    //  w - 
+    //  w -
     //      A vector with frequencies of the complex sinusoids
 
 
@@ -248,68 +263,68 @@ function w = computeFreqs(noiseEigenvects,pEffective,EVFlag,eigenvals)
     else
         weights = ones(numOfNoiseEigenvects,1);
     end
-    
+
     // Form a polynomial consisting of a sum of polynomials given by the
-    // product of the noise subspace eigenvectors and the reversed and 
+    // product of the noise subspace eigenvectors and the reversed and
     // conjugated version. (eq 8.163 from [1])
     D = 0;
     for i=1:numOfNoiseEigenvects
         eigenvect = noiseEigenvects(:,i);
         D = D + conv(eigenvect,conj(eigenvect($:-1:1)))./weights(i);
     end
-    
+
     roots = roots(D);
-    
+
     // selecting the roots inside the unit circle
     rootsSelected = roots(abs(roots)<1);
-    
+
     // sort the roots in order of increasing distance from the unit circle
     [dist,indices] = gsort(abs(rootsSelected)-1);
-    
+
     sortedRoots = rootsSelected(indices);
-    
+
     if isempty(sortedRoots) then
         w = [];
     else
         w = atan(imag(sortedRoots(1:pEffective)),real(sortedRoots(1:pEffective)));
     end
-    
-    
+
+
 endfunction
 
 
 function power = computePower(signalEigenvects,eigenvals,w,pEffective,...
                     sigma_noise,isXReal)
-                    
+
     if isXReal then
-        // removing the negative frequencies as sinusoids will be present in 
+        // removing the negative frequencies as sinusoids will be present in
         //  complex conjugate pairs
         w = w(w>=0);
         pEffective = length(w);
     end
-    
+
     // Solving eq. 8.160 from [1] (Ap = b) where p is the power matrix
-    
+
     A = zeros(length(w),pEffective);
-    
+
     for i=1:pEffective
         A(:,i) = computeFreqResponseByPolyEval(signalEigenvects(:,i), ...
                         w,1,%F);
     end
-    
+
     A = (abs(A).^2)';
     b = eigenvals(1:pEffective) - sigma_noise;
-    
+
     // Solving Ap=b with the constraint that all elements of p >=0
     power = nnls(A,b+A*sqrt(%eps)*ones(pEffective,1));
-    
-    
+
+
 endfunction
 
 function h = computeFreqResponseByPolyEval(b,f,fs,isFsSpecified)
     // returns the frequency response (h) for a digital filter with numerator b.
     // The evaluation of the frequency response is done at frequency values f
-    
+
     f = f(:);
     b = b(:);
     if isFsSpecified then
@@ -318,18 +333,18 @@ function h = computeFreqResponseByPolyEval(b,f,fs,isFsSpecified)
     else
         w = f;
     end
-    
+
     n = length(b);
     powerMatrix = zeros(length(f),n);
     powerMatrix(:,1) = 1;
     for i=2:n
         powerMatrix(:,i) = exp(w*(-i+1)*%i);
     end
-    
+
     h = powerMatrix*b;
-     
-endfunction    
-    
+
+endfunction
+
 
 function result = IsIntOrDouble(inputNum, isPositiveCheck)
     // Checks if The Input Is Integer Or Double

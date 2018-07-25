@@ -17,7 +17,77 @@
 
   <refnamediv>
     <refname>polyscale</refname>
-    <refpurpose>errcheck1</refpurpose>
+    <refpurpose> scales the roots of a polynomial in the z plane</refpurpose>
   </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  b = polyscale(a,alpha)
+
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+<title>Description</title>
+<para>
+b = polyscale(a,alpha) scales the roots of a polynomial in the z-plane, where a is a vector containing the polynomial coefficients and alpha is the scaling factor.
+</para>
+<para>
+If alpha is a real value in the range [0 1], then the roots of a are radially scaled toward the origin in the z-plane. Complex values for alpha allow arbitrary changes to the root locations.
+</para>
+
+
+</refsection>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> vector containing the polynomial coefficients</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>alpha:</term>
+      <listitem><para> the scaling vector</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+<varlistentry><term>b:</term>
+      <listitem><para>vector of scaled roots. </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+p=[1 0 0 0 0 0 0 -1]
+b=polyscale(p,0.95)
+//EXPECTED OUTPUT:b=1.    0.    0.    0.    0.    0.    0.  - 0.6983373
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+t
+p=[1 0 0 0 0 0 0 -1]
+b=polyscale(p,0.85)
+//EXPECTED OUTPUT:b=1.    0.    0.    0.    0.    0.    0.  - 0.3205771
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+<title>Author</title>
+<simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
+
+
 
 </refentry>

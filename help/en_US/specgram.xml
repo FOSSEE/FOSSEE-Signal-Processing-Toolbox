@@ -17,7 +17,83 @@
 
   <refnamediv>
     <refname>specgram</refname>
-    <refpurpose></refpurpose>
-  </refnamediv>
+    <refpurpose>Generate a spectrogram for the signal x.</refpurpose>
+ </refnamediv>
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  [S, f, t] = specgram (x,n,fs,win,overlap)
+  [S, f, t] =specgram(x)
+   </synopsis>
+</refsynopsisdiv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>S:</term>
+      <listitem><para>is the complex output of the FFT, one row per slice.</para></listitem></varlistentry>
+   <varlistentry><term>f:</term>
+      <listitem><para>is the frequency indices corresponding to the rows of S.</para></listitem></varlistentry>
+   <varlistentry><term>t:</term>
+      <listitem><para>is the time indices corresponding to the columns of S.</para></listitem></varlistentry>
+
+<varlistentry><term>x:</term>
+      <listitem><para>the input signal.</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para>length of the overlapping segments(default,n=256).</para></listitem></varlistentry>
+
+<varlistentry><term>fs:</term>
+      <listitem><para>sampling rate of input signal (if specified).</para></listitem></varlistentry>
+<varlistentry><term>win:</term>
+      <listitem><para>window vector,alternate window to apply rather than the default of hanning (n).</para></listitem></varlistentry>
+<varlistentry><term>overlap:</term>
+      <listitem><para>specifies the number of samples overlap between successive segments of the input signal. The default overlap is length (window)/2.</para></listitem></varlistentry>
+
+
+</variablelist>
+
+</refsection>
+
+
+<refsection>
+   <title>Description
+ </title>
+<para>Generates a spectrogram for the signal x. The signal is chopped into overlapping segments of length n, and each segment is windowed and transformed into the frequency domain using the FFT. The default segment size is 256. If fs is given, it specifies the sampling rate of the input signal. The argument window specifies an alternate window to apply rather than the default of hanning (n). The argument overlap specifies the number of samples overlap between successive segments of the input signal. The default overlap is length (window)/2.
+</para>
+
+</refsection>
+
+
+
+
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+N=1024;
+n=0:N-1;
+w=2*%pi/5;
+x=sin(w*n)+10*sin(2*w*n);
+[s,f,t]=specgram(x);
+//grayplot(f,t,s)
+//xlabel("frequency")
+//ylabel("time")
+   ]]></programlisting>
+<scilab:image>
+N=1024;
+n=0:N-1;
+w=2*%pi/5;
+x=sin(w*n)+10*sin(2*w*n);
+[s,f,t]=specgram(x);
+grayplot(f,t,s)
+xlabel("frequency")
+ylabel("time")
+
+</scilab:image>
+
+
+</refsection>
+
 
 </refentry>

@@ -31,20 +31,18 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>xn:</term>
+      <listitem><para> sampled signal</para></listitem></varlistentry>
    <varlistentry><term>s:</term>
-      <listitem><para> </para></listitem></varlistentry>
+      <listitem><para> sampling rate</para></listitem></varlistentry>
    <varlistentry><term>t:</term>
-      <listitem><para> </para></listitem></varlistentry>
+      <listitem><para>all instants of time t at which we need x(t) from x[n] </para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
-   <para>
-This is an Octave function.
-This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
+   <para>This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
 The third parameter t is all the instants where output x is needed from intput n and this time is relative to x(0).
 </para>
 </refsection>
@@ -53,8 +51,8 @@ The third parameter t is all the instants where output x is needed from intput n
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 sampled2continuous([1,2,3],5,6)
-ans  =
-2.4166806
+//ans  =
+//2.4166806
    ]]></programlisting>
 </refsection>
 </refentry>

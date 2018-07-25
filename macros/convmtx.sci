@@ -1,36 +1,30 @@
-//Convolution Matrix
-//convmtx(h,n) returns the convolution matrix for vector h. If h is a
-//column vector and X is a column vector of length n, then convmtx(h,n)*X
-//gives the result of the convolution oof h and X.If R is a row vector and X//is a row vector of length N, then X*convmtx(R,N) gives the convolution of R and X.
-//Example:
-//Generate a simple convolution matrix.
-//
-// h = [%i 1 2 3];
-// convmtx(h,7)       //Convolution matrix
-//
-//Author 
-//Debdeep Dey
-function t=convmtx(v,n);
-    n=double(n);
-    [mv,nv]=size(v);
-    v=v(:);
-    
-    //put Toeplitz code inline
-    c = [v; zeros(n-1,1)]; 
-    r = zeros(n,1);
-    m = length(c);
-    x = [r(n:-1:2) ; c(:)]; 
-    
-    cidx = (0:m-1)';
-        ridx = n:-1:1;
-    t = cidx(:,ones(n,1)) + ridx(ones(m,1),:); //Toeplitz subscripts
-    t(:) = x(t); //actual data
-    
-         //t = single(t);
-    // end of toeplitz code
+function b = convmtx (a, n)
+//Calling sequence:
+//b=convmtx(a,n);
+//convmtx(a,n);
 
-if mv < nv then
-    t = t.';
-    end
-    
+//This function returns the convolution matrix 'b'.
+//If 'a' is a column vector and if we need the convolution of 'a' with another column vector 'x' of length 'n' then an operation            "convmtx(a,n)*x" yeilds the convoluted sequence much faster.
+
+//Similarily, if 'a' is a row vector then to convolve with another row vector 'x' of length n , then convoluted sequence can be obtained by
+//x*convmtx(a,n)
+
+
+
+[nargout,nargin]=argn();
+  if (nargin ~= 2)
+    error("wrong number of input arguments");
+  end
+
+  [r, c] = size(a);
+
+  if ((r ~= 1) & (c ~= 1)) | (r*c == 0)
+    error("convmtx: expecting vector argument");
+  end
+
+  b = toeplitz([a(:); zeros(n-1,1)],[a(1); zeros(n-1,1)]);
+  if (c > r)
+    b = b.';
+  end
+
 endfunction

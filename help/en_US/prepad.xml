@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from prepad.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="prepad" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>prepad</refname>
+    <refpurpose></refpurpose>
+  </refnamediv>
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+ y= prepad (x, l)
+ y= prepad (x, l, c)
+ y= prepad (x, l, c, dim)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para>Input vector or matrix of real numbers.</para></listitem></varlistentry>
+   <varlistentry><term>l:</term>
+      <listitem><para> The length of the final prepadded sequence.</para></listitem></varlistentry>
+   <varlistentry><term>c:</term>
+      <listitem><para>number used for prepadding.</para></listitem></varlistentry>
+   <varlistentry><term>dim:</term>
+      <listitem><para>The dimension along which the prepadding should happen.</para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para>Output</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Prepend the scalar value c to the vector x until it is of length
+ l.  If c is not given, a value of 0 is used.
+
+ If length (x) > l, elements from the beginning of x
+ are removed until a vector of length l is obtained.
+
+ If x is a matrix, elements are prepended or removed from each row.
+
+ If the optional argument dim is given, operate along this dimension.
+
+ If dim is larger than the dimensions of x, the result will have
+ dim dimensions.
+
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+prepad ([1,2], 4,0,2)
+//Output: [0,0,1,2]
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -13,11 +13,12 @@ function [B,A] = sos2tf(sos, g)
 //The input is the sos matrix and the second parameter is the overall gain, default value of which is 1. 
 //The output is a vector.
 //Examples
-//[a,b]=sos2tf([1,2,3,4,5,6])
+//sos = [1  1  1  1  0 -1; -2  3  1  1 10  1];
+////[b,a] = sos2tf(sos)
 //a =
-//   1   2   3
+//  -2   1  2  4  1
 //b =
-//   4   5   6
+//   1 10  0 -10 -1
 funcprot(0);
 rhs = argn(2)
 if(rhs<1 | rhs>2)

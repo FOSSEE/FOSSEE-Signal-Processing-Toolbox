@@ -24,9 +24,7 @@
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   [PXX, W] = periodogram (X)
-   [PXX, W] = periodogram (X, WIN)
-   [PXX, W] = periodogram (X, WIN, NFFT)
+
    [PXX, W] = periodogram (X, WIN, NFFT, FS)
    [PXX, W] = periodogram (..., "RANGE")
    </synopsis>
@@ -56,8 +54,30 @@ The optional second output W are the normalized angular frequencies.  For a one-
    <para>
 If a sampling frequency is specified, FS, then the output frequencies F will be in the range [0, FS/2] or [0, FS/2) for one-sided calculations. For two-sided calculations the range will be [0, FS).
    </para>
-   <para>
-When called with no outputs the periodogram is immediately plotted in the current figure window.
-</para>
+
 </refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+n=0:319;
+x=cos(%pi/4*n)+rand(size(n,"r"),"normal");
+[pxx,w]=periodogram(x,ones(1,320),256,2000,"onesided");
+plot2d(w,10*log10(pxx))
+xtitle('periodogram','frequency','magnitude(db)')
+xgrid()
+   ]]></programlisting>
+<scilab:image>
+n=0:319;
+x=cos(%pi/4*n)+rand(size(n,"r"),"normal");
+[pxx,w]=periodogram(x,ones(1,320),256,2000,"onesided");
+plot2d(w,10*log10(pxx))
+xtitle('periodogram','frequency','magnitude(db)')
+xgrid()
+</scilab:image>
+
+
+</refsection>
+
+
 </refentry>

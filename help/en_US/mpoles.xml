@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from mpoles.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="mpoles" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>mpoles</refname>
+    <refpurpose>Identifies unique poles in p and their associated multiplicity.</refpurpose>
+  </refnamediv>
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+  [multp, idxp] = mpoles (p)
+  [multp, idxp] = mpoles (p, tol)
+  [multp, idxp] = mpoles (p, tol, reorder)
+   </synopsis>
+</refsynopsisdiv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>p:</term>
+      <listitem><para> Real vector whose poles has to be calculated</para></listitem></varlistentry>
+   <varlistentry><term>tol:</term>
+      <listitem><para> tolerence,by default, tol=0.001</para></listitem></varlistentry>
+   <varlistentry><term>reorder:</term>
+      <listitem><para> the optional parameter, if reorder is zero, poles are not sorted.</para></listitem></varlistentry>
+   <varlistentry><term>multp:</term>
+      <listitem><para> is a vector specifying the multiplicity of the poles.</para></listitem></varlistentry>
+<varlistentry><term>indxp:</term>
+      <listitem><para> indices of the poles</para></listitem></varlistentry>
+
+</variablelist>
+</refsection>
+<refsection>
+   <title>Description</title>
+   <para>
+The output is ordered from largest to the smallest poles. If the relative difference between the poles is less than the tolerance(tol), then those poles are considered as multiples. By default, the tolerance value is 0.001.
+</para>
+
+<para>
+If the optional parameter, reorder is 0, then the poles are not sorted.
+</para>
+</refsection>
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+ p = [2 3 1 1 2];
+ [m, n] = mpoles (p)
+// n  =
+//    2.
+//    5.
+//    1.
+//    4.
+//    3.
+// m  =
+//    1.
+//    1.
+//    2.
+//    1.
+//    2.
+   ]]></programlisting>
+</refsection>
+
+</refentry>

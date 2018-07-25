@@ -1,5 +1,36 @@
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
+
+//ss2sos converts a state-space representation of a given digital filter to an equivalent second-order section representation.
+
+////Example:
+//a =[0.5095,0,0,0,0;
+//0.3007, 0.2260, -0.3984, 0, 0;
+//0.0977, 0.3984, 0.8706, 0, 0;
+//0.0243, 0.0991, 0.4652, 0.5309, -0.4974;
+//0.0079, 0.0322, 0.1512, 0.4974, 0.8384];
+//
+//
+//b =[0.6936 0.1382 0.0449 0.0112 0.0036]'
+//
+//
+//c =[0.0028 0.0114 0.0534 0.1759 0.6500]
+//
+//
+//d =0.0013
+
+//[sos,g]=ss2sos(a,b,c,d)
+//Expected output:
+//g  =
+ //    0.0013
+// sos  =
+//  1.    1.2679417    0.6443293    1.  - 1.0966    0.3554782
+//  1.    3.1480112    3.2063892    1.  - 1.3693    0.6925133
+//  1.    0.4742625    0.           1.  - 0.5095    0.
+//
+
+
+
 function [sos,g]=ss2sos(A,B,C,D)
 //not taking if, order and scale as input since they do not seem useful
     if (type(A)~=1 | type(B)~=1 | type(C)~=1 | type(D)~=1) then
@@ -23,7 +54,7 @@ function [sos,g]=ss2sos(A,B,C,D)
     if n~=1 then
         error('for single input single output, C must be row matrix');
     end
-    if size(A)~=[1,1] then
+    if size(A)==[1,1] then
         error('A must be square matrix');
     end
     //obtaining the transfer function(continuous)
@@ -57,7 +88,7 @@ function [sos,g]=ss2sos(A,B,C,D)
         v=[b,a];
         sos=[sos;v]//adding the second order sub-system
     end
-    
+
     g=gn/gd;//computing the gain
-    
+
 endfunction

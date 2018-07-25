@@ -27,4 +27,45 @@
    a = rc2ac(k, R0)
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>k:</term>
+      <listitem><para>Lattice form reflection coefficients.</para></listitem></varlistentry>
+   <varlistentry><term>r0:</term>
+      <listitem><para> Initial zero lag autocorrelation.</para></listitem></varlistentry>
+   <varlistentry><term>a:</term>
+      <listitem><para>Autocorrelation coefficients.</para></listitem></varlistentry>
+
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Uses rlevinson to function convert reflection coefficients to autocorrelation sequence.
+</para>
+<para>
+r = rc2ac(k,r0) finds the autocorrelation coefficients, r, of the output of the discrete-time prediction error filter from the lattice-form reflection coefficients k and initial zero-lag autocorrelation r0
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+k = [0.3090 0.9800 0.0031 0.0082 -0.0082];
+r0 = 0.1;
+R=rc2ac(k,r0)
+//Output:
+//R  =
+//    0.1
+//  - 0.0309
+//  - 0.0790948
+//    0.0786627
+//    0.0293629
+//  - 0.0950000
+
+   ]]></programlisting>
+</refsection>
 </refentry>

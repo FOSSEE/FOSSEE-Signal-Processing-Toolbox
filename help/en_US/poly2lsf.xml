@@ -17,7 +17,45 @@
 
   <refnamediv>
     <refname>poly2lsf</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Calculates the line spectral frequencies for the given prediction polynomial</refpurpose>
   </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   lsf = poly2lsf(a)
+poly2lsf maps Prediction polynomial coefficients to line spectral frequencies.
+
+   </synopsis>
+</refsynopsisdiv>
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> Coefficients of prediction polynomial(the roots of the polynomial has to be inside the unity circle)</para></listitem></varlistentry>
+   </variablelist>
+<variablelist>
+   <varlistentry><term>lsf:</term>
+      <listitem><para> Line spectral frequencies</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Example</title>
+   <programlisting role="example"><![CDATA[
+X=[1 0.6149 0.9899 0 0.0031 -0.0082]
+lsf = poly2lsf(X)
+//EXPECTED OUTPUT:
+//lsf  =0.7841731  1.5605415  1.8776459  1.8984313  2.3592523
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitnder Singh</member>
+   </simplelist>
+</refsection>
 
 </refentry>

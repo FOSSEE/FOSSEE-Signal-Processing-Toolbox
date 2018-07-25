@@ -1,5 +1,5 @@
 // Date of creation: 17 Dec, 2015
-function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
+function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
     // Input parser to be used by pmusic and peig
 
     // primaryInput, p, w, nfft, fs, nwin, noverlap, freqrange, isCorrFlag
@@ -26,7 +26,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
     //      w/f - vector
     //      nfft - positive scalar
     //      fs - positive scalar
-    //      isWindowSpecified - boolean indicating if window specified in the 
+    //      isWindowSpecified - boolean indicating if window specified in the
     //                          input params
     //      windowLength - positive scalar
     //      windowVector - vector
@@ -35,7 +35,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
     //      isCorrFlag - boolean
     //      isFsSpecified - boolean indicating if fs argument is present
     //                      (fs can be empty)
-    // 
+    //
     // msg - error message (if any)
     // err_num - error number (if any; otherwise -1)
 
@@ -43,11 +43,11 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
     msg = "";
     err_num = -1;
     data = struct();
-    
+
     numOfInputArgs = length(inputArgsList);
 
     // ****getting indices of all string input arguments****
-    stringIndices = list();  
+    stringIndices = list();
     for i=1:numOfInputArgs
         e = inputArgsList(i);
         if type(e)==10 then
@@ -60,7 +60,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
     isOneSided = %F;
     isTwoSided = %F;
     isCentered = %F;
-    
+
     if ~isempty(stringIndices) then
         // ****checking for corr flag****
         isCorrFlag = or(strcmpi(inputArgsList(stringIndices),"corr")==0);
@@ -71,7 +71,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
                     | strcmpi(inputArgsList(stringIndices),"whole")==0);
         isCentered = or(strcmpi(inputArgsList(stringIndices),"centered")==0);
     end
-    
+
     freqrange = "";
     if isTwoSided then
         freqrange = "twosided";
@@ -144,7 +144,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
         if ~IsIntOrDouble(p(2),%F) then
             msg = "Wrong type for p(2); must be a scalar";
             err_num = 84;
-            return 
+            return
         end
     end
 
@@ -168,7 +168,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
     if L==3 then
         // (x,p,w), and (x,p,nfft) are candidates
         temp3 = inputArgsList(3);
-        
+
 
         // should be a vector or a scalar
         if size(temp3, 1)~=1 & size(temp3, 2)~=1 then
@@ -271,9 +271,9 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
                 end
                 fs = double(temp4);
                 isFsSpecified = %T;
-            end 
+            end
         end
-        
+
     elseif L>=5 then
         // nfft, fs, nwin, noverlap
         nfft = inputArgsList(3);
@@ -288,7 +288,7 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
         elseif ~length(nfft)==1 | ~IsIntOrDouble(nfft,%T) then
             msg = "Wrong type for argument #3 (nfft); must be a positive integer";
             err_num = 84;
-            return 
+            return
         end
 
         if isempty(fs) then
@@ -331,21 +331,21 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
 
         // noverlap
         if isempty(noverlap) then
-            noverlap = windowLength-1;  
+            noverlap = windowLength-1;
         elseif length(noverlap)==1 then
             if ~(type(noverlap)==8 | type(noverlap)==1)| noverlap<0 then
                 msg = "Wrong type for argument #6 (noverlap); must be a non-negative integer";
                 err_num = 84;
                 return;
             end
-            noverlap = int(noverlap);         
+            noverlap = int(noverlap);
         else
             msg = "Wrong type for argument #6 (noverlap); must be a non-negative integer";
             err_num = 84;
             return;
         end
     end
-    
+
     // assigning default value for freqrange if not already specified
     if length(freqrange)==0 then
         if isreal(x) then
@@ -354,14 +354,14 @@ function [data, msg, err_num] = subspaceMethodsInputParser(inputArgsList)
             freqrange = "twosided";
         end
     end
-    
-    
+
+
     // normalizing w if it exists
     if ~isempty(w) & isFsSpecified then
         w = w*2*%pi/fs;
     end
-    
-    
+
+
     data.x = primaryInput;
     data.p = p;
     data.w = w;
