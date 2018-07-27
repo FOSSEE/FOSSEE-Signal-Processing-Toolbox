@@ -48,7 +48,7 @@ function [w,pow] = rooteig(x,p,varargin)
     //
 //    n=0:99;
 //     s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
-//  exec('/home/shashi/Downloads/FOSSEE-Signal-Processing-Toolbox-master/macros/corrmtx.sci',-1);//EXECUTE CORRMTX FUNCTION PRIOR EXECUTING THIS FUNCTION
+//EXECUTE CORRMTX FUNCTION PRIOR EXECUTING THIS FUNCTION
 // X = corrmtx(s,12,'mod');
 // [W,P] = rooteig(X,3);
 //

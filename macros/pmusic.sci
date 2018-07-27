@@ -85,9 +85,6 @@ function varargout = pmusic(varargin)
 
     funcprot(0);
 
-    //exec /home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/subspaceMethodsInputParser.sci
-    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/musicBase.sci',-1);
-
     [numOutArgs,numInArgs] = argn(0);
 
     // check number of output arguments

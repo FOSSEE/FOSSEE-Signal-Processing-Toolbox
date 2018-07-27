@@ -1,6 +1,5 @@
 //Example taken from https://in.mathworks.com/help/signal/examples/dft-estimation-with-the-goertzel-algorithm.html
 //DFT Estimation with the Goertzel Algorithm
-cd /home/fossee/Desktop/FOSSEE_Scilab_Octave_Interface_Toolbox
 
 warning('off');
 clc;
