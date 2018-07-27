@@ -51,6 +51,9 @@ function y = prepad (x, l, c, dim)
   if (argn(2) < 4)
     // Find the first non-singleton dimension.
     dim = find (sz > 1, 1)
+    if (dim == [])
+      dim = 1
+    end
   else
     if (~(isscalar (dim) & dim == fix (dim) & dim >= 1))
       error ("prepad: DIM must be an integer and a valid dimension");
