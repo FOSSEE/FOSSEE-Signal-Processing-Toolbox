@@ -84,9 +84,6 @@ function [S,f,v,e] = peig(varargin)
 
     funcprot(0);
 
-    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/subspaceMethodsInputParser.sci',-1);
-   // exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/musicBase.sci',-1);
-
     [data, msg, err_num] = subspaceMethodsInputPars(varargin);
 
     if length(msg)==0 then

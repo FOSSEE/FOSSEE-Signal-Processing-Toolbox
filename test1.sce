@@ -1,11 +1,5 @@
-//exec FOSSEE_Scilab_Octave_Interface_Toolbox/loader.sce
-
 exec loader.sce
 exec builder.sce
-exec unloader.sce
-exec loader.sce
-//cd macros
-//getd .
 
 test_pass=[]
 res=[]
@@ -725,7 +719,7 @@ res=find(test_pass==0)
 
 if(res~=[])
     disp("One or more tests failed")
-    //exit(1)
+    exit(1)
 else
     disp("All test cases passed")
     exit

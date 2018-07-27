@@ -73,10 +73,6 @@ function [w,pow] = rootmusic(x,p,varargin)
 
     funcprot(0);
 
-    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/musicBase.sci',-1);
-    //exec('/home/shashi/Desktop/FOSSEE-Signal-Processing-Toolbox-master/macros/nnls.sci',-1);
-
-
     // **** checking the number of input and output arguments ****
 
     [numOutArgs, numInArgs] = argn(0);
