@@ -149,6 +149,7 @@ end
 
 a = [1 0.1 -0.8];
 v = 0.4;
+rand("seed", 0);
 w = sqrt(v)*rand(15000,1,"normal");
 x = filter(1,a,w);
 
@@ -159,7 +160,7 @@ ar = levinson(r,length(a)-1)
 
 ar = round(ar*10000)/10000
 
-if(ar == [1 0.1043 -0.8010])
+if(ar == [1 0.0984 -0.793])
            test_pass=[test_pass,1]
     else
 	test_pass=[test_pass,0]
@@ -171,13 +172,14 @@ end
 
 /////////Test case for       39) lpc                  //////////
 
+rand("seed", 0)
 noise = rand(50000,1,"normal");
 x = filter(1,[1 1/2 1/3 1/4],noise);
 x = x(45904:50000);
 [a,g]= lpc(x,3)
 a = round(a*10000)/10000
 
-if(a == [1 0.5177 0.3310 0.2572])
+if(a == [1 0.5153 0.3313 0.2783])
         test_pass=[test_pass,1]
 else
     test_pass=[test_pass,0]
@@ -361,14 +363,15 @@ end
 a = [1 2 3 4 5];
 b = [7 8 9 10];
 t = 5 ;
+rand("seed", 0)
 m = arch_rnd (a, b, t);
 m = round(m*1000)/1000
 
-if(m == [    7.476
-    67.124
-    671.105
-    7382.441
-    80409.121  ])
+if(m == [ 7.211
+    65.48
+    654.008
+    7194.657
+    78364.905 ])
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -386,14 +389,15 @@ b = [7; 8; 9; 10; 11];
 t = 5 ;
 v = 10 ;
 n = 100 ;
+rand("seed", 0)
 m = arma_rnd (a, b, v, t, n);
 m = round(m) ;
 
-if(m == [    60562.
-    156019.
-    401911.
-    1035344.
-    2667081. ])
+if(m == [    61401.
+    158177.
+    407440.
+    1049604.
+    2703841. ])
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
