@@ -87,7 +87,7 @@ function [r, p, f, m] = residued(b, a, toler)
   //
 [nargout,nargin]=argn();
 
-  if nargin<3,
+  if nargin==3,
     warning("tolerance ignored");
   end
   NUM = b(:)';

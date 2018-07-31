@@ -94,7 +94,6 @@ function b = fir1(n, w, varargin)
 
         x=exp(-1*%i*%pi*w_o)
 //        z=[1 -exp(-1*%i*%pi*w_o)];
-        disp(x)
         nc = length(b);
        if(isscalar(x) &  nc>0 & (x~=%inf) & or(b(:)~=%inf))
             // Make it scream for scalar x.  Polynomial evaluation can be
