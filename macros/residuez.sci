@@ -47,10 +47,11 @@
 
 
  [nargout,nargin]=argn();
- if nargin<3
+ if nargin==3
      warning("tolerance ignored");
  end
- NUM = B(:)'; DEN = A(:)';
+ NUM = B(:)';
+ DEN = A(:)';
  // Matlab's residue does not return m (since it is implied by p):
  [r,p,f,m]=residue(conj(mtlb_fliplr(NUM)),conj(mtlb_fliplr(DEN)));
  p = 1 ./ p;

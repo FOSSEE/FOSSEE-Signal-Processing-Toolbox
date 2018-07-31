@@ -51,7 +51,7 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
 
     funcprot(0);
     [nargout nargin] = argn();
-    ieee(1);
+    ieee(2);
 
     if nargin==3
         T = Sg;
@@ -113,5 +113,5 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
         [Zz, Zp] = zp2tf(Zz, Zp, Zg);
         Zz = prepad(Zz, length(Zp));
     end
-
+ieee(0);
 endfunction

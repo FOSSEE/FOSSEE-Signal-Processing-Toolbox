@@ -725,6 +725,6 @@ if(res~=[])
     disp("One or more tests failed")
     exit(1)
 else
-    disp("All test cases passed")
+    disp("pass")
     exit
 end
