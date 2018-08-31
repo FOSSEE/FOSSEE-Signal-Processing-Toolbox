@@ -1,9 +1,9 @@
 exec loader.sce
 exec builder.sce
 
-exec test1.sce
-exec test2.sce
-exec test3.sce
+exec('test1.sce',-1)
+exec('test2.sce',-1)
+exec('test3.sce',-1)
 
 if test1==1
 		exit(1)
