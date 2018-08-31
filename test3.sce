@@ -1,11 +1,8 @@
-exec loader.sce
-exec builder.sce
-
 test_pass=[]
 res=[]
 
 
-
+test3=0
 
 
 
@@ -825,10 +822,8 @@ res=find(test_pass==0)
 
 
 
+
 if(res~=[])
-	disp("One or more tests failed")
-	exit(1)
-else
-    disp("pass")
-	exit
+    disp("One or more tests failed in test2")
+    test3=1;
 end

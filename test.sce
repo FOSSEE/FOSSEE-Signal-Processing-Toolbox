@@ -1,6 +1,19 @@
 exec loader.sce
 exec builder.sce
 
-disp(whos)
+exec test1.sce
+exec test2.sce
+exec test3.sce
 
-exit()
+if test1==1
+		exit(1)
+elseif test2==1
+		exit(1)
+elseif test3==1
+		exit(1)
+else
+		disp("ALL OK")
+		exit()
+end
+
+

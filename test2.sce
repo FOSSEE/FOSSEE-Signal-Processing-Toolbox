@@ -1,10 +1,8 @@
-exec loader.sce
-exec builder.sce
 
 test_pass=[]
 res=[]
 
-
+test2=0
 /////////Test case for       1)armcov                  //////////
 
 A = [1 -2.7607 3.8106 -2.6535 0.9238];
@@ -594,9 +592,6 @@ end
 res=find(test_pass==0)
 
 if(res~=[])
-	disp("One or more tests failed")
-	exit(1)
-else
-    disp("pass")
-	exit
+    disp("One or more tests failed in test2")
+    test2=1;
 end

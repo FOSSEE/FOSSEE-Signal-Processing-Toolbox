@@ -1,10 +1,8 @@
-exec loader.sce
-exec builder.sce
 
 test_pass=[]
 res=[]
 
-
+test1=0
 /////////Test case for       2) arburg                  //////////
 
 a = arburg([1,2,3,4,5],2);
@@ -722,9 +720,6 @@ end
 res=find(test_pass==0)
 
 if(res~=[])
-    disp("One or more tests failed")
-    exit(1)
-else
-    disp("pass")
-    exit
+    disp("One or more tests failed in test1")
+    test1=1;
 end
