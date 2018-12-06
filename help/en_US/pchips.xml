@@ -20,4 +20,14 @@
     <refpurpose></refpurpose>
   </refnamediv>
 
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>x:</term>
+      <listitem><para> a vector</para></listitem></varlistentry>
+   <varlistentry><term>y:</term>
+      <listitem><para> is Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
 </refentry>

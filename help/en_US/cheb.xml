@@ -17,49 +17,7 @@
 
   <refnamediv>
     <refname>cheb</refname>
-    <refpurpose>Calculates the nth-order Chebyshev polynomial at the point x.</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   cheb(n, x)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter order</para></listitem></varlistentry>
-   <varlistentry><term>x:</term>
-      <listitem><para> Point at which the Chebyshev polynomial is calculater.</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This is an Octave function.
-Equation for Chebyshev polynomial is
-/ cos(n acos(x),    |x| &lt;= 1
-Tn(x) = |
-\ cosh(n acosh(x),  |x| &gt; 1
-   </para>
-   <para>
-x can also be a vector. In that case the output will also be a vector of same size as x.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-x = [1 2 3 4]
-cheb(10, x)
-ans =
-
-1.0000e+00   2.6209e+05   2.2620e+07   4.5747e+08
-   ]]></programlisting>
-</refsection>
 </refentry>

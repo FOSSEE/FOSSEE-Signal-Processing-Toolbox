@@ -24,7 +24,7 @@
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   y = parzenwin (m)
+   w = parzenwin (m)
    </synopsis>
 </refsynopsisdiv>
 
@@ -33,7 +33,7 @@
    <variablelist>
    <varlistentry><term>m:</term>
       <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
+   <varlistentry><term>w:</term>
       <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
    </variablelist>
 </refsection>

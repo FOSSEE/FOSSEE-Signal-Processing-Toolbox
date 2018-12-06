@@ -35,7 +35,7 @@
    <varlistentry><term>x:</term>
       <listitem><para> vector.</para></listitem></varlistentry>
    <varlistentry><term>correct:</term>
-      <listitem><para> if 1, a correction method  is applied.</para></listitem></varlistentry>
+      <listitem><para> if 1, a correction method is applied.</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
@@ -50,10 +50,9 @@ This function return the complex cepstrum of the vector x. If the optional argum
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 cceps([1,2,3],1)
-ans =
-1.92565
-0.96346
--1.09735
+ans = 1.9256506
+0.9634573
+- 1.0973484
    ]]></programlisting>
 </refsection>
 </refentry>

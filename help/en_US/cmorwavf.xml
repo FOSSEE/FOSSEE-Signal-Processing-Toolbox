@@ -17,7 +17,46 @@
 
   <refnamediv>
     <refname>cmorwavf</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [psi,x]=cmorwavf(lb,ub,n,fb,fc)
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>lb:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>ub:</term>
+      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Real scalar strictly positive integer</para></listitem></varlistentry>
+   <varlistentry><term>fb:</term>
+      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+   <varlistentry><term>fc:</term>
+      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns the value of the Complex Morlet Waveform defined by a positive bandwidth parameter FB, a wavelet center frequency FC on an N point regular grid for the interval [LB,UB].
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a,b]=cmorwavf(1,2,1,3,4)
+b=2
+a=0.0858628 -1.682D-16i
+   ]]></programlisting>
+</refsection>
 </refentry>

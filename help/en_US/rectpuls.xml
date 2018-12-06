@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>rectpuls</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generates a Rectangular pulse based on the width and sampling times.</refpurpose>
   </refnamediv>
 
 
@@ -42,7 +42,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function
 y = rectpuls(t) returns a continuous, aperiodic, unity-height rectangular pulse depending upon input t, centered about t=0 and having default width of 1.
 y = rectpuls(t,w) generates a rectangle of width w.
 </para>

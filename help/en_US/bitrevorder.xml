@@ -17,45 +17,7 @@
 
   <refnamediv>
     <refname>bitrevorder</refname>
-    <refpurpose> Returns input data in bit-reversed order </refpurpose>
-    <para> </para>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [y,i] = bitrevorder(x)
-   y = bitrevorder(x)
-   </synopsis>
-    <para> </para>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> Vector of real or complex values</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
-      <listitem><para> input vector in bit reverse order</para></listitem></varlistentry>
-   <varlistentry><term>i:</term>
-      <listitem><para> indices after bit reversing </para></listitem></varlistentry>
-    <para> </para>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This function returns the input data after reversing the bits of the indices and reordering the elements of the input array.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-x = [%i,1,3,6*%i] ;
-[y i]=bitrevorder(x)
-   ]]></programlisting>
-</refsection>
 </refentry>

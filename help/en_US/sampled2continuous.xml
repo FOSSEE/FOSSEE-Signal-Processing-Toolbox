@@ -17,42 +17,7 @@
 
   <refnamediv>
     <refname>sampled2continuous</refname>
-    <refpurpose>This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   x = sampled2continuous (n, s, t)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>xn:</term>
-      <listitem><para> sampled signal</para></listitem></varlistentry>
-   <varlistentry><term>s:</term>
-      <listitem><para> sampling rate</para></listitem></varlistentry>
-   <varlistentry><term>t:</term>
-      <listitem><para>all instants of time t at which we need x(t) from x[n] </para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
-The third parameter t is all the instants where output x is needed from intput n and this time is relative to x(0).
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-sampled2continuous([1,2,3],5,6)
-//ans  =
-//2.4166806
-   ]]></programlisting>
-</refsection>
 </refentry>

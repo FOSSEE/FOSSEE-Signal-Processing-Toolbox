@@ -17,52 +17,7 @@
 
   <refnamediv>
     <refname>slewrate</refname>
-    <refpurpose> returns the slew rate for all transitions found in the bilevel waveform</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-     s=slewrate(x)
-     s=slewrate(x, t)
-     s=slewrate(x, Fs)
-     s=slewrate(x, t, 'PercentReferenceLevels', N )
-     s=slewrate(x, t, 'Tolerance', M)
-     s=slewrate(x, t,'StateLevels', O)
-
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x)
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, t)
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, Fs)
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, t, 'PercentReferenceLevels', N )
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]= slewrate(x, t, 'Tolerance', M)
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]= slewrate(x, t,'StateLevels', O)
-     [s lowercrossvalue uppercrossvalue lowerreference upperreference]= slewrate(x, t,'StateLevels', O, 'fig', on or off)
-
-   </synopsis>
-</refsynopsisdiv>
-
-
-
-
-<refsection>
-   <title>Description</title>
- returns the slew rate for all transitions found in the bilevel waveform, X. The slew rate is the slope of the line connecting the 10% and 90% reference levels. The sample instants of X are the indices of the vector. To determine the transitions, slewrate estimates the state levels of the input waveform by a histogram method. slewrate identifies all regions that cross the upper-state boundary of the low state and the lower-state boundary of the high state. The low-state and high-state boundaries are expressed as the state level plus or minus a multiple of the difference between the state levels.
-</refsection>
-
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
- x=[ones(1,25)  -ones(1,25)  ones(1,25) ]
- t=1:length(x)
- s=slewrate(x,t)
-   //EXPECTED OUTPUT:
-    //s  = - 2  2
-
-   ]]></programlisting>
-</refsection>
-
-
-
 
 </refentry>

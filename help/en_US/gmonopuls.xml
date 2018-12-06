@@ -20,41 +20,4 @@
     <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>t:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>fc:</term>
-      <listitem><para> Real non-negative value or complex value or a vector or matrix with not all real values negative.</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-
-This function returns samples of the Gaussian monopulse of amplitude unity.
-</para>
-</refsection>
-
-<refsection>
-   <title>Example 1.</title>
-   <programlisting role="example"><![CDATA[
-    gmonopuls([1 2 3],0.1)
-//ans= 0.85036   0.94070   0.52591
-
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Example 2.</title>
-   <programlisting role="example"><![CDATA[
-
-  gmonopuls([1 2 3],[])
-//ans= 0 0 0
-   ]]></programlisting>
-</refsection>
-
 </refentry>

@@ -29,4 +29,23 @@
    c = xcorr2 (a, b, biasflag)
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>a:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>b:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   <varlistentry><term>biasflag:</term>
+      <listitem><para> </para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This is an Octave function.
+</para>
+</refsection>
 </refentry>

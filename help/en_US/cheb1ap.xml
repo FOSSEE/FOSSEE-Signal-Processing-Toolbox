@@ -17,55 +17,7 @@
 
   <refnamediv>
     <refname>cheb1ap</refname>
-    <refpurpose>Produces a lowpass analog Chebyshev type I prototype filter.</refpurpose>
+    <refpurpose>This function designs a lowpass analog Chebyshev type I filter.</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [z, p, g] = cheb1ap (n, Rp)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter Order</para></listitem></varlistentry>
-   <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
-   <varlistentry><term>z:</term>
-      <listitem><para> Zeros</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> Poles</para></listitem></varlistentry>
-   <varlistentry><term>g:</term>
-      <listitem><para> Gain</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It gives a lowpass analog Chebyshev type I prototype filter of nth order and with a Peak-to-peak passband ripple of Rp.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 10 ;
-Rp = 3 ;
-[z, p, g] = cheb1ap (n, Rp)
-   ]]></programlisting>
-</refsection>
-
-  <refsection>
-    <title>Authors</title>
-    <simplelist type="vert">
-      <member>Sonu Sharma, RGIT Mumbai</member>
-      <member>FOSSEE, IIT Bombay</member>
-    </simplelist>
-  </refsection>
 
 </refentry>

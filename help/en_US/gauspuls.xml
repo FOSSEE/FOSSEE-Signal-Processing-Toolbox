@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>gauspuls</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generates Gaussian-modulated sinusoidal pulses</refpurpose>
   </refnamediv>
 
 
@@ -45,7 +45,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function
 This function returns a Gaussian RF pulse of unity amplitude at the times indicated in array t.
 </para>
 </refsection>

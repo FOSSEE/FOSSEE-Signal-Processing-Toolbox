@@ -2,11 +2,11 @@
 
 <!--
  *
- * This help file was generated from subspaceMethodsInputParser.sci using help_from_sci().
+ * This help file was generated from subspaceMethodsInputPars.sci using help_from_sci().
  *
  -->
 
-<refentry version="5.0-subset Scilab" xml:id="subspaceMethodsInputParser" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="subspaceMethodsInputPars" xml:lang="en"
           xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
           xmlns:db="http://docbook.org/ns/docbook">
 
   <refnamediv>
-    <refname>subspaceMethodsInputParser</refname>
+    <refname>subspaceMethodsInputPars</refname>
     <refpurpose>Input parser to be used by pmusic and peig</refpurpose>
   </refnamediv>
 

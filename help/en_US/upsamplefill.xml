@@ -24,7 +24,7 @@
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   y = upsamplefill (x, w)
+   
    y = upsamplefill (x, w, cpy)
    </synopsis>
 </refsynopsisdiv>
@@ -54,9 +54,6 @@ The third argument, if true, means that w should be scalar and that each value i
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-upsamplefill([0.4,0.5],7)
-ans  =
-0.4    7.    0.5    7.
    ]]></programlisting>
 </refsection>
 </refentry>

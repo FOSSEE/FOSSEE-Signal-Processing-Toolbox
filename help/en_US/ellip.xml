@@ -17,56 +17,7 @@
 
   <refnamediv>
     <refname>ellip</refname>
-    <refpurpose>Elliptic/Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.</refpurpose>
+    <refpurpose>Elliptic or Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-    [b, a] = ellip (n, rp, rs, wp)
-    [b, a] = ellip (n, rp, rs, wp, "high")
-    [b, a] = ellip (n, rp, rs, [wl, wh])
-    [b, a] = ellip (n, rp, rs, [wl, wh], "stop")
-    [z, p, g] = ellip (…)
-    […] = ellip (…, "s")
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> positive integer value (order of filter)</para></listitem></varlistentry>
-   <varlistentry><term>rp:</term>
-      <listitem><para> non negative scalar value (passband ripple)</para></listitem></varlistentry>
-   <varlistentry><term>rs:</term>
-      <listitem><para> non negative scalar value (stopband attenuation)</para></listitem></varlistentry>
-   <varlistentry><term>ws:</term>
-      <listitem><para> scalar or vector of length 2, all elements should be in the range [0,1]</para><para>    1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}</para><para>    2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.</para>
-<para>[b, a] = ellip(n, Rp, Rs, Wp) indicates low pass filter with order n, Rp decibels of ripple in the passband and a stopband Rs decibels down and cutoff of pi*Wp radians. If the fifth argument is high, then the filter is a high pass filter.</para>
-<para>[b, a] = ellip(n, Rp, Rs, [Wl, Wh]) indictaes band pass filter with band pass edges pi*Wl and pi*Wh. If the fifth argument is stop, the filter is a band reject filter.</para>
-<para>[b,a] = ellip(n, Rp, Rs, [Wl, Wh], 'stop') band reject filter with edges pi*Wl and pi*Wh</para>
-<para>[z, p, g] = ellip(...) returns filter as zero-pole-gain.</para>
-<para>[...] = ellip(...,’s’) returns a Laplace space filter, wp can be larger than 1 rad/sec.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 2;
-rp = 3;
-rs = 40;
-wp = [0.3 0.4];
-[b, a]=ellip(n, rp, rs, wp)
-   ]]></programlisting>
-</refsection>
 </refentry>

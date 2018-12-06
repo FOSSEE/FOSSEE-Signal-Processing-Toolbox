@@ -17,51 +17,7 @@
 
   <refnamediv>
     <refname>buttap</refname>
-    <refpurpose>Produces a lowpass analog prototype Butterworth filter.</refpurpose>
+    <refpurpose>Produces analog prototype Butterworth filter</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [z, p, g] = buttap (n)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter Order</para></listitem></varlistentry>
-   <varlistentry><term>z:</term>
-      <listitem><para> Zeros</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> Poles</para></listitem></varlistentry>
-   <varlistentry><term>g:</term>
-      <listitem><para> Gain</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It gives a lowpass analog prototype Butterworth filter of nth order.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 5 ;
-[z, p, g] = buttap (n)
-   ]]></programlisting>
-</refsection>
-
-  <refsection>
-    <title>Authors</title>
-    <simplelist type="vert">
-      <member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
-	    </simplelist>
-  </refsection>
 
 </refentry>

@@ -17,57 +17,45 @@
 
   <refnamediv>
     <refname>zerocrossing</refname>
-    <refpurpose>This function estimates the points at which a given waveform y=y(x) crosses the x-axis using linear interpolation. </refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   w = zerocrossing (x, y)
+   r = zerocrossing (w, y)
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>w:</term>
-      <listitem><para>vector of points at which the function y(x) crosses x-axis. </para></listitem></varlistentry>
+   <varlistentry><term>r:</term>
+      <listitem><para> zero crossing points</para></listitem></varlistentry>
    <varlistentry><term>y:</term>
-      <listitem><para> The dependant variable,y(x)</para></listitem></varlistentry>
+      <listitem><para>function y=y(x)...the dependant variable</para></listitem></varlistentry>
    <varlistentry><term>x:</term>
-      <listitem><para> The independant variable</para></listitem></varlistentry>
+      <listitem><para>the independant variable</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function estimates the points at which a given waveform y = y(x) crosses the x-axis. It uses linear interpolation.
+This function estimates the points at which a given waveform y = y(w) crosses the x-axis. It uses linear interpolation.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
+//1.
 x = linspace(0,1,100);
-y = 2*sin(2*%pi*x);
+y = rand(1,100)-0.5;
 x0= zerocrossing(x,y);
-//ans:
-// x0  =  0.    0.5	1.0	1.5
 y0=interp1(x,y,x0)
 plot(x,y,x0,y0,'x')
-
    ]]></programlisting>
-
-<scilab:image>
-x = linspace(0,2,200);
-y = 2*sin(2*%pi*x);
-x0= zerocrossing(x,y);
-y0=interp1(x,y,x0)
-plot(x,y,x0,y0,'x')
-
-</scilab:image>
-
 </refsection>
 </refentry>

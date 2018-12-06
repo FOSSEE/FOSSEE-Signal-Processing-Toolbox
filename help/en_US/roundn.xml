@@ -2,11 +2,11 @@
 
 <!--
  *
- * This help file was generated from levinson.sci using help_from_sci().
+ * This help file was generated from roundn.sci using help_from_sci().
  *
  -->
 
-<refentry version="5.0-subset Scilab" xml:id="levinson" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="roundn" xml:lang="en"
           xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -16,8 +16,8 @@
           xmlns:db="http://docbook.org/ns/docbook">
 
   <refnamediv>
-    <refname>levinson</refname>
-    <refpurpose></refpurpose>
+    <refname>roundn</refname>
+    <refpurpose>r=(round(x*10^n))/(10^n);</refpurpose>
   </refnamediv>
 
 </refentry>

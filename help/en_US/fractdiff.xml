@@ -31,7 +31,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.
 </para>
 </refsection>

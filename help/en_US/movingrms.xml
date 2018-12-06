@@ -17,54 +17,7 @@
 
   <refnamediv>
     <refname>movingrms</refname>
-    <refpurpose>Find moving RMS value of signal in x</refpurpose>
-    <para> </para>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [rmsx,w]=movingrms(x,width,risetime)
-   [rmsx,w]=movingrms(x,width,risetime,Fs)
-   </synopsis>
-    <para> </para>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> (Real or complex valued vector or matrix) Input signal samples</para></listitem></varlistentry>
-   <varlistentry><term>width:</term>
-      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
-   <varlistentry><term>risetime:</term>
-      <listitem><para> Real or complex scalar value</para></listitem></varlistentry>
-   <varlistentry><term>Fs:</term>
-      <listitem><para> (Real or complex scalar value) Smapling frequency</para></listitem></varlistentry>
-   </variablelist>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-In this function signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
-</para>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Example : 1</title>
-   <programlisting role="example"><![CDATA[
-[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2) // moving rms with default value of Fs = 1
-   ]]></programlisting>
-
-<title>Example : 2</title>
-   <programlisting role="example"><![CDATA[
-[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2,2)// moving rms with value of Fs = 2
-
-   ]]></programlisting>
-</refsection>
 
 </refentry>

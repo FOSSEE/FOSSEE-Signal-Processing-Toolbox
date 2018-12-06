@@ -17,19 +17,9 @@
 
   <refnamediv>
     <refname>buffer</refname>
-    <refpurpose>This function buffers the given data into a matrix of signal frames</refpurpose>
+    <refpurpose>Calling Sequence</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [y] = buffer (x, n)
-   [y] = buffer (x, n, p)
-   [y] = buffer (x, n, p)
-   [y, z, opt] = buffer (...)
-   </synopsis>
-</refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
@@ -56,11 +46,10 @@ This function buffers the given data into a matrix of signal frames
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 buffer(1,3,2)
-//ans =
-//0   0
-//0   1
-//1   0
-//This function is being called from Octave
+ans =
+0   0
+0   1
+1   0
    ]]></programlisting>
 </refsection>
 </refentry>

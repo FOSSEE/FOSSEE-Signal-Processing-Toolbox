@@ -47,7 +47,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 The vector f contains pairs of frequency band edges in the range [0,1]. The vector m specifies the magnitude response for each band. The values of m must be zero for all stop bands and must have the
 same magnitude for all pass bands. The deviation of the filter dev can be specified as a scalar or a vector of the same length as m. The optional sampling rate fs can be used to indicate that f is in
 Hz in the range [0,fs/2].
@@ -75,8 +74,8 @@ n = (A-8)/(2.285 dw)
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 [n, w, beta, ftype] = kaiserord ([1000, 1200], [1, 0], [0.05, 0.05], 11025)
-n =  1
-w =  1100
+n =  70
+w =  0.199
 beta =  1.5099
 ftype = low
    ]]></programlisting>

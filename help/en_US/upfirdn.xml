@@ -17,46 +17,7 @@
 
   <refnamediv>
     <refname>upfirdn</refname>
-    <refpurpose>This function upsamples the input data, applies the FIR filter and then downsamples it.</refpurpose>
+    <refpurpose>Esentially it is a cascade of three processes:</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   y = upfirdn (x, h, p, q)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> The input signal.</para></listitem></varlistentry>
-   <varlistentry><term>h:</term>
-      <listitem><para> The impulse response of the FIR filter.</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para>The upsampling factor(default=1) </para></listitem></varlistentry>
-   <varlistentry><term>q:</term>
-      <listitem><para>The downsampling factor(default=1) </para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-
-This function upsamples the input data in the matrix by a factor of n. Then the upsampled data is FIR filtered. After this, the resultant is downsampled.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-upfirdn([1,2,3],2,3,5)
-//ans  =
-
-//2.    0.
-   ]]></programlisting>
-</refsection>
 </refentry>

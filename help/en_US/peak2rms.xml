@@ -73,13 +73,11 @@ If the elements of matrix are complex the absolute values are considered in the 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-//To calculate peak2rms of a vector:
+To calculate peak2rms of a vector:
 IN=[6 19 10 25]
 OUT=peak2rms(IN)
-//The output is OUT=
-//1.4638501
-//1.3887301
-//1.119186
+The output is OUT=
+1.4927036
 
    ]]></programlisting>
 </refsection>
@@ -87,54 +85,13 @@ OUT=peak2rms(IN)
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-To calculate peak2rms of rows of matrix:
+//To calculate peak2rms of rows of matrix:
 IN=[1 3 5;2 4 6;7 8 9]
 OUT=peak2rms(IN,2)
-//The output is
-//OUT= 1.3719887
-
+The output is
+OUT= 1.4638501
+1.3887301
+1.119186
    ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-To calculate peak magnitude to RMS value of sinusoid:
-
-t=0:0.6:9
-IN=cos(6*%pi*t);
-OUT= peak2rms(IN)
-//The output is
-//OUT= 1.3719887
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>See also</title>
-   <simplelist type="inline">
-   <member><link linkend="abs">abs</link></member>
-   <member><link linkend="mean">mean</link></member>
-   <member><link linkend="max">max</link></member>
-   <member><link linkend="sqrt">sqrt</link></member>
-   <member><link linkend="isempty">isempty</link></member>
-   </simplelist>
-</refsection>
-
-<refsection>
-   <title>Authors</title>
-   <simplelist type="vert">
-   <member>Indira Askaukar</member>
-   </simplelist>
-</refsection>
-
-<refsection>
-   <title>Bibliography</title>
-   <para>Matlab help document.</para>
-   <para>Modified to accept char i/p</para>
-   <para>MOdified function to match MATLAB input arguments</para>
-   <para>Now for calculating the values of ratio of peak to RMS  of columns of matrix use peak2rms(in,1)</para>
-   <para>And for calculates the values of ratio of peak to RMS  of rows of matrix.  use peak2rms(in,2)</para>
-   <para>Updated help comments accordingly</para>
-   <para>MOdifications done by by Debdeep Dey</para>
 </refsection>
 </refentry>

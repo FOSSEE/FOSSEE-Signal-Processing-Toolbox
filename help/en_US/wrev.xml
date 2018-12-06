@@ -20,37 +20,4 @@
     <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [y]=wrev(x)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> Input vector of string, real or complex values</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This is an Octave function.
-This function reverses the order of elements of the input vector x.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-1.    wrev([1 2 3])
-ans= 3  2  1
-2.    wrev(['a','b','c'])
-ans= cba
-   ]]></programlisting>
-</refsection>
 </refentry>

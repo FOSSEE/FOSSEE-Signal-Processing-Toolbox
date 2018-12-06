@@ -17,8 +17,7 @@
 
   <refnamediv>
     <refname>lar2rc</refname>
-    <refpurpose> Log Area Ratio to Reflection Coefficient</refpurpose>
-    <para> </para>
+    <refpurpose></refpurpose>
   </refnamediv>
 
 
@@ -27,7 +26,6 @@
    <synopsis>
    k = lar2rc(g)
    </synopsis>
-    <para> </para>
 </refsynopsisdiv>
 
 <refsection>
@@ -38,31 +36,5 @@
    <varlistentry><term>k:</term>
       <listitem><para> returns the reflection coefficients.</para></listitem></varlistentry>
    </variablelist>
-    <para> </para>
 </refsection>
-
-<refsection>
-   <title>Description</title>
-   <para> This function takes input as a vector of log area ratios and returns vector of reflection coefficients corresponding to log area ratio vector </para>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-    <para> </para>
-   <programlisting role="example"><![CDATA[
-g = [0.6389 4.5989 0.0063 0.0163 -0.0163]; //log area ratio inputs
-k = lar2rc(g) // returns reflection coefficients corresponding to log area ratios
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>See also</title>
-   <simplelist type="inline">
-   <member><link linkend="Author">Author</link></member>
-   <member><link linkend="Jitendra">Singh</link></member>
-   <member><link linkend="Modified">to match MATLAB o/p when i/p is of type char and is a string by Debdeep Dey</link></member>
-   </simplelist>
-</refsection>
-
 </refentry>

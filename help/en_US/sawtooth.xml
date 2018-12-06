@@ -42,7 +42,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function
 This function returns a sawtooth wave with period 2*pi with +1/-1 as the maximum and minimum values for elements of t. If width is specified, it determines where the maximum is in the interval [0,2*pi].
 </para>
 </refsection>

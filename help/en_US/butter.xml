@@ -17,59 +17,7 @@
 
   <refnamediv>
     <refname>butter</refname>
-    <refpurpose>Butterworth filter design..</refpurpose>
+    <refpurpose>Butterworth filter design.</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-    [b, a] = butter (n, wc)
-    [b, a] = butter (n, wc, "high")
-    [b, a] = butter (n, [wl, wh])
-    [b, a] = butter (n, [wl, wh], "stop")
-    [z, p, g] = butter (…)
-    […] = butter (…, "s")
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> positive integer value (order of filter).</para></listitem></varlistentry>
-   <varlistentry><term>wc:</term>
-      <listitem><para> positive real value,</para><para>    1).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</para><para>    2).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This function generates a Butterworth filter. Default is a discrete space (z) or digital filter using Bilinear transformation from s to z plane.</para>
- <para>If second argument is scalar the third parameter takes in low or high, default value is low. The cutoff is pi*wc radians.</para>
- <para>[b,a] = butter(n, [wl, wh]) indicates a band pass filter with cutoffs pi*Wl and pi*wh radians. </para>
- <para>[b,a] = butter(n, [wl, wh], ’stop’) indicates a band reject filter with cutoffs pi*wl and pi*wh radians.</para>
- <para>[z,p,g] = butter(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.</para>
- <para>[...] = butter(...,’s’) returns a Laplace space filter,here cutoff(s) wc can be larger than 1 (rad/sec).
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 4;
-wc = 0.3;
-[b a] = butter(n, wc, "high")
-
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-<title>Modified by :</title>
-<simplelist type="vert">
-<member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
-    </simplelist>
-</refsection>
 
 </refentry>

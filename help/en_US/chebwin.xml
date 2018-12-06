@@ -17,51 +17,7 @@
 
   <refnamediv>
     <refname>chebwin</refname>
-    <refpurpose>This function returns the filter coefficients of a Dolph-Chebyshev window.</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   w = chebwin (m)
-   w = chebwin (m, at)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>at:</term>
-      <listitem><para> real scalar value</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This is an Octave function.
-This function returns the filter coefficients of a Dolph-Chebyshev window of length m supplied as input, to the output vector w.
-The second parameter is the stop band attenuation of the Fourier transform in dB. The default value is 100 dB.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-chebwin(7)
-ans  =
-0.0565041
-0.3166085
-0.7601208
-1.
-0.7601208
-0.3166085
-0.0565041
-   ]]></programlisting>
-</refsection>
 </refentry>

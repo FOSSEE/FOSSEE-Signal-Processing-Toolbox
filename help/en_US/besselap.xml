@@ -20,49 +20,4 @@
     <refpurpose>Bessel analog filter prototype.</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [zero, pole, gain] = besselap (n)
-   zero = besselap (n)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter Order</para></listitem></varlistentry>
-   <varlistentry><term>zero:</term>
-      <listitem><para> Zeros of filter</para></listitem></varlistentry>
-   <varlistentry><term>pole:</term>
-      <listitem><para> Poles of filter</para></listitem></varlistentry>
-   <varlistentry><term>gain:</term>
-      <listitem><para> Gain of filter</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It Return Bessel analog filter prototype of nth order.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 5;
-[zero, pole, gain] = besselap (n)
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-<title>Modified by :</title>
-<simplelist type="vert">
-<member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
-    </simplelist>
-</refsection>
-
 </refentry>

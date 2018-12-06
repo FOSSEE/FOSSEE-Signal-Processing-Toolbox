@@ -17,52 +17,7 @@
 
   <refnamediv>
     <refname>schurrc</refname>
-    <refpurpose>Computes reflection coefficients from auto-correlation sequence using Schrur algorithm.</refpurpose>
+    <refpurpose>narginchk(1,1,argn(2));</refpurpose>
   </refnamediv>
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   k = schurrc(r)
-[k,e] = schurrc(r)
-   </synopsis>
-</refsynopsisdiv>
 
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>k:</term>
-      <listitem><para> reflection coefficients or lattice parameters of prediction filter</para></listitem></varlistentry>
-   <varlistentry><term>e:</term>
-      <listitem><para> prediction error variance</para></listitem></varlistentry>
-   <varlistentry><term>r:</term>
-      <listitem><para>auto correltion sequence </para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-
-<refsection>
-   <title>Description</title>
-   <para>k = schurrc(r) uses the Schur algorithm to compute a vector k of reflection coefficients from a vector r representing an autocorrelation sequence. k and r are the same size. The reflection coefficients represent the lattice parameters of a prediction filter for a signal with the given autocorrelation sequence, r. When r is a matrix, schurrc treats each column of r as an independent autocorrelation sequence, and produces a matrix k, the same size as r. Each column of k represents the reflection coefficients for the lattice filter for predicting the process with the corresponding autocorrelation sequence r.</para>
-
-<para>[k,e] = schurrc(r) also computes the scalar e, the prediction error variance. When r is a matrix, e is a column vector. The number of rows of e is the same as the number of columns of r.
-
-</para>
-</refsection>
-
-
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-m=linspace(1,100);
-r = xcorr(m(1:5),'unbiased');
-[k,e] = schurrc(r(5:$))
-
-//EXPECTED OUTPUT
-//e  =1.6212406
- //k  = - 0.9090909  0.2222222  0.2244898  0.2434211
-
-
-   ]]></programlisting>
-</refsection>
 </refentry>

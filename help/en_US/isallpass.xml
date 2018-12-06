@@ -17,77 +17,7 @@
 
   <refnamediv>
     <refname>isallpass</refname>
-    <refpurpose>Determines whether the filter is allpass or not</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-	flag = isallpass(b,a)
-	flag = isallpass(sos)
-	flag = isallpass(...,tol)
-
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>b:</term>
-      <listitem><para>vector containing zero coefficients of the transfer function</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para> vector containing pole coefficients of the transfer functtion</para></listitem></varlistentry>
-   <varlistentry><term>sos:</term>
-      <listitem><para> Second order estimates.  real|complex - matrix (K-by-6)</para></listitem></varlistentry>
-   <varlistentry><term>tol:</term>
-      <listitem><para> tolerance is used to determine when two numbers are close enough to be considered equal.  scalar</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-flag = isallpass(b,a) returns a logical output that is either 1 or 0 depending on output parameter "flag" by the filter specified by numerator coefficients, b, and denominator coefficients, a, is an allpass filter or not. If the filter is not an allpass filter, flag is equal to false.<para></para>flag = isallpass(sos) returns true if the filter specified by second order sections matrix ie sos, is an allpass filter.<para></para> sos is a K-by-6 matrix, where the number of sections, K, must be greater than or equal to 2. Each row of sos corresponds to the coefficients of a second order (biquad) filter. The ith row of the sos matrix corresponds to [bi(1) bi(2) bi(3) ai(1) ai(2) ai(3)].
-</para>
-</refsection>
-
-<refsection>
-   <title>Example 1</title>
-   <programlisting role="example"><![CDATA[
-k = [1/2 1/3 1/4 1/5];
-[b,a] = latc2tf(k,'allpass');
-flag_isallpass = isallpass(b,a)
-//Expected Output
-//flag_isallpass  =1
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Example 2</title>
-   <programlisting role="example"><![CDATA[
-b = [1/3 1/4 1/5 1];
-a=b($:-1:1);
-flag = isallpass(b,a)
-//Expected Output
-//flag = 1
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Example 3</title>
-   <programlisting role="example"><![CDATA[
-
-flag = isallpass(1,[1 1])
-//Expected Output
-//flag = 0
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Authors</title>
-   <simplelist type="vert">
-   <member>Parthasarathi Panda</member>
-   </simplelist>
-</refsection>
 
 </refentry>

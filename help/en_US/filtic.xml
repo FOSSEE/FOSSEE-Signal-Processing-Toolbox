@@ -55,12 +55,10 @@ The vectors b and a represent the numerator and denominator coefficients of the 
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 filtic([%i,1,-%i,5], [1,2,3*%i], [0.8*%i,7,9])
-//Expected Output:
-//ans =
-//-22.6i
-// 2.4
-// 0
-
+ans =
+0.00000 - 22.60000i
+2.40000 +  0.00000i
+0.00000 +  0.00000i
    ]]></programlisting>
 </refsection>
 </refentry>

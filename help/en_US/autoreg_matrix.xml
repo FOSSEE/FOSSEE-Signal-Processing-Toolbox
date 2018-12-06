@@ -17,48 +17,7 @@
 
   <refnamediv>
     <refname>autoreg_matrix</refname>
-    <refpurpose>Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.</refpurpose>
+    <refpurpose>funcprot(0);</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   autoreg_matrix(Y, K)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>Y:</term>
-      <listitem><para> Vector</para></listitem></varlistentry>
-   <varlistentry><term>K:</term>
-      <listitem><para> Scalar or Vector</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.
-   </para>
-   <para>
-In other words, for T &gt; K, '[1, Y(T-1), ..., Y(T-K)]' is the t-th row of the result.
-   </para>
-   <para>
-The resulting matrix may be used as a regressor matrix in autoregressions.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-
-Y = [1,2,3] ;
-K = 2 ;
-autoreg_matrix(Y,K)
-
-   ]]></programlisting>
-</refsection>
 </refentry>

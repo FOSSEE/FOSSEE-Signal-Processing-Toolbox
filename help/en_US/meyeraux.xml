@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>meyeraux</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Returns value of Meyer Wavelet Auxiliary function</refpurpose>
   </refnamediv>
 
 
@@ -39,7 +39,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function returns values of the auxiliary function used for Meyer wavelet generation.
 </para>
 </refsection>

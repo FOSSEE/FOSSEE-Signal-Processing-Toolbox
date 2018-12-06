@@ -17,75 +17,7 @@
 
   <refnamediv>
     <refname>isstable</refname>
-    <refpurpose>Checks stability of  given Discrete time system function</refpurpose>
-    <para> </para>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-flag = ismaxphase(b,a)
-flag = ismaxphase(sos)
-   </synopsis>
-    <para> </para>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>b</term>
-      <listitem><para> Coefficients of numerator polynomial of system function </para></listitem></varlistentry>
-   <varlistentry><term>a</term>
-      <listitem><para> Coefficients of denumerator polynomial of system function</para></listitem></varlistentry>
-   <varlistentry><term>sos</term>
-      <listitem><para> Second order section matrix of order Kx6 </para></listitem></varlistentry>
-   <varlistentry><term>flag</term>
-      <listitem><para> This function returns logical 1 if system is Stable (flag = 1) </para> <para> Otherwise it returns logical 0 (flag = 0)</para></listitem></varlistentry>
-   </variablelist>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para> This function determines whether the given system function is Stable system function or not. Stable system means all poles of transfer function will be inside the unit circle in z-plane </para>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Example : 1 <para>Example of stable system function </para> </title>
-   <para>
-    <latex>
-      \begin{eqnarray}
-      H(z) = \frac{1 +2z^{-1} } {1 -0.7z^{-1} + 0.1 z^{-2} }
-      \end{eqnarray}
-    </latex>
-   </para>
-    <para> </para>
-
-   <programlisting role="example"><![CDATA[
-b = [1 2] ; //Numerator polynomial coefficients
-a = [1 -0.7 0.1] ; //Denumerator polynomial coefficients
-flag = isstable(b,a) //This is an example of Stable system, hence it will give output as : flag = 1
-]]></programlisting>
-</refsection>
-
-<refsection>
-<title> Example : 2 <para>Example of unstable system function</para> </title>
-
-   <para>
-    <latex>
-      \begin{eqnarray}
-      H(z) = \frac{1 +2z^{-1} } {1 +5z^{-1} + 6z^{-2} }
-      \end{eqnarray}
-    </latex>
-   </para>
-    <para> </para>
-
-   <programlisting role="example"><![CDATA[
-b = [1 2] ; //Numerator polynomial coefficients
-a = [1 5 6] ; //Denumerator polynomial coefficients
-flag = isstable(b,a) //This is an example of Unstable system, hence it will give output as : flag = 0
-]]></programlisting>
-</refsection>
 
 </refentry>

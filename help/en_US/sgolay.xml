@@ -47,7 +47,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function computes the filter coefficients for all Savitzsky-Golay smoothing filters of order p for length n (odd).
 m can be used in order to get directly the mth derivative; ts is a scaling factor.
 </para>

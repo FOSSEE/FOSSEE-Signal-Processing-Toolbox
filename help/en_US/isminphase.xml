@@ -17,61 +17,7 @@
 
   <refnamediv>
     <refname>isminphase</refname>
-    <refpurpose>Checks given system function is Maximum-Phase system or not</refpurpose>
-    <para> </para>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-flag = ismaxphase(b,a)
-flag = ismaxphase(sos)
-flag = ismaxphase(...,tol)
-   </synopsis>
-    <para> </para>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>b</term>
-      <listitem><para> Coefficients of numerator polynomial of system function </para></listitem></varlistentry>
-   <varlistentry><term>a</term>
-      <listitem><para> Coefficients of denumerator polynomial of system function</para></listitem></varlistentry>
-   <varlistentry><term>sos</term>
-      <listitem><para> Second order section matrix of order Kx6 </para></listitem></varlistentry>
-   <varlistentry><term>tol</term>
-      <listitem><para> Tolerence in similarities between two numbers in phase response </para></listitem></varlistentry>
-   <varlistentry><term>flag</term>
-      <listitem><para> This function returns logical 1 if system is minimum-phase system (flag = 1) </para> <para> Otherwise it returns logical 0 (flag = 0)</para></listitem></varlistentry>
-   </variablelist>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para> This function determines whether the given system function is minimum-phase system or not . Minimum-phase system means all zeros of transfer function will be inside the unit circle in z-plane,also poles must be within unit circle for stability and causality </para>
-    <para> </para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-
-   <para>Checking given system function is minimum phase system or not</para>
-   <para>
-    <latex>
-      \begin{eqnarray}
-      H(z) = 1 -0.3z^{-1} + 0.02 z^{-2}
-      \end{eqnarray}
-    </latex>
-   </para>
-    <para> </para>
-
-   <programlisting role="example"><![CDATA[
-b = [1 -0.3 0.02] ; //Numerator polynomial coefficients
-a = 1 ; //Denumerator polynomial coefficients
-flag = isminphase(b,a) //This is an example of Minimum-Phase system, hence it will give output as : flag = 1
-]]></programlisting>
-</refsection>
 
 </refentry>

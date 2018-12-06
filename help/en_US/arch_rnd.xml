@@ -17,62 +17,7 @@
 
   <refnamediv>
     <refname>arch_rnd</refname>
-    <refpurpose>Simulate an ARCH sequence of length t with AR coefficients b and CH coefficients a.</refpurpose>
+    <refpurpose>funcprot(0);</refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   arch_rnd (a, b, t)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para> CH coefficients</para></listitem></varlistentry>
-   <varlistentry><term>b:</term>
-      <listitem><para> AR coefficients</para></listitem></varlistentry>
-   <varlistentry><term>t:</term>
-      <listitem><para> Length of ARCH sequence</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It Simulates an ARCH sequence of length t with AR coefficients b and CH coefficients a.
-The result y(t) follows the model
-   </para>
-   <para>
-   <latex>
-   \begin{eqnarray}
-y(t) = b(1) + b(2) * y(t-1) + … + b(lb) * y(t-lb+1) + e(t)
-   \end{eqnarray}
-   </latex>
-<para>
-where e(t), given y up to time t-1, is N(0, h(t)), with
-</para>
-   </para>
-   <para>
-   <latex>
-   \begin{eqnarray}
-h(t) = a(1) + a(2) * e(t-1)^2 + … + a(la) * e(t-la+1)^2
-   \end{eqnarray}
-   </latex>
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-a = [1 2 3 4 5];
-b = [7 8 9 10];
-t = 5 ;
-arch_rnd (a, b, t)
-
-   ]]></programlisting>
-</refsection>
 </refentry>

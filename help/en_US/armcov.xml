@@ -17,46 +17,7 @@
 
   <refnamediv>
     <refname>armcov</refname>
-    <refpurpose>This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal x           </refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   a=armcov(x,p)
-   [a,e] = armcov(x,p)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> input signal</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> order</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para> output of an AR system driven by white noise</para></listitem></varlistentry>
-   <varlistentry><term>e:</term>
-      <listitem><para> variance estimate</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal x.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-A = [1 -2.7607 3.8106 -2.6535 0.9238];
-y = filter(1,A,0.2*rand(1024,1,"normal"));
-arcoeffs = armcov(y,4)
-
-   ]]></programlisting>
-
-</refsection>
 </refentry>

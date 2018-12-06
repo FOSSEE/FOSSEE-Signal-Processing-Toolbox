@@ -18,7 +18,6 @@
   <refnamediv>
     <refname>lpc</refname>
     <refpurpose>Linear prediction filter coefficients</refpurpose>
-    <para> </para>
   </refnamediv>
 
 
@@ -27,8 +26,9 @@
    <synopsis>
    [a,g] = lpc(x)
    [a,g] = lpc(x,p)
+   
+   
    </synopsis>
-    <para> </para>
 </refsynopsisdiv>
 
 <refsection>
@@ -36,37 +36,31 @@
    <para>
 [a,g] = lpc(x,p)
 Determines the coefficients of a pth order forward linear predictor
-filter by minimizing the squared error. <para>If p is unspecified, a
-default value of length(x)-1 is used.</para>
+filter by minimizing the squared error. If p is unspecified, a
+default value of length(x)-1 is used.
    </para>
-   <para> </para>
+   <para>
+</para>
 </refsection>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
    <varlistentry><term>x:</term>
-      <listitem><para> double</para><para>input signal, if it is a matrix each column is computed independently</para></listitem></varlistentry>
+      <listitem><para> double</para></listitem></varlistentry>
    <varlistentry><term>p:</term>
-      <listitem><para> int, natural number, scalar</para><para>order of linear predictor filter, value must be scalar, positive and must be less than or equal to length of input signal </para></listitem></varlistentry>
+      <listitem><para> int, natural number, scalar</para></listitem></varlistentry>
    <varlistentry><term>a:</term>
-      <listitem><para> double</para><para>coefficient of forward linear predictor, coefficient for each signal input is returned as a row vector</para></listitem></varlistentry>
+      <listitem><para> double</para></listitem></varlistentry>
    <varlistentry><term>g:</term>
-      <listitem><para> double</para><para>Column vector of averaged square prediction error</para></listitem></varlistentry>
+      <listitem><para> double</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
-   <title>Description</title>
-   <para> This function determines coefficients of a forward linear predictor by minimizing prediction error in least squares sense. It is used in Digital Filter Design </para>
-    <para> </para>
-</refsection>
-
-<refsection>
    <title>Examples</title>
-
    <programlisting role="example"><![CDATA[
-noise = rand(50000,1,"normal"); //Gaussian White Noise
+noise = rand(50000,1,"normal");
 x = filter(1,[1 1/2 1/3 1/4],noise);
 x = x(45904:50000);
 [a,g]= lpc(x,3)
@@ -80,38 +74,5 @@ title 'Original Signal vs. LPC Estimate';
 xlabel 'Sample number', ylabel 'Amplitude';
 legend('Original signal','LPC estimate');
    ]]></programlisting>
-
- <scilab:image>
-noise = rand(50000,1,"normal"); //Gaussian White Noise
-x = filter(1,[1 1/2 1/3 1/4],noise);
-x = x(45904:50000);
-[a,g]= lpc(x,3)
-est_x = filter([0 -a(2:$)],1,x);
-e = x-est_x;
-[acs,lags] = xcorr(e,'coeff');
-plot(1:97,x(4001:4097),1:97,est_x(4001:4097),'--');
-a = gca();
-a.grid = [1,1];
-title 'Original Signal vs. LPC Estimate';
-xlabel 'Sample number', ylabel 'Amplitude';
-legend('Original signal','LPC estimate');
-        </scilab:image>
-   <para> </para>
-
-</refsection>
-
-
-<refsection>
-   <title>See also</title>
-   <simplelist type="inline">
-   <member><link linkend="aryule">| levinson | prony | pyulear | stmcb</link></member>
-   </simplelist>
-</refsection>
-
-<refsection>
-   <title>Authors</title>
-   <simplelist type="vert">
-   <member>Ayush Baid</member>
-   </simplelist>
 </refsection>
 </refentry>

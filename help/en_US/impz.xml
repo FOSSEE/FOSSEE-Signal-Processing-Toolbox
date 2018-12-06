@@ -17,67 +17,7 @@
 
   <refnamediv>
     <refname>impz</refname>
-    <refpurpose> It gives Impulse response of digital filter
-</refpurpose>
+    <refpurpose>It gives Impulse response of digital filter</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   x_r = impz(b)
-   x_r = impz(b, a)
-   x_r = impz(b, a, n)
-   x_r = impz(b, a, n, fs)
-   [x_r, t_r] = impz(b, a, n, fs)
-   </synopsis>
-</refsynopsisdiv>
-
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>x_r:</term>
-      <listitem><para>  impz chooses the number of samples and returns the response in the column vector, x_r.</para></listitem></varlistentry>
-   <varlistentry><term>t_r:</term>
-      <listitem><para> impz returns the sample times in the column vector, t_r </para></listitem></varlistentry>
-   <varlistentry><term>b:</term>
-      <listitem><para> numerator coefficients of the filter</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para>denominator coefficients of the filter</para></listitem></varlistentry>
-   <varlistentry><term>n:</term>
-      <listitem><para> samples of the impulse response   t(by default ,n = length(t) and  is computed automatically.</para></listitem></varlistentry>
-   <varlistentry><term>fs:</term>
-      <listitem><para>sampling frequency</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-[x_r,t_r] = impz(b,a) returns the impulse response of the filter with numerator coefficients, b, and denominator coefficients, a. impz chooses the number of samples and returns the response in the column vector, x_r, and the sample times in the column vector, t_r. t_r = [0:n-1]' and n = length(t) is computed automatically.
-</para>
-</refsection>
-
-<refsection>
-   <title>Example 1</title>
-   <programlisting role="example"><![CDATA[
-[x_r,t_r]=impz([0 1 1],[1 -3 3 -1],10)
-//EXPECTED OUTPUT :
-// t_r = 0.    1.     2.    3.    4.       5.      6.      7.      8.       9
-// x_r=  0.    1.    4.    9.    16.    25.    36.    49     64     81
-
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>Example 2</title>
-   <programlisting role="example"><![CDATA[
-[x_r,t_r]=impz(1,[1 1],5)
-//EXPECTED OUTPUT
-// t_r =   0.    1.    2.    3.    4
-//x_r =   1.  - 1.    1.  - 1.    1.
-   ]]></programlisting>
-</refsection>
 
 </refentry>

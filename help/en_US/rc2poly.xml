@@ -3,11 +3,7 @@
 <!--
  *
  * This help file was generated from rc2poly.sci using help_from_sci().
- *kr: Refelection coefficient.
-// R0: the zero lag autocorrelation, R0.
-// a: Return the prediction polynomial.
-// efinal: Return the final prediction error.
-
+ *
  -->
 
 <refentry version="5.0-subset Scilab" xml:id="rc2poly" xml:lang="en"
@@ -21,7 +17,7 @@
 
   <refnamediv>
     <refname>rc2poly</refname>
-    <refpurpose>Convert reflection coefficients to prediction filter polynomial</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
 
@@ -32,42 +28,4 @@
    [a, efinal] = rc2poly(kr,R0)
    </synopsis>
 </refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>kr:</term>
-      <listitem><para>Reflection coefficients.</para></listitem></varlistentry>
-   <varlistentry><term>R0:</term>
-      <listitem><para>The zero-lag autocorrelation.</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para>Prediciton polynomial.</para></listitem></varlistentry>
-
-<varlistentry><term>efinal:</term>
-      <listitem><para>the final prediction error.</para></listitem></varlistentry>
-</variablelist>
-</refsection>
-
-<refsection>
-<title>Description</title>
-<para>a = rc2poly(k) converts the reflection coefficients k corresponding to the lattice structure to the prediction filter polynomial a, with a(1) = 1.</para>
-<para>The output a is row vector of length length(k) + 1.</para>
-
-<para>[a,efinal] = rc2poly(k,r0) returns the final prediction error efinal based on the zero-lag autocorrelation, r0.</para>
-</refsection>
-
-
-<refsection>
-<title>Example</title>
- <programlisting role="example"><![CDATA[
-k = [0.3090 0.9800 0.0031 0.0082 -0.0082];
-a = rc2poly(k)
-//EXPECTED OUTPUT:a= 1.    0.6148162    0.9898814    0.0000243    0.0031580     - 0.0082
-   ]]></programlisting>
-
-
-</refsection>
-
-
-
 </refentry>

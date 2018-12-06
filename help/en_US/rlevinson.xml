@@ -17,116 +17,17 @@
 
   <refnamediv>
     <refname>rlevinson</refname>
-    <refpurpose>This function computes the autocorrelation coefficients using prediction polynomial method.</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   R = rlevinson(a, efinal)
-   [R, U] = rlevinson(a, efinal)
-   [R, U, kr] = rlevinson(a, efinal)
-   [R, U, kr, e] = rlevinson(a, efinal)
+   a = rlevinson(a, efinal)
+   [a, U] = rlevinson(a, efinal)
+   [a, U, kr] = rlevinson(a, efinal)
+   [a, U, kr, e] = rlevinson(a, efinal)
    </synopsis>
 </refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para>Input argument ,prediction polynomial coefficients.</para></listitem></varlistentry>
-   <varlistentry><term>efinal:</term>
-      <listitem><para>Input argument, final prediction error.</para></listitem></varlistentry>
-   <varlistentry><term>R:</term>
-      <listitem><para>Returns the auto-correlation coefficients.</para></listitem></varlistentry>
-
-<varlistentry><term>U:</term>
-      <listitem><para>Returns  upper triangular matrix of order length(a)*length(a).</para></listitem></varlistentry>
-   <varlistentry><term>kr:</term>
-      <listitem><para>Reflection coefficients.</para></listitem></varlistentry>
-
-<varlistentry><term>e:</term>
-      <listitem><para>Prediction error.</para></listitem></varlistentry>
-   </variablelist>
-
-</refsection>
-
-<refsection>
-   <title>Description
- </title>
-<para>The reverse Levinson-Durbin recursion implements the step-down algorithm for solving the following symmetric Toeplitz system of linear equations for r, where r = [r(1) … r(p + 1)] and r(i)* denotes the complex conjugate of r(i).</para>
-<para>
-<latex>
-\begin{eqnarray}
-\begin{bmatrix}
- r(1)  r(2)* -  -  r(p)* \\
- r(2)  r(1)  -  -  r(p-1)* \\
- -    -  - - - \\
- -     -  -  -  - \\
- -     -  -  -  - \\
- r(p)  r(p-1)  -  r(2)  r(1)
-\end{bmatrix}\begin{bmatrix}
-a(2)\\
-a(3)\\
-.\\
-.\\
-.\\
-a(p+1)
-\end{bmatrix}=\begin{bmatrix}
--r(2)\\
--r(3)\\
-.\\
-.\\
-.\\
--r(p+1)
-\end{bmatrix}
-\end{eqnarray}
-
-</latex>
-</para>
-
-<para>
-Input vector a represents the polynomial coefficients of this prediction error filter in descending powers of z.
-<para>
-<latex>
-\begin{eqnarray}
-A(z)=1+a(2)^{z-1}+.............+a(n+1)^{z-p}
-\end{eqnarray}
-</latex></para>
-</para>
-<para>[r,u] = rlevinson(a,efinal) returns upper triangular matrix U from the UDU* decomposition
-
-</para>
-<latex>
-\begin{eqnarray}
-R^{-1}=UE^{-1}U*
-\end{eqnarray}
-</latex>
-<para>
-<latex>
-
-</latex>
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-X=[1 6/7 5/7 8/7 3/7 6/7];
-[R U kr e] = rlevinson(X, 0.3)
-   ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>See also</title>
-   <simplelist type="inline">
-   <member><link linkend="levinson">abs</link></member>
-   <member><link linkend="levdown">mean</link></member>
-
-   </simplelist>
-</refsection>
-
-
-
 </refentry>

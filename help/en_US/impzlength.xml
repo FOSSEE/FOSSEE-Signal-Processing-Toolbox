@@ -24,34 +24,10 @@
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-   len=impzlength(b,a)
-   len=impzlength(sos)
-   len=impzlength(b,a,tol)
-
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>b:</term>
-      <listitem><para>Numerator coefficients. real|complex - vector|scalar</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para> Denominator coefficients. real|complex - vector|scalar</para></listitem></varlistentry>
-   <varlistentry><term>sos:</term>
-      <listitem><para> Second order estimates.  real|complex - matrix (K-by-6)</para></listitem></varlistentry>
-   <varlistentry><term>tol:</term>
-      <listitem><para> Tolerance for estimating the effective length of an IIR filter impulse response.  scalar</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-len = impzlength(b, a, tol)
+   len = impzlength(b, a, tol)
    returns the impulse response length for the causal discrete-time filter
    with the transfer function coefficients for numerator and denominator in
-   a and b respectively. For stable IIR filters, len is the effective length
+   b and a respectively. For stable IIR filters, len is the effective length
    impulse response length, i.e. the length after which the response is
    essentially zero
    len = impzlength(sos)
@@ -63,34 +39,32 @@ len = impzlength(b, a, tol)
    specifies a tolerance for estimating the effective impulse response
    length in case of an IIR filter. By default, tol is 5e-5. Increasing tol
    leads to shorter len and vice-versa
-</para>
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   </variablelist>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-//Low pass IIR filter with pole at 0.9
+1) Low pass IIR filter with pole at 0.9
 b = 1;
 a = [1 -0.9];
-len = impzlength(b,a);
-//Expected Output :
-//len=93
+len = impzlength(b,a)
+OUTPUT :
+len=93
 
+2) High pass IIR filter with pole at -0.5
+b = 1;
+a = [1 0.5];
+len = impzlength(b,a)
+OUTPUT :
+len=14
    ]]></programlisting>
-</refsection>
-
-<refsection>
-   <title>See also</title>
-   <simplelist type="inline">
-   <member><link linkend="impz"></link></member><para></para>
-   <member><link linkend="zp2sos"></link></member><para></para>
-   </simplelist>
-</refsection>
-
-<refsection>
-   <title>Authors</title>
-   <simplelist type="vert">
-   <member>Ayush Baid</member>
-   </simplelist>
 </refsection>
 </refentry>

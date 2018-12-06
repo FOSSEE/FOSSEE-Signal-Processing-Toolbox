@@ -17,67 +17,7 @@
 
   <refnamediv>
     <refname>prony</refname>
-    <refpurpose>Prony's method for time-domain design of IIR Filters</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-  [b,a] = prony(h,nb,na)
-
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-<title>Description</title>
-<para>
-The system function has numerator order,nb and denominator order,na. The lengths of Num and Den are num_ord+1 and denom_ord+1. If the length of impulse_resp is less than the largest order (num_ord or denom_ord), impulse_resp is padded with zeros.
-</para>
-
-
-
-</refsection>
-
-
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>b:</term>
-      <listitem><para>  coefficients of the numerator of the TF</para></listitem></varlistentry>
-   </variablelist>
-<variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para> coefficients of the denominator of the TF</para></listitem></varlistentry>
-   </variablelist>
-<variablelist>
-<varlistentry><term>h:</term>
-      <listitem><para>impulse response of the digital filter </para></listitem></varlistentry>
-   </variablelist>
-<variablelist>
-<varlistentry><term>nb:</term>
-      <listitem><para>number of zeros(order of numerator) </para></listitem></varlistentry>
-   </variablelist>
-
-<variablelist>
-<varlistentry><term>na:</term>
-      <listitem><para>number of poles(order of denominator) </para></listitem></varlistentry>
-   </variablelist>
-
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-V=filter([1,1],[1,1,2],[1 zeros(1,31)]);
-[b,a]=prony(V,1,2)
-
-//OUTPUT:a  =   1.    1.    2.//denominator coefficients
- //b  =  1.    1. //numerator coefficients
-
-   ]]></programlisting>
-</refsection>
-
-
 
 </refentry>

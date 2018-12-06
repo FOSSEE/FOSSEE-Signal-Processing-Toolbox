@@ -17,58 +17,7 @@
 
   <refnamediv>
     <refname>ellipap</refname>
-    <refpurpose>Produces a lowpass analog elliptic prototype filter.</refpurpose>
+    <refpurpose>Produces a lowpass analog prototype elliptic filter.</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [z, p, g] = ellipap (n, Rp, Rs)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter Order</para></listitem></varlistentry>
-   <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
-   <varlistentry><term>Rs:</term>
-      <listitem><para> Stopband attenuation in dB</para></listitem></varlistentry>
-   <varlistentry><term>z:</term>
-      <listitem><para> Zeros</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> Poles</para></listitem></varlistentry>
-   <varlistentry><term>g:</term>
-      <listitem><para> Gain</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It gives a lowpass analog elliptic prototype filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 4;
-Rp = 3;
-Rs = 10;
-[z, p, g] = ellipap (n, Rp, Rs)
-   ]]></programlisting>
-</refsection>
-
-  <refsection>
-    <title>Authors</title>
-    <simplelist type="vert">
-      <member>Sonu Sharma, RGIT Mumbai</member>
-      <member>FOSSEE, IIT Bombay</member>
-    </simplelist>
-  </refsection>
 
 </refentry>

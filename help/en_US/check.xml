@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>check</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>It checks whether the input string is equal to "AKICc". If it is equal, then it results T(True) else it returns F(False)</refpurpose>
   </refnamediv>
 
 </refentry>

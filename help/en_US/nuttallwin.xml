@@ -17,46 +17,7 @@
 
   <refnamediv>
     <refname>nuttallwin</refname>
-    <refpurpose>This function returns the filter coefficients of a Blackman-Harris window.</refpurpose>
+    <refpurpose></refpurpose>
   </refnamediv>
 
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   w = nuttallwin (m)
-   w = nuttallwin (m, opt)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>opt:</term>
-      <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-This is an Octave function.
-This function returns the filter coefficients of a Blackman-Harris window defined by Nuttall of length m supplied as input, to the output vector w.
-The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-nuttallwin(2, "periodic")
-ans  =
-- 2.429D-17
-1.
-   ]]></programlisting>
-</refsection>
 </refentry>

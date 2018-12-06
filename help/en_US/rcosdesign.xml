@@ -17,66 +17,7 @@
 
   <refnamediv>
     <refname>rcosdesign</refname>
-    <refpurpose><para>RCOSDESIGN computes the raised cosine FIR filter.</para>
-<para>The output result for the input parameter of shape 'normal' is not equivalent to the matlab output because of the use of sinc function in the computation. Matlab and scilab sinc functions seem to not be equivalent.
-</para>
-</refpurpose>
+    <refpurpose>RCOSDESIGN computes the raised cosine FIR filter</refpurpose>
   </refnamediv>
-
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-    h = rcosdesign(rollof_factor, num_of_symb, samp_per_symb, varargin)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>rollof_factor:</term>
-      <listitem><para> roll-off factor of the designed filter</para></listitem></varlistentry>
-   </variablelist>
-
-
-   <variablelist>
-   <varlistentry><term>num_of_symb:</term>
-      <listitem><para>filter truncated to these many number of symbols</para></listitem></varlistentry>
-   </variablelist>
-
-
-   <variablelist>
-   <varlistentry><term>samp_of_symb:</term>
-      <listitem><para> each symbol represented by these many samples</para></listitem></varlistentry>
-   </variablelist>
-
-
-
-   <variablelist>
-   <varlistentry><term>shape:</term>
-      <listitem><para>  returns a normal raised-cosine FIR filter when set to 'normal'.</para>
-<para>returns a square-root raised cosing filter when set to 'sqrt'.</para></listitem></varlistentry>
-   </variablelist>
-
-
-   <variablelist>
-   <varlistentry><term>h:</term>
-      <listitem><para>  returned filter coefficients</para></listitem></varlistentry>
-   </variablelist>
-
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-rolloff = 0.25;
-span = 3;
-sample per symbol=sps=2;
-b=rcosdesign(rolloff,span,sps);
-//OUTPUT:
-//b=- 0.1210006  - 0.0456421    0.4418023    0.7590604    0.4418023  - 0.0456421  - 0.1210006
-   ]]></programlisting>
-</refsection>
 
 </refentry>

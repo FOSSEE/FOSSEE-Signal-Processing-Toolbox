@@ -48,7 +48,6 @@
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function converts series second-order sections to zeros, poles, and gains (pole residues).
 The input is the sos matrix and the second parameter is the overall gain, default value of which is 1.
 The outputs are z, p, k. z and p are column vectors containing zeros and poles respectively, and k is the overall gain.

@@ -17,62 +17,7 @@
 
   <refnamediv>
     <refname>ncauer</refname>
-    <refpurpose>Analog prototype for Cauer filter.</refpurpose>
+    <refpurpose>Analog prototype for Cauer filter (Cauer filter and elliptic filters are same).</refpurpose>
   </refnamediv>
-
-
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-   </synopsis>
-</refsynopsisdiv>
-
-<refsection>
-   <title>Parameters</title>
-   <variablelist>
-   <varlistentry><term>n:</term>
-      <listitem><para> Filter Order</para></listitem></varlistentry>
-   <varlistentry><term>Rp:</term>
-      <listitem><para> Peak-to-peak passband ripple in dB</para></listitem></varlistentry>
-   <varlistentry><term>Rs:</term>
-      <listitem><para> Stopband attenuation in dB</para></listitem></varlistentry>
-   <varlistentry><term>Zz:</term>
-      <listitem><para> Zeros</para></listitem></varlistentry>
-   <varlistentry><term>Zp:</term>
-      <listitem><para> Poles</para></listitem></varlistentry>
-   <varlistentry><term>Zg:</term>
-      <listitem><para> Gain</para></listitem></varlistentry>
-   </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-It gives an analog prototype for Cauer filter (elliptic filter) of nth order, with a Peak-to-peak passband ripple of Rp and a stopband attenuation of Rs.
-</para>
-<para>
-This function is same as ellipap() only order of input argument is different,</para>
- <para> This function is only for octave compatibility only </para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-n = 4;
-Rp = 3;
-Rs = 10;
-[Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-
-   ]]></programlisting>
-</refsection>
-
-  <refsection>
-    <title>Authors</title>
-    <simplelist type="vert">
-      <member>Sonu Sharma, RGIT Mumbai</member>
-      <member>FOSSEE, IIT Bombay</member>
-    </simplelist>
-  </refsection>
 
 </refentry>
