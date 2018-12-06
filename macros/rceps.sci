@@ -12,18 +12,37 @@ function [y, xm]= rceps(x)
 // s(1:Fs/f0:length(s)) = 1;              # Impulse glottal wave
 // x = filter (1, a, s);                  # Speech signal in x
 // [y, xm] = rceps (x .* hanning (1024)); # cepstrum and min phase reconstruction
-funcprot(0)
-lhs= argn(1)
-rhs= argn(2)
 
-if(rhs <1 | rhs> 1 )
+if(argn(2)~= 1 )
 error("Wrong number of Input Arguments");
 end
 
-if(lhs<2 | lhs>2)
+if(argn(1)>2)
 error("Wrong number of Output Arguments")
 end
-
-	[y,xm]= callOctave("rceps",x);
-
+  f = abs(fft1(x));
+  if (or(f == 0))
+    error ("The spectrum of x contains zeros, unable to compute real cepstrum");
+  end
+   
+  y = real(ifft1(log(f)));
+  
+  if argn(1) == 2 then
+    n=length(x);
+    if size(x,1)==1 then
+      if (n-fix(n./2).*2) ==1 then
+        xm = [y(1), 2*y(2:n/2+1), zeros(1,n/2)];
+      else
+        xm = [y(1), 2*y(2:n/2), y(n/2+1), zeros(1,n/2-1)];
+      end
+    else
+      if (n-fix(n./2).*2)==1
+        xm = [y(1,:); 2*y(2:n/2+1,:); zeros(n/2,size(y,2))];
+      else
+        xm = [y(1,:); 2*y(2:n/2,:); y(n/2+1,:); zeros(n/2-1,size(y,2))];
+      end
+    end
+    xm = real(ifft1(exp(fft1(xm)')));
+  end
+  
 endfunction

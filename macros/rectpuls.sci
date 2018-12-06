@@ -1,5 +1,4 @@
 function [y]=rectpuls(t,w)
-
 // Generates a Rectangular pulse based on the width and sampling times.
 // Calling Sequence
 //	[y]=rectpuls(t)
@@ -8,7 +7,6 @@ function [y]=rectpuls(t,w)
 //	t: Real or complex valued vector or matrix
 //	w: Real or complex valued vector or matrix
 // Description
-//	This is an Octave function
 //	y = rectpuls(t) returns a continuous, aperiodic, unity-height rectangular pulse depending upon input t, centered about t=0 and having default width of 1.
 //	y = rectpuls(t,w) generates a rectangle of width w.
 // Examples
@@ -17,12 +15,17 @@ function [y]=rectpuls(t,w)
 // 2.	rectpuls([1000 1000 100 100])
 //	ans =   0   0   0   0
 
-funcprot(0);
-rhs=argn(2);
-if (rhs<1) then
+if (argn(2)<1 | argn(2)>2) then
 	error ("Wrong number of input arguments.")
-elseif (rhs==1)
-	y=callOctave("rectpuls",t)
-else y=callOctave("rectpuls",t,w)
+elseif (argn(2)==1) then
+	w=1;
 end
+
+  if (~ isreal (w) | ~ isscalar (w))
+    error ("W must be a real scalar");
+  end
+  
+y = zeros (size(t,1), size(t,2));
+idx = find ((t >= -w/2) & (t < w/2));
+y(idx) = 1;
 endfunction

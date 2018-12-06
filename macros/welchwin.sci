@@ -23,15 +23,36 @@ function w = welchwin (m, opt)
 
 
 rhs = argn(2)
-if(rhs<1 | rhs>2)
+if(argn(2)<1 | argn(2)>2)
 error("Wrong number of input arguments.")
 end
 
-	select(rhs)
-	case 1 then
-	w = callOctave("welchwin",m)
-	case 2 then
-	w = callOctave("welchwin",m,opt)
-	end
+ if ((~isscalar (m) & (m == fix (m)) & (m > 0))) then
+    error (" M must be a positive integer");
+  end
+
+
+  N = (m - 1) / 2;
+  mmin = 3;
+if argn(2)==2 then
+       
+    select (opt)
+      case "periodic"
+        N = m / 2;
+        mmin = 2;
+      case "symmetric"
+        N = (m - 1) / 2;
+      else
+        error ("window type must be either periodic or symmetric");
+    end
+  end
+  
+
+  if (m < mmin)
+    error ('M must be an integer greater than mmin');
+  end
+
+  n = [0:m-1]';
+  w = 1 - ((n-N)./N).^2;
 
 endfunction
