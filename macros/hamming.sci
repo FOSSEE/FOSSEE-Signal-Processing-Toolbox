@@ -19,7 +19,7 @@ function c = hamming (m, opt)
       case "symmetric"
         //Default option, same as no option specified.
       else
-        error ('hamming: window type must be either periodic or symmetric");
+        error ("hamming: window type must be either periodic or symmetric");
     end
   end
 

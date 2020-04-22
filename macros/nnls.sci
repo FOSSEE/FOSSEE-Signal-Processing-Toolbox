@@ -43,7 +43,7 @@ function [x,w] = nnls(E,f)
         
         while or(z(P)<=0)
             iter = iter+1;
-            if iter>iterM`ax then
+            if iter>iterMax then
                 x = z;
                 return;
             end

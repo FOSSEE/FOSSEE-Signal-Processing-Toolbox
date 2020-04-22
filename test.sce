@@ -1,5 +1,5 @@
-exec loader.sce
-exec builder.sce
+//exec loader.sce
+//exec builder.sce
 
 exec('test1.sce',-1)
 exec('test2.sce',-1)

@@ -19,7 +19,7 @@ function c = hanning (m, opt)
       case "symmetric"
         //Default option, same as no option specified.
       else
-        error ('hanning: window type must be either periodic or symmetric");
+        error ("hanning: window type must be either periodic or symmetric");
     end
   end
 

@@ -249,7 +249,7 @@ if (~isempty(index)) then
                 case {'TOLERANCE'}
                    
             if length(varargin) <=index(j) then
-                      error(strcat(['parameter Tolerance required a value"]));
+                      error(strcat(["parameter Tolerance required a value"]));
                  
                   elseif type(varargin(index(j)+1))==1 then
                      tolerance= varargin(index(j)+1); 

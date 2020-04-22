@@ -18,8 +18,7 @@ function y= fftshift1(X,DIM)
 //
 //If X is a matrix, the same holds for rows and columns.  If X is an array, then the same holds along each dimension.
 //
-//The optional DIM argument can be used to limit the dimension along
-     which the permutation occurs.
+//The optional DIM argument can be used to limit the dimension along which the permutation occurs.
 	rhs= argn(2);
 	if(rhs <1 | rhs >2)
 		error('Wrong number of Input arguments');

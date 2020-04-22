@@ -19,7 +19,7 @@ function w = nuttallwin (m, opt)
       case "symmetric"
         N = m-1;
       else
-        error ('nuttallwin: window type must be either periodic or symmetric");
+        error ("nuttallwin: window type must be either periodic or symmetric");
     end
   end
 

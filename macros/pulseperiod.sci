@@ -120,7 +120,7 @@ if (~isempty(sindex)) then
 
                             if length(varargin) <=sindex(j) then
 
-                      error(strcat(['parameter Tolerance required a value"]));
+                      error(strcat(["parameter Tolerance required a value"]));
 
                   elseif type(varargin(sindex(j)+1))==1 then
                      tolerance= varargin(sindex(j)+1);
