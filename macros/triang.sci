@@ -6,7 +6,6 @@ function w =  triang (m)
 //m: positive integer value
 //w: output variable, vector of real numbers
 //Description
-//This is an Octave function.
 //This function returns the filter coefficients of a triangular window of length m supplied as input, to the output vector y.
 //Examples
 //triang(5)
@@ -29,3 +28,16 @@ rhs = argn(2)
     w = 1 - abs ([-(m-1):2:(m-1)]' / (m+modulo(m,2)));
 
 endfunction
+
+//test input validation:
+//assert_checkerror("triang()", "Wrong number of input arguments.");
+//assert_checkerror("triang(1, 2)", "Wrong number of input arguments.");
+//assert_checkerror("triang(0.5)", "parzenwin: M must be a positive integer");
+//assert_checkerror("triang(-1)", "parzenwin: M must be a positive integer");
+//assert_checkerror("triang(zeros (2, 5))", "parzenwin: M must be a positive integer");
+
+//tests:
+//assert_checkequal(triang(1), 1);
+//assert_checkequal(triang(2), [1; 1]/2);
+//assert_checkequal(triang(3), [1; 2; 1]/2);
+//assert_checkequal(triang(4), [1; 3; 3; 1]/4);
