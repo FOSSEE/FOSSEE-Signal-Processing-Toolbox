@@ -1,15 +1,14 @@
 // Copyright (C) 2018 - IIT Bombay - FOSSEE
-//
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 // Original Source : https://octave.sourceforge.io/signal/
-// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
 function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
 
     //Transforms a s-plane filter (Analog) into a z-plane filter (Digital) using Bilinear transformation
@@ -48,13 +47,15 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     // b  =
     //
     //    0.  - 0.1666667  - 0.3333333    2.5
-
+    // Dependencies
+    // tf2zp postpad zp2tf prepad
     funcprot(0);
     [nargout nargin] = argn();
     ieee(2);
 
     if nargin==3
         T = Sg;
+        //  FIXME : tf2zp is not tested yet
         [Sz, Sp, Sg] = tf2zp(Sz, Sp);
     elseif nargin~=4
         error("bilinear: invalid number of inputs")
@@ -77,9 +78,6 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     if Zg == 0 & nargout == 3 then
         error("bilinear: invalid value of gain due to zero(s) at infinity avoid z-p-g form and use tf form ")
     end
-
-
-
     Zp = (2+Sp*T)./(2-Sp*T);
     SZp = size(Zp);
     if isempty(Sz)
@@ -88,8 +86,6 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
         Zz = [(2+Sz*T)./(2-Sz*T)];
         Zz = postpad(Zz, p, -1);
     end
-
-
     if nargout==2
         // zero at infinity
         Zz1 = [];
@@ -115,3 +111,17 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     end
 ieee(0);
 endfunction
+/*
+// FIXME- not working with three argument
+
+Note : This function is tested with Octave's outputs as a reference.
+
+[Zb,Za] = bilinear([1 0],[1 1],1,0.5) // passed 
+[Zb, Za] = bilinear([], [], 1, 1) // error PASSED
+[Zb, Za] = bilinear([0], [], 1, 0.5) // error PASSED
+[Zb, Za] = bilinear([], [0], 1, 0.5) // PASSED
+
+[Zb, Za] = bilinear([2], [1], 1, 0.5) // PASSED
+[Zb, Za] = bilinear([1; -1], [0.5; -0.5], 2, 1) //PASSED
+[Zb, Za] = bilinear([0], [1], 1, 1) //PASSED
+*/
