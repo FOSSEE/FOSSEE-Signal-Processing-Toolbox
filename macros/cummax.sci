@@ -1,4 +1,15 @@
-function M = cummax(varargin)
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/signal/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 13 March 2024
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
+function [M , iM] = cummax(varargin)
     // Cumulative maximum
     //
     // Calling Sequence
@@ -11,7 +22,8 @@ function M = cummax(varargin)
     //      The operation is performed along the dimension specified by dim
     // M = cummax(_,direction)
     //      direction specifies as the direction of operation
-    //
+    // [M , iM] = cummax(..) 
+    //      If called with two output arguments the index of the maximum value is also returned.
     // Parameters
 //     A - real|complex numbers - vector|matrix
 //         Input Array
@@ -32,15 +44,6 @@ function M = cummax(varargin)
     //     M = cummax(v)
     //        
     // Expected output: [8 9 9 10 10 10 10 10 10 10]
-    //
-    // Authors
-    // Ayush Baid
-    //
-    // See Also
-    // cummax | cumprod | cumsum | max | max
-    
-    
-
     [numOutArgs,numInArgs] = argn(0);
     
     // ** Checking number of arguments
@@ -50,8 +53,8 @@ function M = cummax(varargin)
         error(77,msg);
     end
     
-    if numOutArgs~=1 then
-        msg = "cummax: Wrong number of output argument; 1 expected";
+    if numOutArgs > 2 then
+        msg = "cummax: Wrong number of output argument; 1 or 2 expected";
         error(78,msg);
     end
     
@@ -103,11 +106,11 @@ function M = cummax(varargin)
     end
     
     // extracting direction
-    if strcmpi(directionArg,"reverse")==0 then
+    if strcmp(directionArg,"reverse")==0 then
         isForward = %f;
-    elseif strcmpi(directionArg,"forward")==0 then
+    elseif strcmp(directionArg,"forward")==0 then
         isForward = %t;
-    elseif strcmpi(directionArg,"")~=0 then
+    elseif strcmp(directionArg,"")~=0 then
         msg = "cummax: Wrong value for argument #3 (direction)";
         error(53,msg);
     end
@@ -132,7 +135,18 @@ function M = cummax(varargin)
     end
         
     M = matrix(M_,sizeA);
-
+    
+    if numOutArgs == 2 then
+        // calculating the index 
+        // for vectors
+        iM = zeros(sizeA(1),sizeA(2));
+        for i=1:sizeA(1)
+            for j=1:sizeA(2)
+                index = find (M(i,j) == A(i,:) )
+                iM(i,j) = index(1)
+            end
+        end
+    end
 endfunction
     
     
@@ -191,6 +205,16 @@ function out = cummaxVec(inp,isForward)
             end
         end
     end
-    
-
 endfunction
+/*
+# tests
+[w, iw] = cummax ([1 3 2 6 4 5]); // passed
+x = [1 2 3; 4 1 2; 3 5 1];
+w = cummax(x); //passsed
+
+x = [1 2 3; 4 1 2; 3 5 1];
+w = cummax(x, 2); // passed
+
+x = [1 2 3; 4 1 2; 3 5 1];
+[w,iw] = cummax(x, 2); // passed
+*/

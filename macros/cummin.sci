@@ -1,4 +1,15 @@
-function M = cummin(varargin)
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/signal/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 13 March 2024
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
+function [M ,iM ]= cummin(varargin)
     // Cumulative minimum
     //
     // Calling Sequence
@@ -12,6 +23,8 @@ function M = cummin(varargin)
     // M = cummin(_,direction)
     //      direction specifies as the direction of operation
     //
+    // [M , iM] = cummin(..) 
+    //      If called with two output arguments the index of the minimum value is also returned.
     // Parameters
     // A - real|complex numbers - vector|matrix
     //     Input Array
@@ -33,25 +46,17 @@ function M = cummin(varargin)
     //        
     // Expected output: [8 8 1 1 1 1 1 1 1 1]
     //
-    // Authors
-    // Ayush Baid
-    //
-    // See Also
-    // cummax | cumprod | cumsum | max | min
-    
-    
-
     [numOutArgs,numInArgs] = argn(0);
     
     // ** Checking number of arguments
     
     if numInArgs<1 | numInArgs>3 then
-        msg = "cummin: Wrong number of input argument; 1-6 expected";
+        msg = "cummin: Wrong number of input argument; 1-3 expected";
         error(77,msg);
     end
     
-    if numOutArgs~=1 then
-        msg = "cummin: Wrong number of output argument; 1 expected";
+    if numOutArgs >  2 then
+        msg = "cummin: Wrong number of output argument; 1 or 2 expected";
         error(78,msg);
     end
     
@@ -103,11 +108,11 @@ function M = cummin(varargin)
     end
     
     // extracting direction
-    if strcmpi(directionArg,"reverse")==0 then
+    if strcmp(directionArg,"reverse")==0 then
         isForward = %f;
-    elseif strcmpi(directionArg,"forward")==0 then
+    elseif strcmp(directionArg,"forward")==0 then
         isForward = %t;
-    elseif strcmpi(directionArg,"")~=0 then
+    elseif strcmp(directionArg,"")~=0 then
         msg = "cummin: Wrong value for argument #3 (direction)";
         error(53,msg);
     end
@@ -132,7 +137,17 @@ function M = cummin(varargin)
     end
     
     M = matrix(M_,sizeA);
-
+    if numOutArgs == 2 then
+        // calculating the index 
+        // for vectors
+        iM = zeros(sizeA(1),sizeA(2));
+        for i=1:sizeA(1)
+            for j=1:sizeA(2)
+                index = find (M(i,j) == A(i,:) )
+                iM(i,j) = index(1)
+            end
+        end
+    end
 endfunction
     
     
@@ -202,3 +217,19 @@ function out = cumminVec(inp,isForward)
     
 
 endfunction
+
+/*
+# tests
+w = cummin ([5 4 6 2 3 1]) // passed
+
+[w,iw] = cummin ([5 4 6 2 3 1]) // passed
+
+x = [1 2 3; 4 1 2; 3 5 1];
+result = cummin(x) // passed
+
+x = [1 2 3; 4 1 2; 3 5 1];
+result = cummin(x, 2) //passsed
+
+x = [1 2 3; 4 1 2; 3 5 1];
+[w,iw] = cummin(x, 2) //passsed
+*/
