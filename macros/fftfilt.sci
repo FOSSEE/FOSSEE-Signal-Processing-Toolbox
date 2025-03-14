@@ -1,3 +1,14 @@
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Last Modified on : 3 Feb 2024
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 function y = fftfilt(b, x, varargin)
     // Performs FFT-based FIR filtering using overlap-add method
     // 
@@ -31,13 +42,7 @@ function y = fftfilt(b, x, varargin)
     //      x = sin(1:2000);
     //      b = [1 1/4;1/3 1/5];
     //      y = fftfilt(b,x);
-    //
-    // Authors
-    // Ayush Baid
-
-
-
-
+    
     [numOutArgs,numInArgs] = argn(0);
     
 // ** Checking number of arguments
