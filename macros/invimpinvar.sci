@@ -32,6 +32,10 @@
     */
 function [b_out, a_out] = invimpinvar (b_in, a_in, fs, tol)
 
+    error("invimpinvar: Missing functionality not implemented in this release .Will be  Available soon ");
+endfunction
+// FIXME : fix filter function first . till then drop this fun
+/*
   if (nargin <2)
     error("invimpinvar: Insufficient input arguments");
   end
@@ -82,7 +86,7 @@ function [b_out, a_out] = invimpinvar (b_in, a_in, fs, tol)
   b_out          = polyreduce(b_out);
 
 endfunction
-
+*/
 // Inverse function of z_res (see impinvar source)
 
 function [r_out, sm_out, k_out] = inv_z_res (r_in,p_in,ts)
