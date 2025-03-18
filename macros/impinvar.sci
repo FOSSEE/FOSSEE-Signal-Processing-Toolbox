@@ -32,7 +32,9 @@ Dependencies
 
 */
 function [b_out, a_out] = impinvar (b_in, a_in, fs , tol)
-
+  error("impinvar: Missing functionality .This function is not implemented yet. Will available in next release");
+endfunction
+/*
   if (nargin <2)
     error ("impinvar: Insufficient input arguments");
   end
@@ -85,7 +87,7 @@ function [b_out, a_out] = impinvar (b_in, a_in, fs , tol)
   // Shift results right to account for calculating in z instead of z^-1
   b_out($)=[];
 endfunction
-
+*/
 // Convert residue vector for single and multiple poles in s-domain (located at sm) to
 // residue vector in z-domain. The variable k is the direct term of the result.
 
