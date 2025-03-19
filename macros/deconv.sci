@@ -1,104 +1,106 @@
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Last Modified on : 3 Feb 2024
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 function [b, r] = deconv (y, a)
-// calling sequence:
-// [b,r]= deconv (y, a)
-// Deconvolve two vectors.
-//
-// [b, r] = deconv (y, a) solves for b and r such that
-// y = conv (a, b) + r.
-//
-// If y and a are polynomial coefficient vectors, b will
-// contain the coefficients of the polynomial quotient and r will be
-// a remainder polynomial of lowest order.
 
-//Test cases:
-//1.
-//[b, r] = deconv ([3, 6, 9, 9], [1, 2, 3])
-//Output:
-//b=[3, 0]
-//r=[0, 0, 0, 9]
+  if (nargin ~= 2)
+    error("deconv : Two arguments are required ");
+  end
 
-//2.
-//[b, r] = deconv ([3, 6], [1; 2; 3])
-//Output:
-//b  =  0.
-//r= [- 2. ; 8]
-
-
-
-
-
-    [nargout,nargin]=argn();
-
-    if (nargin ~= 2)
-        error ("wrong number of input arguments");
+    if (~isvector(y) && ~isscalar(y))
+        error ("deconv: Y must be vector");
     end
-
-    if (~ (isvector (y) & isvector (a)))
-        error ("deconv: both arguments must be vectors");
-    end
-
-    la = length (a);
-    ly = length (y);
-
-    lb = ly - la + 1;
-
-    // Ensure A is oriented as Y.
-    if (diff (size (y)) * diff (size (a)) < 0)
-        a = permute (a, [2, 1]);
-    end
-
-    if (ly > la)
-        o=size (y) - size (a) + 1;
-        x = zeros (o(1),o(2));
-        x(1) = 1;
-        b = filter (real(y), real(a), x);
-    elseif (ly == la)
-        b = filter (real(y), real(a), 1);
-    else
-        b = 0;
-    end
-
-    lc = la + length (b) - 1;
-    if (ly == lc)
-        if (length(a)==length(b) | length(a)>length(b))
-            if isrow(a)
-                q=conv(a,b);
-
-                u=[];
-                for i=1:length(y)
-                    u=[u;q];
-                end
-
-                w=[];
-                if (isrow(y))
-                for i=1:length(q)
-                    w=[w;y];
-                end
-            else
-                for i=1:length(q)
-                    w=[w,y];
-                    end
-            end
-
-                r = w-u;
-
-                r=diag(r);
-            end
-        end
-     r=y-conv(a,b);
-
-
-elseif(la~=lc)
-    // Respect the orientation of Y"
-    if (size (y,"r") <= size (y,"c"))
-        r = [(zeros (1, lc - ly)), y] - conv (a, b);
-    else
-        r = [(zeros (lc - ly, 1)); y] - conv (a, b);
-    end
-    if (ly < la)
-        // Trim the remainder is equal to the length of Y.
-        r = r($-(length(y)-1):$);
-    end
+if ( ~isvector(a) && ~isscalar(a))
+    error ("deconv: A must be vector");
 end
 
+  // Ensure A is oriented as Y.
+  if ((size(y,1)==1 && size(a,2)==1) || (size(y,2)==1 && size(a,1)==1))
+    a = a.';
+  end
+
+  la = length (a);
+  ly = length (y);
+
+  lb = ly - la + 1;
+
+  if (ly > la)
+    x = zeros (size (y,1) - size (a,1) + 1,size(y,2)-size(a,2)+1);
+    x(1) = 1;
+    [b, r] = filter (y, a, x);
+    r = r * a(1);
+  elseif (ly == la)
+    [b, r] = filter (y, a, 1);
+    r = r * a(1);
+  else
+    b = 0;
+    r = y;
+  end
+
+  if (nargout() > 1)
+    if (ly >= la)
+      r = [zeros(ly - la + 1, 1); r(1:la - 1)];
+      // Respect the orientation of Y
+      r = matrix (r, size (y,1),size(y,2));
+    end
+  end
 endfunction
+
+/*
+ //test
+ [b, r] = deconv ([3, 6, 9, 9], [1, 2, 3]);
+ assert_checkequal (b, [3, 0]);
+ assert_checkequal (r, [0, 0, 0, 9]);
+
+ //test
+ [b, r] = deconv ([3, 6], [1, 2, 3]);
+ assert_checkequal (b, 0);
+ assert_checkequal (r, [3, 6]);
+
+ //test
+ [b, r] = deconv ([3, 6], [1; 2; 3]);
+ assert_checkequal (b, 0);
+ assert_checkequal (r, [3, 6]);
+
+//test
+ [b,r] = deconv ([3; 6], [1; 2; 3]);
+ assert_checkequal (b, 0);
+ assert_checkequal (r, [3; 6]);
+
+//test
+ [b, r] = deconv ([3; 6], [1, 2, 3]);
+ assert_checkequal (b, 0);
+ assert_checkequal (r, [3; 6]);
+
+ assert_checkequal (deconv ((1:3)',[1, 1]), [1; 1])
+
+// Test input validation
+// error deconv (1)
+// error deconv (1,2,3)
+// error <Y .* must be vector> deconv ([3, 6], [1, 2; 3, 4])
+// error <A must be vector> deconv ([3, 6], [1, 2; 3, 4])
+
+//test
+ y = (10:-1:1);
+ a = (4:-1:1);
+ [b, r] = deconv (y, a);
+ assert_checkequal (conv (a, b) + r, y);
+
+
+//test
+ [b, r] = deconv ([1, 1], 1);
+ assert_checkequal (r, [0, 0]);
+
+//test
+ [b, r] = deconv ([1; 1], 1);
+ assert_checkequal (r, [0; 0]);
+
+ */

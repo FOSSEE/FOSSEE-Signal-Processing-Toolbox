@@ -1,14 +1,14 @@
 // Copyright (C) 2018 - IIT Bombay - FOSSEE
-//
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
-// Author:Sonu Sharma, RGIT Mumbai
+// Original Source : https://octave.sourceforge.io/signal/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
 function [num, den] = zp2tf (z, p, k)
     //Converts zeros / poles to a transfer function.
 
@@ -54,3 +54,7 @@ function [num, den] = zp2tf (z, p, k)
     den = flipdim(den,2);
 
 endfunction
+/*
+[num,den] = zp2tf([1 3 4 5],[-4 -3 1 4],7) //passed
+[num,den] = zp2tf([15 78 6 23],[2 1],965) //passed
+*/

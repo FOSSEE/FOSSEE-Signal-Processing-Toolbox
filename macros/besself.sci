@@ -1,15 +1,14 @@
 // Copyright (C) 2018 - IIT Bombay - FOSSEE
-//
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 // Original Source : https://octave.sourceforge.io/signal/
-// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
 function [a, b, c, d] = besself (n, w, varargin)
     //Bessel filter design.
 
@@ -20,22 +19,17 @@ function [a, b, c, d] = besself (n, w, varargin)
     //[b, a] = besself (n, [Wl, Wh], "stop")
     //[z, p, g] = besself (…)
     //[…] = besself (…, "z")
-
-
     //Parameters
     //n: positive integer value (order of filter)
     //Wc: positive real value,
     //    1).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
     //    2).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
-
     //Description
     //This function generates a Bessel filter. The default is a Laplace space (s)  or analog filter.
     //If second argument is scalar the third parameter takes in high or low, the default value being low. The cutoff is Wc rad/sec.
     //If second argument is vector of length 2 ie [Wl Wh] then third parameter may be pass or stop default is pass for bandpass and band reject filter respectively
     //[z,p,g] = besself(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
     //[...] = besself(...,’z’) returns a discrete space (Z) filter. Wc must be less than 1 {dimensionless}.
-
-
     //Examples
     //[b, a]=besself(2,.3,"high","z")
     //Output :
@@ -46,14 +40,14 @@ function [a, b, c, d] = besself (n, w, varargin)
     //
     //    0.4668229  - 0.9336457    0.4668229
     //
-
+    // Dependencies
+    // besselap bilinear  sftrans  zp2tf
     funcprot(0);
     [nargout nargin] = argn();
 
     if (nargin > 4 | nargin < 2 | nargout > 4 | nargout < 2)
         error("besself: invalid number of inputs")
     end
-
     // interpret the input parameters
     if (~ (isscalar (n) & (n == fix (n)) & (n > 0)))
         error ("besself: filter order N must be a positive integer");
@@ -79,14 +73,13 @@ function [a, b, c, d] = besself (n, w, varargin)
             error ("besself: expected [high|stop] or [s|z]");
         end
     end
-
     // FIXME: Band-pass and stop-band currently non-functional, remove
     //        this check once low-pass to band-pass transform is implemented.
     if (~ isscalar (w))
         error ("besself: band-pass and stop-band filters not yet implemented");
     end
 
-    [rows_w colums_w] = size(w);
+    [rows_w columns_w] = size(w);
 
     if (~ ((length (w) <= 2) & (rows_w == 1 | columns_w == 1)))
         error ("besself: frequency must be given as WC or [WL, WH]");
@@ -115,7 +108,6 @@ function [a, b, c, d] = besself (n, w, varargin)
     if (digital)
         [zero, pole, gain] = bilinear (zero, pole, gain, T);
     end
-
     // convert to the correct output form
     if (nargout == 2)
         //    a = real (gain * poly (zero));
@@ -127,7 +119,28 @@ function [a, b, c, d] = besself (n, w, varargin)
         c = gain;
     else
         // output ss results
-        //    [a, b, c, d] = zp2ss (zero, pole, gain);
+        // FIXME : test zp2ss 
+        //[a, b, c, d] = zp2ss (zero, pole, gain);
         error("besself: yet not implemented in state-space form OR invalid number of o/p arguments")
     end
 endfunction
+
+/*
+Note : This function is tested with Octave's outputs as a reference.
+# Test input validation
+[a, b] = besself () // error passed
+[a, b] = besself (1) // error passed
+[a, b] = besself (1, 2, 3, 4, 5) // error passed
+[a, b] = besself (.5, .2) // error passed
+[a, b] = besself (3, .2, "invalid") // error passed
+ //[b, a] = besself(n, Wc)
+[b a] = besself(2,1000) // passed
+//[b, a] = besself (n, Wc, "high")
+[b a] = besself(7,0.3,"high") // passed
+//[b, a] = besself (n, [Wl, Wh])
+[b a] = besself(4,[1000 5000]) // error: besself: band-pass and stop-band filters not yet implemented
+//[b, a] = besself (n, [Wl, Wh], "stop")
+[b a] = besself(4,[1000 5000],"stop") // besself: band-pass and stop-band filters not yet implemented
+//[z, p, g] = besself (…)
+[z,p,g] = besself(9,0.8,"high") // passed
+*/

@@ -1,15 +1,14 @@
 // Copyright (C) 2018 - IIT Bombay - FOSSEE
-//
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 // Original Source : https://octave.sourceforge.io/signal/
-// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
 function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Frequency Transformation in Analog domain).
 
@@ -71,7 +70,8 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     // Sz  =
     //
     //    20.    10.    6.6666667
-
+    // dependencies
+    // 
     funcprot(0);
     [nargout nargin]= argn();
 
@@ -115,12 +115,12 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
             Sp = [b+sqrt(b.^2-Fh*Fl), b-sqrt(b.^2-Fh*Fl)];
             extend = [sqrt(-Fh*Fl), -sqrt(-Fh*Fl)];
             if isempty(Sz)
-                Sz = [extend(1+rem([1:2*p],2))];
+                Sz = [extend(1+modulo([1:2*p],2))];
             else
                 b = (C*(Fh-Fl)/2)./Sz;
                 Sz = [b+sqrt(b.^2-Fh*Fl), b-sqrt(b.^2-Fh*Fl)];
                 if (p > z)
-                    Sz = [Sz, extend(1+rem([1:2*(p-z)],2))];
+                    Sz = [Sz, extend(1+modulo([1:2*(p-z)],2))];
                 end
             end
         else
@@ -178,3 +178,13 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
         end
     end
 endfunction
+/**
+Note : This function is tested with Octave's outputs as a reference.
+
+[Sz_new , Sp_new , Sg_new ] = sftrans([0.5;-0.5],[0.3 ; -0.3],2,0.5,0) // passed
+[Sz_new , Sp_new , Sg_new ] = sftrans([0.5;-0.5],[0.3 ; -0.3],2,0.5,1)  // passed
+[Sz_new, Sp_new, Sg_new] = sftrans([0.5], [0.3], 1, [1.0, 2.0], 0)      //passed
+[Sz_new, Sp_new, Sg_new] = sftrans([0.5], [0.3], 1, [1.0, 2.0], 1) //passed
+[Sz_new, Sp_new, Sg_new] = sftrans([], [], 1, 1.0, 0) //error passed
+[Sz_new, Sp_new, Sg_new] = sftrans([0], [], 1, 1.0, 0)//error passed
+*/

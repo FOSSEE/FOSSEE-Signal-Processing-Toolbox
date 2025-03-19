@@ -1,15 +1,14 @@
 // Copyright (C) 2018 - IIT Bombay - FOSSEE
-//
 // This file must be used under the terms of the CeCILL.
 // This source file is licensed as described in the file COPYING, which
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 // Original Source : https://octave.sourceforge.io/signal/
-// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
 function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
     //Elliptic or Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.
 
@@ -59,7 +58,8 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
     //         column 5
     //
     //    0.0202774
-
+    // Dependencies
+    // ellipap sftrans bilinear zp2tf
     funcprot(0);
     [nargout nargin] = argn();
 
@@ -85,7 +85,7 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
         case "stop"
             stop = %T;
         case "low"
-            stop = %T;
+            stop = %F;
         case "pass"
             stop = %F;
         else
@@ -93,7 +93,7 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
         end
     end
 
-    [rows_w colums_w] = size(w);
+    [rows_w columns_w] = size(w);
 
     if (~ ((length (w) <= 2) & (rows_w == 1 | columns_w == 1)))
         error ("ellip: frequency must be given as WP or [WL, WH]");
@@ -119,7 +119,7 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
     // Prewarp the digital frequencies
     if (digital)
         T = 2;       // sampling frequency of 2 Hz
-        w = 2 / T * tan (%pi * w / T);
+        w = (2 / T )* tan (%pi * w / T);
     end
 
     // Generate s-plane poles, zeros and gain
@@ -139,8 +139,8 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
     if (nargout == 2)
         [a b] = zp2tf(zero, pole, gain);
     elseif (nargout == 3)
-        a = zero;
-        b = pole;
+        a = conj(zero');
+        b = conj(pole');
         c = gain;
     else
         // output ss results
@@ -148,3 +148,49 @@ function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
         error("ellip: yet not implemented in state-space form OR invalid number of o/p arguments")
     end
 endfunction
+
+/*
+%% Test input validation // all passed
+error [a, b] = ellip ()
+error [a, b] = ellip (1)
+error [a, b] = ellip (1, 2)
+error [a, b] = ellip (1, 2, 3)
+error [a, b] = ellip (1, 2, 3, 4, 5, 6, 7)
+error [a, b] = ellip (.5, 2, 40, .2)
+error [a, b] = ellip (3, 2, 40, .2, "invalid")
+
+test
+
+//[b, a] = ellip (n, rp, rs, [wl, wh])
+[b, a] = ellip (5, 1, 90, [.1 .2]); // passed
+
+//[b, a] = ellip (n, rp, rs, wp)
+[A, B] = ellip (6, 3, 50, .6); //passed
+ 
+//[b, a] = ellip (n, rp, rs, [wl, wh], "stop")
+[b, a] = ellip (5, 1, 90, [.1 .2],"stop"); // passed
+
+//[b, a] = ellip (n, rp, rs, wp, "high")
+[A, B] = ellip (6, 3, 50, .6,"high"); // passed
+
+//[b, a] = ellip (n, rp, rs, [wl, wh])
+[b, a] = ellip (5, 1, 90, [.1 .2],"s"); // passed
+
+//[b, a] = ellip (n, rp, rs, wp)
+[A, B] = ellip (6, 3, 50, .6,"z"); // passed
+ 
+//[b, a] = ellip (n, rp, rs, [wl, wh], "stop")
+[b, a] = ellip (5, 1, 90, [.1 .2],"pass"); // passed
+
+//[b, a] = ellip (n, rp, rs, wp, "high")
+[A, B] = ellip (6, 3, 50, .6,"low"); //  passed
+
+
+//[z, p, g] = ellip (…)
+[z, p, g] = ellip (6, 3, 50, .6); //  passed
+
+[z,p,g] = ellip( 10,15,4,.9,"s") // passed
+
+test
+ [a, b, c, d] = ellip (6, 3, 50, .6); // not implemented yet 
+ */
