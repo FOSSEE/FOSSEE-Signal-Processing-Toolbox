@@ -239,7 +239,6 @@ end
 X=[1 6/7 5/7 8/7 3/7 6/7];
 [R U kr e] = rlevinson(X, 0.3);
 
-:
 ei  =[ 0.3757546,0.0221076,-3.4125,1.1307692,0.3];
  kri  =[
   -0.2251908
@@ -356,7 +355,6 @@ end
 
 
 ////////////////test for schurrc    //////////
-:
 m=linspace(1,100);
 r = xcorr(m(1:5),'unbiased');.......//autocorrelation vector
 [k,e] = schurrc(r(5:$));
