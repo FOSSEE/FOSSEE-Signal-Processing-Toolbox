@@ -38,6 +38,10 @@ function perform_clean()
         end
     end
 
+    if isdir(root_tlbx + "/inline/") then
+        rmdir(root_tlbx + "/inline/", "s");
+    end
+
     if isfile(root_tlbx + "/loader.sce") then
         mdelete(root_tlbx + "/loader.sce");
     end
