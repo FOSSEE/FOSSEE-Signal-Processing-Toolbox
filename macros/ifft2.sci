@@ -1,5 +1,14 @@
-Author: Abinash Singh <abinashsinghlalotra@gmail.com>
-*/
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/
+// Modifieded by: Abinash Singh Under FOSSEE Internship
+// Last Modified on : 19 March 2024
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
 /*Description
     Calculates the inverse two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
     It performs inverse two-dimensional FFT on the matrix A. m and n may be used specify the number of rows and columns of A to use. If either of these is larger
