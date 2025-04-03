@@ -54,8 +54,6 @@ function [y, i] = digitrevorder (x, r)
   y(old_ind + 1) = x(i);
   if (size(x,2)== 1)
     y = y(:);
-  else
-    i = i.';
   end
 endfunction
 
