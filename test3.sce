@@ -594,7 +594,7 @@ else
     disp("tst failed for downsample");
 end
 
-//////////////////test for mpoles////////////
+//////////////////test for mpoles//////////// Tst failed for mpoles
 
 [m,n]=mpoles([2 3 1 1 2]);
 
@@ -790,23 +790,23 @@ end
 
 
 
-//////////////////////test for mexihat////////////////// Test failed with error - Submatrix incorrectly defined.
-// [a,b]= mexihat(1,2,3); 
-// ai=[0.00000  -0.35197  -0.35214];
-// bi=[1.0000   1.5000   2.0000];
+//////////////////////test for mexihat//////////////////
+[a,b]= mexihat(1,2,3); 
+ai=[0.00000  -0.35197  -0.35214];
+bi=[1.0000   1.5000   2.0000];
 
-// a=roundn(a,4);
-// b=roundn(b,4);
+a=roundn(a,4);
+b=roundn(b,4);
 
-// ai=roundn(ai,4);
-// bi=roundn(bi,4);
+ai=roundn(ai,4);
+bi=roundn(bi,4);
 
-// if(and(ai==a) & and(bi==b))
-//      test_pass=[test_pass,1];
-// else
-//    test_pass=[test_pass,0];
-//     disp("tst failed for mexihat");
-// end
+if(and(ai==a) & and(bi==b))
+     test_pass=[test_pass,1];
+else
+   test_pass=[test_pass,0];
+    disp("tst failed for mexihat");
+end
 
 
 
