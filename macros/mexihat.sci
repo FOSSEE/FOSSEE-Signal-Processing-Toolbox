@@ -5,11 +5,9 @@
 // you should have received as part of this distribution.  The terms
 // are also available at
 // http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
-// Author:[insert name]
+// Last Modified by : Abinash Singh , FOSSEE Winter Intern
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-
-
 
 function [psi,x]=mexihat(lb,ub,n)
 
@@ -31,26 +29,22 @@ function [psi,x]=mexihat(lb,ub,n)
 //	a = [0;0;0]
 //	b = [1;1;1]
 
-funcprot(0);
-
-[nargout,nargin]=argn();
-
+  funcprot(0);
+  [nargout,nargin]=argn();
+  x=[];psi=[];
   if (nargin < 3)
-       error("wrong number of input arguments");
-      end
-
+    error("wrong number of input arguments");
+  end
   if (n <= 0)
     error("n must be strictly positive");
   end
-
-  if(isvector(lb))
-      for(i=1:length(lb))
-  x(i) = linspace(lb(i),ub,n);
-  psi(i) = (1-x(i).^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x(i).^2/2)  ;
-  end
-
-else
+  if(isscalar(lb))
     x = linspace(lb,ub,n);
-  psi = (1-x.^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x.^2/2)  ;
-end
+    psi = (1-x.^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x.^2/2)  ;
+  else
+      for(i=1:length(lb))
+        x(i) = linspace(lb(i),ub,n);
+        psi(i) = (1-x(i).^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x(i).^2/2)  ;
+      end
+  end
 endfunction
