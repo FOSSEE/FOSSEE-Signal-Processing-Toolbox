@@ -1,5 +1,4 @@
 function [y]=sosfilt(sos,x)
-
 // Second order section IIR filtering of x. 
 // Calling Sequence
 //	[y]=sosfilt(sos,x)

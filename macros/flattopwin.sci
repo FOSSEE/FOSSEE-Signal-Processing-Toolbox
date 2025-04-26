@@ -1,5 +1,4 @@
 function w = flattopwin (m, opt)
-
 //This function returns the filter coefficients of a Flat Top window.
 //Calling Sequence
 //w = flattopwin (m)

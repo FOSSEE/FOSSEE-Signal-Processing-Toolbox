@@ -13,16 +13,12 @@
 
 function [S_r, f_r, t_r] = specgram(x, n , Fs , win , overlap)
 //Generate a spectrogram for the signal x. The signal is chopped into overlapping segments of length n, and each segment is windowed and transformed into the frequency domain using the FFT. The default segment size is 256. If fs is given, it specifies the sampling rate of the input signal. The argument window specifies an alternate window to apply rather than the default of hanning (n). The argument overlap specifies the number of samples overlap between successive segments of the input signal. The default overlap is length (window)/2.
-
 //CALLING SEQUENCE:
 //[S, f, t] = specgram (x,n,fs,window,overlap)
 //where
 //S is the complex output of the FFT, one row per slice
 //f is the frequency indices corresponding to the rows of S
 // t is the time indices corresponding to the columns of S.
-
-
-
 //Test cases:
 //////1.
 //N=1024;
@@ -33,6 +29,7 @@ function [S_r, f_r, t_r] = specgram(x, n , Fs , win , overlap)
 //grayplot(f,t,s)
 //xlabel("frequency")
 //ylabel("time")
+
 ////
 [nargout,nargin]=argn();
   if nargin < 1 | nargin > 5

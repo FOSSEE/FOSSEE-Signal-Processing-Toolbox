@@ -11,9 +11,7 @@
 
 
 function y = wrev(x)
-
-
-    // Reverses order of elements of input vector
+// Reverses order of elements of input vector
 // Calling Sequence
 //	[y]=wrev(x)
 // Parameters

@@ -1,17 +1,14 @@
 function y = decimate(x, q, n, ftype)
 //Decimation — decrease sample rate by integer factor
-
 //Calling Sequence
 //y = decimate(x,q)
 //y = decimate(x,q,n)
 // y = decimate (…, "fir")
-
 //Parameters
 //x: input sequence
 //q: reduction factor
 //n : filter order
 //ftype: filter type : iir or fir
-
 //Description
 //this is an octave function
 //y = decimate(x,q) reduces the sample rate of x, the input signal, by a factor of q.
@@ -27,7 +24,6 @@ function y = decimate(x, q, n, ftype)
 //plot2d3((0:120),x(1:121));
 //subplot(212);
 //plot2d3((0:30),y(1:31));
-
 //This will result in plots of original sequence v/s sample number and decimated sequence v/s sample number
 
 rhs = argn(2)

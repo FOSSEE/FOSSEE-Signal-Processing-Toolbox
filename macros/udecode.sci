@@ -30,6 +30,7 @@ function y=udecode(u,n,v,saturatemode)
 //See also
 //uencode
 //floor
+
     funcprot(0);
     if(argn(2)<4)
         saturatemode='saturate';

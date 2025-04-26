@@ -1,5 +1,4 @@
 function [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=falltime(x, varargin)
-
     // This function estimate falltime values of real vector X.
     // Calling Sequence
     // r=falltime(x)
@@ -29,7 +28,6 @@ function [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=f
     // uppercrossvalue: return the upper cross value.
     // lowerreference: return lower reference value corrosponding to lower percent reference value.
     // upperreference: return upper reference value corrosponding to upper percent reference value.
-    
     // Examples
     // x=[1.2, 5, 10, -20, 12]
     //t=1:length(x)

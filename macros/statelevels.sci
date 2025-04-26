@@ -1,5 +1,4 @@
 function [levels, histogram, bins] = statelevels (x, varargin) // defining function
-    
     // This function estimate statelevels of real vector X via histogram.
     // Calling Sequence
     // levels=statelevels(x, nbins, method, bounds)
@@ -24,10 +23,6 @@ function [levels, histogram, bins] = statelevels (x, varargin) // defining funct
     // See also
     // Authors
     // Jitendra Singh
-    
-
-   
-    
     
   if or(type(x)==10) then
     error ('Input arguments must be double.')

@@ -11,22 +11,18 @@
 // Email: toolbox@scilab.in
 function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Frequency Transformation in Analog domain).
-
     //Calling Sequence
     //[Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //[Sz, Sp] = sftrans (Sz, Sp, Sg, W, stop)
     //[Sz] = sftrans (Sz, Sp, Sg, W, stop)
-
     //Parameters
     //Sz: Zeros.
     //Sp: Poles.
     //Sg: Gain.
     //W: Edge freuency of target filter.
     //stop: True(%T or 1) for high pass and band stop filters or false (%F or 0) for low pass and band pass filters.
-
     //Description
     //Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros individually. The following table summarizes the transformation:
-
     // Transform         Zero at x                  Pole at x
     // ----------------  -------------------------  ------------------------
     // Low Pass          zero: Fc x/C               pole: Fc x/C
@@ -56,8 +52,6 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:
     //
     //    H(S)=g prod(S-Xi)/prod(S-Xj)
-
-
     //Examples
       //[Sz, Sp, Sg] = sftrans([1 2 3], [4 5 6], 15, 20, %T)
     // Output
@@ -72,6 +66,7 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //    20.    10.    6.6666667
     // dependencies
     // 
+
     funcprot(0);
     [nargout nargin]= argn();
 

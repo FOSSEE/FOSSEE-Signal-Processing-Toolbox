@@ -20,6 +20,7 @@ function w_out = wind (f, m, varargin)
 //    1.
 //    0.5
 //    0.
+
 funcprot(0);
 rhs = argn(2)
 lhs = argn(1)

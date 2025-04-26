@@ -1,14 +1,11 @@
 function R=rc2ac(k, R0)
-
 //rlevinson function convert reflection coefficients to autocorrelation sequence.
 // Calling Sequence
 // a = rc2ac(k, R0)
-
 // Parameters
 // k: input argument reflection coefficients.
 // R0: input argument zero lag autocorrelation
 // R: return  autocorrelation sequence.
-
 // Test cases
 //k = [0.3090 0.9800 0.0031 0.0082 -0.0082];
 //r0 = 0.1;
@@ -20,7 +17,6 @@ function R=rc2ac(k, R0)
 //    0.0786627
 //    0.0293629
 //  - 0.0950000
-
 //
 // See also
 //

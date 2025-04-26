@@ -1,10 +1,11 @@
-//POW2DB   Power to dB conversion
+
+function [ydb]=pow2db(y)
+    //POW2DB   Power to dB conversion
 //YDB = POW2DB(Y) convert the data Y into its corresponding dB value YDB
 //Example:
 //Calculate ratio of 2000W to 2W in decibels
 //y1 = pow2db(2000/2)     //Answer in db
 //Author : Debdeep Dey
-function [ydb]=pow2db(y)
 rhs = argn(2)
 if(rhs~=1)
 error("Wrong number of input arguments.")

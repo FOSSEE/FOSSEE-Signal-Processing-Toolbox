@@ -7,32 +7,32 @@
 // Author: Abinash Singh Under FOSSEE Internship
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-/*
-Calling Sequence :
-    cll = sos2cell(s)
-    cll = sos2cell(s, g)
-Description
-    sos2cell converts a second-order section matrix to a cell array representation. 
-    The function can handle both unity-gain and non-unity gain filter systems. For non-unity gain systems, the gain factor is stored in the first cell of the output array.
-Input Arguments
-    s - Second-order section matrix (L-by-6 matrix)
-        Each row represents one second-order section
-        Must have exactly 6 columns in format: [b0 b1 b2 a0 a1 a2]
-        Number of rows (L) represents the number of sections
-    g - Gain factor (optional)
-        Scalar value representing the system gain
-        Default value is 1 if not specified
-Output Arguments
-    cll - Cell array containing second-order sections
-        For unity-gain systems (no gain specified):
-        Cell array with L elements
-        Each element contains coefficients: {[b0 b1 b2] [a0 a1 a2]}
-    For non-unity gain systems:
-         Cell array with L+1 elements
-         First element contains gain: {g 1}
-         Remaining elements contain section coefficients
-*/
+
 function cll = sos2cell(s, g)
+// Calling Sequence :
+//     cll = sos2cell(s)
+//     cll = sos2cell(s, g)
+// Description
+//     sos2cell converts a second-order section matrix to a cell array representation. 
+//     The function can handle both unity-gain and non-unity gain filter systems. For non-unity gain systems, the gain factor is stored in the first cell of the output array.
+// Input Arguments
+//     s - Second-order section matrix (L-by-6 matrix)
+//         Each row represents one second-order section
+//         Must have exactly 6 columns in format: [b0 b1 b2 a0 a1 a2]
+//         Number of rows (L) represents the number of sections
+//     g - Gain factor (optional)
+//         Scalar value representing the system gain
+//         Default value is 1 if not specified
+// Output Arguments
+//     cll - Cell array containing second-order sections
+//         For unity-gain systems (no gain specified):
+//         Cell array with L elements
+//         Each element contains coefficients: {[b0 b1 b2] [a0 a1 a2]}
+//     For non-unity gain systems:
+//          Cell array with L+1 elements
+//          First element contains gain: {g 1}
+//          Remaining elements contain section coefficients
+
     if (argn(2) > 2) then
         error("sos2cell: Wrong number of input arguments");
     end  

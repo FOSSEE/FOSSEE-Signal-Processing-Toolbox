@@ -52,6 +52,7 @@ function [y,t]=modulate(x,fc,fs,method,opt)
 //    1.    1.    0.    0.  
 //Author
 //Ankur Mallick
+
     funcprot(0);
     if (argn(2)<3|argn(2)>5) then
         error('Incorrect number of input arguments.');

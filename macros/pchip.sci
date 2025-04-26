@@ -1,18 +1,13 @@
 function v = pchip(x,y,xx)
-          
 //this function returns piecewise cubic hermite interpolating polynomial.
-
 // Calling Sequence
 // d=pchip(x,y)
 // d= pchip(X,,y,xx) 
-   
-    
 // Parameters
 // x: a vector
 // y: if Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal length(X).
 // xx: Points for interpolation
 // v: vector of interpolantant at xx
-    
 //// Examples
 // x=[0 1 2 3 4 5]
 // y=[1 0 1 0 1 0]
@@ -20,10 +15,8 @@ function v = pchip(x,y,xx)
 // v=pchip(x, y) 
 // v=pchip(x,y,xx)
 //plot(x,y,xx,v,'o')
-
  // Authors
 // Jitendra Singh
-
 // NOTE:execute function "pchips" prior executing this function
         
 

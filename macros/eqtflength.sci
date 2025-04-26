@@ -3,9 +3,9 @@ function [b,a,N,M] = eqtflength(b,a)
 //Calling Sequence
 //[b,a] = eqtflength(b,a)
 //[b,a,N,M] = eqtflength(b,a)
-
 //Author
 //Debdeep Dey
+
     if(argn(2)~=2)
         error('Incorrect number of input arguments');
     elseif(length(a)==0|max(abs(a))==0)

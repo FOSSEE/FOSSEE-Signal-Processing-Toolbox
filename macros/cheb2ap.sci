@@ -11,20 +11,16 @@
 
 function [z, p, g] = cheb2ap (n, Rs)
     //This function produces a lowpass analog Chebyshev type II prototype filter.
-
     //Calling Sequence
     //[z, p, g] = cheb2ap (n, Rs)
-
     //Parameters
     //n: Filter Order
     //Rs: Stopband attenuation (in dB)
     //z: Zeros
     //p: Poles
     //g: Gain
-
     //Description
     //This function designs a lowpass analog Chebyshev type II filter of nth order and with a stopband attenuation of Rs.
-
     //Examples
     //[z, p, g] = cheb2ap (4, 10)
     //Output :

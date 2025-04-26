@@ -10,6 +10,20 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
+function [h_r, f_r] = freqz (b, a, n, region, Fs)
+// Return the complex frequency response `h` of the rational IIR filter whose 
+// numerator and denominator coefficients are `b` and `a`, respectively.
+// The response is evaluated at `n` angular frequencies between 0 and 2*pi.
+// The output value `w` is a vector of the frequencies.
+// If `a` is omitted, the denominator is assumed to be 1 (this corresponds to a simple FIR filter).
+// If `n` is omitted, a value of 512 is assumed. For fastest computation, `n` should factor into a small number of small primes.
+// If the fourth argument, "whole", is omitted, the response is evaluated at frequencies between 0 and pi.
+// freqz (b, a, w)
+// Evaluate the response at the specific frequencies in the vector `w`. The values for `w` are measured in radians.
+// [...] = freqz (…, Fs)
+// Return frequencies in Hz instead of radians assuming a sampling rate `Fs`. If you are evaluating the response at specific frequencies `w`, those frequencies should be requested in Hz rather than radians.
+// freqz (...)
+// Plot the magnitude and phase response of `h` rather than returning them.
 // Example usage of freqz in different formats:
 // [h, w] = freqz (b, a, n, "whole")
 // [h, w] = freqz (b)
@@ -18,36 +32,8 @@
 // h = freqz (b, a, w)
 // [h, w] = freqz (…, Fs)
 // freqz (...)
-
-/*
-Return the complex frequency response `h` of the rational IIR filter whose 
-numerator and denominator coefficients are `b` and `a`, respectively.
-
-The response is evaluated at `n` angular frequencies between 0 and 2*pi.
-
-The output value `w` is a vector of the frequencies.
-
-If `a` is omitted, the denominator is assumed to be 1 (this corresponds to a simple FIR filter).
-
-If `n` is omitted, a value of 512 is assumed. For fastest computation, `n` should factor into a small number of small primes.
-
-If the fourth argument, "whole", is omitted, the response is evaluated at frequencies between 0 and pi.
-
-freqz (b, a, w)
-
-Evaluate the response at the specific frequencies in the vector `w`. The values for `w` are measured in radians.
-
-[...] = freqz (…, Fs)
-
-Return frequencies in Hz instead of radians assuming a sampling rate `Fs`. If you are evaluating the response at specific frequencies `w`, those frequencies should be requested in Hz rather than radians.
-
-freqz (...)
-
-Plot the magnitude and phase response of `h` rather than returning them.
-*/
 // Dependencies
 // fft1 unwrap2 postpad 
-function [h_r, f_r] = freqz (b, a, n, region, Fs)
 
   if (nargin < 1)
     error("Invalid numbers of inputs");

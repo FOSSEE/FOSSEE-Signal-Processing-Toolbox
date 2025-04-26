@@ -1,16 +1,13 @@
 function [kr, R0]=poly2rc(a, efinal)
-    
 //poly2rc function  convert prediction polynomial to reflection coefficients.
 // Calling Sequence
 // kr = poly2rc(a)
 // [kr, R0] = rc2poly(a, efinal)
-
 // Parameters
 // a: prediction polynomial. 
 // efinal: final prediction error.
 // kr: Return refelection coefficient.
 // R0: Return the  zero lag autocorrelation, R0.
- 
 // Examples
 //X = [7 6 5 8 3 6]
 // [kr, R0] = poly2rc(X)
@@ -19,6 +16,7 @@ function [kr, R0]=poly2rc(a, efinal)
 //
 // Author
 // Jitendra Singh
+
 // modified to handle empty vector as i/p by Debdeep Dey 
       if or(type(a)==10) then
     error ('Input arguments must be double.')

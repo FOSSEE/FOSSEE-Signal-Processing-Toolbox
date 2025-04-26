@@ -61,7 +61,6 @@ function varargout = pmusic(varargin)
     //x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
     //[S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
     //plot(w,S);.........to see the plot of psuedospectrum estimate of x vs frequencies w
-
 //    //Ex2:
 //    n = 0:199;
 //    x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;

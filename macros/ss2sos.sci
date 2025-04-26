@@ -1,35 +1,21 @@
-// Copyright (C) 2018 - IIT Bombay - FOSSEE
-// This file must be used under the terms of the CeCILL.
-// This source file is licensed as described in the file COPYING, which
-// you should have received as part of this distribution.  The terms
-// are also available at
-// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
-// Author: Parthasarathi Panda , < parthasarathipanda314@gmail.com>
-// Modifieded by: Abinash Singh Under FOSSEE Internship
-// Date of Modification: 4 Apr 2024
-// Organization: FOSSEE, IIT Bombay
-// Email: toolbox@scilab.in
-
-
+function [sos,g]=ss2sos(A,B,C,D)
 //ss2sos converts a state-space representation of a given digital filter to an equivalent second-order section representation.
-
-////Example:
-// a =[0.5095,0,0,0,0;
-// 0.3007, 0.2260, -0.3984, 0, 0;
-// 0.0977, 0.3984, 0.8706, 0, 0;
-// 0.0243, 0.0991, 0.4652, 0.5309, -0.4974;
-// 0.0079, 0.0322, 0.1512, 0.4974, 0.8384];
-
-
-// b =[0.6936 0.1382 0.0449 0.0112 0.0036]'
-
-
-// c =[0.0028 0.0114 0.0534 0.1759 0.6500]
-
-
-// d =0.0013
-
-// [sos,g]=ss2sos(a,b,c,d)
+//Example:
+//a =[0.5095,0,0,0,0;
+//0.3007, 0.2260, -0.3984, 0, 0;
+//0.0977, 0.3984, 0.8706, 0, 0;
+//0.0243, 0.0991, 0.4652, 0.5309, -0.4974;
+//0.0079, 0.0322, 0.1512, 0.4974, 0.8384];
+//
+//
+//b =[0.6936 0.1382 0.0449 0.0112 0.0036]'
+//
+//
+//c =[0.0028 0.0114 0.0534 0.1759 0.6500]
+//
+//
+//d =0.0013
+//[sos,g]=ss2sos(a,b,c,d)
 //Expected output:
 //g  =
  //    0.0013
@@ -38,10 +24,12 @@
 //  1.    3.1480112    3.2063892    1.  - 1.3693    0.6925133
 //  1.    0.4742625    0.           1.  - 0.5095    0.
 //
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
 
 
 
-function [sos,g]=ss2sos(A,B,C,D)
+
 //not taking if, order and scale as input since they do not seem useful
     if (type(A)~=1 | type(B)~=1 | type(C)~=1 | type(D)~=1) then
         error('check input types');
@@ -70,8 +58,8 @@ function [sos,g]=ss2sos(A,B,C,D)
     //obtaining the transfer function(continuous)
     tf=ss2tf(syslin('c',A,B,C,D));
     //factorising the numerator and the denominator into second order systems
-    [zero,gn]=sosbreak(tf.num);//function is defined in the same folder
-    [pole,gd]=sosbreak(tf.den);
+    [zero,gn]=sosbreak(numer(tf));//function is defined in the same folder
+    [pole,gd]=sosbreak(denom(tf));
     //reducing each pair of second order in the necessary form
     sos=[];
     for i=[1:length(pole)]

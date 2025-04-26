@@ -37,20 +37,14 @@ function [w,pow] = rootmusic(x,p,varargin)
 //   s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
 // [A,R]=corrmtx(s,12,'mod');
 // [W,P] = rootmusic(R,3,'corr');
-
-
 // //2)
 // n=0:99;
 // s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n);
 //  [A,R]=corrmtx(s,12,'mod');
 // [W,P] = rootmusic(R,3,'corr');
-
  //EXPECTED OUTPUT:
  //W = 0.7738111    1.5690374    1.0426234
  //P  =377.4255    103.18124    123.86659
-
-
-
     //
     // Author
     // Ayush

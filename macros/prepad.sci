@@ -9,19 +9,18 @@
 // Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-/*
-Calling Sequence :
-    prepad (x, l)
-    prepad (x, l, c)
-    prepad (x, l, c, dim)
 
-Prepend the scalar value c to the vector x until it is of length l. If c is not given, a value of 0 is used.
-If length (x) > l, elements from the beginning of x are removed until a vector of length l is obtained.
-If x is a matrix, elements are prepended or removed from each row.
-If the optional argument dim is given, operate along this dimension.
-If dim is larger than the dimensions of x, the result will have dim dimensions.
-*/
 function res = prepad(x,l,c,dim)
+// Calling Sequence :
+//     prepad (x, l)
+//     prepad (x, l, c)
+//     prepad (x, l, c, dim)
+// Prepend the scalar value c to the vector x until it is of length l. If c is not given, a value of 0 is used.
+// If length (x) > l, elements from the beginning of x are removed until a vector of length l is obtained.
+// If x is a matrix, elements are prepended or removed from each row.
+// If the optional argument dim is given, operate along this dimension.
+// If dim is larger than the dimensions of x, the result will have dim dimensions.
+
     if nargin < 2 then 
         error("Usage :  postpad(x,l,c(optional),dim(optional))")
     end

@@ -11,19 +11,15 @@
 
 function [z, p, g] = buttap (n)
     //Produces analog prototype Butterworth filter
-
     //Calling Sequence
     //[z, p, g] = buttap (n)
-
     //Parameters
     //n: Filter Order
     //z: Zeros
     //p: Poles
     //g: Gain
-
     //Description
     //It gives a lowpass analog prototype Butterworth filter of nth order.
-
     //Examples
     //[z, p, g] = buttap(5)
     //Output :

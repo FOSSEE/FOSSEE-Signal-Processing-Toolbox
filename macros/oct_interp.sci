@@ -1,11 +1,22 @@
-//.............................................................................................................
-// ................................Using "callOctave" method..............................
-//.............................................................................................................
-
-
-
 //function already exists in scilab -- doesnt work like this one (I guess)
-//function y = interp(x, q, n, Wc)
+//This function is built with the referrence of interp function (taken from interp.m file).
+//Octave license:
+// Copyright (C) 2000 Paul Kienzle <pkienzle@users.sf.net>
+//
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software
+// Foundation; either version 3 of the License, or (at your option) any later
+// version.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+// details.
+//
+// You should have received a copy of the GNU General Public License along with
+// this program; if not, see <http://www.gnu.org/licenses/>.
+
+function y = oct_interp(x, q, varargin)
 //This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
 //Calling Sequence
 //y = interp(x, q)
@@ -24,54 +35,6 @@
 //interp(1,2)
 //ans  =
 //    0.4792743    0.3626016
-
-//funcprot(0);
-//rhs = argn(2)
-//if(rhs<2 | rhs>4)					source code says rhs<1 -- but crashes for just one arg
-//error("Wrong number of input arguments.")
-//end
-//
-//
-//
-//
-//	select(rhs)
-//	case 2 then
-//	y = callOctave("interp",x,q)
-//	case 3 then
-//	y = callOctave("interp",x,q,n)
-//	case 4 then
-//	y = callOctave("interp",x,q,n,Wc)
-//	end
-//endfunction
-
-
-//........................................................................................................
-// .............................Using pure "Scilab"..........................................
-//.........................................................................................................
-
-//This function is built with the referrence of interp function (taken from interp.m file).
-
-//Octave license:
-
-// Copyright (C) 2000 Paul Kienzle <pkienzle@users.sf.net>
-//
-// This program is free software; you can redistribute it and/or modify it under
-// the terms of the GNU General Public License as published by the Free Software
-// Foundation; either version 3 of the License, or (at your option) any later
-// version.
-//
-// This program is distributed in the hope that it will be useful, but WITHOUT
-// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-// FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-// details.
-//
-// You should have received a copy of the GNU General Public License along with
-// this program; if not, see <http://www.gnu.org/licenses/>.
-
-
-
-
-function y = oct_interp(x, q, varargin)
 
  funcprot(0);
     [nargout,nargin]=argn();

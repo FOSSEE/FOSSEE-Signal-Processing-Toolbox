@@ -32,6 +32,7 @@ function [y, i] = digitrevorder (x, r)
   // y  =
   //
   //    i      3.    1.    6.i
+  
   funcprot(0);
   [nargout, nargin] = argn() ;
 
@@ -54,6 +55,8 @@ function [y, i] = digitrevorder (x, r)
   y(old_ind + 1) = x(i);
   if (size(x,2)== 1)
     y = y(:);
+  else
+    i = i.';
   end
 endfunction
 

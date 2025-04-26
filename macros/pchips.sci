@@ -1,11 +1,9 @@
 function d = pchips(x,y,delta)
-
 //Piecewise Cubic Hermite Interpolating Polynomial (PCHIP)
 //Parameters
 // x: a vector
 // y: is Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal
 //length(X).
-
 // delta: Points for interpolation
 // d: vector of interpolantant at delta
 //Examples:
@@ -14,6 +12,7 @@ function d = pchips(x,y,delta)
 //xq1 = -3:.01:3;
 //v=pchips(x,y,xq1)
 //
+
    n = length(x);
 
    if n==2

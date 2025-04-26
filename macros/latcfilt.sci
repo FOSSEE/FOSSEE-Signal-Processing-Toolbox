@@ -1,7 +1,8 @@
+function [f,g,zo]=latcfilt(k,x,v,zi,dim)
+//the function is for application on vectors only
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
-//the function is for application on vectors only
-function [f,g,zo]=latcfilt(k,x,v,zi,dim)
+
     [nargout,nargin]=argn();
     //(k,x)
     if nargin==2 then

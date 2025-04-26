@@ -12,16 +12,12 @@
 
 function [d]=dftmtx(n)
     // Computes n-by-n Discrete Fourier transformation matrix
-
     //Calling Sequence
     //d=dftmtx(n)
-
     //Parameters
     //n: Real positive scalar number
-
     // Description
     //This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).
-
     // Examples
     //d = dftmtx(4)
     //Output:

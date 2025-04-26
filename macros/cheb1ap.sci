@@ -11,20 +11,16 @@
 
 function [z, p, g] = cheb1ap (n, Rp)
     //This function designs a lowpass analog Chebyshev type I filter.
-
     //Calling Sequence
     //[z, p, g] = cheb1ap (n, Rp)
-
     //Parameters
     //n: Filter Order
     //Rp: Peak-to-peak passband ripple (in dB)
     //z: Zeros
     //p: Poles
     //g: Gain
-
     //Description
     //It gives a lowpass analog Chebyshev type I filter of nth order and with a Peak-to-peak passband ripple of Rp.
-
     //Examples
     //[z, p, g] = cheb1ap (10, 3)
     //Output :

@@ -11,11 +11,9 @@
 
 function y = wconv (typ, x, f, shape)
     //Performs 1D or 2D convolution.
-
     //Calling Sequence
     //y = wconv (type, x, f)
     // y = wconv (type, x, f, shape)
-
     //Parameters
     //type: convolution type.
     //           1 or "1" for 1D
@@ -26,10 +24,8 @@ function y = wconv (typ, x, f, shape)
     //           "full", computes the full one/two-dimensional convolution. It is the default value.
     //          "same",  computes the central part of the convolution of the same size as x.
     //          "valid",  computes the convolution parts without the zero-padding of x.
-
     //Description
     //It performs 1D or 2D convolution between the signal x and the filter coefficients f.
-
     //Examples
     //a = [1 2 3 4 5]
     //b = [7 8 9 10]

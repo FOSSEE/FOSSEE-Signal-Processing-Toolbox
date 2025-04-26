@@ -1,25 +1,19 @@
 function [dboutput] = db(X, SignalType, R)
-
+// Calling Sequence
 //dboutput = db(X) converts the elements of the vector or matrix X to decibels (dB). The elements of X are voltage measurements across a resistance of 1 ohm.
-
 //dboutput = db(X,SignalType) specifies the signal type represented by the elements of X as 'voltage' or 'power'. The entries are not case sensitive. The default value is 'voltage'. For voltage measurements, the resistance defaults to 1 ohm. If you specify SignalType as 'power', the elements of X must be nonnegative.
-
 //dboutput = db(X,R) specifies the resistance R for voltage measurements. You can specify a resistance only when the signal measurements are voltages.
-
 //dboutput = db(X,'voltage',R) specifies the resistance R for voltage measurements. This syntax is equivalent to db(X,R).
-
 //X - Signal measurements. X must be a vector or matrix. If the elements of X are power measurements, all elements must be nonnegative.
-
 //SignalType - Type of signal measurements. Valid entries for SignalType are 'voltage' or 'power'. The entries are not case sensitive. If you specify SignalType as 'power', the elements of X must be nonnegative.
 //Default: 'voltage'
-
 //R - Resistive load in ohms. You can specify resistance only when the SignalType is 'voltage'.
 //Default: 1
-
 //Author : Pratik Kapoor
 //Modified to remove disp(SignalType) at line 28 
 //Modified to handle imaginary, negative power, and zero input
 //Modifications by Debdeep Dey
+
 funcprot(0);
 
 [lhs, rhs] = argn(0)

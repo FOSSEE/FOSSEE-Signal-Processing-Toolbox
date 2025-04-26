@@ -19,6 +19,7 @@ function y = pulstran(t, d, p, varargin)
 //pulstran([0.5,9,8,7],[4,6],[-7,0.5])
 //ans  =
 //    0.    0.    0.    0.5  
+
 funcprot(0);
 
 rhs=argn(2)

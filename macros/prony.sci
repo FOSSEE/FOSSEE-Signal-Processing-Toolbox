@@ -1,3 +1,5 @@
+
+function [b,a]=prony(h,nb,na)
 //Prony's method for time-domain design of IIR Filters
 //[b,a]=prony(h,nb,na)
 //where b= coefficients of the numerator of the TF
@@ -24,8 +26,6 @@
 
 
 
-
-function [b,a]=prony(h,nb,na)
 
 K = length(h)-1;
 M=double(nb);

@@ -21,6 +21,7 @@ function w = hann (varargin)
 //    0.9045085  
 //    0.3454915  
 //    0.  
+
 funcprot(0);
 rhs = argn(2)
 m = varargin(1)

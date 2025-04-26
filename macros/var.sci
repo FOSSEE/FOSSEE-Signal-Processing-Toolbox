@@ -1,5 +1,4 @@
 function y = var(x,w,dim)
-    
     // This function var estimate the variance of the values in X.
     // Calling Sequence
     // y=var(x)
@@ -10,7 +9,6 @@ function y = var(x,w,dim)
     // w: weight vector W of length X, or may take the value of 0 and 1. The default value is 0. Consider only non-negative values.
     // dim: consider the variance along the dimension of X. 1 for clumun wise variamce and 2 for row wise variance.
     // y: returns the variance of the values in X.
-   
     // Examples
     // x=[1.2, 5, 10, -20, 12,10,5,20,32,20];
     // w=1:10;

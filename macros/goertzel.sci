@@ -33,6 +33,7 @@ function Y = goertzel(X,INDVEC,DIM)
 //Ankur Mallick
 //References
 //Goertzel, G. (January 1958), "An Algorithm for the Evaluation of Finite Trigonometric Series", American Mathematical Monthly 65 (1): 34–35, doi:10.2307/2310304
+
     funcprot(0);
     if(argn(2)<3|isempty(DIM))
         DIM=find(size(X)>1,1); //First non-singleton dimension

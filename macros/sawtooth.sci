@@ -1,5 +1,4 @@
 function [y]=sawtooth (t,width)
-
 // Generates a Sawtooth wave
 // Calling Sequence
 //	[y]=sawtooth(t)

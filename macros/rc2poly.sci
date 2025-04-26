@@ -1,16 +1,13 @@
 function [a, efinal] = rc2poly(kr, R0)
-
 //rc2poly function  convert reflection coefficients to prediction polynomial.
 // Calling Sequence
 // a = rc2poly(kr)
 // [a, efinal] = rc2poly(kr,R0)
-
 // Parameters
 // kr: Refelection coefficient.
 // R0: the zero lag autocorrelation, R0.
 // a: Return the prediction polynomial.
 // efinal: Return the final prediction error.
-
 // Examples
 //X = [7 6 5 8 3 6]
 // [a, efinal] = rc2poly(X)  //error as only one input parameter is specified.(R0 is not mentioned)
@@ -24,6 +21,7 @@ function [a, efinal] = rc2poly(kr, R0)
 // Author
 // Jitendra Singh
 //
+
        if or(type(kr)==10) then
     error ('Input arguments must be double.')
 end

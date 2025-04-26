@@ -29,6 +29,7 @@ function isin = rc2is(k)
 // J.R. Deller, J.G. Proakis, J.H.L. Hansen, "Discrete-Time Processing of Speech Signals", Prentice Hall, Section 7.4.5
 //modified function to handle char i/p and also changed error statements to match those of MATLAB by Debdeep Dey
 //convert char i/p to their respective ascii values
+
 if(type(k)==10) then
     w=k;
     k=ascii(k);

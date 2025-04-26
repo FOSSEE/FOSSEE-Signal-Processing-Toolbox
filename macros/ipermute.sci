@@ -12,6 +12,7 @@ function B = ipermute(A, perm)
     // B = ipermute(A, perm) returns the array A with dimensions inverted
     // according to the permutation vector `perm`.
     // Validate the permutation vector
+    
     if max(size(perm)) ~= ndims(A) || or(gsort(perm, "g", "i") ~= 1:ndims(A))
         error('Permutation vector must contain unique integers from 1 to ndims(A).');
     end

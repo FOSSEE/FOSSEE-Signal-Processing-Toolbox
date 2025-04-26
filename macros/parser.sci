@@ -11,8 +11,8 @@
 // Email: toolbox@scilab.in
 
 function [ dSided, minH, minD, minW, maxW ] = parser ( varargin )
+      // This is an helper function for findpeaks
     // Default values
-    // This is an helper function for findpeaks
     // It parses the input arguments and returns the values of the options
     dSided = %f ; 
     minH = %eps ;

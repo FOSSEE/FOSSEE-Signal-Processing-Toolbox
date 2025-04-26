@@ -31,6 +31,7 @@ function y=uencode(u,n,v,signflag)
     //See also
     //udecode
     //floor
+    
     funcprot(0);
     if(argn(2)<4)
         signflag='unsigned';

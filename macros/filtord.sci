@@ -1,3 +1,4 @@
+function m=filtord(varargin)
 //filtord Filter order
 //Calling Syntax
 //n = filtord(b,a) 
@@ -21,7 +22,7 @@
 //generate d.
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
-function m=filtord(varargin)
+
     [nargout,nargin]=argn();
     narginchk(1,2,argn(2));
     if (nargin==2) then

@@ -9,11 +9,13 @@
 // Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
+
+function [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(varargin)
 // IIR Low Pass Filter to Multiband Filter Transformation
-//
+// Calling Sequence
 // [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt)
 // [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt,Pass)
-//
+// Parameters
 // Num,Den:               numerator,denominator of the transformed filter
 // AllpassNum,AllpassDen: numerator,denominator of allpass transform,
 // B,A:                   numerator,denominator of prototype low pass filter
@@ -21,7 +23,7 @@
 // Wt:                    [phi=normalized_angular_frequencies]/pi target vector
 // Pass:                  This parameter may have values 'pass' or 'stop'.  If
 //                        not given, it defaults to the value of 'pass'.
-//
+//Description
 // With normalized ang. freq. targets 0 < phi(1) <  ... < phi(n) < pi radians
 //
 // for Pass == 'pass', the target multiband magnitude will be:
@@ -34,7 +36,6 @@
 //        \    /         \      /           .
 // 0   phi(1) phi(2)  phi(3)   phi(4)  (phi(5))              pi
 //
-function [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(varargin)
 
   usage = sprintf("iirlp2mb Usage: [Num,Den,AllpassNum,AllpassDen]=iirlp2mb(B,A,Wo,Wt[,Pass])\n");
   B = varargin(1);  // numerator polynomial of prototype low pass filter

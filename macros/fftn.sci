@@ -1,21 +1,22 @@
-/*Description:
-        This function computes the N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.
-        The optional vector argument SIZE may be used to specify the dimensions of the array to be used.
-        If an element of SIZE is smaller than the corresponding dimension of A, then the dimension of A is truncated prior to performing the FFT.
-        Otherwise, if an element of SIZE is larger than the corresponding dimension, then A is resized and padded with zeros.
-  Calling sequence:
-         Y = fftn(A)
-         Y = fftn(A, SIZE)
-  Parameters:
-        A: Matrix, the input data for which the FFT is computed.
-        SIZE: Optional vector specifying the dimensions of the output array. If provided, the dimensions of A are adjusted accordingly.
-  Examples:
-        fftn([6 9 7 ;2 9 9 ;0 3 1],[2 2])
-        ans  =
-        26.  -10.
-        4.    4. 
- */
+
 function y = fftn(A, SIZE)
+//   Description:
+//         This function computes the N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.
+//         The optional vector argument SIZE may be used to specify the dimensions of the array to be used.
+//         If an element of SIZE is smaller than the corresponding dimension of A, then the dimension of A is truncated prior to performing the FFT.
+//         Otherwise, if an element of SIZE is larger than the corresponding dimension, then A is resized and padded with zeros.
+//   Calling sequence:
+//          Y = fftn(A)
+//          Y = fftn(A, SIZE)
+//   Parameters:
+//         A: Matrix, the input data for which the FFT is computed.
+//         SIZE: Optional vector specifying the dimensions of the output array. If provided, the dimensions of A are adjusted accordingly.
+//   Examples:
+//         fftn([6 9 7 ;2 9 9 ;0 3 1],[2 2])
+//         ans  =
+//         26.  -10.
+//         4.    4. 
+ 
     funcprot(0);
     // Get the number of input arguments
     rhs = argn(2);

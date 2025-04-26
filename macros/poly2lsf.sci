@@ -1,8 +1,5 @@
 function lsf=poly2lsf(a)
-
-
 //poly2lsf Prediction polynomial to line spectral frequencies.
-
 // Calling Sequence
 // lsf = poly2lsf(a)
 // Parameters
@@ -15,10 +12,10 @@ function lsf=poly2lsf(a)
 // lsf = poly2lsf(X)
 //EXPECTED OUTPUT:
 //lsf  =0.7841731  1.5605415  1.8776459  1.8984313  2.3592523
-
 //
 // Author
 // Jitendra Singh
+
 //modified to match MATLAb o/p
 if(find(a(1,1)==0)==1) then
     error ("Input to ROOTS must not contain NaN or Inf");

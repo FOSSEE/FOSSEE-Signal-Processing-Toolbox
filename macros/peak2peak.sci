@@ -1,29 +1,31 @@
 function [Y] = peak2peak(X, dim)
+	//  peak2peak finds the maximum-to-minimum difference
+	// Calling Sequence
+	//	Y=peak2peak(X)
+	//	Y=peak2peak(X,dim)
+	// Parameters
+	//	X: Real or complex valued input vector or matrix. 
+	//	dim: Dimension to compute maximum-to-minimum difference (Row/Column)
+	// Description
+	//	Y= peak2peak(X) returns the difference between maximum and minimum values in X, operating along the first non-singleton
+	//	dimension of X by default. 
+	//	Y= peak2peak(X,dim) returns the maximum-to-minimum difference in X, along dimension dim.
+	// Examples
+	//  1.  t = 0:0.001:1-0.001;
+	//	x = cos(2*pi*100*t);
+	//	y = peak2peak(x)
+	//  2.  t = 0:0.001:1-0.001;
+	//	x = (1:4)'*cos(2*pi*100*t);
+	//	y = peak2peak(x,2)
+	// Authors
+	// 	Rahul Dalmia
+	//function only accepts real values due to limitations of the 'max' function in Scilab
+	//Modifications made by Debdeep Dey
+	
+
+	
 funcprot(0);
 narginchk(1,2,argn(2));
-// peak2peak finds the maximum-to-minimum difference
-// Calling Sequence
-//	Y=peak2peak(X)
-//	Y=peak2peak(X,dim)
-// Parameters
-//	X: Real or complex valued input vector or matrix. 
-//	dim: Dimension to compute maximum-to-minimum difference (Row/Column)
-// Description
-//	Y= peak2peak(X) returns the difference between maximum and minimum values in X, operating along the first non-singleton
-//	dimension of X by default. 
-//	Y= peak2peak(X,dim) returns the maximum-to-minimum difference in X, along dimension dim.
-// Examples
-//  1.  t = 0:0.001:1-0.001;
-//	x = cos(2*pi*100*t);
-//	y = peak2peak(x)
-//  2.  t = 0:0.001:1-0.001;
-//	x = (1:4)'*cos(2*pi*100*t);
-//	y = peak2peak(x,2)
-// Authors
-// 	Rahul Dalmia
-//function only accepts real values due to limitations of the 'max' function in Scilab
-//Modifications made by Debdeep Dey
-
 
 [nr, nc] = size (X);			 // Dimensions of Input calculated
 if(type(X)==10) then //if i/p is a char type vector or matrix or a string

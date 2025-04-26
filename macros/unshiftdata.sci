@@ -65,6 +65,7 @@ function y = unshiftdata(x,perm,nshifts)
 //shiftdata
 //Author
 //Ankur Mallick
+
     funcprot(0);
     if(argn(2)<1|argn(2)<2|(argn(2)<3&size(perm)==0)|argn(2)>3)
         error('Incorrect number of input arguments.');

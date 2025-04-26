@@ -1,7 +1,4 @@
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
 function o=cconv(a,b,n)
-
  // circularly convolves vectors a and b. n is the length of the resulting vector.
  //If you omit n, it defaults to length(a)+length(b)-1. When n = length(a)+length(b)-1,
  //the circular convolution is equivalent to the linear convolution computed with conv
@@ -26,7 +23,8 @@ function o=cconv(a,b,n)
 //
 //Output:  o=  2.    4. + 5.i    10. + 6.i    10. + 17.i    20.
 //
-
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
 
 
     [nargout,nargin]=argn();

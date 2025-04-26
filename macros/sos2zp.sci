@@ -23,6 +23,7 @@ function [z,p,k] = sos2zp (sos, g)
 //  -0.6250 + 1.0533i
 //  -0.6250 - 1.0533i
 //c =  1
+
 if(argn(2)<1 | argn(2)>2)
 error("Wrong number of input arguments.")
 end

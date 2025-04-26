@@ -1,7 +1,5 @@
 function [w, initialcross, finalcross, midreference]=pulsewidth(x, varargin)
-
-     // This function estimate pulse width of real vector X.
-
+    // This function estimate pulse width of real vector X.
     // Calling Sequence
     // w=pulsewidth(x)
     // w=pulsewidth(x, Fs)
@@ -10,7 +8,6 @@ function [w, initialcross, finalcross, midreference]=pulsewidth(x, varargin)
     // w=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
     // w=pulsewidth(x, t, 'Tolerance', M)
     // w=pulsewidth(x, t,'StateLevels', O)
-
     // [w initialcross finalcross midreference]=pulsewidth(x)
     // [w initialcross finalcross midreference]=pulsewidth(x, Fs)
     // [w initialcross finalcross midreference]=pulsewidth(x, t)
@@ -33,20 +30,16 @@ function [w, initialcross, finalcross, midreference]=pulsewidth(x, varargin)
     // initialcross: returns a vector of initial cross values of bilevel waveform transitions X.
     // finalcross: returns a vector of final cross values of bilevel waveform transitions X.
     // midreference: return mid reference value corrosponding to mid percenr reference value.
-
     // Examples
     //x = fscanfMat("macros/pulsedata_x.txt");
     //t = fscanfMat("macros/pulsedata_t.txt");
     //clf
     //p = pulsewidth(x,t,'fig','ON')
-
     //Output
     // p  =
     //
     //    0.1501572
     // it also generates a pulse with pulse width  and annotations
-
-
     // See also
     // Authors
     // Jitendra Singh

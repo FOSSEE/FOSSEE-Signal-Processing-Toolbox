@@ -11,18 +11,14 @@
 
 function [z, p, g] = ellipap (n, Rp, Rs)
     //Produces a lowpass analog prototype elliptic filter.
-
     //Calling Sequence
     //[z, p, g] = ellipap (n, Rp, Rs)
-
     //Parameters
     //n: Filter Order
     //Rp: Peak-to-peak passband ripple (in dB)
     //Rs: Stopband attenuation (in dB)
-
     //Description
     //It gives a lowpass analog elliptic prototype filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
-
     //Examples
     //[z, p, g] = ellipap (4, 3,10)
     //Output :

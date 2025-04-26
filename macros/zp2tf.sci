@@ -11,21 +11,17 @@
 // Email: toolbox@scilab.in
 function [num, den] = zp2tf (z, p, k)
     //Converts zeros / poles to a transfer function.
-
     //Calling Sequence
     //[num, den] = zp2tf (z, p, k)
     //num = zp2tf (z, p, k)
-
     //Parameters
     //z: Zeros
     //p: Poles
     //k: Leading coefficient (Gain)
     //Num: Numerator coefficients of the transfer function
     //den: Denomenator coefficients of the transfer function
-
     //Description
     //It converts zeros / poles representation to  transfer function representation.
-
     //Examples
     //z = [1 2 3]
     //p = [4 5 6]

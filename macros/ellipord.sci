@@ -11,19 +11,16 @@
 // Email: toolbox@scilab.in
 
 function [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
-    //Minimum filter order of a digital elliptic or Cauer filter with the desired response characteristics.
-
+    //Minimum filter order of a digital elliptic or Cauer filter with the desired response characteristics
     //Calling Sequence
     //[n] = ellipord(Wp, Ws, Rp, Rs)
     //[n, Wp] = ellipord(Wp, Ws, Rp, Rs)
-
     //Parameters
     //Wp: scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]
     //Ws: scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]
     //Rp: passband ripple in dB.
     //Rs: stopband attenuation in dB.
     //n: Minimum order of filter satisfying given specs.
-
     //Description
     //This function computes the minimum filter order of an elliptic filter with the desired response characteristics.
     //Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.

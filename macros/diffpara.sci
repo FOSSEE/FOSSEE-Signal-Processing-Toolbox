@@ -16,6 +16,7 @@ function [D,DD] = diffpara(X,varargin)
 //The estimators for all frequencies in the intervals described above is returned in DD.
 //
 //The value of D is simply the mean of DD.
+
 	lhs= argn(1);
 	rhs= argn(2);
 	if(rhs <1 | rhs> 3)

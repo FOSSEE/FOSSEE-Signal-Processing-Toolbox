@@ -10,51 +10,35 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [pks ,idx, varargout] = findpeaks (data, varargin)
-/*
+  // [pks, loc, extra] = findpeaks (data)
+  // … = findpeaks (…, property, value)
+  // … = findpeaks (…, "DoubleSided")
+  // Finds peaks on data.
+  // Peaks of a positive array of data are defined as local maxima. For double-sided data, they are maxima of the positive part and minima of the negative part. data is expected to be a single column vector.
+  // The function returns the value of data at the peaks in pks. The index indicating their position is returned in loc.
+  // The third output argument is a structure with additional information:
+  // "parabol"
+  // A structure containing the parabola fitted to each returned peak. The structure has two fields, "x" and "pp". The field "pp" contains the coefficients of the 2nd degree polynomial and "x" the extrema of the interval where it was fitted.
+  // "height"
+  // The estimated height of the returned peaks (in units of data).
+  // "baseline"
+  // The height at which the roots of the returned peaks were calculated (in units of data).
+  // "roots"
+  // The abscissa values (in index units) at which the parabola fitted to each of the returned peaks realizes its width as defined below.
+  // This function accepts property-value pair given in the list below:
+  // "MinPeakHeight"
+  // Minimum peak height (non-negative scalar). Only peaks that exceed this value will be returned. For data taking positive and negative values use the option "DoubleSided". Default value eps.
+  // "MinPeakDistance"
+  // Minimum separation between (positive integer). Peaks separated by less than this distance are considered a single peak. This distance is also used to fit a second order polynomial to the peaks to estimate their width, therefore it acts as a smoothing parameter. The neighborhood size is equal to the value of "MinPeakDistance". Default value 1.
+  // "MinPeakWidth"
+  // Minimum width of peaks (positive integer). The width of the peaks is estimated using a parabola fitted to the neighborhood of each peak. The width is calculated with the formula
+  // a * (width - x0)^2 = 1
+  // where a is the concavity of the parabola and x0 its vertex. Default value 1.
+  // "MaxPeakWidth"
+  // Maximum width of peaks (positive integer). Default value Inf.
+  // "DoubleSided"
+  // Tells the function that data takes positive and negative values. The base-line for the peaks is taken as the mean value of the function. This is equivalent as passing the absolute value of the data after removing the mean.
 
-  [pks, loc, extra] = findpeaks (data)
-  … = findpeaks (…, property, value)
-  … = findpeaks (…, "DoubleSided")
-  Finds peaks on data.
-
-  Peaks of a positive array of data are defined as local maxima. For double-sided data, they are maxima of the positive part and minima of the negative part. data is expected to be a single column vector.
-
-  The function returns the value of data at the peaks in pks. The index indicating their position is returned in loc.
-
-  The third output argument is a structure with additional information:
-
-  "parabol"
-  A structure containing the parabola fitted to each returned peak. The structure has two fields, "x" and "pp". The field "pp" contains the coefficients of the 2nd degree polynomial and "x" the extrema of the interval where it was fitted.
-
-  "height"
-  The estimated height of the returned peaks (in units of data).
-
-  "baseline"
-  The height at which the roots of the returned peaks were calculated (in units of data).
-
-  "roots"
-  The abscissa values (in index units) at which the parabola fitted to each of the returned peaks realizes its width as defined below.
-
-  This function accepts property-value pair given in the list below:
-
-  "MinPeakHeight"
-  Minimum peak height (non-negative scalar). Only peaks that exceed this value will be returned. For data taking positive and negative values use the option "DoubleSided". Default value eps.
-
-  "MinPeakDistance"
-  Minimum separation between (positive integer). Peaks separated by less than this distance are considered a single peak. This distance is also used to fit a second order polynomial to the peaks to estimate their width, therefore it acts as a smoothing parameter. The neighborhood size is equal to the value of "MinPeakDistance". Default value 1.
-
-  "MinPeakWidth"
-  Minimum width of peaks (positive integer). The width of the peaks is estimated using a parabola fitted to the neighborhood of each peak. The width is calculated with the formula
-
-  a * (width - x0)^2 = 1
-  where a is the concavity of the parabola and x0 its vertex. Default value 1.
-
-  "MaxPeakWidth"
-  Maximum width of peaks (positive integer). Default value Inf.
-
-  "DoubleSided"
-  Tells the function that data takes positive and negative values. The base-line for the peaks is taken as the mean value of the function. This is equivalent as passing the absolute value of the data after removing the mean.
-*/
 
   if (nargin < 1)
     error("findpeaks:InsufficientInputArguments\nfindpeaks: DATA must be given");

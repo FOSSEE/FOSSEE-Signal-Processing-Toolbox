@@ -10,14 +10,11 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
-
     //Transforms a s-plane filter (Analog) into a z-plane filter (Digital) using Bilinear transformation
-
     //Calling Sequence
     // [Zb, Za] = bilinear(Sb, Sa, T)
     // [Zb, Zb] = bilinear(Sz, Sp, Sg, T)
     // [Zz, Zp, Zg] = bilinear(...)
-
     //Prameters
     //Sb: Numerator coefficient vector in s-domain
     //Sa: denumerator coefficient vector s-domain
@@ -30,14 +27,12 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     //Zz: zeros in z-plane
     //Zp: poles in z-plane
     //Zg: gain in z-domain
-
     //Description:
     //a filter design can be transformed from the s-plane to the z-plane while maintaining the band edges by means of the bilinear transform. This maps the left hand side of the s-plane into the interior of the unit circle in z-plane. The mapping is highly non-linear, so you must design your filter with band edges in the s-plane positioned at 2/T tan(w*T/2) so that they will be positioned at w after the bilinear transform is complete.
     //It does following transformation from s-plane to z-plane
     //                      2  z-1
     //             s -> -  ----
     //                      T  z+1
-
     //Examples
     //[b a] = bilinear ([1 2 3], [4 5 6], 1, 1)
     //Output :
@@ -49,6 +44,7 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     //    0.  - 0.1666667  - 0.3333333    2.5
     // Dependencies
     // tf2zp postpad zp2tf prepad
+    
     funcprot(0);
     [nargout nargin] = argn();
     ieee(2);

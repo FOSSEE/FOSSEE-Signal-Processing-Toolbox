@@ -1,3 +1,5 @@
+
+function w = rectwin (m)
 //function [y] = rectwin (m)
 //This function returns the filter coefficients of a rectangular window.
 //Calling Sequence
@@ -15,8 +17,6 @@
 //    1.
 //    1.
 
-
-function w = rectwin (m)
 
  funcprot(0);
     rhs= argn(2);

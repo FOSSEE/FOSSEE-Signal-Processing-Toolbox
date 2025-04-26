@@ -10,8 +10,6 @@ function filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb)
 // Output: 
 //      filter_coeffs: returned filter coefficients
 
-
-
     // Check validity of number of inout arguments
     checkNArgin(1, 3, argn(2));
     

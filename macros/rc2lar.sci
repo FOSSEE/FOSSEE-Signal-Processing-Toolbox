@@ -1,7 +1,5 @@
 function g=rc2lar(k)
-    
 //rc2lar convert  reflection coefficient to log area ratios.
-
 // Calling Sequence
 // g = rc2lar(k)
 // Parameters

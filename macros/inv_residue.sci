@@ -9,8 +9,8 @@
 // Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-// Inverse of residue function
 function [b_out, a_out] = inv_residue(r_in, p_in, k_in, tol)
+// Inverse of residue function
 
   n = length(r_in); // Number of poles/residues
 

@@ -16,7 +16,7 @@ function [U, V] = dwt(X, varargin)
 //Description
 //This function calculates the discrete wavelet transform (1D).
 //Examples
-//
+
 funcprot(0);
 rhs = argn(2)
 if(rhs<2 | rhs>4)

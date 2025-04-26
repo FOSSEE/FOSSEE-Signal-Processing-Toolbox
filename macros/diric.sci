@@ -1,5 +1,4 @@
 function [y]= diric(x,n)
-
 // Calculates the dirichlet function
 // Calling Sequence
 //	[y]=diric(x,n)

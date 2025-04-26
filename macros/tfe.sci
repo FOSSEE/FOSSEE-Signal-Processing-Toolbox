@@ -1,13 +1,12 @@
-/*
-Dependency : pwelch
-Calling Sequence:
-    [Pxx,freq] = tfe(x,y,Nfft,Fs,window,overlap,range,plot_type,detrend)
-        Estimate transfer function of system with input "x" and output "y".
-        Use the Welch (1967) periodogram/FFT method.
-        Compatible with Matlab R11 tfe and earlier.
-        See "help pwelch" for description of arguments, hints and references — especially hint (7) for Matlab R11 defaults.*/
 function varargout = tfe(varargin)
-    nargout = argn (1)
+// Dependency : pwelch
+// Calling Sequence:
+//     [Pxx,freq] = tfe(x,y,Nfft,Fs,window,overlap,range,plot_type,detrend)
+//         Estimate transfer function of system with input "x" and output "y".
+//         Use the Welch (1967) periodogram/FFT method.
+//         Compatible with Matlab R11 tfe and earlier.
+//         See "help pwelch" for description of arguments, hints and references — especially hint (7) for Matlab R11 defaults.
+  nargout = argn (1)
     nargin = argn(2)
     // Check fixed argument
     if ( nargin<2 )

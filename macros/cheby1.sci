@@ -12,7 +12,6 @@
 
 function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //Chebyshev type I filter design with rp dB of passband ripple.
-
     //Calling Sequence
     //[b, a] = cheby1 (n, rp, wp)
     //[b, a] = cheby1 (n, rp, wp, "high")
@@ -20,14 +19,12 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //[b, a] = cheby1 (n, rp, [wl, wh], "stop")
     //[z, p, g] = cheby1 (…)
     //[…] = cheby1 (…, "s")
-
     //Parameters
     //n: positive integer value (order of filter)
     //rp: non negative scalar value (passband ripple)
     //wp: positive real value,
     //    1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}
     //    2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}
-
     //Description
     //This function generates a Chebyshev type I filter with rp dB of passband ripple.
     //if second parameter is scalar the fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
@@ -35,7 +32,6 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
     //[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
     //[...] = cheby1(...,’s’) returns a Laplace space filter, w can be larger than 1 rad/sec.
-
     //Examples
     //[z, p, k]=cheby1(2,6,0.7,"high")
     // k  =
