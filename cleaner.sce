@@ -49,6 +49,13 @@ function perform_clean()
     if isfile(root_tlbx + "/unloader.sce") then
         mdelete(root_tlbx + "/unloader.sce");
     end
+
+    if isdir(root_tlbx + "/help/en_US") then
+        xmlfiles = findfiles(root_tlbx + "/help/en_US/", "*.xml");
+        if ~isempty(xmlfiles) then
+            deletefile(root_tlbx + "/help/en_US/" + xmlfiles);
+        end
+    end
 endfunction
 
 try

@@ -16,6 +16,7 @@ toolbox_title = "FOSSEE_Signal_Processing_Toolbox"
 
 help_dir = get_absolute_file_path('builder_help.sce');
 
+help_from_sci(toolbox_dir+"/macros/",help_dir+"/en_US/");
 tbx_builder_help_lang("en_US", help_dir);
 
 clear toolbox_title;
