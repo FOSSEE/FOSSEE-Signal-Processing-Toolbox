@@ -1,29 +1,25 @@
-
-
-
-function w = blackmannuttall (m, opt)
-//function [w] = blackmannuttall (m, opt)
-//This function returns the filter coefficients of a Blackman-Nuttall window.
-//Calling Sequence
-//w = blackmannuttall (m)
-//w = blackmannuttall (m, opt)
-//Parameters
-//m: positive integer value
-//opt: string value, takes "periodic" or "symmetric"
-//w: output variable, vector of real numbers
-//Description.
-//This is an Octave function.
-//This function returns the filter coefficients of a Blackman-Nuttall window of length m supplied as input, to the output vector w.
-//The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
-//Examples
-//blackmannuttall(5,"symmetric")
-//ans  =
+function w = blackmannuttall(m, opt)
+// Generate a Blackman-Nuttall window.
+//
+// Syntax
+//   w = blackmannuttall(m)
+//   w = blackmannuttall(m, opt)
+//
+// Parameters
+// m: Positive integer. Length of the Blackman-Nuttall window.
+// opt: String. Specifies the type of Blackman-Nuttall window ('symmetric' or 'periodic'). Default is 'symmetric'.
+//
+// Description
+// This function returns the filter coefficients of a Blackman-Nuttall window of length `m`. The second parameter `opt` specifies whether the window is 'symmetric' (default) or 'periodic'.
+//
+// Examples
+// blackmannuttall(5, "symmetric")
+// ans =
 //    0.0003628
 //    0.2269824
 //    1.
 //    0.2269824
 //    0.0003628
-
 
  funcprot(0);
     rhs= argn(2);
