@@ -10,38 +10,39 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-function [y] = chirp(t,f0,t1,f1,form,phase)
-    //This function evaluates a chirp signal at time t.
-    //Calling Sequence
-    //y = chirp(t)
-    //y = chirp(t, f0)
-    //y = chirp(t, f0, t1)
-    //y = chirp(t, f0, t1, f1)
-    //y = chirp(t, f0, t1, f1, frm)
-    //y = chirp(t, f0, t1, f1, frm, phse)
-    //Parameters
-    //t:  a vector of times to evaluate the chirp signal
-    //f0: the frequency at t=0 [default value = 0 Hz]
-    //t1: some intermediate time [default value = 1 sec]
-    //f1: frequency at t1. [default value = 100 Hz]
-    //frm: string value, takes in "linear", "quadratic", "logarithmic" [default value = "linear"]
-    //phse: phase shift at t=0. [default value = 0]
-    //y: chirp signal value corresponding to t.
-    //Description
-    //This function evaluates a chirp signal at time t. A chirp signal is a frequency swept cosine wave.
-    //The first argument is a vector of times to evaluate the chirp signal, second argument is the frequency at t=0, third argument is time t1 and fourth argument is frequency at t1.
-    //The fifth argument is the form which takes in values "linear", "quadratic" and "logarithmic", the sixth argument gives the phase shift at t=0.
-    //Examples
-    //t = [4,3,2,1];
-    //f0 = 4;
-    //t1 = 5;
-    //f1 = 0.9;
-    //form = "quadratic";
-    //y = chirp(t, f0, t1, f1, form)
-    //Output :
-    // y  =
-    //
-    //  - 0.6112508    0.7459411  - 0.4854201    0.9664658
+function [y] = chirp(t, f0, t1, f1, form, phase)
+// Generate a chirp signal.
+//
+// Syntax
+//   y = chirp(t)
+//   y = chirp(t, f0)
+//   y = chirp(t, f0, t1)
+//   y = chirp(t, f0, t1, f1)
+//   y = chirp(t, f0, t1, f1, form)
+//   y = chirp(t, f0, t1, f1, form, phase)
+//
+// Parameters
+// t: Vector. Times to evaluate the chirp signal.
+// f0: Real scalar. Frequency at t=0. Default is 0 Hz.
+// t1: Real scalar. Intermediate time. Default is 1 second.
+// f1: Real scalar. Frequency at t1. Default is 100 Hz.
+// form: String. Form of the chirp signal. Can be "linear", "quadratic", or "logarithmic". Default is "linear".
+// phase: Real scalar. Phase shift at t=0 in degrees. Default is 0.
+// y: Vector. Chirp signal values corresponding to `t`.
+//
+// Description
+// This function generates a chirp signal, which is a frequency-swept cosine wave. The signal can be linear, quadratic, or logarithmic based on the `form` parameter.
+//
+// Examples
+// t = [4, 3, 2, 1];
+// f0 = 4;
+// t1 = 5;
+// f1 = 0.9;
+// form = "quadratic";
+// y = chirp(t, f0, t1, f1, form)
+// Output:
+// y =
+//  -0.6112508    0.7459411  -0.4854201    0.9664658
 
     funcprot(0);
     [nargout,nargin]=argn(0);
