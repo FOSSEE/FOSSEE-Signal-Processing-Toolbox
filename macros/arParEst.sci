@@ -1,5 +1,26 @@
 function [model_est, var_est, msg_strg] = arParEst(data_in, order, method)
-    
+// Estimate AR model parameters using covariance or modified covariance method.
+//
+// Syntax
+//   [model_est, var_est, msg_strg] = arParEst(data_in, order, method)
+//
+// Parameters
+// data_in: Input data (vector or matrix).
+// order: Order of the AR model.
+// method: Estimation method ('covariance' or 'modified').
+//
+// Returns
+// model_est: Estimated AR model coefficients.
+// var_est: Variance estimate of the white noise input.
+// msg_strg: Error message string (empty if no error).
+//
+// Description
+// Function arParEst() estimates the parameters of an autoregressive (AR) model using the specified method ('covariance' or 'modified').
+// It validates the input data and computes the AR coefficients and variance estimate.
+//
+// Examples
+// [model_est, var_est, msg_strg] = arParEst([1, 2, 3, 4, 5], 2, 'covariance')
+
     checkNArgin(3, 3, argn(2))
     
     model_est = [];
