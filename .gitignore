@@ -1,6 +1,9 @@
 *~
 /help/en_US/master_help.xml
 /help/en_US/scilab_en_US_help/
+/help/en_US/*.xml
 /jar/scilab_en_US_help.jar
 /macros/*.bin
 /macros/lib
+/cleaner.sce
+/loader.sce
