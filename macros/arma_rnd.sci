@@ -1,28 +1,33 @@
-function x = arma_rnd (a, b, v, t, n)
-//Return a simulation of the ARMA model.
-//Calling Sequence:
-//arma_rnd (a, b, v, t, n)
-//arma_rnd (a, b, v, t)
-//Parameters:
-//a: Real vector
-//b: Real vector
-//v: Variance
-//t: Length of output vector
-//n: Number of dummy x(i) used for initialization
-//Description:
-//The ARMA model is defined by x(n) = a(1) * x(n-1) + … + a(k) * x(n-k)     + e(n) + b(1) * e(n-1) + … + b(l) * e(n-l)
-//in which k is the length of vector a, l is the length of vector b and e is Gaussian white noise with variance v. The function returns a vector of length t.
-//The optional parameter n gives the number of dummy x(i) used for initialization, i.e., a sequence of length t+n is generated and x(n+1:t+n) is returned.
-//If n is omitted, n = 100 is used.
-//Examples:
-//a = [1 2 3 4 5];
-//b = [7 8 9 10 11];
-//v = 10;
-//t = 5;
-//n = 100;
-//arma_rnd (a, b, v, t, n)
-//Output :
-// ans  =
+function x = arma_rnd(a, b, v, t, n)
+// Return a simulation of the ARMA model.
+//
+// Syntax
+//   x = arma_rnd(a, b, v, t, n)
+//   x = arma_rnd(a, b, v, t)
+//
+// Parameters
+// a: Real vector. Coefficients of the autoregressive (AR) part of the model.
+// b: Real vector. Coefficients of the moving average (MA) part of the model.
+// v: Variance of the Gaussian white noise.
+// t: Length of the output vector.
+// n: Number of dummy x(i) used for initialization (optional, default = 100).
+//
+// Description
+// The ARMA model is defined by:
+//   x(n) = a(1) * x(n-1) + … + a(k) * x(n-k) + e(n) + b(1) * e(n-1) + … + b(l) * e(n-l),
+// where `k` is the length of vector `a`, `l` is the length of vector `b`, and `e` is Gaussian white noise with variance `v`.
+// The function returns a vector of length `t`. The optional parameter `n` specifies the number of dummy x(i) used for initialization.
+// If `n` is omitted, it defaults to 100.
+//
+// Examples
+// a = [1, 2, 3, 4, 5];
+// b = [7, 8, 9, 10, 11];
+// v = 10;
+// t = 5;
+// n = 100;
+// x = arma_rnd(a, b, v, t, n)
+// Output:
+// ans =
 //    61400.907
 //    158177.11
 //    407440.29
