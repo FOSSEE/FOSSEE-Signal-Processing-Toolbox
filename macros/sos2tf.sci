@@ -18,6 +18,7 @@ function [A,B] = sos2tf(sos, g)
 //  -2   1  2  4  1
 //b =
 //   1 10  0 -10 -1
+
 if(argn(2)<1 | argn(2)>2)
 error("Wrong number of input arguments.")
 end

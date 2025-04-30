@@ -66,10 +66,7 @@ function [S,f,v,e] = peig(varargin)
 //s = 2*sin(2*%pi*25*t)+sin(2*%pi*35*t);
 //[S,w]=peig(s,2,512,fs,'half');
 //plot(w,S);
-
     //EXECUTE  FUNCTIONS subspaceMethodsInputPars.sci, musicBase.sci PRIOR  THE EXECUTION OF THIS FUNCTION
-
-
     // See also
     // rooteig | pmusic | pmtm | pcov | pmcov | pburg | pyulear | pwelch | corrmtx
     //

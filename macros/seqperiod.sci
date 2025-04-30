@@ -39,6 +39,7 @@ function [p,num]=seqperiod(x)
 //1.  
 //Authors
 //Ankur Mallick
+
     funcprot(0);
     if(argn(2)~=1)
         error('Incorrect number of input arguments.');

@@ -1,6 +1,4 @@
 function [d, initialcross, finalcross, nextcross, midreference]= dutycycle(x, varargin)
-    
-      
     // This function estimate duty cycle of bilevel waveform pulses.
     // Calling Sequence
     // d=dutycycle(x)
@@ -11,7 +9,6 @@ function [d, initialcross, finalcross, nextcross, midreference]= dutycycle(x, va
     // d=dutycycle(x, t, 'MidPercentReferenceLevel', N )
     // d=dutycycle(x, t, 'Tolerance', M)
     // d=dutycycle(x, t,'StateLevels', O)
-    
     // [d initialcross finalcross nextcross midreference]=dutycycle(x)
     // [d initialcross finalcross nextcross midreference]=dutycycle(x, t)
     // [d initialcross finalcross nextcross midreference]=dutycycle(x, Fs)
@@ -37,7 +34,6 @@ function [d, initialcross, finalcross, nextcross, midreference]= dutycycle(x, va
     // finalcross: returns a vector of final cross values of bilevel waveform transitions X
     // nextcross: returns a vector of next cross values of bilevel waveform transitions X
     // midreference: return mid reference value corrosponding to mid percenr reference value.
-    
     // Examples
     // x=[1.2, 5, 10, -20, 12]
     //t=1:length(x)
@@ -45,13 +41,8 @@ function [d, initialcross, finalcross, nextcross, midreference]= dutycycle(x, va
     // See also
     // Authors
     // Jitendra Singh
-  
-      
   // run statelevels and midcross function before running risetime function.  
 
-    
-    
-    
      if or(type(x)==10) then
     error ('Input arguments must be double.')
 end  

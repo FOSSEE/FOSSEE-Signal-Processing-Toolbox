@@ -46,28 +46,28 @@ end
 
 
 
-///////////////              Test case for       peig            /////////
+///////////////              Test case for       peig            ///////// failed with error -> Undefined variable: subspaceMethodsInputPars
 
-//fs = 100;
-//t = 0:1/fs:1-1/fs;
-//s = 2*sin(2*%pi*25*t)+sin(2*%pi*35*t);
-//[S,w]=peig(s,2,512,fs,'half');
-//n=length(S);
-//
-//for i=1:n
+// fs = 100;
+// t = 0:1/fs:1-1/fs;
+// s = 2*sin(2*%pi*25*t)+sin(2*%pi*35*t);
+// [S,w]=peig(s,2,512,fs,'half');
+// n=length(S);
+
+// for i=1:n
 //    S(i)=round((S(i)*10^7)/10^7);
 //    end
-//
-//
-//M=fscanfMat("macros/text4_peig.txt");
-//M=roundn(M,7);
-//if(M==S )
+
+
+// M=fscanfMat("macros/text4_peig.txt");
+// M=roundn(M,7);
+// if(M==S )
 //      test_pass=[test_pass 1];
 // else
 //     test_pass=[test_pass 0];
 //     disp("peig test failed");
 //     end
-//
+
 
 /////////////////test for periodogram   ///////////////////////////
 
@@ -93,26 +93,26 @@ end
 
 
 
-////////                   test case for pmusic.............//////////
-//n = 0:199;
-//x = cos(0.257*%pi*n) + sin(0.2*%pi*n);
-//[S,w]=pmusic(x,2,16,1);
-//S=roundn(S,6);
-//w=roundn(w,4);
-//
-//si=[2.6425624,5.7475005, 77.1482210,1.5296243,0.4725347,0.2848481,0.2508128,0.2731036,0.2950648]';
-//si=roundn(si,6);
-//
-//Wi=[0,0.0625,0.125,0.1875,0.25,0.3125,0.375,0.4375,0.5]';
-//Wi=roundn(Wi,4);
-//
+////////                   test case for pmusic.............////////// Failed with error -> Undefined variable: subspaceMethodsInputParser
+// n = 0:199;
+// x = cos(0.257*%pi*n) + sin(0.2*%pi*n);
+// [S,w]=pmusic(x,2,16,1);
+// S=roundn(S,6);
+// w=roundn(w,4);
+
+// si=[2.6425624,5.7475005, 77.1482210,1.5296243,0.4725347,0.2848481,0.2508128,0.2731036,0.2950648]';
+// si=roundn(si,6);
+
+// Wi=[0,0.0625,0.125,0.1875,0.25,0.3125,0.375,0.4375,0.5]';
+// Wi=roundn(Wi,4);
+
 // if(si==S & w==Wi)
 //      test_pass=[test_pass 1];
 // else
 //     test_pass=[test_pass 0];
 //     disp("pmusic test failed");
 //     end
-//
+
 
 
 
@@ -239,7 +239,6 @@ end
 X=[1 6/7 5/7 8/7 3/7 6/7];
 [R U kr e] = rlevinson(X, 0.3);
 
-:
 ei  =[ 0.3757546,0.0221076,-3.4125,1.1307692,0.3];
  kri  =[
   -0.2251908
@@ -356,7 +355,6 @@ end
 
 
 ////////////////test for schurrc    //////////
-:
 m=linspace(1,100);
 r = xcorr(m(1:5),'unbiased');.......//autocorrelation vector
 [k,e] = schurrc(r(5:$));
@@ -488,7 +486,7 @@ else
     disp("test failed for upsample fill");
 end
 
-///////////test for ss2sos///////////////
+///////////test for ss2sos/////////////// 
 a =[0.5095,0,0,0,0;
 0.3007, 0.2260, -0.3984, 0, 0;
 0.0977, 0.3984, 0.8706, 0, 0;
@@ -596,12 +594,12 @@ else
     disp("tst failed for downsample");
 end
 
-//////////////////test for mpoles////////////
+//////////////////test for mpoles//////////// Tst failed for mpoles
 
 [m,n]=mpoles([2 3 1 1 2]);
 
 mi=[1;1;2;1;2];
-ni=[2;5;1;4;3];
+ni=[2;1;5;3;4];
 
 m=round(m);
 n=round(n);
@@ -793,7 +791,7 @@ end
 
 
 //////////////////////test for mexihat//////////////////
-[a,b]= mexihat(1,2,3);
+[a,b]= mexihat(1,2,3); 
 ai=[0.00000  -0.35197  -0.35214];
 bi=[1.0000   1.5000   2.0000];
 
@@ -815,7 +813,7 @@ end
 
 
 
-////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////
 
 res=find(test_pass==0)
 

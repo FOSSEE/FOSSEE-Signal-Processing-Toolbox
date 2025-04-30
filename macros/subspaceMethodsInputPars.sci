@@ -1,11 +1,8 @@
 // Date of creation: 17 Dec, 2015
 function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
     // Input parser to be used by pmusic and peig
-
     // primaryInput, p, w, nfft, fs, nwin, noverlap, freqrange, isCorrFlag
-
     // NOTE: not accepting <x,p,w,nfft> as it is indistinguishable from <x,p,f,fs>
-
     // Input combinations
     // x, p
     // x, p, w
@@ -13,12 +10,8 @@ function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
     // x, p, nfft, fs
     // x, p, f, fs
     // x, p, nfft, fs, nwin, noverlap
-
     // 'corr' flag with everyone
     // freqrange string
-
-
-
     // Output arguments description:
     // data - struct with the following arguments
     //      x - input signal or correlation matrix

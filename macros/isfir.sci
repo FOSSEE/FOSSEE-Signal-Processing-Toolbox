@@ -1,22 +1,16 @@
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
-
+function fir=isfir(varargin)
 // This function checks whether given system function is FIR or not
-
 //. Calling Sequence
 // fir = isfir(b,a)
 // fir = isfir(sos)
-
-// Input Parameters
+// Parameters
 // a -->denumerator coefficient matrix
 // b --> numerator coefficient matrix
 // sos --> second order split matrix
 // Output parameter
 // fir --> fir == 1 if system is FIR , fir == 0 if system is not FIR
-
 //Description
 // This function take a system function (in terms of denumerator and numerator coefficient matrix or in term of second order split (sos) matrix) as input and checks
-
 //Example
 // 1.)
 // fir = isfir([1 -1 1], 1)
@@ -24,10 +18,11 @@
 // fir  =
 //
 //    1.
-
 //Conclusion : Output of above example is fir = 1 this means system is FIR
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
 
-function fir=isfir(varargin)
+
     [nargout,nargin]=argn();
 // checking for input in terms of numerator (b) and denumerator (a) coefficient matrices
     if (nargin==2) then

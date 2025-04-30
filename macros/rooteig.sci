@@ -60,7 +60,6 @@ function [w,pow] = rooteig(x,p,varargin)
  //   4.1748
  //   1.0572
  //   1.2419
-
     // Author
     // Ayush
     //
@@ -71,8 +70,7 @@ function [w,pow] = rooteig(x,p,varargin)
     //    Prentice-Hall
     //
     //
-
-
+    
     funcprot(0);
 
    // exec('musicBase.sci',-1);

@@ -9,7 +9,6 @@ function h = rcosdesign(rollof_factor, num_of_symb, samp_per_symb, varargin)
 // Output:
 //      h: returned filter coefficients
 //The output result for the input parameter of shape 'normal' is not equivalent to the matlab output because of the use of sinc function in the computation. Matlab and scilab sinc functions seem to not be equivalent.
-
 ////EXAMPLE:
 //rolloff = 0.25;
 //span = 3;

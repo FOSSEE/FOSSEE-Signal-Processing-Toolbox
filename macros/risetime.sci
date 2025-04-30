@@ -1,6 +1,4 @@
 function [r, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=risetime(x, varargin)
-    
-      
     // This function estimate risetime values of real vector X.
     // Calling Sequence
     // r=risetime(x)
@@ -30,7 +28,6 @@ function [r, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=r
     // uppercrossvalue: return the upper cross value.
     // lowerreference: return lower reference value corrosponding to lower percenr reference value.
     // upperreference: return lower reference value corrosponding to upper percenr reference value.
-    
     // Examples
     // x=[1.2, 5, 10, -20, 12]
     //t=1:length(x)

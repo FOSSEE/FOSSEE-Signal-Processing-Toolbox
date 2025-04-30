@@ -11,33 +11,24 @@
 // Email: toolbox@scilab.in
 // FIXME: check invfreq.sci for todo's
 
-/*
-  :[B,A] = invfreqs(H,F,nB,nA)
-  :[B,A] = invfreqs(H,F,nB,nA,W) 
-  :[B,A] = invfreqs(H,F,nB,nA,W,iter,tol,'trace') 
 
-    Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.
-
-    A and B are real polynomial coefficients of order nA and nB.
-
-    Optionally, the fit-errors can be weighted vs frequency according to the weights W.
-
-    Note: all the guts are in invfreq.m
-
-    H: desired complex frequency response
-
-    F: frequency (must be same length as H)
-
-    nA: order of the denominator polynomial A
-
-    nB: order of the numerator polynomial B
-
-    W: vector of weights (must be same length as F)
-
-*/
-// Dependencies
-// invfreq
 function [B, A, SigN] = invfreqs(H,F,nB,nA,W,iter,tol,tr, varargin)
+  // Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.
+  // Calling Sequence
+  //   [B,A] = invfreqs(H,F,nB,nA)
+  //   [B,A] = invfreqs(H,F,nB,nA,W) 
+  //   [B,A] = invfreqs(H,F,nB,nA,W,iter,tol,'trace') 
+  // Parameters
+  //   A and B are real polynomial coefficients of order nA and nB.
+  //   Optionally, the fit-errors can be weighted vs frequency according to the weights W.
+  //   Note: all the guts are in invfreq.m
+  //   H: desired complex frequency response
+  //   F: frequency (must be same length as H)
+  //   nA: order of the denominator polynomial A
+  //   nB: order of the numerator polynomial B
+  //   W: vector of weights (must be same length as F)
+// See also
+// invfreq
 
   if nargin < 9
     varargin = {};

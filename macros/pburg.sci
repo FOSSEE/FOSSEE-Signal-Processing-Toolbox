@@ -1,9 +1,7 @@
 function [psd,f_out] = pburg(x, poles, varargin)
 //Calculate Burg maximum-entropy power spectral density.
-
 //Calling Sequence:
 //[psd,f_out] = pburg(x, poles, freq, Fs, range, method, plot_type, criterion)
-
 //Parameters:
 //All but the first two parameters are optional and may be empty.
 //
@@ -49,10 +47,8 @@ function [psd,f_out] = pburg(x, poles, varargin)
 //If return values are not required by the caller, the spectrum is plotted and nothing is returned.
 //psd: [real vector] power-spectral density estimate.
 //f_out: [real vector] frequency values.
-
 //Description:
 //This function is a wrapper for arburg and ar_psd.
-
 //Examples:
 //a = [1.0 -1.6216505 1.1102795 -0.4621741 0.2075552 -0.018756746];
 //[psd, f_out] = pburg(a, 2);

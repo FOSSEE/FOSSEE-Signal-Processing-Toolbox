@@ -1,19 +1,20 @@
-/* Description
-        Return the spectral density estimator given a data vector x, window name win, and bandwidth, b.
-        The window name, e.g., "triangle" or "rectangle" is used to search for a function called win_sw.
-        If win is omitted, the triangle window is used.
-        If b is omitted, 1 / sqrt (length (x)) is used.
-    Calling Sequence
-        spectral_xdf (x)
-        spectral_xdf (x, win)
-        spectral_xdf (x, win, b)
-    Parameters
-        x : Data vector
-        win : the window name . Default "triangle" is used .
-        b : Bandwidth . Default value 1/sqrt(length(x))
-Dependencies:fft1 ifft1 */
 function sde = spectral_xdf (x, win, b)
-    // check x is a vector or not
+//  Description
+//         Return the spectral density estimator given a data vector x, window name win, and bandwidth, b.
+//         The window name, e.g., "triangle" or "rectangle" is used to search for a function called win_sw.
+//         If win is omitted, the triangle window is used.
+//         If b is omitted, 1 / sqrt (length (x)) is used.
+//     Calling Sequence
+//         spectral_xdf (x)
+//         spectral_xdf (x, win)
+//         spectral_xdf (x, win, b)
+//     Parameters
+//         x : Data vector
+//         win : the window name . Default "triangle" is used .
+//         b : Bandwidth . Default value 1/sqrt(length(x))
+// Dependencies:fft1 ifft1 
+
+  // check x is a vector or not
     if ~isvector(x) 
         error("spectral_xdf :  x must a data vector")
     end

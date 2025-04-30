@@ -9,34 +9,30 @@
 // Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-/*
-Calling Sequence 
- q = marcumq (a, b)
- q = marcumq (a, b, m)
- q = marcumq (a, b, m, tol)
- 
-Input and Output parameters
-a — Noncentrality parameter --- nonnegative scalar | array of nonnegative numbers 
-b — Argument of Marcum Q-function --- nonnegative scalar | array of nonnegative numbers
-m — Order of generalized Marcum Q-function --- positive integer | array of positive integers
 
-Compute the generalized Marcum Q function of order `m` with noncentrality parameter `a` and argument `b`. 
-If the order `m` is omitted, it defaults to 1. An optional relative tolerance `tol` may be included, 
-and the default value is `eps`.
-
-If the input arguments are commensurate vectors, this function will produce a table of values.
-
-This function computes Marcum’s Q function using the infinite Bessel series, 
-which is truncated when the relative error is less than the specified tolerance. 
-The accuracy is limited by that of the Bessel functions, so reducing the tolerance is probably not useful.
-
-References:
-- Marcum, "Tables of Q Functions", Rand Corporation.
-- R.T. Short, "Computation of Noncentral Chi-squared and Rice Random Variables", 
-  www.phaselockedsystems.com/publications
-*/
 
 function q = marcumq (a, b, m, tol)
+// Compute the generalized Marcum Q function of order `m` with noncentrality parameter `a` and argument `b`. 
+// Calling Sequence 
+//  q = marcumq (a, b)
+//  q = marcumq (a, b, m)
+//  q = marcumq (a, b, m, tol)
+// Input and Output parameters
+// a — Noncentrality parameter --- nonnegative scalar | array of nonnegative numbers 
+// b — Argument of Marcum Q-function --- nonnegative scalar | array of nonnegative numbers
+// m — Order of generalized Marcum Q-function --- positive integer | array of positive integers
+// Compute the generalized Marcum Q function of order `m` with noncentrality parameter `a` and argument `b`. 
+// If the order `m` is omitted, it defaults to 1. An optional relative tolerance `tol` may be included, 
+// and the default value is `eps`.
+// If the input arguments are commensurate vectors, this function will produce a table of values.
+// This function computes Marcum’s Q function using the infinite Bessel series, 
+// which is truncated when the relative error is less than the specified tolerance. 
+// The accuracy is limited by that of the Bessel functions, so reducing the tolerance is probably not useful.
+// References:
+// - Marcum, "Tables of Q Functions", Rand Corporation.
+// - R.T. Short, "Computation of Noncentral Chi-squared and Rice Random Variables", 
+//   www.phaselockedsystems.com/publications
+
 
   if ((nargin < 2) || (nargin > 5))
     error(" marcumq : wrong numbers of input arguments ");

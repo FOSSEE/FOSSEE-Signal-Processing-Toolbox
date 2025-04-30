@@ -12,7 +12,6 @@
 
 
 function [psi,x]=mexihat(lb,ub,n)
-
 // Generates Mexican Hat wavelet
 // Calling Sequence
 //	[psi,x]=mexihat(lb,ub,n)

@@ -9,33 +9,26 @@
 // Last Modified on : 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-/*
-  : [B,A] = invfreq(H,F,nB,nA,W)
-  : [B,A] = invfreq(H,F,nB,nA,W,[],[],plane) 
-  : [B,A] = invfreq(H,F,nB,nA,W,iter,tol,plane) 
 
-    Fit filter B(z)/A(z) or B(s)/A(s) to complex frequency response at frequency points F.
+function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
+  // Fit filter B(z)/A(z) or B(s)/A(s) to complex frequency response at frequency points F.
+  // Calling Sequence
+  // [B,A] = invfreq(H,F,nB,nA,W)
+  // [B,A] = invfreq(H,F,nB,nA,W,[],[],plane) 
+  // [B,A] = invfreq(H,F,nB,nA,W,iter,tol,plane) 
+  // Parameters
+  //   A and B are real polynomial coefficients of order nA and nB respectively. Optionally, the fit-errors can be weighted vs frequency according to the weights W. Also, the transform plane can be specified as either ’s’ for continuous time or ’z’ for discrete time. ’z’ is chosen by default. Eventually, Steiglitz-McBride iterations will be specified by iter and tol.
+  //   H: desired complex frequency response It is assumed that A and B are real polynomials, hence H is one-sided.
+  //   F: vector of frequency samples in radians
+  //   nA: order of denominator polynomial A
+  //   nB: order of numerator polynomial B
+  //   plane=’z’: F on unit circle (discrete-time spectra, z-plane design)
+  //   plane=’s’: F on jw axis (continuous-time spectra, s-plane design)
+  //   H(k) = spectral samples of filter frequency response at points zk, where zk=exp(sqrt(-1)*F(k)) when plane=’z’ (F(k) in [0,.5]) and zk=(sqrt(-1)*F(k)) when plane=’s’ (F(k) nonnegative)
 
-    A and B are real polynomial coefficients of order nA and nB respectively. Optionally, the fit-errors can be weighted vs frequency according to the weights W. Also, the transform plane can be specified as either ’s’ for continuous time or ’z’ for discrete time. ’z’ is chosen by default. Eventually, Steiglitz-McBride iterations will be specified by iter and tol.
-
-    H: desired complex frequency response It is assumed that A and B are real polynomials, hence H is one-sided.
-
-    F: vector of frequency samples in radians
-
-    nA: order of denominator polynomial A
-
-    nB: order of numerator polynomial B
-
-    plane=’z’: F on unit circle (discrete-time spectra, z-plane design)
-
-    plane=’s’: F on jw axis (continuous-time spectra, s-plane design)
-
-    H(k) = spectral samples of filter frequency response at points zk, where zk=exp(sqrt(-1)*F(k)) when plane=’z’ (F(k) in [0,.5]) and zk=(sqrt(-1)*F(k)) when plane=’s’ (F(k) nonnegative)
-*/
 // FIXME: implement Steiglitz-McBride iterations
 // FIXME: improve numerical stability for high order filters (matlab is a bit better)
 // FIXME: modify to accept more argument configurations
-function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
 
   if nargin < 4  then 
     error("invfreq : Incorrect number of input arguments ")

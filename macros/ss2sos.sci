@@ -1,9 +1,6 @@
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
-
+function [sos,g]=ss2sos(A,B,C,D)
 //ss2sos converts a state-space representation of a given digital filter to an equivalent second-order section representation.
-
-////Example:
+//Example:
 //a =[0.5095,0,0,0,0;
 //0.3007, 0.2260, -0.3984, 0, 0;
 //0.0977, 0.3984, 0.8706, 0, 0;
@@ -18,7 +15,6 @@
 //
 //
 //d =0.0013
-
 //[sos,g]=ss2sos(a,b,c,d)
 //Expected output:
 //g  =
@@ -28,10 +24,12 @@
 //  1.    3.1480112    3.2063892    1.  - 1.3693    0.6925133
 //  1.    0.4742625    0.           1.  - 0.5095    0.
 //
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
 
 
 
-function [sos,g]=ss2sos(A,B,C,D)
+
 //not taking if, order and scale as input since they do not seem useful
     if (type(A)~=1 | type(B)~=1 | type(C)~=1 | type(D)~=1) then
         error('check input types');

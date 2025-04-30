@@ -22,7 +22,6 @@ function savg = spencer (x)
    x = matrix(x, n, 1);
   end
 
-  end
   w = [-3, -6, -5, 3, 21, 46, 67, 74, 67, 46, 21, 3, -5, -6, -3] / 320;
   savg = filter (w, 1, x);
   savg = [zeros(7,c); savg(15:n,:); zeros(7,c);];

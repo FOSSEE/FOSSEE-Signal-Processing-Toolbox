@@ -1,6 +1,5 @@
 function [x,w] = nnls(E,f)
     // Non Negative Least Squares (nnls) for Ex=f with the constraint x>=0
-    
     // Reference 
     //      Lawson, C.L. and R.J. Hanson, Solving Least Squares Problems,
     //      Prentice-Hall, 1974, Chapter 23, p. 161.

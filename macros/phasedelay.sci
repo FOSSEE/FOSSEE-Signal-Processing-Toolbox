@@ -1,10 +1,12 @@
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+
 function [phi, varargout]=phasedelay(varargin)
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given
     //(sos,n) or (sos,w) or (sos,'whole')or (b,a) is the input
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given
     //cas1 variable is 1 if f is to be given as output, 2 other wise
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
+
     [nargout,nargin]=argn();
     //do not forget to execute 'phaseInputParseAs_sos' and 'phaseInputParseAs_ab' before running
     v=size(varargin(1));

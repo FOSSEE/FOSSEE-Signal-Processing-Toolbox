@@ -1,22 +1,22 @@
-/* Description
-        This function calculates the Fast Hartley transform of real input D.
-        If D is a matrix, the Hartley transform is calculated along the columns by default.
-        If N is specified, the first N elements along the specified dimension are used for the transform.
-        If DIM is specified, the transform is calculated along the specified dimension.
-   Calling Sequence
-        M = fht (D)
-        M = fht (D, N)
-        M = fht (D, N, DIM)
-   Parameters 
-        D: Input data (real matrix or vector).
-        N: Number of elements of D to be used for the transform (optional).
-        DIM: Dimension along which the transform is to be computed (optional).
-   Examples
-        fht(1:4)
-        ans =
-       10   -4   -2   0  
-*/
 function M = fht(D, N, DIM)
+//      Description
+//         This function calculates the Fast Hartley transform of real input D.
+//         If D is a matrix, the Hartley transform is calculated along the columns by default.
+//         If N is specified, the first N elements along the specified dimension are used for the transform.
+//         If DIM is specified, the transform is calculated along the specified dimension.
+//    Calling Sequence
+//         M = fht (D)
+//         M = fht (D, N)
+//         M = fht (D, N, DIM)
+//    Parameters 
+//         D: Input data (real matrix or vector).
+//         N: Number of elements of D to be used for the transform (optional).
+//         DIM: Dimension along which the transform is to be computed (optional).
+//    Examples
+//         fht(1:4)
+//         ans =
+//        10   -4   -2   0  
+
     funcprot(0);
     rhs = argn(2);
     if rhs < 1 | rhs > 3 then

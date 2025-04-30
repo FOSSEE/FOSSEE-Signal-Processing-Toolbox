@@ -42,7 +42,6 @@ function [a,g] = lpc(x,varargin)
     //title 'Original Signal vs. LPC Estimate';
     //xlabel 'Sample number', ylabel 'Amplitude';
     //legend('Original signal','LPC estimate');
-
     //Output :
     // g  =
     //
@@ -51,7 +50,6 @@ function [a,g] = lpc(x,varargin)
     //
     //    1.    0.51533    0.3313039    0.2783268
     //
-
     //
     //
     // References

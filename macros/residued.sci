@@ -9,8 +9,10 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-//  Function File [r, p, f, m] = residued (b, a)
+
+function [r, p, f, m] = residued(b, a, toler)
 // Compute the partial fraction expansion (PFE) of filter
+//  Function File [r, p, f, m] = residued (b, a)
 // H(z) = B(z)/A(z).  In the usual PFE function coderesiduez, the
 // IIR part (poles p and residues r) is driven in parallel
 // with the FIR part (f).  In this variant, the IIR part is driven by
@@ -59,8 +61,6 @@
 //  - 2.
 //    8.
 //
-
-function [r, p, f, m] = residued(b, a, toler)
 
   // RESIDUED - return residues, poles, and FIR part of B(z)/A(z)
   //

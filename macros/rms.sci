@@ -1,3 +1,5 @@
+
+function y = rms(x, dim)
 //Root mean squared value \
 //Y=rms(X);
 //Y=rms(X,dim);
@@ -11,7 +13,6 @@
 //   RMS(ABS(X)). 
 //Author Debdeep Dey
 
-function y = rms(x, dim)
 //convert i/p values to their ascii values if they are of type char
 if(type(x)==10) then
     xa=x;

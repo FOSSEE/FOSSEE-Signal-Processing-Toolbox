@@ -10,7 +10,6 @@
 // Email: toolbox@scilab.in
 
 function  r  = zerocrossing (x,y)
-
 //This function estimates the points at which a given waveform crosses the x-axis.
 //Estimates the points at which a given waveform y=y(x) crosses the
 //x-axis using linear interpolation.
@@ -29,7 +28,6 @@ function  r  = zerocrossing (x,y)
 // x0= zerocrossing(x,y);
 //y0=interp1(x,y,x0)
 //plot(x,y,x0,y0,'x')
-
 //
 ////////2.
 //x = linspace(0,1,100);

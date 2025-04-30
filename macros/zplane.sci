@@ -1,21 +1,3 @@
-//Pole-Zero plot for Discrete time systems
-
-//Calling Sequence
-//zplane(z)
-//zpalne(z,p)
-
-//Parameters:
-//z: vector containing numerator coefficients
-//p: vector containing denumerator coefficients
-
-//Description:
-//This function gives pole zero plote of discrete time systems
-
-//Example :
-//zplane([1 2 3],[4 5 6])
-//Output :
-//Output is pole zero plot of respective discrete time system.
-
 
 
 //**************************************************************************************************
@@ -45,6 +27,20 @@
 //**************************************************************************************************
 
 function zplane(z,varargin)
+//Pole-Zero plot for Discrete time systems
+//Calling Sequence
+//zplane(z)
+//zpalne(z,p)
+//Parameters:
+//z: vector containing numerator coefficients
+//p: vector containing denumerator coefficients
+//Description:
+//This function gives pole zero plote of discrete time systems
+//Example :
+//zplane([1 2 3],[4 5 6])
+//Output :
+//Output is pole zero plot of respective discrete time system.
+
 
     funcprot(0);
 

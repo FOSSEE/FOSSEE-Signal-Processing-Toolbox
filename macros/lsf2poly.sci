@@ -2,11 +2,9 @@ function a=lsf2poly(lsf)
 //lsf2poly function  convert line spectral frequencies to prediction polynomial.
 // Calling Sequence
 // a = lsf2poly(lsf)
-
 // Parameters
 // lsf: define line spectral frequencies.
 // a: Return the prediction polynomial.
-
 // Examples
 //X = [0.5 0.752 1.6 1.8 2.45 0.8]
 // a = lsf2poly(X)

@@ -1,4 +1,6 @@
-//phasez Phase response of digital filter
+
+function [phi, varargout]=phasez(varargin)
+    //phasez Phase response of digital filter
 //Calling Syntax
 //[phi,w] = phasez(b,a,n)
 //[phi,w] = phasez(sos,n)
@@ -22,7 +24,7 @@
 //bi(2) bi(3) ai(1) ai(2) ai(3)].
 ////Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
-function [phi, varargout]=phasez(varargin)
+
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given
     //(sos,n) or (sos,w) or (sos,'whole')or (b,a) is the input
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given

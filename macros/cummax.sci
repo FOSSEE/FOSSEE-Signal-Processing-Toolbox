@@ -44,6 +44,7 @@ function [M , iM] = cummax(varargin)
     //     M = cummax(v)
     //        
     // Expected output: [8 9 9 10 10 10 10 10 10 10]
+    
     [numOutArgs,numInArgs] = argn(0);
     
     // ** Checking number of arguments

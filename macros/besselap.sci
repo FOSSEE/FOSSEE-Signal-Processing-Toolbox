@@ -11,20 +11,16 @@
 // Email: toolbox@scilab.in
 function [zero, pole, gain]=besselap(n)
     //Bessel analog filter prototype.
-
     //Calling Sequence
     //[zero, pole, gain] = besselap(n)
     //zero = besselap(n)
-
     //Parameters
     //n: Filter Order
     //zero: Zeros
     //pole: Poles
     //gain: Gain
-
     //Description
     //It Return bessel analog filter prototype of nth order.
-
     //Examples
     //[zero, pole, gain] = besselap (5)
     //Output :

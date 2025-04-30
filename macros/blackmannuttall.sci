@@ -1,3 +1,7 @@
+
+
+
+function w = blackmannuttall (m, opt)
 //function [w] = blackmannuttall (m, opt)
 //This function returns the filter coefficients of a Blackman-Nuttall window.
 //Calling Sequence
@@ -20,10 +24,6 @@
 //    0.2269824
 //    0.0003628
 
-
-
-
-function w = blackmannuttall (m, opt)
 
  funcprot(0);
     rhs= argn(2);

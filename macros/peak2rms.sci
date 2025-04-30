@@ -41,7 +41,6 @@ function out = peak2rms(in,orientation)
    //OUT= 1.4638501
     //1.3887301
     //1.119186
-
 //
 //Examples
 //To calculate peak magnitude to RMS value of sinusoid:
@@ -69,6 +68,8 @@ function out = peak2rms(in,orientation)
 //And for calculates the values of ratio of peak to RMS  of rows of matrix.  use peak2rms(in,2)
 //Updated help comments accordingly
 //MOdifications done by by Debdeep Dey
+
+
     //if(type(in)=10) then      //condition checking error,for equality it is '=='
       if(type(in)==10)
         in=ascii(in);

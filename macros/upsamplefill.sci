@@ -13,10 +13,8 @@ function y = upsamplefill (x, v, c)
 //The second argument has the values in the vector w that are placed in between the elements of x.
 //The third argument, if true, means that w should be scalar and that each value in x repeated w times.
 //Examples
-
 //1.upsamplefill([1,3,5],2,%f)
 //ans:1.    1.    1.    3.    3.    3.    5.    5.    5.
-
 //2.upsamplefill([1,3,5],2,%t)
 //ans:1.    2.    3.    2.    5.    2.
 

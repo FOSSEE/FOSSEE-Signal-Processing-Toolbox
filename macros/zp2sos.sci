@@ -1,9 +1,10 @@
 function B = ipermute(A, perm)
-    funcprot(0);
-    // ipermute : Inverse permute the dimensions of a matrix A.
+  // ipermute : Inverse permute the dimensions of a matrix A.
     // B = ipermute(A, perm) returns the array A with dimensions inverted
     // according to the permutation vector `perm`.
     // Validate the permutation vector
+      
+  funcprot(0);
     if max(size(perm)) ~= ndims(A) || or(gsort(perm, "g", "i") ~= 1:ndims(A))
         error('Permutation vector must contain unique integers from 1 to ndims(A).');
     end

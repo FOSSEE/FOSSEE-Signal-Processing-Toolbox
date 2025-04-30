@@ -9,7 +9,12 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-//Calling sequence:
+
+
+
+
+function y = upsample (x,n,phase )
+  //Calling sequence:
 //  y = upsample (x, n)
 //  y = upsample (x, n, offset)
 // Upsample the signal, inserting n-1 zeros between every element.
@@ -19,24 +24,16 @@
 // If offset is specified, control the position of the inserted sample in
 // the block of n zeros.
 //
-
 //Testcases:
 //1.upsample([1,3,5],2)
 //EXPECTED OUTPUT:[1,0,3,0,5,0]
-
-
 //2.upsample([1;3;5],2)
 //EXPECTED OUTPUT:[1;0;3;0;5;0]
-
-
 //3.upsample([1,2;5,6;9,10],2)
 //EXPECTED OUTPUT:[1,2;0,0;5,6;0,0;9,10;0,0]
 //
 //
 
-
-
-function y = upsample (x,n,phase )
   [nargout,nargin]=argn()
 
   if (nargin<2 | nargin>3),

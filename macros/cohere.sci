@@ -1,12 +1,14 @@
-/*
-Calling Sequence
-      [Pxx, freq] = cohere(x,y,Nfft,Fs,window,overlap,range,plot_type,detrend)
-Estimate (mean square) coherence of signals "x" and "y".
-Use the Welch (1967) periodogram/FFT method.
-Compatible with Matlab R11 cohere and earlier.
-See "help pwelch" for description of arguments, hints and references — especially hint (7) for Matlab R11 defaults. */
+
+
 function varargout = cohere(varargin)
-      if ( nargin<2 )
+//   Calling Sequence
+//       [Pxx, freq] = cohere(x,y,Nfft,Fs,window,overlap,range,plot_type,detrend)
+// Estimate (mean square) coherence of signals "x" and "y".
+// Use the Welch (1967) periodogram/FFT method.
+// Compatible with Matlab R11 cohere and earlier.
+// See "help pwelch" for description of arguments, hints and references — especially hint (7) for Matlab R11 defaults. 
+
+if ( nargin<2 )
         error( 'cohere: Need at least 2 args. Use help cohere.' );
       end
       nvarargin = length(varargin);

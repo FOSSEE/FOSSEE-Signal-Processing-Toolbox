@@ -1,6 +1,5 @@
 function varargout = ar_psd(a, v, varargin)
 //Calculate the power spectrum of the autoregressive model.
-
 //Calling Sequence:
 // [psd, f_out] = ar_psd(a, v)
 // [psd, f_out] = ar_psd (a, v, freq)
@@ -8,7 +7,6 @@ function varargout = ar_psd(a, v, varargin)
 // [psd, f_out] = ar_psd (..., range)
 // [psd, f_out] = ar_psd (..., method)
 // [psd, f_out] = ar_psd (..., plottype)
-
 //Parameters:
 //Every parameter except for the first two is optional.
 //
@@ -26,10 +24,8 @@ function varargout = ar_psd(a, v, varargin)
 //'squared' is the same as 'plot'.  'dB' plots "10*log10(psd)".  This argument is ignored and a spectrum is not plotted if the caller requires a returned value.
 //psd: estimate of power-spectral density.
 //f_out: frequency values.
-
 //Description:
 //If the 'freq' argument is a vector (of frequencies) the spectrum is calculated using the polynomial method and the METHOD argument is ignored.  For scalar 'freq', an integer power of 2, or method = "fft", causes the spectrum to be calculated by fft. Otherwise, the spectrum is calculated as a polynomial.  It may be computationally more efficient to use the fft methodif length of the model is not much smaller than the number of frequency values. The spectrum is scaled so that spectral energy (area under spectrum) is the same as the time-domain energy (mean square of the signal).
-
 //Examples:
 //[a,b]= ar_psd([1,2,3], 2)
 

@@ -1,3 +1,5 @@
+
+function [ar_coeff, var_est] = armcov(data_in, order)
 //Autoregressive all-pole model parameters — modified covariance method
 //Calling Sequence-
 //a = armcov(x,p)
@@ -9,15 +11,12 @@
 //e:variance estimate
 //Description
 //This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal x.
-
 //Example :
 //A = [1 -2.7607 3.8106 -2.6535 0.9238];
 //y = filter(1,A,0.2*rand(1024,1,"normal"));
 //arcoeffs = armcov(y,4)
 //OUTPUT :      // since "rand" function is used, output doesn't always remains same. It differs by some amount.
 //              1.  - 2.7450144    3.7762385  - 2.6201362     0.9104109    0.9104109
-
-    function [ar_coeff, var_est] = armcov(data_in, order)
 
     checkNArgin(2,2, argn(2));                          // function call
     method = 'modified';

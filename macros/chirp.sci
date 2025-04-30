@@ -12,7 +12,6 @@
 
 function [y] = chirp(t,f0,t1,f1,form,phase)
     //This function evaluates a chirp signal at time t.
-
     //Calling Sequence
     //y = chirp(t)
     //y = chirp(t, f0)
@@ -20,7 +19,6 @@ function [y] = chirp(t,f0,t1,f1,form,phase)
     //y = chirp(t, f0, t1, f1)
     //y = chirp(t, f0, t1, f1, frm)
     //y = chirp(t, f0, t1, f1, frm, phse)
-
     //Parameters
     //t:  a vector of times to evaluate the chirp signal
     //f0: the frequency at t=0 [default value = 0 Hz]
@@ -29,12 +27,10 @@ function [y] = chirp(t,f0,t1,f1,form,phase)
     //frm: string value, takes in "linear", "quadratic", "logarithmic" [default value = "linear"]
     //phse: phase shift at t=0. [default value = 0]
     //y: chirp signal value corresponding to t.
-
     //Description
     //This function evaluates a chirp signal at time t. A chirp signal is a frequency swept cosine wave.
     //The first argument is a vector of times to evaluate the chirp signal, second argument is the frequency at t=0, third argument is time t1 and fourth argument is frequency at t1.
     //The fifth argument is the form which takes in values "linear", "quadratic" and "logarithmic", the sixth argument gives the phase shift at t=0.
-
     //Examples
     //t = [4,3,2,1];
     //f0 = 4;

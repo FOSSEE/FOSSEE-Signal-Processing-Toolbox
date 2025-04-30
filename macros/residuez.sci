@@ -10,7 +10,6 @@
 // Email: toolbox@scilab.in
 
   function [r, p, f, m] = residuez(B, A, tol)
-
   // RESIDUEZ - return residues, poles, and FIR part of B(z)/A(z)
   //
   // Let nb = length(b), na = length(a), and N=na-1 = no. of poles.
@@ -33,7 +32,6 @@
   // response. To obtain a decomposition in which the impulse response of
   // the IIR part R(z) starts after that of the FIR part F(z), use RESIDUED.
   //
-
   //NOTE that the polynomials 'b' and 'a' should have real coefficients(because of the function 'filter' used in polyval)
   //Testcase
   //B=[1 1 1]; A=[1 -2 1];

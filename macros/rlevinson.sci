@@ -1,12 +1,10 @@
 function [R, U, kr, e] = rlevinson(a, efinal)
-
 //rlevinson function  computes the autocorrelation coefficients using prediction polynomial.
 // Calling Sequence
 // a = rlevinson(a, efinal)
 // [a, U] = rlevinson(a, efinal)
 // [a, U, kr] = rlevinson(a, efinal)
 // [a, U, kr, e] = rlevinson(a, efinal)
-
 // Parameters
 // a: input argument prediction polynomial.
 // efinal: input argument 'final prediction error'.
@@ -14,15 +12,11 @@ function [R, U, kr, e] = rlevinson(a, efinal)
 // U: return a upper triangular matrox of order (length(a)*length(a))
 // kr: return refelection coefficient.
 // e: Return the vector of prediction error.
-
-
 // Examples
 //X = [7 6 5 8 3 6]     //make the first prediction polynomial coefficient unity and check for standard Auto regressive model
-
 //X=[1 6/7 5/7 8/7 3/7 6/7];
 //
 // [R U kr e] = rlevinson(X, 0.3)
-
 ////EXPECTED OUTPUT:
 //e  =
 //

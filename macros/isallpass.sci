@@ -1,15 +1,11 @@
+function isall=isallpass(varargin)
 //isallpass Determine whether filter is allpass
-
 //Calling Syntax
 //flag = isallpass(b,a)
 //flag = isallpass(sos)
 //flag = isallpass(...,tol)
 // b and a are the vectors containing zero and pole coefficients respectively
 //tol, tolerance is used to determine when two numbers are close enough to be considered equal.
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
-function isall=isallpass(varargin)
-
 //Example
 //k = [1/2 1/3 1/4 1/5];
 //[b,a] = latc2tf(k,'allpass');
@@ -17,21 +13,20 @@ function isall=isallpass(varargin)
 //
 //OUTPUT :
 //              flag_isallpass  =1
-
-
 //b = [1/3 1/4 1/5 1];
 //a=b($:-1:1);
 //flag = isallpass(b,a)
 //
 //OUTPUT
 //              flag=1
-
-
 //fl=isallpass(1,[1 1])
 //
 //OUTPUT
 //              fl=0
-    [nargout,nargin]=argn();
+//Author: Parthasarathi Panda
+//parthasarathipanda314@gmail.com
+
+[nargout,nargin]=argn();
     if (nargin==2) then
         v=size(varargin(1));
         if (v(2)~=6) | (v(2)==6 & v(1)==1) then

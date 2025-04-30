@@ -1,23 +1,24 @@
-/*Calling Sequence
-        c = xcorr2 (a)
-        c = xcorr2 (a, b)
-        c = xcorr2 (a, b, scale)
-Description:
-        Compute the 2D cross-correlation of matrices a and b.
-        If b is not specified, computes autocorrelation of a, i.e., same as xcorr (a, a).
-        The optional argument scale, defines the type of scaling applied to the cross-correlation matrix. Possible values are:
-        "none" (default)
-            No scaling.
-        "biased"
-            Scales the raw cross-correlation by the maximum number of elements of a and b involved in the generation of any element of c.
-        "unbiased"
-            Scales the raw correlation by dividing each element in the cross-correlation matrix by the number of products a and b used to generate that element.
-        "coeff"
-            Scales the normalized cross-correlation on the range of [0 1] so that a value of 1 corresponds to a correlation coefficient of 1.
-  Examples
-        xcorr2(5,0.8,'coeff')
-            ans =  1 */
 function c = xcorr2 (a, b, scale)
+// Calling Sequence
+//         c = xcorr2 (a)
+//         c = xcorr2 (a, b)
+//         c = xcorr2 (a, b, scale)
+// Description:
+//         Compute the 2D cross-correlation of matrices a and b.
+//         If b is not specified, computes autocorrelation of a, i.e., same as xcorr (a, a).
+//         The optional argument scale, defines the type of scaling applied to the cross-correlation matrix. Possible values are:
+//         "none" (default)
+//             No scaling.
+//         "biased"
+//             Scales the raw cross-correlation by the maximum number of elements of a and b involved in the generation of any element of c.
+//         "unbiased"
+//             Scales the raw correlation by dividing each element in the cross-correlation matrix by the number of products a and b used to generate that element.
+//         "coeff"
+//             Scales the normalized cross-correlation on the range of [0 1] so that a value of 1 corresponds to a correlation coefficient of 1.
+//   Examples
+//         xcorr2(5,0.8,'coeff')
+//             ans =  1 
+
   funcprot(0);
   nargin=argn(2);
   if nargin < 3 then

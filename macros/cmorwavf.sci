@@ -1,5 +1,4 @@
 function [psi,x]=cmorwavf(lb,ub,n,fb,fc)
-
 // Finds the Complex Morlet Wavelet
 // Calling Sequence
 // [psi,x]=cmorwavf(lb,ub,n,fb,fc)

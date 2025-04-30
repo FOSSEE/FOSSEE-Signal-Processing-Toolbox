@@ -1,7 +1,8 @@
+function [f,g,zo]=latcfilt1(k,v,x,zi)
+//the function is for application on vectors only
 //Author: Parthasarathi Panda
 //parthasarathipanda314@gmail.com
-//the function is for application on vectors only
-function [f,g,zo]=latcfilt1(k,v,x,zi)
+
     N=length(k);
     gv=zi;
     //gv[n+1]=Agv[n]+Bfv[n]

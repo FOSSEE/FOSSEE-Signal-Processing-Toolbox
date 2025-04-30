@@ -10,9 +10,7 @@
 // Email: toolbox@scilab.in
 
 function xt = sampled2continuous( xn , T, t )
-
-
-    //This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
+//This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
 //Calling Sequence
 //x = sampled2continuous (xn, T, t)
 //Parameters

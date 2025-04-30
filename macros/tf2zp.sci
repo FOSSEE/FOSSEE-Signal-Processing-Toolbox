@@ -10,26 +10,20 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [z,p,k]=tf2zp(num,den)
-
     // Transfer function to zero pole conversion
-
     //Calling Sequence
     //[z,p,k]= tf2zp(b,a);
-
     //Parameters
     //z=zeros of the corrsponding tf
     //p=poles of the corresponding tf
     //k=gain of the tf
     //b=vector containing the numerator coefficients of the transfer function in descending powers of s/z
     //a=vector containing the denominator coefficients of the transfer function in descending powers of s/z
-
     //For discrete-time transfer functions, it is highly recommended to
     //make the length of the numerator and denominator equal to ensure
     //correct results.  You can do this using the function EQTFLENGTH in
     //the Signal Processing Toolbox.
-
     //Author : Debdeep Dey
-
     //Example :
     //b = [1 2 3];
     //a = [4 5 6];

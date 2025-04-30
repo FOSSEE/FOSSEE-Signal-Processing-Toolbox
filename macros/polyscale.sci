@@ -1,3 +1,5 @@
+
+function  b = polyscale(a,alpha)
 // polyscale Scaling roots of a polynomial
 // scales the roots of a polynomial in the z plane
 //Syntax:
@@ -12,21 +14,16 @@
 //p=[1 0 0 0 0 0 0 -1]   and changing the scaling factor,
 //b=polyscale(p,0.85)
 //EXPECTED OUTPUT:b=1.    0.    0.    0.    0.    0.    0.  - 0.3205771
-
-
 //p=[1 0 0 0 0 0 0 -1]   and changing the scaling factor,
 //b=polyscale(p,0.95)
 //EXPECTED OUTPUT:b=1.    0.    0.    0.    0.    0.    0.  - 0.6983373
 //
-
 //p=[1 0 0 0 0 0 0 -1]   and changing the scaling factor,
 //b=polyscale(p,1)
 //EXPECTED OUTPUT:b=1.    0.    0.    0.    0.    0.  -1
-
-
 // Author
 //Debdeep Dey
-function  b = polyscale(a,alpha)
+
 //errcheck1
 if(min(size(a))>1) then
 	error('Input polynomial must be an array')

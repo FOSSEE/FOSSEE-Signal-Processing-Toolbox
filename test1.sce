@@ -40,12 +40,12 @@ else
 end
 
 /////////Test case for       **) digitrevorder                  //////////
-
-x = [%i,1,3,6*%i] ;
+i = %i ;
+x = [i,1,3,6*i] ;
 b = 2;
-[y i]=digitrevorder(x,b);
+[y ii]=digitrevorder(x,b);
 
-if(y == [%i   3   1   6*%i] & i == [1 3 2 4])
+if(y == [i   3   1   6*i] & ii == [1 3 2 4])
     test_pass=[test_pass,1]
 else
     test_pass=[test_pass,0]

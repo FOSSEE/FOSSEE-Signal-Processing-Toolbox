@@ -1,5 +1,4 @@
 function [y] = db2pow(ydb)
-
 //This function calculates the power value in Watt of the decibel value ydb passed as the parameter 
 //Calling sequence
 //function [y] = mag2pow(ydb)

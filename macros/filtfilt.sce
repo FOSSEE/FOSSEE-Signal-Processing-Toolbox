@@ -1,3 +1,5 @@
+
+function y = filtfilt(b, a, x)
 //This is a Signal Processing toolbox function
 //Author: Rashmi Patankar, FOSSEE IIT Bombay
 // y = filtfilt (b, a, x)
@@ -10,8 +12,6 @@
 //y = filtfilt(b,a,x); z = filter(b,a,x); # apply filter
 //plot(t,x,';data;',t,y,';filtfilt;',t,z,';filter;')
  
-
-function y = filtfilt(b, a, x)
 
   // Check for correct number of input arguments
   if nargin() ~= 3 then

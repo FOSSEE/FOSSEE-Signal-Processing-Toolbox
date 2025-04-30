@@ -1,37 +1,29 @@
+function isstab=isstable(varargin)
 //Checks for stability of Discrete time System function
-
 //Description :  A  Discrete time system is stable if all poles of system function are inside unit circle
-
 //  Calling Syntax
 //  flag=isstable(b,a);
 //  flag=isstable(sos);
-
 //It takes input b and a which are array vector of numerator and denumerator coefficients respectively also it takes second order section (sos) system function input.SOS is a Kx6 matrix,where the number of sections, K, must be greater than or equal to 2.Each row of SOS corresponds to the coefficients of a second order filter
 //It returns a logical flag = 1(true) if given system is stable and 0(false) otherwise
-
 // Eample : 1
 // flag = isstable([1 2],[1 -0.7 0.1])
-
 // Output:
 // flag  =
 //
 //    1.
-
 // Conclusion : as flag output is 1 system is stable
-
 // Example : 2
 // flag = isstable([1 2 0],[1 5 6])
-
 //Output :
 //unstable system
 // flag  =
 //
 //    0.
-
 // Conclusion : this system is unstable as flag output is 0
 
-function isstab=isstable(varargin)
-[nargout,nargin]=argn();
+
+    [nargout,nargin]=argn();
 if (nargin==2) then//(a,b) is the input
     a=varargin(1);
     b=varargin(2);

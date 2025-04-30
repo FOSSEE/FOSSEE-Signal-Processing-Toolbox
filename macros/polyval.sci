@@ -5,9 +5,7 @@ function [y, delta] = polyval(p,x,S,mu)
 //delta --is an estimate of the standard deviation of the error in predicting a future observation at x by p(x).
 //               If the coefficients in p are least squares estimates computed by polyfit, and the errors in the data input to poly//               if it are independent, normal, and have constant variance, then y±delta contains at least 50% of the
 //                  predictions of future observations at x.
-
 //y = polyval(p,x,[],mu) or [y,delta] = polyval(p,x,S,mu) use ˆx=(x−μ1)/μ2 in place of x. In this equation, μ1=mean(x)     //      and μ2=std(x). The centering and scaling parameters mu = [μ1,μ2] is optional
-
 //EXAMPLES:
 //p = [3 2 1];
 //y=polyval(p,[5 7 9])

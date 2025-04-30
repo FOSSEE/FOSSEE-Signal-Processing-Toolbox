@@ -44,7 +44,6 @@ function len = impzlength (b, varargin)
 //		len = impzlength(b,a)
 //OUTPUT :
 //                   len=14
-
 // See also
 // designfilt | digitalFilter | impz | zp2sos
 //

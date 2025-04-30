@@ -1,5 +1,4 @@
 function y = sgolayfilt (x, p, n, m, ts)
-
 //This function applies a Savitzky-Golay FIR smoothing filter to the data
 //Calling Sequence
 //y = sgolayfilt (x)
@@ -27,10 +26,6 @@ function y = sgolayfilt (x, p, n, m, ts)
 //   2.0000 + 0.3333i
 //   3.6667 + 0.3333i
 //   3.6667 + 0.3333i
-//This function is being called from Octave
-
-
-
 
 funcprot(0);
 rhs = argn(2)

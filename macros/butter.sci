@@ -12,7 +12,6 @@
 
 function [a, b, c, d] = butter (n, w, varargin)
     //Butterworth filter design.
-
     //Calling Sequence
     //[b, a] = butter (n, wc)
     //[b, a] = butter (n, wc, "high")
@@ -20,13 +19,11 @@ function [a, b, c, d] = butter (n, w, varargin)
     //[b, a] = butter (n, [wl, wh], "stop")
     //[z, p, g] = butter (…)
     //[…] = butter (…, "s")
-
     //Parameters
     //n: positive integer value (order of filter)
     //wc: positive real value,
     //    1).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
     //    2).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
-
     //Description
     //This function generates a Butterworth filter. Default is a discrete space (z) or digital filter using Bilinear transformation from s to z plane.
     //If second argument is scalar the third parameter takes in low or high, default value is low. The cutoff is pi*wc radians.
@@ -34,7 +31,6 @@ function [a, b, c, d] = butter (n, w, varargin)
     //[b,a] = butter(n, [wl, wh], ’stop’) indicates a band reject filter with cutoffs pi*wl and pi*wh radians.
     //[z,p,g] = butter(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
     //[...] = butter(...,’s’) returns a Laplace space filter,here cutoff(s) wc can be larger than 1 (rad/sec).
-
     //Examples
     //[b a] = butter(4,0.3,"high")
     //Output

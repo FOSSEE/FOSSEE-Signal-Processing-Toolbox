@@ -5,7 +5,9 @@
 // you should have received as part of this distribution.  The terms
 // are also available at
 // https://opensource.org/licenses/BSD-3-Clause
-// Author: Shamika Mohanan
+// Author: Shamika Mohanan 
+// Modified by: Abinash Singh Under FOSSEE Internship
+// Last Modified On: 19 March 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
@@ -36,7 +38,11 @@ ilib_verbose(0);
 
 // Load and add help chapter
 // =============================================================================
-if ( %t ) then
+if ( %t ) then 
+// create jar dir if not exists
+if ( isdir(root_tlbx+"/jar") == %f ) then
+    mkdir(root_tlbx+"/jar");
+end
 if or(getscilabmode() == ["NW";"STD"]) then
         mprintf("\tLoad help\n");
         path_addchapter = pathconvert(root_tlbx+"/jar");

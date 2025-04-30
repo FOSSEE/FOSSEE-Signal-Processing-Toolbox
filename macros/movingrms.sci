@@ -1,20 +1,15 @@
 function [rmsx, w] =  movingrms(x, width, risetime, varargin)
-
 // Find moving RMS value of signal in x
-
 // Calling Sequence
 //[rmsx,w]=movingrms(x,width,risetime)
 //[rmsx,w]=movingrms(x,width,risetime,Fs)
-
 // Parameters
 //	x: (Real or complex valued vector or matrix) Input Signal
 //	width: Real or complex scalar value
 //	risetime: Real or complex scalar value
 //	Fs: (Real or complex scalar value) Sampling frequency
-
 // Description
 //	In this function signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
-
 // Example : 1
 //[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2)
 // Output:
@@ -26,7 +21,6 @@ function [rmsx, w] =  movingrms(x, width, risetime, varargin)
 //
 //    0.9123683    17.719291    0.9625436
 //    0.9123683    17.719291    0.9625436
-
 //Example : 2
 // [a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2,2)
 //Output :
@@ -40,23 +34,6 @@ function [rmsx, w] =  movingrms(x, width, risetime, varargin)
 //    4.8332184    93.866927    5.0990195
 
 funcprot(0);
-
-//**************************************************************************************************
-//______________________________________________version1 code (not working)_________________________
-//__________________________________________________________________________________________________
-//**************************************************************************************************
-
-//rhs=argn(2);
-//if (rhs<3) then
-//	error("Wrong number of input arguments.")
-//elseif (rhs==3) then Fs=1;
-//end
-//[rmsx,w]=callOctave("movingrms",x,w,rc,Fs)
-
-//**************************************************************************************************
-//______________________________________________version2 code ( working)____________________________
-//__________________________________________________________________________________________________
-//**************************************************************************************************
 if  argn(2) > 4 | argn(2) < 3 then
     error("movingrms : wrong number of inputs ")
 end

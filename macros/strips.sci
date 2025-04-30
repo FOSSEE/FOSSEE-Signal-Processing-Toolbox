@@ -29,6 +29,7 @@ function strips(x,sd,Fs,scale)
 //If x has complex entries, only the real part of those entries are considered
 //Author
 //Ankur Mallick
+
     funcprot(0);
     if(argn(2)<1|argn(2)>4)
         error('Incorrect number of input arguments.');

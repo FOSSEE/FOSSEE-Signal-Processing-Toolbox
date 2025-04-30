@@ -12,16 +12,12 @@
 
 function T = dctmtx(n)
     // Return the DCT transformation matrix of size N-by-N.
-
     //Calling Sequence
     //T = dctmtx(n)
-
     //Parameters
     //n: Real scalar integer greater than or equal to 1
-
     //Description
     //dctmtx(n) returns a Discrete cosine transform matrix (D) of order n-by-n. It is useful for jpeg image compression. D*A is the DCT of the columns of A and D'*A is the inverse DCT of the columns of A (when A is n-by-n).
-
     // Examples
     //n= 3;
     //T = dctmtx(n)

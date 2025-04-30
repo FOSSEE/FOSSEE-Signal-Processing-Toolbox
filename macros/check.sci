@@ -6,6 +6,7 @@ function [s] = check(str)
 //check("apple")
 //output:
 //F
+
 funcprot(0);
 is_AKICc = (str == "AKICc")  
 disp(is_AKICc)
