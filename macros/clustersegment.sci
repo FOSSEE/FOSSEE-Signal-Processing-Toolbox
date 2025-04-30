@@ -1,17 +1,20 @@
 function contRange = clustersegment(xhi)
-//This function calculates boundary indexes of clusters of 1’s.
-//Calling Sequence:
-//contRange = clustersegment(xhi)
-//Parameters 
-//xhi: scalar, vector or matrix of real numbers (clusters of 1s) 
-//contRange: output variable, cell array of size 1 by Np, where Np is the number of rows in 'xhi'
-//Description:
-//This function calculates boundary indexes of clusters of 1’s.
-//This function calculates the initial and end indices of the sequences of 1's present in the input argument.
-//The output variable 'contRange' is a cell array of size 1 by Np, where Np is the number of rows in 'xhi' and each element has two rows indicating the initial index and end index of the cluster of 1's respectively. The indexing starts from 1.
-//Examples:
-//y = clustersegment([0,1,0,0,1,1])
-//y  =
+// Calculate boundary indexes of clusters of 1’s.
+//
+// Syntax
+//   contRange = clustersegment(xhi)
+//
+// Parameters
+// xhi: Scalar, vector, or matrix. Input containing clusters of 1s.
+// contRange: Cell array. Size 1 by Np, where Np is the number of rows in `xhi`. Each element contains two rows indicating the initial and end indices of clusters of 1s.
+//
+// Description
+// This function calculates the boundary indexes of clusters of 1’s in the input `xhi`. The output `contRange` is a cell array where each element corresponds to a row in `xhi` and contains the start and end indices of clusters of 1s. Indexing starts from 1.
+//
+// Examples
+// y = clustersegment([0, 1, 0, 0, 1, 1])
+// Output:
+// y =
 //    2.    5.  
 //    2.    6.
 
