@@ -1,19 +1,23 @@
 function y = cceps(x, correct)
-//Return the complex cepstrum of the vector x.
-//Calling Sequence:
-//cceps (x)
-//cceps(x, correct)
-//Parameters:
-//x: vector
-//correct: If 1, a correction method is applied.
-//Description:
-//This function return the complex cepstrum of the vector x.
-//If the optional argument correct has the value 1, a correction method is applied. The default is not to do this.
-//Examples:
-//cceps([1,2,3], 1)
-//ans = 1.9256506
-//      0.9634573
-//     -1.0973484
+// Compute the complex cepstrum of a vector.
+//
+// Syntax
+//   y = cceps(x)
+//   y = cceps(x, correct)
+//
+// Parameters
+// x: Vector. Input signal.
+// correct: Integer. If 1, a correction method is applied. Default is 0.
+//
+// Description
+// This function computes the complex cepstrum of the input vector `x`. If the optional argument `correct` is set to 1, a correction method is applied.
+//
+// Examples
+// cceps([1, 2, 3], 1)
+// ans =
+//    1.9256506
+//    0.9634573
+//   -1.0973484
 
   if(argn(2) < 1 | argn(2) > 2)
     error("Wrong number of input arguments.");
