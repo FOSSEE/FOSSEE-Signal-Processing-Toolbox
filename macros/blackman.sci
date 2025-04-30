@@ -1,30 +1,30 @@
-function w=blackman(N,sflag)
-//Generates a Blackman window
-//Calling Sequence
-//w=blackman(N)
-//w=blackman(N,sflag)
-//Parameters
-//N
-//A positive integer describing the length of the blackman window
-//sflag
-//Specifies the type of blackman window desired. Can be 'symmetric' or 'periodic'
-//Description
-//w=blackman(N) returns an N-point symmetric Blackman window in a column vector w
-//w=blackman(N,sflag)
-//Returns an N point Blackman window using the type of sampling specified by sflag
-//sflag can be either 'symmetric' (default) or 'periodic' (used in spectral analysis)
-//Example
-//w=blackman(4)
-//w  =
-// 
-//  - 1.388D-17  
-//    0.63       
-//    0.63       
-//  - 1.388D-17  
-//Author
-//Ankur Mallick
-//References
-//[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
+function w = blackman(N, sflag)
+// Generate a Blackman window.
+//
+// Syntax
+//   w = blackman(N)
+//   w = blackman(N, sflag)
+//
+// Parameters
+// N: Positive integer. Length of the Blackman window.
+// sflag: String. Specifies the type of Blackman window ('symmetric' or 'periodic'). Default is 'symmetric'.
+//
+// Description
+// This function generates an N-point Blackman window. By default, it returns a symmetric Blackman window. If `sflag` is set to 'periodic', the function generates a periodic Blackman window, which is useful in spectral analysis.
+//
+// Examples
+// w = blackman(4)
+// w =
+//  -1.388D-17
+//   0.63
+//   0.63
+//  -1.388D-17
+//
+// Authors
+// Ankur Mallick
+//
+// Bibliography
+// [1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
 
     funcprot(0);
     if(argn(2)<2)
