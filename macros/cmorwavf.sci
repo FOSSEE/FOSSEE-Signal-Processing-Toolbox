@@ -1,20 +1,26 @@
-function [psi,x]=cmorwavf(lb,ub,n,fb,fc)
-// Finds the Complex Morlet Wavelet
-// Calling Sequence
-// [psi,x]=cmorwavf(lb,ub,n,fb,fc)
+function [psi, x] = cmorwavf(lb, ub, n, fb, fc)
+// Compute the Complex Morlet Wavelet.
+//
+// Syntax
+//   [psi, x] = cmorwavf(lb, ub, n, fb, fc)
+//
 // Parameters
-// lb: Real or complex valued vector or matrix
-// ub: Real or complex valued vector or matrix
-// n: Real scalar strictly positive integer
-// fb: Real or complex scalar value
-// fc: Real or complex scalar value
+// lb: Real or complex scalar. Lower bound of the interval.
+// ub: Real or complex scalar. Upper bound of the interval.
+// n: Positive integer. Number of points in the interval.
+// fb: Real or complex scalar. Bandwidth parameter. Default is 1.
+// fc: Real or complex scalar. Wavelet center frequency. Default is 1.
+// psi: Complex vector. Values of the Complex Morlet Wavelet.
+// x: Vector. Regular grid points in the interval [lb, ub].
+//
 // Description
-// This function returns the value of the Complex Morlet Waveform defined by a positive bandwidth parameter FB, a wavelet center frequency FC on an N point regular grid for the interval [LB,UB].
+// This function computes the Complex Morlet Wavelet for a given interval [lb, ub] with `n` points, bandwidth parameter `fb`, and wavelet center frequency `fc`.
+//
 // Examples
-// [a,b]=cmorwavf(1,2,1,3,4)
-// b=2
-// a=0.0858628 -1.682D-16i
-
+// [psi, x] = cmorwavf(1, 2, 100, 3, 4)
+// Output:
+// x = [1, 1.01, ..., 2]
+// psi = [0.0858628 - 1.682D-16i, ...]
 
 if(argn(2)~=5 & argn(2)~=3) then
 	error ("Wrong number of input arguments.")
