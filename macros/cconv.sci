@@ -1,31 +1,35 @@
-function o=cconv(a,b,n)
- // circularly convolves vectors a and b. n is the length of the resulting vector.
- //If you omit n, it defaults to length(a)+length(b)-1. When n = length(a)+length(b)-1,
- //the circular convolution is equivalent to the linear convolution computed with conv
- //Calling Sequence:
- //o=cconv(a,b)
- //o = cconv(a,b,n)
-//a  =a real or complex vector.
-//b  =a real or complex vector.
-//n  =length of circular convolution
-//o  =convolution sequence
-//Examples:
-//a=[1 2 3]
-//b=[4 5 6]
-//o=cconv(a,b,3)
-//Output:  o=  31.    31.    28.
+function o = cconv(a, b, n)
+// Perform circular convolution of two vectors.
 //
+// Syntax
+//   o = cconv(a, b)
+//   o = cconv(a, b, n)
 //
-//a=[1 2+%i 4]
-//b=[2 3*%i 5]
-//o=cconv(a,b)
-//o=clean(o)
+// Parameters
+// a: Vector. Real or complex input vector.
+// b: Vector. Real or complex input vector.
+// n: Integer. Length of the circular convolution. Defaults to length(a) + length(b) - 1.
+// o: Vector. Resulting circular convolution sequence.
 //
-//Output:  o=  2.    4. + 5.i    10. + 6.i    10. + 17.i    20.
+// Description
+// This function computes the circular convolution of two vectors `a` and `b`. If `n` is not provided, it defaults to length(a) + length(b) - 1. When `n` equals length(a) + length(b) - 1, the circular convolution is equivalent to the linear convolution computed with `conv`.
 //
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
-
+// Examples
+// a = [1, 2, 3];
+// b = [4, 5, 6];
+// o = cconv(a, b, 3)
+// Output:
+// o = 31.    31.    28.
+//
+// a = [1, 2 + %i, 4];
+// b = [2, 3*%i, 5];
+// o = cconv(a, b)
+// o = clean(o)
+// o = 
+// 2.    4. + 5.i    10. + 6.i    10. + 17.i    20.
+//
+// Authors
+// Parthasarathi Panda (parthasarathipanda314@gmail.com)
 
     [nargout,nargin]=argn();
     if nargin==2 then //to check the number of inputs entered by the user
