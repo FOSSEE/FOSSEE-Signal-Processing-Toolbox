@@ -1,17 +1,20 @@
-function x = autoreg_matrix (y, k)
-// Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.
-//Calling Sequence:
-//autoreg_matrix(Y, K)
-//Parameters:
-//Y: vector
-//K: scalar
-//Description:
-// Given a time series (vector) Y, return a matrix with ones in the first column and the first K lagged values of Y in the other columns.
-//In other words, for T > K, '[1, Y(T-1), ..., Y(T-K)]' is the t-th row of the result.
-//The resulting matrix may be used as a regressor matrix in autoregressions.
-//Examples:
-//autoreg_matrix([1,2,3], 2)
-//ans =
+function x = autoreg_matrix(y, k)
+// Generate a regressor matrix for autoregressions from a time series.
+//
+// Syntax
+//   x = autoreg_matrix(y, k)
+//
+// Parameters
+// y: Vector. Input time series.
+// k: Scalar. Number of lagged values to include.
+//
+// Description
+// Given a time series (vector) `y`, this function returns a matrix with ones in the first column and the first `k` lagged values of `y` in the other columns.
+// For T > k, `[1, y(T-1), ..., y(T-k)]` is the t-th row of the result. The resulting matrix can be used as a regressor matrix in autoregressions.
+//
+// Examples
+// autoreg_matrix([1, 2, 3], 2)
+// ans =
 //      1.    0.    0.
 //      1.    1.    0.
 //      1.    2.    1.
