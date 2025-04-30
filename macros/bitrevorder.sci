@@ -9,31 +9,33 @@
 // Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-function [y, i] = bitrevorder (x)
-    // Returns input data in bit-reversed order
-    //
-    // Calling Sequence
-    //[y,i] = bitrevorder(x)
-    //y = bitrevorder(x)
-    // Parameters
-    //x: Vector of real or complex values
-    //y: input vector in bit reverse order
-    //i: indices
-    // Description
-    //This function returns the input data after reversing the bits of the indices and reordering the elements of the input array.
-    // Examples
-    //x = [%i,1,3,6*%i] ;
-    //[y i]=bitrevorder(x)
-    //Output :
-    // i  =
-    //
-    //    1.    3.    2.    4.
-    // y  =
-    //
-    //    i      3.    1.    6.i
-    // Dependencies
-    // digitrevorder
-    
+function [y, i] = bitrevorder(x)
+// Return input data in bit-reversed order.
+//
+// Syntax
+//   [y, i] = bitrevorder(x)
+//   y = bitrevorder(x)
+//
+// Parameters
+// x: Vector of real or complex values.
+// y: Input vector in bit-reversed order.
+// i: Indices corresponding to the bit-reversed order.
+//
+// Description
+// This function returns the input data after reversing the bits of the indices and reordering the elements of the input array.
+//
+// Examples
+// x = [%i, 1, 3, 6*%i];
+// [y, i] = bitrevorder(x)
+// Output:
+// i =
+//    1.    3.    2.    4.
+// y =
+//    i      3.    1.    6.i
+//
+// See also
+// digitrevorder
+
     funcprot(0);
     [nargout, nargin] = argn() ;
 
