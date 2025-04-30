@@ -1,11 +1,22 @@
-function b = convmtx (a, n)
-//Calling sequence:
-//b=convmtx(a,n);
-//convmtx(a,n);
-//This function returns the convolution matrix 'b'.
-//If 'a' is a column vector and if we need the convolution of 'a' with another column vector 'x' of length 'n' then an operation            "convmtx(a,n)*x" yeilds the convoluted sequence much faster.
-//Similarily, if 'a' is a row vector then to convolve with another row vector 'x' of length n , then convoluted sequence can be obtained by
-//x*convmtx(a,n)
+function b = convmtx(a, n)
+// Generate a convolution matrix.
+//
+// Syntax
+//   b = convmtx(a, n)
+//
+// Parameters
+// a: Vector. Input vector to generate the convolution matrix.
+// n: Integer. Length of the vector to convolve with.
+// b: Matrix. Convolution matrix.
+//
+// Description
+// This function generates the convolution matrix `b` for the input vector `a`. If `a` is a column vector, the operation `convmtx(a, n) * x` yields the convolution of `a` with another column vector `x` of length `n`. Similarly, if `a` is a row vector, the operation `x * convmtx(a, n)` yields the convolution of `a` with another row vector `x` of length `n`.
+//
+// Examples
+// a = [1; 2; 3];
+// n = 4;
+// b = convmtx(a, n)
+
 
 [nargout,nargin]=argn();
   if (nargin ~= 2)
