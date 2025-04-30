@@ -1,43 +1,41 @@
 function varargout = ar_psd(a, v, varargin)
-//Calculate the power spectrum of the autoregressive model.
-//Calling Sequence:
-// [psd, f_out] = ar_psd(a, v)
-// [psd, f_out] = ar_psd (a, v, freq)
-// [psd, f_out] = ar_psd (a, v, freq, fs)
-// [psd, f_out] = ar_psd (..., range)
-// [psd, f_out] = ar_psd (..., method)
-// [psd, f_out] = ar_psd (..., plottype)
-//Parameters:
-//Every parameter except for the first two is optional.
+// Calculate the power spectrum of the autoregressive model.
 //
-//a- List of m=(order + 1) autoregressive model coefficients. The first element of "ar_coeffs" is the zero-lag coefficient, which always has a value of 1.
-//v- Square of the moving-average coefficient of the AR model.
-//freq: Frequencies at which power spectral density is calculated, or a scalar indicating the number of uniformly distributed frequency values at which spectral density is calculated.  (default = 256)
-//fs- Sampling frequency (Hertz) (default=1)
-//range- 'half', 'onesided'- frequency range of the spectrum is from zero up to but not including sample_f/2. Power from negative frequencies is added to the positive side of the spectrum
-//'whole', 'twosided'- frequency range of the spectrum is-sample_f/2 to sample_f/2, with negative frequencies stored in "wrap around" order after the positive frequencies; e.g. frequencies for a 10-point 'twosided' spectrum are 0 0.1 0.2 0.3 0.4 0.5 -0.4 -0.3 -0.2 -0.1
-//'shift', 'centerdc'- same as 'whole' but with the first half of the spectrum swapped with second half to put the zero-frequency value in the middle. If "freq" is vector, 'shift' is ignored. If model coefficients "ar_coeffs" are real, the default range is 'half', otherwise default range is 'whole'.
-//Method-
-//'fft'- use fft to calculate power spectrum.
-//'poly'- calculate power spectrum as a polynomial of 1/z N.B. this argument is ignored if the "freq" argument is a vector. The default is 'poly' unless the "freq" argument is an integer power of 2.
-//Plot type- 'plot', 'semilogx', 'semilogy', 'loglog', 'squared' or 'db': specifies the type of plot. The default is 'plot', which means linear-linear axes.
-//'squared' is the same as 'plot'.  'dB' plots "10*log10(psd)".  This argument is ignored and a spectrum is not plotted if the caller requires a returned value.
-//psd: estimate of power-spectral density.
-//f_out: frequency values.
-//Description:
-//If the 'freq' argument is a vector (of frequencies) the spectrum is calculated using the polynomial method and the METHOD argument is ignored.  For scalar 'freq', an integer power of 2, or method = "fft", causes the spectrum to be calculated by fft. Otherwise, the spectrum is calculated as a polynomial.  It may be computationally more efficient to use the fft methodif length of the model is not much smaller than the number of frequency values. The spectrum is scaled so that spectral energy (area under spectrum) is the same as the time-domain energy (mean square of the signal).
-//Examples:
-//[a,b]= ar_psd([1,2,3], 2)
+// Syntax
+//   [psd, f_out] = ar_psd(a, v)
+//   [psd, f_out] = ar_psd(a, v, freq)
+//   [psd, f_out] = ar_psd(a, v, freq, fs)
+//   [psd, f_out] = ar_psd(..., range)
+//   [psd, f_out] = ar_psd(..., method)
+//   [psd, f_out] = ar_psd(..., plottype)
+//
+// Parameters
+// a: List of m=(order + 1) autoregressive model coefficients. The first element is the zero-lag coefficient, which always has a value of 1.
+// v: Square of the moving-average coefficient of the AR model.
+// freq: Frequencies at which power spectral density is calculated, or a scalar indicating the number of uniformly distributed frequency values at which spectral density is calculated. (default = 256)
+// fs: Sampling frequency (Hertz) (default = 1).
+// range: Specifies the frequency range of the spectrum. Options include 'half', 'onesided', 'whole', 'twosided', 'shift', or 'centerdc'.
+// method: Specifies the method to calculate the power spectrum. Options include 'fft' or 'poly'.
+// plottype: Specifies the type of plot. Options include 'plot', 'semilogx', 'semilogy', 'loglog', 'squared', or 'db'.
+//
+// Description
+// Function ar_psd() calculates the power spectrum of an autoregressive model using the provided coefficients `a` and variance `v`. 
+// It supports various methods for spectrum calculation and allows customization of frequency range and plot type.
+//
+// Examples
+// [psd, f_out] = ar_psd([1, -0.5], 1)
+// [psd, f_out] = ar_psd([1, -1.5, 0.7], 2, 512, 2.0)
+//
 
-  funcprot(0);
-  // Check fixed arguments
-  if nargin < 2 then
+funcprot(0);
+// Check fixed arguments
+if nargin < 2 then
     error("ar_psd: needs at least 2 args. Use help ar_psd.");
-  elseif ~isvector(a) | length(a) < 2 then
+elseif ~isvector(a) | length(a) < 2 then
     error("ar_psd: arg 1 (a) must be vector, length >= 2.");
-  elseif ~isscalar(v) then
+elseif ~isscalar(v) then
     error("ar_psd: arg 2 (v) must be real scalar >0.");
-  else
+else
     real_model = isreal(a);
     // Default values for optional arguments
     freq = 256;
