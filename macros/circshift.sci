@@ -1,23 +1,24 @@
-
-function R = circshift(M,d)
-// Shifts array circularly
-// CALLING SEQUENCES:
-// R = circshift(M, d)
-//     circularly shifts by d(i) positions components of M along its #ith dimensions
-// PARAMETERS:
-// M,R : vector or matrix of any data type
-// d   : vector of integers. d(i) is the shift to be applied to the M's components
-//        along its ith dimension.
-//        for example d = [0 n] will shift element n position along column
-// EXAMPLES:
-// M = [1 2 3 4];
-// circshift(M, [0 1])
-//Output :
-// ans  =
+function R = circshift(M, d)
+// Perform a circular shift on an array.
 //
+// Syntax
+//   R = circshift(M, d)
+//
+// Parameters
+// M: Array. Input vector or matrix of any data type.
+// d: Vector of integers. Specifies the number of positions to shift along each dimension.
+//    For example, d = [0, n] shifts elements by `n` positions along the columns.
+// R: Array. Resulting array after the circular shift.
+//
+// Description
+// This function circularly shifts the elements of the input array `M` by the specified positions `d` along each dimension.
+//
+// Examples
+// M = [1, 2, 3, 4];
+// circshift(M, [0, 1])
+// Output:
+// ans =
 //    4.    1.    2.    3.
-
-
 
   if argn(2)==0
       error("Invalid input")
