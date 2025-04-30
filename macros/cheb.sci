@@ -1,4 +1,21 @@
-function T = cheb (n, x)
+function T = cheb(n, x)
+// Compute the Chebyshev polynomial of the first kind.
+//
+// Syntax
+//   T = cheb(n, x)
+//
+// Parameters
+// n: Non-negative integer. Order of the Chebyshev polynomial.
+// x: Scalar or array. Input values.
+// T: Scalar or array. Values of the Chebyshev polynomial of the first kind.
+//
+// Description
+// This function computes the Chebyshev polynomial of the first kind of order `n` for the input values `x`. The function supports both scalar and array inputs for `x`.
+//
+// Examples
+// T = cheb(3, 0.5)
+// Output:
+// T = -1
 
  funcprot(0);
     rhs= argn(2);
