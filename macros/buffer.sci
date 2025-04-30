@@ -1,21 +1,23 @@
-
-function [y, z, opt] = buffer (x, n, p, opt)
-//This function buffers the given data into a matrix of signal frames
-//Calling Sequence
-//[y] = buffer (x, n)
-//[y] = buffer (x, n, p)
-//[y] = buffer (x, n, p)
-//[y, z, opt] = buffer (...)
-//Parameters
-//x: Data to be buffered
-//n: Positive integer equal to number of rows in the produced data buffer
-//p: Integer less than n, default value 0
-//opt: In case of overlap, it can be a vector of length p or the string "nodelay", In case of underlap, it is an integer between 0 and p
-//Description
-//This function buffers the given data into a matrix of signal frames
-//Examples
-//buffer(1,3,2)
-//ans =
+function [y, z, opt] = buffer(x, n, p, opt)
+// Buffer data into a matrix of signal frames.
+//
+// Syntax
+//   [y] = buffer(x, n)
+//   [y] = buffer(x, n, p)
+//   [y, z, opt] = buffer(...)
+//
+// Parameters
+// x: Data to be buffered.
+// n: Positive integer. Number of rows in the produced data buffer.
+// p: Integer less than n. Default is 0.
+// opt: Specifies overlap or underlap behavior. Can be a vector of length p, the string "nodelay", or an integer between 0 and p.
+//
+// Description
+// This function buffers the given data into a matrix of signal frames. It supports overlapping and underlapping frames based on the parameters `p` and `opt`.
+//
+// Examples
+// buffer(1, 3, 2)
+// ans =
 //   0   0
 //   0   1
 //   1   0
