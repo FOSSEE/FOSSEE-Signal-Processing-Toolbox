@@ -1,23 +1,23 @@
-function [X,varargout]= corrmtx(x,m,varargin)
-// Generate data matrix for autocorrelation matrix estimation
+function [X, varargout] = corrmtx(x, m, varargin)
+// Generate a data matrix for autocorrelation matrix estimation.
 //
-// Calling Sequence
-// X = corrmtx(x,m)
-// [X,R] = corrmtx(x,m)
-// X = corrmtx(x,m,s)
-// [X,R] = corrmtx(x,m,s)
-// 
+// Syntax
+//   X = corrmtx(x, m)
+//   [X, R] = corrmtx(x, m)
+//   X = corrmtx(x, m, s)
+//   [X, R] = corrmtx(x, m, s)
+//
 // Parameters
-// x: input vector of size N for which correlation matrix of size m is to be calculated
-// m: size of correlation matrix to be computed. Positive integer strictly smaller than the length of the input x
-// X: data matrix as specified according to the input 'method'
-// s: method for type of output matrix X
-//      'autocorrelation': (default) X is the (n + m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the leng    th-n data vector x, derived using prewindowed and postwindowed data, based on an mth-order prediction error model.
-//      'prewindowed': X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x,     derived using prewindowed data, based on an mth-order prediction error model.
-//      'postwindowed': X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x    , derived using postwindowed data, based on an mth-order prediction error model.
-//      'covariance': X is the (n – m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vect    or x, derived using nonwindowed data, based on an mth-order prediction error model.
-//      'modified': X is the 2(n – m)-by-(m + 1) modified rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n d    ata vector x, derived using forward and backward prediction error estimates, based on an mth-order prediction error model.
-// R: (m + 1)-by-(m + 1) autocorrelation matrix estimate calculated as X'*X
+// x: Vector. Input vector of size N for which the correlation matrix of size `m` is to be calculated.
+// m: Positive integer. Size of the correlation matrix to be computed. Must be strictly smaller than the length of `x`.
+// s: String. Method for the type of output matrix `X`. Options are:
+//    - 'autocorrelation' (default): Generates an autocorrelation estimate.
+//    - 'prewindowed': Uses prewindowed data.
+//    - 'postwindowed': Uses postwindowed data.
+//    - 'covariance': Uses nonwindowed data.
+//    - 'modified': Uses forward and backward prediction error estimates.
+// X: Matrix. Data matrix as specified by the input `s`.
+// R: Matrix. Autocorrelation matrix estimate calculated as `X'*X`.
 //
 // Description
 // Consider the generic matrix X below
@@ -59,9 +59,9 @@ function [X,varargout]= corrmtx(x,m,varargin)
 //        |_x*(n-m) ...x*(n)_|
 //
 // Examples
-// 
-// 
-//
+// x = [1, 2, 3, 4, 5];
+// m = 3;
+// [X, R] = corrmtx(x, m, 'autocorrelation')
 // See also
 // peig
 // pmusic
@@ -69,15 +69,14 @@ function [X,varargout]= corrmtx(x,m,varargin)
 // rootmusic
 // xcorr
 //
-// Author:
+// Authors
 // Parthe Pandit
 //
 // Bilbligraphy
 // Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.
+//
 
-
-
-    if(~isvector(x)) then
+if(~isvector(x)) then
         error("Input x must be a length n vector")
         return
     elseif (~isscalar(m)) then
