@@ -9,39 +9,40 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-function [z, p, g] = cheb1ap (n, Rp)
-    //This function designs a lowpass analog Chebyshev type I filter.
-    //Calling Sequence
-    //[z, p, g] = cheb1ap (n, Rp)
-    //Parameters
-    //n: Filter Order
-    //Rp: Peak-to-peak passband ripple (in dB)
-    //z: Zeros
-    //p: Poles
-    //g: Gain
-    //Description
-    //It gives a lowpass analog Chebyshev type I filter of nth order and with a Peak-to-peak passband ripple of Rp.
-    //Examples
-    //[z, p, g] = cheb1ap (10, 3)
-    //Output :
-    // g  =
-    //
-    //    0.0019578
-    // p  =
-    //
-    //  - 0.0138320 - 0.9915418i
-    //  - 0.0401419 - 0.8944827i
-    //  - 0.0625225 - 0.7098655i
-    //  - 0.0787829 - 0.4557617i
-    //  - 0.0873316 - 0.1570448i
-    //  - 0.0873316 + 0.1570448i
-    //  - 0.0787829 + 0.4557617i
-    //  - 0.0625225 + 0.7098655i
-    //  - 0.0401419 + 0.8944827i
-    //  - 0.0138320 + 0.9915418i
-    // z  =
-    //
-    //     []
+function [z, p, g] = cheb1ap(n, Rp)
+// Design a lowpass analog Chebyshev type I filter.
+//
+// Syntax
+//   [z, p, g] = cheb1ap(n, Rp)
+//
+// Parameters
+// n: Positive integer. Order of the filter.
+// Rp: Positive real number. Peak-to-peak passband ripple (in dB).
+// z: Zeros of the filter.
+// p: Poles of the filter.
+// g: Gain of the filter.
+//
+// Description
+// This function designs a lowpass analog Chebyshev type I filter of order `n` with a peak-to-peak passband ripple of `Rp`.
+//
+// Examples
+// [z, p, g] = cheb1ap(10, 3)
+// Output:
+// g =
+//    0.0019578
+// p =
+//  -0.0138320 - 0.9915418i
+//  -0.0401419 - 0.8944827i
+//  -0.0625225 - 0.7098655i
+//  -0.0787829 - 0.4557617i
+//  -0.0873316 - 0.1570448i
+//  -0.0873316 + 0.1570448i
+//  -0.0787829 + 0.4557617i
+//  -0.0625225 + 0.7098655i
+//  -0.0401419 + 0.8944827i
+//  -0.0138320 + 0.9915418i
+// z =
+//     []
 
     funcprot(0);
     lhs = argn(1)
