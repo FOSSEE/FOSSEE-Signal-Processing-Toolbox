@@ -1,14 +1,30 @@
 function varargout = cpsd(varargin)
-//   Calling Sequence
-//   [Pxx, freq] = cpsd (x, y)
-//   […] = cpsd (x, y, window)
-//   […] = cpsd (x, y, window, overlap)
-//   […] = cpsd (x, y, window, overlap, Nfft)
-//   […] = cpsd (x, y, window, overlap, Nfft, Fs)
-//   […] = cpsd (x, y, window, overlap, Nfft, Fs, range)
-//   cpsd (…)
-// Estimate cross power spectrum of data x and y by the Welch (1967) periodogram/FFT method.
-// See "help pwelch" for description of arguments, hints and references
+// Estimate the cross power spectrum of data using the Welch method.
+//
+// Syntax
+//   [Pxx, freq] = cpsd(x, y)
+//   [...] = cpsd(x, y, window)
+//   [...] = cpsd(x, y, window, overlap)
+//   [...] = cpsd(x, y, window, overlap, Nfft)
+//   [...] = cpsd(x, y, window, overlap, Nfft, Fs)
+//   [...] = cpsd(x, y, window, overlap, Nfft, Fs, range)
+//   cpsd(...)
+//
+// Parameters
+// x, y: Vectors. Input signals for cross power spectrum estimation.
+// window: Vector. Windowing function applied to each segment.
+// overlap: Integer. Number of overlapping samples between segments.
+// Nfft: Integer. Number of FFT points.
+// Fs: Real scalar. Sampling frequency.
+// range: String. Frequency range for the analysis.
+// Pxx: Vector. Cross power spectrum estimate.
+// freq: Vector. Frequency values corresponding to the cross power spectrum estimate.
+//
+// Description
+// This function estimates the cross power spectrum of data `x` and `y` using the Welch periodogram/FFT method. It is compatible with Matlab's `cpsd` function.
+//
+// Examples
+// [Pxx, freq] = cpsd(x, y, hamming(256), 128, 256, 1000, 'onesided')
 
     // Check fixed argument
     if (nargin < 2 || nargin > 7)
