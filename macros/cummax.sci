@@ -9,42 +9,38 @@
 // Date of Modification: 13 March 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-function [M , iM] = cummax(varargin)
-    // Cumulative maximum
-    //
-    // Calling Sequence
-    // M = cummax(A)
-    //      returns the cumulative maximum of the arguments of A. The dimension 
-    //      of M is same as the dimension of A. If A is a 2D matrix, the operation
-    //      is performed along the columns. For a hypermatrix, the operation is
-    //      performed along the first non-zero dimension
-    // M = cummax(A,dim)
-    //      The operation is performed along the dimension specified by dim
-    // M = cummax(_,direction)
-    //      direction specifies as the direction of operation
-    // [M , iM] = cummax(..) 
-    //      If called with two output arguments the index of the maximum value is also returned.
-    // Parameters
-//     A - real|complex numbers - vector|matrix
-//         Input Array
-//         For complex elements, cummax compares the magnitude of elements. If
-//         the magnitude are same, phase angles are compared.
-    // dim - positive integer - scalar  
-    //     Dimension to operate along
-    //     If no dimension is specified, then the default value is the first 
-    //     array dimension whose value is greater than 1
-    // direction - string flag - 'forward' (default) or 'reverse'
-    //     Direction of cumulation
-    //     If the direction is forward, cummax works from 1 to end of the active
-    //     dimension. Otherwise, it works in the opposite sense
-    //
-    // Examples
-    // 1) Cumulative maximum values in a vector
-    //     v = [8 9 1 10 6 1 3 6 10 10]
-    //     M = cummax(v)
-    //        
-    // Expected output: [8 9 9 10 10 10 10 10 10 10]
-    
+function [M, iM] = cummax(varargin)
+// Compute the cumulative maximum.
+//
+// Syntax
+//   M = cummax(A)
+//   M = cummax(A, dim)
+//   M = cummax(_, direction)
+//   [M, iM] = cummax(...)
+//
+// Parameters
+// A: Vector or matrix. Input array containing real or complex numbers.
+// dim: Positive integer. Dimension to operate along. Default is the first non-singleton dimension.
+// direction: String. Direction of cumulation. Can be 'forward' (default) or 'reverse'.
+// M: Vector or matrix. Cumulative maximum values.
+// iM: Vector or matrix. Indices of the maximum values.
+//
+// Description
+// This function computes the cumulative maximum of the input array `A`. For complex elements, the function compares magnitudes, and if magnitudes are equal, it compares phase angles. The operation can be performed along a specified dimension and in a specified direction.
+//
+// Examples
+// 1) Cumulative maximum values in a vector:
+//    v = [8, 9, 1, 10, 6, 1, 3, 6, 10, 10];
+//    M = cummax(v)
+//    Output: [8, 9, 9, 10, 10, 10, 10, 10, 10, 10]
+//
+// 2) Cumulative maximum along a specific dimension:
+//    x = [1, 2, 3; 4, 1, 2; 3, 5, 1];
+//    M = cummax(x, 2)
+//
+// 3) Cumulative maximum with indices:
+//    [M, iM] = cummax(x, 2)
+
     [numOutArgs,numInArgs] = argn(0);
     
     // ** Checking number of arguments
