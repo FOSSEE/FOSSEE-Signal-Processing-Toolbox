@@ -9,37 +9,38 @@
 // Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-function [zero, pole, gain]=besselap(n)
-    //Bessel analog filter prototype.
-    //Calling Sequence
-    //[zero, pole, gain] = besselap(n)
-    //zero = besselap(n)
-    //Parameters
-    //n: Filter Order
-    //zero: Zeros
-    //pole: Poles
-    //gain: Gain
-    //Description
-    //It Return bessel analog filter prototype of nth order.
-    //Examples
-    //[zero, pole, gain] = besselap (5)
-    //Output :
-    // gain  =
-    //
-    //    1.
-    // pole  =
-    //
-    //  - 0.5905759 + 0.9072068i
-    //  - 0.5905759 - 0.9072068i
-    //  - 0.9264421
-    //  - 0.8515536 + 0.4427175i
-    //  - 0.8515536 - 0.4427175i
-    // zero  =
-    //
-    //     []
-    // Dependencies
-    // prepad
-
+function [zero, pole, gain] = besselap(n)
+// Generate a Bessel analog filter prototype.
+//
+// Syntax
+//   [zero, pole, gain] = besselap(n)
+//   zero = besselap(n)
+//
+// Parameters
+// n: Positive integer. Filter order.
+// zero: Zeros of the filter.
+// pole: Poles of the filter.
+// gain: Gain of the filter.
+//
+// Description
+// This function returns the Bessel analog filter prototype of nth order.
+//
+// Examples
+// [zero, pole, gain] = besselap(5)
+// Output:
+// gain =
+//    1.
+// pole =
+//  -0.5905759 + 0.9072068i
+//  -0.5905759 - 0.9072068i
+//  -0.9264421
+//  -0.8515536 + 0.4427175i
+//  -0.8515536 - 0.4427175i
+// zero =
+//     []
+//
+// See also
+// prepad
 
     funcprot(0);
     [nargout, nargin] = argn() ;
