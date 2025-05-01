@@ -1,17 +1,28 @@
-
- function y = fftconv(X, Y, n)
+function y = fftconv(X,Y n)
+// Convolve two vectors using the FFT for computation
+//
+// Syntax
+//   y = fftconv(X, Y)
+//  Y = fftconv(X, Y, n)
+//
+// Parameters
+// x ,y : Input signal vectors.
+// y: Convolution result.
+//
 // Description
-//         Convolve two vectors using the FFT for computation. c = fftconv (X, Y) returns a vector of length equal to 'length(X) + length (Y) - 1'.  If X and Y are         the coefficient vectors of two polynomials, the returned value is the coefficient vector of the product polynomial.
-//         If the optional argument n is specified, an N-point FFT is used.
-//     Calling Sequence
-//         Y = fftconv(X, Y)
-//         Y = fftconv(X, Y, n)
-//     Parameters
-//         X, Y: Vectors
-//     Examples
-//         fftconv([1,2,3], [3,4,5])
-//         ans = 
-//             3.    10.    22.    22.    15. 
+// Convolve two vectors using the FFT for computation. c = fftconv (X, Y) returns a vector of length equal to 'length(X) + length (Y) - 1'.  If X and Y are the coefficient vectors of two polynomials, the returned value is the coefficient vector of the product polynomial.
+// If the optional argument n is specified, an N-point FFT is used.
+//
+// Examples
+// fftconv([1,2,3], [3,4,5])
+//    ans = 
+//        3.    10.    22.    22.    15. 
+// 
+// See also
+// fft
+//
+// Authors
+// Abinash Singh (abinashlalotra@gmail.com)
 
      funcprot(0);
      rhs = argn(2);
@@ -45,5 +56,5 @@
      end
      y=clean(y);
  endfunction
-  
+
 

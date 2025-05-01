@@ -1,16 +1,23 @@
 function y = fftshift1(x, dim)
 //Performs a shift of the vector x, for use with the fft1 and ifft1 functions, in order to move the frequency 0 to the center of the vector or matrix.
-//Calling Sequence:
-// fftshift1(x)
-// fftshift1(x, dim)
-//Parameters:
-//x- It is a vector of N elements corresponding to time samples
-//dim- The optional DIM argument can be used to limit the dimension along which the permutation occurs
-//Examples:
-//x = [0:6]
-//fftshift1(x)
-//ans =
-//4 5 6 0 1 2 3
+//
+// Syntax
+//   y = fftshift1(x)
+//   y = fftshift1(x, dim)
+//
+// Parameters
+// x: It is a vector of N elements corresponding to time samples
+// dim: Dimension along which to shift. Default is the first non-singleton dimension.
+// y: Output array with zero-frequency component shifted to the center.
+//
+// Description
+// This function shifts the zero-frequency component to the center of the spectrum.
+//
+// Examples
+// y = fftshift1([1, 2, 3, 4])
+//
+
+
 
   funcprot(0);
   rhs = argn(2);
