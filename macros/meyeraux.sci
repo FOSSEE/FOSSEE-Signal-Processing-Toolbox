@@ -1,16 +1,20 @@
-function [y]=meyeraux(x)
-// Returns value of Meyer Wavelet Auxiliary function
-// Calling Sequence
-//	[y]=meyeraux(x)
+function y = meyeraux(x)
+// Wavelet Auxiliary function
+//
+// Syntax
+//   y = meyeraux(x)
+//
 // Parameters
-//	x: Real or complex valued vector or matrix
+// x: Input signal.
+// y: Meyer auxiliary function of the input signal.
+//
 // Description
-//	This function returns values of the auxiliary function used for Meyer wavelet generation.
+// This function computes the Meyer auxiliary function for the input signal `x`.
+//
 // Examples
-// 1.	meyeraux([1 2 3])
-//	ans= [1    -208  -10287]
-// 2.	meyeraux([1 2 3;4 5 6])
-//	ans=  [1      -208    -10287  ;	 -118016   -709375  -2940624 ]
+// y = meyeraux([1, 2, 3, 4])
+//
+
 
 if (argn(2)~=1) then
 	error ("Wrong number of input arguments.")

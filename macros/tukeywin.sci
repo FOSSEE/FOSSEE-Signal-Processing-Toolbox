@@ -43,7 +43,28 @@
 
 
 
-function w = tukeywin (m, varargin)
+function w = tukeywin(m, varargin)
+// This function returns the filter coefficients of a Tukey window.
+//
+// Syntax
+//   w = tukeywin(n)
+//   w = tukeywin(n, r)
+//
+// Parameters
+// n: Window length.
+// r: Taper ratio. Default is 0.5.
+// w: Tukey window.
+//
+// Description
+// This function generates a Tukey window of length `n` with taper ratio `r`.
+//
+// Examples
+// w = tukeywin(64, 0.5)
+//
+// See also
+//  hanning
+//
+
 
  funcprot(0);
     [nargout,nargin]=argn();

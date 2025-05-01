@@ -1,31 +1,35 @@
 
 function [b,a] = stmcb( x, u_in, q, p, niter, a_in )
-//Compute linear model using Steiglitz-McBride iteration
-//calling syntax
-//[b,a] = stmcb(h,nb,na)
-//[b,a] = stmcb(y,x,nb,na)
-//[b,a] = stmcb(h,nb,na,niter)
-//[b,a] = stmcb(y,x,nb,na,niter)
-//[b,a] = stmcb(h,nb,na,niter,ai)
-//[b,a] = stmcb(y,x,nb,na,niter,ai)
-//Parameters :
-//b,a : coefficients of the system function,nb is number of zeros and na is number of poles
-//h:impulse response of the system
-//x,y: input and output of same length given to the system
-//niter: no of iterations
-//ai:initial estimate of the denominator coefficients
-//Accepts only real i/ps , imaginary i/ps are not accepted due to limitations of the 'filter' function in Scilab
-//Example
-//h = fscanfMat("macros/stmcb_h_data.txt");
-//stmcb(h,4,4)
-//Output :
+// Compute linear model using Steiglitz-McBride iteration
+//
+// Syntax
+//  [b,a] = stmcb(h,nb,na)
+//  [b,a] = stmcb(y,x,nb,na)
+//  [b,a] = stmcb(h,nb,na,niter)
+//  [b,a] = stmcb(y,x,nb,na,niter)
+//  [b,a] = stmcb(h,nb,na,niter,ai)
+//  [b,a] = stmcb(y,x,nb,na,niter,ai)
+//
+//  Parameters
+// b,a : coefficients of the system function,nb is number of zeros and na is number of poles
+// h:impulse response of the system
+// x,y: input and output of same length given to the system
+// niter: no of iterations
+// ai:initial estimate of the denominator coefficients
+// 
+// Description
+// This function computes the coefficients of the system function of a linear system using the Steiglitz-McBride iteration method.
+// Accepts only real i/ps , imaginary i/ps are not accepted due to limitations of the 'filter' function in Scilab
+//
+// Example
+// h = fscanfMat("macros/stmcb_h_data.txt");
+// stmcb(h,4,4)
+// Output :
 // ans  =
 //
 //    0.0003    0.0010284    0.0147159  - 0.0077914    0.0316548
 
-
-
-     narginchk(3, 6, argn(2));
+    narginchk(3, 6, argn(2));
     //modify stmcb to handle exceptions when i/p is char
     if(type(x)==10 | type(u_in)==10) then
         error("Input in stmcb must be double/single, instead it was char");
