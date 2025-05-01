@@ -11,22 +11,36 @@
 // Email: toolbox@scilab.in
 
 function [d]=dftmtx(n)
-    // Computes n-by-n Discrete Fourier transformation matrix
-    //Calling Sequence
-    //d=dftmtx(n)
-    //Parameters
-    //n: Real positive scalar number
-    // Description
-    //This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).
-    // Examples
-    //d = dftmtx(4)
-    //Output:
-    // d  =
-    //
-    //    1.    1.     1.    1.
-    //    1.  - i    - 1.    i
-    //    1.  - 1.     1.  - 1.
-    //    1.    i    - 1.  - i
+// Computes n-by-n Discrete Fourier transformation matrix
+//
+// Syntax
+//   [d] = dftmtx(n)
+//
+// Parameters
+// n: Real positive scalar number
+//
+// Description
+// This function gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).
+//
+// Examples
+// d = dftmtx(4)
+// Output:
+// d  =
+//    1.    1.     1.    1.
+//    1.  - i    - 1.    i
+//    1.  - 1.     1.  - 1.
+//    1.    i    - 1.  - i
+//
+// See also
+//
+//
+// Authors
+//
+//
+// Bibliography
+//
+//
+
 
     funcprot(0);
     [nargout nargin] = argn();
