@@ -1,4 +1,4 @@
-function y = fftconv(X,Y n)
+function y = fftconv(X,Y ,n)
 // Convolve two vectors using the FFT for computation
 //
 // Syntax
