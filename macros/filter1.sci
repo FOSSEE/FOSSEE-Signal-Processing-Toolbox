@@ -1,10 +1,11 @@
 function [Y, SF] = filter1 (B, A, X, SI, DIM)
-//Apply a 1-D digital filter to the data X.
+// Apply a 1-D digital filter to the data X.//Apply a 1-D digital filter to the data X.
+//
 //Calling Sequence
-//Y = filter1(B, A, X)
-//[Y, SF] = filter1(B, A, X, SI)
-//[Y, SF] = filter1(B, A, X, [], DIM)
-//[Y, SF] = filter1(B, A, X, SI, DIM)
+// Y = filter1(B, A, X)
+// [Y, SF] = filter1(B, A, X, SI)
+// [Y, SF] = filter1(B, A, X, [], DIM)
+// [Y, SF] = filter1(B, A, X, SI, DIM)
 //Parameters
 //B: Matrix or Integer
 //A: Matrix or Integer

@@ -1,5 +1,5 @@
 function res = fftw1(a, b)
-//Manage FFTW wisdom data.
+//M// anage FFTW wisdom data
 //Calling Sequence
 // method = fftw ("planner")
 //fftw ("planner", method)
