@@ -1,5 +1,5 @@
 function [dboutput] = db(X, SignalType, R)
-// Short description on the first line following the function header.
+// Converts the elements of the vector or matrix X to decibels (dB
 //
 // Syntax
 //   [dboutput] = db(X)
@@ -27,15 +27,12 @@ function [dboutput] = db(X, SignalType, R)
 //
 // Authors
 // Author : Pratik Kapoor
+// 
+
+
 // Modified to remove disp(SignalType) at line 28 
 // Modified to handle imaginary, negative power, and zero input
 // Modifications by Debdeep Dey
-//
-//
-// Bibliography
-//
-//
-// start of coding after on empty line to mark the end of the head_comments section
 
 funcprot(0);
 
