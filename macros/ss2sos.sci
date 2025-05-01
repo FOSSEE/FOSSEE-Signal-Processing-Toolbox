@@ -49,8 +49,8 @@ function [sos, g] = ss2sos(A, B, C, D)
     //obtaining the transfer function(continuous)
     tf=ss2tf(syslin('c',A,B,C,D));
     //factorising the numerator and the denominator into second order systems
-    [zero,gn]=sosbreak(numer(tf));//function is defined in the same folder
-    [pole,gd]=sosbreak(denom(tf));
+    [zero,gn]=sosbreak(tf.num);//function is defined in the same folder
+    [pole,gd]=sosbreak(tf.den);
     //reducing each pair of second order in the necessary form
     sos=[];
     for i=[1:length(pole)]
