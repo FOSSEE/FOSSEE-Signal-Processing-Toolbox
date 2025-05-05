@@ -1,21 +1,26 @@
 function  [y, h] = fracshift( x, d, h )
-//This function shifts the series x supplied as input argument by a number of samples d.
-//Calling Sequence
-//y = fracshift(x, d)
-//y = fracshift(x, d, h)
-//[y, h] = fracshift(...)
-//Parameters 
-//x:
-//d:
-//h:
-//Description
-//This is an Octave function.
-//This function shifts the series x supplied as input argument by a number of samples d. 
-//The third parameter is the interpolator, which is designed with a Kaiser-windowed sinecard by default, if not supplied.
-//Examples
-//fracshift([1,2,3],5)
-//ans  =
-//    1.    2.    3.  
+// This function shifts the series x supplied as input argument by a number of samples d.
+//
+// Syntax
+//   y = fracshift(x, d)
+//   y = fracshift(x, d, h)
+//   [y, h] = fracshift(...)
+//
+// Parameters 
+// x: Vector. The input series to be shifted.
+// d: Scalar. The number of samples by which the input series `x` is shifted.
+// h: Vector (optional). The interpolator used for shifting. If not supplied, a Kaiser-windowed sinc filter is used by default.
+// y: Vector. The shifted series.
+// h: Vector. The interpolator used for shifting.
+//
+// Description
+// This function shifts the series `x` supplied as input argument by a number of samples `d`. 
+// The third parameter is the interpolator, which is designed with a Kaiser-windowed sinc filter by default, if not supplied.
+//
+// Examples
+// fracshift([1, 2, 3], 5)
+// ans  =
+//     1.    2.    3.  
 
 funcprot(0);
 lhs = argn(1)

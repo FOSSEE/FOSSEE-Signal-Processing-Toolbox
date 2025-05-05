@@ -1,9 +1,23 @@
 function y= fractdiff(x,d)
-//Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.
-//Calling Sequence
-// fractdiff (X, D)
-//Description
-//Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.
+// Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.
+//
+// Syntax
+//   y = fractdiff(x, d)
+//
+// Parameters
+// x: Vector. The input series to be differenced.
+// d: Scalar. The fractional differencing parameter. Must be greater than -1.
+// y: Vector. The fractionally differenced series.
+//
+// Description
+// This function computes the fractional differences (1-L)^d x, where L denotes the lag-operator and d is greater than -1.
+//
+// Examples
+// y = fractdiff([1, 2, 3, 4], 0.5)
+//
+// See also
+//  fftfilt
+//
 
 if(argn(2)~=2)
 	error("Wrong number of input arguments");

@@ -10,6 +10,36 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [b, r] = deconv (y, a)
+// Deconvolve two vectors (polynomial division)
+//
+// Syntax
+//   b = deconv(y, a)
+//   [b, r] = deconv(y, a)
+//
+// Parameters
+// y: Vector or scalar. The dividend polynomial coefficients.
+// a: Vector or scalar. The divisor polynomial coefficients.
+// b: Vector. The quotient polynomial coefficients.
+// r: Vector. The remainder polynomial coefficients.
+//
+// Description
+// [b, r] = deconv(y, a) solves for b and r such that y = conv(a, b) + r.
+//
+// If y and a are polynomial coefficient vectors, b will contain the coefficients of the polynomial quotient, and r will be a remainder polynomial of the lowest order.
+//
+// Examples
+// [b, r] = deconv([3, 6, 9, 9], [1, 2, 3])
+// b = [3, 0]
+// r = [0, 0, 0, 9]
+//
+// [b, r] = deconv([3, 6], [1, 2, 3])
+// b = 0
+// r = [3, 6]
+//
+// See also
+//  filter
+//
+
 
   if (nargin ~= 2)
     error("deconv : Two arguments are required ");

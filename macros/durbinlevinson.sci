@@ -1,19 +1,27 @@
 function [newphi, newv] = durbinlevinson (c, oldphi, oldv)
 // Perform one step of the Durbin-Levinson algorithm.
-//Calling Sequence
-// durbinlevinson(c)
-// durbinlevinson(c, oldphi)
-// durbinlevinson(c, oldphi, oldv)
-//Parameters:
-//c: The vector c specifies the autocovariances '[gamma_0, ..., gamma_t]' from lag 0 to t.
-//oldphi: It specifies the coefficients based on c(t-1).
-//oldv: It specifies the corresponding error.
-//Description:
-//Perform one step of the Durbin-Levinson.
-//If 'oldphi' and 'oldv' are omitted, all steps from 1 to t of the algorithm are performed.
-//Example:
-//durbinlevinson([1, 2, 3], 1, 2)
-//ans = [0.5, 0.5]
+//
+// Syntax
+//   [newphi, newv] = durbinlevinson(c)
+//   [newphi, newv] = durbinlevinson(c, oldphi)
+//   [newphi, newv] = durbinlevinson(c, oldphi, oldv)
+//
+// Parameters
+// c: Vector. Specifies the autocovariances '[gamma_0, ..., gamma_t]' from lag 0 to t.
+// oldphi: Vector. Specifies the coefficients based on c(t-1).
+// oldv: Scalar. Specifies the corresponding error.
+// newphi: Vector. The updated coefficients after one step of the Durbin-Levinson algorithm.
+// newv: Scalar. The updated error after one step of the Durbin-Levinson algorithm.
+//
+// Description
+// Perform one step of the Durbin-Levinson algorithm. If 'oldphi' and 'oldv' are omitted, all steps from 1 to t of the algorithm are performed.
+//
+// Examples
+// [newphi, newv] = durbinlevinson([1, 2, 3], 1, 2)
+// newphi = [0.5, 0.5]
+// newv = 0.75
+//
+
 
   funcprot(0);
   rhs = argn(2);

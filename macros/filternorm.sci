@@ -1,7 +1,7 @@
 function L = filternorm(b,a,varargin)
 // Calculates the L-2 norm or L-infinity norm of a digital filter
 //
-// Calling Sequence
+// Syntax
 // L = filternorm(b,a)
 // L = filternorm(b,a,pnorm)
 // L = filternorm(b,a,2,tol)

@@ -12,7 +12,7 @@
 function y = fftfilt(b, x, varargin)
     // Performs FFT-based FIR filtering using overlap-add method
     // 
-    // Calling sequence
+    // Syntax
     // y = fftfilt(b,x)
     // y = fftfilt(b,x,n)   
     // 
