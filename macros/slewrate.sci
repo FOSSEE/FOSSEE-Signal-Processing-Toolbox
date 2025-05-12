@@ -1,6 +1,7 @@
 function [s, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=slewrate(x, varargin)
     // This function estimate slew rate of bilevel waveform transitions
-    // Calling Sequence
+    //
+    // Syntax
     // s=slewrate(x)
     // s=slewrate(x, t)
      // s=slewrate(x, Fs)
@@ -9,7 +10,7 @@ function [s, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=s
     // s=slewrate(x, t,'StateLevels', O)
     // [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x)
     // [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, t)
-    // // [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, Fs)
+    // [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, Fs)
     // [s lowercrossvalue uppercrossvalue lowerreference upperreference]=slewrate(x, t, 'PercentReferenceLevels', N )
     // [s lowercrossvalue uppercrossvalue lowerreference upperreference]= slewrate(x, t, 'Tolerance', M)
     // [s lowercrossvalue uppercrossvalue lowerreference upperreference]= slewrate(x, t,'StateLevels', O)
@@ -28,21 +29,15 @@ function [s, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=s
     // uppercrossvalue: return the upper cross value of bilevel waveform transitions X
     // lowerreference: return lower reference value corrosponding to lower percent reference value.
     // upperreference: return upper reference value corrosponding to upper percent reference value.
-    // Example1
-    // x=[1.2, 5, 10, -20, 12]
-    //t=1:length(x)
-    //s=slewrate(x, t)
-    //EXPECTED OUTPUT:
-    //s  = - 30.    32.
     //
-    //Example2
-    //x=[ones(1,25)  -ones(1,25)  ones(1,25) ]
-    //t=1:length(x)
-    //s=slewrate(x,t)
-   //EXPECTED OUTPUT:
-    //s  = - 2  2
+    //  Examples
+    // x=[1.2, 5, 10, -20, 12]
+    // t=1:length(x)
+    // s=slewrate(x, t)
+    // 
     // See also
-    // Authors
+    //
+    //  Authors
     // Jitendra Singh
 
 

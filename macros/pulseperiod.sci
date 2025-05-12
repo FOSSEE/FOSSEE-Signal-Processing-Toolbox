@@ -1,6 +1,7 @@
 function [p, initialcross, finalcross, nextcross, midreference]= pulseperiod(x, varargin)
     // This function estimate pulse period of real vector X.
-    // Calling Sequence
+    // 
+    // Syntax
     // p=pulseperiod(x)
     // p=pulseperiod(x, Fs)
     // p=pulseperiod(x, t)
@@ -31,17 +32,16 @@ function [p, initialcross, finalcross, nextcross, midreference]= pulseperiod(x, 
     // finalcross: returns a vector of final cross values of bilevel waveform transitions X
     // nextcross: returns a vector of next cross values of bilevel waveform transitions X
     // midreference: return mid reference value corrosponding to mid percent reference value.
-    // Examples
-    //x = fscanfMat("macros/pulsedata_x.txt");
-    //t = fscanfMat("macros/pulsedata_t.txt");
-    //clf
-    //p = pulseperiod(x,t,'fig','ON')
-    //Output
-    // p  =
     //
-    //    0.5002996
-    //also it generates a pulse plot with pulse period
+    //  Examples
+    // x = fscanfMat("macros/pulsedata_x.txt");
+    // t = fscanfMat("macros/pulsedata_t.txt");
+    // clf
+    // p = pulseperiod(x,t,'fig','ON')
+    // //also it generates a pulse plot with pulse period
+    //
     // See also
+    // 
     // Authors
     // Jitendra Singh
 

@@ -4,12 +4,12 @@ function [psi,x] = morlet(lb, ub, n)
 // Syntax
 // [psi,x]= morlet(lb,ub,n)
 // 
-// Parameters:
+// Parameters
 // lb: Real or complex valued vector/scalar
 // ub: Real or complex valued vector/scalar
 // n: Real positive scalar number
 //
-// Description:
+// Description
 // This function returns values of the Morlet wavelet in the specified interval for all the sample points.
 // 
 // Examples

@@ -1,19 +1,18 @@
 function lsf=poly2lsf(a)
-//poly2lsf Prediction polynomial to line spectral frequencies.
-// Calling Sequence
+// poly2lsf Prediction polynomial to line spectral frequencies.
+// 
+// Syntax
 // lsf = poly2lsf(a)
+//
 // Parameters
 // k: define the prediction polynomial.
 // lsf: returns corresponding line spectral frequencies.
+// 
 // Examples
-//
-//EXAMPLE
-//X=[1 0.6149 0.9899 0 0.0031 -0.0082]
+// X=[1 0.6149 0.9899 0 0.0031 -0.0082]
 // lsf = poly2lsf(X)
-//EXPECTED OUTPUT:
-//lsf  =0.7841731  1.5605415  1.8776459  1.8984313  2.3592523
-//
-// Author
+// 
+// Authors
 // Jitendra Singh
 
 //modified to match MATLAb o/p

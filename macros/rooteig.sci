@@ -3,44 +3,41 @@
 function [w,pow] = rooteig(x,p,varargin)
     // Frequencies and power of sinusoids using eigenvector algorithm
     //
-    // Calling Sequence
+    // Syntax
     // w = rooteig(x,p)
     // [w,pow] = rooteig(x,p)
     // [f,pow] = rooteig(...,fs)
     // [w,pow] = rooteig(...,'corr')
     //
     // Parameters
-    // x - int|double - vector|matrix
+    // x : int|double - vector|matrix
     //      Input signal.
     //      If x is a vector, then it reprsenets one realization of the signal.
     //      If x is a matrix, then each row represents a separate observation of
     //      the signal.
-    // p - int|double - scalar|2 element vector
+    // p : int|double - scalar|2 element vector
     //      p(1) is the signal subspace dimension and hence the number of
     //      complex exponentials in x.
     //      p(2), if specified, represents a threshold that is multiplied by
     //      the smallest estimated eigenvalue of the signal's correlation
     //      matrix.
-    // fs - int|double - scalar
+    // fs : int|double - scalar
     //      Sampling frequency (in Hz)
     //      If fs is specified by an empty vector or unspecified, it defaults
     //      to 1 Hz
-    // 'corr' flag
+    // 'corr' : flag
     //      If specified, x is interpreted as a correlation matrix rather than
     //      a matrix of the signal data. For x to be a correlation matrix,
     //      x must be a square matrix and all its eigenvalues must be
     //      nonnegative
-    // Output arguments
-    // w - double - vector
+    // w : double - vector
     //      Estimated frequencies of the complex sinusoids
-    // pow - double - vector
+    // pow : double - vector
     //      estimated absolute value squared amplitudes of the sinusoids at
     //      the frequencies w
     //
-
-
-    // Examples:
-    //      1) 3 complex exponentials:
+    // Examples
+    //      // 3 complex exponentials:
     //
     //          n=0:99;
     //          s=exp(1i*pi/2*n)+2*exp(1i*pi/4*n)+exp(1i*pi/3*n)+randn(1,100);
@@ -48,24 +45,17 @@ function [w,pow] = rooteig(x,p,varargin)
     //
 //    n=0:99;
 //     s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
-//EXECUTE CORRMTX FUNCTION PRIOR EXECUTING THIS FUNCTION
+// // CORRMTX FUNCTION should be loaded PRIOR EXECUTING THIS FUNCTION
 // X = corrmtx(s,12,'mod');
 // [W,P] = rooteig(X,3);
 //
- //EXPECTED OUTPUT:
- //W =   0.7883
- //            1.5674
-  //           1.0429
-//P=
- //   4.1748
- //   1.0572
- //   1.2419
-    // Author
+// 
+ // Authors
     // Ayush
     //
     //
     //
-    // References
+    // Bibliography
     // 1) Stoica, P. and R. Moses, INTRODUCTION TO SPECTRAL ANALYSIS,
     //    Prentice-Hall
     //

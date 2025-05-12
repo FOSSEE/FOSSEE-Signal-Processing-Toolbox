@@ -21,13 +21,10 @@ function [b,a] = stmcb( x, u_in, q, p, niter, a_in )
 // This function computes the coefficients of the system function of a linear system using the Steiglitz-McBride iteration method.
 // Accepts only real i/ps , imaginary i/ps are not accepted due to limitations of the 'filter' function in Scilab
 //
-// Example
+// Examples
 // h = fscanfMat("macros/stmcb_h_data.txt");
 // stmcb(h,4,4)
-// Output :
-// ans  =
-//
-//    0.0003    0.0010284    0.0147159  - 0.0077914    0.0316548
+
 
     narginchk(3, 6, argn(2));
     //modify stmcb to handle exceptions when i/p is char

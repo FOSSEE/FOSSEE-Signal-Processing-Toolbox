@@ -1,11 +1,14 @@
 function savg = spencer (x)
-//Returns Spencer's 15 point moving average of each column of x.
-//Calling Sequence:
-//spencer(x)
-//Parameters:
-//X: Real vector or matrix
-//Description:
-//Returns Spencer's 15 point moving average of each column of x.
+// Returns Spencer's 15 point moving average of each column of x.
+//
+// Syntax
+// spencer(x)
+//
+// Parameters
+// X: Real vector or matrix
+//
+// Description
+// Returns Spencer's 15 point moving average of each column of x.
 
   funcprot(0);
   if (nargin() ~= 1)

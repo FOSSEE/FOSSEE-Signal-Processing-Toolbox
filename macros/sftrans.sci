@@ -11,18 +11,21 @@
 // Email: toolbox@scilab.in
 function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Frequency Transformation in Analog domain).
-    //Calling Sequence
-    //[Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
-    //[Sz, Sp] = sftrans (Sz, Sp, Sg, W, stop)
-    //[Sz] = sftrans (Sz, Sp, Sg, W, stop)
-    //Parameters
-    //Sz: Zeros.
-    //Sp: Poles.
-    //Sg: Gain.
-    //W: Edge freuency of target filter.
-    //stop: True(%T or 1) for high pass and band stop filters or false (%F or 0) for low pass and band pass filters.
-    //Description
-    //Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros individually. The following table summarizes the transformation:
+    //
+    // Syntax
+    // [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
+    // [Sz, Sp] = sftrans (Sz, Sp, Sg, W, stop)
+    // [Sz] = sftrans (Sz, Sp, Sg, W, stop)
+    //
+    // Parameters
+    // Sz: Zeros.
+    // Sp: Poles.
+    // Sg: Gain.
+    // W: Edge freuency of target filter.
+    // stop: True(%T or 1) for high pass and band stop filters or false (%F or 0) for low pass and band pass filters.
+    //
+    // Description
+    // Theory: Given a low pass filter represented by poles and zeros in the splane, you can convert it to a low pass, high pass, band pass or band stop by transforming each of the poles and zeros individually. The following table summarizes the transformation:
     // Transform         Zero at x                  Pole at x
     // ----------------  -------------------------  ------------------------
     // Low Pass          zero: Fc x/C               pole: Fc x/C
@@ -48,24 +51,14 @@ function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
     //      T z+1
     // ----------------  -------------------------  ------------------------
     //
-    //where C is the cutoff frequency of the initial lowpass filter, Fc is the edge of the target low/high pass filter and [Fl,Fh] are the edges of the target band pass/stop filter. With abundant tedious
-    //algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:
+    // where C is the cutoff frequency of the initial lowpass filter, Fc is the edge of the target low/high pass filter and [Fl,Fh] are the edges of the target band pass/stop filter. With abundant tedious
+    // algebra, you can derive the above formulae yourself by substituting the transform for S into H(S)=S-x for a zero at x or H(S)=1/(S-x) for a pole at x, and converting the result into the form:
     //
     //    H(S)=g prod(S-Xi)/prod(S-Xj)
-    //Examples
-      //[Sz, Sp, Sg] = sftrans([1 2 3], [4 5 6], 15, 20, %T)
-    // Output
-    // Sg  =
     //
-    //    0.75
-    // Sp  =
-    //
-    //    5.    4.    3.3333333
-    // Sz  =
-    //
-    //    20.    10.    6.6666667
-    // dependencies
-    // 
+    // Examples
+    // [Sz, Sp, Sg] = sftrans([1 2 3], [4 5 6], 15, 20, %T)
+   
 
     funcprot(0);
     [nargout nargin]= argn();

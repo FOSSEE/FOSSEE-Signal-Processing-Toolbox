@@ -1,29 +1,43 @@
 
 function [phi, varargout]=phasez(varargin)
-    //phasez Phase response of digital filter
-//Calling Syntax
-//[phi,w] = phasez(b,a,n)
-//[phi,w] = phasez(sos,n)
-///[phi,w] = phasez(b,a,n) returns
-//the n-point unwrapped phase response vector, phi,
-//in radians and the frequency vector, w, in radians/sample
-//for the filter coefficients specified in b and a.
-//The values of the frequency vector, w, range from
-//0 to π. If n is omitted,
-//the length of the phase response vector defaults to 512. For best
-//results, set n to a value greater than the filter
-//order.
-//[phi,w] = phasez(sos,n) returns the unwrapped
-//phase response for the second order sections matrix, sos. sos is
-//a K-by-6 matrix, where the number of sections, K,
-//must be greater than or equal to 2. If the number of sections is less
-//than 2, phasez considers the input to be the
-//numerator vector, b. Each  row of sos corresponds
-//to the coefficients of a second-order (biquad) filter. The ith
-//row of the sos matrix corresponds to [bi(1)
-//bi(2) bi(3) ai(1) ai(2) ai(3)].
-////Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Compute the phase response of a digital filter.
+//
+// Syntax
+//   [phi, w] = phasez(b, a, n)
+//   [phi, w] = phasez(sos, n)
+//
+// Parameters
+// b: Numerator coefficients of the filter (vector).
+// a: Denominator coefficients of the filter (vector).
+// sos: Second-order section matrix (K x 6). Each row corresponds to the coefficients of a second-order (biquad) filter.
+// n: Number of points for the phase response (scalar). Default is 512.
+//
+// Description
+// The `phasez` function computes the unwrapped phase response of a digital filter. 
+// It supports both direct rational form (numerator and denominator coefficients) and second-order section (SOS) form.
+//
+// - For direct rational form, the phase response is computed using the numerator and denominator coefficients.
+// - For SOS form, the phase response is computed for each section and summed to obtain the total phase response.
+//
+// Examples
+// // Compute phase response for a filter in direct form:
+//    b = [0.1, 0.2, 0.3];
+//    a = [1, -0.5, 0.25];
+//    n = 512;
+//    [phi, w] = phasez(b, a, n);
+//
+// // Compute phase response for a filter in SOS form:
+//    sos = [1, -0.5, 0.25, 0.1, 0.2, 0.3];
+//    n = 512;
+//    [phi, w] = phasez(sos, n);
+//
+// // Notes
+// // The frequency vector `w` is returned in radians/sample.
+// // If the number of sections in `sos` is less than 2, the input is treated as numerator coefficients `b`.
+//
+// Authors
+// Parthasarathi Panda
+// parthasarathipanda314@gmail.com
 
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given
     //(sos,n) or (sos,w) or (sos,'whole')or (b,a) is the input

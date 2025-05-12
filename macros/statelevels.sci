@@ -1,10 +1,12 @@
 function [levels, histogram, bins] = statelevels (x, varargin) // defining function
     // This function estimate statelevels of real vector X via histogram.
-    // Calling Sequence
+    // 
+    // Syntax
     // levels=statelevels(x, nbins, method, bounds)
     // [levels histogram]=statelevels(x, nbins, method, bounds)
     // [levels histogram bins]=statelevels(x, nbins, method, bounds)  
     // [levels histogram bins]=statelevels(x, nbins, method, bounds, 'fig', On or Off)  
+    // 
     // Parameters
     // x: real vector
     // nbins: number of histogram bins to use in the histogram as a positive scalar, where the default value is 100
@@ -14,13 +16,16 @@ function [levels, histogram, bins] = statelevels (x, varargin) // defining funct
     // levels: return lower and upper level values
     // histogram: return histogram values
     // bins: return binlevels values
+    // 
     // Examples
     // x=[1.2, 5, 10, -20, 12]
     // nbins=10
     // method='mode'
     // bounds=[1 10]
     // levels=statelevels(x, nbins, method, bounds) 
+    // 
     // See also
+    // 
     // Authors
     // Jitendra Singh
     

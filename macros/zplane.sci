@@ -1,45 +1,20 @@
-
-
-//**************************************************************************************************
-//______________________________________version1 code (not working)_________________________________
-//__________________________________________________________________________________________________
-//**************************************************************************************************
-
-//function [y] = zplane(z,p)
-//funcprot(0);
-//
-//rhs = argn(2)
-//
-//if(rhs<1 | rhs>2)
-//error("Wrong number of input arguments.")
-//end
-//	select(rhs)
-//	case 1 then
-//	callOctave("zplane",z)
-//	case 2 then
-//	callOctave("zplane",z,p)
-//	end
-//endfunction
-
-//**************************************************************************************************
-//______________________________________________version2 code ( working)____________________________
-//__________________________________________________________________________________________________
-//**************************************************************************************************
-
 function zplane(z,varargin)
-//Pole-Zero plot for Discrete time systems
-//Calling Sequence
-//zplane(z)
-//zpalne(z,p)
-//Parameters:
-//z: vector containing numerator coefficients
-//p: vector containing denumerator coefficients
-//Description:
-//This function gives pole zero plote of discrete time systems
-//Example :
-//zplane([1 2 3],[4 5 6])
-//Output :
-//Output is pole zero plot of respective discrete time system.
+// Pole-Zero plot for Discrete time systems
+// 
+// Syntax
+// zplane(z)
+// zpalne(z,p)
+// 
+// Parameters
+// z: vector containing numerator coefficients
+// p: vector containing denumerator coefficients
+//
+// Description
+// This function gives pole zero plote of discrete time systems
+//
+// Examples 
+// zplane([1 2 3],[4 5 6])
+// //Output is pole zero plot of respective discrete time system.
 
 
     funcprot(0);

@@ -1,9 +1,28 @@
 function [x,w] = nnls(E,f)
-    // Non Negative Least Squares (nnls) for Ex=f with the constraint x>=0
-    // 
-    // Bibliography
-    //      Lawson, C.L. and R.J. Hanson, Solving Least Squares Problems,
-    //      Prentice-Hall, 1974, Chapter 23, p. 161.
+// Non-Negative Least Squares (NNLS) for solving Ex = f with the constraint x >= 0.
+//
+// Syntax
+//   [x, w] = nnls(E, f)
+//
+// Parameters
+// E: Coefficient matrix.
+// f: Right-hand side vector.
+// x: Solution vector (non-negative).
+// w: Dual vector.
+//
+// Description
+// The `nnls` function solves the least squares problem Ex = f with the constraint x >= 0 using an iterative approach based on the algorithm described in:
+// Lawson, C.L. and R.J. Hanson, "Solving Least Squares Problems," Prentice-Hall, 1974, Chapter 23, p. 161.
+//
+// Examples
+// 1. Solve a simple NNLS problem:
+//    E = [1, 2; 3, 4];
+//    f = [1; 1];
+//    [x, w] = nnls(E, f);
+//
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
     
     m2 = size(E,1);
     n = size(E,2);

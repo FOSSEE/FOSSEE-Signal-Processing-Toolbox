@@ -1,6 +1,3 @@
-//function already exists in scilab -- doesnt work like this one (I guess)
-//This function is built with the referrence of interp function (taken from interp.m file).
-//Octave license:
 // Copyright (C) 2000 Paul Kienzle <pkienzle@users.sf.net>
 //
 // This program is free software; you can redistribute it and/or modify it under

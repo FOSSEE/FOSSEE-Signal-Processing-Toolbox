@@ -13,25 +13,70 @@
 
 
 function [B, A, SigN] = invfreqs(H,F,nB,nA,W,iter,tol,tr, varargin)
-  // Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.
-  // 
-  // Syntax
-  //   [B,A] = invfreqs(H,F,nB,nA)
-  //   [B,A] = invfreqs(H,F,nB,nA,W) 
-  //   [B,A] = invfreqs(H,F,nB,nA,W,iter,tol,'trace') 
-  //
-  //  Parameters
-  //   A and B are real polynomial coefficients of order nA and nB.
-  //   Optionally, the fit-errors can be weighted vs frequency according to the weights W.
-  //   Note: all the guts are in invfreq.m
-  //   H: desired complex frequency response
-  //   F: frequency (must be same length as H)
-  //   nA: order of the denominator polynomial A
-  //   nB: order of the numerator polynomial B
-  //   W: vector of weights (must be same length as F)
-  // 
-  // See also
+ // Fit filter B(s)/A(s) to the complex frequency response H at frequency points F.
+//
+// Syntax
+//   [B, A] = invfreqs(H, F, nB, nA)
+//   [B, A] = invfreqs(H, F, nB, nA, W)
+//   [B, A] = invfreqs(H, F, nB, nA, W, iter, tol, 'trace')
+//
+// Parameters
+// H: Desired complex frequency response.
+// F: Frequency (must be the same length as H).
+// nA: Order of the denominator polynomial A.
+// nB: Order of the numerator polynomial B.
+// W: (optional) Vector of weights (must be the same length as F). Default is uniform weighting.
+// iter: (optional) Number of iterations for refinement. Default is no iterations.
+// tol: (optional) Tolerance for iterations. Default is no tolerance.
+// 'trace': (optional) Enables tracing of the iterative process.
+// B: Coefficients of the numerator polynomial.
+// A: Coefficients of the denominator polynomial.
+//
+// Description
+// The `invfreqs` function fits a rational transfer function B(s)/A(s) to the desired complex frequency response `H` at frequency points `F`. 
+// The orders of the numerator and denominator polynomials are specified by `nB` and `nA`, respectively. Optionally, the fit-errors can be 
+// weighted using the weights `W`. The function supports iterative refinement of the solution, specified by `iter` and `tol`.
+//
+// Note: The core implementation of this function relies on `invfreq.sci`.
+//
+// Examples
+// // Fit a filter to a frequency response:
+//    B = [1/2, 1];
+//    A = [1, 1];
+//    w = linspace(0, 4, 128);
+//    H = freqs(B, A, w);
+//    [Bh, Ah] = invfreqs(H, w, 1, 1);
+//    Hh = freqs(Bh, Ah, w);
+//    plot(w, [abs(H); abs(Hh)]);
+//    legend('Original', 'Measured');
+//    err = norm(H - Hh);
+//    disp(sprintf('L2 norm of frequency response error = %f', err));
+//
+// // Fit a filter with weighted frequency samples:
+//    B = [1, 0];
+//    A = [1, 2, 1];
+//    w = linspace(0, 8, 128);
+//    H = freqs(B, A, w);
+//    W = linspace(1, 2, length(w)); // Example weights
+//    [Bh, Ah] = invfreqs(H, w, 2, 2, W);
+//    Hh = freqs(Bh, Ah, w);
+//    plot(w, [abs(H); abs(Hh)]);
+//    legend('Original', 'Measured');
+//    err = norm(H - Hh);
+//    disp(sprintf('L2 norm of frequency response error = %f', err));
+//
+// Bibliography
+// - J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983.
+// - https://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html
+// 
+// See also
   // invfreq
+  // 
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
+//
+
 
   if nargin < 9
     varargin = {};

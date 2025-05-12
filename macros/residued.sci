@@ -11,56 +11,66 @@
 
 
 function [r, p, f, m] = residued(b, a, toler)
-// Compute the partial fraction expansion (PFE) of filter
-//  Function File [r, p, f, m] = residued (b, a)
-// H(z) = B(z)/A(z).  In the usual PFE function coderesiduez, the
-// IIR part (poles p and residues r) is driven in parallel
-// with the FIR part (f).  In this variant, the IIR part is driven by
-// the output of the FIR part.  This structure can be more accurate in
-// signal modeling applications.
+// Compute the partial fraction expansion (PFE) of a digital filter.
 //
-// INPUTS:
-// b and a are vectors specifying the digital filter
-// H(z) = B(z)/A(z).
-//NOTE that the polynomials 'b' and 'a' should have real coefficients(because of the function 'filter' used in polyval)
+// Syntax
+//   [r, p, f, m] = residued(b, a)
+//   [r, p, f, m] = residued(b, a, toler)
 //
-// RETURNED:
+// Parameters
+// b: Numerator coefficients of the digital filter (vector).
+// a: Denominator coefficients of the digital filter (vector).
+// toler: (optional) Tolerance for pole-zero matching. Ignored in this implementation.
 //
-//  r = column vector containing the filter-pole residues
-//  p = column vector containing the filter poles
-//  f = row vector containing the FIR part, if any
-//  m = column vector of pole multiplicities
+// Outputs
+// r: Column vector containing the residues of the filter poles.
+// p: Column vector containing the poles of the filter.
+// f: Row vector containing the FIR part of the filter, if any. Empty if no FIR part exists.
+// m: Column vector containing the multiplicities of the poles.
 //
+// Description
+// The `residued` function computes the partial fraction expansion of a digital filter represented by the transfer function:
+//   H(z) = B(z) / A(z)
+// where `b` and `a` are the numerator and denominator coefficients, respectively.
 //
-// Test cases:
-//1.
-//B=[1 1 ]; A=[1 -2 1];
-// [r,p,f,m] = residued(B,A);
-//r =
-//  -1
-//   2
-//p =
-//   1
-//   1
+// The function separates the filter into two parts:
+// 1. The FIR part `f`, which represents the feedforward portion of the filter.
+// 2. The IIR part, represented by the residues `r` and poles `p`.
 //
-//f = [](0x0)
-//e =
-//   1
-//   2
-//2.
-//B=[6,2]; A=[1 -2 1];
-//[r,p,k,e]=residued(B,A)
-//m  =
-//    1.
-//    2.
-// f  =[]
-// p  =
-//    1.
-//    1.
-// r  =
-//  - 2.
-//    8.
+// If the numerator degree is less than the denominator degree (`nb < na`), the FIR part `f` is empty, and the filter is represented as:
+//   H(z) = r(1) / [1 - p(1)/z]^m(1) + ... + r(N) / [1 - p(N)/z]^m(N)
+// where `N` is the number of poles.
 //
+// If the numerator degree is greater than or equal to the denominator degree (`nb >= na`), the FIR part `f` is non-empty, and the filter is represented as:
+//   H(z) = f(1) + f(2)/z + f(3)/z^2 + ... + f(nf)/z^M + R(z)/z^M
+// where `R(z)` is the parallel one-pole filter bank, and `M = nb - na`.
+//
+// Notes
+// - The polynomials `b` and `a` must have real coefficients.
+// - The function uses the `residuez` function internally to compute the residues and poles.
+//
+// Examples
+// // Compute the partial fraction expansion of a filter:
+//    B = [1, 1];
+//    A = [1, -2, 1];
+//    [r, p, f, m] = residued(B, A);
+//    // Output:
+//    // r = [-1; 2]
+//    // p = [1; 1]
+//    // f = []
+//    // m = [1; 2]
+//
+// // Compute the partial fraction expansion with a higher-order numerator:
+//    B = [6, 2];
+//    A = [1, -2, 1];
+//    [r, p, f, m] = residued(B, A);
+//    // Output:
+//    // r = [-2; 8]
+//    // p = [1; 1]
+//    // f = []
+//    // m = [1; 2]
+//
+
 
   // RESIDUED - return residues, poles, and FIR part of B(z)/A(z)
   //

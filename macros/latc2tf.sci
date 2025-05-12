@@ -32,14 +32,15 @@ function [num,den] = latc2tf(k,varargin)
     //      Speficication of the type of FIR filter
     // 
     // Examples
-    // 1) FIR filter
+    // // FIR filter
     //      k1 = [1/2 1/2 1/4];
     //      [num1,den1] = latc2tf(k1);
     // 
     // See also
-    // latcfilt | tf2latc
+    // latcfilt 
+    // tf2latc
     //
-    // References
+    // Bibliography
     // [1] J.G. Proakis, D.G. Manolakis, Digital Signal Processing,
     //    3rd ed., Prentice Hall, N.J., 1996, Chapter 7.
     // [2] S. K. Mitra, Digital Signal Processing, A Computer

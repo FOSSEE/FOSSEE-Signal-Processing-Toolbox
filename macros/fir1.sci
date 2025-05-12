@@ -1,4 +1,58 @@
 function b = fir1(n, w, varargin)
+// Design an FIR filter using the window method.
+//
+// Syntax
+//   b = fir1(n, w)
+//   b = fir1(n, w, type)
+//   b = fir1(n, w, type, window)
+//   b = fir1(n, w, type, window, noscale)
+//
+// Parameters
+// n: Order of the filter.
+// w: Normalized cutoff frequency or band edges (values between 0 and 1, where 1 corresponds to the Nyquist frequency).
+//    - Scalar: Specifies the cutoff frequency for a lowpass or highpass filter.
+//    - Two-element vector: Specifies the edges of a bandpass or bandstop filter.
+//    - N-element vector: Specifies the band edges for a multiband filter.
+// type: (optional) String specifying the filter type. Possible values are:
+//    - "low": Lowpass filter (default if w is scalar).
+//    - "high": Highpass filter.
+//    - "pass" or "bandpass": Bandpass filter (default if w is a pair).
+//    - "stop": Bandstop filter.
+//    - "DC-0": Multiband filter with the first band as a stopband (default if w has more than 2 elements).
+//    - "DC-1": Multiband filter with the first band as a passband.
+// window: (optional) Vector specifying the window to shape the filter. If not provided, a Hamming window is used by default.
+// noscale: (optional) If specified, the filter coefficients are not normalized. By default, the filter is normalized.
+//
+// Outputs
+// b: Vector containing the FIR filter coefficients.
+//
+// Description
+// The `fir1` function designs an FIR filter of order `n` using the window method. The filter type and cutoff frequencies are specified by `w` and `type`. 
+// An optional window can be provided to shape the filter. By default, the filter coefficients are normalized to ensure a magnitude response of 1 at the center of the first passband.
+//
+//
+// Notes
+// 
+// - If the filter order `n` is odd and the final band is a passband, the order is incremented to avoid issues with the Nyquist frequency.
+// - The periodic form of the window is used for spectral analysis, while the symmetric form is typically used for filter design.
+//
+// Examples
+// // Design a lowpass filter:
+//    b = fir1(40, 0.3);
+//
+// // Design a bandstop filter:
+//    b = fir1(15, [0.2, 0.5], "stop");
+//
+// // Design a bandpass filter with a custom window:
+//    window = hamming(16);
+//    b = fir1(15, [0.2, 0.5], "pass", window);
+//
+// // Design a highpass filter without normalization:
+//    b = fir1(20, 0.4, "high", "noscale");
+// 
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
 
     funcprot(0);
     if argn(2) < 2 | argn(2) > 5

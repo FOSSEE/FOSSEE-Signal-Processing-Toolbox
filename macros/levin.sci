@@ -12,6 +12,8 @@ function [ar, sigma2,rc] = levin(r);
 //       |r(N-1) r(N-2) ...  r(0) ||a(N-1)| |  0   |
 //
 //using Levinson's algorithm.
+// 
+// Parameters
 //  r      :Correlation coefficients
 //  ar     :Auto-Regressive model parameters
 //  sigma2 :Scale constant

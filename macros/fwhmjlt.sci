@@ -1,5 +1,6 @@
 function myfwhm = fwhmjlt(y, varargin)
 // This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
+// 
 // Syntax
 // f = fwhmjlt(y)
 // f = fwhmjlt(x, y)
@@ -9,14 +10,15 @@ function myfwhm = fwhmjlt(y, varargin)
 // f = fwhmjlt(…, "rlevel", level)
 // 
 // Parameters
+// y : vector or matrix. If y is a matrix, fwhm is calculated for each column as a row vector.
+// 'zero' : The second argument is by default "zero" which computes the fwhm at half maximum. 
+// 'min' : If it is "min", fwhm is computed at middle curve.
+// 'rlevel' : The option "rlevel" computes full-width at the given relative level of peak profile.
+// 'alevel' : The option "alevel" computes full-width at the given absolute level of y.
 // 
 // Description
 // This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
 // This function returns 0 if FWHM does not exist.
-// y : vector or matrix. If y is a matrix, fwhm is calculated for each column as a row vector.
-// The second argument is by default "zero" which computes the fwhm at half maximum. If it is "min", fwhm is computed at middle curve.
-// The option "rlevel" computes full-width at the given relative level of peak profile.
-// The option "alevel" computes full-width at the given absolute level of y.
 // 
 // Examples
 // t=-50:0.01:50;

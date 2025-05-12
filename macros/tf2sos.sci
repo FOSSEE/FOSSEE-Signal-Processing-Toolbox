@@ -1,22 +1,27 @@
 function [sos,g] = tf2sos (B, A)
-//This function converts direct-form filter coefficients to series second-order sections.
-//Calling Sequence:
-//[sos] = tf2sos (b, a)
-//[sos, g] = tf2sos (b, a)
-//Parameters:
-//b: matrix of real numbers
-//a: matrix of real numbers 
-//Description:
-//This function converts direct-form filter coefficients to series second-order sections.
-//The input parameters b and a are vectors specifying the digital filter H(z) = B(z)/A(z). 
-//The output is the sos matrix and the overall gain.
-//If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.
-//Examples:
-//tf2sos([1,2,3,4,5,6],2)
-//ans =
-//   0.50000   0.80579   1.07239   0.00000   0.00000   1.00000
-//   1.00000  -1.10337   1.87524   0.00000   0.00000   1.00000
-//   1.00000   1.49180  -0.00000   0.00000   1.00000   0.00000
+// This function converts direct-form filter coefficients to series second-order sections.
+//
+// Syntax
+// [sos] = tf2sos (b, a)
+// [sos, g] = tf2sos (b, a)
+//
+// Parameters
+// b: matrix of real numbers
+// a: matrix of real numbers 
+//
+// Description
+// This function converts direct-form filter coefficients to series second-order sections.
+// The input parameters b and a are vectors specifying the digital filter H(z) = B(z)/A(z). 
+// The output is the sos matrix and the overall gain.
+// If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.
+//
+// Examples
+// tf2sos([1,2,3,4,5,6],2)
+//
+// See also
+// zp2sos
+// tf2zp
+//
 
   funcprot(0);
   if (nargin() ~= 2) then

@@ -1,7 +1,7 @@
 function r = poly2ac(a,efinal)
 // Convert prediction polynomial to autocorrelation sequence.
-//Run rlevinson.sci before running this
-// Calling Sequence
+// 
+// Syntax
 // R = poly2ac(a,efinal)
 // 
 // Parameters
@@ -25,11 +25,13 @@ function r = poly2ac(a,efinal)
 // rc2ac
 // ac2rc 
 //
-// Author: Parthe Pandit
+// Authors
+// Parthe Pandit
 //
 // Bibliography
 // S. Kay, Modern Spectral Estimation, Prentice Hall, N.J., 1987, Chapter 6.
 
+//Run rlevinson.sci before running this
     //errcheck 1: Check for input format of polynomial
    if (size(a,1) > 1 & size(a,2) > 1)  then
       error("Input polynomial has to be a 1-dimensional array")

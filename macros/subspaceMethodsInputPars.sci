@@ -1,36 +1,39 @@
 // Date of creation: 17 Dec, 2015
 function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
-    // Input parser to be used by pmusic and peig
-    // primaryInput, p, w, nfft, fs, nwin, noverlap, freqrange, isCorrFlag
-    // NOTE: not accepting <x,p,w,nfft> as it is indistinguishable from <x,p,f,fs>
-    // Input combinations
-    // x, p
-    // x, p, w
-    // x, p, nfft
-    // x, p, nfft, fs
-    // x, p, f, fs
-    // x, p, nfft, fs, nwin, noverlap
-    // 'corr' flag with everyone
-    // freqrange string
-    // Output arguments description:
-    // data - struct with the following arguments
-    //      x - input signal or correlation matrix
-    //      p - scalar|2-element vector - signal subspace parameters
-    //      w/f - vector
-    //      nfft - positive scalar
-    //      fs - positive scalar
-    //      isWindowSpecified - boolean indicating if window specified in the
-    //                          input params
-    //      windowLength - positive scalar
-    //      windowVector - vector
-    //      noverlap - scalar
-    //      freqrange - string
-    //      isCorrFlag - boolean
-    //      isFsSpecified - boolean indicating if fs argument is present
-    //                      (fs can be empty)
-    //
-    // msg - error message (if any)
-    // err_num - error number (if any; otherwise -1)
+// Input parser to be used by pmusic and peig.
+//
+// Syntax
+//   [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
+//
+// Parameters
+// inputArgsList: List of input arguments to be parsed.
+// data: Struct containing the parsed input arguments with the following fields:
+//       - x: Input signal or correlation matrix.
+//       - p: Scalar or 2-element vector representing signal subspace parameters.
+//       - w/f: Vector.
+//       - nfft: Positive scalar.
+//       - fs: Positive scalar.
+//       - isWindowSpecified: Boolean indicating if a window is specified.
+//       - windowLength: Positive scalar.
+//       - windowVector: Vector.
+//       - noverlap: Scalar.
+//       - freqrange: String specifying the frequency range.
+//       - isCorrFlag: Boolean indicating if the 'corr' flag is present.
+//       - isFsSpecified: Boolean indicating if the sampling frequency (fs) is specified.
+// msg: Error message (if any).
+// err_num: Error number (if any; otherwise -1).
+//
+// Description
+// The `subspaceMethodsInputParsS` function parses input arguments for subspace methods like pmusic and peig. 
+// It supports various input combinations and validates the arguments. The function returns a structured output 
+// containing the parsed arguments, along with error messages and error codes if the input is invalid.
+//
+// Examples
+// // Parse input arguments for pmusic:
+//    inputArgsList = {x, p, nfft, fs, 'onesided'};
+//    [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList);
+//
+
 
 
     msg = "";

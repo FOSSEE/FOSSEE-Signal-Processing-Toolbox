@@ -1,16 +1,19 @@
 function y = sinewave (m, n, d)
-//Return a m-element vector with the i-th element given by {sin (2 * pi * (i+d-1) / n}.
-//Calling Sequence:
-//y= sinewave(m)
-//y= sinewave(m,n)
-//y= sinewave(m,n,d)
-//Parameters:
-//m: Real positive scalar
-//n: The value of n in the formula {sin (2 * pi * (i+d-1) / n}. The default value for n is m.
-//d: The value of d in the formula {sin (2 * pi * (i+d-1) / n}. The default value for d is 0.
-//Examples:
-//sinewave(1, 4, 1)
-//ans = 1
+// Return a m-element vector with the i-th element given by {sin (2 * pi * (i+d-1) / n}.
+// 
+// Syntax
+// y= sinewave(m)
+// y= sinewave(m,n)
+// y= sinewave(m,n,d)
+//
+// Parameters
+// m: Real positive scalar
+// n: The value of n in the formula {sin (2 * pi * (i+d-1) / n}. The default value for n is m.
+// d: The value of d in the formula {sin (2 * pi * (i+d-1) / n}. The default value for d is 0.
+//
+// Examples
+// sinewave(1, 4, 1)
+
 
   funcprot(0);
   rhs = argn(2);

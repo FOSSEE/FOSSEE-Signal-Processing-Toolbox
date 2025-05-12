@@ -1,14 +1,17 @@
 function x = synthesis (y, c)
-//Compute a signal from its short-time Fourier transform.
-//Calling Sequence:
-//synthesis(y, c)
-//Parameters:
-//y: Real or complex matrix representing a signal's short-time fourier transform.
-//c: 3-element vector C specifying window size, increment and window type.
-//Description:
-//Compute a signal from its short-time Fourier transform 'y' and a 3-element vector 'c' specifying window size, increment, and window type.
-//A window type of 1 represents a hanning window, 2 represents a hamming window and 3 represents a rectangular window.
-//The values 'y' and 'c' can be derived by [y, c] = stft (x, ...)
+// Compute a signal from its short-time Fourier transform.
+//
+// Syntax
+// synthesis(y, c)
+//
+// Parameters
+// y: Real or complex matrix representing a signal's short-time fourier transform.
+// c: 3-element vector C specifying window size, increment and window type.
+//
+// Description
+// Compute a signal from its short-time Fourier transform 'y' and a 3-element vector 'c' specifying window size, increment, and window type.
+// A window type of 1 represents a hanning window, 2 represents a hamming window and 3 represents a rectangular window.
+// The values 'y' and 'c' can be derived by [y, c] = stft (x, ...)
 
   funcprot(0);
   rhs = argn(2);

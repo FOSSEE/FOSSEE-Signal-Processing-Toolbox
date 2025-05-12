@@ -1,10 +1,12 @@
 function [R, U, kr, e] = rlevinson(a, efinal)
-//rlevinson function  computes the autocorrelation coefficients using prediction polynomial.
-// Calling Sequence
+// It Computes the autocorrelation coefficients using prediction polynomial.
+//
+// Syntax
 // a = rlevinson(a, efinal)
 // [a, U] = rlevinson(a, efinal)
 // [a, U, kr] = rlevinson(a, efinal)
 // [a, U, kr, e] = rlevinson(a, efinal)
+// 
 // Parameters
 // a: input argument prediction polynomial.
 // efinal: input argument 'final prediction error'.
@@ -12,43 +14,15 @@ function [R, U, kr, e] = rlevinson(a, efinal)
 // U: return a upper triangular matrox of order (length(a)*length(a))
 // kr: return refelection coefficient.
 // e: Return the vector of prediction error.
+// 
 // Examples
 //X = [7 6 5 8 3 6]     //make the first prediction polynomial coefficient unity and check for standard Auto regressive model
 //X=[1 6/7 5/7 8/7 3/7 6/7];
 //
 // [R U kr e] = rlevinson(X, 0.3)
-////EXPECTED OUTPUT:
-//e  =
+// 
 //
-//    0.3757546    0.0221076  - 3.4125    1.1307692    0.3
-// kr  =
-//
-//  - 0.2251908
-//    0.9701364
-//  - 12.464286
-//  - 1.1538462
-//    0.8571429
-// U  =
-//    1.  -0.2251908     0.9701364   -12.464286       -1.1538462    0.8571429
-//    0.    1.                 -0.4436567     6.5                    2.                  0.4285714
-//    0.    0.                   1.                 -12.535714     - 1.                  1.1428571
-//    0.    0.                   0.                   1.                      1.8461538    0.7142857
-//    0.    0.                   0.                   0.                      1.                  0.8571429
-//    0.    0.                   0.                   0.                      0                   1
-//
-//
-//
-// R  =
-//
-//    0.3958273
-//    0.0891367
-//  - 0.3444604
-//    0.0362590
-//  - 0.1329496
-//    0.1042446
-//
-//
-// Author
+// Authors
 // Jitendra Singh
 //
 

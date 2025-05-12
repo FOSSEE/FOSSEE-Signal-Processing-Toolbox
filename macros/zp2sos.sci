@@ -1,157 +1,26 @@
-function B = ipermute(A, perm)
-  // ipermute : Inverse permute the dimensions of a matrix A.
-    // B = ipermute(A, perm) returns the array A with dimensions inverted
-    // according to the permutation vector `perm`.
-    // Validate the permutation vector
-      
-  funcprot(0);
-    if max(size(perm)) ~= ndims(A) || or(gsort(perm, "g", "i") ~= 1:ndims(A))
-        error('Permutation vector must contain unique integers from 1 to ndims(A).');
-    end
-    // Compute the inverse permutation vector
-    invPerm = zeros(size(perm,1),size(perm , 2));
-    for i = 1:max(size(perm))
-        invPerm(perm(i)) = i;
-    end
-    // Use the permute function with the inverse permutation
-    B = permute(A, invPerm);
-endfunction
-
-function zsort = cplxpair (z, tol, dim)
-  funcprot(0);
-  if (nargin < 1)
-    error("Invalid inputs");
-  end
-  // default  double
-  realmin = 2.2251e-308
-  if (isempty (z))
-    zsort = zeros (size (z,1) , size (z,2));
-    return;
-  end
-  if (nargin < 2 || isempty (tol))
-    tol = 100* %eps;
-  elseif (~ isscalar (tol) || tol < 0 || tol >= 1)
-    error ("cplxpair: TOL must be a scalar number in the range 0 <= TOL < 1");
-  end
-  nd = ndims (z);
-  if (nargin < 3)
-    // Find the first singleton dimension.
-    sz = size (z);
-    dim = find (sz > 1, 1);
-    if isempty(dim) 
-        dim  = 1;
-    end
-  else
-    dim = floor (dim);
-    if (dim < 1 || dim > nd)
-      error ("cplxpair: invalid dimension DIM");
-    end
-  end
-  // Move dimension to analyze to first position, and convert to a 2-D matrix.
-  perm = [dim:nd, 1:dim-1];
-  z = permute (z, perm);
-  sz = size (z);
-  n = sz(1);
-  m = prod (sz) / n;
-  z = matrix (z, n, m);
-  // Sort the sequence in terms of increasing real values.
-  [temp, idx] = gsort (real (z), 1 , "i");
-  z = z(idx + n * ones (n, 1) * [0:m-1]);
-  // Put the purely real values at the end of the returned list.
-  [idxi, idxj] = find (abs (imag (z)) ./ (abs (z) + realmin) <= tol);
-  // Force values detected to be real within tolerance to actually be real.
-  z(idxi + n*(idxj-1)) = real (z(idxi + n*(idxj-1)));
-  //if idxi and idxj are not scalers
-  if ~isscalar(idxi) then
-      v = ones(size(idxi,1),size(idxi,2));
-  else
-      v = 1 ;
-  end
-  q = sparse ([idxi' idxj'], v, [n m]);
-  nr = sum (q, 1);
-  [temp, idx] = gsort (q, 'r','i');
-  midx = idx + size (idx,1) * ones (size (idx,1), 1) * [0:size(idx,2)-1];
-  z = z(midx);
-  zsort = z;
-  // For each remaining z, place the value and its conjugate at the start of
-  // the returned list, and remove them from further consideration.
-  for j = 1:m
-    p = n - nr(j);
-    for i = 1:2:p
-      if (i+1 > p)
-        error ("cplxpair: could not pair all complex numbers");
-      end
-      [v, idx] = min (abs (z(i+1:p,j) - conj (z(i,j))));
-      if (v >= tol * abs (z(i,j)))
-        error ("cplxpair: could not pair all complex numbers");
-      end
-      // For pairs, select the one with positive imaginary part and use it and
-      // it's conjugate, but list the negative imaginary pair first.
-      if (imag (z(i,j)) > 0)
-        zsort([i, i+1],j) = [conj(z(i,j)), z(i,j)];
-      else
-        zsort([i, i+1],j) = [conj(z(idx+i,j)), z(idx+i,j)];
-      end
-      z(idx+i,j) = z(i+1,j);
-    end
-  end
-  // Reshape the output matrix.
-  zsort = ipermute (matrix (zsort, sz), perm);
-endfunction
-
-function [zc, zr] = cplxreal (z, tol, dim)
-  funcprot(0);
-  if (nargin < 1 || nargin > 3)
-    error("invalid inputs");
-  end
-  if (isempty (z))
-    zc = zeros (size (z,1),size(z,2));
-    zr = zeros (size (z,1),size(z,2));
-    return;
-  end
-  if (nargin < 2 || isempty (tol))
-    tol = 100 * %eps ;
-  end
-  if (nargin >= 3)
-    zcp = cplxpair(z,tol,dim);
-  else
-    zcp = cplxpair (z , tol);
-  end
-  nz = max(size (z) );
-  idx = nz;
-  while ((idx > 0) && (zcp(idx) == 0 || (abs (imag (zcp(idx))) ./ abs (zcp(idx))) <= tol))
-    zcp(idx) = real (zcp(idx));
-    idx = idx - 1;
-  end
-  if (pmodulo (idx, 2) ~= 0)
-    error ("cplxreal: odd number of complex values was returned from cplxpair");
-  end
-  zc = zcp(2:2:idx);
-  zr = zcp(idx+1:nz);
-endfunction
-
 function [SOS, G] = zp2sos(z, p, k, DoNotCombineReal)
-//This function converts filter poles and zeros to second-order sections.
-//Calling Sequence
-//[sos] = zp2sos(z)
-//[sos] = zp2sos(z, p)
-//[sos] = zp2sos(z, p, k)
-//[sos, g] = zp2sos(...)
-//Parameters 
-//z: column vector
-//p: column vector
-//k: real or complex value, default value is 1
-//Description
-//This function converts filter poles and zeros to second-order sections.
-//The first and second parameters are column vectors containing zeros and poles. The third parameter is the overall filter gain, the default value of which is 1.
-//The output is the sos matrix and the overall gain.
-//If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.
-//Examples
-//zp2sos([1, 2, 3], 2, 6)
-//ans =
-//    6  -18   12    1   -2    0
-//    1   -3    0    1    0    0
-  
+// This function converts filter poles and zeros to second-order sections.
+//
+// Syntax
+// [sos] = zp2sos(z)
+// [sos] = zp2sos(z, p)
+// [sos] = zp2sos(z, p, k)
+// [sos, g] = zp2sos(...)
+//
+// Parameters 
+// z: column vector
+// p: column vector
+// k: real or complex value, default value is 1
+//
+// Description
+// This function converts filter poles and zeros to second-order sections.
+// The first and second parameters are column vectors containing zeros and poles. The third parameter is the overall filter gain, the default value of which is 1.
+// The output is the sos matrix and the overall gain.
+// If there is only one output argument, the overall filter gain is applied to the first second-order section in the sos matrix.
+//
+// Examples
+// zp2sos([1, 2, 3], 2, 6)
+
   if argn(2) < 3 then
     k = 1;
   end

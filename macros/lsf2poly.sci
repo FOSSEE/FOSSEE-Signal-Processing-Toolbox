@@ -12,7 +12,7 @@ function a=lsf2poly(lsf)
 // X = [0.5 0.752 1.6 1.8 2.45 0.8]
 // a = lsf2poly(X)
 //
-// Author
+// Authors
 // Jitendra Singh
 //  
 

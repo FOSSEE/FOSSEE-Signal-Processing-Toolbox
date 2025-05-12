@@ -1,37 +1,40 @@
 function [y, c] = stft(x, win_size, inc, num_coef, win_type)
-//Compute the short-time Fourier transform of the vector X.
-//Calling Sequence:
-//y = stft(x)
-//y = stft(x, win_size)
-//y = stft(x, win_size, inc)
-//y = stft(x, win_size, inc, num_coef)
-//y = stft(x, win_size, inc, num_coef, win_type)
-//[y, c] = stft(x)
-//[y, c] = stft(x, win_size)
-//[y, c] = stft(x, win_size, inc)
-//[y, c] = stft(x, win_size, inc, num_coef)
-//[y, c] = stft(x, win_size, inc, num_coef, win_type)
-//Parameters:
-//x: Real scalar or vector
-//win_size: Size of the window used
-//inc: Increment
-//num_coef: Coefficients of Fourier transform
-//win_type: Type of window
-//Description:
-//Compute the short-time Fourier transform of the vector X with num_coef coefficients by applying a window of win_size data points and an increment of inc points.
-//Before computing the Fourier transform, one of the following windows is applied:
-//"hanning" -> win_type = 1
-//"hamming" -> win_type = 2
-//"rectangle" -> win_type = 3
-//The window names can be passed as strings or by the win_type number.
-//The following defaults are used for unspecified arguments: win_sizse = 80, inc = 24, num_coef = 64, and win_type = 1.
-//y = stft(x, ...)' returns the absolute values of the Fourier coefficients according to the NUM_COEF positive frequencies.
-//'[y, c] = stft (x, ...)' returns the entire stft-matrix y and a 3-element vector c containing the window size, increment, and window type,
-//which is needed by the 'synthesis' function.
-//Examples:
-//[y, c] = stft([1; -2; -5])
-//y = []
-//c = [80, 24, 1]
+// Compute the short-time Fourier transform of the vector X.
+//
+// Syntax
+// y = stft(x)
+// y = stft(x, win_size)
+// y = stft(x, win_size, inc)
+// y = stft(x, win_size, inc, num_coef)
+// y = stft(x, win_size, inc, num_coef, win_type)
+// [y, c] = stft(x)
+// [y, c] = stft(x, win_size)
+// [y, c] = stft(x, win_size, inc)
+// [y, c] = stft(x, win_size, inc, num_coef)
+// [y, c] = stft(x, win_size, inc, num_coef, win_type)
+//
+// Parameters
+// x: Real scalar or vector
+// win_size: Size of the window used
+// inc: Increment
+// num_coef: Coefficients of Fourier transform
+// win_type: Type of window
+//
+// Description
+// Compute the short-time Fourier transform of the vector X with num_coef coefficients by applying a window of win_size data points and an increment of inc points.
+// Before computing the Fourier transform, one of the following windows is applied:
+// "hanning" -> win_type = 1
+// "hamming" -> win_type = 2
+// "rectangle" -> win_type = 3
+// The window names can be passed as strings or by the win_type number.
+// The following defaults are used for unspecified arguments: win_sizse = 80, inc = 24, num_coef = 64, and win_type = 1.
+// y = stft(x, ...)' returns the absolute values of the Fourier coefficients according to the NUM_COEF positive frequencies.
+// '[y, c] = stft (x, ...)' returns the entire stft-matrix y and a 3-element vector c containing the window size, increment, and window type,
+// which is needed by the 'synthesis' function.
+//
+// Examples
+// [y, c] = stft([1; -2; -5])
+
  
   funcprot(0);
   rhs = argn(2);

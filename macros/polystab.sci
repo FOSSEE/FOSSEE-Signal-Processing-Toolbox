@@ -1,16 +1,19 @@
 function y = polystab(x)
-//Stabilize the polynomial transfer function. 
-//Calling Sequence:
-//y = polystab(x)
-//Parameters: 
-//x: real or complex valued vector
-//Description:
-//This function stabilizes the polynomial transfer function by replacing all 
-//roots outside the unit circle with their reflection inside the unit circle.
-//Example:
-//polystab([1,3,5])
-//ans=
-//[1, 0.6, 0.2] 
+// Stabilize the polynomial transfer function. 
+//
+// Syntax
+// y = polystab(x)
+//
+// Parameters 
+// x: real or complex valued vector
+//
+// Description
+// This function stabilizes the polynomial transfer function by replacing all 
+// roots outside the unit circle with their reflection inside the unit circle.
+//
+// Examples
+// polystab([1,3,5])
+// 
  
   funcprot(0);
   if (argn(2) ~= 1)

@@ -1,4 +1,6 @@
 function [sos,w,cas1,fs]=phaseInputParseAs_sos(arg,nargin)
+    //  Internal function to parse the input arguments for phase delay
+
     fs=0;
     if nargin<1 then
         error('no. of inputs not valid');
