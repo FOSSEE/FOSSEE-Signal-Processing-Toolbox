@@ -11,29 +11,65 @@
 // Email: toolbox@scilab.in
 
 function [h_r, f_r] = freqz (b, a, n, region, Fs)
-// Return the complex frequency response `h` of the rational IIR filter whose 
-// numerator and denominator coefficients are `b` and `a`, respectively.
-// The response is evaluated at `n` angular frequencies between 0 and 2*pi.
-// The output value `w` is a vector of the frequencies.
-// If `a` is omitted, the denominator is assumed to be 1 (this corresponds to a simple FIR filter).
-// If `n` is omitted, a value of 512 is assumed. For fastest computation, `n` should factor into a small number of small primes.
-// If the fourth argument, "whole", is omitted, the response is evaluated at frequencies between 0 and pi.
-// freqz (b, a, w)
-// Evaluate the response at the specific frequencies in the vector `w`. The values for `w` are measured in radians.
-// [...] = freqz (…, Fs)
-// Return frequencies in Hz instead of radians assuming a sampling rate `Fs`. If you are evaluating the response at specific frequencies `w`, those frequencies should be requested in Hz rather than radians.
-// freqz (...)
-// Plot the magnitude and phase response of `h` rather than returning them.
-// Example usage of freqz in different formats:
-// [h, w] = freqz (b, a, n, "whole")
-// [h, w] = freqz (b)
-// [h, w] = freqz (b, a)
-// [h, w] = freqz (b, a, n)
-// h = freqz (b, a, w)
-// [h, w] = freqz (…, Fs)
-// freqz (...)
-// Dependencies
-// fft1 unwrap2 postpad 
+// Compute the frequency response of a digital filter.
+//
+// Syntax
+//   [h, w] = freqz(b, a)
+//   [h, w] = freqz(b, a, n)
+//   [h, w] = freqz(b, a, n, "whole")
+//   [h, w] = freqz(b, a, w)
+//   [h, f] = freqz(b, a, n, Fs)
+//   freqz(b, a, n)
+//   freqz(b, a)
+//
+// Parameters
+// b: Vector. The numerator coefficients of the filter's transfer function.
+// a: Vector. The denominator coefficients of the filter's transfer function. If omitted, it is assumed to be 1 (FIR filter).
+// n: Integer (optional). The number of frequency points. Default is 512.
+// w: Vector (optional). Specific frequencies (in radians) at which to evaluate the response.
+// Fs: Positive scalar (optional). Sampling frequency in Hz. If provided, frequencies are returned in Hz instead of radians.
+// h: Vector. The complex frequency response of the filter.
+// w: Vector. The frequencies (in radians) at which the response is evaluated.
+// f: Vector. The frequencies (in Hz) at which the response is evaluated.
+//
+// Description
+// This function computes the frequency response of a digital filter defined by its numerator (`b`) and denominator (`a`) coefficients. The response can be evaluated at a specified number of points (`n`) or at specific frequencies (`w`). If the sampling frequency (`Fs`) is provided, the frequencies are returned in Hz.
+//
+// - If `a` is omitted, the filter is assumed to be an FIR filter.
+// - If `n` is omitted, a default value of 512 is used.
+// - If the "whole" option is specified, the response is evaluated over the entire Nyquist range (0 to 2π). Otherwise, it is evaluated over half the Nyquist range (0 to π).
+// - If no output arguments are provided, the function plots the magnitude and phase response.
+//
+// Examples
+// // Compute the frequency response of an FIR filter:
+//    b = [0.2929, 0.5858, 0.2929];
+//    [h, w] = freqz(b)
+//
+// // Compute the frequency response of an IIR filter:
+//    b = [0.2929, 0.5858, 0.2929];
+//    a = [1, 0, 0.1716];
+//    [h, w] = freqz(b, a)
+//
+// // Compute the response at specific frequencies:
+//    b = [0.2929, 0.5858, 0.2929];
+//    a = [1, 0, 0.1716];
+//    w = linspace(0, pi, 100);
+//    h = freqz(b, a, w)
+//
+// // Compute the response with a sampling frequency:
+//    b = [0.2929, 0.5858, 0.2929];
+//    a = [1, 0, 0.1716];
+//    [h, f] = freqz(b, a, 512, 1000)
+//
+// // Plot the magnitude and phase response:
+//    b = [0.2929, 0.5858, 0.2929];
+//    freqz(b)
+//
+// See also
+// fft1
+// unwrap2 
+// postpad 
+// 
 
   if (nargin < 1)
     error("Invalid numbers of inputs");

@@ -1,7 +1,29 @@
 function [f,g,zo]=latcfilt1(k,v,x,zi)
-//the function is for application on vectors only
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Apply a lattice filter to a signal (vector only).
+//
+// Syntax
+//   [f, g, zo] = latcfilt1(k, v, x, zi)
+//
+// Parameters
+// k: Reflection coefficients (vector).
+// v: Ladder coefficients (vector).
+// x: Input signal (vector).
+// zi: Initial conditions (vector).
+//
+// Description
+// The `latcfilt1` function applies a lattice filter to the input signal `x` using the reflection coefficients `k` 
+// and ladder coefficients `v`. This function is specifically designed for vector inputs. The initial conditions 
+// `zi` are used to initialize the filter state.
+//
+// Examples
+// k = [0.5, -0.3, 0.2];
+// v = [0.1, 0.2, 0.3, 1];
+// x = [1, 2, 3, 4];
+// zi = [0, 0, 0];
+// [f, g, zo] = latcfilt1(k, v, x, zi)
+//
+// Authors
+// Parthasarathi Panda  ( parthasarathipanda314@gmail.com )
 
     N=length(k);
     gv=zi;

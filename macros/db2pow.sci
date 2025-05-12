@@ -1,15 +1,30 @@
 function [y] = db2pow(ydb)
-//This function calculates the power value in Watt of the decibel value ydb passed as the parameter 
-//Calling sequence
-//function [y] = mag2pow(ydb)
-//Parameters
-//ydb : scalar or vector or matrix or N-D array
-//Examples
-//ydb = 20
-//y=mag2pow(ydb)
-//Authors
-//Ishita Bedi
-//Modified to handle char i/p by Debdeep Dey
+// Convert decibel values to power values in Watts.
+//
+// Syntax
+//   y = db2pow(ydb)
+//
+// Parameters
+// ydb: Scalar, vector, matrix, or N-D array. Represents the input decibel values.
+//
+// y: Scalar, vector, matrix, or N-D array. Represents the output power values in Watts.
+//
+// Description
+// This function calculates the power value in Watts corresponding to the decibel value `ydb` passed as the parameter. 
+// The conversion is based on the formula: ydb = 10 * log10(y), where `log10` is the base-10 logarithm.
+//
+// Examples
+// ydb = 20;
+// y = db2pow(ydb)
+//
+// Authors
+//  Ishita Bedi
+//  Debdeep Dey
+// 
+
+//  Modified to handle character input by Debdeep Dey
+//
+
 
 funcprot(0);
 rhs = argn(2)

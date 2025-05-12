@@ -1,36 +1,34 @@
 function Y = goertzel(X,INDVEC,DIM)
-//Computes DFT using the second order Goertzel Algorithm
-//Calling Sequence
-//Y = goertzel(X,INDVEC,DIM)
-//Parameters
-//X
-//A vector matrix or n-dimensional array
-//INDVEC
-//The indices at which the DFT is to be computed
-//DIM
-//The dimension along which the algorithm is to be implemented
-//Description
-//goertzel(X,INDVEC)
-//Computes the DFT of X at indices INDVEC using the second order algorithm along
-//the first non-singleton dimension. Elements of INDVEC must be positive integers
-//less than the length of the first non-singleton dimension. If INDVEC is empty
-//the DFT is computed at all indices along the first non-singleton dimension
-//goertzel(X,INDVEC,DIM)
-//Implements the algorithm along dimension DIM
-//In general goertzel is slower than fft when computing the DFT for all indices
-//along a particular dimension. However it is computationally more efficient when
-//the DFT at only a subset of indices is desired
-//Example
-//x=rand(1,5)
-//x  =
+// Computes DFT using the second order Goertzel Algorithm
 // 
-//    0.6283918    0.8497452    0.6857310    0.8782165    0.0683740  
-//y=goertzel(x,2);
-//y  =
+// Syntax
+// Y = goertzel(X,INDVEC,DIM)
 // 
-//  - 0.3531539 - 0.6299881i  
-//Author
+// Parameters
+// X : A vector matrix or n-dimensional array
+// INDVEC : The indices at which the DFT is to be computed
+// DIM : The dimension along which the algorithm is to be implemented
+// 
+// Description
+// goertzel(X,INDVEC) 
+// Computes the DFT of X at indices INDVEC using the second order algorithm along
+// the first non-singleton dimension. Elements of INDVEC must be positive integers
+// less than the length of the first non-singleton dimension. If INDVEC is empty
+// the DFT is computed at all indices along the first non-singleton dimension
+// goertzel(X,INDVEC,DIM)
+// Implements the algorithm along dimension DIM
+// In general goertzel is slower than fft when computing the DFT for all indices
+// along a particular dimension. However it is computationally more efficient when
+// the DFT at only a subset of indices is desired
+// 
+// Examples
+// x=rand(1,5);
+// y=goertzel(x,2)
+// 
+// Authors
 //Ankur Mallick
+// 
+
 //References
 //Goertzel, G. (January 1958), "An Algorithm for the Evaluation of Finite Trigonometric Series", American Mathematical Monthly 65 (1): 34–35, doi:10.2307/2310304
 

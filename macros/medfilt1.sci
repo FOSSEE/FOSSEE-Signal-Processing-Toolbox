@@ -1,7 +1,7 @@
 function y = medfilt1(x, varargin)
 // 1D median filtering
 //
-// Calling sequence
+// Syntax
 // y = medfilt1(x)
 // y = medfilt1(x, n)
 // y = medfilt1(x, n, dim)
@@ -57,11 +57,6 @@ function y = medfilt1(x, varargin)
 //legend('Original','Filtered');
 //y = round(y*10000)/10000;
 //y = y'
-//
-//Output :
-// Output is a plot of x versus t and y versus t
-// samples of y is stored in medfilt1op.txt
-//
 //
 // See also
 // filter | hampel | median | sgolayfilt

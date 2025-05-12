@@ -1,6 +1,7 @@
 function varargout = mscohere(varargin)
 // Estimate (mean square) coherence of signals x and y. Use the Welch (1967) periodogram/FFT method.
-// Calling Sequence:
+// 
+// Syntax
 //         [Pxx, freq] = mscohere (x, y) 
 //         […] = mscohere (x, y, window) 
 //         […] = mscohere (x, y, window, overlap) 
@@ -8,9 +9,11 @@ function varargout = mscohere(varargin)
 //         […] = mscohere (x, y, window, overlap, Nfft, Fs) 
 //         […] = mscohere (x, y, window, overlap, Nfft, Fs, range) 
 //         mscohere (…)
-// Description:        
+// Description
 //   See "help pwelch" for description of arguments, hints and references
-//   Dependencies : pwelch
+// 
+// See also
+// pwelch
 
     // Check fixed argument
     if (nargin < 2 || nargin > 7)

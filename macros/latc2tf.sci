@@ -2,11 +2,10 @@ function [num,den] = latc2tf(k,varargin)
     // Convert lattice filter parameters to transfer function coefficients
     //
     //
-    // Calling sequence
+    // Syntax
     // [num,den] = latc2tf(k,v)
     // [num,den] = latc2tf(k,'iiroption')
     // num = latc2tf(k,'firoption')
-    //
     //
     // Description
     // [num,den] = latc2tf(k,v)

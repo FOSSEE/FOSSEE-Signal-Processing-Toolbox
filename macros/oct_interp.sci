@@ -17,24 +17,26 @@
 // this program; if not, see <http://www.gnu.org/licenses/>.
 
 function y = oct_interp(x, q, varargin)
-//This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
-//Calling Sequence
-//y = interp(x, q)
-//y = interp(x, q, n)
-//y = interp(x, q, n, Wc)
-//Parameters
-//x: scalar or vector of complex or real numbers
-//q: positive integer value, or logical
-//n: positive integer, default value 4
-//Wc: non decreasing vector or scalar, starting from 0 uptill 1, default value 0.5
-//Description
-//This is an Octave function.
-//This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
-//The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
-//Examples
-//interp(1,2)
-//ans  =
-//    0.4792743    0.3626016
+// This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
+//
+//  Syntax
+// y = interp(x, q)
+// y = interp(x, q, n)
+// y = interp(x, q, n, Wc)
+//
+// Parameters
+// x: scalar or vector of complex or real numbers
+// q: positive integer value, or logical
+// n: positive integer, default value 4
+// Wc: non decreasing vector or scalar, starting from 0 uptill 1, default value 0.5
+//
+// Description
+// This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
+// The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
+//
+// Examples
+// interp(1,2)
+// 
 
  funcprot(0);
     [nargout,nargin]=argn();

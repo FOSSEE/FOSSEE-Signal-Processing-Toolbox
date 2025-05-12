@@ -1,30 +1,29 @@
 function [a, v, ref] = levinson(bcf, p)
-//Levinson- Durbin Recurssion Algorithm
-//calling syntax
-//a = levinson(r)
-//a = levinson(r,n)
-//[a,e] = levinson(r,n)
-//[a,e,k] = levinson(r,n)
-// where
-// a is the coefficients of a length(r)-1 order autoregressive linear process
-//e is the prediction error when order is n
-// k is a column vector containing the reflection coefficients of length n
-//Example :
-//a = [1 0.1 -0.8];       //Estimate the coefficients of an autoregressive process given by    x(n) = 0.1x(n-1) - 0.8x(n-2) + w(n)
+// Levinson- Durbin Recurssion Algorithm
+// 
+// Syntax
+// a = levinson(r)
+// a = levinson(r,n)
+// [a,e] = levinson(r,n)
+// [a,e,k] = levinson(r,n)
+// 
+// Parameters
+// a :  the coefficients of a length(r)-1 order autoregressive linear process
+// e :  the prediction error when order is n
+// k :  a column vector containing the reflection coefficients of length n
+// 
+// Example :
+// a = [1 0.1 -0.8];       //Estimate the coefficients of an autoregressive process given by    x(n) = 0.1x(n-1) - 0.8x(n-2) + w(n)
 //
-//v = 0.4;
-//w = sqrt(v)*rand(15000,1,"normal");
-//x = filter(1,a,w);
+// v = 0.4;
+// w = sqrt(v)*rand(15000,1,"normal");
+// x = filter(1,a,w);
 //
-//[r,lg] = xcorr(x,'biased');
-//r(lg<0) = [];
+// [r,lg] = xcorr(x,'biased');
+// r(lg<0) = [];
 //
-//ar = levinson(r,length(a)-1)
-// // Output :---
-// ar  =
-//
-//    1.    0.0983843  - 0.7929775
-//
+// ar = levinson(r,length(a)-1)
+// 
 
 
     funcprot(0);

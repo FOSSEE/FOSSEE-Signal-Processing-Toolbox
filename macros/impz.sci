@@ -12,18 +12,23 @@
 
 function [x_r, t_r] = impz(b, a, n, fs)
 // Generate impulse-response characteristics of the filter. 
-// Calling Sequence
-//  [x, t] = impz (b) ¶
-//  [x, t] = impz (b, a) ¶
-//  [x, t] = impz (b, a, n) ¶
-//  [x, t] = impz (b, a, n, fs) ¶
-//  impz (…) ¶
+// 
+// Syntax
+//  [x, t] = impz (b) 
+//  [x, t] = impz (b, a) 
+//  [x, t] = impz (b, a, n) 
+//  [x, t] = impz (b, a, n, fs) 
+//  impz (…) 
+// 
 //  Description
 // The filter coefficients correspond to the the z-plane rational function with numerator b and denominator a. If a is not specified, it defaults to 1. 
 // If n is not specified, or specified as [], it will be chosen such that the signal has a chance to die down to -120dB, or to not explode beyond 120dB, or to show five periods if there is no significant damping.
 // If no return arguments are requested, plot the results.
-// Dependencies
+//
+// See also
 //   fftfilt
+//   filter
+// 
 
   if nargin < 1 || nargin > 4 then 
     error(" impz : Incorrect number of input arguments ")

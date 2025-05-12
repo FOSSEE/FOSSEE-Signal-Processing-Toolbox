@@ -1,27 +1,40 @@
 function m=filtord(varargin)
-//filtord Filter order
-//Calling Syntax
-//n = filtord(b,a) 
-//n = filtord(sos) 
-//n = filtord(d)
-//n = filtord(b,a) returns
-//the filter order, n, for the causal rational
-//system function specified by the numerator coefficients, b,
-//and denominator coefficients, a.
-//n = filtord(sos) returns
-//the filter order for the filter specified by the second-order sections
-//matrix, sos. sos is a K-by-6
-//matrix. The number of sections, K, must be greater
-//than or equal to 2. Each row of sos corresponds
-//to the coefficients of a second-order filter. The ith
-//row of the second-order section matrix corresponds to [bi(1)
-//bi(2) bi(3) ai(1) ai(2) ai(3)].
-//n = filtord(d) returns
-//the filter order, n, for the digital filter, d.
-//Use the function designfilt to
-//generate d.
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Determine the filter order.
+//
+// Syntax
+//   n = filtord(b, a)
+//   n = filtord(sos)
+//   n = filtord(d)
+//
+// Parameters
+// b: Vector. The numerator coefficients of the filter's transfer function.
+// a: Vector. The denominator coefficients of the filter's transfer function.
+// sos: Matrix. The second-order sections representation of the filter. A K-by-6 matrix where each row corresponds to the coefficients of a second-order filter.
+// d: Digital filter object. Represents a digital filter designed using the `designfilt` function.
+// n: Integer. The order of the filter.
+//
+// Description
+// This function computes the order of a filter based on its representation:
+// - `n = filtord(b, a)` computes the filter order for a causal rational system function specified by the numerator coefficients `b` and denominator coefficients `a`.
+// - `n = filtord(sos)` computes the filter order for a filter specified by the second-order sections matrix `sos`. Each row of `sos` corresponds to the coefficients of a second-order filter.
+// - `n = filtord(d)` computes the filter order for a digital filter object `d`. Use the `designfilt` function to generate `d`.
+//
+// Examples
+// // Compute the filter order for a transfer function:
+// b = [1, 2, 3];
+// a = [1, 0.5, 0.25];
+// n = filtord(b, a)
+//
+// // Compute the filter order for a second-order sections matrix:
+// sos = [1, 0.5, 0.25, 1, -0.5, 0.25];
+// n = filtord(sos)
+//
+// See also
+//  convol
+//
+// Authors
+//  Parthasarathi Panda 
+//
 
     [nargout,nargin]=argn();
     narginchk(1,2,argn(2));

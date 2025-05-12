@@ -1,17 +1,20 @@
 function [psi,x] = morlet(lb, ub, n)
-//Compute the Morlet wavelet.
-//Calling sequence:
-//[psi,x]= morlet(lb,ub,n)
-//Parameters:
-//lb: Real or complex valued vector/scalar
-//ub: Real or complex valued vector/scalar
-//n: Real positive scalar number
-//Description:
-//This function returns values of the Morlet wavelet in the specified interval for all the sample points.
-//Example:
-//[a,b] = morlet([1 2 3], [1 2 3], 1)
-//a = [0.1720498; -0.1135560; -0.0084394]
-//b = [1; 2; 3]
+// Compute the Morlet wavelet.
+//
+// Syntax
+// [psi,x]= morlet(lb,ub,n)
+// 
+// Parameters:
+// lb: Real or complex valued vector/scalar
+// ub: Real or complex valued vector/scalar
+// n: Real positive scalar number
+//
+// Description:
+// This function returns values of the Morlet wavelet in the specified interval for all the sample points.
+// 
+// Examples
+// [a,b] = morlet([1 2 3], [1 2 3], 1)
+//
 
   funcprot(0);
   rhs = argn(2);

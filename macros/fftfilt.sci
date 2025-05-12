@@ -34,14 +34,14 @@ function y = fftfilt(b, x, varargin)
     // y = fftfilt(b,x,n) uses n to determine the length of the FFT.
     //
     // Examples
-    // 1) Filtering a sine wave
-//          x = sin(1:2000);
-//          b = [1 1/2];
-//          y = fftfilt(b,x);
-    // 2) Multiple filters (1,1/3) and (1/4,1/5);
-    //      x = sin(1:2000);
-    //      b = [1 1/4;1/3 1/5];
-    //      y = fftfilt(b,x);
+    // // Filtering a sine wave
+    // x = sin(1:2000);
+    // b = [1 1/2];
+    // y = fftfilt(b,x);
+    // // Multiple filters (1,1/3) and (1/4,1/5);
+    // x = sin(1:2000);
+    // b = [1 1/4;1/3 1/5];
+    // y = fftfilt(b,x);
     
     [numOutArgs,numInArgs] = argn(0);
     

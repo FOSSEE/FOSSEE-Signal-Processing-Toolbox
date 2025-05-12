@@ -1,23 +1,31 @@
 function y = czt(x, m, w, a)
-//     Description
-//     Chirp z-transform. Compute the frequency response starting at a and stepping by w for m steps. a is a point in the complex plane,
-//     and w is the ratio between points in each step (i.e., radius increases exponentially, and angle increases linearly).
-// Calling Sequence
-//     czt (x)
-//     czt (x, m)
-//     czt (x, m, w)
-//     czt (x, m, w, a)
+// Compute the Chirp z-transform.
+//
+// Syntax
+//   y = czt(x)
+//   y = czt(x, m)
+//   y = czt(x, m, w)
+//   y = czt(x, m, w, a)
+//
 // Parameters
-//     x: Input scalar or vector
-//     m: Total Number of steps
-//     w: ratio between points in each step
-//     a: point in the complex plane
-// Examples: This example uses the czt function to determine the frequency components of a signal, as shown in the following
-// t=linspace(0,50,1000); 
-// f=linspace(0,3,1000);    
-// x_t=sin(t) + cos(t*2*%pi);  
-// x_f=czt(x_t);   
-// plot(f,abs(x_f)); 
+// x: Input scalar or vector.
+// m: Total number of steps. Default is the length of the input signal.
+// w: Ratio between points in each step. Default is exp(-2*%i*%pi/m).
+// a: Starting point in the complex plane. Default is 1.
+//
+// Description
+// The `czt` function computes the Chirp z-transform of the input signal `x`. 
+// It calculates the frequency response starting at `a` and stepping by `w` for `m` steps. 
+// The parameter `a` is a point in the complex plane, and `w` is the ratio between points in each step. 
+// The radius increases exponentially, and the angle increases linearly.
+//
+// Examples
+// // Determine the frequency components of a signal
+// t = linspace(0, 50, 1000); 
+// f = linspace(0, 3, 1000);    
+// x_t = sin(t) + cos(t * 2 * %pi);  
+// x_f = czt(x_t);   
+// plot(f, abs(x_f))
 
     funcprot(0);
     nargin=argn(2);

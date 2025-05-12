@@ -18,8 +18,8 @@ function [a, v, k] = aryule(x, p)
 //
 // Examples
 // aryule([1, 2, 3, 4, 5], 2)
-// ans =
-//    1.  -0.8140351    0.1192982
+// 
+
 
   [nargout,nargin] = argn() ;
 

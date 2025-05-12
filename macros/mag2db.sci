@@ -1,9 +1,26 @@
 
 function [ydb] = mag2db(y)
-//The relationship between magnitude and decibels is ydb = 20 log10(y).
-//ydb = mag2db(y) expresses in decibels (dB) the magnitude measurements specified in y. 
-//Author 
-//Debdeep Dey
+// Convert magnitude to decibels.
+//
+// Syntax
+//   ydb = mag2db(y)
+//
+// Parameters
+// y: Input magnitude values (vector or matrix).
+//
+// Description
+// The `mag2db` function converts magnitude measurements specified in `y` to decibels (dB) 
+// using the formula: ydb = 20 * log10(y).
+//
+// - If `y` contains negative real values, the corresponding `ydb` values are set to NaN.
+// - If `y` contains zeros, the corresponding `ydb` values are set to -Inf.
+//
+// Examples
+// y = [1, 10, 0.1, 0, -5];
+// ydb = mag2db(y)
+// 
+// Authors
+// Debdeep Dey
 
     funcprot(0);
 

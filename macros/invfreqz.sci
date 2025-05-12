@@ -13,10 +13,12 @@
 
 function [B, A, SigN] = invfreqz(H, F, nB, nA, W, iter, tol, tr, varargin)
   // Fit filter B(z)/A(z)to the complex frequency response H at frequency points F.
-  // Calling Sequence
+  // 
+  // Syntax
   // [B,A] = invfreqz(H,F,nB,nA) ¶
   // [B,A] = invfreqz(H,F,nB,nA,W) ¶
   // [B,A] = invfreqz(H,F,nB,nA,W,iter,tol,'trace') ¶
+  // 
   // Parameters
   // A and B are real polynomial coefficients of order nA and nB. Optionally, the fit-errors can be weighted vs frequency according to the weights W.
   // H: desired complex frequency response
@@ -24,8 +26,9 @@ function [B, A, SigN] = invfreqz(H, F, nB, nA, W, iter, tol, tr, varargin)
   // nA: order of the denominator polynomial A
   // nB: order of the numerator polynomial B
   // W: vector of weights (must be same length as F)
-// See also
-// invfreq
+  // 
+  // See also
+  // invfreq
 
   if nargin < 9
     varargin = {};

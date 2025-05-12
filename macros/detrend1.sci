@@ -15,15 +15,6 @@ function y = detrend1 (x, p)
 //
 // Examples
 //detrend1([1, 6, 9])
-//ans = [ -0.3333, 0.6667, -0.3333]
-//
-// See also
-//
-//
-// Authors
-//
-//
-// Bibliography
 //
 
 

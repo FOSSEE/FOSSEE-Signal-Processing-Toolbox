@@ -1,7 +1,9 @@
 function [ar, sigma2,rc] = levin(r);
 // Resolve the Yule-Walker equations:
-// Calling Sequence
+// 
+// Syntax
 // [ar,sigma2,rc]=lev(r)
+// 
 // Description
 //       |r(0)   r(1)   ... r(N-1)|| a(1) | |sigma2|
 //       |r(1)   r(0)   ... r(n-1)|| a(2) | |  0   |
@@ -14,7 +16,7 @@ function [ar, sigma2,rc] = levin(r);
 //  ar     :Auto-Regressive model parameters
 //  sigma2 :Scale constant
 //  rc     :Reflection coefficients
-// Example :
+
 
 if length(r)==1 then
     ar=1;

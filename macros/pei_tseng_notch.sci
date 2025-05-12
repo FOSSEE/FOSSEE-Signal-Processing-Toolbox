@@ -1,19 +1,24 @@
 function [ b, a ] = pei_tseng_notch ( frequencies, bandwidths )
-//Return coefficients for an IIR notch-filter.
-//Calling Sequence:
-//[b, a] = pei_tseng_notch(frequencies, bandwidths)
-//Parameters:
-//frequencies: Real scalar/vector representing filter frequencies.
-//bandwidths: Real scalar scalar/vector representing bandwidths to be used with filter.
-//Description:
-//THis function returns coefficients for an IIR notch-filter with one or more filter frequencies and according bandwidths.
-//The filter is based on a all pass filter that performs phasereversal at filter frequencies. This leads to removal of those frequencies of the original and phase-distorted signal.
-//Examples:
-//sf = 800; sf2 = sf/2;
-//data = [[1;zeros(sf-1,1)],sinetone(49,sf,1,1),sinetone(50,sf,1,1),sinetone(51,sf,1,1)];
-//[b,a] = pei_tseng_notch ( 50 / sf2, 2/sf2 )
-//b = 0.99213  -1.83322   0.99213
-//a = 1.00000  -1.83322   0.98426
+// Return coefficients for an IIR notch-filter.
+//
+// Syntax
+//   [b, a] = pei_tseng_notch(frequencies, bandwidths)
+//
+// Parameters
+// frequencies: Real scalar/vector representing filter frequencies.
+// bandwidths: Real scalar/vector representing bandwidths to be used with the filter.
+//
+// Description
+// The `pei_tseng_notch` function returns coefficients for an IIR notch-filter with one or more filter frequencies 
+// and corresponding bandwidths. The filter is based on an all-pass filter that performs phase reversal at the 
+// specified filter frequencies, leading to the removal of those frequencies from the original signal.
+//
+// Examples
+// sf = 800; sf2 = sf / 2;
+// data = [[1; zeros(sf - 1, 1)], sinetone(49, sf, 1, 1), sinetone(50, sf, 1, 1), sinetone(51, sf, 1, 1)];
+// [b, a] = pei_tseng_notch(50 / sf2, 2 / sf2)
+//
+
 
   if (nargin() ~= 2)
     error("Wrong number of input arguments.");

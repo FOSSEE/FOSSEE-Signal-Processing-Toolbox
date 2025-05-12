@@ -11,37 +11,40 @@
 // Email: toolbox@scilab.in
 
 function [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
-    //Minimum filter order of a digital elliptic or Cauer filter with the desired response characteristics
-    //Calling Sequence
-    //[n] = ellipord(Wp, Ws, Rp, Rs)
-    //[n, Wp] = ellipord(Wp, Ws, Rp, Rs)
-    //Parameters
-    //Wp: scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]
-    //Rp: passband ripple in dB.
-    //Rs: stopband attenuation in dB.
-    //n: Minimum order of filter satisfying given specs.
-    //Description
-    //This function computes the minimum filter order of an elliptic filter with the desired response characteristics.
-    //Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
-    //Frequencies are normalized to the Nyquist frequency in the range [0,1].
-    //Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
-    //If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
-    //If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
-    //If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
-    //Examples
-    //Wp = [60 200]/500;
-    //Ws = [50 250]/500;
-    //Rp = 3;
-    //Rs = 40;
-    //[n,Wp] = ellipord(Wp,Ws,Rp,Rs)
-    //Output :
-    // Wp  =
-    //
-    //    0.12    0.4
-    // n  =
-    //
-    //    5.
+// Compute the minimum filter order of a digital elliptic or Cauer filter with the desired response characteristics.
+//
+// Syntax
+//   [n] = ellipord(Wp, Ws, Rp, Rs)
+//   [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
+//
+// Parameters
+// Wp: Scalar or vector of length 2. Specifies the passband edge(s). All elements must be in the range [0, 1].
+// Ws: Scalar or vector of length 2. Specifies the stopband edge(s). All elements must be in the range [0, 1].
+// Rp: Non-negative scalar. The passband ripple in decibels (dB).
+// Rs: Non-negative scalar. The stopband attenuation in decibels (dB).
+// n: Positive integer. The minimum order of the filter satisfying the given specifications.
+//
+// Description
+// This function computes the minimum filter order of an elliptic filter with the desired response characteristics.
+// - Stopband frequency `Ws` and passband frequency `Wp` specify the filter frequency band edges.
+// - Frequencies are normalized to the Nyquist frequency in the range [0, 1].
+// - `Rp` is measured in decibels and represents the allowable passband ripple.
+// - `Rs` is measured in decibels and represents the minimum attenuation in the stopband.
+// - If `Ws > Wp`, the filter is a lowpass filter. If `Wp > Ws`, the filter is a highpass filter.
+// - If `Wp` and `Ws` are vectors of length 2, the passband interval is defined by `Wp` and the stopband interval is defined by `Ws`.
+// - If `Wp` is contained within the lower and upper limits of `Ws`, the filter is a bandpass filter.
+// - If `Ws` is contained within the lower and upper limits of `Wp`, the filter is a bandstop or band-reject filter.
+//
+// Examples
+// // Bandpass filter:
+//    Wp = [60 200]/500;
+//    Ws = [50 250]/500;
+//    Rp = 3;
+//    Rs = 40;
+//    [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
+//
+
+
 
     funcprot(0);
     [nargout nargin] = argn();

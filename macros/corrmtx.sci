@@ -72,7 +72,7 @@ function [X, varargout] = corrmtx(x, m, varargin)
 // Authors
 // Parthe Pandit
 //
-// Bilbligraphy
+// Bilblography
 // Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.
 //
 

@@ -18,9 +18,7 @@ function [psi, x] = cmorwavf(lb, ub, n, fb, fc)
 //
 // Examples
 // [psi, x] = cmorwavf(1, 2, 100, 3, 4)
-// Output:
-// x = [1, 1.01, ..., 2]
-// psi = [0.0858628 - 1.682D-16i, ...]
+// 
 
 if(argn(2)~=5 & argn(2)~=3) then
 	error ("Wrong number of input arguments.")

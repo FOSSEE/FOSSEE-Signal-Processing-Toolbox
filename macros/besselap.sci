@@ -27,17 +27,6 @@ function [zero, pole, gain] = besselap(n)
 //
 // Examples
 // [zero, pole, gain] = besselap(5)
-// Output:
-// gain =
-//    1.
-// pole =
-//  -0.5905759 + 0.9072068i
-//  -0.5905759 - 0.9072068i
-//  -0.9264421
-//  -0.8515536 + 0.4427175i
-//  -0.8515536 - 0.4427175i
-// zero =
-//     []
 //
 // See also
 // prepad

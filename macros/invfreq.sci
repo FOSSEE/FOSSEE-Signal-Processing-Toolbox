@@ -12,10 +12,12 @@
 
 function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
   // Fit filter B(z)/A(z) or B(s)/A(s) to complex frequency response at frequency points F.
-  // Calling Sequence
+  // 
+  // Syntax
   // [B,A] = invfreq(H,F,nB,nA,W)
   // [B,A] = invfreq(H,F,nB,nA,W,[],[],plane) 
   // [B,A] = invfreq(H,F,nB,nA,W,iter,tol,plane) 
+  // 
   // Parameters
   //   A and B are real polynomial coefficients of order nA and nB respectively. Optionally, the fit-errors can be weighted vs frequency according to the weights W. Also, the transform plane can be specified as either ’s’ for continuous time or ’z’ for discrete time. ’z’ is chosen by default. Eventually, Steiglitz-McBride iterations will be specified by iter and tol.
   //   H: desired complex frequency response It is assumed that A and B are real polynomials, hence H is one-sided.

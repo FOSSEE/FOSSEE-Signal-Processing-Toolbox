@@ -1,43 +1,48 @@
 function [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=falltime(x, varargin)
-    // This function estimate falltime values of real vector X.
-    // Calling Sequence
-    // r=falltime(x)
-    // r=falltime(x, t)
-    // r=falltime(x, Fs)
-    // r=falltime(x, t, 'PercentReferenceLevels', N )
-    // r=falltime(x, t, 'Tolerance', M)
-    // r=falltime(x, t,'StateLevels', O)
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x)
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, Fs)  
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, t)
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]=falltime(x, t, 'PercentReferenceLevels', N )
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t, 'Tolerance', M)
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t,'StateLevels', O)
-    // [r lowercrossvalue uppercrossvalue lowerreference upperreference]= falltime(x, t,'StateLevels', O, 'fig', on or off)
-    //  
-    // Parameters
-    // x: real vector.
-    // Fs: specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.
-    // t: defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.
-    // PercentReferenceLevels: specify the percentreferenceleves as a percentage, default value of N is [10 90].
-    // Tolerance: define the tolerance value as real scaler value, where default value of M is 2.0.
-    // StateLevels:  define the lower and upper state levels as two element real vector. 
-    // fig: specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'. 
-    // f: return fall time of negative-going bilevel waveform transitions X.
-    // lowercrossvalue: return the lowerc cross value.
-    // uppercrossvalue: return the upper cross value.
-    // lowerreference: return lower reference value corrosponding to lower percent reference value.
-    // upperreference: return upper reference value corrosponding to upper percent reference value.
-    // Examples
-    // x=[1.2, 5, 10, -20, 12]
-    //t=1:length(x)
-    //f=falltime(x, t) 
-    // See also
-    // Authors
-    // Jitendra Singh
-  
-    
-    
+// Estimate the fall time of a negative-going bilevel waveform.
+//
+// Syntax
+//   f = falltime(x)
+//   f = falltime(x, t)
+//   f = falltime(x, Fs)
+//   f = falltime(x, t, 'PercentReferenceLevels', N)
+//   f = falltime(x, t, 'Tolerance', M)
+//   f = falltime(x, t, 'StateLevels', O)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, Fs)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'PercentReferenceLevels', N)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'Tolerance', M)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'StateLevels', O)
+//   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'StateLevels', O, 'fig', 'on' or 'off')
+//
+// Parameters
+// x: Real vector. The input signal.
+// Fs: Positive scalar. Specifies the sample rate, where the first sample instant corresponds to a time of zero.
+// t: Vector or positive scalar. Defines the sample time instants or the sample rate.
+// PercentReferenceLevels: Two-element vector. Specifies the percent reference levels as percentages. Default is [10, 90].
+// Tolerance: Real scalar. Specifies the tolerance value. Default is 2.0.
+// StateLevels: Two-element real vector. Defines the lower and upper state levels.
+// fig: String. Specifies whether to display the figure ('on' or 'off'). Default is 'off'.
+// f: Vector. Returns the fall time of negative-going bilevel waveform transitions.
+// lowercrossvalue: Vector. Returns the lower cross values.
+// uppercrossvalue: Vector. Returns the upper cross values.
+// lowerreference: Scalar. Returns the lower reference value corresponding to the lower percent reference level.
+// upperreference: Scalar. Returns the upper reference value corresponding to the upper percent reference level.
+//
+// Description
+// This function estimates the fall time of a negative-going bilevel waveform. It calculates the time difference between the upper and lower percent reference levels of the waveform.
+//
+// Examples
+// x = [1.2, 5, 10, -20, 12];
+// t = 1:length(x);
+// f = falltime(x, t);
+//
+
+// Authors
+//  Jitendra Singh 
+//
+
   // run statelevels and midcross function before running risetime function.  
   
     if or(type(x)==10) then

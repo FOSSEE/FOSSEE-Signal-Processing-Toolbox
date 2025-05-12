@@ -35,8 +35,7 @@ function [Y, SF] = filter1 (B, A, X, SI, DIM)
 // 
 // Examples
 // filter([1,2,3], [3,4,5], [5,6,7])
-// ans = 
-//    1.6666667    3.1111111    4.4074074  
+// 
 
 funcprot(0);
 lhs = argn(1)

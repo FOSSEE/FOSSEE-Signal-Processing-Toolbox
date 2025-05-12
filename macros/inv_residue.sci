@@ -10,7 +10,10 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [b_out, a_out] = inv_residue(r_in, p_in, k_in, tol)
-// Inverse of residue function
+// Inverse of residue function 
+// 
+// Description
+// This is an helper function to compute the inverse of the residue function.
 
   n = length(r_in); // Number of poles/residues
 

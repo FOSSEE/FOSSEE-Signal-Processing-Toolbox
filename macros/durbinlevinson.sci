@@ -18,8 +18,6 @@ function [newphi, newv] = durbinlevinson (c, oldphi, oldv)
 //
 // Examples
 // [newphi, newv] = durbinlevinson([1, 2, 3], 1, 2)
-// newphi = [0.5, 0.5]
-// newv = 0.75
 //
 
 

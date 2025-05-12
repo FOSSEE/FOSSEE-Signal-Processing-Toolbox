@@ -19,14 +19,8 @@ function y = filter2 (b, x, shape)
 //
 // Examples
 // y = filter2([1, 3], [4, 5])
-// ans =
-// [19, 5]
 //
 // y = filter2([1, 2], [4; 5; 6], "full")
-// ans =
-// [8, 4;
-//  10, 5;
-//  12, 6]
 //
 // See also
 //  convol2d

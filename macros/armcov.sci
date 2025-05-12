@@ -18,8 +18,7 @@ function [ar_coeff, var_est] = armcov(data_in, order)
 // A = [1 -2.7607 3.8106 -2.6535 0.9238];
 // y = filter(1, A, 0.2 * rand(1024, 1, "normal"));
 // arcoeffs = armcov(y, 4)
-// Output:
-//   1.  -2.7450144    3.7762385  -2.6201362     0.9104109    0.9104109
+
 
     checkNArgin(2,2, argn(2));                          // function call
     method = 'modified';

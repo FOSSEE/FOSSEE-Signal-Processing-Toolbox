@@ -26,13 +26,7 @@ function x = arma_rnd(a, b, v, t, n)
 // t = 5;
 // n = 100;
 // x = arma_rnd(a, b, v, t, n)
-// Output:
-// ans =
-//    61400.907
-//    158177.11
-//    407440.29
-//    1049604.
-//    2703841.3
+// 
 
   funcprot(0);
   [nargout,nargin] = argn() ;

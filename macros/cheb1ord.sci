@@ -35,10 +35,7 @@ function [n, Wc] = cheb1ord(Wp, Ws, Rp, Rs)
 //
 // Examples
 // [n, wp] = cheb1ord([0.25, 0.3], [0.24, 0.31], 3, 10)
-// wp =
-//    0.25    0.3
-// n =
-//    3.
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

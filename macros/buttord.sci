@@ -38,11 +38,7 @@ function [n, Wc] = buttord(Wp, Ws, Rp, Rs)
 // Wp = 40/500;
 // Ws = 150/500;
 // [n, Wc] = buttord(Wp, Ws, 3, 60)
-// Output:
-// Wc =
-//    0.0800376
-// n =
-//    5.
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

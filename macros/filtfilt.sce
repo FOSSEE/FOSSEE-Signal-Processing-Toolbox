@@ -11,15 +11,15 @@ function y = filtfilt(b, a, x)
 // y: Zero-phase filtered signal.
 //
 // Description
-//Forward and reverse filter the signal. 
-//This corrects for phase distortion introduced by a one-pass filter, though it does square the magnitude response in the process. That’s the theory at least. In practice the phase correction is not perfect, and magnitude response is distorted, particularly in the stop band. 
+// Forward and reverse filter the signal. 
+// This corrects for phase distortion introduced by a one-pass filter, though it does square the magnitude response in the process. That’s the theory at least. In practice the phase correction is not perfect, and magnitude response is distorted, particularly in the stop band. 
 //
 // Examples
-//[b, a]=butter(3, 0.1);                  # 5 Hz low-pass filter
-//t = 0:0.01:1.0;                         # 1 second sample
-//x=sin(2*pi*t*2.3)+0.25*randn(size(t));  # 2.3 Hz sinusoid+noise
-//y = filtfilt(b,a,x); z = filter(b,a,x); # apply filter
-//plot(t,x,';data;',t,y,';filtfilt;',t,z,';filter;')
+// [b, a]=butter(3, 0.1);                  # 5 Hz low-pass filter
+// t = 0:0.01:1.0;                         # 1 second sample
+// x=sin(2*pi*t*2.3)+0.25*randn(size(t));  # 2.3 Hz sinusoid+noise
+// y = filtfilt(b,a,x); z = filter(b,a,x); # apply filter
+// plot(t,x,';data;',t,y,';filtfilt;',t,z,';filter;')
 //
 // See also
 //  filter

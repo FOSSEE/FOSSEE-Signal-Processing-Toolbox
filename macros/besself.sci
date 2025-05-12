@@ -32,11 +32,6 @@ function [a, b, c, d] = besself(n, w, varargin)
 //
 // Examples
 // [b, a] = besself(2, 0.3, "high", "z")
-// Output:
-// a =
-//    1.  -0.6912562    0.1760353
-// b =
-//    0.4668229  -0.9336457    0.4668229
 //
 // See also
 // besselap

@@ -40,9 +40,7 @@ function [y] = chirp(t, f0, t1, f1, form, phase)
 // f1 = 0.9;
 // form = "quadratic";
 // y = chirp(t, f0, t1, f1, form)
-// Output:
-// y =
-//  -0.6112508    0.7459411  -0.4854201    0.9664658
+// 
 
     funcprot(0);
     [nargout,nargin]=argn(0);

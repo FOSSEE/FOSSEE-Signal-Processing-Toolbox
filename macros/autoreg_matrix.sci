@@ -14,10 +14,7 @@ function x = autoreg_matrix(y, k)
 //
 // Examples
 // autoreg_matrix([1, 2, 3], 2)
-// ans =
-//      1.    0.    0.
-//      1.    1.    0.
-//      1.    2.    1.
+// 
 
   funcprot(0);
 

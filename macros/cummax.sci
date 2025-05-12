@@ -29,17 +29,18 @@ function [M, iM] = cummax(varargin)
 // This function computes the cumulative maximum of the input array `A`. For complex elements, the function compares magnitudes, and if magnitudes are equal, it compares phase angles. The operation can be performed along a specified dimension and in a specified direction.
 //
 // Examples
-// 1) Cumulative maximum values in a vector:
+//  //Cumulative maximum values in a vector:
 //    v = [8, 9, 1, 10, 6, 1, 3, 6, 10, 10];
 //    M = cummax(v)
-//    Output: [8, 9, 9, 10, 10, 10, 10, 10, 10, 10]
+//   
 //
-// 2) Cumulative maximum along a specific dimension:
+//  //Cumulative maximum along a specific dimension:
 //    x = [1, 2, 3; 4, 1, 2; 3, 5, 1];
 //    M = cummax(x, 2)
 //
-// 3) Cumulative maximum with indices:
+// // Cumulative maximum with indices:
 //    [M, iM] = cummax(x, 2)
+// 
 
     [numOutArgs,numInArgs] = argn(0);
     

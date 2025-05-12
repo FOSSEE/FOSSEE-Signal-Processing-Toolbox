@@ -12,12 +12,7 @@ function w = bohmanwin(m)
 //
 // Examples
 // w = bohmanwin(5)
-// w =
-//  0
-//  0.3183
-//  1.0000
-//  0.3183
-//  0
+// 
 
  funcprot(0);
     rhs= argn(2);

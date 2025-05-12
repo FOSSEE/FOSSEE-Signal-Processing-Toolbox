@@ -1,17 +1,26 @@
-/*
-Description
-    The inverse of the permute function.
-    The expression
-        ipermute (permute (A, perm), perm)
-    returns the original array A.
-Calling Sequence
-    ipermute (A, iperm)
-*/
 function B = ipermute(A, perm)
-    // ipermute : Inverse permute the dimensions of a matrix A.
-    // B = ipermute(A, perm) returns the array A with dimensions inverted
-    // according to the permutation vector `perm`.
-    // Validate the permutation vector
+// Inverse of the permute function.
+//
+// Syntax
+//   B = ipermute(A, perm)
+//
+// Parameters
+// A: Input array.
+// perm: Permutation vector specifying the order of dimensions.
+//
+// Description
+// The `ipermute` function reverses the effect of the `permute` function. 
+// It rearranges the dimensions of the input array `A` according to the inverse of the permutation vector `perm`.
+//
+// The expression:
+//   ipermute(permute(A, perm), perm)
+// returns the original array `A`.
+//
+// Examples
+// A = [1, 2; 3, 4];
+// perm = [2, 1];
+// B = ipermute(permute(A, perm), perm)
+// 
     
     if max(size(perm)) ~= ndims(A) || or(gsort(perm, "g", "i") ~= 1:ndims(A))
         error('Permutation vector must contain unique integers from 1 to ndims(A).');

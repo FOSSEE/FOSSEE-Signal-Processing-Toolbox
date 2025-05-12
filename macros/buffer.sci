@@ -17,10 +17,7 @@ function [y, z, opt] = buffer(x, n, p, opt)
 //
 // Examples
 // buffer(1, 3, 2)
-// ans =
-//   0   0
-//   0   1
-//   1   0
+// 
 
   [nargout, nargin] = argn() ;
 

@@ -1,7 +1,7 @@
 function [k] = is2rc(isin)
 // Convert inverse sine parameters to reflection coefficients
 //
-// Calling Sequence
+// Syntax
 // K = is2rc(isin)
 //
 // Parameters
@@ -16,15 +16,7 @@ function [k] = is2rc(isin)
 // k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
 // isin = rc2is(k)      //Gives inverse sine parameters
 // k_dash = is2rc(isin)
-//
-// OUTPUT :
-//           isin    =   [0.1999886    0.8727832    0.0019735    0.0052203.....- 0.0052203 ]
-//           k_dash =[0.309    0.9801    0.0031    0.0082  - 0.0082]
-//isin = [0.2000 0.8727 0.0020 0.0052 -0.0052];
-//k = is2rc(isin)
-//
-//OUTPUT :
-//              k = [0.3090170    0.9800741    0.0031416    0.0081681..... - 0.0081681 ]
+// 
 // See also
 // rc2is
 // rc2poly

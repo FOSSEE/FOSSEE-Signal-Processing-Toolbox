@@ -1,6 +1,7 @@
 function [midcrossvalue, midreference, levels, t, tolerance, Tinput]= midcross(x, varargin)
     // This function estimate midcross values of real vector X.
-    // Calling Sequence
+    // 
+    // Syntax
     // midcrossvalue=midcross(x)
     // midcrossvalue=midcross(x, Fs)
     // midcrossvalue=midcross(x, t)
@@ -29,12 +30,13 @@ function [midcrossvalue, midreference, levels, t, tolerance, Tinput]= midcross(x
     // t: return the instant sample time.
     // tolerance: retunr the tolerance value
     // Tinput: return t value, which given as input parameter.
+    // 
     // Examples
     // x=[1.2, 5, 10, -20, 12]
-    //t=1:length(x)
+    // t=1:length(x)
     // midcrossvalue=midcross(x, t) 
-    // See also
-    // Authors
+    //
+    //  Authors
     // Jitendra Singh
     
  if or(type(x)==10) then

@@ -1,21 +1,24 @@
 function outputVoltage = helperHarmonicDistortion(inputVoltage)
-//helperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m
-//Calling Sequence
+// HelperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m
+// 
+// Syntax
 // outputVoltage=helperHarmonicDistortionAmplifier(inputVoltage)
-//Description
-//Analizing the harmonic distortion of a weakly non-linear system in the presence of noise.
-//Example
-//VmaxPk = 2;
-//Fi = 2000;
-//Fs = 44.1e3;
-//Tstop = 50e-3;
-//t = 0:1/Fs:Tstop;
-//inputVmax = VmaxPk*sin(2*%pi*Fi*t);z
-//outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
-//plot(t, outputVmax);replot([0,-2.5,0.005,2.5]);
-//xlabel('Time')
-//ylabel('Output Voltage')
-//title('Amplifier output')
+// 
+// Description
+// Analizing the harmonic distortion of a weakly non-linear system in the presence of noise.
+// 
+// Example
+// VmaxPk = 2;
+// Fi = 2000;
+// Fs = 44.1e3;
+// Tstop = 50e-3;
+// t = 0:1/Fs:Tstop;
+// inputVmax = VmaxPk*sin(2*%pi*Fi*t);z
+// outputVmax = helperHarmonicDistortionAmplifier(inputVmax);
+// plot(t, outputVmax);replot([0,-2.5,0.005,2.5]);
+// xlabel('Time')
+// ylabel('Output Voltage')
+// title('Amplifier output')
 
 // model parameters
 noiseVrms = 0.4e-6;  // RMS voltage of input noisefloor

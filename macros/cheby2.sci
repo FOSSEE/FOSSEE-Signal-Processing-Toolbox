@@ -39,13 +39,7 @@ function [a, b, c, d] = cheby2(n, rs, w, varargin)
 //
 // Examples
 // [z, p, g] = cheby2(2, 5, 0.7, "high")
-// Output:
-// g =
-//    0.4752770
-// p =
-//  -0.3938806 + 0.5313815i  -0.3938806 - 0.5313815i
-// z =
-//  -0.3164543 - 0.9486078i  -0.3164543 + 0.9486078i
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

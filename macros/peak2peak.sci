@@ -1,24 +1,34 @@
 function [Y] = peak2peak(X, dim)
-	//  peak2peak finds the maximum-to-minimum difference
-	// Calling Sequence
-	//	Y=peak2peak(X)
-	//	Y=peak2peak(X,dim)
-	// Parameters
-	//	X: Real or complex valued input vector or matrix. 
-	//	dim: Dimension to compute maximum-to-minimum difference (Row/Column)
-	// Description
-	//	Y= peak2peak(X) returns the difference between maximum and minimum values in X, operating along the first non-singleton
-	//	dimension of X by default. 
-	//	Y= peak2peak(X,dim) returns the maximum-to-minimum difference in X, along dimension dim.
-	// Examples
-	//  1.  t = 0:0.001:1-0.001;
-	//	x = cos(2*pi*100*t);
-	//	y = peak2peak(x)
-	//  2.  t = 0:0.001:1-0.001;
-	//	x = (1:4)'*cos(2*pi*100*t);
-	//	y = peak2peak(x,2)
-	// Authors
-	// 	Rahul Dalmia
+// Compute the maximum-to-minimum difference (peak-to-peak).
+//
+// Syntax
+//   Y = peak2peak(X)
+//   Y = peak2peak(X, dim)
+//
+// Parameters
+// X: Real or complex-valued input vector or matrix.
+// dim: (optional) Dimension along which to compute the maximum-to-minimum difference.
+//
+// Description
+// The `peak2peak` function computes the difference between the maximum and minimum values in `X`. 
+// By default, it operates along the first non-singleton dimension of `X`. If the `dim` parameter is provided, 
+// the computation is performed along the specified dimension.
+//
+// Examples
+// // Compute peak-to-peak difference for a vector:
+//    t = 0:0.001:1-0.001;
+//    x = cos(2 * %pi * 100 * t);
+//    y = peak2peak(x)
+//
+// // Compute peak-to-peak difference along a specific dimension:
+//    t = 0:0.001:1-0.001;
+//    x = (1:4)' * cos(2 * %pi * 100 * t);
+//    y = peak2peak(x, 2)
+//
+// Authors
+// Rahul Dalmia
+// Debdeep Dey
+	
 	//function only accepts real values due to limitations of the 'max' function in Scilab
 	//Modifications made by Debdeep Dey
 	

@@ -16,9 +16,7 @@ function R = circshift(M, d)
 // Examples
 // M = [1, 2, 3, 4];
 // circshift(M, [0, 1])
-// Output:
-// ans =
-//    4.    1.    2.    3.
+// 
 
   if argn(2)==0
       error("Invalid input")

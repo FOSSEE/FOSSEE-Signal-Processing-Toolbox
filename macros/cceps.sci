@@ -14,10 +14,7 @@ function y = cceps(x, correct)
 //
 // Examples
 // cceps([1, 2, 3], 1)
-// ans =
-//    1.9256506
-//    0.9634573
-//   -1.0973484
+// 
 
   if(argn(2) < 1 | argn(2) > 2)
     error("Wrong number of input arguments.");

@@ -12,14 +12,7 @@ function w = barthannwin(m)
 //
 // Examples
 // w = barthannwin(5)
-// Output:
-// w =
-//    0.0000
-//    0.5000
-//    1.0000
-//    0.5000
-//    0.0000
-
+// 
  funcprot(0);
     rhs= argn(2);
 

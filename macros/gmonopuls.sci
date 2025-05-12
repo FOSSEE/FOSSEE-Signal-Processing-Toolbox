@@ -10,20 +10,22 @@
 // Email: toolbox@scilab.in
 
 function y = gmonopuls(t, fc )
-// Calling Sequence
+// Gaussian monopulse of amplitude unity.
+// 
+// Syntax
 //	[y]=gmonopuls(t)
 //	[y]=gmonopuls(t,fc)
+// 
 // Parameters
-//	t: Real or complex valued vector or matrix
-//	fc: Real non-negative value or complex value or a vector or matrix with not all real values negative.
+// t: Real or complex valued vector or matrix
+// fc: Real non-negative value or complex value or a vector or matrix with not all real values negative.
+// 
 // Description
-//	This is an Octave function
-//	This function returns samples of the Gaussian monopulse of amplitude unity.
+// This function returns samples of the Gaussian monopulse of amplitude unity.
+// 
 // Examples
-// 1.	gmonopuls([1 2 3],0.1)
-//	ans= 0.85036   0.94070   0.52591
-// 2.	gmonopuls([1 2 3],[])
-//	ans= 0 0 0
+// gmonopuls([1 2 3],0.1)
+// 
 
 
 

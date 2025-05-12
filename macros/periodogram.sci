@@ -11,42 +11,59 @@
 // Email: toolbox@scilab.in
 
 function [pxx, f] = periodogram (x, varargin)
-    //Calling Sequence:
-    //[PXX, F] = periodogram (X, WIN, NFFT, FS)
-    //[PXX, F] = periodogram (..., "RANGE")
-    //     The possible inputs are:
-    //
-    //     X
-    //
-    //          data vector.  If X is real-valued a one-sided spectrum is
-    //          estimated.  If X is complex-valued, or "RANGE" specifies
-    //          "twosided", the full spectrum is estimated.
-    //
-    //     WIN
-    //          window weight data.  If window is empty or unspecified a
-    //          default rectangular window is used.  Otherwise, the window is
-    //          applied to the signal ('X .* WIN') before computing the
-    //          periodogram.  The window data must be a vector of the same
-    //          length as X.
-    //
-    //     NFFT
-    //          number of frequency bins.  The default is 256 or the next
-    //          higher power of 2 greater than the length of X ('max (256,
-    //          2.^nextpow2 (length (x)))').  If NFFT is greater than the
-    //          length of the input then X will be zero-padded to the length
-    //          of NFFT.
-    //
-    //     FS
-    //          sampling rate.  The default is 1.
-    //
-    //     RANGE
-    //          range of spectrum.  "onesided" computes spectrum from
-    //          [0..nfft/2+1].  "twosided" computes spectrum from [0..nfft-1].
-    //
-    //
-    // Dependencies
-    // hamming fft1
-    
+// Compute the periodogram power spectral density estimate.
+//
+// Syntax
+//   [Pxx, f] = periodogram(x)
+//   [Pxx, f] = periodogram(x, win)
+//   [Pxx, f] = periodogram(x, win, nfft)
+//   [Pxx, f] = periodogram(x, win, nfft, fs)
+//   [Pxx, f] = periodogram(x, win, nfft, fs, range)
+//
+// Parameters
+// x: Real or complex-valued input signal (vector).
+// win: (optional) Window applied to the signal. If empty or unspecified, a rectangular window is used.
+// nfft: (optional) Number of frequency bins. Default is 256 or the next power of 2 greater than the length of `x`.
+// fs: (optional) Sampling rate. Default is 1.
+// range: (optional) Spectrum range. Options are "onesided" (default for real signals), "twosided", or "centered".
+//
+// Description
+// The `periodogram` function computes the power spectral density (PSD) of a signal using the periodogram method. 
+// It supports various configurations for windowing, FFT length, sampling rate, and spectrum range.
+//
+// Examples
+// // Compute periodogram for a sine wave:
+//    t = 0:0.01:1;
+//    x = sin(2 * %pi * 10 * t);
+//    periodogram(x);
+//
+// // Compute periodogram with a Hamming window:
+//    x = cos(0:0.01:1);
+//    win = hamming(101);
+//    periodogram(x, win);
+//
+// // Compute periodogram with specified FFT length:
+//    x = tan(0:0.01:1);
+//    nfft = 512;
+//    periodogram(x, [], nfft);
+//
+// // Compute periodogram with sampling rate:
+//    t = 0:0.01:1;
+//    x = sin(2 * %pi * 10 * t);
+//    Fs = 100;
+//    periodogram(x, [], [], Fs);
+//
+// // Compute one-sided and two-sided periodograms:
+//    x = sin(0:0.01:1);
+//    periodogram(x, [], [], [], 'onesided');
+//    periodogram(x, [], [], [], 'twosided');
+//
+// See also
+// hamming
+//  fft1
+//
+// Bibliography
+// [1] Stoica, P., & Moses, R. L. (2005). Spectral Analysis of Signals. Pearson Prentice Hall.
     [nargout,nargin]=argn();
       // check input arguments
       if (nargin < 1 | nargin > 5)
@@ -178,7 +195,7 @@ function [pxx, f] = periodogram (x, varargin)
 endfunction
 
 /*
-pi = %pi; // ezecute on scilab  only
+pi = %pi;
 
 t = 0:0.01:1;
 x = sin(2*pi*10*t); 

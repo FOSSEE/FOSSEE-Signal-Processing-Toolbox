@@ -11,43 +11,53 @@
 // Email: toolbox@scilab.in
 
 function [s,g] = cell2sos(c)
-//     Calling Sequence :
-//     sos = cell2sos(cll)
-//     [sos,g] = cell2sos(cll)
-// Description 
-//     sos = cell2sos(cll) generates a matrix sos containing the coefficients of the filter system described by the second-order section cell array cll.
-//     [sos,g] = cell2sos(cll) also returns the scale gain g.
-//     Second-order section cell-array representation, specified as a cell array.
-// Input Argument:    
-//     For a filter system with L sections, specify 'cll' using this structure:
-//     * Cell array with L elements — For unity-gain filter systems. Each element of the cell 
-//       array corresponds to a second-order section. The kth cell array element of 'cll'
-//         cll{k} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
-//       contains the coefficients from the kth second-order-section of the filter system H(z):
-//         H(z) = product(k=1 to L) H_k(z) 
-//              = product(k=1 to L) (b_0k + b_1k*z^(-1) + b_2k*z^(-2))/(1 + a_1k*z^(-1) + a_2k*z^(-2))
-//     * Cell array with L+1 elements — If the gain of the filter system is different from 1. 
-//       The first element of 'cll' contains the system gains at the numerator (g_n) and at 
-//       the denominator (g_d). Then, the function appends each element of the cell array for 
-//       the corresponding second-order section.
-//       The first and the k+1th cell array element of 'cll'
-//         cll{1} = {g_n g_d}
-//         cll{k+1} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
-//       contain the system gain and the coefficients from the kth second-order section of 
-//       the filter system H(z), respectively, such that:
-//         H(z) = (g_n/g_d) * product(k=1 to L) H_k(z)
-//              = (g_n/g_d) * product(k=1 to L) (b_0k + b_1k*z^(-1) + b_2k*z^(-2))/(1 + a_1k*z^(-1) + a_2k*z^(-2))
-// Output Argument:             
-//          Second-order section representation, returned as an L-by-6 matrix, where L is the 
-//          number of second-order sections. The matrix
-//            sos = [b_01  b_11  b_21   1   a_11  a_21]
-//                  [b_02  b_12  b_22   1   a_12  a_22]
-//                  [  ⋮     ⋮     ⋮     ⋮    ⋮     ⋮ ]
-//                  [b_0L  b_1L  b_2L   1   a_1L  a_2L]
-//          represents the second-order sections of H(z):
-//            H(z) = g * product(k=1 to L) H_k(z)
-//                 = g * product(k=1 to L) (b_0k + b_1k*z^(-1) + b_2k*z^(-2))/(1 + a_1k*z^(-1) + a_2k*z^(-2))
-// 
+// Convert a second-order section cell array to a second-order section matrix.
+//
+// Syntax
+//   sos = cell2sos(cll)
+//   [sos, g] = cell2sos(cll)
+//
+// Parameters
+// cll: Cell array. Represents the second-order section representation of the filter system.
+// sos: Matrix. The second-order section representation of the filter system, returned as an L-by-6 matrix:
+// g: Scalar. The overall gain of the filter system.
+//
+// Description
+// This function converts a second-order section cell array `cll` into a second-order section matrix `sos`. If the gain of the filter system is different from 1, the function also returns the scale gain `g`.
+//       For a filter system with L sections and unity gain, `cll` is a cell array with L elements:
+//        cll{k} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
+//        where each element contains the coefficients of the kth second-order section of the filter system H(z):
+//        H(z) = product(k=1 to L) H_k(z)
+//             = product(k=1 to L) (b_0k + b_1k*z^(-1) + b_2k*z^(-2))/(1 + a_1k*z^(-1) + a_2k*z^(-2))
+//       For a filter system with gain different from 1, `cll` is a cell array with L+1 elements:
+//        cll{1} = {g_n g_d}
+//        cll{k+1} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
+//        where g_n and g_d are the numerator and denominator gains, respectively, and the remaining elements represent the second-order sections.
+//        H(z) = (g_n/g_d) * product(k=1 to L) H_k(z)
+//     And sos = [b_01  b_11  b_21   1   a_11  a_21]
+//            [b_02  b_12  b_22   1   a_12  a_22]
+//            [  ⋮     ⋮     ⋮     ⋮    ⋮     ⋮ ]
+//            [b_0L  b_1L  b_2L   1   a_1L  a_2L]
+//      where each row represents the coefficients of a second-order section.
+//
+// Examples
+// cll = {{[3 6 7] [1 1 2]} 
+//        {[1 4 5] [1 9 3]}
+//        {[2 7 1] [1 7 8]}};
+// sos = cell2sos(cll)
+//
+// cll = {{1 2} {[3 6 7] [1 1 2]} 
+//        {[1 4 5] [1 9 3]}
+//        {[2 7 1] [1 7 8]}};
+// [sos, g] = cell2sos(cll)
+//
+// See also
+//  sos2cell
+//
+// Authors
+//  Abinash Singh (abinashlalotra@gmail.com)
+//
+
 
 
        if(argn(2)~=1) then

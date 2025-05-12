@@ -1,18 +1,21 @@
 function y = ifftshift1(x, dim)
-//Undo the action of the 'fftshift1' function.
-//Calling Sequence:
-// ifftshift1(x)
-// ifftshift1(x, dim)
-//Parameters:
-//x- It is a vector of N elements corresponding to time samples
-//dim- The optional DIM argument can be used to limit the dimension along which the permutation occurs
-//Description:
-//Undoes the action of the 'fftshift1' function. For 'x' of even length 'fftshift1' is its own inverse, but odd lengths differ slightly.
-//Examples:
-//x = [1, 2, 3, 4];
-//ifftshift1(fftshift1(x));
-//ans =
-//[1, 2, 3, 4];
+// Undo the action of the 'fftshift1' function.
+//
+// Syntax
+//   y = ifftshift1(x)
+//   y = ifftshift1(x, dim)
+//
+// Parameters
+// x: Input vector or matrix corresponding to time samples.
+// dim: (optional) Dimension along which the permutation occurs. Default is the first non-singleton dimension.
+//
+// Description
+// Undoes the action of the 'fftshift1' function. For inputs of even length, 'fftshift1' is its own inverse, but odd lengths differ slightly.
+//
+// Examples
+// x = [1, 2, 3, 4];
+// ifftshift1(fftshift1(x))
+// 
 
   funcprot(0);
   rhs = argn(2);

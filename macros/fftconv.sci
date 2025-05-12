@@ -15,8 +15,6 @@ function y = fftconv(X,Y ,n)
 //
 // Examples
 // fftconv([1,2,3], [3,4,5])
-//    ans = 
-//        3.    10.    22.    22.    15. 
 // 
 // See also
 // fft

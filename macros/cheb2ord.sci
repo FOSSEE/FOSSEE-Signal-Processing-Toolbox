@@ -40,11 +40,7 @@ function [n, Wc] = cheb2ord(Wp, Ws, Rp, Rs)
 // Rp = 3;
 // Rs = 60;
 // [n, Ws] = cheb2ord(Wp, Ws, Rp, Rs)
-// Output:
-// Ws =
-//    0.3
-// n =
-//    4.
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

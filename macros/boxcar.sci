@@ -12,12 +12,7 @@ function w = boxcar(m)
 //
 // Examples
 // w = boxcar(5)
-// w =
-//    1.
-//    1.
-//    1.
-//    1.
-//    1.
+// 
 
 funcprot(0);
 rhs= argn(2);

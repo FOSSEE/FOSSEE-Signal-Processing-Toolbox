@@ -22,8 +22,6 @@ function varargout = arburg(x, poles, criterion)
 //
 // Examples
 // arburg([1, 2, 3, 4, 5], 2)
-// ans =
-//    1.  -1.8639053    0.9571006
 //
 
 funcprot(0);

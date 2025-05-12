@@ -1,20 +1,27 @@
 function ismin=isminphase(varargin)
-//isminphase Determine whether filter is minimum phase or not
-// Description : It determines whether the given system function is minimum phase system or not . Minimum phase system means all zeros of transfer function will be inside the unit circle in z-plane , also poles mustbe within unit circle for stability and causality
-//Syntax
-//flag = isminphase(b,a)
-//flag = isminphase(sos)
-//flag = isminphase(...,tol)
-// b and a are the vectors containing numerator and denumerator coefficients respectively
-//tol, tolerance is used to determine when two numbers are close enough to be considered equal.
-//Example : of minimum phase system
-//flag = isminphase([1 -0.3 0.02],1)
-//Output
-// flag =
+// Determine whether a filter is minimum phase.
 //
-// 1.
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Syntax
+//   flag = isminphase(b, a)
+//   flag = isminphase(sos)
+//   flag = isminphase(..., tol)
+//
+// Parameters
+// b: Numerator coefficients of the filter.
+// a: Denominator coefficients of the filter.
+// sos: K x 6 second-order section matrix.
+// tol: (optional) Tolerance used to determine when two numbers are close enough to be considered equal.
+//
+// Description
+// The `isminphase` function determines whether the given system function is a minimum phase system. 
+// A minimum phase system means all zeros of the transfer function are inside the unit circle in the z-plane, 
+// and all poles must be within the unit circle for stability and causality.
+//
+// Examples
+// flag = isminphase([1 -0.3 0.02], 1)
+// 
+// Authors
+// Parthasarathi Panda ( parthasarathipanda314@gmail.com )
 
     [nargout,nargin]=argn();
     if (nargin==2) then

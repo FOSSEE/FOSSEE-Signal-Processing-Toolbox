@@ -13,8 +13,7 @@ function [s] = check(str)
 //
 // Examples
 // check("apple")
-// Output:
-// F
+// 
 
 funcprot(0);
 is_AKICc = (str == "AKICc")  

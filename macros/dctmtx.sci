@@ -25,19 +25,6 @@ function T = dctmtx(n)
 // Examples
 // n= 3;
 // T = dctmtx(n)
-// Output:
-// T  =
-//    0.5773503    0.5773503    0.5773503
-//    0.7071068    5.000D-17  - 0.7071068
-//    0.4082483  - 0.8164966    0.4082483
-//
-// See also
-//
-//
-// Authors
-//
-//
-// Bibliography
 //
 
     funcprot();

@@ -6,7 +6,6 @@ function [n, fo, ao, w] = firpmord(f, a, dev, varargin)
 // [n,fo,ao,w] = firpmord(f,a,dev)
 // [n,fo,ao,w] = firpmord(f,a,dev,fs)
 //
-// 
 // Parameters
 // f: double - positive - vector
 //      Frequency band edges (between 0 and Fs/2).
@@ -27,16 +26,15 @@ function [n, fo, ao, w] = firpmord(f, a, dev, varargin)
 // w: double - vector
 //      Weights
 //
-// 
 // Examples
-// [1] A low-pass filter
+// // A low-pass filter
 //          f = [1500 2000];        // frequency edges for bands
 //          a = [1 0];              // desired amplitude for each band
 //          dev = [0.01 0.1];       // Acceptable deviation for each band
 //          fs = 8000;              // Sampling frequency
 //          [n,fo,ao,w] = firpmord(f,a,dev,fs);
 //
-// [2] A bandstop filter
+// // A bandstop filter
 //          f = [1000 1800 2400 3000];
 //          a = [1 0 0.5];
 //          dev = [0.01 0.1 0.03];
@@ -44,7 +42,7 @@ function [n, fo, ao, w] = firpmord(f, a, dev, varargin)
 //          [n,fo,ao,w] = firpmord(f,a,dev,fs);
 //
 //
-// References
+// Bibliography
 // [1] Rabiner, Lawrence R., and Bernard Gold. "Theory and application of 
 //     digital signal processing." Englewood Cliffs, NJ, Prentice-Hall, Inc., 
 //     1975. 777 p. 156-7 (1975).

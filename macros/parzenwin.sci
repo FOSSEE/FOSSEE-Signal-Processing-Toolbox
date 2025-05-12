@@ -1,19 +1,19 @@
 function w = parzenwin (m)
-//This function returns the filter coefficients of a Parzen window.
-//Calling Sequence
-//w = parzenwin (m)
-//Parameters
-//m: positive integer value
-//w: output variable, vector of real numbers
-//Description
-//This is an Octave function.
-//This function returns the filter coefficients of a Parzen window of length m supplied as input, to the output vector y.
-//Examples
-//parzenwin(3)
-//ans  =
-//    0.0740741
-//    1.
-//    0.0740741
+// This function returns the filter coefficients of a Parzen window.
+//
+// Syntax
+// w = parzenwin (m)
+//
+// Parameters
+// m: positive integer value
+// w: output variable, vector of real numbers
+//
+// Description
+// This function returns the filter coefficients of a Parzen window of length m supplied as input, to the output vector y.
+//
+// Examples
+// parzenwin(3)
+// 
 
  funcprot(0);
     rhs= argn(2);

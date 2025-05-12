@@ -14,12 +14,7 @@ function w = blackmanharris(m, opt)
 //
 // Examples
 // w = blackmanharris(5)
-// w =
-// 6.0000e-05
-// 2.1747e-01
-// 1.0000e+00
-// 2.1747e-01
-// 6.0000e-05
+// 
 
  funcprot(0);
     rhs= argn(2);

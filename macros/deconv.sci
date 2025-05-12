@@ -33,8 +33,6 @@ function [b, r] = deconv (y, a)
 // r = [0, 0, 0, 9]
 //
 // [b, r] = deconv([3, 6], [1, 2, 3])
-// b = 0
-// r = [3, 6]
 //
 // See also
 //  filter

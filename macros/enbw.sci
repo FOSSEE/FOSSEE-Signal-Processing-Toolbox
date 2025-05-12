@@ -1,20 +1,31 @@
 function bw= enbw (window, fs)
-    // This function estimate Equivalent noise bandwidth.
-    // Calling Sequence
-    // bw=enbw(window)
-    // bw=enbw(window, fs) 
-    //  
-    // Parameters
-    // window: specify the sample window.
-    // fs: specify the sampling rate of window.
-    // bw: returns the two-sided equivalent noise bandwidth for a uniformly sampled window 
-    // Examples
-    // window=1:10
-    //fs=2.5
-    //bw=enbw(window, fs)
-    // See also
-    // Authors
-    // Jitendra Singh
+// Estimate the Equivalent Noise Bandwidth (ENBW) of a window.
+//
+// Syntax
+//   bw = enbw(window)
+//   bw = enbw(window, fs)
+//
+// Parameters
+// window: Vector. Specifies the sample window.
+// fs: Positive scalar (optional). Specifies the sampling rate of the window. Default is 1.
+// bw: Scalar. Returns the two-sided equivalent noise bandwidth for a uniformly sampled window.
+//
+// Description
+// This function estimates the Equivalent Noise Bandwidth (ENBW) of a given window. The ENBW is calculated as the ratio of the root mean square (RMS) value of the window to its mean, squared. If the sampling rate `fs` is provided, the bandwidth is scaled accordingly.
+//
+// Examples
+// // Without sampling rate:
+//    window = 1:10;
+//    bw = enbw(window)
+// // With sampling rate:
+//    window = 1:10;
+//    fs = 2.5;
+//    bw = enbw(window, fs)
+//
+//
+// Authors
+//  Jitendra Singh
+//
 
       if isreal(window) then
           else

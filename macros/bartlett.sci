@@ -12,12 +12,6 @@ function w = bartlett(L)
 //
 // Examples
 // w = bartlett(4)
-// Output:
-// w =
-//    0.
-//    0.6666667
-//    0.6666667
-//    0.
 //
 // Authors
 // Ankur Mallick

@@ -19,8 +19,7 @@ function  [y, h] = fracshift( x, d, h )
 //
 // Examples
 // fracshift([1, 2, 3], 5)
-// ans  =
-//     1.    2.    3.  
+// 
 
 funcprot(0);
 lhs = argn(1)

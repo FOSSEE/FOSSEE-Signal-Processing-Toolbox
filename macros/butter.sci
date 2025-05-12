@@ -38,11 +38,7 @@ function [a, b, c, d] = butter(n, w, varargin)
 //
 // Examples
 // [b, a] = butter(4, 0.3, "high")
-// Output:
-// a =
-//    1.  -1.5703989    1.2756133  -0.4844034   0.0761971
-// b =
-//    0.2754133  -1.1016532    1.6524797  -1.1016532  0.2754133
+// 
 
     funcprot();
     [nargout  nargin] = argn();

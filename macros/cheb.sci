@@ -14,8 +14,7 @@ function T = cheb(n, x)
 //
 // Examples
 // T = cheb(3, 0.5)
-// Output:
-// T = -1
+// 
 
  funcprot(0);
     rhs= argn(2);

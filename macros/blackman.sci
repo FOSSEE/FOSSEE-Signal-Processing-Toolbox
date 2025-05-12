@@ -14,12 +14,7 @@ function w = blackman(N, sflag)
 //
 // Examples
 // w = blackman(4)
-// w =
-//  -1.388D-17
-//   0.63
-//   0.63
-//  -1.388D-17
-//
+// 
 // Authors
 // Ankur Mallick
 //

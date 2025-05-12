@@ -13,10 +13,7 @@ function contRange = clustersegment(xhi)
 //
 // Examples
 // y = clustersegment([0, 1, 0, 0, 1, 1])
-// Output:
-// y =
-//    2.    5.  
-//    2.    6.
+// 
 
   funcprot(0);
   if (argn(2) ~= 1)

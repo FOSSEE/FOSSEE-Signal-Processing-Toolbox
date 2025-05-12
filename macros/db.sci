@@ -19,14 +19,8 @@ function [dboutput] = db(X, SignalType, R)
 // dboutput = db(X,R) specifies the resistance R for voltage measurements. You can specify a resistance only when the signal measurements are voltages.
 // dboutput = db(X,'voltage',R) specifies the resistance R for voltage measurements. This syntax is equivalent to db(X,R).
 //
-// Examples
-//
-//
-// See also
-//
-//
 // Authors
-// Author : Pratik Kapoor
+// Pratik Kapoor
 // 
 
 

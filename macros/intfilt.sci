@@ -1,24 +1,23 @@
 function [h, a]= intfilt(R, L, freqmult)
     // This function estimate Interpolated FIR Filter Design.
-    // Calling Sequence
+    // 
+    // Syntax
     // h=intfilt(R,L,freqmult)
     // [h a]=intfilt(R,L,freqmult)
+    //
     // Parameters
     // R: Samples. It should be numeric
     // L: bandlimited interpolation samples. It must be nonzero.
     // freqmult: bandlimitedness of ALPHA times the Nyquist frequency, IT can be numeric or character ('B' or 'L', B is length
     //   (N+1)*L-1 for N odd and (N+1)*L for N even)
     // h:  linear phase FIR filter.
+    // 
     // Examples
     // h=intfilt(20,10,'l')     // The output of this example has 220 columns ,so it is difficult to write it here.
     // h=intfilt(20,10,1)     // The output of this example has 220 columns ,so it is difficult to write it here.
-    //h1=intfilt(2,3,'l');
-    //OUTPUT :
-    //               - 0.0625    0.    0.5625    1.    0.5625    0.  - 0.0625
+    // h1=intfilt(2,3,'l');
     //h2=intfilt(4,1,1);
-    //OUTPUT :
-    //               0.3001054    0.6366198    0.9003163    1.    0.9003163    0.6366198    0.3001054
-    // See also
+    // 
     // Authors
     // Jitendra Singh
 

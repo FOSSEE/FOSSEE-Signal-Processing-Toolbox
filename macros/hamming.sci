@@ -1,4 +1,32 @@
 function c = hamming (m, opt)
+// Generate the filter coefficients of a Hamming window.
+//
+// Syntax
+//   c = hamming(m)
+//   c = hamming(m, "periodic")
+//   c = hamming(m, "symmetric")
+//
+// Parameters
+// m: the length of the Hamming window. Must be a positive integer.
+// opt: (optional) specifies the type of the window. Can be "periodic" or "symmetric".
+//
+// Description
+// Return the filter coefficients of a Hamming window of length m.
+//
+// If the optional argument "periodic" is given, the periodic form of the window is returned. 
+// This is equivalent to the window of length m+1 with the last coefficient removed. 
+// The optional argument "symmetric" is equivalent to not specifying a second argument.
+//
+// For a definition of the Hamming window, see, e.g., A.V. Oppenheim & R. W. Schafer, 
+// Discrete-Time Signal Processing.
+//
+// Examples
+// c = hamming(10)
+// c = hamming(10, "periodic")
+// c = hamming(10, "symmetric")
+//
+// Bibliography
+//   A.V. Oppenheim & R. W. Schafer, Discrete-Time Signal Processing
 
  funcprot(0);
     rhs= argn(2);

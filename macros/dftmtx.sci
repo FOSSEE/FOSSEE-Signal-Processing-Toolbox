@@ -24,21 +24,6 @@ function [d]=dftmtx(n)
 //
 // Examples
 // d = dftmtx(4)
-// Output:
-// d  =
-//    1.    1.     1.    1.
-//    1.  - i    - 1.    i
-//    1.  - 1.     1.  - 1.
-//    1.    i    - 1.  - i
-//
-// See also
-//
-//
-// Authors
-//
-//
-// Bibliography
-//
 //
 
 

@@ -1,25 +1,28 @@
 function myfwhm = fwhmjlt(y, varargin)
-//This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
-//Calling Sequence:
-//f = fwhmjlt(y)
-//f = fwhmjlt(x, y)
-//f = fwhmjlt(…, "zero")
-//f = fwhmjlt(…, "min")
-//f = fwhmjlt(…, "alevel", level)
-//f = fwhmjlt(…, "rlevel", level)
-//Parameters:
-//y- vector or matrix. If y is a matrix, fwhm is calculated for each column as a row vector.
-//The second argument is by default "zero" which computes the fwhm at half maximum. If it is "min", fwhm is computed at middle curve.
-//The option "rlevel" computes full-width at the given relative level of peak profile.
-//The option "alevel" computes full-width at the given absolute level of y.
-//Description:
-//This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
-//This function returns 0 if FWHM does not exist.
-//Examples:
-//t=-50:0.01:50;
-//y=(1/(2*sqrt(2*%pi)))*exp(-(t.^2)/8);
-//z=fwhmjlt(y)
-//Output: 470.96442
+// This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
+// Syntax
+// f = fwhmjlt(y)
+// f = fwhmjlt(x, y)
+// f = fwhmjlt(…, "zero")
+// f = fwhmjlt(…, "min")
+// f = fwhmjlt(…, "alevel", level)
+// f = fwhmjlt(…, "rlevel", level)
+// 
+// Parameters
+// 
+// Description
+// This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.
+// This function returns 0 if FWHM does not exist.
+// y : vector or matrix. If y is a matrix, fwhm is calculated for each column as a row vector.
+// The second argument is by default "zero" which computes the fwhm at half maximum. If it is "min", fwhm is computed at middle curve.
+// The option "rlevel" computes full-width at the given relative level of peak profile.
+// The option "alevel" computes full-width at the given absolute level of y.
+// 
+// Examples
+// t=-50:0.01:50;
+// y=(1/(2*sqrt(2*%pi)))*exp(-(t.^2)/8);
+// z=fwhmjlt(y)
+// 
 
   funcprot(0);
   if nargin < 1 || nargin > 5

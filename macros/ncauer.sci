@@ -10,30 +10,26 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-    //Analog prototype for Cauer filter (Cauer filter and elliptic filters are same).
-    //Calling Sequence
-    //[Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-    //Parameters
-    //n: Filter Order
-    //Rp: Peak-to-peak passband ripple in dB
-    //Rs: Stopband attenuation in dB
-    //Description
-    //It gives an analog prototype for Cauer filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
-    //Examples
-    //n = 5;
-    //Rp = 5;
-    //Rs = 5;
-    //[Zz, Zp, Zg] = ncauer(Rp, Rs, n)
-    //Zz =
+    // Analog prototype for Cauer filter (Cauer filter and elliptic filters are same).
     //
-    //   0.0000 + 2.5546i   0.0000 + 1.6835i  -0.0000 - 2.5546i  -0.0000 - 1.6835i
+    // Syntax
+    // [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
+    // 
+    // Parameters
+    // n: Filter Order
+    // Rp: Peak-to-peak passband ripple in dB
+    // Rs: Stopband attenuation in dB
+    // 
+    // Description
+    // It gives an analog prototype for Cauer filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
     //
-    //Zp =
-    //
-    //  -0.10199 + 0.64039i  -0.03168 + 0.96777i  -0.10199 - 0.64039i  -0.03168 - 0.96777i  -0.14368 + 0.00000i
-    //
-    //Zg =  0.0030628
-    // Dependencies
+    // Examples
+    // n = 5;
+    // Rp = 5;
+    // Rs = 5;
+    // [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
+    // 
+    // See also
     // ellipap
     
     funcprot(0);

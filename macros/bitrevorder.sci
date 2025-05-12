@@ -27,11 +27,6 @@ function [y, i] = bitrevorder(x)
 // Examples
 // x = [%i, 1, 3, 6*%i];
 // [y, i] = bitrevorder(x)
-// Output:
-// i =
-//    1.    3.    2.    4.
-// y =
-//    i      3.    1.    6.i
 //
 // See also
 // digitrevorder

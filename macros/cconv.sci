@@ -18,15 +18,6 @@ function o = cconv(a, b, n)
 // a = [1, 2, 3];
 // b = [4, 5, 6];
 // o = cconv(a, b, 3)
-// Output:
-// o = 31.    31.    28.
-//
-// a = [1, 2 + %i, 4];
-// b = [2, 3*%i, 5];
-// o = cconv(a, b)
-// o = clean(o)
-// o = 
-// 2.    4. + 5.i    10. + 6.i    10. + 17.i    20.
 //
 // Authors
 // Parthasarathi Panda (parthasarathipanda314@gmail.com)

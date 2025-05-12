@@ -21,13 +21,7 @@ function y = arch_rnd(a, b, t)
 // b = [7, 8, 9, 10];
 // t = 5;
 // y = arch_rnd(a, b, t)
-// Output:
-// ans =
-//    7.2113249
-//    65.479684
-//    654.00814
-//    7194.6572
-//    78364.905
+//
 
   funcprot(0);
   [nargout, nargin] = argn() ;

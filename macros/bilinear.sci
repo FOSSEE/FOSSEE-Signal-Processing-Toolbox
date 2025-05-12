@@ -39,11 +39,6 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
 //
 // Examples
 // [b, a] = bilinear([1, 2, 3], [4, 5, 6], 1, 1)
-// Output:
-// a =
-//    1.    7.3333333    17.666667    14.
-// b =
-//    0.  -0.1666667  -0.3333333    2.5
 //
 // See also
 // tf2zp

@@ -15,9 +15,6 @@ function y= fractdiff(x,d)
 // Examples
 // y = fractdiff([1, 2, 3, 4], 0.5)
 //
-// See also
-//  fftfilt
-//
 
 if(argn(2)~=2)
 	error("Wrong number of input arguments");

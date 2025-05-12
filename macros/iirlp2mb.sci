@@ -12,9 +12,11 @@
 
 function [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(varargin)
 // IIR Low Pass Filter to Multiband Filter Transformation
-// Calling Sequence
+// 
+// Syntax
 // [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt)
 // [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt,Pass)
+// 
 // Parameters
 // Num,Den:               numerator,denominator of the transformed filter
 // AllpassNum,AllpassDen: numerator,denominator of allpass transform,
@@ -23,7 +25,7 @@ function [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(varargin)
 // Wt:                    [phi=normalized_angular_frequencies]/pi target vector
 // Pass:                  This parameter may have values 'pass' or 'stop'.  If
 //                        not given, it defaults to the value of 'pass'.
-//Description
+// Description
 // With normalized ang. freq. targets 0 < phi(1) <  ... < phi(n) < pi radians
 //
 // for Pass == 'pass', the target multiband magnitude will be:

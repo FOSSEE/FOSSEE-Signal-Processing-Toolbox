@@ -14,12 +14,7 @@ function w = blackmannuttall(m, opt)
 //
 // Examples
 // blackmannuttall(5, "symmetric")
-// ans =
-//    0.0003628
-//    0.2269824
-//    1.
-//    0.2269824
-//    0.0003628
+// 
 
  funcprot(0);
     rhs= argn(2);

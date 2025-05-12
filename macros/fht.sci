@@ -19,8 +19,6 @@ function M = fht(D, N, DIM)
 //
 // Examples
 // M = fht(1:4)
-// ans =
-// 10   -4   -2   0  
 //
 // See also
 //  fft
