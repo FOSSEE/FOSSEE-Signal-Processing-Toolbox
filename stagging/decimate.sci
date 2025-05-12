@@ -1,36 +1,35 @@
-function y = decimate(x, r, varargin)
-// Short description on the first line following the function header.
+function y = decimate(x, q, n, ftype)
+//Decimation — decrease sample rate by integer factor
+//Calling Sequence
+//y = decimate(x,q)
+//y = decimate(x,q,n)
+// y = decimate (…, "fir")
+//Parameters
+//x: input sequence
+//q: reduction factor
+//n : filter order
+//ftype: filter type : iir or fir
+//Description
+//this is an octave function
+//y = decimate(x,q) reduces the sample rate of x, the input signal, by a factor of q.
+//By default, an order n Chebyshev type I filter is used. If n is not specified, the default is 8.
+//If the optional argument "fir" is given, an order n FIR filter is used, with a default order of 30 if n is not given.
+//Note that q must be an integer for this rate change method.
 //
-// Syntax
-//   y = decimate(x, r)
-//   y = decimate(x, r, n)
-//   y = decimate(x, r, n, 'fir')
-//
-// Parameters
-// x: Input signal vector.
-// r: Decimation factor.
-// n: Filter order. Default is 8.
-// y: Decimated signal.
-//
-// Description
-// This function reduces the sampling rate of a signal by a factor of `r` using an anti-aliasing filter.
-//
-// Examples
-// y = decimate([1, 2, 3, 4, 5], 2)
-//
-// See also
-//  resample, interp
-//
-// Authors
-//  Author name ; should be listed one pr line. Use ";" to separate names from additional information 
-//
-// Bibliography
-//   Literature references one pr. line
+//Example :
+//t = 0:.00025:1;
+//x = sin(2*%pi*30*t) + sin(2*%pi*60*t);
+//y = decimate(x,4);
+//subplot(211);
+//plot2d3((0:120),x(1:121));
+//subplot(212);
+//plot2d3((0:30),y(1:31));
+//This will result in plots of original sequence v/s sample number and decimated sequence v/s sample number
 
 rhs = argn(2)
 if(rhs<2 | rhs>4)
 error("Wrong number of input arguments.")
-elseif(~(sum(length(r)==1) & r == fix (r) & r > 0))
+elseif(~(sum(length(q)==1) & q == fix (q) & q > 0))
 error("Parameter 2 must be a positive integer.")
 end
 //if (nargin < 3)
@@ -66,10 +65,10 @@ error("N must be a positive integer.")
 end
 select(rhs)
 case 2 then
-y = callOctave("decimate", x, r)
+y = callOctave("decimate", x, q)
 case 3 then
-y = callOctave("decimate", x, r, n)
+y = callOctave("decimate", x, q, n)
 case 4 then
-y = callOctave("decimate", x, r, n, ftype)
+y = callOctave("decimate", x, q, n, ftype)
 end
 endfunction
