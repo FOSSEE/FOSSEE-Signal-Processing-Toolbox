@@ -1,4 +1,40 @@
 function b = fir2(n, f, m, grid_n, ramp_n, window_in)
+// Design an FIR filter with an arbitrary frequency response.
+//
+// Syntax
+//   b = fir2(n, f, m)
+//   b = fir2(n, f, m, grid_n)
+//   b = fir2(n, f, m, grid_n, ramp_n)
+//   b = fir2(n, f, m, grid_n, ramp_n, window)
+//
+// Parameters
+// n: Order of the filter.
+// f: Vector of normalized frequency points (values between 0 and 1, where 1 corresponds to the Nyquist frequency). 
+//    - Must be nondecreasing, starting at 0 and ending at 1.
+//    - Discontinuous jumps in the frequency response can be specified by duplicating a band edge in `f` with different values in `m`.
+// m: Vector of magnitude values corresponding to the frequency points in `f`. Must be the same length as `f`.
+// grid_n: (optional) Number of grid points for interpolation. Default is 512 or the next power of 2 greater than `n+1`.
+// ramp_n: (optional) Width of the ramp applied to discontinuities in the frequency response. Default is `grid_n / 25`.
+// window: (optional) Window function to shape the filter. If not specified, a Hamming window of length `n+1` is used.
+//
+// Outputs
+// b: Vector containing the FIR filter coefficients.
+//
+// Description
+// The `fir2` function designs an FIR filter of order `n` with an arbitrary frequency response specified by the vectors `f` and `m`. 
+// The filter is designed using the frequency sampling method, where the desired frequency response is interpolated onto a grid 
+// and transformed into the time domain. An optional window can be applied to shape the filter.
+//
+// Examples
+// // Design a filter with a discontinuous frequency response
+//    f = [0, 0.3, 0.3, 0.6, 0.6, 1];
+//    m = [0, 0, 1, 0.5, 0, 0];
+//    [h, w] = freqz(fir2(100, f, m));
+//    plot(f, m, , w / %pi, abs(h));
+//    legend("target response","filter response");
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
 
  funcprot(0);
     rhs= argn(2);

@@ -35,7 +35,7 @@ end
 if isvector(R) then
     R = R(:);
 
-    [x, y, z] = levin(R);
+    [x, y, z] = _levin(R);
     k = z;
     R0 = R;
 
@@ -44,7 +44,7 @@ else
     
     for i = 1:n(2)
         r = R(:,i);
-        [x, y, z] = levin(r);
+        [x, y, z] = _levin(r);
         kk(:,i) = z; 
     end
 

@@ -13,6 +13,20 @@ function filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb)
 // Description
 // This function designs a Gaussian pulse-shaping filter, which is a low-pass FIR filter. The filter is defined by the 3 dB bandwidth-symbol time product (`BwSt_prod`), the number of symbols (`num_of_symb`), and the number of samples per symbol (`samp_per_symb`). The filter coefficients are normalized such that their sum equals 1.
 //
+// Examples
+// // Design a Gaussian pulse-shaping filter
+// // Parameters
+// BwSt_prod = 0.3;          // Bandwidth-symbol time product
+// num_of_symb = 5;          // Number of symbols
+// samp_per_symb = 4;        // Samples per symbol
+// // Design the filter
+// filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb);
+// // Plot the filter coefficients
+// plot(filter_coeffs);
+// xlabel("Sample Index");
+// ylabel("Amplitude");
+// title("Gaussian Pulse-Shaping Filter Coefficients");
+// xgrid;
 
     // Check validity of number of inout arguments
     checkNArgin(1, 3, argn(2));

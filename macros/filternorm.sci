@@ -28,7 +28,7 @@ function L = filternorm(b,a,varargin)
 // Authors
 // Ayush Baid
 
-exec('impz.sci', -1);
+// exec('impz.sci', -1);
 
 // ** Check on number of input, output arguments
 [numOutArgs, numInArgs] = argn(0);

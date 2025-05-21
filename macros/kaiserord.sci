@@ -31,10 +31,6 @@ function [n, Wn, beta, ftype] = kaiserord (f, m, dev, fs)
 // 
 // Examples
 // [n, w, beta, ftype] = kaiserord ([1000, 1200], [1, 0], [0.05, 0.05], 11025)
-// n =  70
-// w =  0.199
-// beta =  1.5099
-// ftype = low
 // 
 
 if (argn(2) < 3 | argn(2) > 4)

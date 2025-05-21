@@ -97,7 +97,7 @@ function varargout = pmusic(varargin)
     end
 
     // ("**start**");
-    [data, msg, err_num] = subspaceMethodsInputParser(varargin);
+    [data, msg, err_num] = subspaceMethodsInputPars(varargin);
 
     if length(msg)==0 then
         // no error occured

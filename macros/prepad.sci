@@ -29,7 +29,12 @@ function res = prepad(x,l,c,dim)
 // If `c` is not provided, a value of 0 is used. If the length of `x` exceeds `l`, elements are removed from the beginning of `x` 
 // to match the desired length. If `x` is a matrix, the operation is performed along rows or columns based on the `dim` parameter.
 //
-//
+// Examples
+// // Prepend zeros to a row vector to make its length 6
+// res1 = prepad([1, 2, 3, 4], 6);
+// disp("Result 1:");
+// disp(res1); // Output: [0, 0, 1, 2, 3, 4]
+// 
 // Authors
 // Abinash Singh
 

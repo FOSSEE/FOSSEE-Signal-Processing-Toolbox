@@ -25,6 +25,13 @@ function [x_r, t_r] = impz(b, a, n, fs)
 // If n is not specified, or specified as [], it will be chosen such that the signal has a chance to die down to -120dB, or to not explode beyond 120dB, or to show five periods if there is no significant damping.
 // If no return arguments are requested, plot the results.
 //
+// Examples
+// // Define filter coefficients
+// b = [0.2];               // Numerator (feedforward)
+// a = [1, -0.8];           // Denominator (feedback)
+// // Compute impulse response
+// [x, t] = impz(b, a, 50);  // 50 samples of impulse response
+// 
 // See also
 //   fftfilt
 //   filter

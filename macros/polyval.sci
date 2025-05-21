@@ -27,15 +27,6 @@ function [y, delta] = polyval(p,x,S,mu)
 //    y = polyval(p, [5, 7, 9])
 // 
 //
-// // Evaluate with error estimation:
-//    p = [3, 2, 1];
-//    S = polyfit([1, 2, 3], [4, 5, 6], 2);
-//    [y, delta] = polyval(p, [5, 7, 9], S)
-//
-// // Evaluate with centering and scaling:
-//    p = [3, 2, 1];
-//    mu = [mean([1, 2, 3]), std([1, 2, 3])];
-//    y = polyval(p, [5, 7, 9], [], mu)
 //
 
 

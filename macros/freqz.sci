@@ -43,7 +43,7 @@ function [h_r, f_r] = freqz (b, a, n, region, Fs)
 // Examples
 // // Compute the frequency response of an FIR filter:
 //    b = [0.2929, 0.5858, 0.2929];
-//    [h, w] = freqz(b)
+//    [h, w] = freqz(b);
 //
 // // Compute the frequency response of an IIR filter:
 //    b = [0.2929, 0.5858, 0.2929];
@@ -53,17 +53,17 @@ function [h_r, f_r] = freqz (b, a, n, region, Fs)
 // // Compute the response at specific frequencies:
 //    b = [0.2929, 0.5858, 0.2929];
 //    a = [1, 0, 0.1716];
-//    w = linspace(0, pi, 100);
+//    w = linspace(0, %pi, 100);
 //    h = freqz(b, a, w)
 //
 // // Compute the response with a sampling frequency:
 //    b = [0.2929, 0.5858, 0.2929];
 //    a = [1, 0, 0.1716];
-//    [h, f] = freqz(b, a, 512, 1000)
+//    [h, f] = freqz(b, a, 512, 1000);
 //
 // // Plot the magnitude and phase response:
 //    b = [0.2929, 0.5858, 0.2929];
-//    freqz(b)
+//    freqz(b);
 //
 // See also
 // fft1

@@ -29,6 +29,12 @@ function res = postpad(x,l,c,dim)
 // If `c` is not provided, a value of 0 is used. If the length of `x` exceeds `l`, elements are removed from the end of `x` 
 // to match the desired length. If `x` is a matrix, the operation is performed along rows or columns based on the `dim` parameter.
 //
+// Examples
+// // Append -1 to a column vector to make its length 6
+// res2 = postpad([1; 2; 3; 4], 6, -1);
+// disp("Result 2:");
+// disp(res2); // Output: [1; 2; 3; 4; -1; -1]
+
   
     if nargin < 2 then 
         error("Usage :  postpad(x,l,c(optional),dim(optional))")

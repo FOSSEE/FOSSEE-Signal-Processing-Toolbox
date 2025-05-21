@@ -34,7 +34,7 @@ end
   end
   
   
-  if size(lsf,1)==1 & size(lsf,2) then
+  if size(lsf,1)==1 & size(lsf,2)==1 then
             
             error('Input should be vector of length more than one or matrix.')
             end

@@ -16,6 +16,24 @@ function [bt, sigma, r] = ols (y, x)
 //             sigma : The OLS estimator for the matrix s, sigma = (y-x*beta)'* (y-x*beta) / (t-rank(x))
 //             r : The matrix of OLS residuals, r = y - x*beta.
 // 
+//  Examples
+// // Simulated data
+// t = 100;                       // Number of observations
+// x = [ones(t, 1), rand(t, 1)];  // Design matrix: intercept + one regressor
+// b_true = [2; 3];               // True coefficients: intercept = 2, slope = 3
+// // Generate response variable with noise
+// y = x * b_true + randn(t, 1);  // y = 2 + 3*x + noise
+// // Perform OLS estimation
+// [beta, sigma, r] = ols(y, x);
+// // Display results
+// disp('Estimated Coefficients (beta):');
+// disp(beta);
+// disp('Estimated Covariance (sigma):');
+// disp(sigma);
+// disp('First 5 Residuals (r):');
+// disp(r(1:5));
+
+
 
     function [u , p] = formatted_chol(z)
       //p flags whether the matrix A was positive definite and chol does not fail. A zero value of p indicates that matrix A is positive definite and R gives the factorization. Otherwise, p will have a positive value.

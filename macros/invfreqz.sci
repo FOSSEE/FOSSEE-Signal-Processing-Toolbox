@@ -46,14 +46,6 @@ function [B, A, SigN] = invfreqz(H, F, nB, nA, W, iter, tol, tr, varargin)
 //    Hh = freqz(Bh, Ah);
 //    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 //
-// // Fit a filter with weighted frequency samples:
-//    [B, A] = butter(6, 1/2);
-//    [H, F] = freqz(B, A, 128);
-//    W = linspace(1, 2, length(F)); // Example weights
-//    [Bh, Ah] = invfreqz(H, F, 4, 4, W);
-//    Hh = freqz(Bh, Ah);
-//    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
-//
 // Authors
 // FOSSEE Team
 // toolbox@scilab.in

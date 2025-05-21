@@ -69,7 +69,7 @@ function [multp, idxp] = mpoles (p, tol, reorder)
 
   if (nargin < 3 || isempty (reorder))
     reorder = %t;
-  elseif (~(isscalar (reorder) && isreal (reorder)))
+  elseif (~(isscalar (reorder) && isreal (double(reorder))))
     error ("mpoles: REORDER must be a numeric or logical scalar");
   end
 

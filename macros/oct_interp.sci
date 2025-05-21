@@ -17,9 +17,9 @@ function y = oct_interp(x, q, varargin)
 // This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
 //
 //  Syntax
-// y = interp(x, q)
-// y = interp(x, q, n)
-// y = interp(x, q, n, Wc)
+// y = oct_interp(x, q)
+// y = oct_interp(x, q, n)
+// y = oct_interp(x, q, n, Wc)
 //
 // Parameters
 // x: scalar or vector of complex or real numbers
@@ -32,7 +32,7 @@ function y = oct_interp(x, q, varargin)
 // The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
 //
 // Examples
-// interp(1,2)
+// oct_interp(1,2)
 // 
 
  funcprot(0);

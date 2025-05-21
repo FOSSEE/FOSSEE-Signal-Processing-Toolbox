@@ -21,16 +21,8 @@ function retval = unwrap2 (x, tol, dim)
 //
 // Examples
 // // Unwrap a vector of radian phases:
-//    x = [0, π/2, π, -π, -π/2];
+//    x = [0, %pi/2, %pi, -%pi, -%pi/2];
 //    retval = unwrap2(x);
-//
-// // Unwrap with a custom tolerance:
-//    x = [0, π/2, π, -π, -π/2];
-//    retval = unwrap2(x, π/4);
-//
-// // Unwrap along a specific dimension:
-//    x = [0, π/2; π, -π];
-//    retval = unwrap2(x, π, 2);
 //
 // Authors
 // FOSSEE Team

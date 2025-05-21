@@ -11,6 +11,21 @@ function [zero, pole, gain] = tf2zpk(num, den)
 // b : vector containing the numerator coefficients of the transfer function in descending powers of s
 // a : vector containing the denominator coefficients of the transfer function in descending powers of s
 // 
+// Examples
+// // Convert transfer function to zero-pole-gain form
+// // Define the numerator and denominator coefficients of the transfer function
+// num = [1, -3, 2]; // Coefficients of s^2 - 3s + 2
+// den = [1, -2, 1]; // Coefficients of s^2 - 2s + 1
+// // Convert to zero-pole-gain form
+// [z, p, k] = tf2zpk(num, den);
+// // Display the results
+// disp("Zeros of the transfer function:");
+// disp(z);
+// disp("Poles of the transfer function:");
+// disp(p);
+// disp("Gain of the transfer function:");
+// disp(k);
+// 
 // See also
 // eqtflength
 // tf2zp

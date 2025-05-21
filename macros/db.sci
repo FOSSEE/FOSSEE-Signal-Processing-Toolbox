@@ -18,7 +18,16 @@ function [dboutput] = db(X, SignalType, R)
 // dboutput = db(X,SignalType) specifies the signal type represented by the elements of X as 'voltage' or 'power'. The entries are not case sensitive. The default value is 'voltage'. For voltage measurements, the resistance defaults to 1 ohm. If you specify SignalType as 'power', the elements of X must be nonnegative.
 // dboutput = db(X,R) specifies the resistance R for voltage measurements. You can specify a resistance only when the signal measurements are voltages.
 // dboutput = db(X,'voltage',R) specifies the resistance R for voltage measurements. This syntax is equivalent to db(X,R).
-//
+// 
+// Examples
+// // Convert voltage measurements to decibels
+// X = [1, 2; 3, 4]; // Voltage measurements
+// SignalType = 'voltage';
+// R = 2; // Resistance in ohms
+// dboutput = db(X, SignalType, R);
+// disp("Decibel Output:");
+// disp(dboutput);
+// 
 // Authors
 // Pratik Kapoor
 // 

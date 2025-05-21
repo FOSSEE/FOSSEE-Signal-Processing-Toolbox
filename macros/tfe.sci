@@ -10,6 +10,31 @@ function varargout = tfe(varargin)
 //         Compatible with Matlab R11 tfe and earlier.
 //         See "help pwelch" for description of arguments, hints and references — especially hint (7) for Matlab R11 defaults.
 // 
+// Examples
+// // Estimate the transfer function of a system using tfe
+//
+// // Define input and output signals
+// x = sin(2 * %pi * (0:0.01:10)); // Input signal (sine wave)
+// y = 0.5 * x + 0.1 * rand(1, length(x)); // Output signal (scaled and noisy)
+//
+// // Define parameters
+// Nfft = 256; // Number of FFT points
+// Fs = 100; // Sampling frequency
+// window = hamming(128); // Hamming window
+// overlap = 64; // Overlap between segments
+// range = 'onesided'; // Frequency range
+// plot_type = 'trans'; // Plot type
+// detrend = 'none'; // No detrending
+//
+// // Estimate the transfer function
+// [Pxx, freq] = tfe(x, y, Nfft, Fs, window, overlap, range, plot_type, detrend);
+//
+// // Display the results
+// disp("Transfer function estimate:");
+// disp(Pxx);
+// disp("Frequency vector:");
+// disp(freq);
+// 
 // See also
 // pwelch
 

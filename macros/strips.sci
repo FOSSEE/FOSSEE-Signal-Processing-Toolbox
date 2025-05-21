@@ -27,8 +27,13 @@ function strips(x,sd,Fs,scale)
 // If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
 // If x has complex entries, only the real part of those entries are considered
 //
+// Examples
+// x_vector = sin(2 * %pi * (0:0.01:10)); 
+// strips(x_vector, 2, 100, 1); 
+// title("Strip plot of a vector");
+// 
 // Authors
-//Ankur Mallick
+// Ankur Mallick
 
     funcprot(0);
     if(argn(2)<1|argn(2)>4)

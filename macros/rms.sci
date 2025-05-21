@@ -16,6 +16,20 @@ function y = rms(x, dim)
 //   When X is complex, the RMS is computed using the magnitude
 //   RMS(ABS(X)). 
 //
+// Examples
+// // Compute the root mean squared (RMS) value of a vector and a matrix
+// x = [1, 2, 3, 4]; 
+// y1 = rms(x); 
+// disp("RMS of vector:"); 
+// disp(y1); 
+// x_matrix = [1, 2; 3, 4; 5, 6]; 
+// y2 = rms(x_matrix); 
+// disp("RMS of matrix columns:"); 
+// disp(y2); 
+// y3 = rms(x_matrix, 2); 
+// disp("RMS of matrix rows:"); 
+// disp(y3);
+// 
 // Authors
 // Debdeep Dey
 

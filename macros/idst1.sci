@@ -15,7 +15,6 @@ function y = idst1 (x, n)
 // then X is padded or trimmed to length N before computing the transform.
 // If X is a matrix, compute the transform along the columns of the the matrix.
 //
-
 // Examples
 // y = idst1([1, 2, 3, 4])
 //

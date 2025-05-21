@@ -27,6 +27,26 @@ function [pval, lm] = arch_test(y, x, p)
 //   Under the null, LM approximately has a chisquare distribution with p degrees of freedom and pval is the p-value (1 minus the CDF of this distribution at LM) of the test.
 //   If no output argument is given, the p-value is displayed.
 // 
+// Examples
+// 
+// // Perform an ARCH test for conditional heteroscedasticity in financial data
+// 
+// // Generate synthetic financial returns data
+// t = 1:500; // Time points
+// y = 0.05 * t + 0.2 * sin(2 * %pi * t / 50) + 0.1 * rand(1, length(t)); // Simulated returns with trend and noise
+// 
+// // Define lagged independent variable (autoregressive model of order 1)
+// x = [ones(length(y)-1, 1), y(1:$-1)']; // Lagged values of y
+// 
+// // Perform the ARCH test with 2 lags
+// [pval, lm] = arch_test(y(2:$)', x, 2);
+// 
+// // Display the results
+// disp("p-value of the ARCH test:");
+// disp(pval);
+// disp("Lagrange Multiplier test statistic:");
+// disp(lm);
+// 
 // See also
 // ols 
 // autoreg_matrix

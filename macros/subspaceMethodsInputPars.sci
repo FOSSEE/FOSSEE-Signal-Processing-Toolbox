@@ -1,9 +1,9 @@
 // Date of creation: 17 Dec, 2015
-function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
-// Input parser to be used by pmusic and peig.
+function [data, msg, err_num] = subspaceMethodsInputPars(inputArgsList)
+// Input parser to be used by pmusic and peig. It is a helper function
 //
 // Syntax
-//   [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
+//   [data, msg, err_num] = subspaceMethodsInputPars(inputArgsList)
 //
 // Parameters
 // inputArgsList: List of input arguments to be parsed.
@@ -27,11 +27,6 @@ function [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList)
 // The `subspaceMethodsInputParsS` function parses input arguments for subspace methods like pmusic and peig. 
 // It supports various input combinations and validates the arguments. The function returns a structured output 
 // containing the parsed arguments, along with error messages and error codes if the input is invalid.
-//
-// Examples
-// // Parse input arguments for pmusic:
-//    inputArgsList = {x, p, nfft, fs, 'onesided'};
-//    [data, msg, err_num] = subspaceMethodsInputParsS(inputArgsList);
 //
 
 

@@ -76,7 +76,7 @@ function varargout = pwelch(x,varargin)
       compatib = 1;
     end
     if ( nargin <= 0 )
-      error( 'pwelch: Need at least 1 arg. Use help pwelch.' );
+      error(sprintf( 'pwelch: Need at least 1 arg. Use help pwelch.' ));
     elseif ( nargin==1 && (type(x) == 10 ) || isempty(x)) 
       varargout(1) = compat_str{compatib};
       if ( isempty(x) ) // native
@@ -88,13 +88,13 @@ function varargout = pwelch(x,varargin)
       elseif ( ~strcmp(x,'psd') )
         compatib = 4;
       else
-        error( 'pwelch: compatibility arg must be empty, R11-, R12+ or psd' );
+        error(sprintf( 'pwelch: compatibility arg must be empty, R11-, R12+ or psd' ));
       end
       // return
     //
     // Check fixed argument
     elseif ( isempty(x) || ~isvector(x) )
-      error( 'pwelch: arg 1 (x) must be vector.' );
+      error(sprintf( 'pwelch: arg 1 (x) must be vector.' ));
     else
       //  force x to be COLUMN vector
       if ( size(x,1)==1 )
@@ -114,7 +114,7 @@ function varargout = pwelch(x,varargin)
           // OK. Need "y". Grab it from 2nd arg.
           arg = varargin(1);
           if ( nargin<2 || isempty(arg) || ~isvector(arg) || max(size(arg))~=x_len )
-            error( 'pwelch: arg 2 (y) must be vector, same length as x.' );
+            error(sprintf( 'pwelch: arg 2 (y) must be vector, same length as x.' ));
           end
           // force  COLUMN vector
           y = varargin(1)(:);
@@ -230,14 +230,14 @@ function varargout = pwelch(x,varargin)
               do_ypower = n_results;
             end
           else
-            error( 'pwelch: string arg %d illegal value: %s', iarg+1, arg );
+            error(sprintf( 'pwelch: string arg %d illegal value: %s', iarg+1, arg ));
           end
           // end of processing string args
           //
         elseif ( end_numeric_args )
           if ( ~isempty(arg) )
             // found non-string arg after a string arg ... oops
-            error( 'pwelch: control arg must be string' );
+            error(sprintf( 'pwelch: control arg must be string' ));
           end
         //
         // first 4 optional arguments are numeric -- in fixed order
@@ -248,7 +248,7 @@ function varargout = pwelch(x,varargin)
           if ( isempty(arg) )
             Fs = 1;
           elseif ( ~isscalar(arg) || ~isreal(arg) || arg<0 )
-            error( 'pwelch: arg %d (Fs) must be real scalar >0', iarg+1 );
+            error(sprintf( 'pwelch: arg %d (Fs) must be real scalar >0', iarg+1 ));
           else
             Fs = arg;
           end
@@ -259,7 +259,7 @@ function varargout = pwelch(x,varargin)
           if ( isempty(arg) )
             conf = 0.95;
           elseif ( ~isscalar(arg) || ~isreal(arg) || arg < 0.0 || arg >= 1.0 )
-            error( 'pwelch: arg %d (conf) must be real scalar, >=0, <1',iarg+1 );
+            error(sprintf( 'pwelch: arg %d (conf) must be real scalar, >=0, <1',iarg+1 ));
           else
             conf = arg;
           end
@@ -281,11 +281,11 @@ function varargout = pwelch(x,varargin)
             is_win = 0;
           end
           if ( ~is_win )
-            error( 'pwelch: arg %d (window) must be scalar or vector', iarg+1 );
+            error(sprintf( 'pwelch: arg %d (window) must be scalar or vector', iarg+1 ));
           elseif ( is_win==1 && ( ~isreal(arg) || fix(arg)~=arg || arg<=3 ) )
-            error( 'pwelch: arg %d (window) must be integer >3', iarg+1 );
+            error(sprintf( 'pwelch: arg %d (window) must be integer >3', iarg+1 ));
           elseif ( is_win>1 && ( ~isreal(arg) ) )
-            error( 'pwelch: arg %d (window) vector must be real and >=0',iarg+1);
+            error(sprintf( 'pwelch: arg %d (window) vector must be real and >=0',iarg+1));
           end
           window = arg;
           is_sloppy = 0;
@@ -293,24 +293,23 @@ function varargout = pwelch(x,varargin)
         // -- "overlap" arg -- segment overlap
         elseif ( iarg == arg_posn(2) )
           if (~isscalar(arg) || ~isreal(arg) || arg<0 || arg>max_overlap )
-            error( 'pwelch: arg %d (overlap) must be real from 0 to %f', ...
-                   iarg+1, max_overlap );
+            error(sprintf( "pwelch: arg %d (overlap) must be real from 0 to %f",iarg+1, max_overlap ));
           end
           overlap = arg;
         //
         // -- "Nfft" arg -- FFT length
         elseif ( iarg == arg_posn(3) )
           if ( ~isscalar(arg) || ~isreal(arg) || fix(arg)~=arg || arg<0 )
-            error( 'pwelch: arg %d (Nfft) must be integer >=0', iarg+1 );
+            error(sprintf( 'pwelch: arg %d (Nfft) must be integer >=0', iarg+1 ));
           end
           Nfft = arg;
         //
         else
-          error( 'pwelch: arg %d  must be string', iarg+1 );
+          error(sprintf( 'pwelch: arg %d  must be string', iarg+1 ));
         end
       end
       if ( conf>0 && (n_results && ~do_power ) )
-        error('pwelch: can give confidence interval for x power spectrum only' );
+        error(sprintf('pwelch: can give confidence interval for x power spectrum only' ));
       end
       //
       // end DECODE AND CHECK OPTIONAL ARGUMENTS.
@@ -447,8 +446,8 @@ function varargout = pwelch(x,varargin)
       if ( isempty(overlap) )
         overlap = fix(seg_len /2);
       elseif ( overlap >= seg_len )
-        error( 'pwelch: arg (overlap=%d) too big. Must be <max(size(window)=%d',...
-               overlap, seg_len );
+        error(sprintf( 'pwelch: arg (overlap=%d) too big. Must be <max(size(window))=%d',...
+               overlap, seg_len ));
       end
       //
       // Pad data with zeros if shorter than segment. This should not happen.
@@ -661,9 +660,9 @@ function varargout = pwelch(x,varargin)
       end
       if ( nargout>=1 )
         varargout(1) = spectra;
-      else
+      end
         //
-        // Plot the spectra if there are no return variables.
+        // Plot the spectra if there are no return variables.---- nargout can't be zero so lets plot it every time
         plot_title=['power spectrum x ';
                     'cross spectrum   ';
                     'transfer function';
@@ -705,7 +704,7 @@ function varargout = pwelch(x,varargin)
           end
         end
       end
-    end
+    
   endfunction 
   /*
   

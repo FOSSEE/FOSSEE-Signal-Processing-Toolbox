@@ -13,6 +13,20 @@ function w = gaussian(m, a)
 // This function returns a Gaussian convolution window of length m supplied as input, to the output vector w.
 // The second parameter is the width measured in sample rate/number of samples and should be f for time domain and 1/f for frequency domain. The width is inversely proportional to a.
 // 
+// Examples
+// // Define parameters
+// m = 21;       // Length of the window
+// a = 0.4;      // Width control (higher a = narrower window)
+// // Generate Gaussian window
+// w = gaussian(m, a);
+// // Plot the window
+// x = linspace(-(m-1)/2, (m-1)/2, m);
+// plot(x, w, '-o');
+// title('Gaussian Window');
+// xlabel('Samples');
+// ylabel('Amplitude');
+// xgrid;
+// 
 // Authors
 // Rashmi Patankar
 // 

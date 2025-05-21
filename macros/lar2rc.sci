@@ -8,7 +8,7 @@ function k=lar2rc(g)
 // g: define log area ratios.
 // k: returns the reflection coefficients.
 //
-// Example
+// Examples
 // g = [0.6389 4.5989 0.0063 0.0163 -0.0163];
 // k = lar2rc(g)
 // 

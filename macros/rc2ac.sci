@@ -9,8 +9,22 @@ function R=rc2ac(k, R0)
 // R0: input argument zero lag autocorrelation
 // R: return  autocorrelation sequence.
 // 
+// Examples
+// // Example: Convert reflection coefficients to autocorrelation sequence
+// // Reflection coefficients
+// k = [0.8, -0.5, 0.3];
+// // Zero lag autocorrelation
+// R0 = 1;
+// // Convert reflection coefficients to autocorrelation sequence
+// R = rc2ac(k, R0);
+// // Display the result
+// disp("Autocorrelation sequence:");
+// disp(R);
+// 
 // See also
-//
+// rx2poly
+// rlevinson
+// 
 // Authors
 // Jitendra Singh
 //

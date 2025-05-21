@@ -12,7 +12,7 @@ function [k] = is2rc(isin)
 // This function returns a vector of reflection coefficients from a vector of inverse sine parameters
 // output array has k(i) = sin(pi/2*isin(i))
 //
-// Example
+// Examples
 // k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
 // isin = rc2is(k)      //Gives inverse sine parameters
 // k_dash = is2rc(isin)

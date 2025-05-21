@@ -14,8 +14,8 @@ function r=roundn(x,n)
 // Description
 // The `roundn` function rounds the input `x` to `n` decimal places.
 //
-// Example
-// 1. Round a number to 2 decimal places:
+// Examples
+// // Round a number to 2 decimal places:
 //    r = roundn(3.14159, 2);
 //    // Output: r = 3.14
 

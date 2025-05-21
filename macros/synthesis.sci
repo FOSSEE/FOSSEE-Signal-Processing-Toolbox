@@ -12,6 +12,19 @@ function x = synthesis (y, c)
 // Compute a signal from its short-time Fourier transform 'y' and a 3-element vector 'c' specifying window size, increment, and window type.
 // A window type of 1 represents a hanning window, 2 represents a hamming window and 3 represents a rectangular window.
 // The values 'y' and 'c' can be derived by [y, c] = stft (x, ...)
+// 
+// Examples
+// // Reconstruct a signal from its short-time Fourier transform
+// // Define a short-time Fourier transform (STFT) matrix
+// y = [1+2*%i, 2+3*%i; 3+4*%i, 4+5*%i];
+// // Define the window parameters: [window size, increment, window type]
+// c = [4, 2, 1]; // Hanning window with size 4 and increment 2
+// // Reconstruct the signal
+// x = synthesis(y, c);
+// // Display the reconstructed signal
+// disp("Reconstructed signal:");
+// disp(x);
+// 
 
   funcprot(0);
   rhs = argn(2);

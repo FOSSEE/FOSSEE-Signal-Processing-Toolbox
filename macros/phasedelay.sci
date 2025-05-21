@@ -28,17 +28,6 @@ function [phi, varargout]=phasedelay(varargin)
 //    w = linspace(0, %pi, 100);
 //    phi = phasedelay(b, a, w);
 //
-// // Compute phase delay for a filter in SOS form:
-//    sos = [1, -0.5, 0.25, 0.1, 0.2, 0.3];
-//    w = linspace(0, %pi, 100);
-//    phi = phasedelay(sos, w);
-//
-// // Compute phase delay with sampling frequency:
-//    b = [0.1, 0.2, 0.3];
-//    a = [1, -0.5, 0.25];
-//    w = linspace(0, %pi, 100);
-//    fs = 1000;
-//    [phi, f] = phasedelay(b, a, w, fs);
 //
 // Authors
 // Parthasarathi Panda

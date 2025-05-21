@@ -45,6 +45,27 @@ function [y,t]=modulate(x,fc,fs,method,opt)
 //
 //   If x is a matrix, its columns are modulated.
 // 
+// Examples
+// // Modulate a signal using amplitude modulation (AM)
+// // Parameters
+// fs = 1000;                // Sampling frequency (Hz)
+// fc = 100;                 // Carrier frequency (Hz)
+// t = 0:1/fs:1;             // Time vector (1 second duration)
+// x = sin(2 * %pi * 10 * t); // Input signal (10 Hz sine wave)
+// // Perform amplitude modulation (double side-band, transmitted carrier)
+// [y, t_mod] = modulate(x, fc, fs, 'amdsb-tc');
+// // Plot the original and modulated signals
+// subplot(2, 1, 1);
+// plot(t, x);
+// xlabel("Time (s)");
+// ylabel("Amplitude");
+// title("Original Signal");
+// subplot(2, 1, 2);
+// plot(t_mod, y);
+// xlabel("Time (s)");
+// ylabel("Amplitude");
+// title("Modulated Signal (AM DSB-TC)");
+// 
 // Authors
 // Ankur Mallick
 

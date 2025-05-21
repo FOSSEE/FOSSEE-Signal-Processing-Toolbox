@@ -27,8 +27,8 @@ function [sos,g] = tf2sos (B, A)
   if (nargin() ~= 2) then
     error("Wrong number of input arguments.");
   end
-  S = syslin([], inv_coeff(flipdim(B(:)', 2)), inv_coeff(flipdim(A(:)', 2)));
-  [z,p,k] = tf2zp(S);
+  
+  [z,p,k] = tf2zp(B(:)', A(:)');
   if (nargout() < 2)
     sos = clean(zp2sos(z,p,k));
   else

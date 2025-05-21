@@ -40,31 +40,23 @@ function [B, A, SigN] = invfreqs(H,F,nB,nA,W,iter,tol,tr, varargin)
 // Note: The core implementation of this function relies on `invfreq.sci`.
 //
 // Examples
-// // Fit a filter to a frequency response:
-//    B = [1/2, 1];
-//    A = [1, 1];
-//    w = linspace(0, 4, 128);
-//    H = freqs(B, A, w);
-//    [Bh, Ah] = invfreqs(H, w, 1, 1);
-//    Hh = freqs(Bh, Ah, w);
-//    plot(w, [abs(H); abs(Hh)]);
-//    legend('Original', 'Measured');
-//    err = norm(H - Hh);
-//    disp(sprintf('L2 norm of frequency response error = %f', err));
-//
-// // Fit a filter with weighted frequency samples:
-//    B = [1, 0];
-//    A = [1, 2, 1];
-//    w = linspace(0, 8, 128);
-//    H = freqs(B, A, w);
-//    W = linspace(1, 2, length(w)); // Example weights
-//    [Bh, Ah] = invfreqs(H, w, 2, 2, W);
-//    Hh = freqs(Bh, Ah, w);
-//    plot(w, [abs(H); abs(Hh)]);
-//    legend('Original', 'Measured');
-//    err = norm(H - Hh);
-//    disp(sprintf('L2 norm of frequency response error = %f', err));
-//
+// // Define the desired frequency response (H) and frequency points (F)
+// F = linspace(0, 10, 100); // Frequency points
+// H = 1 ./ (1 + %i * F);    // Desired frequency response (low-pass filter)
+// 
+// // Define the orders of the numerator and denominator polynomials
+// nB = 1; // Order of the numerator
+// nA = 1; // Order of the denominator
+// 
+// // Fit the filter
+// [B, A] = invfreqs(H, F, nB, nA);
+// 
+// // Display the results
+// disp("Numerator coefficients (B):");
+// disp(B);
+// disp("Denominator coefficients (A):");
+// disp(A);
+// 
 // Bibliography
 // - J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983.
 // - https://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html
@@ -77,6 +69,19 @@ function [B, A, SigN] = invfreqs(H,F,nB,nA,W,iter,tol,tr, varargin)
 // toolbox@scilab.in
 //
 
+// Freqs is not avaliable so drop this example
+// // Fit a filter to a frequency response:
+//    B = [1/2, 1];
+//    A = [1, 1];
+//    w = linspace(0, 4, 128);
+//    H = freqs(B, A, w);
+//    [Bh, Ah] = invfreqs(H, w, 1, 1);
+//    Hh = freqs(Bh, Ah, w);
+//    plot(w, [abs(H); abs(Hh)]);
+//    legend('Original', 'Measured');
+//    err = norm(H - Hh);
+//    disp(sprintf('L2 norm of frequency response error = %f', err));
+//
 
   if nargin < 9
     varargin = {};

@@ -12,6 +12,23 @@ function varargout = mscohere(varargin)
 // Description
 //   See "help pwelch" for description of arguments, hints and references
 // 
+// Examples
+// // Generate example signals
+// fs = 1000;                   // Sampling frequency in Hz
+// t = 0:1/fs:1-1/fs;           // Time vector (1 second)
+// // Signal x: a sine wave + random noise
+// x = sin(2*pi*50*t) + 0.5*randn(size(t));
+// // Signal y: the same sine wave with different noise
+// y = sin(2*pi*50*t) + 0.5*randn(size(t));
+// // Compute coherence
+// [Pxx, freq] = mscohere(x, y);
+// // Plot the result
+// plot(freq, Pxx);
+// title('Magnitude-Squared Coherence');
+// xlabel('Frequency (Hz)');
+// ylabel('Coherence');
+// grid on;
+// 
 // See also
 // pwelch
 

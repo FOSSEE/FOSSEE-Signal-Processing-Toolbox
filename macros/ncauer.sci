@@ -24,9 +24,9 @@ function [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
     // It gives an analog prototype for Cauer filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
     //
     // Examples
-    // n = 5;
-    // Rp = 5;
-    // Rs = 5;
+    // n = 1;
+    // Rp = 2;
+    // Rs = 3;
     // [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
     // 
     // See also

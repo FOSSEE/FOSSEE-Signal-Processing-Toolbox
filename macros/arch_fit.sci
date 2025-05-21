@@ -22,9 +22,24 @@ function [a, b] = arch_fit(y, x, p, iter, gamma, a0, b0)
 // where `e(t)` is N(0, h(t)). The function allows specifying the number of iterations, updating factor, and initial values for the scoring algorithm.
 //
 // Examples
-// [a, b] = arch_fit([1, 2, 3, 4], [1, 2; 3, 4; 5, 6; 7, 8], 2)
-// [a, b] = arch_fit([1, 2, 3, 4], [1, 2; 3, 4; 5, 6; 7, 8], 2, 100, 0.1, [0.5, 0.2], [1, 0.5])
-//
+// // Fit an ARCH regression model to a time series
+// 
+// // Define the time series data (y) and regressors (x)
+// y = [1.2, 2.3, 1.8, 2.5, 3.1, 2.9, 3.5, 3.8, 4.2, 4.5]; // Time-series data
+// x = [1, 2; 2, 3; 3, 4; 4, 5; 5, 6; 6, 7; 7, 8; 8, 9; 9, 10; 10, 11]; // Regressors
+// 
+// // Define the order of the regression of the residual variance
+// p = 2;
+// 
+// // Fit the ARCH model
+// [a, b] = arch_fit(y, x, p);
+// 
+// // Display the results
+// disp("ARCH model coefficients (a):");
+// disp(a);
+// disp("Regression coefficients (b):");
+// disp(b);
+// 
 // See also
 //  autoreg_matrix
 

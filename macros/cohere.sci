@@ -20,7 +20,7 @@ function varargout = cohere(varargin)
 // This function estimates the coherence (mean square) of signals `x` and `y` using the Welch periodogram/FFT method. It is compatible with Matlab R11 `cohere` and earlier versions.
 //
 // Examples
-// [Pxx, freq] = cohere(x, y, 256, 1000, hamming(256), 128, 'onesided', 'plot', 'none')
+// [Pxx, freq] = cohere(x, y, 256, 1000, hamming(256), 128, 'onesided', 'plot', 'none');
 
 if ( nargin<2 )
         error( 'cohere: Need at least 2 args. Use help cohere.' );

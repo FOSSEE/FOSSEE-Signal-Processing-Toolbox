@@ -45,6 +45,20 @@ function [gd,w] = grpdelay (b, a, n, whole, Fs)
 //               d/dw A(e^-jw) = sum(k a_k e^-jwk)
 //         which is just the FFT of the coefficients multiplied by a ramp.
 // 
+// Examples
+// // Define filter coefficients
+// b = [1, 0.9];
+// a = [];
+// 
+// // Compute group delay
+// [gd, w] = grpdelay(b, a, 512, "whole", 1);
+// 
+// // Plot the group delay
+// plot2d(w, gd, style = 2);
+// xlabel("Normalized Frequency (cycles/sample)");
+// ylabel("Group Delay (samples)");
+// title("Group Delay of the Filter");
+// 
 // See also
 // fft1
 // 

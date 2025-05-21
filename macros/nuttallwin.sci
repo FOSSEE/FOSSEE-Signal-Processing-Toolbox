@@ -23,13 +23,13 @@ function w = nuttallwin (m, opt)
 // - The symmetric form is typically used for filter design.
 // 
 // Examples
-// 1. Compute a symmetric Nuttall window of length 10:
+// //. Compute a symmetric Nuttall window of length 10:
 //    w = nuttallwin(10);
 //
-// 2. Compute a periodic Nuttall window of length 10:
+// // Compute a periodic Nuttall window of length 10:
 //    w = nuttallwin(10, "periodic");
 //
-// 3. Compute a symmetric Nuttall window explicitly:
+// // Compute a symmetric Nuttall window explicitly:
 //    w = nuttallwin(10, "symmetric");
 //
 //

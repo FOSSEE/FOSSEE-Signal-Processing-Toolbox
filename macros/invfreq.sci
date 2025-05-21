@@ -46,14 +46,6 @@ function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
 //    Hh = freqz(Bh, Ah);
 //    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 //
-// // Fit a filter with weighted frequency samples:
-//    [B, A] = butter(6, 1/2);
-//    [H, w] = freqz(B, A, 128);
-//    W = linspace(1, 2, length(w)); // Example weights
-//    [Bh, Ah] = invfreq(H, w, 4, 4, W);
-//    Hh = freqz(Bh, Ah);
-//    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
-//
 // Bibliography
 // J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983, page 50.
 // http://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html
