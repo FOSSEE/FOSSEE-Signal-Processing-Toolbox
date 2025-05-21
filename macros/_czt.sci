@@ -1,11 +1,11 @@
-function y = czt(x, m, w, a)
+function y = _czt(x, m, w, a)
 // Compute the Chirp z-transform.
 //
 // Syntax
-//   y = czt(x)
-//   y = czt(x, m)
-//   y = czt(x, m, w)
-//   y = czt(x, m, w, a)
+//   y = _czt(x)
+//   y = _czt(x, m)
+//   y = _czt(x, m, w)
+//   y = _czt(x, m, w, a)
 //
 // Parameters
 // x: Input scalar or vector.
@@ -24,7 +24,7 @@ function y = czt(x, m, w, a)
 // t = linspace(0, 50, 1000); 
 // f = linspace(0, 3, 1000);    
 // x_t = sin(t) + cos(t * 2 * %pi);  
-// x_f = czt(x_t);   
+// x_f = _czt(x_t);   
 // plot(f, abs(x_f))
 
     funcprot(0);

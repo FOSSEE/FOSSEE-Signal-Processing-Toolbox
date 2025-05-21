@@ -1,8 +1,8 @@
-function [ar, sigma2,rc] = levin(r);
+function [ar, sigma2,rc] = _levin(r);
 // Resolve the Yule-Walker equations:
 // 
 // Syntax
-// [ar,sigma2,rc]=lev(r)
+// [ar,sigma2,rc]=_levin(r)
 // 
 // Description
 //       |r(0)   r(1)   ... r(N-1)|| a(1) | |sigma2|
@@ -18,7 +18,20 @@ function [ar, sigma2,rc] = levin(r);
 //  ar     :Auto-Regressive model parameters
 //  sigma2 :Scale constant
 //  rc     :Reflection coefficients
-
+// 
+// Examples
+// // Solve the Yule-Walker equations using Levinson's algorithm
+// // Correlation coefficients
+// r = [1, 0.8, 0.5, 0.2];
+// // Solve the Yule-Walker equations
+// [ar, sigma2, rc] = _levin(r);
+// // Display the results
+// disp("Auto-Regressive model parameters (ar):");
+// disp(ar);
+// disp("Scale constant (sigma2):");
+// disp(sigma2);
+// disp("Reflection coefficients (rc):");
+// disp(rc);
 
 if length(r)==1 then
     ar=1;
