@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cmorwavf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cmorwavf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cmorwavf</refname>
+    <refpurpose>Compute the Complex Morlet Wavelet.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [psi, x] = cmorwavf(lb, ub, n, fb, fc)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>lb:</term>
+            <listitem><para> Real or complex scalar. Lower bound of the interval.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ub:</term>
+            <listitem><para> Real or complex scalar. Upper bound of the interval.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. Number of points in the interval.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fb:</term>
+            <listitem><para> Real or complex scalar. Bandwidth parameter. Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc:</term>
+            <listitem><para> Real or complex scalar. Wavelet center frequency. Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>psi:</term>
+            <listitem><para> Complex vector. Values of the Complex Morlet Wavelet.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector. Regular grid points in the interval [lb, ub].</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the Complex Morlet Wavelet for a given interval [lb, ub] with `n` points, bandwidth parameter `fb`, and wavelet center frequency `fc`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[psi, x] = cmorwavf(1, 2, 100, 3, 4)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

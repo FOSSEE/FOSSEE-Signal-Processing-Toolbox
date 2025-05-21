@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from blackmanharris.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="blackmanharris" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>blackmanharris</refname>
+    <refpurpose>Generate a Blackman-Harris window.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = blackmanharris(m)
+   w = blackmanharris(m, opt)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Length of the Blackman-Harris window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> String. Specifies the type of Blackman-Harris window ('symmetric' or 'periodic'). Default is 'symmetric'.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates an m-point Blackman-Harris window. By default, it returns a symmetric Blackman-Harris window. If `opt` is set to 'periodic', the function generates a periodic Blackman-Harris window, which is useful in spectral analysis.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = blackmanharris(5)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

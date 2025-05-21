@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from xcorr2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="xcorr2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>xcorr2</refname>
+    <refpurpose>Compute the 2D cross-correlation of matrices.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   c = xcorr2(a)
+   c = xcorr2(a, b)
+   c = xcorr2(a, b, scale)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Input matrix (2D array).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> (optional) Input matrix (2D array). If not specified, computes the autocorrelation of `a`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>scale:</term>
+            <listitem><para> (optional) String specifying the type of scaling applied to the cross-correlation matrix. Possible values are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "none" (default):</term>
+            <listitem><para> No scaling.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "biased":</term>
+            <listitem><para> Scales the raw cross-correlation by the maximum number of elements of `a` and `b` involved in the generation of any element of `c`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "unbiased":</term>
+            <listitem><para> Scales the raw correlation by dividing each element in the cross-correlation matrix by the number of products `a` and `b` used to generate that element.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "coeff":</term>
+            <listitem><para> Scales the normalized cross-correlation on the range of [0, 1] so that a value of 1 corresponds to a correlation coefficient of 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>c:</term>
+            <listitem><para> Cross-correlation matrix.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `xcorr2` function computes the 2D cross-correlation of matrices `a` and `b`. If `b` is not specified, it computes the autocorrelation of `a`.
+The optional `scale` parameter allows for different types of scaling to be applied to the cross-correlation matrix.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the 2D cross-correlation of two matrices:
+a = [1, 2; 3, 4];
+b = [0, 1; 1, 0];
+c = xcorr2(a, b);
+
+// Compute the autocorrelation of a matrix:
+a = [1, 2; 3, 4];
+c = xcorr2(a);
+
+// Compute the cross-correlation with scaling:
+a = [1, 2; 3, 4];
+b = [0, 1; 1, 0];
+c = xcorr2(a, b, "coeff");
+   ]]></programlisting>
+</refsection>
+</refentry>

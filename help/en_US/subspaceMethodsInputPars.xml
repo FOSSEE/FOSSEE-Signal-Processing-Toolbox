@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from subspaceMethodsInputPars.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="subspaceMethodsInputPars" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>subspaceMethodsInputPars</refname>
+    <refpurpose>Input parser to be used by pmusic and peig. It is a helper function</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [data, msg, err_num] = subspaceMethodsInputPars(inputArgsList)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>inputArgsList:</term>
+            <listitem><para> List of input arguments to be parsed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>data:</term>
+            <listitem><para> Struct containing the parsed input arguments with the following fields:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- x:</term>
+            <listitem><para> Input signal or correlation matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- p:</term>
+            <listitem><para> Scalar or 2-element vector representing signal subspace parameters.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- w/f:</term>
+            <listitem><para> Vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- nfft:</term>
+            <listitem><para> Positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- fs:</term>
+            <listitem><para> Positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- isWindowSpecified:</term>
+            <listitem><para> Boolean indicating if a window is specified.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- windowLength:</term>
+            <listitem><para> Positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- windowVector:</term>
+            <listitem><para> Vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- noverlap:</term>
+            <listitem><para> Scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- freqrange:</term>
+            <listitem><para> String specifying the frequency range.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- isCorrFlag:</term>
+            <listitem><para> Boolean indicating if the 'corr' flag is present.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- isFsSpecified:</term>
+            <listitem><para> Boolean indicating if the sampling frequency (fs) is specified.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>msg:</term>
+            <listitem><para> Error message (if any).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>err_num:</term>
+            <listitem><para> Error number (if any; otherwise -1).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `subspaceMethodsInputParsS` function parses input arguments for subspace methods like pmusic and peig.
+It supports various input combinations and validates the arguments. The function returns a structured output
+containing the parsed arguments, along with error messages and error codes if the input is invalid.
+   </para>
+   <para>
+</para>
+</refsection>
+</refentry>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from spectral_adf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="spectral_adf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>spectral_adf</refname>
+    <refpurpose>Compute the spectral density estimator using autocovariances.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   sde = spectral_adf(c)
+   sde = spectral_adf(c, win)
+   sde = spectral_adf(c, win, b)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>c:</term>
+            <listitem><para> Vector of autocovariances.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>win:</term>
+            <listitem><para> (optional) The window name. Default is "triangle". Supported values are "triangle" and "rectangle".</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> (optional) Bandwidth. Default is 1 / sqrt(length(c)).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sde:</term>
+            <listitem><para> Spectral density estimator.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `spectral_adf` function computes the spectral density estimator given a vector of autocovariances `c`,
+a window name `win`, and a bandwidth `b`. The window name is used to search for a function called `win_lw`
+(e.g., "triangle" or "rectangle"). If `win` is omitted, the triangle window is used. If `b` is omitted,
+1 / sqrt(length(c)) is used.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the spectral density estimator with default parameters:
+c = [1, 0.8, 0.6, 0.4, 0.2];
+sde = spectral_adf(c);
+
+   ]]></programlisting>
+</refsection>
+</refentry>

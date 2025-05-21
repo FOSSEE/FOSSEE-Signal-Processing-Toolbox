@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from idst1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="idst1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>idst1</refname>
+    <refpurpose>Computes the inverse type I discrete sine transform of X</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = idst1(x)
+   y = idst1(x,n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> If N is given, then X is padded or trimmed to length N before computing the transform.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Inverse discrete sine transform of the input signal.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the inverse type I discrete sine transform of X If N is given,
+then X is padded or trimmed to length N before computing the transform.
+If X is a matrix, compute the transform along the columns of the the matrix.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = idst1([1, 2, 3, 4])
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="dst1">dst1</link></member>
+   </simplelist>
+</refsection>
+</refentry>

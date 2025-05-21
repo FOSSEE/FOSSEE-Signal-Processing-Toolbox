@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from gmonopuls.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="gmonopuls" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>gmonopuls</refname>
+    <refpurpose>Gaussian monopulse of amplitude unity.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [y]=gmonopuls(t)
+   [y]=gmonopuls(t,fc)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc:</term>
+            <listitem><para> Real non-negative value or complex value or a vector or matrix with not all real values negative.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns samples of the Gaussian monopulse of amplitude unity.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+gmonopuls([1 2 3],0.1)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

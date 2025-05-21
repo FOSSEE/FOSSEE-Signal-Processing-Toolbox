@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arcov.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arcov" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arcov</refname>
+    <refpurpose>Autoregressive all-pole model parameters — covariance method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   a = arcov(x, p)
+   [a, e] = arcov(x, p)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Order of the autoregressive model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Contains normalized estimates of the AR system parameters, A(z), in descending powers of z.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Variance estimate of the white noise input to the AR model.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function arcov() estimates the autoregressive (AR) model parameters using the covariance method.
+The function returns the AR coefficients `a` and the variance estimate `e` of the white noise input to the AR model.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a, e] = arcov([1, 2, 3, 4, 5], 2)
+   ]]></programlisting>
+</refsection>
+</refentry>

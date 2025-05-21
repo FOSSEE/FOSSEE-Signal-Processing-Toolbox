@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cummin.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cummin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cummin</refname>
+    <refpurpose>Compute the cumulative minimum.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   M = cummin(A)
+   M = cummin(A, dim)
+   M = cummin(_, direction)
+   [M, iM] = cummin(..)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Real or complex numbers - vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> Positive integer - scalar (optional).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>direction:</term>
+            <listitem><para> String flag - 'forward' (default) or 'reverse' (optional).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `cummin` function computes the cumulative minimum of the elements of the input array `A`.
+The operation is performed along the specified dimension or the first non-singleton dimension by default.
+If called with two output arguments, the index of the minimum value is also returned.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// 1) Cumulative minimum values in a vector
+v = [8 9 1 10 6 1 3 6 10 10];
+M = cummin(v)
+
+// 2) Cumulative minimum along a specific dimension
+x = [1 2 3; 4 1 2; 3 5 1];
+M = cummin(x, 2)
+
+// 3) Cumulative minimum with indices
+[M, iM] = cummin(x, 2)
+
+// 4) Cumulative minimum in reverse direction
+M = cummin(v, 'reverse')
+   ]]></programlisting>
+</refsection>
+</refentry>

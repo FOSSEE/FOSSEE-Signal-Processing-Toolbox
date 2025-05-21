@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fftn.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fftn" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fftn</refname>
+    <refpurpose>Compute the N-dimensional discrete Fourier transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y = fftn(A)
+   Y = fftn(A, SIZE)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Matrix, the input data for which the FFT is computed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>SIZE:</term>
+            <listitem><para> (optional) Vector specifying the dimensions of the output array.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `fftn` function computes the N-dimensional discrete Fourier transform of the input matrix `A`
+using a Fast Fourier Transform (FFT) algorithm. The optional `SIZE` parameter allows specifying
+the dimensions of the output array.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Example 1: Compute the FFT of a matrix
+A = [6 9 7; 2 9 9; 0 3 1];
+Y = fftn(A)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

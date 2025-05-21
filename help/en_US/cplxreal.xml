@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cplxreal.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cplxreal" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cplxreal</refname>
+    <refpurpose>Separate numbers into complex-conjugate pairs and real values.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [zc, zr] = cplxreal(z)
+   [zc, zr] = cplxreal(z, tol)
+   [zc, zr] = cplxreal(z, tol, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Vector or matrix. Input numbers to be separated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> Scalar. Tolerance for matching complex conjugates. Default is 100 * eps.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> Integer. Dimension along which to sort. Default is the first non-singleton dimension.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zc:</term>
+            <listitem><para> Vector or matrix. Complex conjugate pairs.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zr:</term>
+            <listitem><para> Vector or matrix. Real numbers.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Sort the numbers z into complex-conjugate-valued and real-valued elements.
+The positive imaginary complex numbers of each complex conjugate pair are returned in zc and the real numbers are returned in zr.
+Signal an error if some complex numbers could not be paired.
+Signal an error if all complex numbers are not exact conjugates (to within tol).
+Note that there is no defined order for pairs with identical real parts but differing imaginary parts//
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+z = roots([1, 0, 0, 1, 0]);
+[zc, zr] = cplxreal(z)
+   ]]></programlisting>
+</refsection>
+</refentry>

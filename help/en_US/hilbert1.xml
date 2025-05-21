@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from hilbert1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="hilbert1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>hilbert1</refname>
+    <refpurpose>Compute the analytic extension of a real-valued signal.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   h = hilbert1(f)
+   h = hilbert1(f, N)
+   h = hilbert1(f, N, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>f :</term>
+            <listitem><para> real-valued input signal. Can be a vector, matrix, or N-D array.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N :</term>
+            <listitem><para> (optional) length of the Hilbert transform. Must be a positive integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim :</term>
+            <listitem><para> (optional) dimension along which the Hilbert transform is applied. Must be a scalar.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute the analytic extension of a real-valued signal.
+   </para>
+   <para>
+- h = hilbert1(f) computes the analytic signal of the real-valued input signal f.
+If f is a matrix, the transformation is applied to each column. For N-D arrays,
+the transformation is applied to the first non-singleton dimension.
+- real(h) contains the original signal f.
+- imag(h) contains the Hilbert transform of f.
+- hilbert1(f, N) computes the Hilbert transform with a length N. The result will also have length N.
+- hilbert1(f, [], dim) or hilbert1(f, N, dim) applies the transformation along the specified dimension.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft1">fft1</link></member>
+   <member><link linkend="ifft1">ifft1</link></member>
+   <member><link linkend="ipermute">ipermute</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// The magnitude of the Hilbert transform eliminates the carrier
+t = linspace(0, 10, 1024);
+x = 5 * cos(0.2 * t) .* sin(100 * t);
+plot(t, x, t, abs(hilbert1(x)));
+   ]]></programlisting>
+</refsection>
+</refentry>

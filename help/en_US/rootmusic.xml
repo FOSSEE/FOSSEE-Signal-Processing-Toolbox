@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rootmusic.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rootmusic" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rootmusic</refname>
+    <refpurpose>Frequencies and power of sinusoids using the root MUSIC algorithm</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = rootmusic(x,p)
+   [w,pow] = rootmusic(x,p)
+   [f,pow] = rootmusc(...,fs)
+   [w,pow] = rootmusic(...,'corr')
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> int|double - vector|matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p :</term>
+            <listitem><para> int|double - scalar|2 element vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> int|double - scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'corr' :</term>
+            <listitem><para> flag</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w :</term>
+            <listitem><para> double - vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>pow :</term>
+            <listitem><para> double - vector</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// 3 complex exponentials:
+
+n=0:99;
+s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
+[A,R]=corrmtx(s,12,'mod');
+[W,P] = rootmusic(R,3,'corr');
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush</member>
+   </simplelist>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="corrmtx">| peig | pmusic | rooteig</link></member>
+   </simplelist>
+</refsection>
+</refentry>

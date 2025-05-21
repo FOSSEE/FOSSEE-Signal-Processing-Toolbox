@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from upsample.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="upsample" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>upsample</refname>
+    <refpurpose>Upsample the signal by inserting zeros between elements.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = upsample(x, n)
+   y = upsample(x, n, phase)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal (vector or matrix).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Upsampling factor (positive integer). Specifies the number of samples in the upsampled signal for each input sample.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>phase (optional):</term>
+            <listitem><para> Offset specifying the position of the original sample in the block of `n` samples. Default is 0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Upsampled signal (vector or matrix).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `upsample` function increases the sampling rate of the input signal `x` by inserting `n-1` zeros between every element.
+If `x` is a matrix, the function upsamples every column independently. The optional `phase` parameter controls the position
+of the original sample in the block of `n` samples.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Upsample a row vector by a factor of 2:
+x = [1, 3, 5];
+y = upsample(x, 2);
+// Output: y = [1, 0, 3, 0, 5, 0]
+
+// Upsample a column vector by a factor of 2:
+x = [1; 3; 5];
+y = upsample(x, 2);
+// Output: y = [1; 0; 3; 0; 5; 0]
+
+// Upsample a matrix by a factor of 2:
+x = [1, 2; 5, 6; 9, 10];
+y = upsample(x, 2);
+// Output: y = [1, 2; 0, 0; 5, 6; 0, 0; 9, 10; 0, 0]
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

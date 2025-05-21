@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ifft1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ifft1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ifft1</refname>
+    <refpurpose>Compute the inverse discrete Fourier transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   ifft1(x)
+   ifft1(x, n)
+   ifft1(x, n, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> (optional) Number of elements of x to use. If n is larger than the dimension along which the inverse FFT is calculated, x is resized and padded with zeros. If smaller, x is truncated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension of the matrix along which the inverse FFT is performed.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Calculates the inverse discrete Fourier transform of a matrix using a Fast Fourier Transform algorithm. The inverse FFT is calculated along the first non-singleton dimension of the array.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1 2 3; 4 5 6; 7 8 9]
+n = 3
+dim = 2
+ifft1(x, n, dim)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

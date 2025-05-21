@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pmusic.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pmusic" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pmusic</refname>
+    <refpurpose>Psuedospectrum using MUSIC algorithm</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [S,w] = pmusic(x,p)
+   [S,w] = pmusic(x,p,w)
+   [S,w] = pmusic(x,p,nfft)
+   [S,w] = pmusic(x,p,nfft,fs)
+   [S,w] = pmusic(x,p,f,fs)
+   [S,f] = pmusic(...,'corr')
+   [S,f] = pmusic(x,p,nfft,fs,nwin,noverlap)
+   [...] = pmusic(...,freqrange)
+   [...,v,e] = pmusic(...)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> int|double - vector|matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p :</term>
+            <listitem><para> int|double - scalar|vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w :</term>
+            <listitem><para> int|double - vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nfft :</term>
+            <listitem><para> int - scalar (Default = 256)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> int|double - scalar (Default = 1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nwin :</term>
+            <listitem><para> int|double - scalar (int only)|vector (Default = 2*p(1))</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>noverlap :</term>
+            <listitem><para> int - scalar (Default = nwin-1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freqrange :</term>
+            <listitem><para> string</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'corr' flag :</term>
+            <listitem><para> </para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+n = 0:199;
+x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
+[S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
+plot(w,S);//.........to see the plot of psuedospectrum estimate of x vs frequencies w
+
+n = 0:199;
+x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;
+[S,w]=pmusic(x,2,16,1)        //where x: [1x200 constant]   p: 2   w: [0x0 constant]   nfft: 16   fs: 1
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="pburg">pburg</link></member>
+   <member><link linkend="peig">peig</link></member>
+   <member><link linkend="periodogram">periodogram</link></member>
+   <member><link linkend="pmtm">pmtm</link></member>
+   <member><link linkend="prony">prony</link></member>
+   <member><link linkend="pwelch">pwelch</link></member>
+   <member><link linkend="rooteig">rooteig</link></member>
+   <member><link linkend="rootmusic">rootmusic</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Petre Stoica and Randolph Moses, Introduction To Spectral</para>
+   <para>Analysis, Prentice-Hall, 1997, pg. 15</para>
+   <para>[2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.</para>
+   <para>2nd Ed., Macmillan, 1988.</para>
+</refsection>
+</refentry>

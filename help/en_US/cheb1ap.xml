@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheb1ap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheb1ap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheb1ap</refname>
+    <refpurpose>Design a lowpass analog Chebyshev type I filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [z, p, g] = cheb1ap(n, Rp)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. Order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rp:</term>
+            <listitem><para> Positive real number. Peak-to-peak passband ripple (in dB).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Gain of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function designs a lowpass analog Chebyshev type I filter of order `n` with a peak-to-peak passband ripple of `Rp`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[z, p, g] = cheb1ap(10, 3)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

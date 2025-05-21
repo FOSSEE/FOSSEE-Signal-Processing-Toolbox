@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from firtype.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="firtype" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>firtype</refname>
+    <refpurpose>Identify the type of a linear phase FIR filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   t = firtype(b)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The filter coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Integer. The type of the FIR filter. Can be 1, 2, 3, or 4.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function determines the type, `t`, of a linear phase FIR filter with coefficients `b`. The filter must be real and have linear phase.
+The type is determined as follows:
+- Type 1: Symmetrical coefficients with an odd length.
+- Type 2: Symmetrical coefficients with an even length.
+- Type 3: Anti-symmetrical coefficients with an odd length.
+- Type 4: Anti-symmetrical coefficients with an even length.
+   </para>
+   <para>
+If the filter does not have linear phase, the function returns `t = -1`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Symmetrical filter with even length:
+b = [9.2762e-05, 9.5482e-02, 4.0443e-01, 4.0443e-01, 9.5482e-02, 9.2762e-05];
+t = firtype(b)
+
+// Anti-symmetrical filter with odd length:
+b = [-1, -2, 0, 2, 1];
+t = firtype(b)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   </simplelist>
+</refsection>
+</refentry>

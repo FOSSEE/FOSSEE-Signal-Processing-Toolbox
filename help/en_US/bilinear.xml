@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from bilinear.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="bilinear" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>bilinear</refname>
+    <refpurpose>Transform an s-plane filter (analog) into a z-plane filter (digital) using the bilinear transformation.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [Zb, Za] = bilinear(Sb, Sa, T)
+   [Zb, Zb] = bilinear(Sz, Sp, Sg, T)
+   [Zz, Zp, Zg] = bilinear(...)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>Sb:</term>
+            <listitem><para> Numerator coefficient vector in the s-domain.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Sa:</term>
+            <listitem><para> Denominator coefficient vector in the s-domain.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Sz:</term>
+            <listitem><para> Zeros in the s-plane.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Sp:</term>
+            <listitem><para> Poles in the s-plane.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Sg:</term>
+            <listitem><para> Gain in the s-domain.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>T:</term>
+            <listitem><para> Sampling period (double).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Zb:</term>
+            <listitem><para> Numerator coefficient vector in the z-domain.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Za:</term>
+            <listitem><para> Denominator coefficient vector in the z-domain.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Zz:</term>
+            <listitem><para> Zeros in the z-plane.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Zp:</term>
+            <listitem><para> Poles in the z-plane.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Zg:</term>
+            <listitem><para> Gain in the z-domain.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function transforms a filter design from the s-plane to the z-plane while maintaining the band edges using the bilinear transform. The mapping is non-linear, so the filter must be designed with band edges in the s-plane positioned at 2/T tan(w*T/2) to ensure correct positioning in the z-plane.
+It does following transformation from s-plane to z-plane
+2  z-1
+s -&gt; -  --------
+T  z+1
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[b, a] = bilinear([1, 2, 3], [4, 5, 6], 1, 1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="tf2zp">tf2zp</link></member>
+   <member><link linkend="postpad">postpad</link></member>
+   <member><link linkend="zp2tf">zp2tf</link></member>
+   <member><link linkend="prepad">prepad</link></member>
+   </simplelist>
+</refsection>
+</refentry>

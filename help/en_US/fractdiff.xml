@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fractdiff.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fractdiff" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fractdiff</refname>
+    <refpurpose>Compute the fractional differences (1-L)^d x where L denotes the lag-operator and d is greater than -1.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = fractdiff(x, d)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector. The input series to be differenced.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> Scalar. The fractional differencing parameter. Must be greater than -1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector. The fractionally differenced series.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the fractional differences (1-L)^d x, where L denotes the lag-operator and d is greater than -1.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = fractdiff([1, 2, 3, 4], 0.5)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

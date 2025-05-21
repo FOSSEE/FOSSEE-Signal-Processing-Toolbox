@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from freqz.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="freqz" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>freqz</refname>
+    <refpurpose>Compute the frequency response of a digital filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [h, w] = freqz(b, a)
+   [h, w] = freqz(b, a, n)
+   [h, w] = freqz(b, a, n, "whole")
+   [h, w] = freqz(b, a, w)
+   [h, f] = freqz(b, a, n, Fs)
+   freqz(b, a, n)
+   freqz(b, a)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The numerator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. The denominator coefficients of the filter's transfer function. If omitted, it is assumed to be 1 (FIR filter).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Integer (optional). The number of frequency points. Default is 512.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector (optional). Specific frequencies (in radians) at which to evaluate the response.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Positive scalar (optional). Sampling frequency in Hz. If provided, frequencies are returned in Hz instead of radians.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para> Vector. The complex frequency response of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector. The frequencies (in radians) at which the response is evaluated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Vector. The frequencies (in Hz) at which the response is evaluated.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the frequency response of a digital filter defined by its numerator (`b`) and denominator (`a`) coefficients. The response can be evaluated at a specified number of points (`n`) or at specific frequencies (`w`). If the sampling frequency (`Fs`) is provided, the frequencies are returned in Hz.
+   </para>
+   <para>
+- If `a` is omitted, the filter is assumed to be an FIR filter.
+- If `n` is omitted, a default value of 512 is used.
+- If the "whole" option is specified, the response is evaluated over the entire Nyquist range (0 to 2π). Otherwise, it is evaluated over half the Nyquist range (0 to π).
+- If no output arguments are provided, the function plots the magnitude and phase response.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the frequency response of an FIR filter:
+b = [0.2929, 0.5858, 0.2929];
+[h, w] = freqz(b);
+
+// Compute the frequency response of an IIR filter:
+b = [0.2929, 0.5858, 0.2929];
+a = [1, 0, 0.1716];
+[h, w] = freqz(b, a)
+
+// Compute the response at specific frequencies:
+b = [0.2929, 0.5858, 0.2929];
+a = [1, 0, 0.1716];
+w = linspace(0, %pi, 100);
+h = freqz(b, a, w)
+
+// Compute the response with a sampling frequency:
+b = [0.2929, 0.5858, 0.2929];
+a = [1, 0, 0.1716];
+[h, f] = freqz(b, a, 512, 1000);
+
+// Plot the magnitude and phase response:
+b = [0.2929, 0.5858, 0.2929];
+freqz(b);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft1">fft1</link></member>
+   <member><link linkend="unwrap2">unwrap2</link></member>
+   <member><link linkend="postpad">postpad</link></member>
+   </simplelist>
+</refsection>
+</refentry>

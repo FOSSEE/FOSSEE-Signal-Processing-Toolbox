@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arch_test.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arch_test" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arch_test</refname>
+    <refpurpose>Perform a Lagrange Multiplier (LM) test for conditional heteroscedasticity.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [pval, lm] = arch_test(y, x, p)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Array-like. Dependent variable of the regression model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Array-like. Independent variables of the regression model. If x is a scalar integer k, it represents the order of autoregression.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Integer. Number of lagged squared residuals to include in the heteroscedasticity model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>pval:</term>
+            <listitem><para> Float. p-value of the LM test.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lm:</term>
+            <listitem><para> Float. Lagrange Multiplier test statistic.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function performs a Lagrange Multiplier (LM) test for conditional heteroscedasticity in a linear regression model:
+y = x * b + e
+The null hypothesis is no conditional heteroscedasticity, while the alternative is CH(p):
+y(t) = b(1) * x(t,1) + … + b(k) * x(t,k) + e(t),
+given y up to t-1 and x up to t, e(t) is N(0, h(t)) with
+h(t) = v + a(1) * e(t-1)^2 + … + a(p) * e(t-p)^2,
+and the null is a(1) == … == a(p) == 0.
+If the second argument is a scalar integer, k, perform the same test in a linear autoregression model of order k, i.e., with
+[1, y(t-1), …, y(t-k)]
+as the t-th row of x.
+Under the null, LM approximately has a chisquare distribution with p degrees of freedom and pval is the p-value (1 minus the CDF of this distribution at LM) of the test.
+If no output argument is given, the p-value is displayed.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+// Perform an ARCH test for conditional heteroscedasticity in financial data
+
+// Generate synthetic financial returns data
+t = 1:500; // Time points
+y = 0.05 * t + 0.2 * sin(2 * %pi * t / 50) + 0.1 * rand(1, length(t)); // Simulated returns with trend and noise
+
+// Define lagged independent variable (autoregressive model of order 1)
+x = [ones(length(y)-1, 1), y(1:$-1)']; // Lagged values of y
+
+// Perform the ARCH test with 2 lags
+[pval, lm] = arch_test(y(2:$)', x, 2);
+
+// Display the results
+disp("p-value of the ARCH test:");
+disp(pval);
+disp("Lagrange Multiplier test statistic:");
+disp(lm);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ols">ols</link></member>
+   <member><link linkend="autoreg_matrix">autoreg_matrix</link></member>
+   </simplelist>
+</refsection>
+</refentry>

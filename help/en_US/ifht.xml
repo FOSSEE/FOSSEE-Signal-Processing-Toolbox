@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ifht.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ifht" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ifht</refname>
+    <refpurpose>Calculate the inverse Fast Hartley Transform of real input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   m = ifht(d)
+   m = ifht(d, n)
+   m = ifht(d, n, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> Real or complex scalar, vector, or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> (optional) Integer specifying the number of elements of d to use. If n is larger than the dimension along which the ifht is calculated, d is resized and padded with zeros. If smaller, d is truncated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Integer specifying the dimension of the matrix along which the ifht is performed.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Calculates the inverse Fast Hartley Transform of real input d. If d is a matrix, the inverse Hartley transform is calculated along the columns by default.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+ifht(1 : 4)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

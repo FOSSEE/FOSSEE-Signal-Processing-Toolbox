@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rc2ac.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rc2ac" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rc2ac</refname>
+    <refpurpose>Convert reflection coefficients to autocorrelation sequence.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   a = rc2ac(k, R0)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> input argument reflection coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R0:</term>
+            <listitem><para> input argument zero lag autocorrelation</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> return  autocorrelation sequence.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Example: Convert reflection coefficients to autocorrelation sequence
+// Reflection coefficients
+k = [0.8, -0.5, 0.3];
+// Zero lag autocorrelation
+R0 = 1;
+// Convert reflection coefficients to autocorrelation sequence
+R = rc2ac(k, R0);
+// Display the result
+disp("Autocorrelation sequence:");
+disp(R);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="rx2poly">rx2poly</link></member>
+   <member><link linkend="rlevinson">rlevinson</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
+</refentry>

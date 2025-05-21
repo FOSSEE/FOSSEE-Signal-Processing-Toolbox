@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from sos2ss.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="sos2ss" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>sos2ss</refname>
+    <refpurpose>Convert digital filter second-order section parameters to state-space form</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [A,B,C,D] = sos2ss(sos)
+   [A,B,C,D] = sos2ss(sos,g)
+   
+   Descriotion
+   sos2ss converts a second-order section representation of a digital filter to an equivalent state-space representation.
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A,B,C,D:</term>
+            <listitem><para>Steady state parameters</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para>6 column second order section matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para>gain</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sos = [1  1  1  1   0  -1 ;
+-2  3  1  1  10   1];
+[A,B,C,D] = sos2ss(sos,2);
+
+//EXPECTED OUTPUT:
+//D  =- 4.
+//C  =42.    4.  - 32.  - 2.
+//B  =[1.  0.  0.    0.    0.]'
+//A  =[- 10.    0.    10.    1. ; 1.     0.    0.     0.  ; 0.     1.    0.     0.  ;  0.     0.    1.     0.  ]
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   <member>parthasarathipanda314@gmail.com</member>
+   </simplelist>
+</refsection>
+</refentry>

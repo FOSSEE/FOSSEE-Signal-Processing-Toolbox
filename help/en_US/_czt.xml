@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from _czt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="_czt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>_czt</refname>
+    <refpurpose>Compute the Chirp z-transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = _czt(x)
+   y = _czt(x, m)
+   y = _czt(x, m, w)
+   y = _czt(x, m, w, a)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input scalar or vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Total number of steps. Default is the length of the input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Ratio between points in each step. Default is exp(-2*%i*%pi/m).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Starting point in the complex plane. Default is 1.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `czt` function computes the Chirp z-transform of the input signal `x`.
+It calculates the frequency response starting at `a` and stepping by `w` for `m` steps.
+The parameter `a` is a point in the complex plane, and `w` is the ratio between points in each step.
+The radius increases exponentially, and the angle increases linearly.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Determine the frequency components of a signal
+t = linspace(0, 50, 1000);
+f = linspace(0, 3, 1000);
+x_t = sin(t) + cos(t * 2 * %pi);
+x_f = _czt(x_t);
+plot(f, abs(x_f))
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from convmtx.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="convmtx" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>convmtx</refname>
+    <refpurpose>Generate a convolution matrix.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   b = convmtx(a, n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. Input vector to generate the convolution matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Integer. Length of the vector to convolve with.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Matrix. Convolution matrix.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates the convolution matrix `b` for the input vector `a`. If `a` is a column vector, the operation `convmtx(a, n) * x` yields the convolution of `a` with another column vector `x` of length `n`. Similarly, if `a` is a row vector, the operation `x * convmtx(a, n)` yields the convolution of `a` with another row vector `x` of length `n`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1; 2; 3];
+n = 4;
+b = convmtx(a, n)
+   ]]></programlisting>
+</refsection>
+</refentry>

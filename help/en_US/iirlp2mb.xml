@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from iirlp2mb.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="iirlp2mb" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>iirlp2mb</refname>
+    <refpurpose>IIR Low Pass Filter to Multiband Filter Transformation</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt)
+   [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt,Pass)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>Num,Den:</term>
+            <listitem><para>               numerator,denominator of the transformed filter</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>AllpassNum,AllpassDen:</term>
+            <listitem><para> numerator,denominator of allpass transform,</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>B,A:</term>
+            <listitem><para>                   numerator,denominator of prototype low pass filter</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wo:</term>
+            <listitem><para>                    normalized_angular_frequency/pi to be transformed</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wt:</term>
+            <listitem><para>                    [phi=normalized_angular_frequencies]/pi target vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Pass:</term>
+            <listitem><para>                  This parameter may have values 'pass' or 'stop'.  If</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+With normalized ang. freq. targets 0 &lt; phi(1) &lt;  ... &lt; phi(n) &lt; pi radians
+   </para>
+   <para>
+for Pass == 'pass', the target multiband magnitude will be:
+--------       ----------        -----------...
+/        \     /          \      /            .
+0   phi(1) phi(2)  phi(3)   phi(4)   phi(5)   (phi(6))    pi
+   </para>
+   <para>
+for Pass == 'stop', the target multiband magnitude will be:
+-------      ---------        ----------...
+\    /         \      /           .
+0   phi(1) phi(2)  phi(3)   phi(4)  (phi(5))              pi
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[B, A] = butter(6, 0.5);
+[Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8]);
+
+   ]]></programlisting>
+</refsection>
+</refentry>

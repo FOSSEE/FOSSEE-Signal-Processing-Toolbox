@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from tripuls.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="tripuls" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>tripuls</refname>
+    <refpurpose>This function generates a triangular pulse over the interval [-w/2, w/2] sampled at times t.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = tripuls(t)
+   y = tripuls(t, w)
+   y = tripuls(t, w, skew)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Vector of real numbers</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Real number. The default value is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>skew:</term>
+            <listitem><para> Real number in the interval [-1, 1], The default value is 0.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a triangular pulse which is sampled at times t over the interval [-w/2,w/2].
+The value of skew lies between -1 and 1. The value of skew represents the relative placement of the peak in the given width.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+tripuls([0, .5, .6, 1], 0.9)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

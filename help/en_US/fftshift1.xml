@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fftshift1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fftshift1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fftshift1</refname>
+    <refpurpose>Performs a shift of the vector x, for use with the fft1 and ifft1 functions, in order to move the frequency 0 to the center of the vector or matrix.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = fftshift1(x)
+   y = fftshift1(x, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> It is a vector of N elements corresponding to time samples</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> Dimension along which to shift. Default is the first non-singleton dimension.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Output array with zero-frequency component shifted to the center.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function shifts the zero-frequency component to the center of the spectrum.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = fftshift1([1, 2, 3, 4])
+
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from peig.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="peig" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>peig</refname>
+    <refpurpose>Pseudospectrum using the eigenvector method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [S, w] = peig(x, p)
+   [S, w] = peig(x, p, w)
+   [S, w] = peig(x, p, nfft)
+   [S, w] = peig(x, p, nfft, fs)
+   [S, w] = peig(x, p, f, fs)
+   [S, f] = peig(..., 'corr')
+   [S, f] = peig(x, p, nfft, fs, nwin, noverlap)
+   [...] = peig(..., freqrange)
+   [..., v, e] = peig(...)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> int|double - vector|matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> int|double - scalar|vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> int|double - vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nfft:</term>
+            <listitem><para> int - scalar (Default = 256)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> int|double - scalar (Default = 1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nwin:</term>
+            <listitem><para> int|double - scalar (int only)|vector (Default = 2*p(1))</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>noverlap:</term>
+            <listitem><para> int - scalar (Default = nwin-1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freqrange:</term>
+            <listitem><para> string</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'corr' flag:</term>
+            <listitem><para> </para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `peig` function computes the pseudospectrum of a signal using the eigenvector method. It supports
+various input configurations, including signal subspace dimension, FFT length, sampling rate, and
+frequency range.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute pseudospectrum for a signal:
+fs = 100;
+t = 0:1/fs:1-1/fs;
+s = 2*sin(2*%pi*25*t) + sin(2*%pi*35*t) + rand(1, 100, "normal");
+[S, w] = peig(s, 2, 512, fs, 'half');
+plot(w, S)
+
+// Compute pseudospectrum for a deterministic signal:
+fs = 100;
+t = 0:1/fs:1-1/fs;
+s = 2*sin(2*%pi*25*t) + sin(2*%pi*35*t);
+[S, w] = peig(s, 2, 512, fs, 'half');
+plot(w, S)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="rooteig,">pmusic, pmtm, pcov, pmcov, pburg, pyulear, pwelch, corrmtx</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   <member>References</member>
+   <member>[1] Petre Stoica and Randolph Moses, Introduction To Spectral Analysis, Prentice-Hall, 1997, pg. 15</member>
+   <member>[2] S. J. Orfanidis, Optimum Signal Processing. An Introduction. 2nd Ed., Macmillan, 1988.</member>
+   </simplelist>
+</refsection>
+</refentry>

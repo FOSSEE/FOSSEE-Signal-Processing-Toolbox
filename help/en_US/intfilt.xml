@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from intfilt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="intfilt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>intfilt</refname>
+    <refpurpose>This function estimate Interpolated FIR Filter Design.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   h=intfilt(R,L,freqmult)
+   [h a]=intfilt(R,L,freqmult)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Samples. It should be numeric</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>L:</term>
+            <listitem><para> bandlimited interpolation samples. It must be nonzero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freqmult:</term>
+            <listitem><para> bandlimitedness of ALPHA times the Nyquist frequency, IT can be numeric or character ('B' or 'L', B is length</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para>  linear phase FIR filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+h=intfilt(20,10,'l')     // The output of this example has 220 columns ,so it is difficult to write it here.
+h=intfilt(20,10,1)     // The output of this example has 220 columns ,so it is difficult to write it here.
+h1=intfilt(2,3,'l');
+h2=intfilt(4,1,1);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
+</refentry>

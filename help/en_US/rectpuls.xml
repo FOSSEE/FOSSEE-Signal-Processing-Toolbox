@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rectpuls.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rectpuls" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rectpuls</refname>
+    <refpurpose>Generates a Rectangular pulse based on the width and sampling times.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [y]=rectpuls(t)
+   [y]=rectpuls(t,w)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+y = rectpuls(t) returns a continuous, aperiodic, unity-height rectangular pulse depending upon input t, centered about t=0 and having default width of 1.
+y = rectpuls(t,w) generates a rectangle of width w.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+rectpuls([10 100 1000 13 839],27)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

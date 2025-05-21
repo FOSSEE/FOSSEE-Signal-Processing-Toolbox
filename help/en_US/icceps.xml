@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from icceps.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="icceps" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>icceps</refname>
+    <refpurpose>Compute the inverse cepstrum of a real-valued input signal.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   inv_ceps = icceps(input, remv_samp)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>input:</term>
+            <listitem><para> Real-valued input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>remv_samp:</term>
+            <listitem><para> (optional) Number of samples of delay to be removed. Default is 0.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+ICCEPS computes the inverse cepstrum of a real-valued input signal.
+The resulting spectrum will be complex in nature.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+xhat = [2.2428, -0.0420, -0.0210, 0.0045, 0.0366, 0.0788, 0.1386, 0.2327, 0.4114, 0.9249];
+icc = icceps(xhat, 2);
+round(icc)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pburg.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pburg" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pburg</refname>
+    <refpurpose>Calculate Burg maximum-entropy power spectral density.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [psd, f_out] = pburg(x, poles, freq, Fs, range, method, plot_type, criterion)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Sampled data (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>poles:</term>
+            <listitem><para> Required number of poles of the AR model (integer scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freq:</term>
+            <listitem><para> Frequencies at which power spectral density is calculated (real vector or integer scalar). Default is 256.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Sampling frequency in Hertz (real scalar). Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> Frequency range of the spectrum ('half', 'onesided', 'whole', 'twosided', 'shift', or 'centerdc').</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>method:</term>
+            <listitem><para> Method to calculate power spectral density ('fft' or 'poly'). Default is 'poly'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>plot_type:</term>
+            <listitem><para> Type of plot ('plot', 'semilogx', 'semilogy', 'loglog', 'squared', or 'db'). Default is 'plot'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>criterion:</term>
+            <listitem><para> Model-selection criterion ('AKICc', 'KIC', 'AICc', 'AIC', or 'FPE'). Optional.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `pburg` function calculates the power spectral density (PSD) of a signal using the Burg method.
+It is a wrapper for `arburg` and `ar_psd`. The function supports various options for frequency range,
+computation method, and plotting.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1.0, -1.6216505, 1.1102795, -0.4621741, 0.2075552, -0.018756746];
+[psd, f_out] = pburg(x, 2)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

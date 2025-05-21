@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from invfreq.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="invfreq" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>invfreq</refname>
+    <refpurpose>Fit filter B(z)/A(z) or B(s)/A(s) to complex frequency response at frequency points F.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [B, A] = invfreq(H, F, nB, nA)
+   [B, A] = invfreq(H, F, nB, nA, W)
+   [B, A] = invfreq(H, F, nB, nA, W, [], [], plane)
+   [B, A] = invfreq(H, F, nB, nA, W, iter, tol, plane)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>H:</term>
+            <listitem><para> Desired complex frequency response. It is assumed that A and B are real polynomials, hence H is one-sided.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>F:</term>
+            <listitem><para> Vector of frequency samples in radians.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nA:</term>
+            <listitem><para> Order of denominator polynomial A.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nB:</term>
+            <listitem><para> Order of numerator polynomial B.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>W:</term>
+            <listitem><para> (optional) Vector of weights for frequency samples. Default is uniform weighting.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>iter:</term>
+            <listitem><para> (optional) Number of Steiglitz-McBride iterations. Default is no iterations.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance for Steiglitz-McBride iterations. Default is no tolerance.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>plane:</term>
+            <listitem><para> (optional) Transform plane. Either "z" for discrete-time spectra (default) or "s" for continuous-time spectra.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>B:</term>
+            <listitem><para> Coefficients of the numerator polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Coefficients of the denominator polynomial.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `invfreq` function fits a rational transfer function B(z)/A(z) or B(s)/A(s) to the desired complex frequency response `H` at frequency points `F`.
+The orders of the numerator and denominator polynomials are specified by `nB` and `nA`, respectively. Optionally, the fit-errors can be weighted
+using the weights `W`. The transform plane can be specified as either "z" for discrete-time or "s" for continuous-time. By default, the z-plane is used.
+   </para>
+   <para>
+The function supports Steiglitz-McBride iterations for iterative refinement of the solution, specified by `iter` and `tol`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Fit a filter to a Butterworth filter response:
+[B, A] = butter(12, 1/4);
+[H, w] = freqz(B, A, 128);
+[Bh, Ah] = invfreq(H, w, 4, 4);
+Hh = freqz(Bh, Ah);
+disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983, page 50.</para>
+   <para>http://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

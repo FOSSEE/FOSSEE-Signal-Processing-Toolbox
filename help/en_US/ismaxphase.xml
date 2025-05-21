@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ismaxphase.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ismaxphase" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ismaxphase</refname>
+    <refpurpose>Determine whether a filter is maximum phase.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   flag = ismaxphase(b, a)
+   flag = ismaxphase(sos)
+   flag = ismaxphase(..., tol)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> K x 6 second-order section matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance used to determine when two numbers are close enough to be considered equal.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `ismaxphase` function determines whether the given system function is a maximum phase system.
+A maximum phase system means all zeros of the transfer function are outside the unit circle in the z-plane,
+and all poles must be within the unit circle for stability and causality.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+flag = ismaxphase([1 -5 6], 1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda ( parthasarathipanda314@gmail.com )</member>
+   </simplelist>
+</refsection>
+</refentry>

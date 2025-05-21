@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheb.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheb" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheb</refname>
+    <refpurpose>Compute the Chebyshev polynomial of the first kind.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   T = cheb(n, x)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Non-negative integer. Order of the Chebyshev polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Scalar or array. Input values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>T:</term>
+            <listitem><para> Scalar or array. Values of the Chebyshev polynomial of the first kind.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the Chebyshev polynomial of the first kind of order `n` for the input values `x`. The function supports both scalar and array inputs for `x`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+T = cheb(3, 0.5)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

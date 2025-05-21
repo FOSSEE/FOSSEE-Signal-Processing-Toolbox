@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from islinphase.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="islinphase" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>islinphase</refname>
+    <refpurpose>Determine whether a filter has linear phase.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   flag = islinphase(b, a)
+   flag = islinphase(sos)
+   flag = islinphase(..., tol)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> K x 6 second-order section matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance for phase response similarity. Default is 0.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `islinphase` function determines whether a filter has linear phase.
+It returns `flag = 1` if the filter is linear phase, otherwise it returns `flag = 0`.
+   </para>
+   <para>
+- When called with `b` and `a`, the function checks the linear phase property of the filter defined by these coefficients.
+- When called with `sos`, the function checks the linear phase property of the filter defined by the second-order section matrix.
+- The optional `tol` parameter specifies the tolerance for phase response similarity.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+flag = islinphase([0, 1, 2, 2, 1, 0], 1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda  ( parthasarathipanda314@gmail.com )</member>
+   </simplelist>
+</refsection>
+</refentry>

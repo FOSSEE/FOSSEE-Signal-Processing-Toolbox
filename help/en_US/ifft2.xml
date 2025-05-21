@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ifft2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ifft2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ifft2</refname>
+    <refpurpose>Compute the inverse two-dimensional discrete Fourier transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   ifft2(A)
+   ifft2(A, m, n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Input matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> (optional) Number of rows of A to be used.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> (optional) Number of columns of A to be used.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Calculates the inverse two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm. If m or n is larger than the size of A, A is resized and padded with zeros. If smaller, A is truncated.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+A = [1 2 3; 4 5 6; 7 8 9]
+m = 4
+n = 4
+ifft2(A, m, n)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

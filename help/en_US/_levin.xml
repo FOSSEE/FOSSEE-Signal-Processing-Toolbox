@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from _levin.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="_levin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>_levin</refname>
+    <refpurpose>Resolve the Yule-Walker equations:</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [ar,sigma2,rc]=_levin(r)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+|r(0)   r(1)   ... r(N-1)|| a(1) | |sigma2|
+|r(1)   r(0)   ... r(n-1)|| a(2) | |  0   |
+|  :      :    ...    :  ||   :  |=|  0   |
+|  :      :    ...    :  ||   :  | |  0   |
+|r(N-1) r(N-2) ...  r(0) ||a(N-1)| |  0   |
+   </para>
+   <para>
+using Levinson's algorithm.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>r      :</term>
+            <listitem><para>Correlation coefficients</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ar     :</term>
+            <listitem><para>Auto-Regressive model parameters</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sigma2 :</term>
+            <listitem><para>Scale constant</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rc     :</term>
+            <listitem><para>Reflection coefficients</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Solve the Yule-Walker equations using Levinson's algorithm
+// Correlation coefficients
+r = [1, 0.8, 0.5, 0.2];
+// Solve the Yule-Walker equations
+[ar, sigma2, rc] = _levin(r);
+// Display the results
+disp("Auto-Regressive model parameters (ar):");
+disp(ar);
+disp("Scale constant (sigma2):");
+disp(sigma2);
+disp("Reflection coefficients (rc):");
+disp(rc);
+   ]]></programlisting>
+</refsection>
+</refentry>

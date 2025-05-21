@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ellipap.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ellipap" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ellipap</refname>
+    <refpurpose>Produces a lowpass analog prototype elliptic filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [z, p, g] = ellipap(n, Rp, Rs)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. The order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rp:</term>
+            <listitem><para> Non-negative scalar. The peak-to-peak passband ripple in decibels (dB).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rs:</term>
+            <listitem><para> Non-negative scalar. The stopband attenuation in decibels (dB).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Vector. The zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Vector. The poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Scalar. The gain of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function produces a lowpass analog elliptic prototype filter of order `n`, with a peak-to-peak passband ripple of `Rp` dB and a stopband attenuation of `Rs` dB.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[z, p, g] = ellipap(4, 3, 10)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="analpf">analpf</link></member>
+   </simplelist>
+</refsection>
+</refentry>

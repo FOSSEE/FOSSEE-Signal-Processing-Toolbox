@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arma_rnd.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arma_rnd" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arma_rnd</refname>
+    <refpurpose>Return a simulation of the ARMA model.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   x = arma_rnd(a, b, v, t, n)
+   x = arma_rnd(a, b, v, t)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Real vector. Coefficients of the autoregressive (AR) part of the model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Real vector. Coefficients of the moving average (MA) part of the model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>v:</term>
+            <listitem><para> Variance of the Gaussian white noise.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Length of the output vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Number of dummy x(i) used for initialization (optional, default = 100).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The ARMA model is defined by:
+x(n) = a(1) * x(n-1) + … + a(k) * x(n-k) + e(n) + b(1) * e(n-1) + … + b(l) * e(n-l),
+where `k` is the length of vector `a`, `l` is the length of vector `b`, and `e` is Gaussian white noise with variance `v`.
+The function returns a vector of length `t`. The optional parameter `n` specifies the number of dummy x(i) used for initialization.
+If `n` is omitted, it defaults to 100.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1, 2, 3, 4, 5];
+b = [7, 8, 9, 10, 11];
+v = 10;
+t = 5;
+n = 100;
+x = arma_rnd(a, b, v, t, n)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

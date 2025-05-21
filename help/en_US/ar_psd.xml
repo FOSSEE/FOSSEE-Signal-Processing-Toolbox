@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ar_psd.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ar_psd" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ar_psd</refname>
+    <refpurpose>Calculate the power spectrum of the autoregressive model.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [psd, f_out] = ar_psd(a, v)
+   [psd, f_out] = ar_psd(a, v, freq)
+   [psd, f_out] = ar_psd(a, v, freq, fs)
+   [psd, f_out] = ar_psd(..., range)
+   [psd, f_out] = ar_psd(..., method)
+   [psd, f_out] = ar_psd(..., plottype)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> List of m=(order + 1) autoregressive model coefficients. The first element is the zero-lag coefficient, which always has a value of 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>v:</term>
+            <listitem><para> Square of the moving-average coefficient of the AR model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freq:</term>
+            <listitem><para> Frequencies at which power spectral density is calculated, or a scalar indicating the number of uniformly distributed frequency values at which spectral density is calculated. (default = 256)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> Sampling frequency (Hertz) (default = 1).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> Specifies the frequency range of the spectrum. Options include 'half', 'onesided', 'whole', 'twosided', 'shift', or 'centerdc'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>method:</term>
+            <listitem><para> Specifies the method to calculate the power spectrum. Options include 'fft' or 'poly'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>plottype:</term>
+            <listitem><para> Specifies the type of plot. Options include 'plot', 'semilogx', 'semilogy', 'loglog', 'squared', or 'db'.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function ar_psd() calculates the power spectrum of an autoregressive model using the provided coefficients `a` and variance `v`.
+It supports various methods for spectrum calculation and allows customization of frequency range and plot type.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[psd, f_out] = ar_psd([1, -0.5], 1)
+[psd, f_out] = ar_psd([1, -1.5, 0.7], 2, 512, 2.0)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

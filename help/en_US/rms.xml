@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rms.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rms" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rms</refname>
+    <refpurpose>Root mean squared value</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y=rms(X);
+   Y=rms(X,dim);
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+For vectors, RMS(X) is the root mean squared value in X. For matrices,
+RMS(X) is a row vector containing the RMS value from each column. For
+N-D arrays, RMS(X) operates along the first non-singleton dimension.
+   </para>
+   <para>
+Y = RMS(X,DIM) operates along the dimension DIM.
+   </para>
+   <para>
+When X is complex, the RMS is computed using the magnitude
+RMS(ABS(X)).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the root mean squared (RMS) value of a vector and a matrix
+x = [1, 2, 3, 4];
+y1 = rms(x);
+disp("RMS of vector:");
+disp(y1);
+x_matrix = [1, 2; 3, 4; 5, 6];
+y2 = rms(x_matrix);
+disp("RMS of matrix columns:");
+disp(y2);
+y3 = rms(x_matrix, 2);
+disp("RMS of matrix rows:");
+disp(y3);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
+</refentry>

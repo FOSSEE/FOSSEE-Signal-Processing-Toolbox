@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from upfirdn.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="upfirdn" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>upfirdn</refname>
+    <refpurpose>Upsample, filter, and downsample a signal.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   yout = upfirdn(xin, h, p, q)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>xin:</term>
+            <listitem><para> Input signal (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para> Filter coefficients (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Upsampling factor (positive integer). Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>q:</term>
+            <listitem><para> Downsampling factor (positive integer). Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>yout:</term>
+            <listitem><para> Output signal after upsampling, filtering, and downsampling.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `upfirdn` function performs three operations on the input signal `xin`:
+1. Upsampling by a factor `p` (inserting zeros between samples).
+2. Filtering the upsampled signal using the filter coefficients `h`.
+3. Downsampling the filtered signal by a factor `q` (keeping every q-th sample).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Perform upsampling, filtering, and downsampling:
+xin = 1:10;
+h = [1, 2, 1];
+p = 2;
+q = 3;
+yout = upfirdn(xin, h, p, q);
+
+// Default upsampling and downsampling factors (p = 1, q = 1):
+xin = 1:10;
+h = [1, 2, 1];
+yout = upfirdn(xin, h);
+
+// Upsample by 2 and downsample by 2:
+xin = 1:10;
+h = [1];
+yout = upfirdn(xin, h, 2, 2);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

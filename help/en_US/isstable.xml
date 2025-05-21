@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from isstable.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="isstable" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>isstable</refname>
+    <refpurpose>Check for the stability of a discrete-time system.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   flag = isstable(b, a)
+   flag = isstable(sos)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> K x 6 second-order section matrix. Each row corresponds to the coefficients of a second-order filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `isstable` function checks whether a discrete-time system is stable.
+A discrete-time system is stable if all poles of the system function are inside the unit circle in the z-plane.
+   </para>
+   <para>
+- When called with `b` and `a`, the function checks the stability of the filter defined by these coefficients.
+- When called with `sos`, the function checks the stability of the filter defined by the second-order section matrix.
+   </para>
+   <para>
+The function returns `flag = 1` if the system is stable, and `flag = 0` otherwise.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+flag = isstable([1 2 0], [1 5 6])
+   ]]></programlisting>
+</refsection>
+</refentry>

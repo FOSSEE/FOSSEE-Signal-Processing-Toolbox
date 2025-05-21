@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pwelch.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pwelch" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pwelch</refname>
+    <refpurpose>Estimate power spectral density of data "x" by the Welch (1967) periodogram/FFT method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [spectra, freq] = pwelch(x, y, window, overlap, Nfft, Fs, range, plot_type, detrend, sloppy, results)
+   [spectra, Pxx_ci, freq] = pwelch(x, window, overlap, Nfft, Fs, conf, range, plot_type, detrend, sloppy)
+   [spectra, Pxx_ci, freq] = pwelch(x, y, window, overlap, Nfft, Fs, conf, range, plot_type, detrend, sloppy, results)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> [non-empty vector] System-input time-series data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> [non-empty vector] System-output time-series data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> [real vector] Window-function values between 0 and 1. Default is Hamming.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>overlap:</term>
+            <listitem><para> [real scalar] Segment overlap expressed as a multiple of window or segment length. Default is 0.5.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Nfft:</term>
+            <listitem><para> [integer scalar] Length of FFT. Default is the length of the "window" vector or the scalar "window" argument.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> [real scalar] Sampling frequency (Hertz). Default is 1.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>conf:</term>
+            <listitem><para> [real scalar] Confidence level between 0 and 1. Default is 0.95.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> Frequency range of the spectrum. Options are 'half', 'onesided', 'whole', 'twosided', 'shift', 'centerdc'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>plot_type:</term>
+            <listitem><para> Specifies the type of plot. Options are 'plot', 'semilogx', 'semilogy', 'loglog', 'squared', 'db'. Default is 'plot'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>detrend:</term>
+            <listitem><para> Specifies how to remove trends from the data. Options are 'no-strip', 'none', 'short', 'mean', 'linear', 'long-mean'. Default is 'long-mean'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sloppy:</term>
+            <listitem><para> Adjusts FFT length to the nearest integer power of 2 by zero padding. Default is exact FFT length.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>results:</term>
+            <listitem><para> Specifies what results to return. Options are 'power', 'cross', 'trans', 'coher', 'ypower'. Default is 'power'.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `pwelch` function estimates the power spectral density (PSD) of data "x" using the Welch periodogram/FFT method.
+It supports single-channel and two-channel spectrum analysis, including power spectral density, cross-spectral density,
+transfer function, and coherence functions.
+   </para>
+   <para>
+The data is divided into overlapping segments. Each segment is windowed using the specified window function (e.g., Hamming)
+and zero-padded to the desired FFT length. The periodogram is computed for each segment, and the PSD is obtained by averaging
+the periodograms. This averaging reduces the variance of the spectral estimate.
+   </para>
+   <para>
+The function also supports confidence interval estimation for the PSD, which is based on the scatter in the periodograms.
+However, confidence intervals are only available for the power spectrum of "x" and not for cross-power spectra, transfer functions,
+or coherence functions.
+   </para>
+   <para>
+The `pwelch` function provides compatibility with different versions of MATLAB (R11, R12, R14) and their respective default behaviors.
+It also includes options for customizing the frequency range, plot type, and detrending method.
+   </para>
+   <para>
+Notes
+- The spectral density is scaled so that the area under the spectrum equals the mean square of the data.
+- The function supports both one-sided and two-sided spectra. For one-sided spectra, contributions from negative frequencies
+are added to the positive side of the spectrum.
+- The default window function is Hamming, but other window functions (e.g., Hann, Bartlett) can be used.
+- Zero-padding increases the frequency resolution but does not improve the accuracy of the spectral estimate.
+- The function can handle real and complex data. For real data, the default frequency range is 'half'; for complex data, it is 'whole'.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute power spectral density of a signal:
+x = rand(1, 1024);
+[spectra, freq] = pwelch(x);
+
+// Compute cross-spectral density of two signals:
+x = rand(1, 1024);
+y = rand(1, 1024);
+[spectra, freq] = pwelch(x, y, [], [], 512);
+
+// Compute power spectral density with confidence intervals:
+x = rand(1, 1024);
+[spectra, Pxx_ci, freq] = pwelch(x, [], [], [], [], 0.95);
+
+// Plot power spectral density in dB:
+x = rand(1, 1024);
+pwelch(x, [], [], [], [], [], 'db');
+
+// Use MATLAB R12 compatibility mode:
+prev_compat = pwelch('R12+');
+[spectra, freq] = pwelch(x, [], [], [], [], [], 'plot');
+
+   ]]></programlisting>
+</refsection>
+</refentry>

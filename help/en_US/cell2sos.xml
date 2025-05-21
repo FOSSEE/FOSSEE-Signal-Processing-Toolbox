@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cell2sos.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cell2sos" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cell2sos</refname>
+    <refpurpose>Convert a second-order section cell array to a second-order section matrix.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   sos = cell2sos(cll)
+   [sos, g] = cell2sos(cll)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>cll:</term>
+            <listitem><para> Cell array. Represents the second-order section representation of the filter system.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> Matrix. The second-order section representation of the filter system, returned as an L-by-6 matrix:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Scalar. The overall gain of the filter system.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function converts a second-order section cell array `cll` into a second-order section matrix `sos`. If the gain of the filter system is different from 1, the function also returns the scale gain `g`.
+For a filter system with L sections and unity gain, `cll` is a cell array with L elements:
+cll{k} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
+where each element contains the coefficients of the kth second-order section of the filter system H(z):
+H(z) = product(k=1 to L) H_k(z)
+= product(k=1 to L) (b_0k + b_1k*z^(-1) + b_2k*z^(-2))/(1 + a_1k*z^(-1) + a_2k*z^(-2))
+For a filter system with gain different from 1, `cll` is a cell array with L+1 elements:
+cll{1} = {g_n g_d}
+cll{k+1} = {[b_0k b_1k b_2k] [1 a_1k a_2k]}
+where g_n and g_d are the numerator and denominator gains, respectively, and the remaining elements represent the second-order sections.
+H(z) = (g_n/g_d) * product(k=1 to L) H_k(z)
+And sos = [b_01  b_11  b_21   1   a_11  a_21]
+[b_02  b_12  b_22   1   a_12  a_22]
+[  ⋮     ⋮     ⋮     ⋮    ⋮     ⋮ ]
+[b_0L  b_1L  b_2L   1   a_1L  a_2L]
+where each row represents the coefficients of a second-order section.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+cll = {{[3 6 7] [1 1 2]}
+{[1 4 5] [1 9 3]}
+{[2 7 1] [1 7 8]}};
+sos = cell2sos(cll)
+
+cll = {{1 2} {[3 6 7] [1 1 2]}
+{[1 4 5] [1 9 3]}
+{[2 7 1] [1 7 8]}};
+[sos, g] = cell2sos(cll)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="sos2cell">sos2cell</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abinash Singh (abinashlalotra@gmail.com)</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from impz.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="impz" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>impz</refname>
+    <refpurpose>Generate impulse-response characteristics of the filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [x, t] = impz (b)
+   [x, t] = impz (b, a)
+   [x, t] = impz (b, a, n)
+   [x, t] = impz (b, a, n, fs)
+   impz (…)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The filter coefficients correspond to the the z-plane rational function with numerator b and denominator a. If a is not specified, it defaults to 1.
+If n is not specified, or specified as [], it will be chosen such that the signal has a chance to die down to -120dB, or to not explode beyond 120dB, or to show five periods if there is no significant damping.
+If no return arguments are requested, plot the results.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Define filter coefficients
+b = [0.2];               // Numerator (feedforward)
+a = [1, -0.8];           // Denominator (feedback)
+// Compute impulse response
+[x, t] = impz(b, a, 50);  // 50 samples of impulse response
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fftfilt">fftfilt</link></member>
+   <member><link linkend="filter">filter</link></member>
+   </simplelist>
+</refsection>
+</refentry>

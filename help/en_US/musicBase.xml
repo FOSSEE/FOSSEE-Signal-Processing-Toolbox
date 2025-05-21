@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from musicBase.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="musicBase" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>musicBase</refname>
+    <refpurpose>Implements the core of the MUSIC (Multiple Signal Classification) algorithm.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [outputData, msg] = musicBase(inputData)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>inputData:</term>
+            <listitem><para> A structure containing the following fields:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- x:</term>
+            <listitem><para> Input signal or correlation matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- isCorrFlag:</term>
+            <listitem><para> Boolean flag indicating whether `x` is a correlation matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- windowLength:</term>
+            <listitem><para> Length of the window for signal segmentation.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- noverlap:</term>
+            <listitem><para> Number of overlapping samples between consecutive windows.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- windowVector:</term>
+            <listitem><para> Window function to apply to each segment.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- isWindowSpecified:</term>
+            <listitem><para> Boolean flag indicating whether a window function is specified.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- p:</term>
+            <listitem><para> Signal subspace dimension and optional threshold for eigenvalue selection.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>outputData:</term>
+            <listitem><para> A structure containing the following fields:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- signalEigenvects:</term>
+            <listitem><para> Eigenvectors corresponding to the signal subspace.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- noiseEigenvects:</term>
+            <listitem><para> Eigenvectors corresponding to the noise subspace.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- eigenvals:</term>
+            <listitem><para> Eigenvalues of the correlation matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- pEffective:</term>
+            <listitem><para> Effective dimension of the signal subspace.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>msg:</term>
+            <listitem><para> A string containing error messages, if any.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `musicBase` function implements the core of the MUSIC algorithm, which is used for spectral estimation and direction-of-arrival (DOA) estimation.
+It computes the eigenvalues and eigenvectors of the correlation matrix (or signal matrix) and separates them into signal and noise subspaces.
+The effective dimension of the signal subspace is determined based on the input parameters.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the signal and noise subspaces using the MUSIC algorithm:
+inputData.x = rand(100, 1);               // Input signal
+inputData.isCorrFlag = %f;               // Input is not a correlation matrix
+inputData.windowLength = 50;             // Window length
+inputData.noverlap = 25;                 // Overlap between windows
+inputData.windowVector = hamming(50);    // Hamming window
+inputData.isWindowSpecified = %t;        // Window is specified
+inputData.p = [2, 0.1];                  // Signal subspace dimension and threshold
+
+[outputData, msg] = musicBase(inputData);
+
+if length(msg) == 0 then
+disp("Signal Eigenvectors:");
+disp(outputData.signalEigenvects);
+disp("Noise Eigenvectors:");
+disp(outputData.noiseEigenvects);
+disp("Eigenvalues:");
+disp(outputData.eigenvals);
+disp("Effective Signal Subspace Dimension:");
+disp(outputData.pEffective);
+else
+disp("Error: " + msg);
+end
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

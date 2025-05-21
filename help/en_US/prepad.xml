@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from prepad.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="prepad" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>prepad</refname>
+    <refpurpose>Prepend or truncate a vector or matrix to a specified length.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   res = prepad(x, l)
+   res = prepad(x, l, c)
+   res = prepad(x, l, c, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>l:</term>
+            <listitem><para> Desired length (scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>c:</term>
+            <listitem><para> (optional) Scalar value to prepend. Default is 0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which to operate. Default is 2.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `prepad` function prepends the scalar value `c` to the vector or matrix `x` until it reaches the specified length `l`.
+If `c` is not provided, a value of 0 is used. If the length of `x` exceeds `l`, elements are removed from the beginning of `x`
+to match the desired length. If `x` is a matrix, the operation is performed along rows or columns based on the `dim` parameter.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Prepend zeros to a row vector to make its length 6
+res1 = prepad([1, 2, 3, 4], 6);
+disp("Result 1:");
+disp(res1); // Output: [0, 0, 1, 2, 3, 4]
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abinash Singh</member>
+   </simplelist>
+</refsection>
+</refentry>

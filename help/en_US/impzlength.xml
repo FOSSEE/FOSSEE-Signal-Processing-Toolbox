@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from impzlength.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="impzlength" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>impzlength</refname>
+    <refpurpose>Compute the impulse response length.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   len = impzlength(b, a, tol)
+   len = impzlength(sos)
+   len = impzlength(__, tol)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients (real|complex, vector|scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients (real|complex, vector|scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> Second-order estimates (real|complex, matrix K-by-6).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> Tolerance for estimating the effective length (positive real, scalar).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `impzlength` function computes the impulse response length for a causal discrete-time filter.
+For stable IIR filters, it returns the effective length, i.e., the length after which the response
+is essentially zero. It supports transfer function coefficients or second-order section matrices.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Low pass IIR filter with pole at 0.9
+b = 1;
+a = [1 -0.9];
+len = impzlength(b, a)
+
+// High pass IIR filter with pole at -0.5
+b = 1;
+a = [1 0.5];
+len = impzlength(b, a)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="designfilt">designfilt</link></member>
+   <member><link linkend="digitalFilter">digitalFilter</link></member>
+   <member><link linkend="impz,">impz,</link></member>
+   <member><link linkend="zp2sos">zp2sos</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+</refentry>

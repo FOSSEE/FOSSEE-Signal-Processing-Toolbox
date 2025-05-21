@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from eqtflength.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="eqtflength" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>eqtflength</refname>
+    <refpurpose>Modifies the input vectors to give output vectors of the same length.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = eqtflength(b, a)
+   [b, a, N, M] = eqtflength(b, a)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The numerator coefficients of the transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. The denominator coefficients of the transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N:</term>
+            <listitem><para> Integer. The length of the numerator vector after modification.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>M:</term>
+            <listitem><para> Integer. The length of the denominator vector after modification.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function modifies the input vectors `b` and `a` to ensure they have the same length by appending zeros to the shorter vector.
+It also returns the lengths of the modified numerator and denominator vectors.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Equalize lengths of numerator and denominator:
+b = [1, 2];
+a = [1, 2, 3];
+[b, a] = eqtflength(b, a)
+// Return lengths of modified vectors:
+b = [1, 2];
+a = [1, 2, 3];
+[b, a, N, M] = eqtflength(b, a)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
+</refentry>

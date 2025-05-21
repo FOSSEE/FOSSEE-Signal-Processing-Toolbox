@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from residue.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="residue" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>residue</refname>
+    <refpurpose>Residue computation for partial fraction expansion and reconstruction.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [r, p, k, e] = residue(b, a)
+   [b, a] = residue(r, p, k, e)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the polynomial (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the polynomial (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> Residues of the partial fraction expansion (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles of the partial fraction expansion (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> Coefficients of the direct polynomial term (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Multiplicities of the poles (vector).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `residue` function computes the partial fraction expansion of a rational function represented by the numerator `b`
+and denominator `a`. It returns the residues `r`, poles `p`, and direct term coefficients `k`. The function can also
+reconstruct the numerator and denominator polynomials from the residues, poles, and direct term.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute partial fraction expansion:
+b = [1, 1, 1];
+a = [1, -5, 8, -4];
+[r, p, k, e] = residue(b, a);
+
+// Reconstruct polynomials from residues and poles:
+[b_reconstructed, a_reconstructed] = residue(r, p, k, e);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

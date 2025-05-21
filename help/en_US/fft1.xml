@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fft1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fft1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fft1</refname>
+    <refpurpose>Calculates the discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = fft1(D)
+   y = fft1(D, N)
+   y = fft1(D, N, DIM)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>D:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N:</term>
+            <listitem><para> Number of points for the FFT. Default is the length of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>DIM:</term>
+            <listitem><para> Specifies the dimension of the matrix along which the FFT is performed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> FFT of the input signal.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Calculates the discrete Fourier transform of a matrix using Fast Fourier Transform algorithm.
+The FFT is calculated along the first non-singleton dimension of the array. Thus, FFT is computed for each column of D.
+The variable 'N' is an integer that determines the number of elements of 'D' to use.
+If 'N' is larger than the dimension along which the FFT is calculated,
+then 'D' is resized and padded with zeros to match the required size.On the other hand,
+if 'N' is smaller than the size of 'D', then 'D' is truncated to match the required size.
+DIM is an integer specifying the dimension of the matrix along which the FFT is performed.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+D = [1 2 3; 4 5 6; 7 8 9]
+N = 3
+DIM = 2
+fft1(D, N, DIM)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft">fft</link></member>
+   </simplelist>
+</refsection>
+</refentry>

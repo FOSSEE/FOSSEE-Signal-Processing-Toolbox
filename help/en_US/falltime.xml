@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from falltime.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="falltime" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>falltime</refname>
+    <refpurpose>Estimate the fall time of a negative-going bilevel waveform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   f = falltime(x)
+   f = falltime(x, t)
+   f = falltime(x, Fs)
+   f = falltime(x, t, 'PercentReferenceLevels', N)
+   f = falltime(x, t, 'Tolerance', M)
+   f = falltime(x, t, 'StateLevels', O)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, Fs)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'PercentReferenceLevels', N)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'Tolerance', M)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'StateLevels', O)
+   [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference] = falltime(x, t, 'StateLevels', O, 'fig', 'on' or 'off')
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Real vector. The input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Positive scalar. Specifies the sample rate, where the first sample instant corresponds to a time of zero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Vector or positive scalar. Defines the sample time instants or the sample rate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>PercentReferenceLevels:</term>
+            <listitem><para> Two-element vector. Specifies the percent reference levels as percentages. Default is [10, 90].</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tolerance:</term>
+            <listitem><para> Real scalar. Specifies the tolerance value. Default is 2.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>StateLevels:</term>
+            <listitem><para> Two-element real vector. Defines the lower and upper state levels.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fig:</term>
+            <listitem><para> String. Specifies whether to display the figure ('on' or 'off'). Default is 'off'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Vector. Returns the fall time of negative-going bilevel waveform transitions.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lowercrossvalue:</term>
+            <listitem><para> Vector. Returns the lower cross values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>uppercrossvalue:</term>
+            <listitem><para> Vector. Returns the upper cross values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lowerreference:</term>
+            <listitem><para> Scalar. Returns the lower reference value corresponding to the lower percent reference level.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>upperreference:</term>
+            <listitem><para> Scalar. Returns the upper reference value corresponding to the upper percent reference level.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function estimates the fall time of a negative-going bilevel waveform. It calculates the time difference between the upper and lower percent reference levels of the waveform.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1.2, 5, 10, -20, 12];
+t = 1:length(x);
+f = falltime(x, t);
+
+   ]]></programlisting>
+</refsection>
+</refentry>

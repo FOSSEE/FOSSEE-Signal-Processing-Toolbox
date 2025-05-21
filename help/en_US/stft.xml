@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from stft.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="stft" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>stft</refname>
+    <refpurpose>Compute the short-time Fourier transform of the vector X.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = stft(x)
+   y = stft(x, win_size)
+   y = stft(x, win_size, inc)
+   y = stft(x, win_size, inc, num_coef)
+   y = stft(x, win_size, inc, num_coef, win_type)
+   [y, c] = stft(x)
+   [y, c] = stft(x, win_size)
+   [y, c] = stft(x, win_size, inc)
+   [y, c] = stft(x, win_size, inc, num_coef)
+   [y, c] = stft(x, win_size, inc, num_coef, win_type)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Real scalar or vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>win_size:</term>
+            <listitem><para> Size of the window used</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>inc:</term>
+            <listitem><para> Increment</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>num_coef:</term>
+            <listitem><para> Coefficients of Fourier transform</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>win_type:</term>
+            <listitem><para> Type of window</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Compute the short-time Fourier transform of the vector X with num_coef coefficients by applying a window of win_size data points and an increment of inc points.
+Before computing the Fourier transform, one of the following windows is applied:
+"hanning" -&gt; win_type = 1
+"hamming" -&gt; win_type = 2
+"rectangle" -&gt; win_type = 3
+The window names can be passed as strings or by the win_type number.
+The following defaults are used for unspecified arguments: win_sizse = 80, inc = 24, num_coef = 64, and win_type = 1.
+y = stft(x, ...)' returns the absolute values of the Fourier coefficients according to the NUM_COEF positive frequencies.
+'[y, c] = stft (x, ...)' returns the entire stft-matrix y and a 3-element vector c containing the window size, increment, and window type,
+which is needed by the 'synthesis' function.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[y, c] = stft([1; -2; -5])
+   ]]></programlisting>
+</refsection>
+</refentry>

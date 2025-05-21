@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fft21.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fft21" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fft21</refname>
+    <refpurpose>Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = fft21(A)
+   y = fft21(A, m,n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Number of rows of A to be used</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Number of columns of A to be used</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
+It performs two-dimentional FFT on the matrix A. You can use the variables m and n to specify the number of rows and columns
+of A that you want to use. If either of these variables is larger than the size of A,
+then A will be resized, and zeros will be added as padding.
+If A is a multi-dimensional matrix, the function will treat each two-dimensional sub-matrix of A separat// Examples
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+A = [1 2 3; 4 5 6; 7 8 9]
+m = 4
+n = 4
+fft21 (A, m, n)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft">fft</link></member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from shanwavf.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="shanwavf" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>shanwavf</refname>
+    <refpurpose>Compute the Complex Shannon wavelet.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [psi, x] = shanwavf(lb, ub, n, fb, fc)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>lb, ub:</term>
+            <listitem><para> Interval endpoints (real-valued scalars). Specifies the range [lb, ub] where the wavelet is evaluated. Must satisfy lb ≤ ub.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Number of regularly spaced points in the interval [lb, ub] (positive integer).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fb:</term>
+            <listitem><para> Time-decay parameter of the wavelet (bandwidth in the frequency domain). Must be a positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc:</term>
+            <listitem><para> Center frequency of the complex Shannon wavelet. Must be a positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>psi:</term>
+            <listitem><para> Complex Shannon wavelet evaluated on the n-point regular grid `x` in the interval [lb, ub]. Returned as a 1-by-n vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Grid where the complex Shannon wavelet is evaluated. Returned as a 1-by-n vector. The sample points are evenly distributed between lb and ub.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `shanwavf` function computes the Complex Shannon wavelet on a regular grid in the interval [lb, ub].
+The wavelet is defined by the expression:
+psi(x) = fb^(1/2) * sinc(fb * x) * exp(2 * %i * %pi * fc * x)
+where `sinc(x) = sin(%pi * x) / (%pi * x)`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the Complex Shannon wavelet:
+[psi, x] = shanwavf(2, 8, 3, 1, 6);
+// Output:
+// psi = [-3.8982e-17 + 1.1457e-31i   3.8982e-17 - 8.4040e-31i  -3.8982e-17 + 4.5829e-31i]
+// x = [2   5   8]
+
+   ]]></programlisting>
+</refsection>
+</refentry>

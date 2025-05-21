@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rceps.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rceps" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rceps</refname>
+    <refpurpose>Real cepstrum and minimum-phase reconstruction</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Description</title>
+   <para>
+Real cepstrum and minimum-phase reconstruction
+If  called with two output arguments,
+the minimum phase reconstruction of the signal x is returned in ym.Calling Sequence
+[y,ym] = rceps(x)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector or a Matirx</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y :</term>
+            <listitem><para> Real cepstrum</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ym :</term>
+            <listitem><para> Minimum-phase reconstruction</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// create a 45 Hz sine wave sampled at 100 Hz.
+t = 0:0.01:1.27;
+s1 = sin(2*%pi*45*t);
+s2 = s1 + 0.5*[zeros(1,20) s1(1:108)]; //Add an echo of the signal, with half the amplitude, 0.2 seconds after the beginning of the signal.
+c = rceps(s2); // real cepstrum of signal
+plot(t,c)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ifft1">ifft1</link></member>
+   </simplelist>
+</refsection>
+</refentry>

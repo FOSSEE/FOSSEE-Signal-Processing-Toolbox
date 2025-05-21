@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from shiftdata.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="shiftdata" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>shiftdata</refname>
+    <refpurpose>Shifts data by rearranging dimensions</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [y,perm,nshifts]=shiftdata(x,dim)
+   [y,perm,nshifts]=shiftdata(x)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector matrix or n-dimensional array</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim :</term>
+            <listitem><para> The dimension to be shifted to the first column</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[y,perm,nshifts]=shiftdata(x,dim)
+Shifts the entries along dimension dim in x to the first column and returns the permutation vector in perm
+[y,perm,nshifts]=shiftdata(x)
+Shifts the entries along dimension dim in x to the first column and returns the number of shifts in nshifts
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+//When dim is specified:
+x=testmatrix('magi',3)
+[y,perm,nshifts] = shiftdata(x,2)
+
+//When dim is not specified:
+x=1:5
+[y,perm,nshifts] = shiftdata(x)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="permute">permute</link></member>
+   <member><link linkend="unshiftdata">unshiftdata</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
+</refsection>
+</refentry>

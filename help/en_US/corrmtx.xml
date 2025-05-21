@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from corrmtx.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="corrmtx" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>corrmtx</refname>
+    <refpurpose>Generate a data matrix for autocorrelation matrix estimation.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   X = corrmtx(x, m)
+   [X, R] = corrmtx(x, m)
+   X = corrmtx(x, m, s)
+   [X, R] = corrmtx(x, m, s)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector. Input vector of size N for which the correlation matrix of size `m` is to be calculated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Size of the correlation matrix to be computed. Must be strictly smaller than the length of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>s:</term>
+            <listitem><para> String. Method for the type of output matrix `X`. Options are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'autocorrelation' (default):</term>
+            <listitem><para> Generates an autocorrelation estimate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'prewindowed':</term>
+            <listitem><para> Uses prewindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'postwindowed':</term>
+            <listitem><para> Uses postwindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'covariance':</term>
+            <listitem><para> Uses nonwindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'modified':</term>
+            <listitem><para> Uses forward and backward prediction error estimates.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Matrix. Data matrix as specified by the input `s`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Matrix. Autocorrelation matrix estimate calculated as `X'*X`.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Consider the generic matrix X below
+_                _
+| x(1) ..........0 |
+| :      .       : |
+| :       .      : |
+| x(m+1).......x(1)|
+| :      .       : |
+| :       .      : |
+X = | x(n-m).....x(m+1)|
+| :      .       : |
+| :       .      : |
+| x(n).......x(n-m)|
+| :      .       : |
+| :       .      : |
+|_0 ..........x(n)_|
+--
+For different inputs of string s the output would vary ass described below
+'autocorrelation' — (default) X = X, above.
+'prewindowed' — X is the n-by-(m + 1) submatrix of X whose first row is [x(1) … 0] and whose last row is [x(n) … x(n – m)]
+'postwindowed' — X is the n-by-(m + 1) submatrix of X whose first row is [x(m + 1) … x(1)] and whose last row is [0 … x(n)]
+'covariance' — X is the (n – m)-by-(m + 1) submatrix of X whose first row is [x(m + 1) … x(1)] and whose last row is [x(n) … x(n – m)]
+'modified' — X is the 2(n – m)-by-(m + 1) matrix X_mod shown below
+_                _
+| x(m+1) ......x(1)|
+| :      .       : |
+| :       .      : |
+| x(n-m).....x(m+1)|
+| :      .       : |
+| :       .      : |
+| x(n).......x(n-m)|
+X_mod= | x*(1).....x*(m+1)|
+| :      .       : |
+| :       .      : |
+| x*(m+1)...x*(n-m)|
+| :      .       : |
+| :       .      : |
+|_x*(n-m) ...x*(n)_|
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1, 2, 3, 4, 5];
+m = 3;
+[X, R] = corrmtx(x, m, 'autocorrelation')
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="peig">peig</link></member>
+   <member><link linkend="pmusic">pmusic</link></member>
+   <member><link linkend="rooteig">rooteig</link></member>
+   <member><link linkend="rootmusic">rootmusic</link></member>
+   <member><link linkend="xcorr">xcorr</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
+   <member>Bilblography</member>
+   <member>Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</member>
+   </simplelist>
+</refsection>
+</refentry>

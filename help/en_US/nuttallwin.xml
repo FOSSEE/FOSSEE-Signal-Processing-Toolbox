@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from nuttallwin.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="nuttallwin" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>nuttallwin</refname>
+    <refpurpose>Return the filter coefficients of a Blackman-Harris window defined by Nuttall of length m.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = nuttallwin(m)
+   w = nuttallwin(m, "periodic")
+   w = nuttallwin(m, "symmetric")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer specifying the length of the window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> (optional) String specifying the type of window. Possible values are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "periodic":</term>
+            <listitem><para> Returns the periodic form of the window (equivalent to a window of length m+1 with the last coefficient removed).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "symmetric":</term>
+            <listitem><para> Default behavior if no second argument is provided.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector containing the Nuttall window coefficients.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `nuttallwin` function computes the coefficients of a Blackman-Harris window as defined by Nuttall. The window is of length `m`.
+If the optional argument `"periodic"` is provided, the periodic form of the window is returned. If `"symmetric"` is provided or no
+second argument is specified, the symmetric form of the window is returned.
+   </para>
+   <para>
+// Notes
+- The periodic form of the window is useful for spectral analysis where periodicity is assumed.
+- The symmetric form is typically used for filter design.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+//. Compute a symmetric Nuttall window of length 10:
+w = nuttallwin(10);
+
+// Compute a periodic Nuttall window of length 10:
+w = nuttallwin(10, "periodic");
+
+// Compute a symmetric Nuttall window explicitly:
+w = nuttallwin(10, "symmetric");
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

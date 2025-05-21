@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from butter.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="butter" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>butter</refname>
+    <refpurpose>Design a Butterworth filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = butter(n, wc)
+   [b, a] = butter(n, wc, "high")
+   [b, a] = butter(n, [wl, wh])
+   [b, a] = butter(n, [wl, wh], "stop")
+   [z, p, g] = butter(...)
+   [...] = butter(..., "s")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. Order of the Butterworth filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>wc:</term>
+            <listitem><para> Positive real value. Normalized digital or analog 3dB cutoff frequency/frequencies.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Gain of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a Butterworth filter. Default is a discrete space (z) or digital filter using Bilinear transformation from s to z plane.
+If second argument is scalar the third parameter takes in low or high, default value is low. The cutoff is pi*wc radians.
+[b,a] = butter(n, [wl, wh]) indicates a band pass filter with cutoffs pi*Wl and pi*wh radians.
+[b,a] = butter(n, [wl, wh], ’stop’) indicates a band reject filter with cutoffs pi*wl and pi*wh radians.
+[z,p,g] = butter(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+[...] = butter(...,’s’) returns a Laplace space filter,here cutoff(s) wc can be larger than 1 (rad/sec).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[b, a] = butter(4, 0.3, "high")
+
+   ]]></programlisting>
+</refsection>
+</refentry>

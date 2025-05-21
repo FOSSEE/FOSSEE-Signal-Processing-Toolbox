@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fir1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fir1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fir1</refname>
+    <refpurpose>Design an FIR filter using the window method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   b = fir1(n, w)
+   b = fir1(n, w, type)
+   b = fir1(n, w, type, window)
+   b = fir1(n, w, type, window, noscale)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Normalized cutoff frequency or band edges (values between 0 and 1, where 1 corresponds to the Nyquist frequency).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- Scalar:</term>
+            <listitem><para> Specifies the cutoff frequency for a lowpass or highpass filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- Two-element vector:</term>
+            <listitem><para> Specifies the edges of a bandpass or bandstop filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- N-element vector:</term>
+            <listitem><para> Specifies the band edges for a multiband filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>type:</term>
+            <listitem><para> (optional) String specifying the filter type. Possible values are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "low":</term>
+            <listitem><para> Lowpass filter (default if w is scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "high":</term>
+            <listitem><para> Highpass filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "pass" or "bandpass":</term>
+            <listitem><para> Bandpass filter (default if w is a pair).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "stop":</term>
+            <listitem><para> Bandstop filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "DC-0":</term>
+            <listitem><para> Multiband filter with the first band as a stopband (default if w has more than 2 elements).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- "DC-1":</term>
+            <listitem><para> Multiband filter with the first band as a passband.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> (optional) Vector specifying the window to shape the filter. If not provided, a Hamming window is used by default.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>noscale:</term>
+            <listitem><para> (optional) If specified, the filter coefficients are not normalized. By default, the filter is normalized.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector containing the FIR filter coefficients.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `fir1` function designs an FIR filter of order `n` using the window method. The filter type and cutoff frequencies are specified by `w` and `type`.
+An optional window can be provided to shape the filter. By default, the filter coefficients are normalized to ensure a magnitude response of 1 at the center of the first passband.
+   </para>
+   <para>
+   </para>
+   <para>
+Notes
+   </para>
+   <para>
+- If the filter order `n` is odd and the final band is a passband, the order is incremented to avoid issues with the Nyquist frequency.
+- The periodic form of the window is used for spectral analysis, while the symmetric form is typically used for filter design.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Design a lowpass filter:
+b = fir1(40, 0.3);
+
+// Design a bandstop filter:
+b = fir1(15, [0.2, 0.5], "stop");
+
+// Design a bandpass filter with a custom window:
+window = hamming(16);
+b = fir1(15, [0.2, 0.5], "pass", window);
+
+// Design a highpass filter without normalization:
+b = fir1(20, 0.4, "high", "noscale");
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

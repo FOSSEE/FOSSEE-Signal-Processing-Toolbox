@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from peak2peak.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="peak2peak" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>peak2peak</refname>
+    <refpurpose>Compute the maximum-to-minimum difference (peak-to-peak).</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y = peak2peak(X)
+   Y = peak2peak(X, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Real or complex-valued input vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which to compute the maximum-to-minimum difference.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `peak2peak` function computes the difference between the maximum and minimum values in `X`.
+By default, it operates along the first non-singleton dimension of `X`. If the `dim` parameter is provided,
+the computation is performed along the specified dimension.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute peak-to-peak difference for a vector:
+t = 0:0.001:1-0.001;
+x = cos(2 * %pi * 100 * t);
+y = peak2peak(x)
+
+// Compute peak-to-peak difference along a specific dimension:
+t = 0:0.001:1-0.001;
+x = (1:4)' * cos(2 * %pi * 100 * t);
+y = peak2peak(x, 2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Rahul Dalmia</member>
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
+</refentry>

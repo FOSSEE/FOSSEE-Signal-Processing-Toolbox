@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from polyscale.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="polyscale" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>polyscale</refname>
+    <refpurpose>polyscale Scaling roots of a polynomial (scales the roots of a polynomial in the z plane)</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   b = polyscale(a,alpha)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a :</term>
+            <listitem><para> vector containing the polynomial coefficients</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>alpha :</term>
+            <listitem><para> is the scaling vector</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// to scale the seventh roots of unity ,x^7=1,
+//we represent
+p=[1 0 0 0 0 0 0 -1]   // and changing the scaling factor,
+b=polyscale(p,0.85)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
+</refentry>

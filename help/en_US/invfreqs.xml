@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from invfreqs.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="invfreqs" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>invfreqs</refname>
+    <refpurpose>Fit filter B(s)/A(s) to the complex frequency response H at frequency points F.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [B, A] = invfreqs(H, F, nB, nA)
+   [B, A] = invfreqs(H, F, nB, nA, W)
+   [B, A] = invfreqs(H, F, nB, nA, W, iter, tol, 'trace')
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>H:</term>
+            <listitem><para> Desired complex frequency response.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>F:</term>
+            <listitem><para> Frequency (must be the same length as H).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nA:</term>
+            <listitem><para> Order of the denominator polynomial A.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nB:</term>
+            <listitem><para> Order of the numerator polynomial B.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>W:</term>
+            <listitem><para> (optional) Vector of weights (must be the same length as F). Default is uniform weighting.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>iter:</term>
+            <listitem><para> (optional) Number of iterations for refinement. Default is no iterations.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance for iterations. Default is no tolerance.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'trace':</term>
+            <listitem><para> (optional) Enables tracing of the iterative process.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>B:</term>
+            <listitem><para> Coefficients of the numerator polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Coefficients of the denominator polynomial.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `invfreqs` function fits a rational transfer function B(s)/A(s) to the desired complex frequency response `H` at frequency points `F`.
+The orders of the numerator and denominator polynomials are specified by `nB` and `nA`, respectively. Optionally, the fit-errors can be
+weighted using the weights `W`. The function supports iterative refinement of the solution, specified by `iter` and `tol`.
+   </para>
+   <para>
+Note: The core implementation of this function relies on `invfreq.sci`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Define the desired frequency response (H) and frequency points (F)
+F = linspace(0, 10, 100); // Frequency points
+H = 1 ./ (1 + %i * F);    // Desired frequency response (low-pass filter)
+
+// Define the orders of the numerator and denominator polynomials
+nB = 1; // Order of the numerator
+nA = 1; // Order of the denominator
+
+// Fit the filter
+[B, A] = invfreqs(H, F, nB, nA);
+
+// Display the results
+disp("Numerator coefficients (B):");
+disp(B);
+disp("Denominator coefficients (A):");
+disp(A);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>- J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983.</para>
+   <para>- https://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html</para>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="invfreq">invfreq</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+</refentry>

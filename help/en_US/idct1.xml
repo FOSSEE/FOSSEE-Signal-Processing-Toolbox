@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from idct1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="idct1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>idct1</refname>
+    <refpurpose>Compute the inverse discrete cosine transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y = idct1(X)
+   Y = idct1(X, N)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Input matrix or integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N:</term>
+            <listitem><para> (optional) If N is given, X is padded or trimmed to length N before computing the transform.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Computes the inverse discrete cosine transform of input X. If X is a matrix, the transform is computed along the columns of the matrix. The transform is faster if X is real-valued and of even length.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+idct1([1, 3, 6])
+
+   ]]></programlisting>
+</refsection>
+</refentry>

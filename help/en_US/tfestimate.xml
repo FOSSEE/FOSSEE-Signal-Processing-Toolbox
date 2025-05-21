@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from tfestimate.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="tfestimate" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>tfestimate</refname>
+    <refpurpose>Estimate transfer function of system with input x and output y. Use the Welch (1967) periodogram/FFT method.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   tfestimate (x, y)
+   tfestimate (x, y, window)
+   tfestimate (x, y, window, overlap)
+   tfestimate (x, y, window, overlap, Nfft)
+   tfestimate (x, y, window, overlap, Nfft, Fs)
+   tfestimate (x, y, window, overlap, Nfft, Fs, range)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> system-input time-series data. Real pr complex vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> system-output time-series data. Real or complex vector, same dimension as x.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> [real vector] of window-function values between 0 and 1; the data segment has the same length as the window. Default window shape is Hamming.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>overlap:</term>
+            <listitem><para> [real scalar] segment overlap expressed as a multiple of window or segment length. 0 &lt;= overlap &lt; 1, The default is overlap = 0.5.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Nfft:</term>
+            <listitem><para> [integer scalar] Length of FFT.  The default is the length of the "window" vector or has the same value as the scalar "window" argument. If Nfft is larger than the segment length, "seg_len", the data segment is padded with "Nfft-seg_len" zeros.  The default is no padding. Nfft values smaller than the length of the data segment (or window) are ignored silently.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> [real scalar] sampling frequency (Hertz); default = 1.0</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> 'half', 'onesided' : frequency range of the spectrum is zero up to but not including Fs/2. Power from negative frequencies is added to the positive side of the spectrum,but not at zero or Nyquist (Fs/2) frequencies.  This keeps power equal in time and spectral domains. 'whole', 'twosided': frequency range of the spectrum is  -Fs/2 to Fs/2, with negative frequencies stored in "wrap around" order after the positive frequencies; e.g. frequencies for a 10-point 'twosided' spectrum are 0 0.1 0.2 0.3 0.4 0.5 -0.4 -0.3 -0.2 -0.1 'shift', 'centerdc' : same as 'whole' but with the first half of the spectrum swapped with second half to put the zero-frequency value in the middle. If data (x and y) are real, the default range is 'half', otherwise default range is 'whole'.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Estimate transfer function of system with input x and output y. Use the Welch (1967) periodogram/FFT method.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[Pxx, freq] = tfestimate([1 2 3], [4 5 6])
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="pwelch">pwelch</link></member>
+   </simplelist>
+</refsection>
+</refentry>

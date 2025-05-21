@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from periodogram.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="periodogram" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>periodogram</refname>
+    <refpurpose>Compute the periodogram power spectral density estimate.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [Pxx, f] = periodogram(x)
+   [Pxx, f] = periodogram(x, win)
+   [Pxx, f] = periodogram(x, win, nfft)
+   [Pxx, f] = periodogram(x, win, nfft, fs)
+   [Pxx, f] = periodogram(x, win, nfft, fs, range)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Real or complex-valued input signal (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>win:</term>
+            <listitem><para> (optional) Window applied to the signal. If empty or unspecified, a rectangular window is used.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nfft:</term>
+            <listitem><para> (optional) Number of frequency bins. Default is 256 or the next power of 2 greater than the length of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> (optional) Sampling rate. Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> (optional) Spectrum range. Options are "onesided" (default for real signals), "twosided", or "centered".</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `periodogram` function computes the power spectral density (PSD) of a signal using the periodogram method.
+It supports various configurations for windowing, FFT length, sampling rate, and spectrum range.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute periodogram for a sine wave:
+t = 0:0.01:1;
+x = sin(2 * %pi * 10 * t);
+periodogram(x);
+
+// Compute periodogram with a Hamming window:
+x = cos(0:0.01:1);
+win = hamming(101);
+periodogram(x, win);
+
+// Compute periodogram with specified FFT length:
+x = tan(0:0.01:1);
+nfft = 512;
+periodogram(x, [], nfft);
+
+// Compute periodogram with sampling rate:
+t = 0:0.01:1;
+x = sin(2 * %pi * 10 * t);
+Fs = 100;
+periodogram(x, [], [], Fs);
+
+// Compute one-sided and two-sided periodograms:
+x = sin(0:0.01:1);
+periodogram(x, [], [], [], 'onesided');
+periodogram(x, [], [], [], 'twosided');
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="hamming">hamming</link></member>
+   <member><link linkend="fft1">fft1</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Stoica, P., &amp; Moses, R. L. (2005). Spectral Analysis of Signals. Pearson Prentice Hall.</para>
+</refsection>
+</refentry>

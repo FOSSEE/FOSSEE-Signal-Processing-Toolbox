@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from clustersegment.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="clustersegment" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>clustersegment</refname>
+    <refpurpose>Calculate boundary indexes of clusters of 1’s.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   contRange = clustersegment(xhi)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>xhi:</term>
+            <listitem><para> Scalar, vector, or matrix. Input containing clusters of 1s.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>contRange:</term>
+            <listitem><para> Cell array. Size 1 by Np, where Np is the number of rows in `xhi`. Each element contains two rows indicating the initial and end indices of clusters of 1s.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function calculates the boundary indexes of clusters of 1’s in the input `xhi`. The output `contRange` is a cell array where each element corresponds to a row in `xhi` and contains the start and end indices of clusters of 1s. Indexing starts from 1.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = clustersegment([0, 1, 0, 0, 1, 1])
+
+   ]]></programlisting>
+</refsection>
+</refentry>

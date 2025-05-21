@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from unwrap2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="unwrap2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>unwrap2</refname>
+    <refpurpose>Unwrap radian phases in an input array.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   retval = unwrap2(x)
+   retval = unwrap2(x, tol)
+   retval = unwrap2(x, tol, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input array containing radian phases to be unwrapped.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol (optional):</term>
+            <listitem><para> Tolerance parameter specifying the maximum jump allowed between consecutive phases before adding or subtracting 2π. Defaults to π.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim (optional):</term>
+            <listitem><para> Dimension along which to unwrap the phases. If unspecified, dim defaults to the first non-singleton dimension of the array x.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>retval:</term>
+            <listitem><para> Array with unwrapped radian phases.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `unwrap2` function adjusts radian phases in the input array `x` by adding or subtracting multiples of 2π as necessary to remove phase jumps
+that exceed the specified tolerance `tol`. If `tol` is not provided, it defaults to π. The function operates along the specified dimension `dim`
+or the first non-singleton dimension if `dim` is not provided.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Unwrap a vector of radian phases:
+x = [0, %pi/2, %pi, -%pi, -%pi/2];
+retval = unwrap2(x);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="permute">permute</link></member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from idct2.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="idct2" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>idct2</refname>
+    <refpurpose>Compute the inverse 2-D discrete cosine transform.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y = idct2(X)
+   Y = idct2(X, M, N)
+   Y = idct2(X, [M, N])
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Input matrix or integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>M, N:</term>
+            <listitem><para> (optional) If specified, the input matrix X is padded or truncated to have M rows and N columns.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Computes the inverse 2-D discrete cosine transform of the input matrix X. If M and N are specified, the input is either padded or truncated to match the specified dimensions.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+idct2(3, 4, 6)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

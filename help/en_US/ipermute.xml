@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ipermute.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ipermute" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ipermute</refname>
+    <refpurpose>Inverse of the permute function.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   B = ipermute(A, perm)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Input array.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>perm:</term>
+            <listitem><para> Permutation vector specifying the order of dimensions.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `ipermute` function reverses the effect of the `permute` function.
+It rearranges the dimensions of the input array `A` according to the inverse of the permutation vector `perm`.
+   </para>
+   <para>
+The expression:
+ipermute(permute(A, perm), perm)
+returns the original array `A`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+A = [1, 2; 3, 4];
+perm = [2, 1];
+B = ipermute(permute(A, perm), perm)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

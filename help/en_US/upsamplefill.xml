@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from upsamplefill.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="upsamplefill" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>upsamplefill</refname>
+    <refpurpose>Upsample a vector by interleaving given values or copies of the vector elements.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = upsamplefill(x, w, cpy)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Scalar, vector, or matrix of real or complex numbers.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Scalar or vector of real or complex values. Specifies the values to be interleaved between the elements of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>cpy:</term>
+            <listitem><para> Boolean (`%t` or `%f`). If `%t`, `w` must be scalar, and each value in `x` is repeated `w` times. Default is `%f`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Upsampled vector or matrix with interleaved values or repeated elements.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `upsamplefill` function upsamples a vector or matrix by interleaving specified values or repeating elements.
+If `cpy` is `%f`, the values in `w` are interleaved between the elements of `x`. If `cpy` is `%t`, each value in `x`
+is repeated `w` times.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Upsample a vector by repeating elements:
+x = [1, 3, 5];
+y = upsamplefill(x, 2, %f);
+// Output: y = [1, 1, 1, 3, 3, 3, 5, 5, 5]
+
+// Upsample a vector by interleaving values:
+x = [1, 3, 5];
+y = upsamplefill(x, 2, %t);
+// Output: y = [1, 2, 3, 2, 5, 2]
+
+   ]]></programlisting>
+</refsection>
+</refentry>

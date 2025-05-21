@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from schurrc.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="schurrc" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>schurrc</refname>
+    <refpurpose>Schur algorithm for computing reflection coefficients and prediction error variance.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [k, e] = schurrc(R)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Autocorrelation vector or matrix. If `R` is a matrix, the function computes the reflection coefficients</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> Reflection coefficients (matrix). Each column corresponds to the reflection coefficients for the respective column of `R`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Prediction error variance (vector). Each row corresponds to the prediction error variance for the respective column of `R`.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `schurrc` function computes the reflection coefficients and prediction error variance using Schur's algorithm.
+If the input `R` is a matrix, the function processes each column independently.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute reflection coefficients and prediction error variance:
+m = linspace(1, 100);
+r = xcorr(m(1:5), 'unbiased'); // Autocorrelation vector
+[k, e] = schurrc(r(5:$));
+// Expected Output:
+// e = 1.6212406
+// k = -0.9090909  0.2222222  0.2244898  0.2434211
+   ]]></programlisting>
+</refsection>
+</refentry>

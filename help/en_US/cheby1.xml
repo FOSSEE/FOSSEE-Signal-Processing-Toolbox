@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cheby1.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cheby1" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cheby1</refname>
+    <refpurpose>Design a Chebyshev type I filter with specified passband ripple.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = cheby1(n, rp, wp)
+   [b, a] = cheby1(n, rp, wp, "high")
+   [b, a] = cheby1(n, rp, [wl, wh])
+   [b, a] = cheby1(n, rp, [wl, wh], "stop")
+   [z, p, g] = cheby1(...)
+   [...] = cheby1(..., "s")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. Order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rp:</term>
+            <listitem><para> Non-negative scalar. Passband ripple in dB.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>wp:</term>
+            <listitem><para> Positive real value. Normalized digital or analog passband edge(s).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Gain of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a Chebyshev type I filter with rp dB of passband ripple.
+if second parameter is scalar the fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
+[b, a] = cheby1(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
+[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
+[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+[...] = cheby1(...,’s’) returns a Laplace space filter, w can be larger than 1 rad/sec.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[z, p, k] = cheby1(2, 6, 0.7, "high")
+
+   ]]></programlisting>
+</refsection>
+</refentry>

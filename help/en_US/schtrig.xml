@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from schtrig.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="schtrig" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>schtrig</refname>
+    <refpurpose>This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   x = schtrig(x, lvl)
+   lvl = schtrig(x, lvl, rst)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector or matrix of real numbers</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lvl:</term>
+            <listitem><para> Real number</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rst:</term>
+            <listitem><para> Boolean, default value is 'true'</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
+The argument 1 is a matrix (or a vector) and this trigger works along its first dimension.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+schtrig([0.2,-3,5], -4)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

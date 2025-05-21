@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from residuez.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="residuez" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>residuez</refname>
+    <refpurpose>Compute the partial fraction expansion (PFE) of a digital filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [r, p, f, m] = residuez(B, A)
+   [r, p, f, m] = residuez(B, A, tol)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>B:</term>
+            <listitem><para> Numerator coefficients of the digital filter (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Denominator coefficients of the digital filter (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance for pole-zero matching. Ignored in this implementation.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> Column vector containing the residues of the filter poles.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Column vector containing the poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Row vector containing the FIR part of the filter, if any. Empty if no FIR part exists.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Column vector containing the multiplicities of the poles.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `residuez` function computes the partial fraction expansion of a digital filter represented by the transfer function:
+H(z) = B(z) / A(z)
+where `B` and `A` are the numerator and denominator coefficients, respectively.
+   </para>
+   <para>
+The function separates the filter into two parts:
+1. The FIR part `f`, which represents the feedforward portion of the filter.
+2. The IIR part, represented by the residues `r` and poles `p`.
+   </para>
+   <para>
+If the numerator degree is less than the denominator degree (`nb &lt; na`), the FIR part `f` is empty, and the filter is represented as:
+H(z) = r(1) / [1 - p(1)/z]^m(1) + ... + r(N) / [1 - p(N)/z]^m(N)
+where `N` is the number of poles.
+   </para>
+   <para>
+If the numerator degree is greater than or equal to the denominator degree (`nb &gt;= na`), the FIR part `f` is non-empty, and the filter is represented as:
+H(z) = f(1) + f(2)/z + f(3)/z^2 + ... + f(M+1)/z^M + R(z)
+where `R(z)` is the parallel one-pole filter bank.
+   </para>
+   <para>
+Notes
+- The polynomials `B` and `A` must have real coefficients.
+- The function uses MATLAB's `residue` function internally to compute the residues and poles.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the partial fraction expansion of a filter:
+B = [1, 1, 1];
+A = [1, -2, 1];
+[r, p, f, m] = residuez(B, A);
+// Output:
+// r = [0; 3]
+// p = [1; 1]
+// f = 1
+// m = [1; 2]
+
+   ]]></programlisting>
+</refsection>
+</refentry>

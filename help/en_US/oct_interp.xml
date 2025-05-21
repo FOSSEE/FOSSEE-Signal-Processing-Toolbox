@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from oct_interp.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="oct_interp" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>oct_interp</refname>
+    <refpurpose>This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = oct_interp(x, q)
+   y = oct_interp(x, q, n)
+   y = oct_interp(x, q, n, Wc)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> scalar or vector of complex or real numbers</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>q:</term>
+            <listitem><para> positive integer value, or logical</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> positive integer, default value 4</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wc:</term>
+            <listitem><para> non decreasing vector or scalar, starting from 0 uptill 1, default value 0.5</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
+The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+oct_interp(1,2)
+
+   ]]></programlisting>
+</refsection>
+</refentry>

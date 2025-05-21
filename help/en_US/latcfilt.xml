@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from latcfilt.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="latcfilt" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>latcfilt</refname>
+    <refpurpose>Apply a lattice filter to a signal.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [f, g, zo] = latcfilt(k, x)
+   [f, g, zo] = latcfilt(k, x, v)
+   [f, g, zo] = latcfilt(k, x, v, zi)
+   [f, g, zo] = latcfilt(k, x, v, zi, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> Reflection coefficients (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>v:</term>
+            <listitem><para> (optional) Ladder coefficients (vector). Default is [zeros(length(k)-1, 1); 1].</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zi:</term>
+            <listitem><para> (optional) Initial conditions (vector). Default is zeros(length(k), 1).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which the filter is applied. Default is 1.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `latcfilt` function applies a lattice filter to the input signal `x` using the reflection coefficients `k`.
+The optional parameters `v`, `zi`, and `dim` allow customization of the ladder coefficients, initial conditions,
+and the dimension along which the filter is applied.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+k = [0.5, -0.3, 0.2];
+x = [1, 2, 3, 4];
+[f, g, zo] = latcfilt(k, x)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda ( parthasarathipanda314@gmail.com )</member>
+   </simplelist>
+</refsection>
+</refentry>
