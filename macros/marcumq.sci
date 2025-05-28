@@ -66,7 +66,7 @@ function q = marcumq (a, b, m, tol)
   end
 
   [a, b] = tablify (a, b);
-  q = []
+  q = zeros(size(a,1),size(a,2))
   for i=1:size(a,1)
     for j=1:size(a,2)
       q(i,j) = mq(a(i,j),b(i,j),m,tol)
@@ -77,7 +77,6 @@ endfunction
 
 // Subfunction to compute the actual Marcum Q function.
 function q = mq (a, b, m, tol)
-
   // Special cases.
   if (b == 0)
     q = 1;
@@ -121,31 +120,101 @@ function q = mq (a, b, m, tol)
     S = 0;
     N = 0;
   end
-
-  while  (abs (t / S) > tol)
+ 
+  if (S==0) then
+      flag = %t;
+  else
+      flag = abs(t/S) >tol;
+  end
+  while  (flag)
     t = d * besseli (abs (k), z, 1);
     S = S + t;
     d = d * x;
     N = k;
     k = k + 1 ;
+    if (S==0) then
+      flag = %t;
+    else
+      flag = abs(t/S) >tol;
+    end
   end
   q = c + s * exp (-(a - b)^2 / 2) * S;
 
 endfunction
 
-// Internal helper function to create a table of like dimensions from arguments.
-function [ta , tb] = tablify(a,b)
-  rows = size(a,1)
-  cols = size(b,2)
-  ta=[]
-  for i=1:cols
-    ta = [ta a ]
+// // Internal helper function to create a table of like dimensions from arguments.
+function varargout = tablify(varargin)
+  nin = length(varargin);
+  
+  if nin < 2 then
+      varargout = varargin;
+      return;
   end
-  tb=[]
-  for i=1:rows
-    tb = [ tb ; b]
+
+  empty = [];
+  nrows = [];
+  ncols = [];
+
+  // Find sizes for non-empty inputs
+  for i = 1:nin
+      item = varargin(i);
+      if isempty(item)
+          empty(i) = %t;
+          nrows(i) = 0;
+          ncols(i) = 0;
+      else
+          empty(i) = %f;
+          sz = size(item);
+          nrows(i) = sz(1);
+          if size(sz, "*") == 1 then
+    ncols(i) = length(item);
+else
+    ncols(i) = sz(2);
+end
+      end
+  end
+
+  // Determine broadcast size
+  rowCandidates = nrows(~empty);
+  colCandidates = ncols(~empty);
+
+  rdim = max(1, max(rowCandidates));
+  cdim = max(1, max(colCandidates));
+
+  // Check for incompatible sizes
+  for i = 1:nin
+      if ~empty(i)
+          if nrows(i) > 1 & nrows(i) <> rdim then
+              error("tablify: incompatible row dimensions");
+          end
+          if ncols(i) > 1 & ncols(i) <> cdim then
+              error("tablify: incompatible column dimensions");
+          end
+      end
+  end
+
+  // Broadcast each input
+  for i = 1:nin
+      item = varargin(i);
+      if empty(i)
+          varargout(i) = item;
+      else
+          r = nrows(i);
+          c = ncols(i);
+          out = item;
+
+          if r == 1 & rdim > 1 then
+              out = repmat(out, rdim, 1);
+          end
+          if c == 1 & cdim > 1 then
+              out = repmat(out, 1, cdim);
+          end
+          varargout(i) = out;
+      end
   end
 endfunction
+
+
 /*
 test
  a = [0.00; 0.05; 1.00; 2.00; 3.00; 4.00; 5.00; 6.00; 7.00; 8.00; 9.00; 10.00;

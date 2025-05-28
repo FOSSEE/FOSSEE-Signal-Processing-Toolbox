@@ -18,7 +18,7 @@ function x = synthesis (y, c)
 // // Define a short-time Fourier transform (STFT) matrix
 // y = [1+2*%i, 2+3*%i; 3+4*%i, 4+5*%i];
 // // Define the window parameters: [window size, increment, window type]
-// c = [4, 2, 1]; // Hanning window with size 4 and increment 2
+// c = [4, 1, 1]; // Hanning window with size 4 and increment 1
 // // Reconstruct the signal
 // x = synthesis(y, c);
 // // Display the reconstructed signal
@@ -53,7 +53,8 @@ function x = synthesis (y, c)
   if (isnan(w_coeff))
     w_coeff = 1;
   end
-  z = real(fft(y, 1, find(size(y) ~= 1, 1)));
+
+  z = real(ifft1(y));
   st = fix((w_size-inc) / 2);
   z = z(st+1:st+inc, :);
   w_coeff = w_coeff(st+1:st+inc);

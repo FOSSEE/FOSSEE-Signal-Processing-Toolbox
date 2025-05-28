@@ -228,6 +228,17 @@ end
   end
     
 endfunction
+
+function ret = bsminuseq(A)
+  tempA=[]
+  tempB=[]
+  A=A(:)';
+  for i=1:length(A)
+    tempA = [tempA ; A];
+    tempB = [tempB A'];
+  end  
+  ret = tempA - tempB;
+endfunction
 /*
 demo
 pi = %pi ;

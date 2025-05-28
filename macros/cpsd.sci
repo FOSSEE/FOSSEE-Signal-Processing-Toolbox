@@ -24,7 +24,11 @@ function varargout = cpsd(varargin)
 // This function estimates the cross power spectrum of data `x` and `y` using the Welch periodogram/FFT method. It is compatible with Matlab's `cpsd` function.
 //
 // Examples
-// [Pxx, freq] = cpsd(x, y, hamming(256), 128, 256, 1000, 'onesided')
+// t = linspace(0,10,1000); 
+// x = sin(t) ;
+// y = cos(t);
+// cpsd(x,y)
+
 
     // Check fixed argument
     if (nargin < 2 || nargin > 7)
