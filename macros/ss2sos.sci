@@ -16,7 +16,10 @@ function [sos, g] = ss2sos(A, B, C, D)
 // This function converts state-space representation to second-order sections.
 //
 // Examples
-// [sos, g] = ss2sos(a, b, c, d)
+//  b = [0.1, 0.2, 0.3];
+//  a = [1, -0.5, 0.25];
+//  sys = tf2ss(b,a);
+// [sos, g] = ss2sos(sys('A'),sys('B'),sys('C'), sys('D'))
 //
 // See also
 //  sosbreak
