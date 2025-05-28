@@ -85,7 +85,10 @@ This function estimates the cross power spectrum of data `x` and `y` using the W
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[Pxx, freq] = cpsd(x, y, hamming(256), 128, 256, 1000, 'onesided')
+t = linspace(0,10,1000);
+x = sin(t) ;
+y = cos(t);
+cpsd(x,y)
    ]]></programlisting>
 </refsection>
 </refentry>
