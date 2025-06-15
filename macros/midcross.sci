@@ -144,132 +144,88 @@ end
 
 if (~isempty(index)) then
         for j=1:length(index)
-            
             select convstr(varargin(index(j)),'u')
-                
-                case {'STATELEVELS'}
+                case "STATELEVELS"
                    //////
-                 if length(varargin) <=index(j) then
-                      error(strcat(['parameter StateLevels required a value']));
-                  end
-                  
-                  if type(varargin(index(j)+1))==1 then
-                      levels=varargin(index(j)+1); 
-                      
-                   elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='MIDPERCENTREFERENCELEVEL' |  convstr(varargin(index(j)+1),'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='FIG' then
-                      
-                    error('parameter StateLevels required a value.')        
-                      
-                      
-                  elseif type(varargin(index(j)+1))==10  then
-                      
-                    error('Expected STATELEVELS to be one of these types: double, Instead its type was char.')
+                    if length(varargin) <=index(j) then
+                        error(strcat(['parameter StateLevels required a value']));
                     end
-                    
-                if length(levels)~=2 then
-                    error ('Expected STATELEVELS to be of size 1x2')
-                      end             
-               
-                if levels(2)<=levels(1) then
-                     error('The state levels must be in increasing order.')
-                     end
-                  ///////  
-                  
-                case {'MIDPERCENTREFERENCELEVEL'}
-
-           
-            if length(varargin) <=index(j) then
-                      error(strcat(['parameter MidPercentRefernceLevel required a value.'])); 
-                  end
-                  
-                  if  type(varargin(index(j)+1))==1 then
-                      midpercentval= varargin(index(j)+1);                                                           
-                        elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='STATELEVELS' | convstr(varargin(index(j)+1),'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='FIG' then                     
-                    error('parameter MidPercentRefernceLevel required a value.') 
-                                
-                  elseif type(varargin(index(j)+1))==10 then                     
-                    error('Expected MidPercentRefernceLevel to be one of these types: double, Instead its type was char.')  
-                end
-                              
-                if length( midpercentval)~=1 then
-                    error ('Expected MidPercentRefernceLevel to be of size 1x1')                                  
-                end 
-                
-                
-            case {'FIG'}
-                
-                if length(varargin) <=index(j) then
-                      error(strcat(['parameter fig required a value.']));
-                  end
-                  
-                  if type(varargin(index(j)+1))==1 then
-                      error ('Expected fig to match one of these strings: on or off');
-                  
-                 elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='STATELEVELS' | convstr(varargin(index(j)+1), 'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='MIDPERCENTREFERENCELEVEL' then                     
-                    error('parameter fig required a value.')                     
-                    else 
+                    if type(varargin(index(j)+1))==1 then
+                        levels=varargin(index(j)+1);
+                    elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='MIDPERCENTREFERENCELEVEL' |  convstr(varargin(index(j)+1),'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='FIG' then
+                        error('parameter StateLevels required a value.');
+                    elseif type(varargin(index(j)+1))==10  then
+                        error('Expected STATELEVELS to be one of these types: double, Instead its type was char.')
+                    end
+                    if length(levels)~=2 then
+                        error ('Expected STATELEVELS to be of size 1x2')
+                    end
+                    if levels(2)<=levels(1) then
+                        error('The state levels must be in increasing order.')
+                    end
+                    ///////
+                case "MIDPERCENTREFERENCELEVEL"
+                    if length(varargin) <=index(j) then
+                        error(strcat(['parameter MidPercentRefernceLevel required a value.']));
+                    end
+                    if  type(varargin(index(j)+1))==1 then
+                        midpercentval= varargin(index(j)+1);
+                    elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='STATELEVELS' | convstr(varargin(index(j)+1),'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='FIG' then                     
+                        error('parameter MidPercentRefernceLevel required a value.');
+                    elseif type(varargin(index(j)+1))==10 then
+                        error('Expected MidPercentRefernceLevel to be one of these types: double, Instead its type was char.');
+                    end
+                    if length( midpercentval)~=1 then
+                        error ('Expected MidPercentRefernceLevel to be of size 1x1');
+                    end
+                case "FIG"
+                    if length(varargin) <=index(j) then
+                        error(strcat(['parameter fig required a value.']));
+                    end
+                    if type(varargin(index(j)+1))==1 then
+                        error ('Expected fig to match one of these strings: on or off');
+                    elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')=='STATELEVELS' | convstr(varargin(index(j)+1), 'u')== 'TOLERANCE' | convstr(varargin(index(j)+1), 'u')=='MIDPERCENTREFERENCELEVEL' then                     
+                        error('parameter fig required a value.');
+                    else
                         fig=  convstr(varargin(index(j)+1), 'u');
-                       
-                    end 
-                    
-               
-                     if fig == 'OFF' | fig == 'ON' then  
-        else 
-     error('Expected fig to match one of these strings: on or off');
-           end   
-  
-                      
-                   
-        case{'ON'} 
-            
-             if length(varargin) == 1 then
-                 error ('Unexpected input.')                     
-            
-              
-            elseif type(varargin(index(j)-1))==1 then
-                error ('Unexpected input.');            
-            elseif convstr(varargin(index(j)-1), 'u')~='FIG' then
-                error('Unexpected input');
-                end
-            
-         case{'OFF'}
-                       
-            if length(varargin) == 1 then
-                 error ('Unexpected input.')                     
-            
-              
-            elseif type(varargin(index(j)-1))==1 then
-                error ('Unexpected input.');            
-            elseif convstr(varargin(index(j)-1), 'u')~='FIG' then
-                error('Unexpected input');
-                end      
-                   
-                             
-                   //////
-                case {'TOLERANCE'}
-                   
-            if length(varargin) <=index(j) then
-                      error(strcat(["parameter Tolerance required a value"]));
-                 
-                  elseif type(varargin(index(j)+1))==1 then
-                     tolerance= varargin(index(j)+1); 
-                      
-                  elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')== 'STATELEVELS' | convstr(varargin(index(j)+1), 'u')== 'MIDPERCENTREFERENCELEVEL' | convstr(varargin(index(j)+1), 'u')=='FIG' then
-                      
-                    error('parameter Tolerance required a value.');
-                                           
-                  elseif type(varargin(index(j)+1))==10  then
-                      
-                    error('Expected Tolerance to be one of these types: double, Instead its type was char.');
                     end
-                  
-                if length(tolerance)~=1 then
-                    error ('Expected Tolerance to be of size 1x1');
-                    
-                    end 
-            
-            else      
-              error(strcat(['Invalid optional argument'," ", varargin(index(j))]));
+                    if fig == 'OFF' | fig == 'ON' then
+
+                    else
+                        error('Expected fig to match one of these strings: on or off');
+                    end
+                case "ON"
+                    if length(varargin) == 1 then
+                        error ('Unexpected input.')
+                    elseif type(varargin(index(j)-1))==1 then
+                        error ('Unexpected input.');
+                    elseif convstr(varargin(index(j)-1), 'u')~='FIG' then
+                        error('Unexpected input');
+                    end
+                case "OFF"
+                    if length(varargin) == 1 then
+                        error ('Unexpected input.');
+                    elseif type(varargin(index(j)-1))==1 then
+                        error ('Unexpected input.');
+                    elseif convstr(varargin(index(j)-1), 'u')~='FIG' then
+                        error('Unexpected input');
+                    end
+                   //////
+                case "TOLERANCE"
+                    if length(varargin) <=index(j) then
+                        error(strcat(["parameter Tolerance required a value"]));
+                    elseif type(varargin(index(j)+1))==1 then
+                        tolerance= varargin(index(j)+1);
+                    elseif type(varargin(index(j)+1))==10 & convstr(varargin(index(j)+1), 'u')== 'STATELEVELS' | convstr(varargin(index(j)+1), 'u')== 'MIDPERCENTREFERENCELEVEL' | convstr(varargin(index(j)+1), 'u')=='FIG' then
+                        error('parameter Tolerance required a value.');
+                    elseif type(varargin(index(j)+1))==10  then
+                        error('Expected Tolerance to be one of these types: double, Instead its type was char.');
+                    end
+                    if length(tolerance)~=1 then
+                        error ('Expected Tolerance to be of size 1x1');
+                    end
+                else
+                    error(strcat(['Invalid optional argument'," ", varargin(index(j))]));
             end // switch
         end // for
     end // if
