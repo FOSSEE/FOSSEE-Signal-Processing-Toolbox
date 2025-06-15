@@ -2,7 +2,7 @@
 /help/en_US/master_help.xml
 /help/en_US/scilab_en_US_help/
 # /help/en_US/*.xml   xml files are required in production
-/jar/scilab_en_US_help.jar
+# /jar/scilab_en_US_help.jar required in production and testing across the versions
 /macros/*.bin
 /macros/lib
 /cleaner.sce
