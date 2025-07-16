@@ -33,20 +33,8 @@ function y = upsample (x,n,phase )
 //
 // Examples
 // // Upsample a row vector by a factor of 2:
-//    x = [1, 3, 5];
-//    y = upsample(x, 2);
-//    // Output: y = [1, 0, 3, 0, 5, 0]
-//
-// // Upsample a column vector by a factor of 2:
-//    x = [1; 3; 5];
-//    y = upsample(x, 2);
-//    // Output: y = [1; 0; 3; 0; 5; 0]
-//
-// // Upsample a matrix by a factor of 2:
-//    x = [1, 2; 5, 6; 9, 10];
-//    y = upsample(x, 2);
-//    // Output: y = [1, 2; 0, 0; 5, 6; 0, 0; 9, 10; 0, 0]
-//
+//    x = [1, 3, 5]
+//    y = upsample(x, 2)
 // Authors
 // FOSSEE Team
 // toolbox@scilab.in

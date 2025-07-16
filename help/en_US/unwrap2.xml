@@ -68,8 +68,8 @@ or the first non-singleton dimension if `dim` is not provided.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Unwrap a vector of radian phases:
-x = [0, %pi/2, %pi, -%pi, -%pi/2];
-retval = unwrap2(x);
+x = [0, %pi/2, %pi, -%pi, -%pi/2]
+retval = unwrap2(x)
 
    ]]></programlisting>
 </refsection>

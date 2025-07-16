@@ -84,10 +84,10 @@ Notes
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Design a square-root raised cosine filter:
-rolloff = 0.25;
-span = 3;
-sps = 2; // Samples per symbol
-b = rcosdesign(rolloff, span, sps);
+rolloff = 0.25
+span = 3
+sps = 2 // Samples per symbol
+b = rcosdesign(rolloff, span, sps)
 
    ]]></programlisting>
 </refsection>

@@ -68,8 +68,8 @@ If `b` is omitted, 1 / sqrt(length(x)) is used.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Compute the spectral density estimator with default parameters:
-x = [1, 2, 3, 4, 5];
-sde = spectral_xdf(x);
+x = [1, 2, 3, 4, 5]
+sde = spectral_xdf(x)
 
    ]]></programlisting>
 </refsection>

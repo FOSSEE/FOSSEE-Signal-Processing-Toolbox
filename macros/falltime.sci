@@ -34,11 +34,11 @@ function [f, lowercrossvalue, uppercrossvalue, lowerreference, upperreference]=f
 // This function estimates the fall time of a negative-going bilevel waveform. It calculates the time difference between the upper and lower percent reference levels of the waveform.
 //
 // Examples
-// x = [1.2, 5, 10, -20, 12];
-// t = 1:length(x);
-// f = falltime(x, t);
+// Fs = 1e6 // 1 MHz sampling rate
+// x = [3.3, 3.3, 3.2, 2.5, 1.0, 0.2, 0.0, 0.0] // Simulated digital fall
+// f = falltime(x, Fs)
 //
-
+//
 // Authors
 //  Jitendra Singh 
 //

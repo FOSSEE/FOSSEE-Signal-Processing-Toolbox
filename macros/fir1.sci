@@ -38,7 +38,7 @@ function b = fir1(n, w, varargin)
 //
 // Examples
 // // Design a lowpass filter:
-//    b = fir1(40, 0.3);
+//    b = fir1(40, 0.3)
 //
 // // Design a bandstop filter:
 //    b = fir1(15, [0.2, 0.5], "stop");

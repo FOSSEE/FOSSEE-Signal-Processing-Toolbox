@@ -17,11 +17,8 @@ function [k,e] = schurrc(R)
 // Examples
 // // Compute reflection coefficients and prediction error variance:
 //    m = linspace(1, 100);
-//    r = xcorr(m(1:5), 'unbiased'); // Autocorrelation vector
-//    [k, e] = schurrc(r(5:$));
-//    // Expected Output:
-//    // e = 1.6212406
-//    // k = -0.9090909  0.2222222  0.2244898  0.2434211
+//    r = xcorr(m(1:5), 'unbiased') // Autocorrelation vector
+//    [k, e] = schurrc(r(5:$))
 
 
     narginchk(1,1,argn(2));

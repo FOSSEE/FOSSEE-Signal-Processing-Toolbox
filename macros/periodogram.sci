@@ -37,27 +37,6 @@ function [pxx, f] = periodogram (x, varargin)
 //    x = sin(2 * %pi * 10 * t);
 //    periodogram(x);
 //
-// // Compute periodogram with a Hamming window:
-//    x = cos(0:0.01:1);
-//    win = hamming(101);
-//    periodogram(x, win);
-//
-// // Compute periodogram with specified FFT length:
-//    x = tan(0:0.01:1);
-//    nfft = 512;
-//    periodogram(x, [], nfft);
-//
-// // Compute periodogram with sampling rate:
-//    t = 0:0.01:1;
-//    x = sin(2 * %pi * 10 * t);
-//    Fs = 100;
-//    periodogram(x, [], [], Fs);
-//
-// // Compute one-sided and two-sided periodograms:
-//    x = sin(0:0.01:1);
-//    periodogram(x, [], [], [], 'onesided');
-//    periodogram(x, [], [], [], 'twosided');
-//
 // See also
 // hamming
 //  fft1

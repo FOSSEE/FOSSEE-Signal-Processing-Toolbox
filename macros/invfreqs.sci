@@ -45,17 +45,11 @@ function [B, A, SigN] = invfreqs(H,F,nB,nA,W,iter,tol,tr, varargin)
 // H = 1 ./ (1 + %i * F);    // Desired frequency response (low-pass filter)
 // 
 // // Define the orders of the numerator and denominator polynomials
-// nB = 1; // Order of the numerator
-// nA = 1; // Order of the denominator
+// nB = 1 // Order of the numerator
+// nA = 1 // Order of the denominator
 // 
 // // Fit the filter
-// [B, A] = invfreqs(H, F, nB, nA);
-// 
-// // Display the results
-// disp("Numerator coefficients (B):");
-// disp(B);
-// disp("Denominator coefficients (A):");
-// disp(A);
+// [B, A] = invfreqs(H, F, nB, nA)
 // 
 // Bibliography
 // - J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983.

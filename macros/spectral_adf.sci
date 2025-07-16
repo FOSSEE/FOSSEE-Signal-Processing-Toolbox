@@ -22,8 +22,8 @@ function sde = spectral_adf (c, win, b)
 //
 // Examples
 // // Compute the spectral density estimator with default parameters:
-//    c = [1, 0.8, 0.6, 0.4, 0.2];
-//    sde = spectral_adf(c);
+//    c = [1, 0.8, 0.6, 0.4, 0.2]
+//    sde = spectral_adf(c)
 //
 
   //c should be a vector

@@ -33,8 +33,8 @@ function [num,den] = latc2tf(k,varargin)
     // 
     // Examples
     // // FIR filter
-    //      k1 = [1/2 1/2 1/4];
-    //      [num1,den1] = latc2tf(k1);
+    //      k1 = [1/2 1/2 1/4]
+    //      [num1,den1] = latc2tf(k1)
     // 
     // See also
     // latcfilt 

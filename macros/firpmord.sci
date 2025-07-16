@@ -28,18 +28,18 @@ function [n, fo, ao, w] = firpmord(f, a, dev, varargin)
 //
 // Examples
 // // A low-pass filter
-//          f = [1500 2000];        // frequency edges for bands
-//          a = [1 0];              // desired amplitude for each band
-//          dev = [0.01 0.1];       // Acceptable deviation for each band
-//          fs = 8000;              // Sampling frequency
-//          [n,fo,ao,w] = firpmord(f,a,dev,fs);
+//          f = [1500 2000]        // frequency edges for bands
+//          a = [1 0]              // desired amplitude for each band
+//          dev = [0.01 0.1]       // Acceptable deviation for each band
+//          fs = 8000              // Sampling frequency
+//          [n,fo,ao,w] = firpmord(f,a,dev,fs)
 //
 // // A bandstop filter
-//          f = [1000 1800 2400 3000];
-//          a = [1 0 0.5];
-//          dev = [0.01 0.1 0.03];
-//          fs = 8000;
-//          [n,fo,ao,w] = firpmord(f,a,dev,fs);
+//          f = [1000 1800 2400 3000]
+//          a = [1 0 0.5]
+//          dev = [0.01 0.1 0.03]
+//          fs = 8000
+//          [n,fo,ao,w] = firpmord(f,a,dev,fs)
 //
 //
 // Bibliography

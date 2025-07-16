@@ -40,10 +40,10 @@ function [B, A, SigN] = invfreqz(H, F, nB, nA, W, iter, tol, tr, varargin)
 //
 // Examples
 // // Fit a filter to a frequency response:
-//    [B, A] = butter(4, 1/4);
+//    [B, A] = butter(4, 1/4)
 //    [H, F] = freqz(B, A);
-//    [Bh, Ah] = invfreqz(H, F, 4, 4);
-//    Hh = freqz(Bh, Ah);
+//    [Bh, Ah] = invfreqz(H, F, 4, 4)
+//    Hh = freqz(Bh, Ah,128);
 //    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 //
 // Authors

@@ -23,10 +23,10 @@ function [phi, varargout]=phasedelay(varargin)
 //
 // Examples
 // // Compute phase delay for a filter in direct form:
-//    b = [0.1, 0.2, 0.3];
-//    a = [1, -0.5, 0.25];
+//    b = [0.1, 0.2, 0.3]
+//    a = [1, -0.5, 0.25]
 //    w = linspace(0, %pi, 100);
-//    phi = phasedelay(b, a, w);
+//    phi = phasedelay(b, a, w)
 //
 //
 // Authors

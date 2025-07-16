@@ -65,7 +65,7 @@ f can take any valid function as a string, for example "blackmanharris".
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-window("hanning",5)
+wind("hanning",5)
    ]]></programlisting>
 </refsection>
 </refentry>

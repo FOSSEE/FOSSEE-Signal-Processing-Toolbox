@@ -50,14 +50,9 @@
 //
 // Examples
 // // Compute the partial fraction expansion of a filter:
-//    B = [1, 1, 1];
-//    A = [1, -2, 1];
-//    [r, p, f, m] = residuez(B, A);
-//    // Output:
-//    // r = [0; 3]
-//    // p = [1; 1]
-//    // f = 1
-//    // m = [1; 2]
+//    B = [1, 1, 1]
+//    A = [1, -2, 1]
+//    [r, p, f, m] = residuez(B, A)
 //
 
 

@@ -16,7 +16,7 @@ function w_out = wind (f, m, varargin)
 // f can take any valid function as a string, for example "blackmanharris".
 //
 // Examples
-// window("hanning",5)
+// wind("hanning",5)
 
 
 funcprot(0);

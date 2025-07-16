@@ -60,8 +60,7 @@ The `roundn` function rounds the input `x` to `n` decimal places.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Round a number to 2 decimal places:
-r = roundn(3.14159, 2);
-// Output: r = 3.14
+r = roundn(3.14159, 2)
    ]]></programlisting>
 </refsection>
 </refentry>

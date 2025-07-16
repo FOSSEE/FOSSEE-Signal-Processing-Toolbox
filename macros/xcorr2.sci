@@ -24,18 +24,9 @@ function c = xcorr2 (a, b, scale)
 //
 // Examples
 // // Compute the 2D cross-correlation of two matrices:
-//    a = [1, 2; 3, 4];
-//    b = [0, 1; 1, 0];
-//    c = xcorr2(a, b);
-//
-// // Compute the autocorrelation of a matrix:
-//    a = [1, 2; 3, 4];
-//    c = xcorr2(a);
-//
-// // Compute the cross-correlation with scaling:
-//    a = [1, 2; 3, 4];
-//    b = [0, 1; 1, 0];
-//    c = xcorr2(a, b, "coeff");
+//    a = [1, 2; 3, 4]
+//    b = [0, 1; 1, 0]
+//    c = xcorr2(a, b)
 
   funcprot(0);
   nargin=argn(2);

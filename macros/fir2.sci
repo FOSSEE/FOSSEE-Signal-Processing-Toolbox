@@ -27,9 +27,9 @@ function b = fir2(n, f, m, grid_n, ramp_n, window_in)
 //
 // Examples
 // // Design a filter with a discontinuous frequency response
-//    f = [0, 0.3, 0.3, 0.6, 0.6, 1];
-//    m = [0, 0, 1, 0.5, 0, 0];
-//    [h, w] = freqz(fir2(100, f, m));
+//    f = [0, 0.3, 0.3, 0.6, 0.6, 1]
+//    m = [0, 0, 1, 0.5, 0, 0]
+//    [h, w] = freqz(fir2(100, f, m))
 //    plot(f, m, , w / %pi, abs(h));
 //    legend("target response","filter response");
 // Authors

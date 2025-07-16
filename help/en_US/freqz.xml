@@ -91,30 +91,14 @@ This function computes the frequency response of a digital filter defined by its
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-// Compute the frequency response of an FIR filter:
-b = [0.2929, 0.5858, 0.2929];
-[h, w] = freqz(b);
+//Compute the frequency response of a Butterworth low-pass filter
+//Design a 4th-order Butterworth low-pass filter with cutoff frequency 0.3π
+//(normalized frequency range: 0 to 1 corresponds to 0 to π radians)
+order = 4
+fc = 0.3  // Normalized cutoff frequency (0 < fc < 1)
 
-// Compute the frequency response of an IIR filter:
-b = [0.2929, 0.5858, 0.2929];
-a = [1, 0, 0.1716];
-[h, w] = freqz(b, a)
-
-// Compute the response at specific frequencies:
-b = [0.2929, 0.5858, 0.2929];
-a = [1, 0, 0.1716];
-w = linspace(0, %pi, 100);
-h = freqz(b, a, w)
-
-// Compute the response with a sampling frequency:
-b = [0.2929, 0.5858, 0.2929];
-a = [1, 0, 0.1716];
-[h, f] = freqz(b, a, 512, 1000);
-
-// Plot the magnitude and phase response:
-b = [0.2929, 0.5858, 0.2929];
-freqz(b);
-
+[b, a] = butter(order, fc)
+freqz(b, a);
    ]]></programlisting>
 </refsection>
 

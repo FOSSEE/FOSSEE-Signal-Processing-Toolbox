@@ -84,8 +84,8 @@ for Pass == 'stop', the target multiband magnitude will be:
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[B, A] = butter(6, 0.5);
-[Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8]);
+[B, A] = butter(6, 0.5)
+[Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8])
 
    ]]></programlisting>
 </refsection>

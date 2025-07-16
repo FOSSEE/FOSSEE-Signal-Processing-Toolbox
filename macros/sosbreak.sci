@@ -19,8 +19,8 @@ function [zerosort,g]=sosbreak(p)
 //
 // Examples
 // // Break a polynomial into second-order polynomials and a linear term:
-//    v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4];
-//    [zerosort, g] = sosbreak(v);
+//    v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4]
+//    [zerosort, g] = sosbreak(v)
 //
 // Authors
 // Parthasarathi Panda

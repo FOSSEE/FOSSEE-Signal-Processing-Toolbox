@@ -12,14 +12,8 @@ function savg = spencer (x)
 // 
 // Examples 
 // //Compute Spencer's 15-point moving average of a vector and a matrix
-// x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; 
-// savg_vector = spencer(x); 
-// disp("Spencer's 15-point moving average of the vector:"); 
-// disp(savg_vector); 
-// x_matrix = [1:15; 16:30; 31:45]'; 
-// savg_matrix = spencer(x_matrix); 
-// disp("Spencer's 15-point moving average of the matrix:"); 
-// disp(savg_matrix);
+// x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+// savg_vector = spencer(x)
 // 
 // See also
 // filter

@@ -47,11 +47,11 @@ function [gd,w] = grpdelay (b, a, n, whole, Fs)
 // 
 // Examples
 // // Define filter coefficients
-// b = [1, 0.9];
-// a = [];
+// b = [1, 0.9]
+// a = []
 // 
 // // Compute group delay
-// [gd, w] = grpdelay(b, a, 512, "whole", 1);
+// [gd, w] = grpdelay(b, a, 512, "whole", 1)
 // 
 // // Plot the group delay
 // plot2d(w, gd, style = 2);

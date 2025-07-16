@@ -25,10 +25,10 @@ function h = rcosdesign(rollof_factor, num_of_symb, samp_per_symb, varargin)
     //
     // Examples
     // // Design a square-root raised cosine filter:
-    //    rolloff = 0.25;
-    //    span = 3;
-    //    sps = 2; // Samples per symbol
-    //    b = rcosdesign(rolloff, span, sps);
+    //    rolloff = 0.25
+    //    span = 3
+    //    sps = 2 // Samples per symbol
+    //    b = rcosdesign(rolloff, span, sps)
     //
 
 

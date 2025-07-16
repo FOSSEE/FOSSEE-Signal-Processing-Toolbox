@@ -19,8 +19,8 @@ function sde = spectral_xdf (x, win, b)
 //
 // Examples
 // // Compute the spectral density estimator with default parameters:
-//    x = [1, 2, 3, 4, 5];
-//    sde = spectral_xdf(x);
+//    x = [1, 2, 3, 4, 5]
+//    sde = spectral_xdf(x)
 // 
 // See also
 // fft1 

@@ -22,16 +22,10 @@ function [ar, sigma2,rc] = _levin(r);
 // Examples
 // // Solve the Yule-Walker equations using Levinson's algorithm
 // // Correlation coefficients
-// r = [1, 0.8, 0.5, 0.2];
+// r = [1, 0.8, 0.5, 0.2]
 // // Solve the Yule-Walker equations
-// [ar, sigma2, rc] = _levin(r);
-// // Display the results
-// disp("Auto-Regressive model parameters (ar):");
-// disp(ar);
-// disp("Scale constant (sigma2):");
-// disp(sigma2);
-// disp("Reflection coefficients (rc):");
-// disp(rc);
+// [ar, sigma2, rc] = _levin(r)
+
 
 if length(r)==1 then
     ar=1;

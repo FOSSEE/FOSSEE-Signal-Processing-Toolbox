@@ -107,10 +107,18 @@ This function estimates the fall time of a negative-going bilevel waveform. It c
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-x = [1.2, 5, 10, -20, 12];
-t = 1:length(x);
-f = falltime(x, t);
+Fs = 1e6 // 1 MHz sampling rate
+x = [3.3, 3.3, 3.2, 2.5, 1.0, 0.2, 0.0, 0.0] // Simulated digital fall
+f = falltime(x, Fs)
+
 
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
 </refsection>
 </refentry>

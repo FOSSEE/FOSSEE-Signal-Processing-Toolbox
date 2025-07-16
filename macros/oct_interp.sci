@@ -32,8 +32,28 @@ function y = oct_interp(x, q, varargin)
 // The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
 //
 // Examples
-// oct_interp(1,2)
+// // Generate 5 random bits and map to BPSK symbols
+// bits = [1 0 1 1 0];
+// symbols = 2 * bits - 1;  // BPSK mapping: 1 -> +1, 0 -> -1
+// // Upsample by factor of 4 using oct_interp (defined elsewhere)
+// y = oct_interp(symbols, 4);
+// // Plot original symbols (using plot2d3 to simulate stem)
+// n1 = 0:length(symbols)-1;
+// scf(0);
+// subplot(2,1,1);
+// plot2d3(n1', symbols');
+// title("Original BPSK Symbols");
+// xlabel("Symbol index");
+// ylabel("Amplitude");
 // 
+// // Plot upsampled signal
+// n2 = 0:length(y)-1;
+// subplot(2,1,2);
+// plot(n2, y);
+// title("Upsampled Signal (q=4)");
+// xlabel("Sample index");
+// ylabel("Amplitude");
+
 
  funcprot(0);
     [nargout,nargin]=argn();

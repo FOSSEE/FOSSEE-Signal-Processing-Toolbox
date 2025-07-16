@@ -68,14 +68,8 @@
 // 3 complex exponentials:
 
 n=0:99;
-s=exp(1i*pi/2*n)+2*exp(1i*pi/4*n)+exp(1i*pi/3*n)+randn(1,100);
-[W,P] = rooteig(s,3);
-
-n=0:99;
-s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
-// CORRMTX FUNCTION should be loaded PRIOR EXECUTING THIS FUNCTION
-X = corrmtx(s,12,'mod');
-[W,P] = rooteig(X,3);
+s=exp(1i*pi/2*n)+2*exp(1i*pi/4*n)+exp(1i*pi/3*n)+rand(1,100,'normal');
+[W,P] = rooteig(s,3)
 
 
    ]]></programlisting>

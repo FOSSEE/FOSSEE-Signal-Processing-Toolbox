@@ -20,12 +20,38 @@ function y = _czt(x, m, w, a)
 // The radius increases exponentially, and the angle increases linearly.
 //
 // Examples
-// // Determine the frequency components of a signal
-// t = linspace(0, 50, 1000); 
-// f = linspace(0, 3, 1000);    
-// x_t = sin(t) + cos(t * 2 * %pi);  
-// x_f = _czt(x_t);   
-// plot(f, abs(x_f))
+// Time-domain signal: two sinusoids at normalized frequencies 0.1 and 0.3
+// N = 512;
+// n = 0:(N - 1);
+// x = sin(2 * %pi * 0.1 * n) + 0.5 * sin(2 * %pi * 0.3 * n);
+//
+// // === Define Zoom Region ===
+// M = 512;         // Number of CZT frequency bins
+// f_start = 0.05;  // Start frequency (normalized)
+// f_end   = 0.4;   // End frequency (normalized)
+//
+// // === Define CZT Parameters ===
+// w = exp(-2 * %i * %pi * (f_end - f_start) / M);
+// a = exp(2 * %i * %pi * f_start);
+//
+// // Compute Chirp z-Transform
+// X_czt = _czt(x, M, w, a);
+//
+// // Compute standard FFT for comparison
+// X_fft = fft1(x, M);
+//
+// // === Frequency Axes ===
+// freq_fft = (0:(M - 1)) / M;  // Normalized frequency for FFT
+// freq_czt = f_start + (0:(M - 1)) * (f_end - f_start) / M;  // CZT frequency axis
+//
+// clf();
+// plot2d(freq_fft', abs(X_fft)', style=1);       // Blue solid line for FFT
+// plot2d(freq_czt', abs(X_czt)', style=2);       // Red dashed line for CZT
+//
+// legend(["Standard FFT", "Zoomed CZT"]);
+// xlabel("Normalized Frequency");
+// ylabel("|X(f)|");
+// xtitle("Zoomed Spectrum using Chirp z-Transform");
 
     funcprot(0);
     nargin=argn(2);
@@ -43,7 +69,7 @@ function y = _czt(x, m, w, a)
         error("czt: m must be a single element\n");
     end
     if nargin < 3 || isempty(w) then
-        w = exp(-2*%i*%pi/m);
+        w = exp(2*%i*%pi/m);
     end
     if nargin < 4 || isempty(a) then
         a = 1;
@@ -71,4 +97,19 @@ function y = _czt(x, m, w, a)
     end
     y = clean ( y ) ;
 endfunction
+
+B
+B
+B
+B
+B
+B
+B
+B
+A
+A
+A
+A
+
+i
 

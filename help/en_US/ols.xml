@@ -65,18 +65,11 @@ The return values beta, sigma, and r are defined as follows.
 // Simulated data
 t = 100;                       // Number of observations
 x = [ones(t, 1), rand(t, 1)];  // Design matrix: intercept + one regressor
-b_true = [2; 3];               // True coefficients: intercept = 2, slope = 3
+b_true = [2; 3]               // True coefficients: intercept = 2, slope = 3
 // Generate response variable with noise
-y = x * b_true + randn(t, 1);  // y = 2 + 3*x + noise
+y = x * b_true + rand(t, 1,'normal');  // y = 2 + 3*x + noise
 // Perform OLS estimation
-[beta, sigma, r] = ols(y, x);
-// Display results
-disp('Estimated Coefficients (beta):');
-disp(beta);
-disp('Estimated Covariance (sigma):');
-disp(sigma);
-disp('First 5 Residuals (r):');
-disp(r(1:5));
+[beta, sigma, r] = ols(y, x)
    ]]></programlisting>
 </refsection>
 </refentry>

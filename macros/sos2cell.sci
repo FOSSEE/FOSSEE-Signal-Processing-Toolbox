@@ -37,18 +37,9 @@ function cll = sos2cell(s, g)
 //
 // Examples
 // // Convert a second-order section matrix to a cell array (unity gain):
-//    sos = [3. 6. 7. 1. 1. 2. ; 1. 4. 5. 1. 9. 3. ; 2. 7. 1. 1. 7. 8.];
-//    cll = sos2cell(sos);
-//    // Output:
-//    // cll = {[3. 6. 7.] [1. 1. 2.]; [1. 4. 5.] [1. 9. 3.]; [2. 7. 1.] [1. 7. 8.]}
-//
-// // Convert a second-order section matrix to a cell array with a gain factor:
-//    sos = [3. 6. 7. 1. 1. 2. ; 1. 4. 5. 1. 9. 3. ; 2. 7. 1. 1. 7. 8.];
-//    g = 0.5;
-//    cll = sos2cell(sos, g);
-//    // Output:
-//    // cll = {{0.5 1}; [3. 6. 7.] [1. 1. 2.]; [1. 4. 5.] [1. 9. 3.]; [2. 7. 1.] [1. 7. 8.]}
-//
+//    sos = [3. 6. 7. 1. 1. 2. ; 1. 4. 5. 1. 9. 3. ; 2. 7. 1. 1. 7. 8.]
+//    cll = sos2cell(sos)
+// 
 // Authors
 // Abinash Singh        
 

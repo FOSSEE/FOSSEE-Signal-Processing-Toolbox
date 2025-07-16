@@ -66,8 +66,8 @@ Speficication of the type of FIR filter
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // FIR filter
-k1 = [1/2 1/2 1/4];
-[num1,den1] = latc2tf(k1);
+k1 = [1/2 1/2 1/4]
+[num1,den1] = latc2tf(k1)
 
    ]]></programlisting>
 </refsection>

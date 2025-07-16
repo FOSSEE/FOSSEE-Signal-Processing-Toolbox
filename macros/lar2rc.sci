@@ -9,10 +9,10 @@ function k=lar2rc(g)
 // k: returns the reflection coefficients.
 //
 // Examples
-// g = [0.6389 4.5989 0.0063 0.0163 -0.0163];
+// g = [0.6389 4.5989 0.0063 0.0163 -0.0163]
 // k = lar2rc(g)
 // 
-// Author
+// Authors
 // Jitendra Singh
 //
 

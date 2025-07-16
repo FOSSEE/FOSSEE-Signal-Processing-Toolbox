@@ -15,10 +15,10 @@ function w = gaussian(m, a)
 // 
 // Examples
 // // Define parameters
-// m = 21;       // Length of the window
-// a = 0.4;      // Width control (higher a = narrower window)
+// m = 21       // Length of the window
+// a = 0.4      // Width control (higher a = narrower window)
 // // Generate Gaussian window
-// w = gaussian(m, a);
+// w = gaussian(m, a)
 // // Plot the window
 // x = linspace(-(m-1)/2, (m-1)/2, m);
 // plot(x, w, '-o');

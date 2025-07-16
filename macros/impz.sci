@@ -27,10 +27,10 @@ function [x_r, t_r] = impz(b, a, n, fs)
 //
 // Examples
 // // Define filter coefficients
-// b = [0.2];               // Numerator (feedforward)
-// a = [1, -0.8];           // Denominator (feedback)
+// b = [0.2]               // Numerator (feedforward)
+// a = [1, -0.8]           // Denominator (feedback)
 // // Compute impulse response
-// [x, t] = impz(b, a, 50);  // 50 samples of impulse response
+// [x, t] = impz(b, a, 50)  // 50 samples of impulse response
 // 
 // See also
 //   fftfilt

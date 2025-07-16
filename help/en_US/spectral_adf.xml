@@ -69,8 +69,8 @@ a window name `win`, and a bandwidth `b`. The window name is used to search for 
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Compute the spectral density estimator with default parameters:
-c = [1, 0.8, 0.6, 0.4, 0.2];
-sde = spectral_adf(c);
+c = [1, 0.8, 0.6, 0.4, 0.2]
+sde = spectral_adf(c)
 
    ]]></programlisting>
 </refsection>

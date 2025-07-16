@@ -13,10 +13,22 @@ function [h, a]= intfilt(R, L, freqmult)
     // h:  linear phase FIR filter.
     // 
     // Examples
-    // h=intfilt(20,10,'l')     // The output of this example has 220 columns ,so it is difficult to write it here.
-    // h=intfilt(20,10,1)     // The output of this example has 220 columns ,so it is difficult to write it here.
-    // h1=intfilt(2,3,'l');
-    //h2=intfilt(4,1,1);
+    // // Interpolated FIR filter design and frequency response
+    // // Design parameters
+    // R = 4
+    // L = 3
+    // freqmult = 'l'  // low-bandwidth interpolation
+    // // Design the interpolated FIR filter
+    // [h, a] = intfilt(R, L, freqmult)
+    // // Plot impulse response
+    // n = 0:length(h)-1;
+    // scf(0);
+    // plot2d3(n', h');
+    // xlabel("n");
+    // ylabel("Amplitude");
+    // title("Impulse Response of Interpolated FIR Filter");
+    // scf(1);
+    // freqz(h, 1);
     // 
     // Authors
     // Jitendra Singh

@@ -33,12 +33,12 @@ function [r, p, k, e] = residue (b, a, varargin)
 //
 // Examples
 // // Compute partial fraction expansion:
-//    b = [1, 1, 1];
-//    a = [1, -5, 8, -4];
-//    [r, p, k, e] = residue(b, a);
+//    b = [1, 1, 1]
+//    a = [1, -5, 8, -4]
+//    [r, p, k, e] = residue(b, a)
 //
 // // Reconstruct polynomials from residues and poles:
-//    [b_reconstructed, a_reconstructed] = residue(r, p, k, e);
+//    [b_reconstructed, a_reconstructed] = residue(r, p, k, e)
 //
 // Authors
 // FOSSEE Team

@@ -39,8 +39,8 @@ function [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(varargin)
 // 0   phi(1) phi(2)  phi(3)   phi(4)  (phi(5))              pi
 //
 // Examples
-// [B, A] = butter(6, 0.5);
-//  [Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8]);
+// [B, A] = butter(6, 0.5)
+//  [Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8])
 // 
 
   usage = sprintf("iirlp2mb Usage: [Num,Den,AllpassNum,AllpassDen]=iirlp2mb(B,A,Wo,Wt[,Pass])\n");

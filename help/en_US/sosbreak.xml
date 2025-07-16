@@ -62,8 +62,8 @@ For even-degree polynomials, linear factors are combined into second-order polyn
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Break a polynomial into second-order polynomials and a linear term:
-v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4];
-[zerosort, g] = sosbreak(v);
+v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4]
+[zerosort, g] = sosbreak(v)
 
    ]]></programlisting>
 </refsection>

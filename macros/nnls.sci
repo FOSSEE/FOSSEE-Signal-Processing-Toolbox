@@ -15,10 +15,10 @@ function [x,w] = nnls(E,f)
 // Lawson, C.L. and R.J. Hanson, "Solving Least Squares Problems," Prentice-Hall, 1974, Chapter 23, p. 161.
 //
 // Examples
-// 1. Solve a simple NNLS problem:
-//    E = [1, 2; 3, 4];
-//    f = [1; 1];
-//    [x, w] = nnls(E, f);
+// // Solve a simple NNLS problem:
+//    E = [1, 2; 3, 4]
+//    f = [1; 1]
+//    [x, w] = nnls(E, f)
 //
 // Authors
 // FOSSEE Team

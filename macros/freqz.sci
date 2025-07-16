@@ -41,30 +41,14 @@ function [h_r, f_r] = freqz (b, a, n, region, Fs)
 // - If no output arguments are provided, the function plots the magnitude and phase response.
 //
 // Examples
-// // Compute the frequency response of an FIR filter:
-//    b = [0.2929, 0.5858, 0.2929];
-//    [h, w] = freqz(b);
-//
-// // Compute the frequency response of an IIR filter:
-//    b = [0.2929, 0.5858, 0.2929];
-//    a = [1, 0, 0.1716];
-//    [h, w] = freqz(b, a)
-//
-// // Compute the response at specific frequencies:
-//    b = [0.2929, 0.5858, 0.2929];
-//    a = [1, 0, 0.1716];
-//    w = linspace(0, %pi, 100);
-//    h = freqz(b, a, w)
-//
-// // Compute the response with a sampling frequency:
-//    b = [0.2929, 0.5858, 0.2929];
-//    a = [1, 0, 0.1716];
-//    [h, f] = freqz(b, a, 512, 1000);
-//
-// // Plot the magnitude and phase response:
-//    b = [0.2929, 0.5858, 0.2929];
-//    freqz(b);
-//
+// //Compute the frequency response of a Butterworth low-pass filter
+// //Design a 4th-order Butterworth low-pass filter with cutoff frequency 0.3π
+// //(normalized frequency range: 0 to 1 corresponds to 0 to π radians)
+// order = 4
+// fc = 0.3  // Normalized cutoff frequency (0 < fc < 1)
+// 
+// [b, a] = butter(order, fc)
+// freqz(b, a);
 // See also
 // fft1
 // unwrap2 
@@ -97,12 +81,12 @@ function [h_r, f_r] = freqz (b, a, n, region, Fs)
 
   if (isempty (b))
     b = 1;
-  elseif (~ isvector (b))
+  elseif (~ isvector (b) && ~isscalar(b))
     error ("freqz: B must be a vector");
   end
   if (isempty (a))
     a = 1;
-  elseif (~ isvector (a))
+  elseif (~ isvector (a) && ~isscalar(a))
     error ("freqz: A must be a vector");
   end
   if (isempty (n))
@@ -193,7 +177,7 @@ function [h_r, f_r] = freqz (b, a, n, region, Fs)
   end
 
   h = hb ./ ha;
-
+  h = remove_zeros(h); // replace zero values with %eps 
   if (plot_output)
     // Plot and don't return values.
     if (whole_region && isscalar (n))
@@ -216,7 +200,8 @@ function freqz_plot (w, h, freq_norm)
     freq_norm = %f 
   end
   n = size(max(w));
-  mag = 20 * log10 (abs (h));
+  mag = abs(h);
+  mag = 20 * log10 (mag);
   phase = unwrap2 (angle (h));
 
   if (freq_norm)
@@ -237,6 +222,19 @@ function freqz_plot (w, h, freq_norm)
   ylabel ("Phase (degrees)");
 
 endfunction
+function ret = remove_zeros(mag)
+
+  ret = zeros(size(mag));
+  for i=1:length(mag)
+    if mag(i)==0 then
+       ret(i)=%eps; 
+    else
+      ret(i)=mag(i);
+    end
+  end
+
+endfunction
+
 /*
 //  passed
 testif HAVE_FFTW # correct values and fft-polyval consistency 

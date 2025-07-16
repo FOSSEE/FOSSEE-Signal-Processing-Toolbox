@@ -51,24 +51,9 @@ function [r, p, f, m] = residued(b, a, toler)
 //
 // Examples
 // // Compute the partial fraction expansion of a filter:
-//    B = [1, 1];
-//    A = [1, -2, 1];
-//    [r, p, f, m] = residued(B, A);
-//    // Output:
-//    // r = [-1; 2]
-//    // p = [1; 1]
-//    // f = []
-//    // m = [1; 2]
-//
-// // Compute the partial fraction expansion with a higher-order numerator:
-//    B = [6, 2];
-//    A = [1, -2, 1];
-//    [r, p, f, m] = residued(B, A);
-//    // Output:
-//    // r = [-2; 8]
-//    // p = [1; 1]
-//    // f = []
-//    // m = [1; 2]
+//    B = [1, 1]
+//    A = [1, -2, 1]
+//    [r, p, f, m] = residued(B, A)
 //
 
 

@@ -13,8 +13,8 @@ function inv_ceps = icceps(input, remv_samp)
 // The resulting spectrum will be complex in nature.
 //
 // Examples
-// xhat = [2.2428, -0.0420, -0.0210, 0.0045, 0.0366, 0.0788, 0.1386, 0.2327, 0.4114, 0.9249];
-// icc = icceps(xhat, 2);
+// xhat = [2.2428, -0.0420, -0.0210, 0.0045, 0.0366, 0.0788, 0.1386, 0.2327, 0.4114, 0.9249]
+// icc = icceps(xhat, 2)
 // round(icc)
 //
 

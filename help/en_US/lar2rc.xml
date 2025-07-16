@@ -46,12 +46,16 @@
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-g = [0.6389 4.5989 0.0063 0.0163 -0.0163];
+g = [0.6389 4.5989 0.0063 0.0163 -0.0163]
 k = lar2rc(g)
 
-Author
-Jitendra Singh
-
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
 </refsection>
 </refentry>

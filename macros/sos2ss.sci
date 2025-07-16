@@ -14,19 +14,12 @@ function [A,B,C,D]=sos2ss(sos,g)
 // g:gain
 // 
 // Examples
-// sos = [1  1  1  1   0  -1 ;
-//         -2  3  1  1  10   1];
-// [A,B,C,D] = sos2ss(sos,2);
-//
-// //EXPECTED OUTPUT:
-////D  =- 4.
- ////C  =42.    4.  - 32.  - 2.
- ////B  =[1.  0.  0.    0.    0.]'
- ////A  =[- 10.    0.    10.    1. ; 1.     0.    0.     0.  ; 0.     1.    0.     0.  ;  0.     0.    1.     0.  ]
+// sos = [1  1  1  1   0  -1 ; -2  3  1  1  10   1]
+// [A,B,C,D] = sos2ss(sos,2)
 //
 // Authors
 // Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// parthasarathipanda314@gmail.com
  
 [nargout,nargin]=argn();
     if nargin==1 then

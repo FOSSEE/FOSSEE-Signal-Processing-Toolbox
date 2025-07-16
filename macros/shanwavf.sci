@@ -22,10 +22,7 @@ function [psi,x]=shanwavf(lb,ub,n,fb,fc)
 //
 // Examples
 // // Compute the Complex Shannon wavelet:
-//    [psi, x] = shanwavf(2, 8, 3, 1, 6);
-//    // Output:
-//    // psi = [-3.8982e-17 + 1.1457e-31i   3.8982e-17 - 8.4040e-31i  -3.8982e-17 + 4.5829e-31i]
-//    // x = [2   5   8]
+//    [psi, x] = shanwavf(2, 8, 3, 1, 6)
 //
 
     funcprot(0);

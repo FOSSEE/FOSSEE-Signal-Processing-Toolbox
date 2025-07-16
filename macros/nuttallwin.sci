@@ -24,13 +24,13 @@ function w = nuttallwin (m, opt)
 // 
 // Examples
 // //. Compute a symmetric Nuttall window of length 10:
-//    w = nuttallwin(10);
+//    w = nuttallwin(10)
 //
 // // Compute a periodic Nuttall window of length 10:
-//    w = nuttallwin(10, "periodic");
+//    w = nuttallwin(10, "periodic")
 //
 // // Compute a symmetric Nuttall window explicitly:
-//    w = nuttallwin(10, "symmetric");
+//    w = nuttallwin(10, "symmetric")
 //
 //
 // Authors

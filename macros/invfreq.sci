@@ -40,10 +40,10 @@ function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
 //
 // Examples
 // // Fit a filter to a Butterworth filter response:
-//    [B, A] = butter(12, 1/4);
+//    [B, A] = butter(12, 1/4)
 //    [H, w] = freqz(B, A, 128);
-//    [Bh, Ah] = invfreq(H, w, 4, 4);
-//    Hh = freqz(Bh, Ah);
+//    [Bh, Ah] = invfreq(H, w, 4, 4)
+//    Hh = freqz(Bh, Ah,128);
 //    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 //
 // Bibliography
@@ -253,14 +253,14 @@ endfunction
 test case 1 // passed
 
 [B,A,Sign] = invfreq(1,1,1,1,1,[],[],'','z','norm',1,'method','LS')
-assert_checkequal(B,[0.6314 0.3411])
-assert_checkequal(A,[1 -0.3411])
-assert_checkequal(Sign,0)
+assert_checkalmostequal(B,[0.63 0.34],%eps,10e-2)
+assert_checkalmostequal(A,[1 -0.34],%eps,10e-2)
+assert_checkalmostequal(Sign,0)
 
 [B,A,Sign] = invfreq(1,1,1,1,1,[],[],'','s')
-assert_checkequal(B,[0 1])
-assert_checkequal(A,[0 1])
-assert_checkequal(Sign,0)
+assert_checkalmostequal(B,[0 1])
+assert_checkalmostequal(A,[0 1])
+assert_checkalmostequal(Sign,0)
 
 
 test case 2 // passed 

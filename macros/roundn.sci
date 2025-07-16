@@ -16,8 +16,8 @@ function r=roundn(x,n)
 //
 // Examples
 // // Round a number to 2 decimal places:
-//    r = roundn(3.14159, 2);
-//    // Output: r = 3.14
+//    r = roundn(3.14159, 2)
+
 
     r=(round(x*10^n))/(10^n);
 endfunction
