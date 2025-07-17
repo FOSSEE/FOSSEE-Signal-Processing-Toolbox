@@ -224,7 +224,7 @@ function freqz_plot (w, h, freq_norm)
 endfunction
 function ret = remove_zeros(mag)
 
-  ret = zeros(size(mag));
+  ret = zeros(size(mag,1),size(mag,2));
   for i=1:length(mag)
     if mag(i)==0 then
        ret(i)=%eps; 

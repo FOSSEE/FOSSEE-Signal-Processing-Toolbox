@@ -120,19 +120,9 @@ Notes
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-// Design a lowpass filter:
-b = fir1(40, 0.3)
-
 // Design a bandstop filter:
-b = fir1(15, [0.2, 0.5], "stop");
-
-// Design a bandpass filter with a custom window:
-window = hamming(16);
-b = fir1(15, [0.2, 0.5], "pass", window);
-
-// Design a highpass filter without normalization:
-b = fir1(20, 0.4, "high", "noscale");
-
+b = fir1(15, [0.2, 0.5], "stop")
+freqz(b,[]);
    ]]></programlisting>
 </refsection>
 

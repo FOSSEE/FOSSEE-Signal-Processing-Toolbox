@@ -37,19 +37,9 @@ function b = fir1(n, w, varargin)
 // - The periodic form of the window is used for spectral analysis, while the symmetric form is typically used for filter design.
 //
 // Examples
-// // Design a lowpass filter:
-//    b = fir1(40, 0.3)
-//
 // // Design a bandstop filter:
-//    b = fir1(15, [0.2, 0.5], "stop");
-//
-// // Design a bandpass filter with a custom window:
-//    window = hamming(16);
-//    b = fir1(15, [0.2, 0.5], "pass", window);
-//
-// // Design a highpass filter without normalization:
-//    b = fir1(20, 0.4, "high", "noscale");
-// 
+//    b = fir1(15, [0.2, 0.5], "stop")
+//    freqz(b,[]);
 // Authors
 // FOSSEE Team
 // toolbox@scilab.in

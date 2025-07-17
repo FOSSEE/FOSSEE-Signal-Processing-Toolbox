@@ -40,11 +40,14 @@ function [B, A, SigN] = invfreq(H, F, nB, nA, W, iter, tol, tr, plane,varargin)
 //
 // Examples
 // // Fit a filter to a Butterworth filter response:
-//    [B, A] = butter(12, 1/4)
-//    [H, w] = freqz(B, A, 128);
-//    [Bh, Ah] = invfreq(H, w, 4, 4)
-//    Hh = freqz(Bh, Ah,128);
-//    disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
+  //  order=6
+  //  fc = 1/2
+  //  n = 128
+  //  [B, A] = butter(order, fc)
+  //  [H, w] = freqz(B, A, n)
+  //  [Bh, Ah] = invfreq(H, w, order, order)
+  //  [Hh,wh] = freqz(Bh, Ah,n)
+  //  disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 //
 // Bibliography
 // J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983, page 50.

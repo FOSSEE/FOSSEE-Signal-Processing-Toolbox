@@ -33,9 +33,9 @@ function [pxx, f] = periodogram (x, varargin)
 //
 // Examples
 // // Compute periodogram for a sine wave:
-//    t = 0:0.01:1;
-//    x = sin(2 * %pi * 10 * t);
-//    periodogram(x);
+//    t = 0:0.01:1
+//    x = sin(2 * %pi * 10 * t)
+//    periodogram(x)
 //
 // See also
 // hamming

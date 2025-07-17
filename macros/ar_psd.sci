@@ -23,7 +23,7 @@ function varargout = ar_psd(a, v, varargin)
 // It supports various methods for spectrum calculation and allows customization of frequency range and plot type.
 //
 // Examples
-// AR(2) model: a = [1, -1.5, 0.7], variance v = 2
+// // AR(2) model: a = [1, -1.5, 0.7], variance v = 2
 // a = [1, -1.5, 0.7];
 // v = 2;
 // ar_psd(a, v, 512, 2.0, 'whole', 'fft', 'plot');

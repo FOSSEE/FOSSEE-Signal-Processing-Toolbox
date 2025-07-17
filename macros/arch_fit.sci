@@ -25,20 +25,14 @@ function [a, b] = arch_fit(y, x, p, iter, gamma, a0, b0)
 // // Fit an ARCH regression model to a time series
 // 
 // // Define the time series data (y) and regressors (x)
-// y = [1.2, 2.3, 1.8, 2.5, 3.1, 2.9, 3.5, 3.8, 4.2, 4.5]; // Time-series data
-// x = [1, 2; 2, 3; 3, 4; 4, 5; 5, 6; 6, 7; 7, 8; 8, 9; 9, 10; 10, 11]; // Regressors
+// y = [1.2, 2.3, 1.8, 2.5, 3.1, 2.9, 3.5, 3.8, 4.2, 4.5] // Time-series data
+// x = [1, 2; 2, 3; 3, 4; 4, 5; 5, 6; 6, 7; 7, 8; 8, 9; 9, 10; 10, 11] // Regressors
 // 
 // // Define the order of the regression of the residual variance
-// p = 2;
+// p = 2
 // 
 // // Fit the ARCH model
-// [a, b] = arch_fit(y, x, p);
-// 
-// // Display the results
-// disp("ARCH model coefficients (a):");
-// disp(a);
-// disp("Regression coefficients (b):");
-// disp(b);
+// [a, b] = arch_fit(y, x, p)
 // 
 // See also
 //  autoreg_matrix

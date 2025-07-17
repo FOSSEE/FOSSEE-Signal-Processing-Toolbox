@@ -15,8 +15,8 @@ function [ar_coeff, var_est] = armcov(data_in, order)
 // This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal `x`.
 //
 // Examples
-// A = [1 -2.7607 3.8106 -2.6535 0.9238];
-// y = filter(1, A, 0.2 * rand(1024, 1, "normal"));
+// A = [1 -2.7607 3.8106 -2.6535 0.9238]
+// y = filter(1, A, 0.2 * rand(1024, 1, "normal"))
 // arcoeffs = armcov(y, 4)
 
 

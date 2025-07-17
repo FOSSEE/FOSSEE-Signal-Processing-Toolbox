@@ -36,17 +36,10 @@ function [pval, lm] = arch_test(y, x, p)
 // y = 0.05 * t + 0.2 * sin(2 * %pi * t / 50) + 0.1 * rand(1, length(t)); // Simulated returns with trend and noise
 // 
 // // Define lagged independent variable (autoregressive model of order 1)
-// x = [ones(length(y)-1, 1), y(1:$-1)']; // Lagged values of y
+// x = [ones(length(y)-1, 1), y(1:$-1)'] // Lagged values of y
 // 
 // // Perform the ARCH test with 2 lags
-// [pval, lm] = arch_test(y(2:$)', x, 2);
-// 
-// // Display the results
-// disp("p-value of the ARCH test:");
-// disp(pval);
-// disp("Lagrange Multiplier test statistic:");
-// disp(lm);
-// 
+// [pval, lm] = arch_test(y(2:$)', x, 2)
 // See also
 // ols 
 // autoreg_matrix

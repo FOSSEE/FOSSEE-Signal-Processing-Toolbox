@@ -63,9 +63,9 @@ h(t) = a(1) + a(2) * e(t-1)^2 + … + a(la) * e(t-la+1)^2.
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1, 2, 3, 4, 5];
-b = [7, 8, 9, 10];
-t = 5;
+a = [1, 2, 3, 4, 5]
+b = [7, 8, 9, 10]
+t = 5
 y = arch_rnd(a, b, t)
 
    ]]></programlisting>

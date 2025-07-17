@@ -20,11 +20,11 @@ function x = arma_rnd(a, b, v, t, n)
 // If `n` is omitted, it defaults to 100.
 //
 // Examples
-// a = [1, 2, 3, 4, 5];
-// b = [7, 8, 9, 10, 11];
-// v = 10;
-// t = 5;
-// n = 100;
+// a = [1, 2, 3, 4, 5]
+// b = [7, 8, 9, 10, 11]
+// v = 10
+// t = 5
+// n = 100
 // x = arma_rnd(a, b, v, t, n)
 // 
 

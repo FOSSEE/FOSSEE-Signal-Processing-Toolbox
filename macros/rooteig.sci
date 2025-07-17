@@ -37,11 +37,12 @@ function [w,pow] = rooteig(x,p,varargin)
     //      the frequencies w
     //
     // Examples
-    //      // 3 complex exponentials:
-    //
-    //      n=0:99;
-    //      s=exp(1i*pi/2*n)+2*exp(1i*pi/4*n)+exp(1i*pi/3*n)+rand(1,100,'normal');
-    //      [W,P] = rooteig(s,3)
+    // // Time vector
+    // n = 0:99
+    // // Create a signal with 2 complex exponentials + noise
+    // s = exp(1i*2*%pi*0.1*n) + 1.5*exp(1i*2*%pi*0.25*n) + 0.5*rand(1, 100, 'normal')
+    // // Use rooteig to estimate frequencies and powers
+    // [W, P] = rooteig(s, 2)
     //
     // 
     // Authors

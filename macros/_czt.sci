@@ -20,38 +20,33 @@ function y = _czt(x, m, w, a)
 // The radius increases exponentially, and the angle increases linearly.
 //
 // Examples
-// Time-domain signal: two sinusoids at normalized frequencies 0.1 and 0.3
-// N = 512;
+// // --- Signal Generation ---
+// N = 256
 // n = 0:(N - 1);
-// x = sin(2 * %pi * 0.1 * n) + 0.5 * sin(2 * %pi * 0.3 * n);
-//
-// // === Define Zoom Region ===
-// M = 512;         // Number of CZT frequency bins
-// f_start = 0.05;  // Start frequency (normalized)
-// f_end   = 0.4;   // End frequency (normalized)
-//
-// // === Define CZT Parameters ===
+// f0 = 0.2
+// x = sin(2 * %pi * f0 * n);
+// // --- CZT Parameters ---
+// M = 512
+// f_start = 0.1
+// f_end   = 0.3
 // w = exp(-2 * %i * %pi * (f_end - f_start) / M);
 // a = exp(2 * %i * %pi * f_start);
-//
-// // Compute Chirp z-Transform
+// // --- CZT Computation ---
 // X_czt = _czt(x, M, w, a);
-//
-// // Compute standard FFT for comparison
-// X_fft = fft1(x, M);
-//
-// // === Frequency Axes ===
-// freq_fft = (0:(M - 1)) / M;  // Normalized frequency for FFT
-// freq_czt = f_start + (0:(M - 1)) * (f_end - f_start) / M;  // CZT frequency axis
-//
+// // --- Frequency Axis ---
+// freq_czt = f_start + (0:(M - 1)) * (f_end - f_start) / M;
+// // --- Peak Frequency Detection ---
+// [_, idx_max] = max(abs(X_czt))
+// detected_freq = freq_czt(idx_max)
+// disp("Detected frequency = " + string(detected_freq));
+// // --- Plot ---
 // clf();
-// plot2d(freq_fft', abs(X_fft)', style=1);       // Blue solid line for FFT
-// plot2d(freq_czt', abs(X_czt)', style=2);       // Red dashed line for CZT
-//
-// legend(["Standard FFT", "Zoomed CZT"]);
+// plot2d(freq_czt', abs(X_czt)');
+// xtitle("CZT Spectrum of Sine Wave at f = " + string(f0));
 // xlabel("Normalized Frequency");
 // ylabel("|X(f)|");
-// xtitle("Zoomed Spectrum using Chirp z-Transform");
+// xgrid();
+
 
     funcprot(0);
     nargin=argn(2);
@@ -69,7 +64,7 @@ function y = _czt(x, m, w, a)
         error("czt: m must be a single element\n");
     end
     if nargin < 3 || isempty(w) then
-        w = exp(2*%i*%pi/m);
+        w = exp(-2*%i*%pi/m);
     end
     if nargin < 4 || isempty(a) then
         a = 1;

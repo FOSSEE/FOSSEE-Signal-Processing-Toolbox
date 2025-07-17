@@ -81,7 +81,7 @@ It supports various methods for spectrum calculation and allows customization of
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-AR(2) model: a = [1, -1.5, 0.7], variance v = 2
+// AR(2) model: a = [1, -1.5, 0.7], variance v = 2
 a = [1, -1.5, 0.7];
 v = 2;
 ar_psd(a, v, 512, 2.0, 'whole', 'fft', 'plot');

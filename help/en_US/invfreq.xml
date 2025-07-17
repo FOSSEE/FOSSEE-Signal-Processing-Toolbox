@@ -96,10 +96,13 @@ The function supports Steiglitz-McBride iterations for iterative refinement of t
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Fit a filter to a Butterworth filter response:
-[B, A] = butter(12, 1/4)
-[H, w] = freqz(B, A, 128);
-[Bh, Ah] = invfreq(H, w, 4, 4)
-Hh = freqz(Bh, Ah,128);
+order=6
+fc = 1/2
+n = 128
+[B, A] = butter(order, fc)
+[H, w] = freqz(B, A, n)
+[Bh, Ah] = invfreq(H, w, order, order)
+[Hh,wh] = freqz(Bh, Ah,n)
 disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
 
    ]]></programlisting>

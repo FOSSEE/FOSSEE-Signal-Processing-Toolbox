@@ -94,13 +94,27 @@ Note: The core implementation of this function relies on `invfreq.sci`.
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-// Fit a filter to a frequency response:
-[B, A] = butter(4, 1/4)
-[H, F] = freqz(B, A);
-[Bh, Ah] = invfreqz(H, F, 4, 4)
-Hh = freqz(Bh, Ah,128);
-disp(sprintf('||frequency response error||= %f', norm(H - Hh)));
-
+order = 9;  // order of test filter
+// going to 10 or above leads to numerical instabilities and large errors
+fc = 1/2;   // sampling rate / 4
+n = 128;    // frequency grid size
+[B0, A0] = butter(order, fc);
+[H0, w] = freqz(B0, A0, n);
+Nn = (rand(size(w,1),size(w,2),'normal')+i*rand(size(w,1),size(w,2),'normal'))/sqrt(2);
+[Bh, Ah, Sig0] = invfreqz(H0, w, order, order);
+[Hh, wh] = freqz(Bh, Ah, n);
+[BLS, ALS, SigLS] = invfreqz(H0+1e-5*Nn, w, order, order, [], [], [], [], "method", "LS");
+HLS = freqz(BLS, ALS, n);
+[BTLS, ATLS, SigTLS] = invfreqz(H0+1e-5*Nn, w, order, order, [], [], [], [], "method", "TLS");
+HTLS = freqz(BTLS, ATLS, n);
+[BMLS, AMLS, SigMLS] = invfreqz(H0+1e-5*Nn, w, order, order, [], [], [], [], "method", "QR");
+HMLS = freqz(BMLS, AMLS, n);
+plot(w,[abs(H0) abs(Hh)])
+xlabel("Frequency (rad/sample)");
+ylabel("Magnitude");
+legend('Original','Measured');
+err = norm(H0-Hh);
+disp(sprintf('L2 norm of frequency response error = %f',err));
    ]]></programlisting>
 </refsection>
 
