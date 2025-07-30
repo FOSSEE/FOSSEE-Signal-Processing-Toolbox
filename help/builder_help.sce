@@ -37,4 +37,4 @@ end
 
 tbx_builder_help_lang("en_US", help_dir);
 
-clear toolbox_title;
+clear help_dir toolbox_title;
