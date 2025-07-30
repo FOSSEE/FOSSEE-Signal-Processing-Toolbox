@@ -1,5 +1,5 @@
 function outputVoltage = helperHarmonicDistortion(inputVoltage)
-// HelperHarmonicDistortionADC Helper function for HarmonicDistortionExample.m
+// HelperHarmonicDistortionADC Helper function for HarmonicDistortionExample.sci
 // 
 // Syntax
 // outputVoltage=helperHarmonicDistortionAmplifier(inputVoltage)
@@ -7,7 +7,7 @@ function outputVoltage = helperHarmonicDistortion(inputVoltage)
 // Description
 // Analizing the harmonic distortion of a weakly non-linear system in the presence of noise.
 // 
-// Example
+// Examples
 // VmaxPk = 2;
 // Fi = 2000;
 // Fs = 44.1e3;
