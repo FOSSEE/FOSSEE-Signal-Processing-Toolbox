@@ -20,11 +20,11 @@ function typ=firtype(b)
 //
 // Examples
 // // Symmetrical filter with even length:
-//    b = [9.2762e-05, 9.5482e-02, 4.0443e-01, 4.0443e-01, 9.5482e-02, 9.2762e-05];
+//    b = [9.2762e-05, 9.5482e-02, 4.0443e-01, 4.0443e-01, 9.5482e-02, 9.2762e-05]
 //    t = firtype(b)
 //
 // // Anti-symmetrical filter with odd length:
-//    b = [-1, -2, 0, 2, 1];
+//    b = [-1, -2, 0, 2, 1]
 //    t = firtype(b)
 //   
 // Authors

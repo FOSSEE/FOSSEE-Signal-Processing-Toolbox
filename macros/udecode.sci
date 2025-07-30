@@ -19,7 +19,7 @@ function y=udecode(u,n,v,saturatemode)
 // If saturatemode='saturate' the output is saturated if overflow accors
 //
 // Examples
-// u = int8([-1 1 2 -5]);
+// u = int8([-1 1 2 -5])
 // ysat = udecode(u,3)
 // 
 // Authors

@@ -16,7 +16,7 @@ function [ydb] = mag2db(y)
 // - If `y` contains zeros, the corresponding `ydb` values are set to -Inf.
 //
 // Examples
-// y = [1, 10, 0.1, 0, -5];
+// y = [1, 10, 0.1, 0, -5]
 // ydb = mag2db(y)
 // 
 // Authors

@@ -19,7 +19,7 @@ function y = fftn(A, SIZE)
 //
 // Examples
 // // Example 1: Compute the FFT of a matrix
-// A = [6 9 7; 2 9 9; 0 3 1];
+// A = [6 9 7; 2 9 9; 0 3 1]
 // Y = fftn(A)
 //
  

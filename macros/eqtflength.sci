@@ -17,12 +17,12 @@ function [b,a,N,M] = eqtflength(b,a)
 //
 // Examples
 // // Equalize lengths of numerator and denominator:
-//    b = [1, 2];
-//    a = [1, 2, 3];
+//    b = [1, 2]
+//    a = [1, 2, 3]
 //    [b, a] = eqtflength(b, a)
 // // Return lengths of modified vectors:
-//    b = [1, 2];
-//    a = [1, 2, 3];
+//    b = [1, 2]
+//    a = [1, 2, 3]
 //    [b, a, N, M] = eqtflength(b, a)
 //
 // Authors

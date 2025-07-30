@@ -16,10 +16,10 @@ function v = var(x, w, dim)
 // This function calculates the variance of the input data array `x`.
 //
 // Examples
-// x=[1.2, 5, 10, -20, 12,10,5,20,32,20];
-// w=1:10;
-// dim=2;
-// y=var(x, w, dim) ;
+// x=[1.2, 5, 10, -20, 12,10,5,20,32,20]
+// w=1:10
+// dim=2
+// y=var(x, w, dim)
 //
 
 

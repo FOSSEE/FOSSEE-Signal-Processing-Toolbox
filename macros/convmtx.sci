@@ -13,8 +13,8 @@ function b = convmtx(a, n)
 // This function generates the convolution matrix `b` for the input vector `a`. If `a` is a column vector, the operation `convmtx(a, n) * x` yields the convolution of `a` with another column vector `x` of length `n`. Similarly, if `a` is a row vector, the operation `x * convmtx(a, n)` yields the convolution of `a` with another row vector `x` of length `n`.
 //
 // Examples
-// a = [1; 2; 3];
-// n = 4;
+// a = [1; 2; 3]
+// n = 4
 // b = convmtx(a, n)
 
 

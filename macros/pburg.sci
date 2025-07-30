@@ -20,7 +20,7 @@ function [psd,f_out] = pburg(x, poles, varargin)
 // computation method, and plotting.
 //
 // Examples
-// x = [1.0, -1.6216505, 1.1102795, -0.4621741, 0.2075552, -0.018756746];
+// x = [1.0, -1.6216505, 1.1102795, -0.4621741, 0.2075552, -0.018756746]
 // [psd, f_out] = pburg(x, 2)
 //
 

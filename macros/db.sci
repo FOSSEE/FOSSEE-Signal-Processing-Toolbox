@@ -21,12 +21,10 @@ function [dboutput] = db(X, SignalType, R)
 // 
 // Examples
 // // Convert voltage measurements to decibels
-// X = [1, 2; 3, 4]; // Voltage measurements
-// SignalType = 'voltage';
-// R = 2; // Resistance in ohms
-// dboutput = db(X, SignalType, R);
-// disp("Decibel Output:");
-// disp(dboutput);
+// X = [1, 2; 3, 4] // Voltage measurements
+// SignalType = 'voltage'
+// R = 2 // Resistance in ohms
+// dboutput = db(X, SignalType, R)
 // 
 // Authors
 // Pratik Kapoor

@@ -32,12 +32,7 @@ function  r  = zerocrossing (x,y)
 // plot(x,y,x0,y0,'x')
 //
 //
-// x = linspace(0,1,100);
-// y = 2*sin(2*%pi*x);
-// x0= zerocrossing(x,y);
-//y0=interp1(x,y,x0)
-//plot(x,y,x0,y0,'x')
-//
+
 
 
   x = x(:);y = y(:);

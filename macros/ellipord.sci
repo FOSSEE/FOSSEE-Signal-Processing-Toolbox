@@ -37,10 +37,10 @@ function [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
 //
 // Examples
 // // Bandpass filter:
-//    Wp = [60 200]/500;
-//    Ws = [50 250]/500;
-//    Rp = 3;
-//    Rs = 40;
+//    Wp = [60 200]/500
+//    Ws = [50 250]/500
+//    Rp = 3
+//    Rs = 40
 //    [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
 //
 

@@ -27,8 +27,8 @@ function [y, i] = digitrevorder (x, r)
 // The radix `r` determines the base for digit reversal.
 //
 // Examples
-// x = [%i, 1, 3, 6*%i];
-// r = 2;
+// x = [%i, 1, 3, 6*%i]
+// r = 2
 // [y, i] = digitrevorder(x, r)
 //
 // See also

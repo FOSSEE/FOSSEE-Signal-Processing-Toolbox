@@ -16,14 +16,11 @@ function x = synthesis (y, c)
 // Examples
 // // Reconstruct a signal from its short-time Fourier transform
 // // Define a short-time Fourier transform (STFT) matrix
-// y = [1+2*%i, 2+3*%i; 3+4*%i, 4+5*%i];
+// y = [1+2*%i, 2+3*%i; 3+4*%i, 4+5*%i]
 // // Define the window parameters: [window size, increment, window type]
-// c = [4, 1, 1]; // Hanning window with size 4 and increment 1
+// c = [4, 1, 1] // Hanning window with size 4 and increment 1
 // // Reconstruct the signal
-// x = synthesis(y, c);
-// // Display the reconstructed signal
-// disp("Reconstructed signal:");
-// disp(x);
+// x = synthesis(y, c)
 // 
 
   funcprot(0);

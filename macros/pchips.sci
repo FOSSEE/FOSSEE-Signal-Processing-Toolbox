@@ -1,5 +1,5 @@
 function d = pchips(x,y,delta)
-// Compute the piecewise cubic Hermite interpolating polynomial.
+//  Internal helper for main function pchip.
 //
 // Syntax
 //   v = pchip(x, y)
@@ -10,24 +10,11 @@ function d = pchips(x,y,delta)
 // y: A vector or matrix of function values at the points in `x`. If `y` is a vector, it must have the same length as `x`. If `y` is a matrix, the last dimension of `y` must equal the length of `x`.
 // xx: (optional) Points for interpolation.
 //
-// Description
-// The `pchip` function computes the piecewise cubic Hermite interpolating polynomial for the given data points `x` and `y`. 
-// If the optional parameter `xx` is provided, the function evaluates the interpolating polynomial at the points in `xx`.
-//
-// Examples
-// x = [0, 1, 2, 3, 4, 5];
-// y = [1, 0, 1, 0, 1, 0];
-// xx = linspace(0, 5, 800);
-// v1 = pchip(x, y);
-// v2 = pchip(x, y, xx);
-// plot(x, y, 'o', xx, v2)
 //
 // Authors
 // Jitendra Singh
 //
 
-// Note
-// Execute the function `pchips` prior to executing this function.
 
    n = length(x);
 

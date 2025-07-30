@@ -14,8 +14,8 @@ function r = poly2ac(a,efinal)
 // denominator polynomial and the numerator scaling. The filter is H(z) = efinal/(a(1) + a(2) x z a(3) x z^2 ... a(n) x z^n-1)
 // 
 // Examples
-//   a = [1.0000 0.4288 0.76 0.0404 -0.02];
-//   efinal = 0.2;           // Step prediction error
+//   a = [1.0000 0.4288 0.76 0.0404 -0.02]
+//   efinal = 0.2           // Step prediction error
 //   r = poly2ac(a,efinal)   // Autocorrelation sequence
 //
 // See also

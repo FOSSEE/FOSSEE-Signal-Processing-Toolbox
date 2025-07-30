@@ -15,8 +15,8 @@ function o = cconv(a, b, n)
 // This function computes the circular convolution of two vectors `a` and `b`. If `n` is not provided, it defaults to length(a) + length(b) - 1. When `n` equals length(a) + length(b) - 1, the circular convolution is equivalent to the linear convolution computed with `conv`.
 //
 // Examples
-// a = [1, 2, 3];
-// b = [4, 5, 6];
+// a = [1, 2, 3]
+// b = [4, 5, 6]
 // o = cconv(a, b, 3)
 //
 // Authors

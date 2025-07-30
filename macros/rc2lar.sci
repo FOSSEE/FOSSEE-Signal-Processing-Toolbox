@@ -9,7 +9,7 @@ function g=rc2lar(k)
 // g: returns log area ratios.
 // 
 // Examples
-// X = [0.5 0.3 0.8 0.9 0.4 0.05];
+// X = [0.5 0.3 0.8 0.9 0.4 0.05]
 // g = rc2lar(X)
 // 
 // See also

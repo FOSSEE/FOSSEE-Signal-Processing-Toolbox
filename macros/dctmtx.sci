@@ -23,7 +23,7 @@ function T = dctmtx(n)
 // dctmtx(n) returns a Discrete cosine transform matrix (D) of order n-by-n. It is useful for jpeg image compression. D*A is the DCT of the columns of A and D'*A is the inverse DCT of the columns of A (when A is n-by-n).
 //
 // Examples
-// n= 3;
+// n= 3
 // T = dctmtx(n)
 //
 

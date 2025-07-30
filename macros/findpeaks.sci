@@ -40,15 +40,15 @@ function [pks ,idx, varargout] = findpeaks (data, varargin)
 //
 // Examples
 // // Find peaks in a simple signal:
-//    data = [1, 3, 2, 5, 1];
+//    data = [1, 3, 2, 5, 1]
 //    [pks, loc] = findpeaks(data)
 //
 // // Find peaks with a minimum height:
-//    data = [1, 3, 2, 5, 1];
+//    data = [1, 3, 2, 5, 1]
 //    [pks, loc] = findpeaks(data, "MinPeakHeight", 3)
 //
 // // Find peaks in double-sided data:
-//    data = [1, -3, 2, -5, 1];
+//    data = [1, -3, 2, -5, 1]
 //    [pks, loc] = findpeaks(data, "DoubleSided")
 //
 

@@ -18,18 +18,8 @@ function y = rms(x, dim)
 //
 // Examples
 // // Compute the root mean squared (RMS) value of a vector and a matrix
-// x = [1, 2, 3, 4]; 
-// y1 = rms(x); 
-// disp("RMS of vector:"); 
-// disp(y1); 
-// x_matrix = [1, 2; 3, 4; 5, 6]; 
-// y2 = rms(x_matrix); 
-// disp("RMS of matrix columns:"); 
-// disp(y2); 
-// y3 = rms(x_matrix, 2); 
-// disp("RMS of matrix rows:"); 
-// disp(y3);
-// 
+// x = [1, 2, 3, 4]
+// y1 = rms(x)
 // Authors
 // Debdeep Dey
 

@@ -19,7 +19,7 @@ function [p,num]=seqperiod(x)
 // x = [4 0 1 5; 
 //     1 1 2 5; 
 //     2 0 3 5; 
-//     3 1 1 5];
+//     3 1 1 5]
 // p = seqperiod(x)
 // 
 //Authors

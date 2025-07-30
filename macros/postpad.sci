@@ -31,9 +31,7 @@ function res = postpad(x,l,c,dim)
 //
 // Examples
 // // Append -1 to a column vector to make its length 6
-// res2 = postpad([1; 2; 3; 4], 6, -1);
-// disp("Result 2:");
-// disp(res2); // Output: [1; 2; 3; 4; -1; -1]
+// res2 = postpad([1; 2; 3; 4], 6, -1)
 
   
     if nargin < 2 then 

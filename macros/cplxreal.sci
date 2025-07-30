@@ -20,7 +20,7 @@ function [zc, zr] = cplxreal(z, tol, dim)
 // Signal an error if all complex numbers are not exact conjugates (to within tol).
 // Note that there is no defined order for pairs with identical real parts but differing imaginary parts//
 // Examples
-// z = roots([1, 0, 0, 1, 0]);
+// z = roots([1, 0, 0, 1, 0])
 // [zc, zr] = cplxreal(z)
 
 

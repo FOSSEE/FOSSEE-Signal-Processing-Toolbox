@@ -21,12 +21,12 @@ function m=filtord(varargin)
 //
 // Examples
 // // Compute the filter order for a transfer function:
-// b = [1, 2, 3];
-// a = [1, 0.5, 0.25];
+// b = [1, 2, 3]
+// a = [1, 0.5, 0.25]
 // n = filtord(b, a)
 //
 // // Compute the filter order for a second-order sections matrix:
-// sos = [1, 0.5, 0.25, 1, -0.5, 0.25];
+// sos = [1, 0.5, 0.25, 1, -0.5, 0.25]
 // n = filtord(sos)
 //
 // See also

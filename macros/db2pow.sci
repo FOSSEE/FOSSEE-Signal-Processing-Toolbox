@@ -14,7 +14,7 @@ function [y] = db2pow(ydb)
 // The conversion is based on the formula: ydb = 10 * log10(y), where `log10` is the base-10 logarithm.
 //
 // Examples
-// ydb = 20;
+// ydb = 20
 // y = db2pow(ydb)
 //
 // Authors

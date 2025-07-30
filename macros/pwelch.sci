@@ -48,24 +48,7 @@ function varargout = pwelch(x,varargin)
 // Examples
 // // Compute power spectral density of a signal:
 //    x = rand(1, 1024);
-//    [spectra, freq] = pwelch(x);
-//
-// // Compute cross-spectral density of two signals:
-//    x = rand(1, 1024);
-//    y = rand(1, 1024);
-//    [spectra, freq] = pwelch(x, y, [], [], 512);
-//
-// // Compute power spectral density with confidence intervals:
-//    x = rand(1, 1024);
-//    [spectra, Pxx_ci, freq] = pwelch(x, [], [], [], [], 0.95);
-//
-// // Plot power spectral density in dB:
-//    x = rand(1, 1024);
-//    pwelch(x, [], [], [], [], [], 'db');
-//
-// // Use MATLAB R12 compatibility mode:
-//    prev_compat = pwelch('R12+');
-//    [spectra, freq] = pwelch(x, [], [], [], [], [], 'plot');
+//    [spectra, freq] = pwelch(x)
 //
 
     nargin = argn(2)

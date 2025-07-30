@@ -17,8 +17,8 @@ function isall=isallpass(varargin)
 // An allpass filter has a magnitude response of 1 for all frequencies.
 //
 // Examples
-// k = [1/2, 1/3, 1/4, 1/5];
-// [b, a] = latc2tf(k, 'allpass');
+// k = [1/2, 1/3, 1/4, 1/5]
+// [b, a] = latc2tf(k, 'allpass')
 // flag_isallpass = isallpass(b, a)
 //
 // Authors

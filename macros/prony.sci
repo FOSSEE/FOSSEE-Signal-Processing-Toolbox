@@ -21,18 +21,12 @@ function [b,a]=prony(h,nb,na)
 //
 // Examples
 // // Design an IIR filter with 1 zero and 2 poles:
-//    V = filter([1, 1], [1, 1, 2], [1 zeros(1, 31)]); // Impulse response
+//    V = filter([1, 1], [1, 1, 2], [1 zeros(1, 31)]) // Impulse response
 //    [b, a] = prony(V, 1, 2)
-//    // Output:
-//    // a = [1, 1, 2] // Denominator coefficients
-//    // b = [1, 1]    // Numerator coefficients
 //
 // // Design an IIR filter with 1 zero and 3 poles:
 //    V = filter([1, 2], [1, 2, 3, 4], [1 zeros(1, 31)]);
 //    [b, a] = prony(V, 1, 3)
-//    // Output:
-//    // a = [1, 2, 3, 4] // Denominator coefficients
-//    // b = [1, 2]       // Numerator coefficients
 //
 // Bibliography
 // T.W. Parks and C.S. Burrus, Digital Filter Design, John Wiley and Sons, 1987, p226.

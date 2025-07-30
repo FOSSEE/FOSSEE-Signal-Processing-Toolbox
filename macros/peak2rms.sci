@@ -31,7 +31,7 @@ function out = peak2rms(in,orientation)
 //
 // // To calculate peak magnitude to RMS value of sinusoid:
 // t=0:0.6:9
-// IN=cos(6*%pi*t);
+// IN=cos(6*%pi*t)
 // OUT= peak2rms(IN)
 // 
 // See also
@@ -43,7 +43,7 @@ function out = peak2rms(in,orientation)
 //
 // Authors
 // Indira Askaukar
-//
+
 // Bibliography
 // Matlab help document.
 // Modified to accept char i/p

@@ -34,11 +34,11 @@ function [y] = chirp(t, f0, t1, f1, form, phase)
 // This function generates a chirp signal, which is a frequency-swept cosine wave. The signal can be linear, quadratic, or logarithmic based on the `form` parameter.
 //
 // Examples
-// t = [4, 3, 2, 1];
-// f0 = 4;
-// t1 = 5;
-// f1 = 0.9;
-// form = "quadratic";
+// t = [4, 3, 2, 1]
+// f0 = 4
+// t1 = 5
+// f1 = 0.9
+// form = "quadratic"
 // y = chirp(t, f0, t1, f1, form)
 // 
 

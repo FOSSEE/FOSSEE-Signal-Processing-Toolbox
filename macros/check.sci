@@ -1,4 +1,4 @@
-function [s] = check(str)
+function [is_AKICc] = check(str)
 // Check if the input string is equal to "AKICc".
 //
 // Syntax
@@ -16,6 +16,5 @@ function [s] = check(str)
 // 
 
 funcprot(0);
-is_AKICc = (str == "AKICc")  
-disp(is_AKICc)
+is_AKICc = (str == "AKICc")
 endfunction

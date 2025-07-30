@@ -59,8 +59,8 @@ function [X, varargout] = corrmtx(x, m, varargin)
 //        |_x*(n-m) ...x*(n)_|
 //
 // Examples
-// x = [1, 2, 3, 4, 5];
-// m = 3;
+// x = [1, 2, 3, 4, 5]
+// m = 3
 // [X, R] = corrmtx(x, m, 'autocorrelation')
 // See also
 // peig
@@ -72,7 +72,7 @@ function [X, varargout] = corrmtx(x, m, varargin)
 // Authors
 // Parthe Pandit
 //
-// Bilblography
+// Bibliography
 // Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.
 //
 

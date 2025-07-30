@@ -14,8 +14,8 @@ function [ b, a ] = pei_tseng_notch ( frequencies, bandwidths )
 // specified filter frequencies, leading to the removal of those frequencies from the original signal.
 //
 // Examples
-// sf = 800; sf2 = sf / 2;
-// data = [[1; zeros(sf - 1, 1)], sinetone(49, sf, 1, 1), sinetone(50, sf, 1, 1), sinetone(51, sf, 1, 1)];
+// sf = 800; sf2 = sf / 2
+// data = [[1; zeros(sf - 1, 1)], sinetone(49, sf, 1, 1), sinetone(50, sf, 1, 1), sinetone(51, sf, 1, 1)]
 // [b, a] = pei_tseng_notch(50 / sf2, 2 / sf2)
 //
 

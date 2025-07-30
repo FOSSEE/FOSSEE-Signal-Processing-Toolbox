@@ -16,7 +16,7 @@ function zsort = cplxpair(z, tol, dim)
 // This function sorts the input numbers `z` into complex conjugate pairs, ordered by increasing real part. Negative imaginary parts are placed first within each pair. Real numbers are placed after the complex pairs. An error is signaled if some complex numbers cannot be paired or if they are not exact conjugates within the specified tolerance.
 //
 // Examples
-// z = exp(2*%i*%pi*[0:4]'/5);
+// z = exp(2*%i*%pi*[0:4]'/5)
 // zsort = cplxpair(z)
 
 

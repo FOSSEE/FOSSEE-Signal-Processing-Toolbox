@@ -16,7 +16,7 @@ function [A,B] = sos2tf(sos, g)
 // The output is a vector.
 //
 // Examples
-// sos = [1  1  1  1  0 -1; -2  3  1  1 10  1];
+// sos = [1  1  1  1  0 -1; -2  3  1  1 10  1]
 // [b,a] = sos2tf(sos)
 
 

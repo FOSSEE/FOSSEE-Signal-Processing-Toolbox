@@ -24,11 +24,9 @@ function [a,e]=levdown(a, efinal)
 //
 // Examples
 // // Reduce the order of an AR model:
-//    a = [1, -0.5, 0.25];
-//    efinal = 0.1;
-//    [a_reduced, e_reduced] = levdown(a, efinal);
-//    disp(a_reduced);  // Output: Reduced-order AR coefficients
-//    disp(e_reduced);  // Output: Reduced-order prediction error
+//    a = [1, -0.5, 0.25]
+//    efinal = 0.1
+//    [a_reduced, e_reduced] = levdown(a, efinal)
 //
 // Authors
 // FOSSEE Team

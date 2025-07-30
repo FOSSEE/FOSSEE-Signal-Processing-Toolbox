@@ -23,7 +23,7 @@ function [y, delta] = polyval(p,x,S,mu)
 //
 // Examples
 // // Evaluate a polynomial at specific points:
-//    p = [3, 2, 1];
+//    p = [3, 2, 1]
 //    y = polyval(p, [5, 7, 9])
 // 
 //

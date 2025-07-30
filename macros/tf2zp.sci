@@ -32,8 +32,8 @@ function [z,p,k]=tf2zp(num,den)
     // Debdeep Dey
     //
     // Examples
-    // b = [1 2 3];
-    // a = [4 5 6];
+    // b = [1 2 3]
+    // a = [4 5 6]
     // [z p k] = tf2zp(b,a)
 // 
 

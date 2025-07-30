@@ -15,11 +15,11 @@ function bw= enbw (window, fs)
 //
 // Examples
 // // Without sampling rate:
-//    window = 1:10;
+//    window = 1:10
 //    bw = enbw(window)
 // // With sampling rate:
-//    window = 1:10;
-//    fs = 2.5;
+//    window = 1:10
+//    fs = 2.5
 //    bw = enbw(window, fs)
 //
 //

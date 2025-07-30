@@ -43,13 +43,9 @@ function [s,g] = cell2sos(c)
 // Examples
 // cll = {{[3 6 7] [1 1 2]} 
 //        {[1 4 5] [1 9 3]}
-//        {[2 7 1] [1 7 8]}};
+//        {[2 7 1] [1 7 8]}}
 // sos = cell2sos(cll)
 //
-// cll = {{1 2} {[3 6 7] [1 1 2]} 
-//        {[1 4 5] [1 9 3]}
-//        {[2 7 1] [1 7 8]}};
-// [sos, g] = cell2sos(cll)
 //
 // See also
 //  sos2cell

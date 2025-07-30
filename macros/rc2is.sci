@@ -13,7 +13,7 @@ function isin = rc2is(k)
 // output array has isin(i) = 2/pi*asin(k(i))
 //
 // Examples
-// k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+// k = [0.3090 0.9801 0.0031 0.0082 -0.0082]
 // isin = rc2is(k)      //Gives inverse sine parameters
 //
 // See also 

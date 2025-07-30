@@ -31,9 +31,7 @@ function res = prepad(x,l,c,dim)
 //
 // Examples
 // // Prepend zeros to a row vector to make its length 6
-// res1 = prepad([1, 2, 3, 4], 6);
-// disp("Result 1:");
-// disp(res1); // Output: [0, 0, 1, 2, 3, 4]
+// res1 = prepad([1, 2, 3, 4], 6)
 // 
 // Authors
 // Abinash Singh

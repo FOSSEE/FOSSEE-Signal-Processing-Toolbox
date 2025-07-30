@@ -20,13 +20,13 @@ function len = impzlength (b, varargin)
 //
 // Examples
 // // Low pass IIR filter with pole at 0.9
-// b = 1;
-// a = [1 -0.9];
+// b = 1
+// a = [1 -0.9]
 // len = impzlength(b, a)
 //
 // // High pass IIR filter with pole at -0.5
-// b = 1;
-// a = [1 0.5];
+// b = 1
+// a = [1 0.5]
 // len = impzlength(b, a)
 //
 // See also

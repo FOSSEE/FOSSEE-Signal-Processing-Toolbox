@@ -15,11 +15,11 @@ function v = pchip(x,y,xx)
 // If the optional parameter `xx` is provided, the function evaluates the interpolating polynomial at the points in `xx`.
 //
 // Examples
-// x = [0, 1, 2, 3, 4, 5];
-// y = [1, 0, 1, 0, 1, 0];
-// xx = linspace(0, 5, 800);
-// v1 = pchip(x, y);
-// v2 = pchip(x, y, xx);
+// x = [0, 1, 2, 3, 4, 5]
+// y = [1, 0, 1, 0, 1, 0]
+// xx = linspace(0, 5, 800)
+// v1 = pchip(x, y)
+// v2 = pchip(x, y, xx)
 // plot(x, y, 'o', xx, v2)
 //
 // Authors

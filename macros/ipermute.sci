@@ -17,8 +17,8 @@ function B = ipermute(A, perm)
 // returns the original array `A`.
 //
 // Examples
-// A = [1, 2; 3, 4];
-// perm = [2, 1];
+// A = [1, 2; 3, 4]
+// perm = [2, 1]
 // B = ipermute(permute(A, perm), perm)
 // 
     

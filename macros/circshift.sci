@@ -14,7 +14,7 @@ function R = circshift(M, d)
 // This function circularly shifts the elements of the input array `M` by the specified positions `d` along each dimension.
 //
 // Examples
-// M = [1, 2, 3, 4];
+// M = [1, 2, 3, 4]
 // circshift(M, [0, 1])
 // 
 

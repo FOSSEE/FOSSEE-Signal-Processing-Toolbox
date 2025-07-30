@@ -35,18 +35,18 @@ function [multp, idxp] = mpoles (p, tol, reorder)
 //
 // Examples
 // // Identify unique poles and their multiplicity:
-//    p = [2, 3, 1, 1, 2];
-//    [m, n] = mpoles(p);
+//    p = [2, 3, 1, 1, 2]
+//    [m, n] = mpoles(p)
 //
 // // Use a custom tolerance to identify multiples:
-//    p = [1, 1.1, 1.3];
-//    [m, n] = mpoles(p, 0.1 / 1.1);
+//    p = [1, 1.1, 1.3]
+//    [m, n] = mpoles(p, 0.1 / 1.1)
 //
-//    [m, n] = mpoles(p, 0.1 / 1.1 + %eps);
+//    [m, n] = mpoles(p, 0.1 / 1.1 + %eps)
 //
 // // Disable sorting of poles:
-//    p = [2, 3, 1, 1, 2];
-//    [m, n] = mpoles(p, 0.001, %f);
+//    p = [2, 3, 1, 1, 2]
+//    [m, n] = mpoles(p, 0.001, %f)
 //
 // Authors
 // FOSSEE Team

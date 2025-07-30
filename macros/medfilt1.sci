@@ -47,7 +47,7 @@ function y = medfilt1(x, varargin)
 // Examples 
 // // Noise supression using 10th order (n =10) median filtering
 // //Generate a sinusoidal signal sampled for 1 second at 100 Hz. Add a higher-frequency sinusoid to simulate noise.
-// fs = 100;
+// fs = 100
 // t = 0:1/fs:1;
 // x = sin(2*%pi*t*3)+0.25*sin(2*%pi*t*40);
 //

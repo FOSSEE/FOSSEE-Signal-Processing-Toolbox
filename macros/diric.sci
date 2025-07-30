@@ -13,8 +13,8 @@ function [y]= diric(x,n)
 // This function computes the Dirichlet function values for the input array `x` and number of harmonics `n`.
 //
 // Examples
-// f = linspace(-%pi, %pi, 100);  // frequency range
-// y = diric(f, 7);
+// f = linspace(-%pi, %pi, 100)  // frequency range
+// y = diric(f, 7)
 //
 // plot(f, y)
 // xtitle("Dirichlet Function - Frequency Response of 7-Harmonic Pulse Train", "Frequency (rad)", "Amplitude")

@@ -22,11 +22,11 @@ function Y = goertzel(X,INDVEC,DIM)
 // the DFT at only a subset of indices is desired
 // 
 // Examples
-// x=rand(1,5);
+// x=rand(1,5)
 // y=goertzel(x,2)
 // 
 // Authors
-//Ankur Mallick
+// Ankur Mallick
 // 
 
 //References

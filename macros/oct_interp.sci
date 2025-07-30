@@ -33,10 +33,10 @@ function y = oct_interp(x, q, varargin)
 //
 // Examples
 // // Generate 5 random bits and map to BPSK symbols
-// bits = [1 0 1 1 0];
-// symbols = 2 * bits - 1;  // BPSK mapping: 1 -> +1, 0 -> -1
+// bits = [1 0 1 1 0]
+// symbols = 2 * bits - 1  // BPSK mapping: 1 -> +1, 0 -> -1
 // // Upsample by factor of 4 using oct_interp (defined elsewhere)
-// y = oct_interp(symbols, 4);
+// y = oct_interp(symbols, 4)
 // // Plot original symbols (using plot2d3 to simulate stem)
 // n1 = 0:length(symbols)-1;
 // scf(0);

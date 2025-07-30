@@ -39,8 +39,8 @@ function q = marcumq (a, b, m, tol)
 // - R.T. Short, "Computation of Noncentral Chi-squared and Rice Random Variables".
 //
 // Examples
-// a = [0.5, 1.0, 1.5];
-// b = [1.0, 2.0, 3.0];
+// a = [0.5, 1.0, 1.5]
+// b = [1.0, 2.0, 3.0]
 // q = marcumq(a, b)
 //
 // Authors

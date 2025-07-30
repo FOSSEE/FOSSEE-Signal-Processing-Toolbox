@@ -55,16 +55,9 @@ function [S,f,v,e] = peig(varargin)
 //
 // Examples
 // // Compute pseudospectrum for a signal:
-//    fs = 100;
+//    fs = 100
 //    t = 0:1/fs:1-1/fs;
 //    s = 2*sin(2*%pi*25*t) + sin(2*%pi*35*t) + rand(1, 100, "normal");
-//    [S, w] = peig(s, 2, 512, fs, 'half');
-//    plot(w, S)
-//
-// // Compute pseudospectrum for a deterministic signal:
-//    fs = 100;
-//    t = 0:1/fs:1-1/fs;
-//    s = 2*sin(2*%pi*25*t) + sin(2*%pi*35*t);
 //    [S, w] = peig(s, 2, 512, fs, 'half');
 //    plot(w, S)
 //

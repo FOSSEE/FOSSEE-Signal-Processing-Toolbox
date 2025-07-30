@@ -39,8 +39,8 @@ function [a,g] = lpc(x,varargin)
     // plot(1:97,x(4001:4097),1:97,est_x(4001:4097),'--');
     // a = gca();
     // a.grid = [1,1];
-    // title 'Original Signal vs. LPC Estimate';
-    // xlabel 'Sample number', ylabel 'Amplitude';
+    // title('Original Signal vs. LPC Estimate');
+    // xlabel ('Sample number', ylabel 'Amplitude');
     // legend('Original signal','LPC estimate');
     //
     // Bibliography
