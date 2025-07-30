@@ -13,7 +13,7 @@ function [k] = is2rc(isin)
 // output array has k(i) = sin(pi/2*isin(i))
 //
 // Examples
-// k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+// k = [0.3090 0.9801 0.0031 0.0082 -0.0082]
 // isin = rc2is(k)      //Gives inverse sine parameters
 // k_dash = is2rc(isin)
 // 
@@ -23,7 +23,7 @@ function [k] = is2rc(isin)
 // rc2ac
 // rc2lar
 //
-// Author
+// Authors
 // Parthe Pandit
 //
 // Bibliography
