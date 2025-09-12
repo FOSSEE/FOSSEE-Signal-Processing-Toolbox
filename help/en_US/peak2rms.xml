@@ -77,7 +77,7 @@ OUT=peak2rms(IN,2)
 
 // To calculate peak magnitude to RMS value of sinusoid:
 t=0:0.6:9
-IN=cos(6*%pi*t);
+IN=cos(6*%pi*t)
 OUT= peak2rms(IN)
 
    ]]></programlisting>
@@ -99,16 +99,5 @@ OUT= peak2rms(IN)
    <simplelist type="vert">
    <member>Indira Askaukar</member>
    </simplelist>
-</refsection>
-
-<refsection>
-   <title>Bibliography</title>
-   <para>Matlab help document.</para>
-   <para>Modified to accept char i/p</para>
-   <para>MOdified function to match MATLAB input arguments</para>
-   <para>Now for calculating the values of ratio of peak to RMS  of columns of matrix use peak2rms(in,1)</para>
-   <para>And for calculates the values of ratio of peak to RMS  of rows of matrix.  use peak2rms(in,2)</para>
-   <para>Updated help comments accordingly</para>
-   <para>MOdifications done by by Debdeep Dey</para>
 </refsection>
 </refentry>

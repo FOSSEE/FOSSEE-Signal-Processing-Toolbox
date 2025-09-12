@@ -21,15 +21,15 @@ help_dir = get_absolute_file_path('builder_help.sce');
 // For final testing and release keep them Commented 
 // I don't know why it couurpts documentation in scilab >=2024.1.0
 // So be safe
-if (isdir(help_dir + "/en_US/"))then
-    xmlfiles = findfiles(help_dir + "/en_US/", "*.xml");
-    if ~isempty(xmlfiles) then
-       root_tlbx = toolbox_dir;
-       exec(help_dir + "cleaner_help.sce");
-       clear root_tlbx
-    end
-    help_from_sci(toolbox_dir+"/macros/",help_dir+"/en_US/");
-end
+// if (isdir(help_dir + "/en_US/"))then
+//     xmlfiles = findfiles(help_dir + "/en_US/", "*.xml");
+//     if ~isempty(xmlfiles) then
+//        root_tlbx = toolbox_dir;
+//        exec(help_dir + "cleaner_help.sce");
+//        clear root_tlbx
+//     end
+//     help_from_sci(toolbox_dir+"/macros/",help_dir+"/en_US/");
+// end
 
 if ~(isdir(toolbox_dir+ "/jar/")) then
     mkdir(toolbox_dir+ "/jar/");

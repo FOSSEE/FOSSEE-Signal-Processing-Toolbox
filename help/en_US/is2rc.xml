@@ -56,7 +56,7 @@ output array has k(i) = sin(pi/2*isin(i))
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+k = [0.3090 0.9801 0.0031 0.0082 -0.0082]
 isin = rc2is(k)      //Gives inverse sine parameters
 k_dash = is2rc(isin)
 
@@ -70,8 +70,13 @@ k_dash = is2rc(isin)
    <member><link linkend="rc2poly">rc2poly</link></member>
    <member><link linkend="rc2ac">rc2ac</link></member>
    <member><link linkend="rc2lar">rc2lar</link></member>
-   <member><link linkend="Author">Author</link></member>
-   <member><link linkend="Parthe">Pandit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
    </simplelist>
 </refsection>
 

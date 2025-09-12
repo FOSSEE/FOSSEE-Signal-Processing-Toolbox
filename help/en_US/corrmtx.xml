@@ -126,8 +126,8 @@ X_mod= | x*(1).....x*(m+1)|
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-x = [1, 2, 3, 4, 5];
-m = 3;
+x = [1, 2, 3, 4, 5]
+m = 3
 [X, R] = corrmtx(x, m, 'autocorrelation')
    ]]></programlisting>
 </refsection>
@@ -147,8 +147,11 @@ m = 3;
    <title>Authors</title>
    <simplelist type="vert">
    <member>Parthe Pandit</member>
-   <member>Bilblography</member>
-   <member>Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</member>
    </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</para>
 </refsection>
 </refentry>

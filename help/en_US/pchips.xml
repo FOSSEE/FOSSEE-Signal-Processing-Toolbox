@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>pchips</refname>
-    <refpurpose>Compute the piecewise cubic Hermite interpolating polynomial.</refpurpose>
+    <refpurpose>Internal helper for main function pchip.</refpurpose>
   </refnamediv>
 
 
@@ -46,29 +46,6 @@
             <listitem><para> (optional) Points for interpolation.</para></listitem>
         </varlistentry>
    </variablelist>
-</refsection>
-
-<refsection>
-   <title>Description</title>
-   <para>
-The `pchip` function computes the piecewise cubic Hermite interpolating polynomial for the given data points `x` and `y`.
-If the optional parameter `xx` is provided, the function evaluates the interpolating polynomial at the points in `xx`.
-   </para>
-   <para>
-</para>
-</refsection>
-
-<refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-x = [0, 1, 2, 3, 4, 5];
-y = [1, 0, 1, 0, 1, 0];
-xx = linspace(0, 5, 800);
-v1 = pchip(x, y);
-v2 = pchip(x, y, xx);
-plot(x, y, 'o', xx, v2)
-
-   ]]></programlisting>
 </refsection>
 
 <refsection>

@@ -64,8 +64,8 @@ This function computes the circular convolution of two vectors `a` and `b`. If `
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1, 2, 3];
-b = [4, 5, 6];
+a = [1, 2, 3]
+b = [4, 5, 6]
 o = cconv(a, b, 3)
 
    ]]></programlisting>

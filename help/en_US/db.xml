@@ -70,12 +70,10 @@ dboutput = db(X,'voltage',R) specifies the resistance R for voltage measurements
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Convert voltage measurements to decibels
-X = [1, 2; 3, 4]; // Voltage measurements
-SignalType = 'voltage';
-R = 2; // Resistance in ohms
-dboutput = db(X, SignalType, R);
-disp("Decibel Output:");
-disp(dboutput);
+X = [1, 2; 3, 4] // Voltage measurements
+SignalType = 'voltage'
+R = 2 // Resistance in ohms
+dboutput = db(X, SignalType, R)
 
    ]]></programlisting>
 </refsection>

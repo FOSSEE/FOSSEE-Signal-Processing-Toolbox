@@ -107,15 +107,15 @@ This function identifies peaks in the input signal `data`. Peaks are defined as 
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Find peaks in a simple signal:
-data = [1, 3, 2, 5, 1];
+data = [1, 3, 2, 5, 1]
 [pks, loc] = findpeaks(data)
 
 // Find peaks with a minimum height:
-data = [1, 3, 2, 5, 1];
+data = [1, 3, 2, 5, 1]
 [pks, loc] = findpeaks(data, "MinPeakHeight", 3)
 
 // Find peaks in double-sided data:
-data = [1, -3, 2, -5, 1];
+data = [1, -3, 2, -5, 1]
 [pks, loc] = findpeaks(data, "DoubleSided")
 
    ]]></programlisting>

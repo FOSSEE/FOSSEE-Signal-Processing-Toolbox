@@ -15,13 +15,13 @@
 // Unique identifier for this toolbox.
 // It must be alphanumeric, start with a letter and contain neither space
 // nor special characters other than underscore or dash.
-Toolbox: toolbox_skeleton
+Toolbox: FOSSEE_SIGNAL_PROCESSING_TOOLBOX
 
 // Human-friendly name for your toolbox
-Title: Toolbox Skeleton
+Title: SIGNAL PROCESSING TOOLBOX
 
 // One-line description for your toolbox
-Summary: Skeleton of a valid atoms package
+Summary: A toolbox providing essential functions for signal generation, transformation, filtering, and analysis.
 
 // Version number, in format 'major.minor.patch', or
 // 'major.minor.patch', where all fields are numbers.
@@ -32,27 +32,24 @@ Version: 0.1.0
 // Name(s) of the author(s) of this toolbox.
 // They are usually the original copyright holders
 // (persons or entities)
-Author: Your Name
-  Other Author
+Author: FOSSEE
+  Scilab Team
 
 // Name(s) and email address(es) of the person(s) maintaining this toolbox
-Maintainer: Your Name <name@address.com>
-  Other Maintainer <othername@address.com>
+Maintainer: Scilab Team <office@fossee.in>
+  
 
 // Categories that this toolbox belongs to.
 // The toolbox will appear in the Scilab Atoms GUI
 // under the categories that you select here.
-Category: biology - Robotic_2
- CatB - SScat2
- biology - modelisation_III
+Category: Signal Processing
 
 // Name of the institution (company, university, lab...) who has developped the toolbox.
 // If you developped the toolbox as an individual, then just enter "private individual"
-Entity: Personnal
+Entity: FOSSEE, IIT Bombay
 
 // Optional website that has more information about this toolbox
-WebSite: https://www.scilab.org
-
+WebSite: https://www.fossee.in
 // License under which the toolbox will be published
 License: GPL 2.0
 
@@ -73,13 +70,21 @@ Depends:
 // Creation date
 Date: 2016-03-01
 
-Description: Succinct presentation of this toolbox.
+Description: The Signal Processing Toolbox provides a collection of functions for
+ signal analysis, transformation, and synthesis in Scilab. It is designed to
+ help users perform common signal processing tasks such as:
+ - Signal generation (sine, square, triangular, etc.)
+ - Frequency-domain transformations (FFT, DFT, etc.)
+ - Digital filtering (FIR, IIR, Butterworth, Chebyshev, etc.)
+ - Basic spectral analysis and convolution tools.
 
- It should cover:
- - What problem the toolbox solves,
- - If it requires any third-party software or hardware,
-   and how to install them,
- - Some basics about how to use it, such as an example of use.
- but ensuring that each line starts with a space.
+ This toolbox is useful for engineers, researchers, and students working in
+ communication systems, audio processing, biomedical signal analysis, and
+ general signal transformations.
 
 
+ Example usage:
+ --> t = 0:0.01:1;
+ --> x = sin(2*%pi*10*t);
+ --> y = fft1(x);
+ disp(abs(y), "FFT Magnitude:")

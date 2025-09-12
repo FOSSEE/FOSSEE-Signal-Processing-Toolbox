@@ -59,8 +59,8 @@ This function generates the convolution matrix `b` for the input vector `a`. If 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1; 2; 3];
-n = 4;
+a = [1; 2; 3]
+n = 4
 b = convmtx(a, n)
    ]]></programlisting>
 </refsection>

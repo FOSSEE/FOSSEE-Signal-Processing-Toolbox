@@ -71,21 +71,11 @@ The `upfirdn` function performs three operations on the input signal `xin`:
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Perform upsampling, filtering, and downsampling:
-xin = 1:10;
-h = [1, 2, 1];
-p = 2;
-q = 3;
-yout = upfirdn(xin, h, p, q);
-
-// Default upsampling and downsampling factors (p = 1, q = 1):
-xin = 1:10;
-h = [1, 2, 1];
-yout = upfirdn(xin, h);
-
-// Upsample by 2 and downsample by 2:
-xin = 1:10;
-h = [1];
-yout = upfirdn(xin, h, 2, 2);
+xin = 1:10
+h = [1, 2, 1]
+p = 2
+q = 3
+yout = upfirdn(xin, h, p, q)
 
    ]]></programlisting>
 </refsection>

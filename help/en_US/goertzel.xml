@@ -68,7 +68,7 @@ the DFT at only a subset of indices is desired
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-x=rand(1,5);
+x=rand(1,5)
 y=goertzel(x,2)
 
    ]]></programlisting>

@@ -50,9 +50,9 @@ See "help pwelch" for description of arguments, hints and references
 fs = 1000                   // Sampling frequency in Hz
 t = 0:1/fs:1-1/fs;           // Time vector (1 second)
 // Signal x: a sine wave + random noise
-x = sin(2*%pi*50*t) + 0.5*rand(size(t),'normal');
+x = sin(2*%pi*50*t) + 0.5*rand(size(t,1),size(t,2),'normal');
 // Signal y: the same sine wave with different noise
-y = sin(2*%pi*50*t) + 0.5*rand(size(t),'normal');
+y = sin(2*%pi*50*t) + 0.5*rand(size(t,1),size(t,2),'normal');
 // Compute coherence
 [Pxx, freq] = mscohere(x, y);
 // Plot the result

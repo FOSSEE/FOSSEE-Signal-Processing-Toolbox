@@ -71,7 +71,7 @@ Note that there is no defined order for pairs with identical real parts but diff
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-z = roots([1, 0, 0, 1, 0]);
+z = roots([1, 0, 0, 1, 0])
 [zc, zr] = cplxreal(z)
    ]]></programlisting>
 </refsection>

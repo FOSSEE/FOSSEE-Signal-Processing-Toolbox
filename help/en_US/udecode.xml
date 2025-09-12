@@ -68,7 +68,7 @@ If saturatemode='saturate' the output is saturated if overflow accors
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-u = int8([-1 1 2 -5]);
+u = int8([-1 1 2 -5])
 ysat = udecode(u,3)
 
    ]]></programlisting>

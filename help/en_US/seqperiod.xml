@@ -59,7 +59,7 @@ If x is a matrix or n-dimesnional array, the function operates along the first n
 x = [4 0 1 5;
 1 1 2 5;
 2 0 3 5;
-3 1 1 5];
+3 1 1 5]
 p = seqperiod(x)
 
    ]]></programlisting>

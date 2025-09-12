@@ -59,7 +59,7 @@ This function circularly shifts the elements of the input array `M` by the speci
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-M = [1, 2, 3, 4];
+M = [1, 2, 3, 4]
 circshift(M, [0, 1])
 
    ]]></programlisting>

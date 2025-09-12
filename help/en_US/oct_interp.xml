@@ -67,10 +67,10 @@ The second argument q must be an integer. The default values of the third and fo
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Generate 5 random bits and map to BPSK symbols
-bits = [1 0 1 1 0];
-symbols = 2 * bits - 1;  // BPSK mapping: 1 -> +1, 0 -> -1
+bits = [1 0 1 1 0]
+symbols = 2 * bits - 1  // BPSK mapping: 1 -> +1, 0 -> -1
 // Upsample by factor of 4 using oct_interp (defined elsewhere)
-y = oct_interp(symbols, 4);
+y = oct_interp(symbols, 4)
 // Plot original symbols (using plot2d3 to simulate stem)
 n1 = 0:length(symbols)-1;
 scf(0);

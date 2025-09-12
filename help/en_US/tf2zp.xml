@@ -77,8 +77,8 @@ the Signal Processing Toolbox.
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-b = [1 2 3];
-a = [4 5 6];
+b = [1 2 3]
+a = [4 5 6]
 [z p k] = tf2zp(b,a)
 
    ]]></programlisting>

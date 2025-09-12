@@ -51,7 +51,7 @@ dctmtx(n) returns a Discrete cosine transform matrix (D) of order n-by-n. It is 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-n= 3;
+n= 3
 T = dctmtx(n)
 
    ]]></programlisting>

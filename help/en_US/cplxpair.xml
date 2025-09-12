@@ -65,7 +65,7 @@ This function sorts the input numbers `z` into complex conjugate pairs, ordered 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-z = exp(2*%i*%pi*[0:4]'/5);
+z = exp(2*%i*%pi*[0:4]'/5)
 zsort = cplxpair(z)
    ]]></programlisting>
 </refsection>

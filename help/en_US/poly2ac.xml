@@ -60,8 +60,8 @@ denominator polynomial and the numerator scaling. The filter is H(z) = efinal/(a
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1.0000 0.4288 0.76 0.0404 -0.02];
-efinal = 0.2;           // Step prediction error
+a = [1.0000 0.4288 0.76 0.0404 -0.02]
+efinal = 0.2           // Step prediction error
 r = poly2ac(a,efinal)   // Autocorrelation sequence
 
    ]]></programlisting>

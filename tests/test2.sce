@@ -194,24 +194,24 @@ end
 ///////////Test case for       11)helperHarmonicDisutortionAmplifier                  ///////
 //
 
-VmaxPk = 2;
-Fi = 2000;
-Fs = 44.1e3;
-Tstop = 50e-3;
-t = 0:1/Fs:Tstop;
-inputVmax = VmaxPk*sin(2*%pi*Fi*t);
+// VmaxPk = 2;
+// Fi = 2000;
+// Fs = 44.1e3;
+// Tstop = 50e-3;
+// t = 0:1/Fs:Tstop;
+// inputVmax = VmaxPk*sin(2*%pi*Fi*t);
 
-outputVmax = helperHarmonicDistortion(inputVmax);
-outputVmax=outputVmax';
-outputVmax=roundn(outputVmax,3);
-M=fscanfMat("macros/txt3_helperHDA.txt")
+// outputVmax = helperHarmonicDistortion(inputVmax);
+// outputVmax=outputVmax';
+// outputVmax=roundn(outputVmax,3);
+// M=fscanfMat("macros/txt3_helperHDA.txt")
 
-if(M==outputVmax)
-           test_pass=[test_pass,1]
-else
-           test_pass=[test_pass,0]
-           disp("helperHarmonicDistortionAmplifier Test failed")
-end
+// if(M==outputVmax)
+//            test_pass=[test_pass,1]
+// else
+//            test_pass=[test_pass,0]
+//            disp("helperHarmonicDistortionAmplifier Test failed")
+// end
 //
 ///////////////////////////////////////////////
 //

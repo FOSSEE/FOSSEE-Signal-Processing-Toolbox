@@ -59,9 +59,9 @@ It gives an analog prototype for Cauer filter of nth order, with a Peak-to-peak 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-n = 1;
-Rp = 2;
-Rs = 3;
+n = 1
+Rp = 2
+Rs = 3
 [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
 
    ]]></programlisting>

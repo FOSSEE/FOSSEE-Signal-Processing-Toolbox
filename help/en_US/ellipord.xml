@@ -77,10 +77,10 @@ This function computes the minimum filter order of an elliptic filter with the d
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Bandpass filter:
-Wp = [60 200]/500;
-Ws = [50 250]/500;
-Rp = 3;
-Rs = 40;
+Wp = [60 200]/500
+Ws = [50 250]/500
+Rp = 3
+Rs = 40
 [n, Wp] = ellipord(Wp, Ws, Rp, Rs)
 
    ]]></programlisting>

@@ -1,10 +1,14 @@
-License of the Toolbox_skeleton
+  License Terms:
+  --------------
+  This file is released under the terms of the CeCILL license.
+  You should have received a copy of the license in the COPYING file.
+  The terms are also available at:
+      http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
 
-Please update this file with the license terms (Copy and paste the license agreement).
-Note that all the files of the toolbox_skeleton are released into the public domain.
-Therefore, there is no limitation on the use of these files.
+  Notes:
+  ------
+  - Original Source: https://octave.sourceforge.io/signal/
+  - This file was adapted for Scilab from the Octave signal package.
 
-Please note that Scilab is released under the terms of the GNU GPL v2.0 
-For more information, see the COPYING file which you should have received
-along with this program.
-
+  Organization: FOSSEE, IIT Bombay  
+  Email: toolbox@scilab.in

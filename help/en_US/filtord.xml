@@ -73,12 +73,12 @@ This function computes the order of a filter based on its representation:
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Compute the filter order for a transfer function:
-b = [1, 2, 3];
-a = [1, 0.5, 0.25];
+b = [1, 2, 3]
+a = [1, 0.5, 0.25]
 n = filtord(b, a)
 
 // Compute the filter order for a second-order sections matrix:
-sos = [1, 0.5, 0.25, 1, -0.5, 0.25];
+sos = [1, 0.5, 0.25, 1, -0.5, 0.25]
 n = filtord(sos)
 
    ]]></programlisting>

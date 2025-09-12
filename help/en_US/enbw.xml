@@ -61,11 +61,11 @@ This function estimates the Equivalent Noise Bandwidth (ENBW) of a given window.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Without sampling rate:
-window = 1:10;
+window = 1:10
 bw = enbw(window)
 // With sampling rate:
-window = 1:10;
-fs = 2.5;
+window = 1:10
+fs = 2.5
 bw = enbw(window, fs)
 
 
