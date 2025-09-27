@@ -1,10 +1,10 @@
-Toolbox: FOSSEE_SIGNAL_PROCESSING_TOOLBOX
+Toolbox: FOSSEE_Signal_Processing_Toolbox
 
 Title: Signal Processing Toolbox
 
 Summary: A Scilab toolbox providing functions for signal generation, transformation, filtering, and analysis.
 
-Version: 0.1.0
+Version: 0.3
 
 Author: FOSSEE Scilab Team
 
