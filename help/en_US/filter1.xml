@@ -17,29 +17,36 @@
 
   <refnamediv>
     <refname>filter1</refname>
-    <refpurpose>Apply a 1-D digital filter to the data X.</refpurpose>
+    <refpurpose>Apply a 1-D digital filter to the data X.Apply a 1-D digital filter to the data X.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    Y = filter1(B, A, X)
    [Y, SF] = filter1(B, A, X, SI)
    [Y, SF] = filter1(B, A, X, [], DIM)
    [Y, SF] = filter1(B, A, X, SI, DIM)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>B:</term>
-      <listitem><para> Matrix or Integer</para></listitem></varlistentry>
-   <varlistentry><term>A:</term>
-      <listitem><para> Matrix or Integer</para></listitem></varlistentry>
-   <varlistentry><term>X:</term>
-      <listitem><para> Matrix or Integer</para></listitem></varlistentry>
+        <varlistentry>
+            <term>B:</term>
+            <listitem><para> Matrix or Integer</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Matrix or Integer</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Matrix or Integer</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -74,6 +81,8 @@ k=1                 k=0
    </para>
    <para>
 where c = a/a(1) and d = b/a(1).
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -81,8 +90,7 @@ where c = a/a(1) and d = b/a(1).
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 filter([1,2,3], [3,4,5], [5,6,7])
-ans =
-1.6666667    3.1111111    4.4074074
+
    ]]></programlisting>
 </refsection>
 </refentry>

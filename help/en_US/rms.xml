@@ -17,7 +17,50 @@
 
   <refnamediv>
     <refname>rms</refname>
-    <refpurpose>convert i/p values to their ascii values if they are of type char</refpurpose>
+    <refpurpose>Root mean squared value</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y=rms(X);
+   Y=rms(X,dim);
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+For vectors, RMS(X) is the root mean squared value in X. For matrices,
+RMS(X) is a row vector containing the RMS value from each column. For
+N-D arrays, RMS(X) operates along the first non-singleton dimension.
+   </para>
+   <para>
+Y = RMS(X,DIM) operates along the dimension DIM.
+   </para>
+   <para>
+When X is complex, the RMS is computed using the magnitude
+RMS(ABS(X)).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the root mean squared (RMS) value of a vector and a matrix
+x = [1, 2, 3, 4]
+y1 = rms(x)
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
 </refentry>

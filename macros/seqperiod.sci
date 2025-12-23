@@ -1,42 +1,27 @@
 function [p,num]=seqperiod(x)
-//Calculates the period of a sequence
-//Calling Sequence
-//[p,num]=seqperiod(x)
-//Parameters
-//x: A vector matrix or n-dimensional array
-//Description
-//[p,num]=seqperiod(x)
-//Returns an integer p such that x(1:p) is the smallest subsequence that repeats in x
-//The number of times the subsequence repeats is returned in num (may not be an integer)
-//Repetitions may be incomplete at the end of the sequence but no breaks are permitted between repetitions
-//If there is no subsequence that repeats in x then p=length(x)
-//If x is a matrix or n-dimesnional array, the function operates along the first non-singleton dimension of x
-//Examples
-//x = [4 0 1 5; 
+// Calculates the period of a sequence
+//
+// Syntax
+// [p,num]=seqperiod(x)
+//
+// Parameters
+// x: A vector matrix or n-dimensional array
+//
+// Description
+// [p,num]=seqperiod(x)
+// Returns an integer p such that x(1:p) is the smallest subsequence that repeats in x
+// The number of times the subsequence repeats is returned in num (may not be an integer)
+// Repetitions may be incomplete at the end of the sequence but no breaks are permitted between repetitions
+// If there is no subsequence that repeats in x then p=length(x)
+// If x is a matrix or n-dimesnional array, the function operates along the first non-singleton dimension of x
+//
+// Examples
+// x = [4 0 1 5; 
 //     1 1 2 5; 
 //     2 0 3 5; 
-//     3 1 1 5];
-//p = seqperiod(x)
-//p  =
+//     3 1 1 5]
+// p = seqperiod(x)
 // 
-//    4.    2.    3.    1.
-//A=zeros(4,1,4);
-//A(:,1,:)=x;
-//p1=seqperiod(A);
-//p1  =
-//
-//(:,:,1)
-//
-//4.  
-//(:,:,2)
-//
-//2.  
-//(:,:,3)
-//
-//3.  
-//(:,:,4)
-//
-//1.  
 //Authors
 //Ankur Mallick
 

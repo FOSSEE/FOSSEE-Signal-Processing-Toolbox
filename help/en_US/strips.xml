@@ -22,18 +22,35 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    strips(x);
    strips(x,sd);
    strips(x,sd,fs);
    strips(x,sd,fs,scale);
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector or a matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sd :</term>
+            <listitem><para> Strip duration</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> Sampling frequency</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>scale :</term>
+            <listitem><para> Scaling parameter for vertical axis</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -52,8 +69,25 @@ strips(x,sd,fs,scale)
 Plots x in strips as above, and scales the vertical axis by scale
 If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
 If x has complex entries, only the real part of those entries are considered
-Author
-Ankur Mallick
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x_vector = sin(2 * %pi * (0:0.01:10));
+strips(x_vector, 2, 100, 1);
+title("Strip plot of a vector");
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
 </refsection>
 </refentry>

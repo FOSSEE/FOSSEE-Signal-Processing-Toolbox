@@ -10,21 +10,23 @@
 // Email: toolbox@scilab.in
 
 function xt = sampled2continuous( xn , T, t )
-//This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
-//Calling Sequence
-//x = sampled2continuous (xn, T, t)
-//Parameters
-//xn:sampled signal
-//T:sampling rate
-//t:all the instants of time when you need x(t) from x[n]
-//Description
-//This is an Octave function.
-//This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
-//The third parameter t is all the instants where output x is needed from intput n and this time is relative to x(0).
-//Examples
-//sampled2continuous([1,2,3],5,6)
-//ans  =
-//    2.4166806
+// This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
+// 
+// Syntax
+// x = sampled2continuous (xn, T, t)
+//
+// Parameters
+// xn:sampled signal
+// T:sampling rate
+// t:all the instants of time when you need x(t) from x[n]
+//
+// Description
+// This function calculates the output reconstructed from the samples n supplied as input, at a rate of 1/s samples per unit time.
+// The third parameter t is all the instants where output x is needed from intput n and this time is relative to x(0).
+//
+// Examples
+// sampled2continuous([1,2,3],5,6)
+// 
 
   if ( argn(2) < 3 )
     error('wrong number of input parameters')

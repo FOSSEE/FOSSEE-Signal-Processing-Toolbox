@@ -17,17 +17,17 @@
 
   <refnamediv>
     <refname>corrmtx</refname>
-    <refpurpose>Generate data matrix for autocorrelation matrix estimation</refpurpose>
+    <refpurpose>Generate a data matrix for autocorrelation matrix estimation.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   X = corrmtx(x,m)
-   [X,R] = corrmtx(x,m)
-   X = corrmtx(x,m,s)
-   [X,R] = corrmtx(x,m,s)
+   X = corrmtx(x, m)
+   [X, R] = corrmtx(x, m)
+   X = corrmtx(x, m, s)
+   [X, R] = corrmtx(x, m, s)
    
    </synopsis>
 </refsynopsisdiv>
@@ -35,26 +35,46 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> input vector of size N for which correlation matrix of size m is to be calculated</para></listitem></varlistentry>
-   <varlistentry><term>m:</term>
-      <listitem><para> size of correlation matrix to be computed. Positive integer strictly smaller than the length of the input x</para></listitem></varlistentry>
-   <varlistentry><term>X:</term>
-      <listitem><para> data matrix as specified according to the input 'method'</para></listitem></varlistentry>
-   <varlistentry><term>s:</term>
-      <listitem><para> method for type of output matrix X</para></listitem></varlistentry>
-   <varlistentry><term>'autocorrelation':</term>
-      <listitem><para> (default) X is the (n + m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the leng    th-n data vector x, derived using prewindowed and postwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
-   <varlistentry><term>'prewindowed':</term>
-      <listitem><para> X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x,     derived using prewindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
-   <varlistentry><term>'postwindowed':</term>
-      <listitem><para> X is the n-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vector x    , derived using postwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
-   <varlistentry><term>'covariance':</term>
-      <listitem><para> X is the (n – m)-by-(m + 1) rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n data vect    or x, derived using nonwindowed data, based on an mth-order prediction error model.</para></listitem></varlistentry>
-   <varlistentry><term>'modified':</term>
-      <listitem><para> X is the 2(n – m)-by-(m + 1) modified rectangular Toeplitz matrix that generates an autocorrelation estimate for the length-n d    ata vector x, derived using forward and backward prediction error estimates, based on an mth-order prediction error model.</para></listitem></varlistentry>
-   <varlistentry><term>R:</term>
-      <listitem><para> (m + 1)-by-(m + 1) autocorrelation matrix estimate calculated as X'*X</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector. Input vector of size N for which the correlation matrix of size `m` is to be calculated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Size of the correlation matrix to be computed. Must be strictly smaller than the length of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>s:</term>
+            <listitem><para> String. Method for the type of output matrix `X`. Options are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'autocorrelation' (default):</term>
+            <listitem><para> Generates an autocorrelation estimate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'prewindowed':</term>
+            <listitem><para> Uses prewindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'postwindowed':</term>
+            <listitem><para> Uses postwindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'covariance':</term>
+            <listitem><para> Uses nonwindowed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'modified':</term>
+            <listitem><para> Uses forward and backward prediction error estimates.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Matrix. Data matrix as specified by the input `s`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Matrix. Autocorrelation matrix estimate calculated as `X'*X`.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -106,13 +126,13 @@ X_mod= | x*(1).....x*(m+1)|
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-
-
-
+x = [1, 2, 3, 4, 5]
+m = 3
+[X, R] = corrmtx(x, m, 'autocorrelation')
    ]]></programlisting>
 </refsection>
 
-<refsection>
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
    <member><link linkend="peig">peig</link></member>
@@ -120,10 +140,18 @@ X_mod= | x*(1).....x*(m+1)|
    <member><link linkend="rooteig">rooteig</link></member>
    <member><link linkend="rootmusic">rootmusic</link></member>
    <member><link linkend="xcorr">xcorr</link></member>
-   <member><link linkend="Author:">Author:</link></member>
-   <member><link linkend="Parthe">Pandit</link></member>
-   <member><link linkend="Bilbligraphy">Bilbligraphy</link></member>
-   <member><link linkend="Marple,">S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</link></member>
    </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>Marple, S. Lawrence. Digital Spectral Analysis. Englewood Cliffs, NJ: Prentice-Hall, 1987.</para>
 </refsection>
 </refentry>

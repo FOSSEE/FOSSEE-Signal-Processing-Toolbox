@@ -17,7 +17,67 @@
 
   <refnamediv>
     <refname>firtype</refname>
-    <refpurpose>This function identifies Type of linear phase FIR filter</refpurpose>
+    <refpurpose>Identify the type of a linear phase FIR filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   t = firtype(b)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The filter coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Integer. The type of the FIR filter. Can be 1, 2, 3, or 4.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function determines the type, `t`, of a linear phase FIR filter with coefficients `b`. The filter must be real and have linear phase.
+The type is determined as follows:
+- Type 1: Symmetrical coefficients with an odd length.
+- Type 2: Symmetrical coefficients with an even length.
+- Type 3: Anti-symmetrical coefficients with an odd length.
+- Type 4: Anti-symmetrical coefficients with an even length.
+   </para>
+   <para>
+If the filter does not have linear phase, the function returns `t = -1`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Symmetrical filter with even length:
+b = [9.2762e-05, 9.5482e-02, 4.0443e-01, 4.0443e-01, 9.5482e-02, 9.2762e-05]
+t = firtype(b)
+
+// Anti-symmetrical filter with odd length:
+b = [-1, -2, 0, 2, 1]
+t = firtype(b)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   </simplelist>
+</refsection>
 </refentry>

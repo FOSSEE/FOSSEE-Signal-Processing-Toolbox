@@ -17,7 +17,50 @@
 
   <refnamediv>
     <refname>roundn</refname>
-    <refpurpose>r=(round(x*10^n))/(10^n);</refpurpose>
+    <refpurpose>Round a number to a specified number of decimal places.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   r = roundn(x, n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input number or array.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Number of decimal places to round to.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> Rounded number or array.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `roundn` function rounds the input `x` to `n` decimal places.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Round a number to 2 decimal places:
+r = roundn(3.14159, 2)
+   ]]></programlisting>
+</refsection>
 </refentry>

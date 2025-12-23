@@ -17,7 +17,108 @@
 
   <refnamediv>
     <refname>pulsewidth</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate pulse width of real vector X.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w=pulsewidth(x)
+   w=pulsewidth(x, Fs)
+   w=pulsewidth(x, t)
+   w=pulsewidth (x, t, 'Polarity', pol)
+   w=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
+   w=pulsewidth(x, t, 'Tolerance', M)
+   w=pulsewidth(x, t,'StateLevels', O)
+   [w initialcross finalcross midreference]=pulsewidth(x)
+   [w initialcross finalcross midreference]=pulsewidth(x, Fs)
+   [w initialcross finalcross midreference]=pulsewidth(x, t)
+   [w initialcross finalcross midreference]=pulsewidth(x, t, 'Polarity', pol)
+   [w initialcross finalcross midreference]=pulsewidth(x, t, 'MidPercentReferenceLevel', N )
+   [w initialcross finalcross midreference]= pulsewidth(x, t, 'Tolerance', M)
+   [w initialcross finalcross midreference]= pulsewidth(x, t,'StateLevels', O)
+   [w initialcross finalcross midreference]= pulsewidth(x, t,'StateLevels', O, 'fig', on or off)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Polarity:</term>
+            <listitem><para> specify the polarity of the pulse as either 'positive' or 'negative', where the default value is 'positive'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>MidPercentReferenceLevel:</term>
+            <listitem><para> specify the mid percent reference leves as a percentage, default value of N is 50.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tolerance:</term>
+            <listitem><para> define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>StateLevels:</term>
+            <listitem><para>  define the lower and upper state levels as two element real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fig:</term>
+            <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> returns a vector of difference between the mid-crossings of the initial and final transitions of each positive-polarity pulse found in the input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>initialcross:</term>
+            <listitem><para> returns a vector of initial cross values of bilevel waveform transitions X.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>finalcross:</term>
+            <listitem><para> returns a vector of final cross values of bilevel waveform transitions X.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>midreference:</term>
+            <listitem><para> return mid reference value corrosponding to mid percenr reference value.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = fscanfMat("macros/pulsedata_x.txt");
+t = fscanfMat("macros/pulsedata_t.txt");
+clf
+p = pulsewidth(x,t,'fig','ON')
+//it also generates a pulse with pulse width  and annotations
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    R = poly2ac(a,efinal)
    
@@ -32,12 +32,18 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para> input prediction polynomial with 1st element 1 (if not, poly2ac normalizes it to 1 before proceeding).</para></listitem></varlistentry>
-   <varlistentry><term>efinal:</term>
-      <listitem><para> input prediction error</para></listitem></varlistentry>
-   <varlistentry><term>r:</term>
-      <listitem><para> output autocorrelation sequence</para></listitem></varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> input prediction polynomial with 1st element 1 (if not, poly2ac normalizes it to 1 before proceeding).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>efinal:</term>
+            <listitem><para> input prediction error</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> output autocorrelation sequence</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -54,14 +60,14 @@ denominator polynomial and the numerator scaling. The filter is H(z) = efinal/(a
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-a = [1.0000 0.4288 0.76 0.0404 -0.02];
-efinal = 0.2;           // Step prediction error
+a = [1.0000 0.4288 0.76 0.0404 -0.02]
+efinal = 0.2           // Step prediction error
 r = poly2ac(a,efinal)   // Autocorrelation sequence
 
    ]]></programlisting>
 </refsection>
 
-<refsection>
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
    <member><link linkend="ac2poly">ac2poly</link></member>
@@ -69,7 +75,13 @@ r = poly2ac(a,efinal)   // Autocorrelation sequence
    <member><link linkend="rc2poly">rc2poly</link></member>
    <member><link linkend="rc2ac">rc2ac</link></member>
    <member><link linkend="ac2rc">ac2rc</link></member>
-   <member><link linkend="Author:">Parthe Pandit</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthe Pandit</member>
    </simplelist>
 </refsection>
 

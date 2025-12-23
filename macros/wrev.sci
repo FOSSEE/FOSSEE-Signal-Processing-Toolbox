@@ -12,18 +12,20 @@
 
 function y = wrev(x)
 // Reverses order of elements of input vector
-// Calling Sequence
+// 
+// Syntax
 //	[y]=wrev(x)
+// 
 // Parameters
 //	x: Input vector of string, real or complex values
+// 
 // Description
-//	This is an Octave function which is built in scilab.
 //	This function reverses the order of elements of the input vector x.
 // Examples
-// 1.	wrev([1 2 3])
-//	ans= 3  2  1
-// 2.	wrev(['a','b','c'])
-//	ans= cba
+// 	wrev([1 2 3])
+//	//ans= 3  2  1
+// 	wrev(['a','b','c'])
+//	//ans= cba
 
 funcprot(0);
   if (argn(2)< 1| argn(2) > 1) then

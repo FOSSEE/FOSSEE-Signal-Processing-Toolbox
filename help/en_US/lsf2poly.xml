@@ -22,9 +22,40 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    a = lsf2poly(lsf)
+   
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>lsf:</term>
+            <listitem><para> define line spectral frequencies.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Return the prediction polynomial.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+X = [0.5 0.752 1.6 1.8 2.45 0.8]
+a = lsf2poly(X)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

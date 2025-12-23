@@ -17,7 +17,66 @@
 
   <refnamediv>
     <refname>prepad</refname>
-    <refpurpose>Calling sequence:</refpurpose>
+    <refpurpose>Prepend or truncate a vector or matrix to a specified length.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   res = prepad(x, l)
+   res = prepad(x, l, c)
+   res = prepad(x, l, c, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>l:</term>
+            <listitem><para> Desired length (scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>c:</term>
+            <listitem><para> (optional) Scalar value to prepend. Default is 0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which to operate. Default is 2.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `prepad` function prepends the scalar value `c` to the vector or matrix `x` until it reaches the specified length `l`.
+If `c` is not provided, a value of 0 is used. If the length of `x` exceeds `l`, elements are removed from the beginning of `x`
+to match the desired length. If `x` is a matrix, the operation is performed along rows or columns based on the `dim` parameter.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Prepend zeros to a row vector to make its length 6
+res1 = prepad([1, 2, 3, 4], 6)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abinash Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

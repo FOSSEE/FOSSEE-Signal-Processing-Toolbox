@@ -1,5 +1,18 @@
-function w = barthannwin (m)
-
+function w = barthannwin(m)
+// Generate a modified Bartlett-Hann window.
+//
+// Syntax
+//   w = barthannwin(m)
+//
+// Parameters
+// m: Positive integer. Length of the window.
+//
+// Description
+// This function generates a modified Bartlett-Hann window of length `m`. The window is symmetric and tapers smoothly to zero at both ends.
+//
+// Examples
+// w = barthannwin(5)
+// 
  funcprot(0);
     rhs= argn(2);
 

@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [S,w] = pmusic(x,p)
    [S,w] = pmusic(x,p,w)
@@ -34,53 +34,93 @@
    [...] = pmusic(...,freqrange)
    [...,v,e] = pmusic(...)
    
-   Parameters:
-   x - int|double - vector|matrix
-   Input signal. In case of a matrix, each row of x represents a
-   seperate observation of the signal. If 'corr' flag is specified,
-   then x is the correlation matrix.
-   If w is not specified in the input, it is determined by the
-   algorithm. If x is real valued, then range of w is [0, pi].
-   Otherwise, the range of w is [0, 2pi)
-   p - int|double - scalar|vector
-   p(1) is the dimension of the signal subspace
-   p(2), if specified, represents a threshold that is multiplied by
-   the smallest estimated eigenvalue of the signal's correlation matrix.
-   w - int|double - vector
-   w is the vector of normalized frequencies over which the
-   pseuspectrogram is to be computed.
-   nfft - int - scalar (Default = 256)
-   Length of the fft used to compute pseudospectrum. The length of S
-   (and hence w/f) depends on the type of values in x and nfft.
-   If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if
-   nfft is even and (nfft+1)/2 {Range of w = [0, pi)} otherwise.
-   If x is complex, length of s is nfft.
-   fs - int|double - scalar (Default = 1)
-   Sampling rate. Used to convert the normalized frequencies (w) to
-   actual values (f) and vice-versa.
-   nwin - int|double - scalar (int only)|vector (Default = 2*p(1))
-   If nwin is scalar, it is the length of the rectangular window.
-   Otherwise, the vector input is considered as the window coefficients.
-   Not used if 'corr' flag present.
-   If x is a vector, windowing not done in nwin in scalar. If x is a
-   matrix,
-   noverlap - int - scalar (Default = nwin-1)
-   number of points by which successive windows overlap. noverlap not
-   used if x is a matrix
-   freqrange - string
-   The range of frequencies over which the pseudospetrogram is
-   computed. Three possible values - 'onesided', 'twosided', 'centered'
-   'corr' flag
-   Presence indicates that the primary input x is actually a
-   correlation matrix
-   
-   Examples:
-   
-   Ex1:
-   n = 0:199;
-   x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
-   [S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
-   plot(w,S);.........to see the plot of psuedospectrum estimate of x vs frequencies w
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> int|double - vector|matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p :</term>
+            <listitem><para> int|double - scalar|vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w :</term>
+            <listitem><para> int|double - vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nfft :</term>
+            <listitem><para> int - scalar (Default = 256)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> int|double - scalar (Default = 1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nwin :</term>
+            <listitem><para> int|double - scalar (int only)|vector (Default = 2*p(1))</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>noverlap :</term>
+            <listitem><para> int - scalar (Default = nwin-1)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freqrange :</term>
+            <listitem><para> string</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'corr' flag :</term>
+            <listitem><para> </para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+
+n = 0:199;
+x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
+[S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
+plot(w,S);//.........to see the plot of psuedospectrum estimate of x vs frequencies w
+
+n = 0:199;
+x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;
+[S,w]=pmusic(x,2,16,1)        //where x: [1x200 constant]   p: 2   w: [0x0 constant]   nfft: 16   fs: 1
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="pburg">pburg</link></member>
+   <member><link linkend="peig">peig</link></member>
+   <member><link linkend="periodogram">periodogram</link></member>
+   <member><link linkend="pmtm">pmtm</link></member>
+   <member><link linkend="prony">prony</link></member>
+   <member><link linkend="pwelch">pwelch</link></member>
+   <member><link linkend="rooteig">rooteig</link></member>
+   <member><link linkend="rootmusic">rootmusic</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Petre Stoica and Randolph Moses, Introduction To Spectral</para>
+   <para>Analysis, Prentice-Hall, 1997, pg. 15</para>
+   <para>[2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.</para>
+   <para>2nd Ed., Macmillan, 1988.</para>
+</refsection>
 </refentry>

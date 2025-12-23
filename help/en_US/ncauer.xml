@@ -20,4 +20,57 @@
     <refpurpose>Analog prototype for Cauer filter (Cauer filter and elliptic filters are same).</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [Zz, Zp, Zg] = ncauer(Rp, Rs, n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Filter Order</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rp:</term>
+            <listitem><para> Peak-to-peak passband ripple in dB</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rs:</term>
+            <listitem><para> Stopband attenuation in dB</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+It gives an analog prototype for Cauer filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+n = 1
+Rp = 2
+Rs = 3
+[Zz, Zp, Zg] = ncauer(Rp, Rs, n)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ellipap">ellipap</link></member>
+   </simplelist>
+</refsection>
 </refentry>

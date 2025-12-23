@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>enbw</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Estimate the Equivalent Noise Bandwidth (ENBW) of a window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   bw = enbw(window)
+   bw = enbw(window, fs)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> Vector. Specifies the sample window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> Positive scalar (optional). Specifies the sampling rate of the window. Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>bw:</term>
+            <listitem><para> Scalar. Returns the two-sided equivalent noise bandwidth for a uniformly sampled window.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function estimates the Equivalent Noise Bandwidth (ENBW) of a given window. The ENBW is calculated as the ratio of the root mean square (RMS) value of the window to its mean, squared. If the sampling rate `fs` is provided, the bandwidth is scaled accordingly.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Without sampling rate:
+window = 1:10
+bw = enbw(window)
+// With sampling rate:
+window = 1:10
+fs = 2.5
+bw = enbw(window, fs)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

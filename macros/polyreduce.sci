@@ -9,17 +9,21 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-
-
-function p = polyreduce (c)
-//Calling sequence
-//p= polyreduce (c)
-// Reduce a polynomial coefficient vector to a minimum number of terms by
-// stripping off any leading zeros.
-//Test cases:
-//polyreduce ([0, 0, 1, 2, 3])
-//Output: [1, 2, 3]
-
+function p = polyreduce(c)
+// This function reduces a polynomial by removing leading zero coefficients.
+//
+//  Syntax
+//   p = polyreduce(c)
+//
+// Parameters
+// c: Polynomial coefficients.
+//
+// Description
+// This function reduces a polynomial by removing leading zero coefficients.
+//
+// Examples
+// p = polyreduce([0, 0, 1, 2, 3])
+//
 
 
 [nargout,nargin]=argn();

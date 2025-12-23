@@ -1,4 +1,18 @@
-function w = bohmanwin (m)
+function w = bohmanwin(m)
+// Generate a Bohman window.
+//
+// Syntax
+//   w = bohmanwin(m)
+//
+// Parameters
+// m: Positive integer. Length of the Bohman window.
+//
+// Description
+// This function generates a Bohman window of length `m`. The Bohman window tapers smoothly to zero at both ends and is symmetric.
+//
+// Examples
+// w = bohmanwin(5)
+// 
 
  funcprot(0);
     rhs= argn(2);

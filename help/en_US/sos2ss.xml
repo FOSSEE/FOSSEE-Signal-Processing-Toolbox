@@ -17,7 +17,54 @@
 
   <refnamediv>
     <refname>sos2ss</refname>
-    <refpurpose>[nargout,nargin]=argn();</refpurpose>
+    <refpurpose>Convert digital filter second-order section parameters to state-space form</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [A,B,C,D] = sos2ss(sos)
+   [A,B,C,D] = sos2ss(sos,g)
+   
+   Descriotion
+   sos2ss converts a second-order section representation of a digital filter to an equivalent state-space representation.
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>A,B,C,D:</term>
+            <listitem><para>Steady state parameters</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para>6 column second order section matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para>gain</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sos = [1  1  1  1   0  -1 ; -2  3  1  1  10   1]
+[A,B,C,D] = sos2ss(sos,2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   <member>parthasarathipanda314@gmail.com</member>
+   </simplelist>
+</refsection>
 </refentry>

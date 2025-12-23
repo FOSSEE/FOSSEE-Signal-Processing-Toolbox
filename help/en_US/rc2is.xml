@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    isin = rc2is(K)
    
@@ -32,10 +32,14 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>k:</term>
-      <listitem><para> input reflection coefficients. Needs to be an array of real numbers between -1 and 1</para></listitem></varlistentry>
-   <varlistentry><term>isin:</term>
-      <listitem><para> inverse sine parameters corresponding to the reflection coefficients in input</para></listitem></varlistentry>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> input reflection coefficients. Needs to be an array of real numbers between -1 and 1</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>isin:</term>
+            <listitem><para> inverse sine parameters corresponding to the reflection coefficients in input</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -46,15 +50,19 @@ This function returns the inverse sine parameters corresponding to the input ref
 output array has isin(i) = 2/pi*asin(k(i))
    </para>
    <para>
-Example
-k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
-isin = rc2is(k)      //Gives inverse sine parameters
-   </para>
-   <para>
 </para>
 </refsection>
 
 <refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+k = [0.3090 0.9801 0.0031 0.0082 -0.0082]
+isin = rc2is(k)      //Gives inverse sine parameters
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
    <member><link linkend="is2rc">is2rc</link></member>
@@ -74,7 +82,5 @@ isin = rc2is(k)      //Gives inverse sine parameters
 <refsection>
    <title>Bibliography</title>
    <para>J.R. Deller, J.G. Proakis, J.H.L. Hansen, "Discrete-Time Processing of Speech Signals", Prentice Hall, Section 7.4.5</para>
-   <para>modified function to handle char i/p and also changed error statements to match those of MATLAB by Debdeep Dey</para>
-   <para>convert char i/p to their respective ascii values</para>
 </refsection>
 </refentry>

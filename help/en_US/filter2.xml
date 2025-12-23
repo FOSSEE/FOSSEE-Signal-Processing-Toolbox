@@ -17,47 +17,64 @@
 
   <refnamediv>
     <refname>filter2</refname>
-    <refpurpose>Apply the 2-D FIR filter B to X.</refpurpose>
+    <refpurpose>Apply the 2-D FIR filter b to x.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   Y = filter2(B, X)
-   Y = filter2(B, X, SHAPE)
+   y = filter2(b, x)
+   y = filter2(b, x, shape)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>B, X:</term>
-      <listitem><para> Matrix</para></listitem></varlistentry>
-   <varlistentry><term>SHAPE:</term>
-      <listitem><para> </para></listitem></varlistentry>
-   <varlistentry><term>'full':</term>
-      <listitem><para>  pad X with zeros on all sides before filtering.</para></listitem></varlistentry>
-   <varlistentry><term>'same':</term>
-      <listitem><para> unpadded X (default)</para></listitem></varlistentry>
-   <varlistentry><term>'valid':</term>
-      <listitem><para> trim X after filtering so edge effects are no included.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector or matrix. The 2-D FIR filter coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector or matrix. The input data to be filtered.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>shape:</term>
+            <listitem><para> String (optional). Specifies the shape of the output. Possible values are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector or matrix. The filtered output.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function applies the 2-D FIR filter B to X. If the argument SHAPE is specified, return an array of the desired shape.
+This function applies a 2-D FIR filter `b` to the input data `x`. The optional `shape` parameter determines the size and content of the output.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-filter2([1,3], [4,5])
-ans =
-19.    5.
+y = filter2([1, 3], [4, 5])
+
+y = filter2([1, 2], [4; 5; 6], "full")
+
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="convol2d">convol2d</link></member>
+   </simplelist>
 </refsection>
 </refentry>

@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    w = rooteig(x,p)
    [w,pow] = rooteig(x,p)
@@ -35,6 +35,57 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> int|double - vector|matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p :</term>
+            <listitem><para> int|double - scalar|2 element vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> int|double - scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'corr' :</term>
+            <listitem><para> flag</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w :</term>
+            <listitem><para> double - vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>pow :</term>
+            <listitem><para> double - vector</para></listitem>
+        </varlistentry>
    </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Time vector
+n = 0:99
+// Create a signal with 2 complex exponentials + noise
+s = exp(%i*2*%pi*0.1*n) + 1.5*exp(%i*2*%pi*0.25*n) + 0.5*rand(1, 100, 'normal')
+// Use rooteig to estimate frequencies and powers
+[W, P] = rooteig(s, 2)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>1) Stoica, P. and R. Moses, INTRODUCTION TO SPECTRAL ANALYSIS,</para>
+   <para>Prentice-Hall</para>
 </refsection>
 </refentry>

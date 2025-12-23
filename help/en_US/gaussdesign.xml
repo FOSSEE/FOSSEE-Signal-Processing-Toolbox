@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>gaussdesign</refname>
-    <refpurpose>GAUSSDESIGN designs a Gaussian pulse-shaping filter which is a low pass FIR</refpurpose>
+    <refpurpose>Design a Gaussian pulse-shaping filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>BwSt_prod:</term>
+            <listitem><para> Scalar. The 3 dB bandwidth-symbol time product. Bandwidth is one-sided and in hertz, and symbol time is in seconds.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>num_of_symb:</term>
+            <listitem><para> Positive integer. The number of symbols to which the filter is truncated. Default is 3.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>samp_per_symb:</term>
+            <listitem><para> Positive integer. The number of samples representing each symbol. Default is 2.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>filter_coeffs:</term>
+            <listitem><para> Vector. The coefficients of the designed Gaussian filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function designs a Gaussian pulse-shaping filter, which is a low-pass FIR filter. The filter is defined by the 3 dB bandwidth-symbol time product (`BwSt_prod`), the number of symbols (`num_of_symb`), and the number of samples per symbol (`samp_per_symb`). The filter coefficients are normalized such that their sum equals 1.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Design a Gaussian pulse-shaping filter
+// Parameters
+BwSt_prod = 0.3;          // Bandwidth-symbol time product
+num_of_symb = 5;          // Number of symbols
+samp_per_symb = 4;        // Samples per symbol
+// Design the filter
+filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb);
+// Plot the filter coefficients
+plot(filter_coeffs);
+xlabel("Sample Index");
+ylabel("Amplitude");
+title("Gaussian Pulse-Shaping Filter Coefficients");
+xgrid;
+   ]]></programlisting>
+</refsection>
 </refentry>

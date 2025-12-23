@@ -1,25 +1,38 @@
 
 function f=hilbert1(f, N ,dim )
-//   Calling Sequence
-//           h = hilbert1 (f)  
-//           h = hilbert1 (f, N)
-//           h = hilbert1 (f, N, dim)
+// Compute the analytic extension of a real-valued signal.
+//
+// Syntax
+//   h = hilbert1(f)
+//   h = hilbert1(f, N)
+//   h = hilbert1(f, N, dim)
+//
+// Parameters
+// f : real-valued input signal. Can be a vector, matrix, or N-D array.
+// N : (optional) length of the Hilbert transform. Must be a positive integer.
+// dim : (optional) dimension along which the Hilbert transform is applied. Must be a scalar.
+//
 // Description
-//           Analytic extension of real valued signal.
-//           h = hilbert (f) computes the extension of the real valued signal f to an analytic signal.
-//           If f is a matrix, the transformation is applied to each column.
-//           For N-D arrays, the transformation is applied to the first non-singleton dimension.
-//           real (h) contains the original signal f. imag (h) contains the Hilbert transform of f.
-//           hilbert (f, N) does the same using a length N Hilbert transform. The result will also have length N.
-//           hilbert (f, [], dim) or hilbert (f, N, dim) does the same along dimension dim.
-// Dependencies
-//           fft1, ifft1, ipermute
-// Example
-//             //the magnitude of the hilbert transform eliminates the carrier
-//             t=linspace(0,10,1024);
-//             x=5*cos(0.2*t).*sin(100*t);
-//             plot(t,x,t,abs(hilbert(x)));
-          
+// Compute the analytic extension of a real-valued signal.
+//
+// - h = hilbert1(f) computes the analytic signal of the real-valued input signal f.
+//   If f is a matrix, the transformation is applied to each column. For N-D arrays, 
+//   the transformation is applied to the first non-singleton dimension.
+// - real(h) contains the original signal f.
+// - imag(h) contains the Hilbert transform of f.
+// - hilbert1(f, N) computes the Hilbert transform with a length N. The result will also have length N.
+// - hilbert1(f, [], dim) or hilbert1(f, N, dim) applies the transformation along the specified dimension.
+//
+// See also
+// fft1
+// ifft1 
+// ipermute
+//
+// Examples
+//   // The magnitude of the Hilbert transform eliminates the carrier
+//   t = linspace(0, 10, 1024);
+//   x = 5 * cos(0.2 * t) .* sin(100 * t);
+//   plot(t, x, t, abs(hilbert1(x)));
 
   // ------ PRE: initialization and dimension shifting ---------
   nargin = argn(2); 

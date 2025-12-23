@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!--Begin Entities-->
+<!ENTITY abb1b10096115e1bcf619b219926165d6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/_czt.xml">
+<!ENTITY a0d382c14ea2f3357071878fe21c98090 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/_levin.xml">
+<!ENTITY a00bc39443c16c7917537f93863c77d50 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2poly.xml">
+<!ENTITY af4406b567071f4ff4f2995754fa2187b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ac2rc.xml">
+<!ENTITY a00b6683f824c6e3735743bdae664293c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arParEst.xml">
+<!ENTITY a4bda2c39f90349f29582d12e03ce5885 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ar_psd.xml">
+<!ENTITY a80bec787ae804cb0d5414131fdca6b6a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arburg.xml">
+<!ENTITY a0554d8f2d5fc45d2ba20076f4f98cb97 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arch_fit.xml">
+<!ENTITY afa5a96784e53335b462a7dcfe587936e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arch_rnd.xml">
+<!ENTITY a10590951a18ed13119a8d70988c3af9e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arch_test.xml">
+<!ENTITY a0cd9a79d575bdf872c709539efe87b71 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arcov.xml">
+<!ENTITY a3d3a8804195d5f92d18102d762bd1862 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/arma_rnd.xml">
+<!ENTITY af835e4977ce38c6b1009f00053442692 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/armcov.xml">
+<!ENTITY a858f0fc57bbed1f11edb69ff04d54f51 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/aryule.xml">
+<!ENTITY ad097c4541b0ec40ffe50f6e7b0051889 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/autoreg_matrix.xml">
+<!ENTITY acf6eddd873d4cfb0b13105658c7358ef SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/barthannwin.xml">
+<!ENTITY ac0e0d6ad4632ed5be8b4e511aeb2ce88 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/bartlett.xml">
+<!ENTITY ae2dc7b46602be37e4e75a691968067ef SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/besselap.xml">
+<!ENTITY a8fad4dde54e1b248700a7bfe93169ccd SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/besself.xml">
+<!ENTITY ab1a78226adcbfc157a6204cd598d9be1 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/bilinear.xml">
+<!ENTITY adfdcccee02d518b631c11101d630e64c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/bitrevorder.xml">
+<!ENTITY a3d346e1812f9c811709785ae5eac1b59 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackman.xml">
+<!ENTITY a488166551be15f13252e9463333a5043 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackmanharris.xml">
+<!ENTITY ae508615c3fca483570dc41705ef3c499 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/blackmannuttall.xml">
+<!ENTITY ad7395e82b4f1be991f192528c21272d0 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/bohmanwin.xml">
+<!ENTITY aa6cd12326adaab27487fadb5f7f51c7b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/boxcar.xml">
+<!ENTITY a8562289e8d8d647c6d5feb777fe8e10e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/buffer.xml">
+<!ENTITY a5485169521fbbd0f82564ea54ba8865a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/buttap.xml">
+<!ENTITY aefaf2f22850e710c28cfcdfe4d1e86c2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/butter.xml">
+<!ENTITY ab3d2aaeb5fb24c24579dfe7a28555969 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/buttord.xml">
+<!ENTITY a60b0ee818755c39b8aee4f261a872b45 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cceps.xml">
+<!ENTITY aedcd3d17b85aa1d3cd1a051e69b67959 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cconv.xml">
+<!ENTITY ab9a44443d6a640d9a9e6aa26b8a9f998 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cell2sos.xml">
+<!ENTITY a960b6cf31079f8e319e5be49e4e2bd8e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb.xml">
+<!ENTITY afb2b0f9638001336fbeaa9f6c7b865f5 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb1ap.xml">
+<!ENTITY ad6904690980e1a7591e4ce625902d465 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb1ord.xml">
+<!ENTITY aea713c4371d40a7563f1bf161a7b1515 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb2ap.xml">
+<!ENTITY a6120f4408fa1fd2ba779889deee26293 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheb2ord.xml">
+<!ENTITY a48b183271d23ba47b2d433231bed5841 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/chebwin.xml">
+<!ENTITY a6bf8920b252bc26871080df673322cc2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheby1.xml">
+<!ENTITY a8cf285b6d747266782b11de7a4873bcc SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cheby2.xml">
+<!ENTITY aebffde40b122ddffa3e96a11a62a4bb4 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/check.xml">
+<!ENTITY a4c4c009a9bb9967ff46ff4cb67c41e3b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/chirp.xml">
+<!ENTITY af4df1371b13b509caf0d8b175047f696 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/circshift.xml">
+<!ENTITY ae4e1e2eb62e9458b1cab125dbba97824 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/clustersegment.xml">
+<!ENTITY a9296567a3f9098ed5e58e7a9b8cfe2ca SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cmorwavf.xml">
+<!ENTITY adb7dcaeccfbd0a03e040643ed1386bc9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cohere.xml">
+<!ENTITY adaa376a57abbd358af9aae78083a028a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/convmtx.xml">
+<!ENTITY a685c028417a33ca0ad8e9f773ee6d382 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/corrmtx.xml">
+<!ENTITY a3785725b8fa20c1b652d495f3bf6675d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cplxpair.xml">
+<!ENTITY aae1a34bef1efc3f7cf544938ae2bb143 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cplxreal.xml">
+<!ENTITY a187ce77b437d10da0b6b49cb6b8ea23f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cpsd.xml">
+<!ENTITY a6d82f9bba39bee4acfcb0dc92418f930 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cummax.xml">
+<!ENTITY ad29b1d06f0c91212c82b298f73401e9a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/cummin.xml">
+<!ENTITY a58d2a1b606f70995ab94f40bb0b363ee SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/db.xml">
+<!ENTITY a6e77fe89f7b1f5e95335879d8712119a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/db2pow.xml">
+<!ENTITY a3507cc8c28403c1bac4198b8bc010c07 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/dctmtx.xml">
+<!ENTITY ae0ebb8d95da815ba441e0dc045bf1bde SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/deconv.xml">
+<!ENTITY af6405f5d72725f6abaee9bc810a9cbe9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/detrend1.xml">
+<!ENTITY a90b75cad0018b6731cdea49de991bb94 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/dftmtx.xml">
+<!ENTITY a8e2ace6a1d9abb468c07636ba6ecaa8c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/digitrevorder.xml">
+<!ENTITY a37c3df4affce1a1aae8cbd8dfb5ba5fe SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/diric.xml">
+<!ENTITY a8099045b22493e3889a6fa6855ec5d5f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/downsample.xml">
+<!ENTITY aa39e74a284973e56e3e5894f210fd650 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/dst1.xml">
+<!ENTITY a59b96c67ca8198fb03420cb869e22d14 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/durbinlevinson.xml">
+<!ENTITY abee96ac93b7676646c218e5771ed2a1a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/dutycycle.xml">
+<!ENTITY af62422b5565b4e183fe18c0fc9f451ef SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellip.xml">
+<!ENTITY a682e911b68eccb56aa3b92fa5aceaa48 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellipap.xml">
+<!ENTITY ad1ee867d6c1d132f082cd0c918f010db SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ellipord.xml">
+<!ENTITY a0525c10a95ae3f5b58f99caea526a8d5 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/enbw.xml">
+<!ENTITY afc9f1aab891cd293b3e8013ce44ab599 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/eqtflength.xml">
+<!ENTITY a6c35399565f2a4fe0b6f7c6dd07d7039 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/falltime.xml">
+<!ENTITY a7e30037599a4cf1601e5b4adbd19c0a1 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fft1.xml">
+<!ENTITY adb606c2d97d464e7ee8d8d2aa3ab41fe SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fft21.xml">
+<!ENTITY a0fa0c521c5e24013967810b1ade5306a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftconv.xml">
+<!ENTITY a8de4b0ffe5695c4e62f0b51657dbd481 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftfilt.xml">
+<!ENTITY af989466e6ecea0570a2ed90f124c1abd SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftn.xml">
+<!ENTITY a757d7163ee2a11078ad2721df4313feb SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fftshift1.xml">
+<!ENTITY a7b99b553c1bbe5939270fe358bc39da5 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fht.xml">
+<!ENTITY a3706b0020f30030832e6c3f8296a9e07 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filter1.xml">
+<!ENTITY aad972a74419134a1e5d280fde6cdc914 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filter2.xml">
+<!ENTITY af3eeffb2f07a97b7932b6046984f94db SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filternorm.xml">
+<!ENTITY a7c2d8591cb05d3cb481fc4bc22bfd4a0 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtfilt.xml">
+<!ENTITY ab28791a0fd417a8955b014b67858447f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtic.xml">
+<!ENTITY a88d8113468977bd91aae600b841c1c99 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/filtord.xml">
+<!ENTITY aa2e94b06c33b7457c79b8634ca0c0679 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/findpeaks.xml">
+<!ENTITY a2fe0a525337b19f6166c9646319e04af SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fir1.xml">
+<!ENTITY ae444ea3775b106cbf5778fa9dcb796c2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fir2.xml">
+<!ENTITY ae4a97834ee770316371f2dbfb845665c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/firpmord.xml">
+<!ENTITY ad04715e11222b14c9ff2db1a5f7ffbbb SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/firtype.xml">
+<!ENTITY a5b76d9cabac5042f0b7aad790c6665f8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/flattopwin.xml">
+<!ENTITY a0fe17887e0e4ff20d78bf6382b75de12 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fractdiff.xml">
+<!ENTITY a97b31968da656364c396e199c4a1569f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/freqz.xml">
+<!ENTITY a24da4ce7e1d059f6a30f71ffa31ec5cc SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhm.xml">
+<!ENTITY a73ad2976468122bac113ccdf303e772c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/fwhmjlt.xml">
+<!ENTITY a82eb64a88dab08aca578f8d58741e309 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/gauspuls.xml">
+<!ENTITY ae4a2a598802f61c8b9abf115b1b019a6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/gaussdesign.xml">
+<!ENTITY a93621e44331b1e104985af893b6ac132 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/gaussian.xml">
+<!ENTITY aaa0bf1f8af764091c7b5a137aa43441b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/gmonopuls.xml">
+<!ENTITY aa3d430d5fd5063fd9051c986cef148f8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/goertzel.xml">
+<!ENTITY a37205d267843c202b6be4f2b9f023418 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/grpdelay.xml">
+<!ENTITY a9a1decc24dc92eeb7710d9a741bc1f2b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/h1_z_deriv.xml">
+<!ENTITY af0baa8376bd12dc1513da0223a6ec5bf SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/hamming.xml">
+<!ENTITY ac49a0f5c340715d876a5b6cfe98e4548 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/hann.xml">
+<!ENTITY afe8ac32474038b2091cb30164beed5ba SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/hanning.xml">
+<!ENTITY ad8f4079ef2fd48448f59b57015f44f77 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/hilbert1.xml">
+<!ENTITY abf80c8fcfe81c288a38a63d6b3809af8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/hurst.xml">
+<!ENTITY af1508d70136d3cbade265d0cdf8bc78d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/icceps.xml">
+<!ENTITY adaca6cce335f38965a3f98c416910801 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/idct1.xml">
+<!ENTITY af08d0105d442cd96e513fed88b15dfa2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/idct2.xml">
+<!ENTITY a93400bcd8e2a96e7080ff615bcdb3f4c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/idst1.xml">
+<!ENTITY a4f3c91b021f61bded1c0fb26874c495a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifft1.xml">
+<!ENTITY ac32f5074e7191246fd277c786080347b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifft2.xml">
+<!ENTITY aacfc3ff01771fc51fa37f6c254749500 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifftn.xml">
+<!ENTITY a5e86c19224d97f4f75cf9429940bc175 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifftshift1.xml">
+<!ENTITY a3579c35ba2fd8ac1be734a908a1af879 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ifht.xml">
+<!ENTITY a93f0fb473f5141df51a786b5d38aa508 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/iirlp2mb.xml">
+<!ENTITY af8ffe1b0871c90316ef18612534e536f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/impz.xml">
+<!ENTITY ad202666e3cc0ff4b023dfbef8160b3d4 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/impzlength.xml">
+<!ENTITY adf03a19e2b85ea26aaf45bc469bd21b8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/intfilt.xml">
+<!ENTITY aa00cfd449bbb75de920cdd65cec9c433 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/inv_residue.xml">
+<!ENTITY adb16c1083d69cefd62535f28bfe855b9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/invfreq.xml">
+<!ENTITY a302d5d8e14f51aa8cd16302075abbd78 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/invfreqs.xml">
+<!ENTITY a5d1db37962ba7d3ecf28d50f92b497c9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/invfreqz.xml">
+<!ENTITY aedcfdbb461aec298c3f97b6b6dc4ce55 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ipermute.xml">
+<!ENTITY af26f2f980446d3611d15deb526f5944f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/is2rc.xml">
+<!ENTITY a4718d414342da3902ca67ed905fb7438 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/isallpass.xml">
+<!ENTITY a95fcfbe479b5ea23754f11b64a99946d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/isfir.xml">
+<!ENTITY a72922d608f5693ad85d3fd2a87baed7a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/islinphase.xml">
+<!ENTITY a405fc39b90e09f8cca0ed4d1a168588d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ismaxphase.xml">
+<!ENTITY a3d7c3f5208e3ae68ced85eca5c83633b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/isminphase.xml">
+<!ENTITY a90155d051b6e87e166c9418dfcea0e20 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/isstable.xml">
+<!ENTITY aee90ed0d141f1af9bea86b89da569e8b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/kaiser.xml">
+<!ENTITY ae423231ac8e9abba2c9d7845b6216e09 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/kaiserord.xml">
+<!ENTITY a851baa7d17e4580443947f495566cc2a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/lar2rc.xml">
+<!ENTITY ab9d6f77a61967e9530a9c1b10ed663f8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/latc2tf.xml">
+<!ENTITY a5f3ad7662a83f978a6fa9aa83d7f78d6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/levdown.xml">
+<!ENTITY aa36872454f3f7e23f67feffb5d0b923a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/levinson.xml">
+<!ENTITY a78987fbdfc9fdcf50eba7d6227c325b7 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/lpc.xml">
+<!ENTITY a750c5f572e966fffa660267350770b37 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/lsf2poly.xml">
+<!ENTITY abde48fe850d7460c098f2a9abf3429b6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/mag2db.xml">
+<!ENTITY aea5aebe42b6e7a67e9f0da9106a40346 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/marcumq.xml">
+<!ENTITY a4bcb97e825a8722b24c63f89d7db941c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/medfilt1.xml">
+<!ENTITY ace6274598bff47ed8907cebfaaaa5175 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/mexihat.xml">
+<!ENTITY acc4db2b4bc158f9405903fcb84b8ea19 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/meyeraux.xml">
+<!ENTITY a22fd2eb6f0dabf249204c89ac52865d3 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/midcross.xml">
+<!ENTITY aa4ca2623d4bcea73d8756ec030edcbd2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/modulate.xml">
+<!ENTITY a8b0912f63de744b4e64ee3af5b40eb59 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/morlet.xml">
+<!ENTITY a4305db01bf825357d199dfe42aff1fe2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/movingrms.xml">
+<!ENTITY a6decf203562459c46fceff5783f0908b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/mpoles.xml">
+<!ENTITY a29cb6b62ef8197b4269d4a2d520f55f3 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/mscohere.xml">
+<!ENTITY af91210d527522fd12c386f93eb83b189 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/musicBase.xml">
+<!ENTITY a30a22a4a2c9ef9cc270810384a664d08 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ncauer.xml">
+<!ENTITY a8c1a712a6265bfef3e0d9b69926fbd78 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/nnls.xml">
+<!ENTITY a93450aeea19ec9c0bd676c5a18aa7a7d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/nuttallwin.xml">
+<!ENTITY a33a50281f888b086325cea4860b6a133 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/oct_interp.xml">
+<!ENTITY a86b9f6880f233db8b828a1a641ffe90b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/ols.xml">
+<!ENTITY a2beb4176616658993d1aa650c322c3ba SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/parser.xml">
+<!ENTITY a22a08720f333296f40d11e6b319cb739 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/parzenwin.xml">
+<!ENTITY ae9368fba7d115d2ee9f01f68c6b51bea SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pburg.xml">
+<!ENTITY af7d087b3e52bd875d3a82624d4deabea SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pchip.xml">
+<!ENTITY ab165886e1dc53c7d6fecf3d36e6a758e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pchips.xml">
+<!ENTITY afc106595dded4441598dc9d2e80ca2f5 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/peak2peak.xml">
+<!ENTITY a2f7b27b4ac56d6f24a499ec2cc3cb71d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/peak2rms.xml">
+<!ENTITY ace0c3dcf39226bb7fe02eb5568d23426 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pei_tseng_notch.xml">
+<!ENTITY af9294c31c32f1dbeb5f1527182bd85ae SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/peig.xml">
+<!ENTITY ade6f311a3a6914e714a64233ca387619 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/periodogram.xml">
+<!ENTITY a11c1cdcd1e4a6430add27a6c5bcb1ab6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/phaseInputParseAs_ab.xml">
+<!ENTITY a6cf92bfecc42d3e78ec90e3374de5204 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/phaseInputParseAs_sos.xml">
+<!ENTITY a5935be88bd110375a9eba9e6e86c7a94 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/phasedelay.xml">
+<!ENTITY a9b7c2a03ae8e9c37421764b3cacd0d03 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pmusic.xml">
+<!ENTITY ae7cd9b3e362e6403238b426f5d4e66f2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2ac.xml">
+<!ENTITY ac7b508988d9b5ce4caf4a839a33cc288 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2lsf.xml">
+<!ENTITY a406e803fc36848a82dbdb8a4f1c8e73b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/poly2rc.xml">
+<!ENTITY ac283ed2370a5fa8befd650c10d0804d3 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/polyreduce.xml">
+<!ENTITY a829873041e7f64d54515960b15357158 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/polyscale.xml">
+<!ENTITY a94ca60ef57753fb3c2947cf69fee6ed9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/polystab.xml">
+<!ENTITY a90bf4aff8dbbe96a984e318706cc9885 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/polyval.xml">
+<!ENTITY a1902521e6d6a61c81ef27742c368ba42 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/postpad.xml">
+<!ENTITY a6fd101ee5f4b2d7e10143f99f3bdfe0f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pow2db.xml">
+<!ENTITY a4604cc64fc7ad80569210f9dc10e182c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/prepad.xml">
+<!ENTITY a81c3f5e91097a90d9f596d5008716528 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/prony.xml">
+<!ENTITY afabea49cc5b6b20b02ac00e437f09be8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulseperiod.xml">
+<!ENTITY a749e4b72b837bb30780cb640c22fc054 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulsesep.xml">
+<!ENTITY ae9541187f61df536094e5784ea182e9a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pulsewidth.xml">
+<!ENTITY a04ce7366f9523e0e7ad633a3a2bee499 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/pwelch.xml">
+<!ENTITY aa09e49720edb879ea3ef2db364ee73f1 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2ac.xml">
+<!ENTITY a4574a37df4babcf83b90a7d7431f826e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2is.xml">
+<!ENTITY a7a61615f5ac08c94a20dc67aafa7b18a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2lar.xml">
+<!ENTITY a18558ec2996091b4259a9ee604f5862d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rc2poly.xml">
+<!ENTITY a8b7be179b6b940f7be126dc0813af511 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rceps.xml">
+<!ENTITY a933cecad3c95cae7b6c55db1e13ebd7a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rcosdesign.xml">
+<!ENTITY a3c0924321e0abdc6b33dd2649581bc26 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rectpuls.xml">
+<!ENTITY a91f6f607f8ad5464f675540e6b26af1a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rectwin.xml">
+<!ENTITY a9b1de0b51c74e419d62d09b422c1e9da SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/residue.xml">
+<!ENTITY a254fd6c4e4ebfbde50a3e5c5df5055a3 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/residued.xml">
+<!ENTITY acfbb776f587a6d6367ef1bd5c76afebf SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/residuez.xml">
+<!ENTITY a7249cd71d879b4cfc78b1a2f1e58fb5c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/risetime.xml">
+<!ENTITY ad8482b56f7676e7d00e81da643463d4d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rlevinson.xml">
+<!ENTITY a9846e7ffc5ee3864df73a6c3640820c7 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rms.xml">
+<!ENTITY abfd06b21a392083854c13fdc7e269872 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rooteig.xml">
+<!ENTITY ae4b4b76d2cf007e09ccd42e66e0bc732 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rootmusic.xml">
+<!ENTITY a9139e78de11d9715f4faa1d1e142b587 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/roundn.xml">
+<!ENTITY ad9e6482c3dd4404d2c0a742af6e1d6df SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/rssq.xml">
+<!ENTITY a54695318c0863086cdbb8bfa43f8f0f0 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sampled2continuous.xml">
+<!ENTITY acce234c3dde18ea80db33a8288f21511 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sawtooth.xml">
+<!ENTITY ab9f82565666cfe12ce9f360b323603cd SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/schtrig.xml">
+<!ENTITY a449712c10c48beda00b1430b591b821d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/schurrc.xml">
+<!ENTITY ae03e3f51657ed7da318191cd4ee284b7 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/seqperiod.xml">
+<!ENTITY a33215eb19eac2a422d50737c2b8f35e2 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sftrans.xml">
+<!ENTITY a15b6a60dbc2e26ac768ceb3e1f7ac0c6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sgolay.xml">
+<!ENTITY a345071423999fb3a8c2ce57383abd524 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/shanwavf.xml">
+<!ENTITY a93d8d5d34a5930f764319de92af6a360 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/shiftdata.xml">
+<!ENTITY acdd3248770244d9c9f54f1fa4989a36c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sigmoid_train.xml">
+<!ENTITY ac161bce0e7b5ac956fb8a82ee7a8c87d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sinetone.xml">
+<!ENTITY a660e1af49205053511e4f680680a4334 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sinewave.xml">
+<!ENTITY a91a9347406da5364c22ad825f7882f6e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/slewrate.xml">
+<!ENTITY a72e53f556b5d445d216a01e4da030e27 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2cell.xml">
+<!ENTITY a3f46683b67f934c326a5df14d7261b91 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2ss.xml">
+<!ENTITY a601402cc73d93b345d26d66003875471 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2tf.xml">
+<!ENTITY ae825350c97cbbbfde8273c20491ee7a3 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sos2zp.xml">
+<!ENTITY ad750f7a9b5a8fdad0471aaecea43a9dd SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/sosbreak.xml">
+<!ENTITY a2e5d8d7ad4f5cf0d33cac47c058b767b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/spectral_adf.xml">
+<!ENTITY afebe7df6fd7a9f8a427910e873dbb013 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/spectral_xdf.xml">
+<!ENTITY afa563c2ddf14d58184a4ddc791fddfe4 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/spencer.xml">
+<!ENTITY af7a09774d193151bae1e3a07442b3d27 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/statelevels.xml">
+<!ENTITY a61b00907db6b76c8774026b44e9ad944 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/stft.xml">
+<!ENTITY aab25c7986cf5668da323a63eeed8d27e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/stmcb.xml">
+<!ENTITY a2f70a9176e26c592d971805512261b97 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/strcmpi.xml">
+<!ENTITY ad4769d3c91264b807b021a52413e4a0d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/strips.xml">
+<!ENTITY ae463a3ebd4a51ccda0f35b19dfd9aaa6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/subspaceMethodsInputPars.xml">
+<!ENTITY afc156e8a80d8c021208008452b889360 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/synthesis.xml">
+<!ENTITY a34a60f6fc7ef0bd9ba31716d97d4c2fe SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2sos.xml">
+<!ENTITY a76c15ff51eef13e284daadb5ae971c2d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zp.xml">
+<!ENTITY a5239216519461e5d747735a14283bd5e SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tf2zpk.xml">
+<!ENTITY ac9642c639e9fea3f96af577569a69282 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tfe.xml">
+<!ENTITY a17d99920e90074592303bc80e85fd271 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tfestimate.xml">
+<!ENTITY a4254e42cdf2035240aee6d4544b76e3a SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/triang.xml">
+<!ENTITY a6c9a81d58a2b358ded6b94f80760b2b5 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tripuls.xml">
+<!ENTITY af5e4c6c7c133996396ff7de0c36dd625 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/truth.xml">
+<!ENTITY aba8110760ddf4a0fbf012a7c3608e606 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/tukeywin.xml">
+<!ENTITY a7496b1b92de7a66566b9e3bfd3fddb0c SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/udecode.xml">
+<!ENTITY a638184ccf43adf64605a19be01955c66 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/uencode.xml">
+<!ENTITY ada5e37285ee9f7ad6a53a23be542d092 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/unshiftdata.xml">
+<!ENTITY a7d638ea9d63d3f7bf920caf8f8aa78c6 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/unwrap2.xml">
+<!ENTITY ab4fc8107f54ebc140c2b725f69494fea SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/upfirdn.xml">
+<!ENTITY a31ad04e7c07ef80d3a0673a875debe03 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/upsample.xml">
+<!ENTITY ae92770ba5177bfd6973056996d8f753b SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/upsamplefill.xml">
+<!ENTITY a367009b64e2a117a3e1414042bea8ca0 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/validate_filter_bands.xml">
+<!ENTITY ac6690d8dc619a12e5c17da887677dcc7 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/var.xml">
+<!ENTITY a2b64c65e73fa910047555871858255e8 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/vco.xml">
+<!ENTITY ad191102367019a93f3ad228e8bbad834 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/wconv.xml">
+<!ENTITY ab300792d2cd25a82eb99b9321de5faa7 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/welchwin.xml">
+<!ENTITY a315a574029780ef53b97730acc701cb1 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/wind.xml">
+<!ENTITY a56ab679dc0e5aaffd857b42feed78f79 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/wkeep.xml">
+<!ENTITY ac7dff1985f051e5d7373fb7e6812b50d SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/wrev.xml">
+<!ENTITY a4d46e88ae06719e70be9bde77f3a6914 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/xcorr2.xml">
+<!ENTITY aff99da9c754b8a585a805f66d51ddc88 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/yulewalker.xml">
+<!ENTITY add5ca9e84a9fe70ad80966998128b347 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/zerocrossing.xml">
+<!ENTITY a0eec17a1efe40e08f703219b378301a4 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2sos.xml">
+<!ENTITY a44a375cdf679887939d6020157c1c63f SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2ss.xml">
+<!ENTITY ab3f4ba57a6c03736d4f1ca018bd328c9 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/zp2tf.xml">
+<!ENTITY a81eafcc5183bb071da8b17b4884b65a0 SYSTEM "/home/avinash/GITHUB/FOSSEE-Signal-Processing-Toolbox/help/en_US/zplane.xml">
+<!--End Entities-->
+]>
+<book version="5.0-subset Scilab" xml:lang="en_US"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:mml="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info xml:id='fossee_signal_processing_toolbox_manual'>
+    <title>FOSSEE_Signal_Processing_Toolbox</title>
+  </info>
+
+<part xml:id='section_81eb9226da11c75dd517d52f20235689'>
+<title>FOSSEE_Signal_Processing_Toolbox</title>
+&abb1b10096115e1bcf619b219926165d6;
+&a0d382c14ea2f3357071878fe21c98090;
+&a00bc39443c16c7917537f93863c77d50;
+&af4406b567071f4ff4f2995754fa2187b;
+&a00b6683f824c6e3735743bdae664293c;
+&a4bda2c39f90349f29582d12e03ce5885;
+&a80bec787ae804cb0d5414131fdca6b6a;
+&a0554d8f2d5fc45d2ba20076f4f98cb97;
+&afa5a96784e53335b462a7dcfe587936e;
+&a10590951a18ed13119a8d70988c3af9e;
+&a0cd9a79d575bdf872c709539efe87b71;
+&a3d3a8804195d5f92d18102d762bd1862;
+&af835e4977ce38c6b1009f00053442692;
+&a858f0fc57bbed1f11edb69ff04d54f51;
+&ad097c4541b0ec40ffe50f6e7b0051889;
+&acf6eddd873d4cfb0b13105658c7358ef;
+&ac0e0d6ad4632ed5be8b4e511aeb2ce88;
+&ae2dc7b46602be37e4e75a691968067ef;
+&a8fad4dde54e1b248700a7bfe93169ccd;
+&ab1a78226adcbfc157a6204cd598d9be1;
+&adfdcccee02d518b631c11101d630e64c;
+&a3d346e1812f9c811709785ae5eac1b59;
+&a488166551be15f13252e9463333a5043;
+&ae508615c3fca483570dc41705ef3c499;
+&ad7395e82b4f1be991f192528c21272d0;
+&aa6cd12326adaab27487fadb5f7f51c7b;
+&a8562289e8d8d647c6d5feb777fe8e10e;
+&a5485169521fbbd0f82564ea54ba8865a;
+&aefaf2f22850e710c28cfcdfe4d1e86c2;
+&ab3d2aaeb5fb24c24579dfe7a28555969;
+&a60b0ee818755c39b8aee4f261a872b45;
+&aedcd3d17b85aa1d3cd1a051e69b67959;
+&ab9a44443d6a640d9a9e6aa26b8a9f998;
+&a960b6cf31079f8e319e5be49e4e2bd8e;
+&afb2b0f9638001336fbeaa9f6c7b865f5;
+&ad6904690980e1a7591e4ce625902d465;
+&aea713c4371d40a7563f1bf161a7b1515;
+&a6120f4408fa1fd2ba779889deee26293;
+&a48b183271d23ba47b2d433231bed5841;
+&a6bf8920b252bc26871080df673322cc2;
+&a8cf285b6d747266782b11de7a4873bcc;
+&aebffde40b122ddffa3e96a11a62a4bb4;
+&a4c4c009a9bb9967ff46ff4cb67c41e3b;
+&af4df1371b13b509caf0d8b175047f696;
+&ae4e1e2eb62e9458b1cab125dbba97824;
+&a9296567a3f9098ed5e58e7a9b8cfe2ca;
+&adb7dcaeccfbd0a03e040643ed1386bc9;
+&adaa376a57abbd358af9aae78083a028a;
+&a685c028417a33ca0ad8e9f773ee6d382;
+&a3785725b8fa20c1b652d495f3bf6675d;
+&aae1a34bef1efc3f7cf544938ae2bb143;
+&a187ce77b437d10da0b6b49cb6b8ea23f;
+&a6d82f9bba39bee4acfcb0dc92418f930;
+&ad29b1d06f0c91212c82b298f73401e9a;
+&a58d2a1b606f70995ab94f40bb0b363ee;
+&a6e77fe89f7b1f5e95335879d8712119a;
+&a3507cc8c28403c1bac4198b8bc010c07;
+&ae0ebb8d95da815ba441e0dc045bf1bde;
+&af6405f5d72725f6abaee9bc810a9cbe9;
+&a90b75cad0018b6731cdea49de991bb94;
+&a8e2ace6a1d9abb468c07636ba6ecaa8c;
+&a37c3df4affce1a1aae8cbd8dfb5ba5fe;
+&a8099045b22493e3889a6fa6855ec5d5f;
+&aa39e74a284973e56e3e5894f210fd650;
+&a59b96c67ca8198fb03420cb869e22d14;
+&abee96ac93b7676646c218e5771ed2a1a;
+&af62422b5565b4e183fe18c0fc9f451ef;
+&a682e911b68eccb56aa3b92fa5aceaa48;
+&ad1ee867d6c1d132f082cd0c918f010db;
+&a0525c10a95ae3f5b58f99caea526a8d5;
+&afc9f1aab891cd293b3e8013ce44ab599;
+&a6c35399565f2a4fe0b6f7c6dd07d7039;
+&a7e30037599a4cf1601e5b4adbd19c0a1;
+&adb606c2d97d464e7ee8d8d2aa3ab41fe;
+&a0fa0c521c5e24013967810b1ade5306a;
+&a8de4b0ffe5695c4e62f0b51657dbd481;
+&af989466e6ecea0570a2ed90f124c1abd;
+&a757d7163ee2a11078ad2721df4313feb;
+&a7b99b553c1bbe5939270fe358bc39da5;
+&a3706b0020f30030832e6c3f8296a9e07;
+&aad972a74419134a1e5d280fde6cdc914;
+&af3eeffb2f07a97b7932b6046984f94db;
+&a7c2d8591cb05d3cb481fc4bc22bfd4a0;
+&ab28791a0fd417a8955b014b67858447f;
+&a88d8113468977bd91aae600b841c1c99;
+&aa2e94b06c33b7457c79b8634ca0c0679;
+&a2fe0a525337b19f6166c9646319e04af;
+&ae444ea3775b106cbf5778fa9dcb796c2;
+&ae4a97834ee770316371f2dbfb845665c;
+&ad04715e11222b14c9ff2db1a5f7ffbbb;
+&a5b76d9cabac5042f0b7aad790c6665f8;
+&a0fe17887e0e4ff20d78bf6382b75de12;
+&a97b31968da656364c396e199c4a1569f;
+&a24da4ce7e1d059f6a30f71ffa31ec5cc;
+&a73ad2976468122bac113ccdf303e772c;
+&a82eb64a88dab08aca578f8d58741e309;
+&ae4a2a598802f61c8b9abf115b1b019a6;
+&a93621e44331b1e104985af893b6ac132;
+&aaa0bf1f8af764091c7b5a137aa43441b;
+&aa3d430d5fd5063fd9051c986cef148f8;
+&a37205d267843c202b6be4f2b9f023418;
+&a9a1decc24dc92eeb7710d9a741bc1f2b;
+&af0baa8376bd12dc1513da0223a6ec5bf;
+&ac49a0f5c340715d876a5b6cfe98e4548;
+&afe8ac32474038b2091cb30164beed5ba;
+&ad8f4079ef2fd48448f59b57015f44f77;
+&abf80c8fcfe81c288a38a63d6b3809af8;
+&af1508d70136d3cbade265d0cdf8bc78d;
+&adaca6cce335f38965a3f98c416910801;
+&af08d0105d442cd96e513fed88b15dfa2;
+&a93400bcd8e2a96e7080ff615bcdb3f4c;
+&a4f3c91b021f61bded1c0fb26874c495a;
+&ac32f5074e7191246fd277c786080347b;
+&aacfc3ff01771fc51fa37f6c254749500;
+&a5e86c19224d97f4f75cf9429940bc175;
+&a3579c35ba2fd8ac1be734a908a1af879;
+&a93f0fb473f5141df51a786b5d38aa508;
+&af8ffe1b0871c90316ef18612534e536f;
+&ad202666e3cc0ff4b023dfbef8160b3d4;
+&adf03a19e2b85ea26aaf45bc469bd21b8;
+&aa00cfd449bbb75de920cdd65cec9c433;
+&adb16c1083d69cefd62535f28bfe855b9;
+&a302d5d8e14f51aa8cd16302075abbd78;
+&a5d1db37962ba7d3ecf28d50f92b497c9;
+&aedcfdbb461aec298c3f97b6b6dc4ce55;
+&af26f2f980446d3611d15deb526f5944f;
+&a4718d414342da3902ca67ed905fb7438;
+&a95fcfbe479b5ea23754f11b64a99946d;
+&a72922d608f5693ad85d3fd2a87baed7a;
+&a405fc39b90e09f8cca0ed4d1a168588d;
+&a3d7c3f5208e3ae68ced85eca5c83633b;
+&a90155d051b6e87e166c9418dfcea0e20;
+&aee90ed0d141f1af9bea86b89da569e8b;
+&ae423231ac8e9abba2c9d7845b6216e09;
+&a851baa7d17e4580443947f495566cc2a;
+&ab9d6f77a61967e9530a9c1b10ed663f8;
+&a5f3ad7662a83f978a6fa9aa83d7f78d6;
+&aa36872454f3f7e23f67feffb5d0b923a;
+&a78987fbdfc9fdcf50eba7d6227c325b7;
+&a750c5f572e966fffa660267350770b37;
+&abde48fe850d7460c098f2a9abf3429b6;
+&aea5aebe42b6e7a67e9f0da9106a40346;
+&a4bcb97e825a8722b24c63f89d7db941c;
+&ace6274598bff47ed8907cebfaaaa5175;
+&acc4db2b4bc158f9405903fcb84b8ea19;
+&a22fd2eb6f0dabf249204c89ac52865d3;
+&aa4ca2623d4bcea73d8756ec030edcbd2;
+&a8b0912f63de744b4e64ee3af5b40eb59;
+&a4305db01bf825357d199dfe42aff1fe2;
+&a6decf203562459c46fceff5783f0908b;
+&a29cb6b62ef8197b4269d4a2d520f55f3;
+&af91210d527522fd12c386f93eb83b189;
+&a30a22a4a2c9ef9cc270810384a664d08;
+&a8c1a712a6265bfef3e0d9b69926fbd78;
+&a93450aeea19ec9c0bd676c5a18aa7a7d;
+&a33a50281f888b086325cea4860b6a133;
+&a86b9f6880f233db8b828a1a641ffe90b;
+&a2beb4176616658993d1aa650c322c3ba;
+&a22a08720f333296f40d11e6b319cb739;
+&ae9368fba7d115d2ee9f01f68c6b51bea;
+&af7d087b3e52bd875d3a82624d4deabea;
+&ab165886e1dc53c7d6fecf3d36e6a758e;
+&afc106595dded4441598dc9d2e80ca2f5;
+&a2f7b27b4ac56d6f24a499ec2cc3cb71d;
+&ace0c3dcf39226bb7fe02eb5568d23426;
+&af9294c31c32f1dbeb5f1527182bd85ae;
+&ade6f311a3a6914e714a64233ca387619;
+&a11c1cdcd1e4a6430add27a6c5bcb1ab6;
+&a6cf92bfecc42d3e78ec90e3374de5204;
+&a5935be88bd110375a9eba9e6e86c7a94;
+&a9b7c2a03ae8e9c37421764b3cacd0d03;
+&ae7cd9b3e362e6403238b426f5d4e66f2;
+&ac7b508988d9b5ce4caf4a839a33cc288;
+&a406e803fc36848a82dbdb8a4f1c8e73b;
+&ac283ed2370a5fa8befd650c10d0804d3;
+&a829873041e7f64d54515960b15357158;
+&a94ca60ef57753fb3c2947cf69fee6ed9;
+&a90bf4aff8dbbe96a984e318706cc9885;
+&a1902521e6d6a61c81ef27742c368ba42;
+&a6fd101ee5f4b2d7e10143f99f3bdfe0f;
+&a4604cc64fc7ad80569210f9dc10e182c;
+&a81c3f5e91097a90d9f596d5008716528;
+&afabea49cc5b6b20b02ac00e437f09be8;
+&a749e4b72b837bb30780cb640c22fc054;
+&ae9541187f61df536094e5784ea182e9a;
+&a04ce7366f9523e0e7ad633a3a2bee499;
+&aa09e49720edb879ea3ef2db364ee73f1;
+&a4574a37df4babcf83b90a7d7431f826e;
+&a7a61615f5ac08c94a20dc67aafa7b18a;
+&a18558ec2996091b4259a9ee604f5862d;
+&a8b7be179b6b940f7be126dc0813af511;
+&a933cecad3c95cae7b6c55db1e13ebd7a;
+&a3c0924321e0abdc6b33dd2649581bc26;
+&a91f6f607f8ad5464f675540e6b26af1a;
+&a9b1de0b51c74e419d62d09b422c1e9da;
+&a254fd6c4e4ebfbde50a3e5c5df5055a3;
+&acfbb776f587a6d6367ef1bd5c76afebf;
+&a7249cd71d879b4cfc78b1a2f1e58fb5c;
+&ad8482b56f7676e7d00e81da643463d4d;
+&a9846e7ffc5ee3864df73a6c3640820c7;
+&abfd06b21a392083854c13fdc7e269872;
+&ae4b4b76d2cf007e09ccd42e66e0bc732;
+&a9139e78de11d9715f4faa1d1e142b587;
+&ad9e6482c3dd4404d2c0a742af6e1d6df;
+&a54695318c0863086cdbb8bfa43f8f0f0;
+&acce234c3dde18ea80db33a8288f21511;
+&ab9f82565666cfe12ce9f360b323603cd;
+&a449712c10c48beda00b1430b591b821d;
+&ae03e3f51657ed7da318191cd4ee284b7;
+&a33215eb19eac2a422d50737c2b8f35e2;
+&a15b6a60dbc2e26ac768ceb3e1f7ac0c6;
+&a345071423999fb3a8c2ce57383abd524;
+&a93d8d5d34a5930f764319de92af6a360;
+&acdd3248770244d9c9f54f1fa4989a36c;
+&ac161bce0e7b5ac956fb8a82ee7a8c87d;
+&a660e1af49205053511e4f680680a4334;
+&a91a9347406da5364c22ad825f7882f6e;
+&a72e53f556b5d445d216a01e4da030e27;
+&a3f46683b67f934c326a5df14d7261b91;
+&a601402cc73d93b345d26d66003875471;
+&ae825350c97cbbbfde8273c20491ee7a3;
+&ad750f7a9b5a8fdad0471aaecea43a9dd;
+&a2e5d8d7ad4f5cf0d33cac47c058b767b;
+&afebe7df6fd7a9f8a427910e873dbb013;
+&afa563c2ddf14d58184a4ddc791fddfe4;
+&af7a09774d193151bae1e3a07442b3d27;
+&a61b00907db6b76c8774026b44e9ad944;
+&aab25c7986cf5668da323a63eeed8d27e;
+&a2f70a9176e26c592d971805512261b97;
+&ad4769d3c91264b807b021a52413e4a0d;
+&ae463a3ebd4a51ccda0f35b19dfd9aaa6;
+&afc156e8a80d8c021208008452b889360;
+&a34a60f6fc7ef0bd9ba31716d97d4c2fe;
+&a76c15ff51eef13e284daadb5ae971c2d;
+&a5239216519461e5d747735a14283bd5e;
+&ac9642c639e9fea3f96af577569a69282;
+&a17d99920e90074592303bc80e85fd271;
+&a4254e42cdf2035240aee6d4544b76e3a;
+&a6c9a81d58a2b358ded6b94f80760b2b5;
+&af5e4c6c7c133996396ff7de0c36dd625;
+&aba8110760ddf4a0fbf012a7c3608e606;
+&a7496b1b92de7a66566b9e3bfd3fddb0c;
+&a638184ccf43adf64605a19be01955c66;
+&ada5e37285ee9f7ad6a53a23be542d092;
+&a7d638ea9d63d3f7bf920caf8f8aa78c6;
+&ab4fc8107f54ebc140c2b725f69494fea;
+&a31ad04e7c07ef80d3a0673a875debe03;
+&ae92770ba5177bfd6973056996d8f753b;
+&a367009b64e2a117a3e1414042bea8ca0;
+&ac6690d8dc619a12e5c17da887677dcc7;
+&a2b64c65e73fa910047555871858255e8;
+&ad191102367019a93f3ad228e8bbad834;
+&ab300792d2cd25a82eb99b9321de5faa7;
+&a315a574029780ef53b97730acc701cb1;
+&a56ab679dc0e5aaffd857b42feed78f79;
+&ac7dff1985f051e5d7373fb7e6812b50d;
+&a4d46e88ae06719e70be9bde77f3a6914;
+&aff99da9c754b8a585a805f66d51ddc88;
+&add5ca9e84a9fe70ad80966998128b347;
+&a0eec17a1efe40e08f703219b378301a4;
+&a44a375cdf679887939d6020157c1c63f;
+&ab3f4ba57a6c03736d4f1ca018bd328c9;
+&a81eafcc5183bb071da8b17b4884b65a0;
+</part>
+</book>

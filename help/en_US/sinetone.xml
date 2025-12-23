@@ -22,33 +22,53 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   y= sinetone(FREQ)
-   y= sinetone(FREQ, RATE)
-   y= sinetone(FREQ, RATE, SEC)
-   y= sinetone(FREQ, RATE, SEC, AMPL)
+   y= sinetone(freq)
+   y= sinetone(freq, rate)
+   y= sinetone(freq, rate, sec)
+   y= sinetone(freq, rate, sec, ampl)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>FREQ:</term>
-      <listitem><para> frequency of sinetone</para></listitem></varlistentry>
-   <varlistentry><term>RATE:</term>
-      <listitem><para> Sampling rate</para></listitem></varlistentry>
-   <varlistentry><term>SEC:</term>
-      <listitem><para> Length in seconds</para></listitem></varlistentry>
-   <varlistentry><term>AMPL:</term>
-      <listitem><para> Amplitude</para></listitem></varlistentry>
+        <varlistentry>
+            <term>freq:</term>
+            <listitem><para> frequency of sinetone</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rate:</term>
+            <listitem><para> sampling rate</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sec:</term>
+            <listitem><para> length in seconds</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ampl:</term>
+            <listitem><para> amplitude</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Return a sinetone of frequency FREQ with a length of SEC seconds atsampling rate RATE and with amplitude AMPL.The arguments FREQ and AMPL may be vectors of common size.The defaults are RATE = 8000, SEC = 1, and AMPL = 64.
+Return a sinetone of frequency 'freq' with a length of 'sec' seconds at sampling rate 'rate' and with amplitude 'ampl'.
+The arguments freq and ampl may be vectors of common size. The defaults are rate = 8000, sec = 1, and ampl = 64.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sinetone(5, 2, 1, 8)
+
+   ]]></programlisting>
 </refsection>
 </refentry>

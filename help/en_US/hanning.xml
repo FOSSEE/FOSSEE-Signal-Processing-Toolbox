@@ -17,7 +17,64 @@
 
   <refnamediv>
     <refname>hanning</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generate the filter coefficients of a Hanning window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   c = hanning(m)
+   c = hanning(m, "periodic")
+   c = hanning(m, "symmetric")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> the length of the Hanning window. Must be a positive integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> (optional) specifies the type of the window. Can be "periodic" or "symmetric".</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return the filter coefficients of a Hanning window of length m.
+   </para>
+   <para>
+If the optional argument "periodic" is given, the periodic form of the window is returned.
+This is equivalent to the window of length m+1 with the last coefficient removed.
+The optional argument "symmetric" is equivalent to not specifying a second argument.
+   </para>
+   <para>
+For a definition of the Hanning window, see, e.g., A.V. Oppenheim &amp; R. W. Schafer,
+Discrete-Time Signal Processing.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+c = hanning(10)
+c = hanning(10, "periodic")
+c = hanning(10, "symmetric")
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>A.V. Oppenheim &amp; R. W. Schafer, Discrete-Time Signal Processing</para>
+</refsection>
 </refentry>

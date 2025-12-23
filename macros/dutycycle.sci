@@ -34,14 +34,17 @@ function [d, initialcross, finalcross, nextcross, midreference]= dutycycle(x, va
     // finalcross: returns a vector of final cross values of bilevel waveform transitions X
     // nextcross: returns a vector of next cross values of bilevel waveform transitions X
     // midreference: return mid reference value corrosponding to mid percenr reference value.
+    // 
     // Examples
     // x=[1.2, 5, 10, -20, 12]
-    //t=1:length(x)
-    //d=dutycycle(x, t) 
-    // See also
+    // t=1:length(x)
+    // d=dutycycle(x, t) 
+    // 
     // Authors
     // Jitendra Singh
-  // run statelevels and midcross function before running risetime function.  
+    // 
+    
+    // run statelevels and midcross function before running risetime function.  
 
      if or(type(x)==10) then
     error ('Input arguments must be double.')

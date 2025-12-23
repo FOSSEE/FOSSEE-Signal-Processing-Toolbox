@@ -12,26 +12,26 @@
 
 
 function y = downsample (x, n, phase)
-//Function File vary = downsample (x, n)
-//Function File y = downsample (x, n, offset)
-// Downsample the signal, selecting every nth element.  If x
-// is a matrix, downsample every column.
+// Downsample the signal, selecting every nth element.
 //
-// If offset is defined, select every nth element starting at
-// sample offset.
+// Syntax
+//   y = downsample(x, n)
+//   y = downsample(x, n, phase)
 //
+// Parameters
+// x: Vector or matrix. The input signal to be downsampled.
+// n: Scalar. The downsampling factor. Selects every nth element.
+// phase: Scalar (optional). The starting offset for downsampling. Defaults to 0.
 //
-//Test cases:
-//1.downsample([1,2,3,4,5],2)
-//EXPECTED OUTPUT:[1,3,5]
-//2.downsample([1;2;3;4;5],2)
-//EXPECTED OUTPUT:[1;3;5]
-//3.downsample([1,2;3,4;5,6;7,8;9,10],2)
-//EXPECTED OUTPUT:[1,2;5,6;9,10]
-//4.downsample([1,2,3,4,5],2,1)
-//EXPECTED OUTPUT:[2,4]
-//5.downsample([1,2;3,4;5,6;7,8;9,10],2,1)
-//EXPECTED OUTPUT:[3,4;7,8]
+// y: Vector or matrix. The downsampled signal.
+//
+// Description
+// This function downsamples the input signal `x` by selecting every nth element. If `x` is a matrix, the function downsamples every column. 
+// If the optional `phase` parameter is provided, the function starts downsampling at the specified offset.
+//
+// Examples
+// downsample([1, 2, 3, 4, 5], 2)
+//
 
 [nargout,nargin]=argn();
   if (nargin<2 | nargin>3)
@@ -53,3 +53,14 @@ end
   end
 
 endfunction
+//Test cases:
+//1.downsample([1,2,3,4,5],2)
+//EXPECTED OUTPUT:[1,3,5]
+//2.downsample([1;2;3;4;5],2)
+//EXPECTED OUTPUT:[1;3;5]
+//3.downsample([1,2;3,4;5,6;7,8;9,10],2)
+//EXPECTED OUTPUT:[1,2;5,6;9,10]
+//4.downsample([1,2,3,4,5],2,1)
+//EXPECTED OUTPUT:[2,4]
+//5.downsample([1,2;3,4;5,6;7,8;9,10],2,1)
+//EXPECTED OUTPUT:[3,4;7,8]

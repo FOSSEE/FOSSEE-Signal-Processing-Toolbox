@@ -17,50 +17,50 @@
 
   <refnamediv>
     <refname>pei_tseng_notch</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Return coefficients for an IIR notch-filter.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [b, a] = pei_tseng_notch (frequencies, bandwidths)
-   b = pei_tseng_notch (frequencies, bandwidths)
+   [b, a] = pei_tseng_notch(frequencies, bandwidths)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>frequencies:</term>
-      <listitem><para> filter frequencies</para></listitem></varlistentry>
-   <varlistentry><term>bandwidths:</term>
-      <listitem><para> bandwidths to be used with filter</para></listitem></varlistentry>
+        <varlistentry>
+            <term>frequencies:</term>
+            <listitem><para> Real scalar/vector representing filter frequencies.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>bandwidths:</term>
+            <listitem><para> Real scalar/vector representing bandwidths to be used with the filter.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-It return coefficients for an IIR notch-filter with one or more filter frequencies and according bandwidths. The filter is based on a all pass filter that performs phasereversal at filter frequencies.
-This leads to removal of those frequencies of the original and phase-distorted signal.
+The `pei_tseng_notch` function returns coefficients for an IIR notch-filter with one or more filter frequencies
+and corresponding bandwidths. The filter is based on an all-pass filter that performs phase reversal at the
+specified filter frequencies, leading to the removal of those frequencies from the original signal.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-sf = 800; sf2 = sf/2;
-data=[[1;zeros(sf-1,1)],sinetone(49,sf,1,1),sinetone(50,sf,1,1),sinetone(51,sf,1,1)];
-[b,a]=pei_tseng_notch ( 50 / sf2, 2/sf2 )
-b =
+sf = 800; sf2 = sf / 2
+data = [[1; zeros(sf - 1, 1)], sinetone(49, sf, 1, 1), sinetone(50, sf, 1, 1), sinetone(51, sf, 1, 1)]
+[b, a] = pei_tseng_notch(50 / sf2, 2 / sf2)
 
-0.99213  -1.83322   0.99213
-
-a =
-
-1.00000  -1.83322   0.98426
    ]]></programlisting>
 </refsection>
 </refentry>

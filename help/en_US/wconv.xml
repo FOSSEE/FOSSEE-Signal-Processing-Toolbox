@@ -20,4 +20,61 @@
     <refpurpose>Performs 1D or 2D convolution.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = wconv (type, x, f)
+   y = wconv (type, x, f, shape)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>type:</term>
+            <listitem><para> convolution type.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Signal vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> FIR filter coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>shape:</term>
+            <listitem><para> Shape.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+It performs 1D or 2D convolution between the signal x and the filter coefficients f.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1 2 3 4 5]
+b = [7 8 9 10]
+wconv(1,a,b)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="conv2">conv2</link></member>
+   </simplelist>
+</refsection>
 </refentry>

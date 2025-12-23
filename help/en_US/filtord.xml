@@ -17,7 +17,84 @@
 
   <refnamediv>
     <refname>filtord</refname>
-    <refpurpose>and denominator coefficients, a.</refpurpose>
+    <refpurpose>Determine the filter order.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   n = filtord(b, a)
+   n = filtord(sos)
+   n = filtord(d)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The numerator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. The denominator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> Matrix. The second-order sections representation of the filter. A K-by-6 matrix where each row corresponds to the coefficients of a second-order filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> Digital filter object. Represents a digital filter designed using the `designfilt` function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Integer. The order of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the order of a filter based on its representation:
+- `n = filtord(b, a)` computes the filter order for a causal rational system function specified by the numerator coefficients `b` and denominator coefficients `a`.
+- `n = filtord(sos)` computes the filter order for a filter specified by the second-order sections matrix `sos`. Each row of `sos` corresponds to the coefficients of a second-order filter.
+- `n = filtord(d)` computes the filter order for a digital filter object `d`. Use the `designfilt` function to generate `d`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the filter order for a transfer function:
+b = [1, 2, 3]
+a = [1, 0.5, 0.25]
+n = filtord(b, a)
+
+// Compute the filter order for a second-order sections matrix:
+sos = [1, 0.5, 0.25, 1, -0.5, 0.25]
+n = filtord(sos)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="convol">convol</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   </simplelist>
+</refsection>
 </refentry>

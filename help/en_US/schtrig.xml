@@ -17,45 +17,52 @@
 
   <refnamediv>
     <refname>schtrig</refname>
-    <refpurpose>This function implements a multisignal Schmitt triggers with lev levels supplied as input.</refpurpose>
+    <refpurpose>This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   v = schtrig (x, lev)
-   v = schtrig (x, lev, rs)
+   x = schtrig(x, lvl)
+   lvl = schtrig(x, lvl, rst)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> vector or matrix of real numbers</para></listitem></varlistentry>
-   <varlistentry><term>lev:</term>
-      <listitem><para> real number</para></listitem></varlistentry>
-   <varlistentry><term>rs:</term>
-      <listitem><para> default value 1</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector or matrix of real numbers</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lvl:</term>
+            <listitem><para> Real number</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rst:</term>
+            <listitem><para> Boolean, default value is 'true'</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function implements a multisignal Schmitt triggers with lev levels supplied as input.
+This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
 The argument 1 is a matrix (or a vector) and this trigger works along its first dimension.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-schtrig([0.2,-3,5],-4)
-ans  =
-0.    0.    1.
+schtrig([0.2,-3,5], -4)
+
    ]]></programlisting>
 </refsection>
 </refentry>

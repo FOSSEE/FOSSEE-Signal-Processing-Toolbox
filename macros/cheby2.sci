@@ -10,40 +10,36 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 
-function [a, b, c, d] = cheby2 (n, rs, w, varargin)
-    //Chebyshev type II filter design with rs dB of stopband attenuation.
-    //Calling Sequence
-    //[b, a] = cheby2 (n, rs, ws)
-    //[b, a] = cheby2 (n, rs, ws, "high")
-    //[b, a] = cheby2 (n, rs, [wl, wh])
-    //[b, a] = cheby2 (n, rs, [wl, wh], "stop")
-    //[z, p, g] = cheby2 (…)
-    //[…] = cheby2 (…, "s")
-    //Parameters
-    //n: positive integer value (order of filter)
-    //rs: non negative scalar value (stopband attenuation in dB)
-    //ws: positive real value,
-    //    1).Normalised digital stopband edge(s) for digital filter, in the range [0, 1] {dimensionless}
-    //    2).Analog stopband edge(s) for analog filter, in the range [0, Inf] {rad/sec}
-    //Description
-    //This function generates a Chebyshev type II filter with rs dB of stopband attenuation.
-    //The fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
-    //[b, a] = cheby2(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
-    //[b, a] = cheby2(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
-    //[z, p, g] = cheby2(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
-    //[...] = cheby2(...,’s’) returns a Laplace space filter, w can be larger than 1.
-    //Examples
-    //[z, p, g]=cheby2(2,5,0.7,"high")
-    //Output:
-    // g  =
-    //
-    //    0.4752770
-    // p  =
-    //
-    //  - 0.3938806 + 0.5313815i  - 0.3938806 - 0.5313815i
-    // z  =
-    //
-    //  - 0.3164543 - 0.9486078i  - 0.3164543 + 0.9486078i
+function [a, b, c, d] = cheby2(n, rs, w, varargin)
+// Design a Chebyshev type II filter with specified stopband attenuation.
+//
+// Syntax
+//   [b, a] = cheby2(n, rs, ws)
+//   [b, a] = cheby2(n, rs, ws, "high")
+//   [b, a] = cheby2(n, rs, [wl, wh])
+//   [b, a] = cheby2(n, rs, [wl, wh], "stop")
+//   [z, p, g] = cheby2(...)
+//   [...] = cheby2(..., "s")
+//
+// Parameters
+// n: Positive integer. Order of the filter.
+// rs: Non-negative scalar. Stopband attenuation in dB.
+// ws: Positive real value. Normalized digital or analog stopband edge(s).
+// z: Zeros of the filter.
+// p: Poles of the filter.
+// g: Gain of the filter.
+//
+// Description
+//This function generates a Chebyshev type II filter with rs dB of stopband attenuation.
+//The fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
+//[b, a] = cheby2(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
+//[b, a] = cheby2(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
+//[z, p, g] = cheby2(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
+//[...] = cheby2(...,’s’) returns a Laplace space filter, w can be larger than 1.
+//
+// Examples
+// [z, p, g] = cheby2(2, 5, 0.7, "high")
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

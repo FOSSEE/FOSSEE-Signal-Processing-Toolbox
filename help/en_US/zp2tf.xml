@@ -20,4 +20,58 @@
     <refpurpose>Converts zeros / poles to a transfer function.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [num, den] = zp2tf (z, p, k)
+   num = zp2tf (z, p, k)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Zeros</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> Leading coefficient (Gain)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Num:</term>
+            <listitem><para> Numerator coefficients of the transfer function</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>den:</term>
+            <listitem><para> Denomenator coefficients of the transfer function</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+It converts zeros / poles representation to  transfer function representation.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+z = [1 2 3]
+p = [4 5 6]
+k = 5
+[num, den] = zp2tf (z, p, k)
+   ]]></programlisting>
+</refsection>
 </refentry>

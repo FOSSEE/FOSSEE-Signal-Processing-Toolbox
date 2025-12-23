@@ -13,22 +13,20 @@
 
 function [psi,x]=mexihat(lb,ub,n)
 // Generates Mexican Hat wavelet
-// Calling Sequence
+//
+//  Syntax
 //	[psi,x]=mexihat(lb,ub,n)
-// Parameters
+//
+//  Parameters
 //	lb: Real or complex valued vector or matrix
 //	ub: Real or complex valued vector or matrix
 //	n: Real strictly positive scalar number
-// Description
-//	This is an Octave function which is built in scilab.
+//
+//  Description
 //	This function returns values of the Mexican hat wavelet in the specified interval at all the sample points.
+// 
 // Examples
-// 1.	[a,b]= mexihat(1,2,3)
-//	a =   [0.00000  -0.35197  -0.35214]
-//	b =   [1.0000   1.5000   2.0000]
-// 2.	[a,b]= mexihat([1 2 3],1,1)
-//	a = [0;0;0]
-//	b = [1;1;1]
+// 	[a,b]= mexihat(1,10,1)
 
 funcprot(0);
 
@@ -42,14 +40,31 @@ funcprot(0);
     error("n must be strictly positive");
   end
 
-  if(isvector(lb))
+  if(__isvector(lb))
       for(i=1:length(lb))
-  x(i) = linspace(lb(i),ub,n);
-  psi(i) = (1-x(i).^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x(i).^2/2)  ;
-  end
-
-else
+        x(i) = linspace(lb(i),ub,n);
+        psi(i) = (1-x(i).^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x(i).^2/2)  ;
+      end
+  else
     x = linspace(lb,ub,n);
-  psi = (1-x.^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x.^2/2)  ;
-end
+    psi = (1-x.^2).*(2/(sqrt(3)*%pi^0.25)) .* exp(-x.^2/2)  ;
+  end
+endfunction
+
+/* __isvector
+returns T if input is a vector
+
+Scilab has a isvector function which has some bug in Scilab 2025 version
+So this function is used in its place
+
+*/
+function ret = __isvector(x)
+  if length(size(x)) > 2 then
+    ret = %f;
+  end
+  if size(x,1)==1 && size(x,2)==1 then
+    ret = %f;
+  else
+    ret = %t;
+  end
 endfunction

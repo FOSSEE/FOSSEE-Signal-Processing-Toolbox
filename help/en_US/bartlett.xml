@@ -17,40 +17,54 @@
 
   <refnamediv>
     <refname>bartlett</refname>
-    <refpurpose>Generates a Bartlett window</refpurpose>
+    <refpurpose>Generate a Bartlett window.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   w=bartlett(L)
+   w = bartlett(L)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>L:</term>
+            <listitem><para> Positive integer. Length of the Bartlett window.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-w=bartlett(L) returns an L-point Bartlett window in a column vector w
-Example
-w=bartlett(4)
-w  =
+This function generates an L-point Bartlett window and returns it as a column vector `w`.
    </para>
    <para>
-0.
-0.6666667
-0.6666667
-0.
-Author
-Ankur Mallick
-References
-[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = bartlett(4)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.</para>
 </refsection>
 </refentry>

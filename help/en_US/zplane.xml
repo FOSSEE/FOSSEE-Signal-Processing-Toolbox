@@ -17,7 +17,47 @@
 
   <refnamediv>
     <refname>zplane</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Pole-Zero plot for Discrete time systems</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   zplane(z)
+   zpalne(z,p)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> vector containing numerator coefficients</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> vector containing denumerator coefficients</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function gives pole zero plote of discrete time systems
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+zplane([1 2 3],[4 5 6])
+//Output is pole zero plot of respective discrete time system.
+   ]]></programlisting>
+</refsection>
 </refentry>

@@ -1,18 +1,20 @@
 function [y]=sawtooth (t,width)
 // Generates a Sawtooth wave
-// Calling Sequence
+// 
+// Syntax
 //	[y]=sawtooth(t)
 //	[y]=sawtooth(t,width)
-// Parameters
+//
+//  Parameters
 //	t: Real valued vector or matrix
 //	width: Real number between 0 and 1
+// 
 // Description
 //	This function returns a sawtooth wave with period 2*pi with +1/-1 as the maximum and minimum values for elements of t. If width is specified, it determines where the maximum is in the interval [0,2*pi].
+// 
 // Examples
-// 1.	sawtooth([1 2 3 4 5],0.5)
-//	ans =  [-0.36338   0.27324   0.90986   0.45352  -0.18310]
-// 2.	sawtooth([1 2; 4 5])
-//	ans =  [-0.68169  -0.36338;   0.27324   0.59155]
+// 	sawtooth([1 2 3 4 5],0.5)
+// 
 
 if (argn(2)<1 | argn(2)>2) then
 	error ("Wrong number of input arguments.")

@@ -17,7 +17,90 @@
 
   <refnamediv>
     <refname>dutycycle</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate duty cycle of bilevel waveform pulses.</refpurpose>
   </refnamediv>
 
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tau:</term>
+            <listitem><para> define real scalar input pulse width TAU (in seconds).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>prf:</term>
+            <listitem><para> pulse repetition frequency PRF (in Hz). The product of TAU and PRF must be less than or equal to 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Polarity:</term>
+            <listitem><para> specify the polarity of the pulse as either 'positive' or 'negative', where the default value is 'positive'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>MidPercentReferenceLevel:</term>
+            <listitem><para> specify the mid percent reference leves as a percentage, default value of N is 50.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tolerance:</term>
+            <listitem><para> define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>StateLevels:</term>
+            <listitem><para>  define the lower and upper state levels as two element real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fig:</term>
+            <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> returns the ratio of the pulse width to the pulse period for each positive-polarity pulse</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>initialcross:</term>
+            <listitem><para> returns a vector of initial cross values of bilevel waveform transitions X</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>finalcross:</term>
+            <listitem><para> returns a vector of final cross values of bilevel waveform transitions X</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nextcross:</term>
+            <listitem><para> returns a vector of next cross values of bilevel waveform transitions X</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>midreference:</term>
+            <listitem><para> return mid reference value corrosponding to mid percenr reference value.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=[1.2, 5, 10, -20, 12]
+t=1:length(x)
+d=dutycycle(x, t)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

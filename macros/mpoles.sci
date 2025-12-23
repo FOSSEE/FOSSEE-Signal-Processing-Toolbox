@@ -10,6 +10,48 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [multp, idxp] = mpoles (p, tol, reorder)
+// Identify unique poles in p and their associated multiplicity.
+//
+// Syntax
+//   [multp, idxp] = mpoles(p)
+//   [multp, idxp] = mpoles(p, tol)
+//   [multp, idxp] = mpoles(p, tol, reorder)
+//
+// Parameters
+// p: Vector of poles (single or double floating-point values).
+// tol: (optional) Tolerance for identifying multiple poles. If the relative difference of two poles is less than `tol`, they are considered multiples. Default is 0.001.
+// reorder: (optional) Logical or numeric scalar. If `%t` (default), poles are sorted from largest to smallest magnitude. If `%f`, poles are not sorted.
+//
+// Outputs
+// multp: Vector specifying the multiplicity of the poles. `multp(n)` refers to the multiplicity of the Nth pole `p(idxp(n))`.
+// idxp: Indices of the poles in the original vector `p`, ordered by magnitude (if `reorder` is `%t`).
+//
+// Description
+// The `mpoles` function identifies unique poles in the input vector `p` and determines their multiplicity. Poles are considered multiples if their relative difference is less than the specified tolerance `tol`. By default, the poles are sorted in descending order of magnitude. If `reorder` is set to `%f`, the poles are not sorted.
+// Notes
+//
+//  - If `tol` is not provided, the default value of 0.001 is used.
+// - If `reorder` is not provided, the poles are sorted by default.
+//
+// Examples
+// // Identify unique poles and their multiplicity:
+//    p = [2, 3, 1, 1, 2]
+//    [m, n] = mpoles(p)
+//
+// // Use a custom tolerance to identify multiples:
+//    p = [1, 1.1, 1.3]
+//    [m, n] = mpoles(p, 0.1 / 1.1)
+//
+//    [m, n] = mpoles(p, 0.1 / 1.1 + %eps)
+//
+// // Disable sorting of poles:
+//    p = [2, 3, 1, 1, 2]
+//    [m, n] = mpoles(p, 0.001, %f)
+//
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
+
 
   if (nargin < 1)
     error("mpoles: Invalid number of input arguments");
@@ -27,7 +69,7 @@ function [multp, idxp] = mpoles (p, tol, reorder)
 
   if (nargin < 3 || isempty (reorder))
     reorder = %t;
-  elseif (~(isscalar (reorder) && isreal (reorder)))
+  elseif (~(isscalar (reorder) && isreal (double(reorder))))
     error ("mpoles: REORDER must be a numeric or logical scalar");
   end
 

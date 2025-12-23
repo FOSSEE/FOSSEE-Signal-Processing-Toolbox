@@ -17,7 +17,51 @@
 
   <refnamediv>
     <refname>circshift</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Perform a circular shift on an array.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   R = circshift(M, d)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>M:</term>
+            <listitem><para> Array. Input vector or matrix of any data type.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> Vector of integers. Specifies the number of positions to shift along each dimension.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Array. Resulting array after the circular shift.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function circularly shifts the elements of the input array `M` by the specified positions `d` along each dimension.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+M = [1, 2, 3, 4]
+circshift(M, [0, 1])
+
+   ]]></programlisting>
+</refsection>
 </refentry>

@@ -17,31 +17,42 @@
 
   <refnamediv>
     <refname>hurst</refname>
-    <refpurpose>Estimate the Hurst parameter of sample X via the rescaled r statistic.</refpurpose>
+    <refpurpose>Estimate the Hurst parameter of sample X via the rescaled range statistic.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   hurst(X)
-   variable=hurst(X)
+   hurst(x)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X:</term>
-      <listitem><para> X is a matrix, the parameter of sample X via the rescaled r statistic</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> x is a vector or matrix</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function estimates the Hurst parameter of sample X via the rescaled rstatistic.
+This function estimates the Hurst parameter of sample x using the rescaled range statistic.
+If x is a matrix, the parameter is estimated for every column.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+hurst([10, 15, 3])
+   ]]></programlisting>
 </refsection>
 </refentry>

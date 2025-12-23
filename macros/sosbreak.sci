@@ -1,26 +1,32 @@
 
 function [zerosort,g]=sosbreak(p)
-//function for breaking a polynomial in second order polynomials and an extra linear term (g)
-//where
-//g:-the interger multiple obtained after breaking the polynomial
-//zerosort:-the array of the broken polynomials
-//p:-the input polynomial
-//EXAMPLE:
-//v=[1+4*%s+6*%s^2+4*%s^3+%s^4];
-// [zerosort,g]=sosbreak(v);
-//OUTPUT:
-// g  =1.
- //zerosort  =
- //   zerosort(1)
-//                2
-// 1 + 2s + s
-// zerosort(2)
-//                              2
-//1.0000000 + 2s + s
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Function for breaking a polynomial into second-order polynomials and an extra linear term.
+//
+// Syntax
+//   [zerosort, g] = sosbreak(p)
+//
+// Parameters
+// p: Input polynomial (vector or symbolic polynomial).
+//
+// Outputs
+// zerosort: List of broken polynomials. Contains second-order polynomials and possibly one linear polynomial.
+// g: Integer multiple obtained after breaking the polynomial.
+//
+// Description
+// The `sosbreak` function factors the input polynomial `p` into real-coefficient polynomials. It segregates the factors 
+// into second-order polynomials and linear polynomials. If the polynomial degree is odd, the last linear polynomial is left as is. 
+// For even-degree polynomials, linear factors are combined into second-order polynomials.
+//
+// Examples
+// // Break a polynomial into second-order polynomials and a linear term:
+//    v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4]
+//    [zerosort, g] = sosbreak(v)
+//
+// Authors
+// Parthasarathi Panda
+// parthasarathipanda314@gmail.com
 
-//NOTE :To verify the output use coeff(zerosort(1)) and coeff(zerosort(2))
+
 
     [zero,g]=factors(p);//factorising into real coefficient polynomials
     degn=degree(p);

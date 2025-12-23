@@ -1,21 +1,29 @@
 function M = fht(D, N, DIM)
-//      Description
-//         This function calculates the Fast Hartley transform of real input D.
-//         If D is a matrix, the Hartley transform is calculated along the columns by default.
-//         If N is specified, the first N elements along the specified dimension are used for the transform.
-//         If DIM is specified, the transform is calculated along the specified dimension.
-//    Calling Sequence
-//         M = fht (D)
-//         M = fht (D, N)
-//         M = fht (D, N, DIM)
-//    Parameters 
-//         D: Input data (real matrix or vector).
-//         N: Number of elements of D to be used for the transform (optional).
-//         DIM: Dimension along which the transform is to be computed (optional).
-//    Examples
-//         fht(1:4)
-//         ans =
-//        10   -4   -2   0  
+// Fast Hartley transform of real input D
+//
+// Syntax
+//   M = fht(D)
+//   M = fht(D, N)
+//   M = fht(D, N, DIM)
+//
+// Parameters
+// D: Input data (real matrix or vector).
+// N: Number of elements of D to be used for the transform (optional).
+// DIM: Dimension along which the transform is to be computed (optional).
+//
+// Description
+// This function computes the Fast Hartley Transform (FHT) of the input signal `D`.
+// If D is a matrix, the Hartley transform is calculated along the columns by default.
+// If N is specified, the first N elements along the specified dimension are used for the transform.
+// If DIM is specified, the transform is calculated along the specified dimension.
+//
+// Examples
+// M = fht(1:4)
+//
+// See also
+//  fft
+//
+
 
     funcprot(0);
     rhs = argn(2);

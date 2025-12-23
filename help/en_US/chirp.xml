@@ -17,7 +17,76 @@
 
   <refnamediv>
     <refname>chirp</refname>
-    <refpurpose>This function evaluates a chirp signal at time t.</refpurpose>
+    <refpurpose>Generate a chirp signal.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = chirp(t)
+   y = chirp(t, f0)
+   y = chirp(t, f0, t1)
+   y = chirp(t, f0, t1, f1)
+   y = chirp(t, f0, t1, f1, form)
+   y = chirp(t, f0, t1, f1, form, phase)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Vector. Times to evaluate the chirp signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f0:</term>
+            <listitem><para> Real scalar. Frequency at t=0. Default is 0 Hz.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t1:</term>
+            <listitem><para> Real scalar. Intermediate time. Default is 1 second.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f1:</term>
+            <listitem><para> Real scalar. Frequency at t1. Default is 100 Hz.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>form:</term>
+            <listitem><para> String. Form of the chirp signal. Can be "linear", "quadratic", or "logarithmic". Default is "linear".</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>phase:</term>
+            <listitem><para> Real scalar. Phase shift at t=0 in degrees. Default is 0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector. Chirp signal values corresponding to `t`.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a chirp signal, which is a frequency-swept cosine wave. The signal can be linear, quadratic, or logarithmic based on the `form` parameter.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+t = [4, 3, 2, 1]
+f0 = 4
+t1 = 5
+f1 = 0.9
+form = "quadratic"
+y = chirp(t, f0, t1, f1, form)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

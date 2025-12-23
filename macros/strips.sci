@@ -1,34 +1,39 @@
 function strips(x,sd,Fs,scale)
-//Plots vector or matrix in strips
-//Calling Sequence
-//strips(x);
-//strips(x,sd);
-//strips(x,sd,fs);
-//strips(x,sd,fs,scale);
-//Parameters
-//x
-//A vector or a matrix
-//sd
-//Strip duration
-//fs
-//Sampling frequency
-//scale
-//Scaling parameter for vertical axis
-//Description
-//strips(x)
-//Plots a vector x in horizontal strips of length 250
-//If x is a matrix, it plots each column of x on a separate strip with the leftmost
-//column as the topmost strip
-//strips(x,sd)
-//Plots x in strips of length sd samples each
-//strips(x,sd,fs)
-//Plots x in strips of duration sd seconds with sampling frequency fs (in Hz)
-//strips(x,sd,fs,scale)
-//Plots x in strips as above, and scales the vertical axis by scale
-//If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
-//If x has complex entries, only the real part of those entries are considered
-//Author
-//Ankur Mallick
+// Plots vector or matrix in strips
+//
+// Syntax
+// strips(x);
+// strips(x,sd);
+// strips(x,sd,fs);
+// strips(x,sd,fs,scale);
+//
+// Parameters
+// x : A vector or a matrix
+// sd : Strip duration
+// fs : Sampling frequency
+// scale : Scaling parameter for vertical axis
+//
+// Description
+// strips(x)
+// Plots a vector x in horizontal strips of length 250
+// If x is a matrix, it plots each column of x on a separate strip with the leftmost
+// column as the topmost strip
+// strips(x,sd)
+// Plots x in strips of length sd samples each
+// strips(x,sd,fs)
+// Plots x in strips of duration sd seconds with sampling frequency fs (in Hz)
+// strips(x,sd,fs,scale)
+// Plots x in strips as above, and scales the vertical axis by scale
+// If x is a matrix, strips uses a column vector of all the elements of x for the strip plot
+// If x has complex entries, only the real part of those entries are considered
+//
+// Examples
+// x_vector = sin(2 * %pi * (0:0.01:10)); 
+// strips(x_vector, 2, 100, 1); 
+// title("Strip plot of a vector");
+// 
+// Authors
+// Ankur Mallick
 
     funcprot(0);
     if(argn(2)<1|argn(2)>4)

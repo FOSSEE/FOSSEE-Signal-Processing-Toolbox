@@ -22,27 +22,33 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    y = rectwin (m)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> positive integer value</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> output variable, vector of real numbers</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function returns the filter coefficients of a rectangular window of length m supplied as input, to the output vector y.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -50,10 +56,7 @@ This function returns the filter coefficients of a rectangular window of length 
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 rectwin(3)
-ans  =
-1.
-1.
-1.
+
    ]]></programlisting>
 </refsection>
 </refentry>

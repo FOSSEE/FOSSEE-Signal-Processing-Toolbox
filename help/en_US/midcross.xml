@@ -17,7 +17,102 @@
 
   <refnamediv>
     <refname>midcross</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate midcross values of real vector X.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   midcrossvalue=midcross(x)
+   midcrossvalue=midcross(x, Fs)
+   midcrossvalue=midcross(x, t)
+   midcrossvalue=midcross(x, t, 'MidPercentReferenceLevels', N )
+   midcrossvalue=midcross(x, t, 'Tolerance', M)
+   midcrossvalue=midcross(x, t,'StateLevels', O)
+   [midcrossvalue midreference]=midcross(x)
+   [midcrossvalue midreference]=midcross(x, Fs)
+   [midcrossvalue midreference]=midcross(x, t)
+   [midcrossvalue midreference]= midcross(x, t, 'MidPercentReferenceLevel', N )
+   [midcrossvalue midreference]= midcross(x, t, 'Tolerance', M)
+   [midcrossvalue midreference]= midcross(x, t,'StateLevels', O)
+   [midcrossvalue midreference]= midcross(x, t,'StateLevels', O, 'fig', on or off)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>MidPercentReferenceLevels:</term>
+            <listitem><para> specify the midpercentreferenceleves as a percentage, default value of N is 50.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tolerance:</term>
+            <listitem><para> define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>StateLevels:</term>
+            <listitem><para>  define the lower and upper state levels as two element real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fig:</term>
+            <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>midcrossvalues:</term>
+            <listitem><para> return the midcross values</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>midreference:</term>
+            <listitem><para> return the midrefence values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>levels:</term>
+            <listitem><para> return statelevels values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> return the instant sample time.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tolerance:</term>
+            <listitem><para> retunr the tolerance value</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tinput:</term>
+            <listitem><para> return t value, which given as input parameter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=[1.2, 5, 10, -20, 12]
+t=1:length(x)
+midcrossvalue=midcross(x, t)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

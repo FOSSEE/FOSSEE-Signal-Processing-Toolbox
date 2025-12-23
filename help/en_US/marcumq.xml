@@ -17,51 +17,78 @@
 
   <refnamediv>
     <refname>marcumq</refname>
-    <refpurpose>This function computes the generalized Marcum Q function of order m with noncentrality parameter a and argument b.</refpurpose>
+    <refpurpose>Compute the generalized Marcum Q function.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   q = marcumq (a, b)
-   q = marcumq (a, b, m)
-   q = marcumq (a, b, m, tol)
+   q = marcumq(a, b)
+   q = marcumq(a, b, m)
+   q = marcumq(a, b, m, tol)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para> </para></listitem></varlistentry>
-   <varlistentry><term>b:</term>
-      <listitem><para> </para></listitem></varlistentry>
-   <varlistentry><term>m:</term>
-      <listitem><para> default value 1</para></listitem></varlistentry>
-   <varlistentry><term>tol:</term>
-      <listitem><para> default value eps</para></listitem></varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Noncentrality parameter (nonnegative scalar or array).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Argument of Marcum Q-function (nonnegative scalar or array).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> (optional) Order of the generalized Marcum Q-function (positive integer or array). Default is 1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Relative tolerance for computation. Default is `eps`.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function computes the generalized Marcum Q function of order m with noncentrality parameter a and argument b.
-The third argument m is the order, which by default is 1.
-The fourth argument tol is the tolerance, which by default is eps.
-If input arguments are vectors which correspond in size and degree, the output is a table of values.
-This function calculates Marcum’s Q function using the infinite Bessel series, which is truncated when the relative error is less than the specified tolerance.
+The `marcumq` function computes the generalized Marcum Q function of order `m` with noncentrality parameter `a`
+and argument `b`. If the order `m` is omitted, it defaults to 1. An optional relative tolerance `tol` may be
+included, and the default value is `eps`.
+   </para>
+   <para>
+This function computes Marcum’s Q function using the infinite Bessel series, which is truncated when the
+relative error is less than the specified tolerance. The accuracy is limited by that of the Bessel functions,
+so reducing the tolerance is probably not useful.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>- Marcum, "Tables of Q Functions", Rand Corporation.</para>
+   <para>- R.T. Short, "Computation of Noncentral Chi-squared and Rice Random Variables".</para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-marcumq([1,2,3],4)
-ans  =
-0.0028895    0.0341348    0.1965122
+a = [0.5, 1.0, 1.5]
+b = [1.0, 2.0, 3.0]
+q = marcumq(a, b)
+
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abinash Singh</member>
+   </simplelist>
 </refsection>
 </refentry>

@@ -1,26 +1,22 @@
 function w = kaiser (m, varargin)
-//This function returns the filter coefficients of a Kaiser window.
-//Calling Sequence
-//w = kaiser (m)
-//w = kaiser (m, beta)
-//Parameters
-//m: positive integer value
-//beta: real scalar value
-//w: output variable, vector of real numbers
-//Description
-//This is an Octave function.
-//This function returns the filter coefficients of a Kaiser window of length m supplied as input, to the output vector w.
-//The second parameter gives the stop band attenuation of the Fourier transform of the window on derivation.
-//Examples
-//kaiser(6,0.2)
-// ans  =
+// Compute the filter coefficients of a Kaiser window.
 //
-//    0.9900745
-//    0.9964211
-//    0.9996020
-//    0.9996020
-//    0.9964211
-//    0.9900745
+// Syntax
+//   w = kaiser(m)
+//   w = kaiser(m, beta)
+//
+// Parameters
+// m: Positive integer value representing the length of the Kaiser window.
+// beta: (optional) Real scalar value representing the shape parameter of the Kaiser window. Default is 0.5.
+// w: Output variable, a vector of real numbers representing the filter coefficients.
+//
+// Description
+// The `kaiser` function computes the filter coefficients of a Kaiser window of length `m`.
+// The second parameter `beta` determines the stopband attenuation of the Fourier transform of the window.
+//
+// Examples
+// kaiser(6, 0.2)
+// 
 
 funcprot(0);
     rhs = argn(2)

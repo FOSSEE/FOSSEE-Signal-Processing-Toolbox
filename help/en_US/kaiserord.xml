@@ -22,25 +22,34 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [n, Wn, beta, ftype] = kaiserord (f, m, dev, fs)
    […] = kaiserord (f, m, dev, fs)
    […] = kaiserord (f, m, dev)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>f:</term>
-      <listitem><para> Pairs of frequency band edges.</para></listitem></varlistentry>
-   <varlistentry><term>m:</term>
-      <listitem><para> Magnitude response for each band.</para></listitem></varlistentry>
-   <varlistentry><term>dev:</term>
-      <listitem><para> Deviation of the filter.</para></listitem></varlistentry>
-   <varlistentry><term>fs:</term>
-      <listitem><para> Sampling rate.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Pairs of frequency band edges.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Magnitude response for each band.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dev:</term>
+            <listitem><para> Deviation of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> Sampling rate.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -67,6 +76,8 @@ beta = | 0.5842(A-21)^0.4 + 0.07886(A-21)     21 &lt;= A &lt;= 50
    </para>
    <para>
 n = (A-8)/(2.285 dw)
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -74,10 +85,7 @@ n = (A-8)/(2.285 dw)
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 [n, w, beta, ftype] = kaiserord ([1000, 1200], [1, 0], [0.05, 0.05], 11025)
-n =  70
-w =  0.199
-beta =  1.5099
-ftype = low
+
    ]]></programlisting>
 </refsection>
 </refentry>

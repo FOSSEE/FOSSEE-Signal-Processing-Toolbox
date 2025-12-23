@@ -17,30 +17,39 @@
 
   <refnamediv>
     <refname>ifftn</refname>
-    <refpurpose>Compute the inverse N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.</refpurpose>
+    <refpurpose>Compute the inverse N-dimensional discrete Fourier transform.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    Y = ifftn(A)
-   Y = ifftn(A, size)
+   Y = ifftn(A, SIZE)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>A:</term>
-      <listitem><para> Matrix</para></listitem></varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Input matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>SIZE:</term>
+            <listitem><para> (optional) Dimensions of the matrix to be used. If an element of SIZE is smaller than the corresponding dimension of A, the dimension of A is truncated. If larger, A is resized and padded with zeros.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Compute the inverse N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm. The optional vector argument SIZE may be used specify the dimensions of the array to be used.  If an element of SIZE is smaller than the corresponding dimension of A, then the dimension of A is truncated prior to performing the inverse FFT. Otherwise, if an element of SIZE is larger than the corresponding dimension then A is resized and padded with zeros.
+Compute the inverse N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -48,8 +57,7 @@ Compute the inverse N-dimensional discrete Fourier transform of A using a Fast F
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 ifftn([2,3,4])
-ans =
-3.  - 0.5 - 0.2886751i  - 0.5 + 0.2886751i
+
    ]]></programlisting>
 </refsection>
 </refentry>

@@ -17,51 +17,78 @@
 
   <refnamediv>
     <refname>cpsd</refname>
-    <refpurpose>This function estimates cross power spectrum of data x and y by the Welch (1967) periodogram/FFT method.</refpurpose>
+    <refpurpose>Estimate the cross power spectrum of data using the Welch method.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [PXX, FREQ] = cpsd(X, Y)
-   [...] = cpsd(X, Y, WINDOW)
-   [...] = cpsd(X, Y, WINDOW, OVERLAP)
-   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT)
-   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT, FS)
-   [...] = cpsd(X, Y, WINDOW, OVERLAP, NFFT, FS, RANGE)
+   [Pxx, freq] = cpsd(x, y)
+   [...] = cpsd(x, y, window)
+   [...] = cpsd(x, y, window, overlap)
+   [...] = cpsd(x, y, window, overlap, Nfft)
+   [...] = cpsd(x, y, window, overlap, Nfft, Fs)
+   [...] = cpsd(x, y, window, overlap, Nfft, Fs, range)
    cpsd(...)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X, Y:</term>
-      <listitem><para> Matrix or integer</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x, y:</term>
+            <listitem><para> Vectors. Input signals for cross power spectrum estimation.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> Vector. Windowing function applied to each segment.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>overlap:</term>
+            <listitem><para> Integer. Number of overlapping samples between segments.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Nfft:</term>
+            <listitem><para> Integer. Number of FFT points.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Real scalar. Sampling frequency.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> String. Frequency range for the analysis.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Pxx:</term>
+            <listitem><para> Vector. Cross power spectrum estimate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freq:</term>
+            <listitem><para> Vector. Frequency values corresponding to the cross power spectrum estimate.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Estimate cross power spectrum of data X and Y by the Welch (1967) periodogram/FFT method.
+This function estimates the cross power spectrum of data `x` and `y` using the Welch periodogram/FFT method. It is compatible with Matlab's `cpsd` function.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-[a, b] = cpsd([1,2,3],[4,5,6])
-ans =
-b  =
-0.
-0.25
-0.5
-a  =
-2.7804939
-4.4785583 + 1.0743784i
-0.7729851
+t = linspace(0,10,1000);
+x = sin(t) ;
+y = cos(t);
+cpsd(x,y)
    ]]></programlisting>
 </refsection>
 </refentry>

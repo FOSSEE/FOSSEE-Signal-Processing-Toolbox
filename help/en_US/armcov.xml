@@ -17,7 +17,56 @@
 
   <refnamediv>
     <refname>armcov</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Autoregressive all-pole model parameters — modified covariance method.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   a = armcov(x, p)
+   [a, e] = armcov(x, p)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Order of the autoregressive model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Output of an AR system driven by white noise.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Variance estimate of the white noise input to the AR model.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function uses the modified covariance method to fit a pth-order autoregressive (AR) model to the input signal `x`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+A = [1 -2.7607 3.8106 -2.6535 0.9238]
+y = filter(1, A, 0.2 * rand(1024, 1, "normal"))
+arcoeffs = armcov(y, 4)
+   ]]></programlisting>
+</refsection>
 </refentry>

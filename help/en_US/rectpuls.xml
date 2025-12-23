@@ -22,20 +22,25 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [y]=rectpuls(t)
    [y]=rectpuls(t,w)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>t:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -44,16 +49,16 @@
    <para>
 y = rectpuls(t) returns a continuous, aperiodic, unity-height rectangular pulse depending upon input t, centered about t=0 and having default width of 1.
 y = rectpuls(t,w) generates a rectangle of width w.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    rectpuls([10 100 1000 13 839],27)
-ans =   1   0   0   1   0
-2.    rectpuls([1000 1000 100 100])
-ans =   0   0   0   0
+rectpuls([10 100 1000 13 839],27)
+
    ]]></programlisting>
 </refsection>
 </refentry>

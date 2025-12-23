@@ -17,7 +17,73 @@
 
   <refnamediv>
     <refname>levdown</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Reduce the order of an autoregressive (AR) model using Levinson-Durbin recursion.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [a, e] = levdown(a, efinal)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector of AR coefficients of the current model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>efinal:</term>
+            <listitem><para> Final prediction error of the current model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector of AR coefficients of the reduced-order model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Prediction error of the reduced-order model.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `levdown` function reduces the order of an autoregressive (AR) model by one using a step in the Levinson-Durbin recursion.
+It computes the AR coefficients and prediction error for the reduced-order model based on the AR coefficients and prediction error of the current model.
+   </para>
+   <para>
+The function performs the following steps:
+1. Extracts the last coefficient of the AR model.
+2. Updates the AR coefficients using the Levinson-Durbin recursion formula.
+3. Removes the last coefficient to reduce the order of the AR model.
+4. Updates the prediction error for the reduced-order model.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Reduce the order of an AR model:
+a = [1, -0.5, 0.25]
+efinal = 0.1
+[a_reduced, e_reduced] = levdown(a, efinal)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
 </refentry>

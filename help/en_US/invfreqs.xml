@@ -17,62 +17,115 @@
 
   <refnamediv>
     <refname>invfreqs</refname>
-    <refpurpose>Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.</refpurpose>
+    <refpurpose>Fit filter B(s)/A(s) to the complex frequency response H at frequency points F.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [B,A,C] = invfreqs(H,F,nB,nA,W,iter,tol,trace)
-   [B,A,C] = invfreqs(H,F,nB,nA,W)
-   [B,A,C] = invfreqs(H,F,nB,nA)
+   [B, A] = invfreqs(H, F, nB, nA)
+   [B, A] = invfreqs(H, F, nB, nA, W)
+   [B, A] = invfreqs(H, F, nB, nA, W, iter, tol, 'trace')
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>H:</term>
-      <listitem><para> desired complex frequency response.</para></listitem></varlistentry>
-   <varlistentry><term>F:</term>
-      <listitem><para> frequency (must be same length as H).</para></listitem></varlistentry>
-   <varlistentry><term>nB:</term>
-      <listitem><para> order of the numerator polynomial B.</para></listitem></varlistentry>
-   <varlistentry><term>nA:</term>
-      <listitem><para> order of the denominator polynomial A.</para></listitem></varlistentry>
-   <varlistentry><term>W:</term>
-      <listitem><para> vector of weights (must be same length as F).</para></listitem></varlistentry>
+        <varlistentry>
+            <term>H:</term>
+            <listitem><para> Desired complex frequency response.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>F:</term>
+            <listitem><para> Frequency (must be the same length as H).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nA:</term>
+            <listitem><para> Order of the denominator polynomial A.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nB:</term>
+            <listitem><para> Order of the numerator polynomial B.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>W:</term>
+            <listitem><para> (optional) Vector of weights (must be the same length as F). Default is uniform weighting.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>iter:</term>
+            <listitem><para> (optional) Number of iterations for refinement. Default is no iterations.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance for iterations. Default is no tolerance.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>'trace':</term>
+            <listitem><para> (optional) Enables tracing of the iterative process.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>B:</term>
+            <listitem><para> Coefficients of the numerator polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Coefficients of the denominator polynomial.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-Fit filter B(s)/A(s)to the complex frequency response H at frequency points F.  A and B are real polynomial coefficients of order nA and nB.
-Optionally, the fit-errors can be weighted vs frequency according to the weights W.
-Note: all the guts are in invfreq.m
+The `invfreqs` function fits a rational transfer function B(s)/A(s) to the desired complex frequency response `H` at frequency points `F`.
+The orders of the numerator and denominator polynomials are specified by `nB` and `nA`, respectively. Optionally, the fit-errors can be
+weighted using the weights `W`. The function supports iterative refinement of the solution, specified by `iter` and `tol`.
+   </para>
+   <para>
+Note: The core implementation of this function relies on `invfreq.sci`.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-B = [1/2 1];
-A = [1 1];
-w = linspace(0,4,128);
-H = freqs(B,A,w);
-[Bh,Ah, C] = invfreqs(H,w,1,1);
-Bh =
+// Define the desired frequency response (H) and frequency points (F)
+F = linspace(0, 10, 100); // Frequency points
+H = 1 ./ (1 + %i * F);    // Desired frequency response (low-pass filter)
 
-0.50000   1.00000
+// Define the orders of the numerator and denominator polynomials
+nB = 1 // Order of the numerator
+nA = 1 // Order of the denominator
 
-Ah =
+// Fit the filter
+[B, A] = invfreqs(H, F, nB, nA)
 
-1.0000   1.0000
-
-C =   -3.0964e-15
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>- J. O. Smith, "Techniques for Digital Filter Design and System Identification with Application to the Violin, Ph.D. Dissertation, Elec. Eng. Dept., Stanford University, June 1983.</para>
+   <para>- https://ccrma.stanford.edu/~jos/filters/FFT_Based_Equation_Error_Method.html</para>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="invfreq">invfreq</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
 </refsection>
 </refentry>

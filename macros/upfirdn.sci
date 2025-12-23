@@ -15,18 +15,35 @@
 
 
 function yout = upfirdn(xin,h,p,q)
-//Function y=upfirdn(xin,h,p,q)
+// Upsample, filter, and downsample a signal.
 //
-//this function upsamples the input data xin by factor "p", filters it using fiter coefficients "h" and the downsamples this filtered data by a factor "q".
-//Esentially it is a cascade of three processes:
-//1)Upsampling(Interpolation)
-//2)Filtering
-//3)Downsampling(Decimation)
-//Test cases:
-//1.yout=upfirdn (1:100, 1, 1, 1)
-//Expected output: yout=1:100
-//2.yout=upfirdn (1:100, 1, 1, 2)
-//Expected outut: yout=1:2:100
+// Syntax
+//   yout = upfirdn(xin, h, p, q)
+//
+// Parameters
+// xin: Input signal (vector).
+// h: Filter coefficients (vector).
+// p: Upsampling factor (positive integer). Default is 1.
+// q: Downsampling factor (positive integer). Default is 1.
+// yout: Output signal after upsampling, filtering, and downsampling.
+//
+// Description
+// The `upfirdn` function performs three operations on the input signal `xin`:
+// 1. Upsampling by a factor `p` (inserting zeros between samples).
+// 2. Filtering the upsampled signal using the filter coefficients `h`.
+// 3. Downsampling the filtered signal by a factor `q` (keeping every q-th sample).
+//
+// Examples
+// // Perform upsampling, filtering, and downsampling:
+//    xin = 1:10
+//    h = [1, 2, 1]
+//    p = 2
+//    q = 3
+//    yout = upfirdn(xin, h, p, q)
+//
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
 
 [nargout,nargin]=argn();
 

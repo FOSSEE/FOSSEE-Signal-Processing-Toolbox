@@ -1,20 +1,31 @@
 function islin=islinphase(varargin)
-//islinphase Determine whether filter has linear phase
-// Calling Syntax and Parameter description
-//flag = islinphase(b,a)
-//takes input as numerator and denumerator coefficint matrices and returns flag =1 if filter is linear phase else return flag = 0
-//flag = islinphase(sos)
-//takes input as K x 6 second order split (sos) matrix and returns flag =1 if filter is linear phase else returns flag =0
-//flag = islinphase(...,tol)
-// tol -->this takes tolerence in similarities between two numbers in phase respose
-//Example :
-//flag = islinphase([0 1 2 2 1 0],1)
-//Output:
-//flag  =
-//    1.
-//conclusion : output of above example is flag = 1 means filter is linear phase which must be as example is of symmetric linear phase fir filter
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Determine whether a filter has linear phase.
+//
+// Syntax
+//   flag = islinphase(b, a)
+//   flag = islinphase(sos)
+//   flag = islinphase(..., tol)
+//
+// Parameters
+// b: Numerator coefficients of the filter.
+// a: Denominator coefficients of the filter.
+// sos: K x 6 second-order section matrix.
+// tol: (optional) Tolerance for phase response similarity. Default is 0.
+//
+// Description
+// The `islinphase` function determines whether a filter has linear phase. 
+// It returns `flag = 1` if the filter is linear phase, otherwise it returns `flag = 0`.
+//
+// - When called with `b` and `a`, the function checks the linear phase property of the filter defined by these coefficients.
+// - When called with `sos`, the function checks the linear phase property of the filter defined by the second-order section matrix.
+// - The optional `tol` parameter specifies the tolerance for phase response similarity.
+//
+// Examples
+// flag = islinphase([0, 1, 2, 2, 1, 0], 1)
+//
+// Authors
+// Parthasarathi Panda  ( parthasarathipanda314@gmail.com )
+// 
 
     [nargout,nargin]=argn();
     if (nargin==2) then

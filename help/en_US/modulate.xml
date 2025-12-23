@@ -22,16 +22,37 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    y=modulate(x,fc,fs,method,opt)
    [y,t]=modulate(x,fc,fs,method,opt)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector or a matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc :</term>
+            <listitem><para> Carrier frequency</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs :</term>
+            <listitem><para> Sampling frequency</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>method :</term>
+            <listitem><para> Modulation Method</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt :</term>
+            <listitem><para> An optional parameter required by certain modulation methods</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -70,13 +91,41 @@ quadrature with x.
    </para>
    <para>
 If x is a matrix, its columns are modulated.
-Example
-y  =
    </para>
    <para>
-1.    1.    0.    0.
-Author
-Ankur Mallick
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Modulate a signal using amplitude modulation (AM)
+// Parameters
+fs = 1000;                // Sampling frequency (Hz)
+fc = 100;                 // Carrier frequency (Hz)
+t = 0:1/fs:1;             // Time vector (1 second duration)
+x = sin(2 * %pi * 10 * t); // Input signal (10 Hz sine wave)
+// Perform amplitude modulation (double side-band, transmitted carrier)
+[y, t_mod] = modulate(x, fc, fs, 'amdsb-tc');
+// Plot the original and modulated signals
+subplot(2, 1, 1);
+plot(t, x);
+xlabel("Time (s)");
+ylabel("Amplitude");
+title("Original Signal");
+subplot(2, 1, 2);
+plot(t_mod, y);
+xlabel("Time (s)");
+ylabel("Amplitude");
+title("Modulated Signal (AM DSB-TC)");
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
 </refsection>
 </refentry>

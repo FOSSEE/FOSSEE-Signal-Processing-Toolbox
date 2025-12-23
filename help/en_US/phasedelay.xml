@@ -17,7 +17,78 @@
 
   <refnamediv>
     <refname>phasedelay</refname>
-    <refpurpose>cas variable is 2 if sos form is involved and 1 if direct rational form is given</refpurpose>
+    <refpurpose>Compute the phase delay of a filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [phi] = phasedelay(b, a, w)
+   [phi] = phasedelay(sos, w)
+   [phi, f] = phasedelay(..., fs)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the filter (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the filter (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> Second-order section matrix (K x 6).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Frequency points (vector) at which the phase delay is computed (in radians/sample).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fs:</term>
+            <listitem><para> (optional) Sampling frequency (scalar). If provided, the frequency vector `f` is returned in Hz.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `phasedelay` function computes the phase delay of a filter at specified frequency points.
+It supports both direct rational form (numerator and denominator coefficients) and second-order section (SOS) form.
+   </para>
+   <para>
+- For direct rational form, the phase delay is computed using the numerator and denominator coefficients.
+- For SOS form, the phase delay is computed for each section and summed to obtain the total phase delay.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute phase delay for a filter in direct form:
+b = [0.1, 0.2, 0.3]
+a = [1, -0.5, 0.25]
+w = linspace(0, %pi, 100);
+phi = phasedelay(b, a, w)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   <member>parthasarathipanda314@gmail.com</member>
+   </simplelist>
+</refsection>
 </refentry>

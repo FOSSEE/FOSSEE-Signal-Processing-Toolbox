@@ -1,15 +1,18 @@
 function H = hurst(x)
-//Estimate the Hurst parameter of sample X via the rescaled range statistic.
-//Calling Sequence:
-//hurst(x)
-//Parameters:
-//x: x is a vector or matrix
-//Description:
-//This function estimates the Hurst parameter of sample x using the rescaled range statistic.
-//If x is a matrix, the parameter is estimated for every column.
-//Examples:
-//hurst([10, 15, 3])
-//ans = 0.045019
+// Estimate the Hurst parameter of sample X via the rescaled range statistic.
+// 
+// Syntax
+// hurst(x)
+// 
+// Parameters
+// x: x is a vector or matrix
+// 
+// Description
+// This function estimates the Hurst parameter of sample x using the rescaled range statistic.
+// If x is a matrix, the parameter is estimated for every column.
+// 
+// Examples
+// hurst([10, 15, 3])
 
   funcprot(0);
   if (argn(2) ~= 1)

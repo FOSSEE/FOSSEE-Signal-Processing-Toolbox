@@ -2,6 +2,63 @@
 
 
 function [outputData,msg] = musicBase(inputData)
+// Implements the core of the MUSIC (Multiple Signal Classification) algorithm.
+//
+// Syntax
+//   [outputData, msg] = musicBase(inputData)
+//
+// Parameters
+// inputData: A structure containing the following fields:
+//   - x: Input signal or correlation matrix.
+//   - isCorrFlag: Boolean flag indicating whether `x` is a correlation matrix.
+//   - windowLength: Length of the window for signal segmentation.
+//   - noverlap: Number of overlapping samples between consecutive windows.
+//   - windowVector: Window function to apply to each segment.
+//   - isWindowSpecified: Boolean flag indicating whether a window function is specified.
+//   - p: Signal subspace dimension and optional threshold for eigenvalue selection.
+//
+// Outputs
+// outputData: A structure containing the following fields:
+//   - signalEigenvects: Eigenvectors corresponding to the signal subspace.
+//   - noiseEigenvects: Eigenvectors corresponding to the noise subspace.
+//   - eigenvals: Eigenvalues of the correlation matrix.
+//   - pEffective: Effective dimension of the signal subspace.
+// msg: A string containing error messages, if any.
+//
+// Description
+// The `musicBase` function implements the core of the MUSIC algorithm, which is used for spectral estimation and direction-of-arrival (DOA) estimation. 
+// It computes the eigenvalues and eigenvectors of the correlation matrix (or signal matrix) and separates them into signal and noise subspaces. 
+// The effective dimension of the signal subspace is determined based on the input parameters.
+//
+// Examples
+// // Compute the signal and noise subspaces using the MUSIC algorithm:
+//    inputData.x = rand(100, 1);               // Input signal
+//    inputData.isCorrFlag = %f;               // Input is not a correlation matrix
+//    inputData.windowLength = 50;             // Window length
+//    inputData.noverlap = 25;                 // Overlap between windows
+//    inputData.windowVector = hamming(50);    // Hamming window
+//    inputData.isWindowSpecified = %t;        // Window is specified
+//    inputData.p = [2, 0.1];                  // Signal subspace dimension and threshold
+//
+//    [outputData, msg] = musicBase(inputData);
+//
+//    if length(msg) == 0 then
+//        disp("Signal Eigenvectors:");
+//        disp(outputData.signalEigenvects);
+//        disp("Noise Eigenvectors:");
+//        disp(outputData.noiseEigenvects);
+//        disp("Eigenvalues:");
+//        disp(outputData.eigenvals);
+//        disp("Effective Signal Subspace Dimension:");
+//        disp(outputData.pEffective);
+//    else
+//        disp("Error: " + msg);
+//    end
+//
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
+
     // Implements the core of the MUSIC algorithm
     // Used by pmusic and rootmusic algorithm
     

@@ -17,37 +17,42 @@
 
   <refnamediv>
     <refname>sinewave</refname>
-    <refpurpose>Return an M-element vector with I-th element given by 'sin(2* pi *(I+D-1)/N).'</refpurpose>
+    <refpurpose>Return a m-element vector with the i-th element given by {sin (2 * pi * (i+d-1) / n}.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   y= sinewave(M)
-   y= sinewave(M,N)
-   y= sinewave(M,N,D)
+   y= sinewave(m)
+   y= sinewave(m,n)
+   y= sinewave(m,n,d)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>M:</term>
-      <listitem><para> Input vector</para></listitem></varlistentry>
-   <varlistentry><term>N:</term>
-      <listitem><para> The default value for N is M</para></listitem></varlistentry>
-   <varlistentry><term>D:</term>
-      <listitem><para> The default value for D is 0</para></listitem></varlistentry>
-   <varlistentry><term>AMPL:</term>
-      <listitem><para> Amplitude</para></listitem></varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Real positive scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> The value of n in the formula {sin (2 * pi * (i+d-1) / n}. The default value for n is m.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>d:</term>
+            <listitem><para> The value of d in the formula {sin (2 * pi * (i+d-1) / n}. The default value for d is 0.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
-   <title>Description</title>
-   <para>
-Return an M-element vector with I-th element given by 'sin(2* pi *(I+D-1)/N).'
-</para>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+sinewave(1, 4, 1)
+   ]]></programlisting>
 </refsection>
 </refentry>

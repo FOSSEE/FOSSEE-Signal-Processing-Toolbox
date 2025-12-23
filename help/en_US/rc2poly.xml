@@ -17,15 +17,63 @@
 
   <refnamediv>
     <refname>rc2poly</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Convert reflection coefficients to prediction polynomial.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    a = rc2poly(kr)
    [a, efinal] = rc2poly(kr,R0)
+   
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>kr:</term>
+            <listitem><para> Refelection coefficient.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R0:</term>
+            <listitem><para> the zero lag autocorrelation, R0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Return the prediction polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>efinal:</term>
+            <listitem><para> Return the final prediction error.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+X = [7 6 5 8 3 6]
+[a, efinal] = rc2poly(X)  //error as only one input parameter is specified.(R0 is not mentioned)
+
+k = [0.3090 0.9800 0.0031 0.0082 -0.0082];
+a = rc2poly(k)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

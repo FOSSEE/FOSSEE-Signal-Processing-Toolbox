@@ -17,40 +17,47 @@
 
   <refnamediv>
     <refname>blackmannuttall</refname>
-    <refpurpose>This function returns the filter coefficients of a Blackman-Nuttall window.</refpurpose>
+    <refpurpose>Generate a Blackman-Nuttall window.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   w = blackmannuttall (m)
-   w = blackmannuttall (m, opt)
+   w = blackmannuttall(m)
+   w = blackmannuttall(m, opt)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>opt:</term>
-      <listitem><para> string value, takes "periodic" or "symmetric"</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Length of the Blackman-Nuttall window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> String. Specifies the type of Blackman-Nuttall window ('symmetric' or 'periodic'). Default is 'symmetric'.</para></listitem>
+        </varlistentry>
    </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns the filter coefficients of a Blackman-Nuttall window of length `m`. The second parameter `opt` specifies whether the window is 'symmetric' (default) or 'periodic'.
+   </para>
+   <para>
+</para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-blackmannuttall(5,"symmetric")
-ans  =
-0.0003628
-0.2269824
-1.
-0.2269824
-0.0003628
+blackmannuttall(5, "symmetric")
+
    ]]></programlisting>
 </refsection>
 </refentry>

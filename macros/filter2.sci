@@ -1,19 +1,29 @@
 function y = filter2 (b, x, shape)
-//Apply the 2-D FIR filter b to x.
-//Calling Sequence:
-//y =  filter2(b, x)
-//y = filter2(b, x, shape)
-//Parameters:
-//b, x: vectors
-//If the optional argument 'shape' is specified, return a vector of the desired shape. 
-//Possible values are:
-//  "full"- pad x with zeros on all sides before filtering.
-//  "same"- unpadded x (default)
-//  "valid"- trim x after filtering so edge effects are no included.
-//Examples:
-//filter2([1,3], [4,5])
-//ans =
-//[19, 5]
+// Apply the 2-D FIR filter b to x.
+//
+// Syntax
+//   y = filter2(b, x)
+//   y = filter2(b, x, shape)
+//
+// Parameters
+// b: Vector or matrix. The 2-D FIR filter coefficients.
+// x: Vector or matrix. The input data to be filtered.
+// shape: String (optional). Specifies the shape of the output. Possible values are:
+//   "full" - Pads `x` with zeros on all sides before filtering.
+//   "same" - Returns the central part of the convolution (default).
+//   "valid" - Trims `x` after filtering so edge effects are not included.
+// y: Vector or matrix. The filtered output.
+//
+// Description
+// This function applies a 2-D FIR filter `b` to the input data `x`. The optional `shape` parameter determines the size and content of the output.
+//
+// Examples
+// y = filter2([1, 3], [4, 5])
+//
+// y = filter2([1, 2], [4; 5; 6], "full")
+//
+// See also
+//  convol2d
 
   funcprot(0);
   rhs = argn(2);

@@ -22,23 +22,30 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [y]=gauspuls(t,fc,bw)
    [y]=gauspuls(t,fc)
    [y]=gauspuls(t)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>t:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>fc:</term>
-      <listitem><para> Real non negative number or complex number</para></listitem></varlistentry>
-   <varlistentry><term>bw:</term>
-      <listitem><para> Real positive number or complex number</para></listitem></varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc:</term>
+            <listitem><para> Real non negative number or complex number</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>bw:</term>
+            <listitem><para> Real positive number or complex number</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -46,16 +53,16 @@
    <title>Description</title>
    <para>
 This function returns a Gaussian RF pulse of unity amplitude at the times indicated in array t.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    gauspuls(1,2,3)
-ans= 1.427D-56
-2.    gauspuls([1 2 3],1,1)
-ans= 0.0281016    0.0000006    1.093D-14
+gauspuls(1,2,3)
+
    ]]></programlisting>
 </refsection>
 </refentry>

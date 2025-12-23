@@ -1,0 +1,14 @@
+  License Terms:
+  --------------
+  This file is released under the terms of the CeCILL license.
+  You should have received a copy of the license in the COPYING file.
+  The terms are also available at:
+      http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+
+  Notes:
+  ------
+  - Original Source: https://octave.sourceforge.io/signal/
+  - This file was adapted for Scilab from the Octave signal package.
+
+  Organization: FOSSEE, IIT Bombay  
+  Email: toolbox@scilab.in

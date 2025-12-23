@@ -11,20 +11,20 @@
 
 function [A,V]= yulewalker(c)
 // Fit an AR (p)-model with Yule-Walker estimates given a vector C of autocovariances '[gamma_0, ..., gamma_p]'.
-//Calling Sequence
-//A    = yulewalker(C)
-//[A,V]= yulewalker(C)
-//Parameters
-//C: Autocovariances
-//Description
-//Fit an AR (p)-model with Yule-Walker estimates given a vector C of autocovariances '[gamma_0, ..., gamma_p]'.
-//Returns the AR coefficients, A, and the variance of white noise, V.
-
-//Test cases
-//[A,V]=yulewalker([1 2 3])
-// V  = - 2.6666667
-// A  =1.3333333
-//     0.3333333
+//
+// Syntax
+// A = yulewalker(C)
+// [A,V]= yulewalker(C)
+//
+// Parameters
+// C: Autocovariances
+//
+// Description
+// Fit an AR (p)-model with Yule-Walker estimates given a vector C of autocovariances '[gamma_0, ..., gamma_p]'.
+// Returns the AR coefficients, A, and the variance of white noise, V.
+// 
+// Examples
+// [A,V]=yulewalker([1 2 3])
 
 
 funcprot(0);

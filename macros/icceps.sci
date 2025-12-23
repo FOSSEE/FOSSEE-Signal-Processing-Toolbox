@@ -1,17 +1,22 @@
 function inv_ceps = icceps(input, remv_samp)
-// ICCEPS computes the inverse cepstrum of a real-valued input. This spectrum 
-// will be complex in nature
-// Inputs:
-//      input: Real-valued input 
-//      remv_samps: Number of samples of delay to be removed
-// Outputs: 
-//      inv_ceps: Inverse cepstrum output
-//Example
-//xhat=[ 2.2428   -0.0420   -0.0210    0.0045    0.0366    0.0788    0.1386    0.2327    0.4114    0.9249]
-//icc = icceps(xhat,2);
-//round(icc)
-//OUTPUT:
-//  2   3   4   5   6   7   8   9   10  1
+// Compute the inverse cepstrum of a real-valued input signal.
+//
+// Syntax
+//   inv_ceps = icceps(input, remv_samp)
+//
+// Parameters
+// input: Real-valued input signal.
+// remv_samp: (optional) Number of samples of delay to be removed. Default is 0.
+//
+// Description
+// ICCEPS computes the inverse cepstrum of a real-valued input signal. 
+// The resulting spectrum will be complex in nature.
+//
+// Examples
+// xhat = [2.2428, -0.0420, -0.0210, 0.0045, 0.0366, 0.0788, 0.1386, 0.2327, 0.4114, 0.9249]
+// icc = icceps(xhat, 2)
+// round(icc)
+//
 
 // Check validity of number of inout arguments
 checkNArgin(1,3, argn(2));

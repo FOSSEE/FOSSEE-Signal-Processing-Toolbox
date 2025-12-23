@@ -10,6 +10,52 @@
 // Email: toolbox@scilab.in
 
   function [r, p, f, m] = residuez(B, A, tol)
+// Compute the partial fraction expansion (PFE) of a digital filter.
+//
+// Syntax
+//   [r, p, f, m] = residuez(B, A)
+//   [r, p, f, m] = residuez(B, A, tol)
+//
+// Parameters
+// B: Numerator coefficients of the digital filter (vector).
+// A: Denominator coefficients of the digital filter (vector).
+// tol: (optional) Tolerance for pole-zero matching. Ignored in this implementation.
+//
+// Outputs
+// r: Column vector containing the residues of the filter poles.
+// p: Column vector containing the poles of the filter.
+// f: Row vector containing the FIR part of the filter, if any. Empty if no FIR part exists.
+// m: Column vector containing the multiplicities of the poles.
+//
+// Description
+// The `residuez` function computes the partial fraction expansion of a digital filter represented by the transfer function:
+//   H(z) = B(z) / A(z)
+// where `B` and `A` are the numerator and denominator coefficients, respectively.
+//
+// The function separates the filter into two parts:
+// 1. The FIR part `f`, which represents the feedforward portion of the filter.
+// 2. The IIR part, represented by the residues `r` and poles `p`.
+//
+// If the numerator degree is less than the denominator degree (`nb < na`), the FIR part `f` is empty, and the filter is represented as:
+//   H(z) = r(1) / [1 - p(1)/z]^m(1) + ... + r(N) / [1 - p(N)/z]^m(N)
+// where `N` is the number of poles.
+//
+// If the numerator degree is greater than or equal to the denominator degree (`nb >= na`), the FIR part `f` is non-empty, and the filter is represented as:
+//   H(z) = f(1) + f(2)/z + f(3)/z^2 + ... + f(M+1)/z^M + R(z)
+// where `R(z)` is the parallel one-pole filter bank.
+//
+// Notes
+// - The polynomials `B` and `A` must have real coefficients.
+// - The function uses MATLAB's `residue` function internally to compute the residues and poles.
+//
+// Examples
+// // Compute the partial fraction expansion of a filter:
+//    B = [1, 1, 1]
+//    A = [1, -2, 1]
+//    [r, p, f, m] = residuez(B, A)
+//
+
+
   // RESIDUEZ - return residues, poles, and FIR part of B(z)/A(z)
   //
   // Let nb = length(b), na = length(a), and N=na-1 = no. of poles.

@@ -17,46 +17,49 @@
 
   <refnamediv>
     <refname>mexihat</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generates Mexican Hat wavelet</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [psi,x]=mexihat(lb,ub,n)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>lb:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>ub:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>n:</term>
-      <listitem><para> Real strictly positive scalar number</para></listitem></varlistentry>
+        <varlistentry>
+            <term>lb:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ub:</term>
+            <listitem><para> Real or complex valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Real strictly positive scalar number</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function which is built in scilab.
 This function returns values of the Mexican hat wavelet in the specified interval at all the sample points.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    [a,b]= mexihat(1,2,3)
-a =   [0.00000  -0.35197  -0.35214]
-b =   [1.0000   1.5000   2.0000]
-2.    [a,b]= mexihat([1 2 3],1,1)
-a = [0;0;0]
-b = [1;1;1]
+[a,b]= mexihat(1,10,1)
    ]]></programlisting>
 </refsection>
 </refentry>

@@ -11,36 +11,34 @@
 // Email: toolbox@scilab.in
 
 function [n, Wc] = buttord(Wp, Ws, Rp, Rs)
-    //Minimum filter order and 3dB cutoff frequency of a digital Butterworth filter with the desired response characteristics
-    //Calling Sequence
-    //n = buttord(Wp, Ws, Rp, Rs)
-    //[n, Wc] = buttord(Wp, Ws, Rp, Rs)
-    //Parameters
-    //Wp: scalar or vector of length 2 (passband edge(s) ), elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2 (stopband edge(s) ), elements must be in the range [0,1]
-    //Rp: passband ripple in dB.
-    //Rs: stopband attenuation in dB.
-    //n: Minimum filter order satisfying specs
-    //Wc: 3dB cutoff frequency/frequencies
-    //Description.
-    //This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.
-    //The filter frequency band edges are specified by the passband frequency wp and stopband frequency ws.
-    //Frequencies are normalized to the Nyquist frequency in the range [0,1].
-    //Rp is measured in decibels and is the allowable passband ripple, and Rs is also in decibels and is the minimum attenuation in the stop band.
-    //If ws>wp, the filter is a low pass filter. If wp>ws, the filter is a high pass filter.
-    //If wp and ws are vectors of length 2, then the passband interval is defined by wp the stopband interval is defined by ws.
-    //If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp the filter is a band-stop or band-reject filter.
-    //Examples
-    //Wp = 40/500 ;
-    //Ws = 150/500 ;
-    //[n, Wc] = buttord(Wp, Ws, 3, 60)
-    //Output :
-    // Wc  =
-    //
-    //    0.0800376
-    // n  =
-    //
-    //    5.
+// Compute the minimum filter order and 3dB cutoff frequency of a Butterworth filter.
+//
+// Syntax
+//   n = buttord(Wp, Ws, Rp, Rs)
+//   [n, Wc] = buttord(Wp, Ws, Rp, Rs)
+//
+// Parameters
+// Wp: Scalar or vector of length 2. Passband edge(s) in the range [0, 1].
+// Ws: Scalar or vector of length 2. Stopband edge(s) in the range [0, 1].
+// Rp: Passband ripple in dB.
+// Rs: Stopband attenuation in dB.
+// n: Minimum filter order satisfying the specifications.
+// Wc: 3dB cutoff frequency/frequencies.
+//
+// Description
+//This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.
+//The filter frequency band edges are specified by the passband frequency wp and stopband frequency ws.
+//Frequencies are normalized to the Nyquist frequency in the range [0,1].
+//Rp is measured in decibels and is the allowable passband ripple, and Rs is also in decibels and is the minimum attenuation in the stop band.
+//If ws>wp, the filter is a low pass filter. If wp>ws, the filter is a high pass filter.
+//If wp and ws are vectors of length 2, then the passband interval is defined by wp the stopband interval is defined by ws.
+//If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp the filter is a band-stop or band-reject filter.
+//
+// Examples
+// Wp = 40/500;
+// Ws = 150/500;
+// [n, Wc] = buttord(Wp, Ws, 3, 60)
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

@@ -22,32 +22,40 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    w = welchwin (m)
    w = welchwin (m, opt)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>opt:</term>
-      <listitem><para> string value, takes "periodic" or "symmetric"</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> positive integer value</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> string value, takes "periodic" or "symmetric"</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> output variable, vector of real numbers</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function returns the filter coefficients of a Welch window of length m supplied as input, to the output vector w.
 The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
 For symmetric, the length should be an integer>2. For periodic, the length should be an integer>1.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -55,11 +63,6 @@ For symmetric, the length should be an integer>2. For periodic, the length shoul
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 welchwin(4,"symmetric")
-ans  =
-0.
-0.8888889
-0.8888889
-0.
    ]]></programlisting>
 </refsection>
 </refentry>

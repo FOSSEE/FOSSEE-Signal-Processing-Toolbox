@@ -1,19 +1,24 @@
 function [k,e] = schurrc(R)
-    //schurrc - Schur algorithm.
-//K = SCHURRC(R) computes the reflection coefficients from autocorrelation vector R. If R is a matrix, SCHURRC finds coefficients for each column of R, and returns them in the columns of K.
-//[K,E] = SCHURRC(R) returns the prediction error variance E. If R is a matrix, SCHURRC finds the error for each column of R, and returns them in the rows of E.
-//Modified to match matlab i/p and o/p and handle exceptions
-//Fixed bugs
-//by Debdeep Dey
-//////EXAMPLES:
-//m=linspace(1,100);
-//r = xcorr(m(1:5),'unbiased');.......autocorrelation vector
-//[k,e] = schurrc(r(5:$))
-//EXPECTED OUTPUT
-//e  =1.6212406
- //k  = - 0.9090909  0.2222222  0.2244898  0.2434211
-
-
+// Schur algorithm for computing reflection coefficients and prediction error variance.
+//
+// Syntax
+//   [k, e] = schurrc(R)
+//
+// Parameters
+// R: Autocorrelation vector or matrix. If `R` is a matrix, the function computes the reflection coefficients 
+//    for each column of `R` and returns them in the columns of `k`.
+// k: Reflection coefficients (matrix). Each column corresponds to the reflection coefficients for the respective column of `R`.
+// e: Prediction error variance (vector). Each row corresponds to the prediction error variance for the respective column of `R`.
+//
+// Description
+// The `schurrc` function computes the reflection coefficients and prediction error variance using Schur's algorithm. 
+// If the input `R` is a matrix, the function processes each column independently.
+//
+// Examples
+// // Compute reflection coefficients and prediction error variance:
+//    m = linspace(1, 100);
+//    r = xcorr(m(1:5), 'unbiased') // Autocorrelation vector
+//    [k, e] = schurrc(r(5:$))
 
 
     narginchk(1,1,argn(2));

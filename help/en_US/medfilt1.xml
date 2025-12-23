@@ -22,8 +22,13 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
+   y = medfilt1(x)
+   y = medfilt1(x, n)
+   y = medfilt1(x, n, dim)
+   y = medfitl1(__, nanflag, padding)
+   
    </synopsis>
 </refsynopsisdiv>
 
@@ -51,30 +56,55 @@ type of filtering to be performed at the signal edges.
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> int | double</para></listitem></varlistentry>
-   <varlistentry><term>n:</term>
-      <listitem><para> positive integer scalar</para></listitem></varlistentry>
-   <varlistentry><term>dim:</term>
-      <listitem><para> positive integer scalar</para></listitem></varlistentry>
-   <varlistentry><term>nanflag:</term>
-      <listitem><para> 'includenan' (default) | 'omitnan'</para></listitem></varlistentry>
-   <varlistentry><term>* includenan:</term>
-      <listitem><para> Filtering such that the median of any segment</para></listitem></varlistentry>
-   <varlistentry><term>* omitnan:</term>
-      <listitem><para> Filtering with NaNs omitted in each segment. If a segment</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
-      <listitem><para> int | double</para></listitem></varlistentry>
-   <varlistentry><term>Examples :</term>
-      <listitem><para> Noise supression using 10th order (n =10) median filtering</para></listitem></varlistentry>
-   <varlistentry><term>t = 0:</term>
-      <listitem><para>1/fs:1;</para></listitem></varlistentry>
-   <varlistentry><term>Output :</term>
-      <listitem><para> </para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> int | double</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> positive integer scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> positive integer scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nanflag:</term>
+            <listitem><para> 'includenan' (default) | 'omitnan'</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>* includenan:</term>
+            <listitem><para> Filtering such that the median of any segment</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>* omitnan:</term>
+            <listitem><para> Filtering with NaNs omitted in each segment. If a segment</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> int | double</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Noise supression using 10th order (n =10) median filtering
+//Generate a sinusoidal signal sampled for 1 second at 100 Hz. Add a higher-frequency sinusoid to simulate noise.
+fs = 100
+t = 0:1/fs:1;
+x = sin(2*%pi*t*3)+0.25*sin(2*%pi*t*40);
+
+//Use a 10th-order median filter to smooth the signal. Plot the result.
+y = medfilt1(x,10);
+plot(t,x,t,y)
+legend('Original','Filtered');
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
    <member><link linkend="filter">| hampel | median | sgolayfilt</link></member>

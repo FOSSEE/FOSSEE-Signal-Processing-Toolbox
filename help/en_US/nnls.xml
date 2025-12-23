@@ -17,7 +17,66 @@
 
   <refnamediv>
     <refname>nnls</refname>
-    <refpurpose>Non Negative Least Squares (nnls) for Ex=f with the constraint x>=0</refpurpose>
+    <refpurpose>Non-Negative Least Squares (NNLS) for solving Ex = f with the constraint x >= 0.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [x, w] = nnls(E, f)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>E:</term>
+            <listitem><para> Coefficient matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Right-hand side vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Solution vector (non-negative).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Dual vector.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `nnls` function solves the least squares problem Ex = f with the constraint x &gt;= 0 using an iterative approach based on the algorithm described in:
+Lawson, C.L. and R.J. Hanson, "Solving Least Squares Problems," Prentice-Hall, 1974, Chapter 23, p. 161.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Solve a simple NNLS problem:
+E = [1, 2; 3, 4]
+f = [1; 1]
+[x, w] = nnls(E, f)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
 </refentry>

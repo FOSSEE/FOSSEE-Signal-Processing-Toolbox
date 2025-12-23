@@ -17,7 +17,42 @@
 
   <refnamediv>
     <refname>boxcar</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generate a rectangular (boxcar) window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = boxcar(m)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Length of the rectangular window.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a rectangular (boxcar) window of length `m`. The window has constant amplitude across its length.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = boxcar(5)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

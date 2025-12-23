@@ -17,33 +17,40 @@
 
   <refnamediv>
     <refname>idct2</refname>
-    <refpurpose>This function computes the inverse 2-D discrete cosine transform of input matrix.</refpurpose>
+    <refpurpose>Compute the inverse 2-D discrete cosine transform.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    Y = idct2(X)
    Y = idct2(X, M, N)
    Y = idct2(X, [M, N])
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X:</term>
-      <listitem><para> Matrix or integer</para></listitem></varlistentry>
-   <varlistentry><term>M, N:</term>
-      <listitem><para> If specified Matrix X is padded with M rows and N columns.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Input matrix or integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>M, N:</term>
+            <listitem><para> (optional) If specified, the input matrix X is padded or truncated to have M rows and N columns.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function computes the inverse 2-D discrete cosine transform of matrix X. If M and N are specified, the input is either padded or truncated to have M rows and N columns.
+Computes the inverse 2-D discrete cosine transform of the input matrix X. If M and N are specified, the input is either padded or truncated to match the specified dimensions.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -51,8 +58,7 @@ This function computes the inverse 2-D discrete cosine transform of matrix X. If
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 idct2(3, 4, 6)
-ans =
-2.811261   0.612372  -0.525856   0.250601   0.612372  -0.086516
+
    ]]></programlisting>
 </refsection>
 </refentry>

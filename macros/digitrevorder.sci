@@ -10,29 +10,31 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [y, i] = digitrevorder (x, r)
-  // Returns input data in digit-reversed order
-  // Calling Sequence
-  //[y,i] = digitrevorder(x,r)
-  //y = digitrevorder(x,r)
-  // Parameters
-  //x: Vector of real or complex values
-  //r: radix / base
-  //y: input vector in digit reverse order
-  //i: indices
-  // Description
-  //This function returns the input data after reversing the digits of the indices and reordering the elements of the input array.
-  // Examples
-  //x = [%i,1,3,6*%i] ;
-  //r = 2 ;
-  //[y i]=digitrevorder(x, r)
-  //Output :
-  // i  =
-  //
-  //    1.    3.    2.    4.
-  // y  =
-  //
-  //    i      3.    1.    6.i
-  
+// Returns input data in digit-reversed order.
+//
+// Syntax
+//   [y, i] = digitrevorder(x, r)
+//   y = digitrevorder(x, r)
+//
+// Parameters
+// x: Vector of real or complex values. The input data to be reordered.
+// r: Scalar. The radix/base for digit reversal. Must be an integer between 2 and 36.
+// y: Vector. The input vector reordered in digit-reversed order.
+// i: Vector. The indices corresponding to the digit-reversed order.
+//
+// Description
+// This function returns the input data after reversing the digits of the indices and reordering the elements of the input array. 
+// The radix `r` determines the base for digit reversal.
+//
+// Examples
+// x = [%i, 1, 3, 6*%i]
+// r = 2
+// [y, i] = digitrevorder(x, r)
+//
+// See also
+//  base2dec, dec2base
+//
+
   funcprot(0);
   [nargout, nargin] = argn() ;
 
@@ -55,9 +57,8 @@ function [y, i] = digitrevorder (x, r)
   y(old_ind + 1) = x(i);
   if (size(x,2)== 1)
     y = y(:);
-  else
-    i = i.';
   end
+
 endfunction
 
 /*

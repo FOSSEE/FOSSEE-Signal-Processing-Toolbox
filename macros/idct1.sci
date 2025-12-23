@@ -1,19 +1,20 @@
 function y = idct1(x,n)
-// Description
-//     This function computes the inverse discrete cosine transform of input X.
-//     If N is given, then X is padded or trimmed to length N before computing the transform.
-//     If X is a matrix, compute the transform along the columns of the the matrix.
-//     The transform is faster if X is real-valued and even length.
-// Calling Sequence
-//     Y = idct1(X)
-//     Y = idct1(X, N)
+// Compute the inverse discrete cosine transform.
+//
+// Syntax
+//   Y = idct1(X)
+//   Y = idct1(X, N)
+//
 // Parameters
-//     X: Matrix or integer
-//     N: If N is given, then X is padded or trimmed to length N before computing the transform.
+// X: Input matrix or integer.
+// N: (optional) If N is given, X is padded or trimmed to length N before computing the transform.
+//
+// Description
+// Computes the inverse discrete cosine transform of input X. If X is a matrix, the transform is computed along the columns of the matrix. The transform is faster if X is real-valued and of even length.
+//
 // Examples
-//     idct1([1,3,6])
-//     ans =
-//         5.1481604  - 4.3216292    0.9055197
+// idct1([1, 3, 6])
+// 
 
     funcprot(0);
     rhs=argn(2);

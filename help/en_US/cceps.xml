@@ -17,42 +17,47 @@
 
   <refnamediv>
     <refname>cceps</refname>
-    <refpurpose>Return the complex cepstrum of the vector x</refpurpose>
+    <refpurpose>Compute the complex cepstrum of a vector.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   cceps (x)
-   cceps(x, correct)
+   y = cceps(x)
+   y = cceps(x, correct)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> vector.</para></listitem></varlistentry>
-   <varlistentry><term>correct:</term>
-      <listitem><para> if 1, a correction method is applied.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector. Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>correct:</term>
+            <listitem><para> Integer. If 1, a correction method is applied. Default is 0.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function return the complex cepstrum of the vector x. If the optional argument correct has the value 1, a correction method is applied. The default is not to do this.
+This function computes the complex cepstrum of the input vector `x`. If the optional argument `correct` is set to 1, a correction method is applied.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-cceps([1,2,3],1)
-ans = 1.9256506
-0.9634573
-- 1.0973484
+cceps([1, 2, 3], 1)
+
    ]]></programlisting>
 </refsection>
 </refentry>

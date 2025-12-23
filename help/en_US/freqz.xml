@@ -17,77 +17,97 @@
 
   <refnamediv>
     <refname>freqz</refname>
-    <refpurpose>This function returns the complex frequency response H of the rational IIR filter whose numerator and denominator coefficients are B and A, respectively.</refpurpose>
+    <refpurpose>Compute the frequency response of a digital filter.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [H, W] = freqz(B, A, N, "whole")
-   [H, W] = freqz(B)
-   [H, W] = freqz(B, A)
-   [H, W] = freqz(B, A, N)
-   H = freqz(B, A, W)
-   [H, W] = freqz(..., FS)
-   freqz(...)
+   [h, w] = freqz(b, a)
+   [h, w] = freqz(b, a, n)
+   [h, w] = freqz(b, a, n, "whole")
+   [h, w] = freqz(b, a, w)
+   [h, f] = freqz(b, a, n, Fs)
+   freqz(b, a, n)
+   freqz(b, a)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>B, A, N:</term>
-      <listitem><para> Integer or Vector</para></listitem></varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The numerator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. The denominator coefficients of the filter's transfer function. If omitted, it is assumed to be 1 (FIR filter).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Integer (optional). The number of frequency points. Default is 512.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector (optional). Specific frequencies (in radians) at which to evaluate the response.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Positive scalar (optional). Sampling frequency in Hz. If provided, frequencies are returned in Hz instead of radians.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para> Vector. The complex frequency response of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector. The frequencies (in radians) at which the response is evaluated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Vector. The frequencies (in Hz) at which the response is evaluated.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Return the complex frequency response H of the rational IIR filter whose numerator and denominator coefficients are B and A, respectively.
+This function computes the frequency response of a digital filter defined by its numerator (`b`) and denominator (`a`) coefficients. The response can be evaluated at a specified number of points (`n`) or at specific frequencies (`w`). If the sampling frequency (`Fs`) is provided, the frequencies are returned in Hz.
    </para>
    <para>
-The response is evaluated at N angular frequencies between 0 and 2*pi.
+- If `a` is omitted, the filter is assumed to be an FIR filter.
+- If `n` is omitted, a default value of 512 is used.
+- If the "whole" option is specified, the response is evaluated over the entire Nyquist range (0 to 2π). Otherwise, it is evaluated over half the Nyquist range (0 to π).
+- If no output arguments are provided, the function plots the magnitude and phase response.
    </para>
    <para>
-The output value W is a vector of the frequencies.
-   </para>
-   <para>
-If A is omitted, the denominator is assumed to be 1 (this corresponds to a simple FIR filter).
-   </para>
-   <para>
-If N is omitted, a value of 512 is assumed. For fastest computation, N should factor into a small number of small primes.
-   </para>
-   <para>
-If the fourth argument, "whole", is omitted the response is evaluated at frequencies between 0 and pi.
-   </para>
-   <para>
-'freqz (B, A, W)'
-   </para>
-   <para>
-Evaluate the response at the specific frequencies in the vector W. The values for W are measured in radians.
-   </para>
-   <para>
-'[...] = freqz (..., FS)'
-   </para>
-   <para>
-Return frequencies in Hz instead of radians assuming a sampling rate FS. If you are evaluating the response at specific frequencies W, those frequencies should be requested in Hz rather than radians.
-   </para>
-   <para>
-'freqz (...)'
-   </para>
-   <para>
-Plot the magnitude and phase response of H rather than returning them.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-H = freqz([1,2,3], [4,3], [1,2,5])
-ans =
-0.4164716 - 0.5976772i  - 0.4107690 - 0.2430335i    0.1761948 + 0.6273032i
+//Compute the frequency response of a Butterworth low-pass filter
+//Design a 4th-order Butterworth low-pass filter with cutoff frequency 0.3π
+//(normalized frequency range: 0 to 1 corresponds to 0 to π radians)
+order = 4
+fc = 0.3  // Normalized cutoff frequency (0 < fc < 1)
+
+[b, a] = butter(order, fc)
+freqz(b, a);
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft1">fft1</link></member>
+   <member><link linkend="unwrap2">unwrap2</link></member>
+   <member><link linkend="postpad">postpad</link></member>
+   </simplelist>
 </refsection>
 </refentry>

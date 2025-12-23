@@ -17,7 +17,46 @@
 
   <refnamediv>
     <refname>check</refname>
-    <refpurpose>It checks whether the input string is equal to "AKICc". If it is equal, then it results T(True) else it returns F(False)</refpurpose>
+    <refpurpose>Check if the input string is equal to "AKICc".</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   s = check(str)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>str:</term>
+            <listitem><para> String. Input string to be checked.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>s:</term>
+            <listitem><para> Boolean. Returns `T` (True) if the input string is "AKICc", otherwise `F` (False).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function checks whether the input string is equal to "AKICc". If it is, the function returns `T` (True); otherwise, it returns `F` (False).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+check("apple")
+
+   ]]></programlisting>
+</refsection>
 </refentry>

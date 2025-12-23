@@ -17,29 +17,55 @@
 
   <refnamediv>
     <refname>arcov</refname>
-    <refpurpose>Autoregressive all-pole model parameters — covariance method</refpurpose>
+    <refpurpose>Autoregressive all-pole model parameters — covariance method.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   a = arcov(x,p)
-   [a,e] = arcov(x,p)
+   a = arcov(x, p)
+   [a, e] = arcov(x, p)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>a:</term>
-      <listitem><para> contains normalized estimates of the AR system parameters, A(z), in descending powers of z.</para></listitem></varlistentry>
-   <varlistentry><term>e:</term>
-      <listitem><para> variance estimate of the white noise input to the AR model</para></listitem></varlistentry>
-   <varlistentry><term>x:</term>
-      <listitem><para> is the input signal</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> is the order of the auto regressive model</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Order of the autoregressive model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Contains normalized estimates of the AR system parameters, A(z), in descending powers of z.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Variance estimate of the white noise input to the AR model.</para></listitem>
+        </varlistentry>
    </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function arcov() estimates the autoregressive (AR) model parameters using the covariance method.
+The function returns the AR coefficients `a` and the variance estimate `e` of the white noise input to the AR model.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[a, e] = arcov([1, 2, 3, 4, 5], 2)
+   ]]></programlisting>
 </refsection>
 </refentry>

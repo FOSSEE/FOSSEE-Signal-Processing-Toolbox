@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from cplxpair.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="cplxpair" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>cplxpair</refname>
+    <refpurpose>Sort numbers into complex conjugate pairs.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   zsort = cplxpair(z)
+   zsort = cplxpair(z, tol)
+   zsort = cplxpair(z, tol, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Matrix or vector. Input numbers to be sorted.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> Scalar. Tolerance for matching complex conjugates. Default is 100.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> Integer. Dimension along which to sort. Default is the first non-singleton dimension.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zsort:</term>
+            <listitem><para> Matrix or vector. Sorted numbers with complex conjugate pairs.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function sorts the input numbers `z` into complex conjugate pairs, ordered by increasing real part. Negative imaginary parts are placed first within each pair. Real numbers are placed after the complex pairs. An error is signaled if some complex numbers cannot be paired or if they are not exact conjugates within the specified tolerance.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+z = exp(2*%i*%pi*[0:4]'/5)
+zsort = cplxpair(z)
+   ]]></programlisting>
+</refsection>
+</refentry>

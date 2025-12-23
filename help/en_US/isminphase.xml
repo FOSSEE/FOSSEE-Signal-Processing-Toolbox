@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>isminphase</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Determine whether a filter is minimum phase.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   flag = isminphase(b, a)
+   flag = isminphase(sos)
+   flag = isminphase(..., tol)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Numerator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Denominator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sos:</term>
+            <listitem><para> K x 6 second-order section matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol:</term>
+            <listitem><para> (optional) Tolerance used to determine when two numbers are close enough to be considered equal.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `isminphase` function determines whether the given system function is a minimum phase system.
+A minimum phase system means all zeros of the transfer function are inside the unit circle in the z-plane,
+and all poles must be within the unit circle for stability and causality.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+flag = isminphase([1 -0.3 0.02], 1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda ( parthasarathipanda314@gmail.com )</member>
+   </simplelist>
+</refsection>
 </refentry>

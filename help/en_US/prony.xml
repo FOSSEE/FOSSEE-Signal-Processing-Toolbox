@@ -17,7 +17,75 @@
 
   <refnamediv>
     <refname>prony</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Prony's method for time-domain design of IIR Filters.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = prony(h, nb, na)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para> Impulse response of the digital filter (vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>nb:</term>
+            <listitem><para> Number of zeros (integer).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>na:</term>
+            <listitem><para> Number of poles (integer).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `prony` function designs an IIR filter using Prony's method. It computes the coefficients of the numerator (`b`)
+and denominator (`a`) of the transfer function (TF) based on the given impulse response `h`, number of zeros `nb`,
+and number of poles `na`.
+   </para>
+   <para>
+Notes
+- The function zero-pads the input `h` if its length is less than `max(nb, na) + 1`.
+- The method avoids division by zero by normalizing the first element of `h`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Design an IIR filter with 1 zero and 2 poles:
+V = filter([1, 1], [1, 1, 2], [1 zeros(1, 31)]) // Impulse response
+[b, a] = prony(V, 1, 2)
+
+// Design an IIR filter with 1 zero and 3 poles:
+V = filter([1, 2], [1, 2, 3, 4], [1 zeros(1, 31)]);
+[b, a] = prony(V, 1, 3)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>T.W. Parks and C.S. Burrus, Digital Filter Design, John Wiley and Sons, 1987, p226.</para>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
 </refentry>

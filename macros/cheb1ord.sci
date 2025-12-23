@@ -10,33 +10,32 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [n, Wc] = cheb1ord(Wp, Ws, Rp, Rs)
-    //Minimum filter order of a digital Chebyshev type I filter with the desired response characteristics.
-    //Calling Sequence
-    //n = cheb1ord(Wp, Ws, Rp, Rs)
-    //[n, Wp] = cheb1ord(Wp, Ws, Rp, Rs)
-    //Parameters
-    //Wp: scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]
-    //Rp: passband ripple in dB.
-    //Rs: stopband attenuation in dB.
-    //n: Minimum filter order satisfying specs
-    //Wp: passband edge(s)
-    //Description
-    //This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.
-    //Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
-    //Frequencies are normalized to the Nyquist frequency in the range [0,1].
-    //Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
-    //If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
-    //If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
-    //If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
-    //Examples
-    //[n, wp]=cheb1ord([0.25 0.3],[0.24 0.31],3,10)
-    // wp  =
-    //
-    //    0.25    0.3
-    // n  =
-    //
-    //    3.
+// Compute the minimum filter order of a digital Chebyshev type I filter.
+//
+// Syntax
+//   n = cheb1ord(Wp, Ws, Rp, Rs)
+//   [n, Wp] = cheb1ord(Wp, Ws, Rp, Rs)
+//
+// Parameters
+// Wp: Scalar or vector of length 2. Passband edge(s) in the range [0, 1].
+// Ws: Scalar or vector of length 2. Stopband edge(s) in the range [0, 1].
+// Rp: Passband ripple in dB.
+// Rs: Stopband attenuation in dB.
+// n: Minimum filter order satisfying the specifications.
+// Wp: Passband edge(s).
+//
+// Description
+//This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.
+//Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
+//Frequencies are normalized to the Nyquist frequency in the range [0,1].
+//Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
+//If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
+//If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
+//If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
+//
+// Examples
+// [n, wp] = cheb1ord([0.25, 0.3], [0.24, 0.31], 3, 10)
+// 
 
     funcprot(0);
     [nargout nargin] = argn();

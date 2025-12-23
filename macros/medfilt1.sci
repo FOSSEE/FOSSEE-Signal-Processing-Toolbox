@@ -1,7 +1,7 @@
 function y = medfilt1(x, varargin)
 // 1D median filtering
 //
-// Calling sequence
+// Syntax
 // y = medfilt1(x)
 // y = medfilt1(x, n)
 // y = medfilt1(x, n, dim)
@@ -44,24 +44,17 @@ function y = medfilt1(x, varargin)
 //      y has the same size as x
 //
 //
-// Examples : Noise supression using 10th order (n =10) median filtering
+// Examples 
+// // Noise supression using 10th order (n =10) median filtering
+// //Generate a sinusoidal signal sampled for 1 second at 100 Hz. Add a higher-frequency sinusoid to simulate noise.
+// fs = 100
+// t = 0:1/fs:1;
+// x = sin(2*%pi*t*3)+0.25*sin(2*%pi*t*40);
 //
-////Generate a sinusoidal signal sampled for 1 second at 100 Hz. Add a higher-frequency sinusoid to simulate noise.
-//fs = 100;
-//t = 0:1/fs:1;
-//x = sin(2*%pi*t*3)+0.25*sin(2*%pi*t*40);
-//
-////Use a 10th-order median filter to smooth the signal. Plot the result.
-//y = medfilt1(x,10);
-//plot(t,x,t,y)
-//legend('Original','Filtered');
-//y = round(y*10000)/10000;
-//y = y'
-//
-//Output :
-// Output is a plot of x versus t and y versus t
-// samples of y is stored in medfilt1op.txt
-//
+// //Use a 10th-order median filter to smooth the signal. Plot the result.
+// y = medfilt1(x,10);
+// plot(t,x,t,y)
+// legend('Original','Filtered');
 //
 // See also
 // filter | hampel | median | sgolayfilt

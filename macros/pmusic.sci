@@ -3,7 +3,7 @@ function varargout = pmusic(varargin)
     // Psuedospectrum using MUSIC algorithm
     //
     // Note: does not implement the plotting functionality as in matlab
-    // Calling Sequence
+    // Syntax
     // [S,w] = pmusic(x,p)
     // [S,w] = pmusic(x,p,w)
     // [S,w] = pmusic(x,p,nfft)
@@ -14,74 +14,78 @@ function varargout = pmusic(varargin)
     // [...] = pmusic(...,freqrange)
     // [...,v,e] = pmusic(...)
     //
-    // Parameters:
-    // x - int|double - vector|matrix
+    // Parameters
+    // x : int|double - vector|matrix
     //      Input signal. In case of a matrix, each row of x represents a
     //      seperate observation of the signal. If 'corr' flag is specified,
     //      then x is the correlation matrix.
     //      If w is not specified in the input, it is determined by the
     //      algorithm. If x is real valued, then range of w is [0, pi].
     //      Otherwise, the range of w is [0, 2pi)
-    // p - int|double - scalar|vector
+    // p : int|double - scalar|vector
     //      p(1) is the dimension of the signal subspace
     //      p(2), if specified, represents a threshold that is multiplied by
     //      the smallest estimated eigenvalue of the signal's correlation matrix.
-    // w - int|double - vector
+    // w : int|double - vector
     //      w is the vector of normalized frequencies over which the
     //      pseuspectrogram is to be computed.
-    // nfft - int - scalar (Default = 256)
+    // nfft : int - scalar (Default = 256)
     //      Length of the fft used to compute pseudospectrum. The length of S
     //      (and hence w/f) depends on the type of values in x and nfft.
     //      If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if
     //      nfft is even and (nfft+1)/2 {Range of w = [0, pi)} otherwise.
     //      If x is complex, length of s is nfft.
-    // fs - int|double - scalar (Default = 1)
+    // fs : int|double - scalar (Default = 1)
     //      Sampling rate. Used to convert the normalized frequencies (w) to
     //      actual values (f) and vice-versa.
-    // nwin - int|double - scalar (int only)|vector (Default = 2*p(1))
+    // nwin : int|double - scalar (int only)|vector (Default = 2*p(1))
     //      If nwin is scalar, it is the length of the rectangular window.
     //      Otherwise, the vector input is considered as the window coefficients.
     //      Not used if 'corr' flag present.
     //      If x is a vector, windowing not done in nwin in scalar. If x is a
     //      matrix,
-    // noverlap - int - scalar (Default = nwin-1)
+    // noverlap : int - scalar (Default = nwin-1)
     //      number of points by which successive windows overlap. noverlap not
     //      used if x is a matrix
-    // freqrange - string
+    // freqrange : string
     //      The range of frequencies over which the pseudospetrogram is
     //      computed. Three possible values - 'onesided', 'twosided', 'centered'
-    // 'corr' flag
+    // 'corr' flag :
     //      Presence indicates that the primary input x is actually a
     //      correlation matrix
     //
-    // Examples:
+    // Examples
     //
-    //Ex1:
-    //n = 0:199;
-    //x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
-    //[S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
-    //plot(w,S);.........to see the plot of psuedospectrum estimate of x vs frequencies w
-//    //Ex2:
-//    n = 0:199;
-//    x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;
-//    [S,w]=pmusic(x,2,16,1)        //where x: [1x200 constant]   p: 2   w: [0x0 constant]   nfft: 16   fs: 1
-  // OUTPUT:
-//S=[2.6425624,5.7475005,77.148221,1.5296243,0.4725347,0.2848481,0.2508128,0.2731036,0.2950648];
-//w=[0,0.0625,0.125,0.1875,0.25,0.3125,0.375,0.4375,0.5];
-   //NOTE EXECUTE FUNCTIONS subspaceMethodsInputParser.sci AND musicBase.sci  PRIOR EXECUTING THIS        FUNCTION
-   //
+    // n = 0:199;
+    // x = cos(0.257*%pi*n) + sin(0.2*%pi*n) + 0.01*rand(size(n,"r"),"normal");
+    // [S,w]=pmusic(x,[%inf,1.1],[],8000,2)  ;//where x: [1x200 constant]       p:-infinite signal space and threshold  value is 1.1         window length:-7       Fs:-8000Hz........fftlength:-256
+    // plot(w,S);//.........to see the plot of psuedospectrum estimate of x vs frequencies w
+    //    
+    //    n = 0:199;
+    //    x = cos(0.257*%pi*n) + sin(0.2*%pi*n) ;
+    //    [S,w]=pmusic(x,2,16,1)        //where x: [1x200 constant]   p: 2   w: [0x0 constant]   nfft: 16   fs: 1
+//    
     // See also
-    // pburg | peig | periodogram | pmtm | prony | pwelch | rooteig | rootmusic
+    // pburg 
+    // peig 
+    // periodogram 
+    // pmtm
+    // prony 
+    // pwelch 
+    // rooteig 
+    // rootmusic
     //
     // Authors
     // Ayush Baid
     //
-    // References
+    // Bibliography
     // [1] Petre Stoica and Randolph Moses, Introduction To Spectral
     //     Analysis, Prentice-Hall, 1997, pg. 15
     // [2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.
     //     2nd Ed., Macmillan, 1988.
 
+    //NOTE EXECUTE FUNCTIONS subspaceMethodsInputParser.sci AND musicBase.sci  PRIOR EXECUTING THIS        FUNCTION
+   //
     funcprot(0);
 
     [numOutArgs,numInArgs] = argn(0);
@@ -93,7 +97,7 @@ function varargout = pmusic(varargin)
     end
 
     // ("**start**");
-    [data, msg, err_num] = subspaceMethodsInputParser(varargin);
+    [data, msg, err_num] = subspaceMethodsInputPars(varargin);
 
     if length(msg)==0 then
         // no error occured

@@ -22,8 +22,12 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
+   [num,den] = latc2tf(k,v)
+   [num,den] = latc2tf(k,'iiroption')
+   num = latc2tf(k,'firoption')
+   
    </synopsis>
 </refsynopsisdiv>
 
@@ -61,23 +65,27 @@ Speficication of the type of FIR filter
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1) FIR filter
-k1 = [1/2 1/2 1/4];
-[num1,den1] = latc2tf(k1);
+// FIR filter
+k1 = [1/2 1/2 1/4]
+[num1,den1] = latc2tf(k1)
 
    ]]></programlisting>
 </refsection>
 
-<refsection>
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
-   <member><link linkend="latcfilt">| tf2latc</link></member>
-   <member><link linkend="References">References</link></member>
-   <member><link linkend="[1]">J.G. Proakis, D.G. Manolakis, Digital Signal Processing,</link></member>
-   <member><link linkend="3rd">ed., Prentice Hall, N.J., 1996, Chapter 7.</link></member>
-   <member><link linkend="[2]">S. K. Mitra, Digital Signal Processing, A Computer</link></member>
-   <member><link linkend="Based">Approach, McGraw-Hill, N.Y., 1998, Chapter 6.</link></member>
+   <member><link linkend="latcfilt">latcfilt</link></member>
+   <member><link linkend="tf2latc">tf2latc</link></member>
    </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] J.G. Proakis, D.G. Manolakis, Digital Signal Processing,</para>
+   <para>3rd ed., Prentice Hall, N.J., 1996, Chapter 7.</para>
+   <para>[2] S. K. Mitra, Digital Signal Processing, A Computer</para>
+   <para>Based Approach, McGraw-Hill, N.Y., 1998, Chapter 6.</para>
 </refsection>
 
 <refsection>

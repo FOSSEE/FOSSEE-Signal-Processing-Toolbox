@@ -1,10 +1,33 @@
 function [b,a,N,M] = eqtflength(b,a)
-//Modifies the input vector to give output vectors of the same length
-//Calling Sequence
-//[b,a] = eqtflength(b,a)
-//[b,a,N,M] = eqtflength(b,a)
-//Author
-//Debdeep Dey
+// Modifies the input vectors to give output vectors of the same length.
+//
+// Syntax
+//   [b, a] = eqtflength(b, a)
+//   [b, a, N, M] = eqtflength(b, a)
+//
+// Parameters
+// b: Vector. The numerator coefficients of the transfer function.
+// a: Vector. The denominator coefficients of the transfer function.
+// N: Integer. The length of the numerator vector after modification.
+// M: Integer. The length of the denominator vector after modification.
+//
+// Description
+// This function modifies the input vectors `b` and `a` to ensure they have the same length by appending zeros to the shorter vector. 
+// It also returns the lengths of the modified numerator and denominator vectors.
+//
+// Examples
+// // Equalize lengths of numerator and denominator:
+//    b = [1, 2]
+//    a = [1, 2, 3]
+//    [b, a] = eqtflength(b, a)
+// // Return lengths of modified vectors:
+//    b = [1, 2]
+//    a = [1, 2, 3]
+//    [b, a, N, M] = eqtflength(b, a)
+//
+// Authors
+//  Debdeep Dey 
+
 
     if(argn(2)~=2)
         error('Incorrect number of input arguments');

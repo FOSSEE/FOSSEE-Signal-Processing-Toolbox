@@ -17,37 +17,45 @@
 
   <refnamediv>
     <refname>flattopwin</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function returns the filter coefficients of a Flat Top window.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    w = flattopwin (m)
    w = flattopwin (m, opt)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>opt:</term>
-      <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> positive integer value</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opt:</term>
+            <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> output variable, vector of real numbers</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
 This function returns the filter coefficients of a Flat Top window of length m supplied as input, to the output vector w.
 The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
 This window has low pass-band ripple but a high bandwidth.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -55,15 +63,7 @@ This window has low pass-band ripple but a high bandwidth.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 flattopwin(8,"periodic")
-ans  =
-0.0009051
-- 0.0264124
-- 0.0555580
-0.4435496
-1.
-0.4435496
-- 0.0555580
-- 0.0264124
+
    ]]></programlisting>
 </refsection>
 </refentry>

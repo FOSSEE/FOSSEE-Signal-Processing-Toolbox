@@ -17,39 +17,46 @@
 
   <refnamediv>
     <refname>meyeraux</refname>
-    <refpurpose>Returns value of Meyer Wavelet Auxiliary function</refpurpose>
+    <refpurpose>Wavelet Auxiliary function</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [y]=meyeraux(x)
+   y = meyeraux(x)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> Real or complex valued vector or matrix</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Meyer auxiliary function of the input signal.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function returns values of the auxiliary function used for Meyer wavelet generation.
+This function computes the Meyer auxiliary function for the input signal `x`.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-1.    meyeraux([1 2 3])
-ans= [1    -208  -10287]
-2.    meyeraux([1 2 3;4 5 6])
-ans=  [1      -208    -10287  ;     -118016   -709375  -2940624 ]
+y = meyeraux([1, 2, 3, 4])
+
    ]]></programlisting>
 </refsection>
 </refentry>

@@ -17,7 +17,68 @@
 
   <refnamediv>
     <refname>intfilt</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate Interpolated FIR Filter Design.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   h=intfilt(R,L,freqmult)
+   [h a]=intfilt(R,L,freqmult)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> Samples. It should be numeric</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>L:</term>
+            <listitem><para> bandlimited interpolation samples. It must be nonzero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freqmult:</term>
+            <listitem><para> bandlimitedness of ALPHA times the Nyquist frequency, IT can be numeric or character ('B' or 'L', B is length</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para>  linear phase FIR filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Interpolated FIR filter design and frequency response
+// Design parameters
+R = 4
+L = 3
+freqmult = 'l'  // low-bandwidth interpolation
+// Design the interpolated FIR filter
+[h, a] = intfilt(R, L, freqmult)
+// Plot impulse response
+n = 0:length(h)-1;
+scf(0);
+plot2d3(n', h');
+xlabel("n");
+ylabel("Amplitude");
+title("Impulse Response of Interpolated FIR Filter");
+scf(1);
+freqz(h, 1);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

@@ -17,7 +17,52 @@
 
   <refnamediv>
     <refname>kaiser</refname>
-    <refpurpose>This function returns the filter coefficients of a Kaiser window.</refpurpose>
+    <refpurpose>Compute the filter coefficients of a Kaiser window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = kaiser(m)
+   w = kaiser(m, beta)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer value representing the length of the Kaiser window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>beta:</term>
+            <listitem><para> (optional) Real scalar value representing the shape parameter of the Kaiser window. Default is 0.5.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Output variable, a vector of real numbers representing the filter coefficients.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `kaiser` function computes the filter coefficients of a Kaiser window of length `m`.
+The second parameter `beta` determines the stopband attenuation of the Fourier transform of the window.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+kaiser(6, 0.2)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

@@ -10,52 +10,55 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [a, b, c, d] = ellip (n, rp, rs, w, varargin)
-    //Elliptic or Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.
-    //Calling Sequence
-    //[b, a] = ellip (n, rp, rs, wp)
-    //[b, a] = ellip (n, rp, rs, wp, "high")
-    //[b, a] = ellip (n, rp, rs, [wl, wh])
-    //[b, a] = ellip (n, rp, rs, [wl, wh], "stop")
-    //[z, p, g] = ellip (…)
-    //[…] = ellip (…, "s")
-    //Parameters
-    //n: positive integer value (order of filter)
-    //rp: non negative scalar value (passband ripple)
-    //rs: non negative scalar value (stopband attenuation)
-    //wp: positive real value,
-    //    1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}
-    //    2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}
-    //Description
-    //This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.
-    //[b, a] = ellip(n, Rp, Rs, Wp) indicates low pass filter with order n, Rp decibels of ripple in the passband and a stopband Rs decibels down and cutoff of pi*Wp radians. If the fifth argument is high, then the filter is a high pass filter.
-    //[b, a] = ellip(n, Rp, Rs, [Wl, Wh]) indictaes band pass filter with band pass edges pi*Wl and pi*Wh. If the fifth argument is stop, the filter is a band reject filter.
-    //[z, p, g] = ellip(...) returns filter as zero-pole-gain.
-    //[...] = ellip(...,’s’) returns a Laplace space filter, wp can be larger than 1.
-    //Examples
-    //[b, a]=ellip(2, 3, 40, [0.3,0.4])
-    //Output :
-    // a  =
-    //
-    //
-    //         column 1 to 4
-    //
-    //    1.  - 1.7258519    2.5097172  - 1.5592802
-    //
-    //         column 5
-    //
-    //    0.8188057
-    // b  =
-    //
-    //
-    //         column 1 to 4
-    //
-    //    0.0202774  - 0.0164257    0.0027304  - 0.0164257
-    //
-    //         column 5
-    //
-    //    0.0202774
-    // Dependencies
-    // ellipap sftrans bilinear zp2tf
+    // Design an elliptic or Cauer filter with specified passband ripple and stopband attenuation.
+//
+// Syntax
+//   [b, a] = ellip(n, rp, rs, wp)
+//   [b, a] = ellip(n, rp, rs, wp, "high")
+//   [b, a] = ellip(n, rp, rs, [wl, wh])
+//   [b, a] = ellip(n, rp, rs, [wl, wh], "stop")
+//   [z, p, g] = ellip(...)
+//   [...] = ellip(..., "s")
+//
+// Parameters
+// n: Positive integer. The order of the filter.
+// rp: Non-negative scalar. The passband ripple in decibels (dB).
+// rs: Non-negative scalar. The stopband attenuation in decibels (dB).
+// wp: Positive real value. Specifies the passband edge(s):
+//     1) Normalized digital passband edge(s) for digital filters, in the range [0, 1] (dimensionless).
+//     2) Analog passband edge(s) for analog filters, in the range [0, Inf] (rad/sec).
+// wl, wh: Positive real values. Specify the lower and upper band edges for bandpass or bandstop filters.
+// z: Vector. The zeros of the filter.
+// p: Vector. The poles of the filter.
+// g: Scalar. The gain of the filter.
+// b: Vector. The numerator coefficients of the filter.
+// a: Vector. The denominator coefficients of the filter.
+//
+// Description
+// This function generates an elliptic or Cauer filter with `rp` dB of passband ripple and `rs` dB of stopband attenuation.
+// - [b, a] = ellip(n, rp, rs, wp) designs a lowpass filter with order `n`, passband ripple `rp`, stopband attenuation `rs`, and cutoff frequency `pi*wp` radians.
+// - [b, a] = ellip(n, rp, rs, wp, "high") designs a highpass filter.
+// - [b, a] = ellip(n, rp, rs, [wl, wh]) designs a bandpass filter with edges `pi*wl` and `pi*wh`.
+// - [b, a] = ellip(n, rp, rs, [wl, wh], "stop") designs a bandstop filter.
+// - [z, p, g] = ellip(...) returns the filter in zero-pole-gain form.
+// - [...] = ellip(..., "s") returns an analog filter in Laplace space.
+//
+// Examples
+// // Lowpass filter:
+//    [b, a] = ellip(6, 3, 50, 0.6)
+// // Highpass filter:
+//    [b, a] = ellip(6, 3, 50, 0.6, "high")
+// // Bandpass filter:
+//    [b, a] = ellip(5, 1, 90, [0.1, 0.2])
+// // Bandstop filter:
+//    [b, a] = ellip(5, 1, 90, [0.1, 0.2], "stop")
+// // Zero-pole-gain form:
+//    [z, p, g] = ellip(6, 3, 50, 0.6)
+//
+// See also
+//  ellipap, sftrans, bilinear, zp2tf
+//
+
     
     funcprot(0);
     [nargout nargin] = argn();

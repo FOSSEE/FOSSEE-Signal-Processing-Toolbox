@@ -12,6 +12,37 @@
 // Dependencies
 // prepad deconv mpoles
 function [r, p, k, e] = residue (b, a, varargin)
+// Residue computation for partial fraction expansion and reconstruction.
+//
+// Syntax
+//   [r, p, k, e] = residue(b, a)
+//   [b, a] = residue(r, p, k, e)
+//
+// Parameters
+// b: Numerator coefficients of the polynomial (vector).
+// a: Denominator coefficients of the polynomial (vector).
+// r: Residues of the partial fraction expansion (vector).
+// p: Poles of the partial fraction expansion (vector).
+// k: Coefficients of the direct polynomial term (vector).
+// e: Multiplicities of the poles (vector).
+//
+// Description
+// The `residue` function computes the partial fraction expansion of a rational function represented by the numerator `b` 
+// and denominator `a`. It returns the residues `r`, poles `p`, and direct term coefficients `k`. The function can also 
+// reconstruct the numerator and denominator polynomials from the residues, poles, and direct term.
+//
+// Examples
+// // Compute partial fraction expansion:
+//    b = [1, 1, 1]
+//    a = [1, -5, 8, -4]
+//    [r, p, k, e] = residue(b, a)
+//
+// // Reconstruct polynomials from residues and poles:
+//    [b_reconstructed, a_reconstructed] = residue(r, p, k, e)
+//
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
 
     if (nargin < 2 || nargin > 4)
       error("residue: Invalid number of arguments");

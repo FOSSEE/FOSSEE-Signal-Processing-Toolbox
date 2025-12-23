@@ -1,5 +1,38 @@
 
 function [phi, varargout]=phasedelay(varargin)
+// Compute the phase delay of a filter.
+//
+// Syntax
+//   [phi] = phasedelay(b, a, w)
+//   [phi] = phasedelay(sos, w)
+//   [phi, f] = phasedelay(..., fs)
+//
+// Parameters
+// b: Numerator coefficients of the filter (vector).
+// a: Denominator coefficients of the filter (vector).
+// sos: Second-order section matrix (K x 6).
+// w: Frequency points (vector) at which the phase delay is computed (in radians/sample).
+// fs: (optional) Sampling frequency (scalar). If provided, the frequency vector `f` is returned in Hz.
+//
+// Description
+// The `phasedelay` function computes the phase delay of a filter at specified frequency points. 
+// It supports both direct rational form (numerator and denominator coefficients) and second-order section (SOS) form.
+//
+// - For direct rational form, the phase delay is computed using the numerator and denominator coefficients.
+// - For SOS form, the phase delay is computed for each section and summed to obtain the total phase delay.
+//
+// Examples
+// // Compute phase delay for a filter in direct form:
+//    b = [0.1, 0.2, 0.3]
+//    a = [1, -0.5, 0.25]
+//    w = linspace(0, %pi, 100);
+//    phi = phasedelay(b, a, w)
+//
+//
+// Authors
+// Parthasarathi Panda
+// parthasarathipanda314@gmail.com
+
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given
     //(sos,n) or (sos,w) or (sos,'whole')or (b,a) is the input
     //cas variable is 2 if sos form is involved and 1 if direct rational form is given

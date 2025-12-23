@@ -17,7 +17,64 @@
 
   <refnamediv>
     <refname>stmcb</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Compute linear model using Steiglitz-McBride iteration</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b,a] = stmcb(h,nb,na)
+   [b,a] = stmcb(y,x,nb,na)
+   [b,a] = stmcb(h,nb,na,niter)
+   [b,a] = stmcb(y,x,nb,na,niter)
+   [b,a] = stmcb(h,nb,na,niter,ai)
+   [b,a] = stmcb(y,x,nb,na,niter,ai)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>b,a :</term>
+            <listitem><para> coefficients of the system function,nb is number of zeros and na is number of poles</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para>impulse response of the system</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x,y:</term>
+            <listitem><para> input and output of same length given to the system</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>niter:</term>
+            <listitem><para> no of iterations</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ai:</term>
+            <listitem><para>initial estimate of the denominator coefficients</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the coefficients of the system function of a linear system using the Steiglitz-McBride iteration method.
+Accepts only real i/ps , imaginary i/ps are not accepted due to limitations of the 'filter' function in Scilab
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+h = fscanfMat("macros/stmcb_h_data.txt");
+stmcb(h,4,4)
+   ]]></programlisting>
+</refsection>
 </refentry>

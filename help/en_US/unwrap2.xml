@@ -17,44 +17,75 @@
 
   <refnamediv>
     <refname>unwrap2</refname>
-    <refpurpose>Unwrap radian phases by adding or subtracting multiples of 2*pi.</refpurpose>
+    <refpurpose>Unwrap radian phases in an input array.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   B = unwrap(X)
-   B = unwrap(X, TOL)
-   B = unwrap(X, TOL, DIM)
+   retval = unwrap2(x)
+   retval = unwrap2(x, tol)
+   retval = unwrap2(x, tol, dim)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input array containing radian phases to be unwrapped.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>tol (optional):</term>
+            <listitem><para> Tolerance parameter specifying the maximum jump allowed between consecutive phases before adding or subtracting 2π. Defaults to π.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim (optional):</term>
+            <listitem><para> Dimension along which to unwrap the phases. If unspecified, dim defaults to the first non-singleton dimension of the array x.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>retval:</term>
+            <listitem><para> Array with unwrapped radian phases.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function unwraps radian phases by adding or subtracting multiples of 2*pi as appropriate to remove jumps greater than TOL.
+The `unwrap2` function adjusts radian phases in the input array `x` by adding or subtracting multiples of 2π as necessary to remove phase jumps
+that exceed the specified tolerance `tol`. If `tol` is not provided, it defaults to π. The function operates along the specified dimension `dim`
+or the first non-singleton dimension if `dim` is not provided.
    </para>
    <para>
-TOL defaults to pi.
-   </para>
-   <para>
-Unwrap will work along the dimension DIM.  If DIM is unspecified it defaults to the first non-singleton dimension.
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-unwrap2([1,2,3])
-ans =
-1.    2.    3.
+// Unwrap a vector of radian phases:
+x = [0, %pi/2, %pi, -%pi, -%pi/2]
+retval = unwrap2(x)
+
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="permute">permute</link></member>
+   </simplelist>
 </refsection>
 </refentry>

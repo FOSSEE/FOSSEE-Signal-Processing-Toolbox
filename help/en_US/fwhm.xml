@@ -17,27 +17,97 @@
 
   <refnamediv>
     <refname>fwhm</refname>
-    <refpurpose>This function computes peak full width at half minimum or at another level of peak minimum for vector or matrix data y supplied as input.</refpurpose>
+    <refpurpose>Compute peak full-width at half maximum (FWHM) or at another level of peak maximum for vector or matrix data.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   f = fwhm (y)
-   f = fwhm (x, y)
-   f = fwhm (…, "zero")
-   f = fwhm (…, "min")
-   f = fwhm (…, "alevel", level)
-   f = fwhm (…, "rlevel", level)
+   f = fwhm(y)
+   f = fwhm(x, y)
+   f = fwhm(…, "zero")
+   f = fwhm(…, "min")
+   f = fwhm(…, "alevel", level)
+   f = fwhm(…, "rlevel", level)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>y:</term>
-      <listitem><para> vector or matrix</para></listitem></varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector or matrix. If `y` is a matrix, FWHM is calculated for each column as a row vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> (optional) Vector specifying the sampling points of `y`. If not provided, `x` defaults to 1:length(y).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>"zero":</term>
+            <listitem><para> (optional) Default option. Computes FWHM at half maximum, i.e., 0.5 * max(y).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>"min":</term>
+            <listitem><para> (optional) Computes FWHM at the middle curve, i.e., 0.5 * (min(y) + max(y)).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>"alevel":</term>
+            <listitem><para> (optional) Computes full-width at the given absolute level of `y`. Requires an additional argument `level`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>"rlevel":</term>
+            <listitem><para> (optional) Computes full-width at the given relative level of peak profile. Requires an additional argument `level`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>level:</term>
+            <listitem><para> (optional) Scalar specifying the absolute or relative level for FWHM computation.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> Full-width at the specified level. If FWHM does not exist (e.g., for a monotonous function), returns 0.</para></listitem>
+        </varlistentry>
    </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `fwhm` function computes the full-width at half maximum (FWHM) or at another specified level for vector or matrix data `y`.
+If `y` is a matrix, the function computes FWHM for each column and returns the results as a row vector. The function supports
+several options for specifying the level at which the width is computed:
+   </para>
+   <para>
+- "zero" (default): Computes FWHM at half maximum, i.e., 0.5 * max(y).
+- "min": Computes FWHM at the middle curve, i.e., 0.5 * (min(y) + max(y)).
+- "rlevel": Computes full-width at the given relative level of the peak profile, i.e., at `rlevel * max(y)` or
+`rlevel * (min(y) + max(y))`. For example, `fwhm(…, "rlevel", 0.1)` computes the full width at 10% of the peak maximum.
+FWHM is equivalent to `fwhm(…, "rlevel", 0.5)`.
+- "alevel": Computes full-width at the given absolute level of `y`.
+   </para>
+   <para>
+The function returns 0 if FWHM does not exist (e.g., for a monotonous function or if the function does not intersect the
+horizontal line at the specified level).
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+fwhm([1,2,3;9,-7,0.6],[4,5,6])
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>FOSSEE Team</member>
+   <member>toolbox@scilab.in</member>
+   </simplelist>
 </refsection>
 </refentry>

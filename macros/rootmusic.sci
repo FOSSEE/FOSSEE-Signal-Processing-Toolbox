@@ -2,68 +2,61 @@
 function [w,pow] = rootmusic(x,p,varargin)
     // Frequencies and power of sinusoids using the root MUSIC algorithm
     //
-    // Calling Sequence
+    // Syntax
     // w = rootmusic(x,p)
     // [w,pow] = rootmusic(x,p)
     // [f,pow] = rootmusc(...,fs)
     // [w,pow] = rootmusic(...,'corr')
     //
     // Parameters
-    // x - int|double - vector|matrix
+    // x : int|double - vector|matrix
     //      Input signal.
     //      If x is a vector, then it reprsenets one realization of the signal.
     //      If x is a matrix, then each row represents a separate observation of
     //      the signal.
-    // p - int|double - scalar|2 element vector
+    // p : int|double - scalar|2 element vector
     //      p(1) is the signal subspace dimension and hence the number of
     //      complex exponentials in x.
     //      p(2), if specified, represents a threshold that is multiplied by
     //      the smallest estimated eigenvalue of the signal's correlation
     //      matrix.
-    // fs - int|double - scalar
+    // fs : int|double - scalar
     //      Sampling frequency (in Hz)
     //      If fs is specified by an empty vector or unspecified, it defaults
     //      to 1 Hz
-    // 'corr' flag
+    // 'corr' : flag
     //      If specified, x is interpreted as a correlation matrix rather than
     //      a matrix of the signal data. For x to be a correlation matrix,
     //      x must be a square matrix and all its eigenvalues must be
     //      nonnegative
     //
-    // Examples:
-    //      1) 3 complex exponentials:
+    // w : double - vector
+    //      Estimated frequencies of the complex sinusoids
+    // pow : double - vector
+    //      estimated absolute value squared amplitudes of the sinusoids at
+    //      the frequencies w   
+    //  
+    // Examples
+    //      // 3 complex exponentials:
     //
-//              n=0:99;
-//   s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
-// [A,R]=corrmtx(s,12,'mod');
-// [W,P] = rootmusic(R,3,'corr');
-// //2)
-// n=0:99;
-// s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n);
-//  [A,R]=corrmtx(s,12,'mod');
-// [W,P] = rootmusic(R,3,'corr');
- //EXPECTED OUTPUT:
- //W = 0.7738111    1.5690374    1.0426234
- //P  =377.4255    103.18124    123.86659
+    //       n=0:99;
+    //       s=exp(1*%i*%pi/2*n)+2*exp(1*%i*%pi/4*n)+exp(1*%i*%pi/3*n)+rand(1,100,"normal");
+    //       [A,R]=corrmtx(s,12,'mod')
+    //       [W,P] = rootmusic(R,3,'corr')
     //
-    // Author
+    // Authors
     // Ayush
     //
     // See also
     // corrmtx | peig | pmusic | rooteig
     //
-    // References
+  
+    
+    // Bibliography
     // 1) Monson H. Hayes, Statistical Digital Signal Processing And Modeling,
     // Wiley & Sons, Inc, [Section 8.6.3]
     //
-    //
-    // Output arguments
-    // w - double - vector
-    //      Estimated frequencies of the complex sinusoids
-    // pow - double - vector
-    //      estimated absolute value squared amplitudes of the sinusoids at
-    //      the frequencies w
-    //
+    
 
     funcprot(0);
 

@@ -1,24 +1,33 @@
 function v = pchip(x,y,xx)
-//this function returns piecewise cubic hermite interpolating polynomial.
-// Calling Sequence
-// d=pchip(x,y)
-// d= pchip(X,,y,xx) 
+// Compute the piecewise cubic Hermite interpolating polynomial.
+//
+// Syntax
+//   v = pchip(x, y)
+//   v = pchip(x, y, xx)
+//
 // Parameters
-// x: a vector
-// y: if Y is vector then it must have the same length as x and Y is matrix then  the last dimension of Y must equal length(X).
-// xx: Points for interpolation
-// v: vector of interpolantant at xx
-//// Examples
-// x=[0 1 2 3 4 5]
-// y=[1 0 1 0 1 0]
-// xx=linspace(0,5,800)
-// v=pchip(x, y) 
-// v=pchip(x,y,xx)
-//plot(x,y,xx,v,'o')
- // Authors
+// x: A vector of input data points.
+// y: A vector or matrix of function values at the points in `x`. If `y` is a vector, it must have the same length as `x`. If `y` is a matrix, the last dimension of `y` must equal the length of `x`.
+// xx: (optional) Points for interpolation.
+//
+// Description
+// The `pchip` function computes the piecewise cubic Hermite interpolating polynomial for the given data points `x` and `y`. 
+// If the optional parameter `xx` is provided, the function evaluates the interpolating polynomial at the points in `xx`.
+//
+// Examples
+// x = [0, 1, 2, 3, 4, 5]
+// y = [1, 0, 1, 0, 1, 0]
+// xx = linspace(0, 5, 800)
+// v1 = pchip(x, y)
+// v2 = pchip(x, y, xx)
+// plot(x, y, 'o', xx, v2)
+//
+// Authors
 // Jitendra Singh
-// NOTE:execute function "pchips" prior executing this function
-        
+//
+
+// Note
+// Execute the function `pchips` prior to executing this function.
 
 if argn(2)==3 & ~isreal(xx)
   error('Points for interpolation must be real.') 

@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    OUT=peak2rms(IN)
    OUT=peak2rms(IN,orientation)
@@ -33,12 +33,18 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>in:</term>
-      <listitem><para>Vector or Matrix of real or complex elements.</para></listitem></varlistentry>
-   <varlistentry><term>orientation:</term>
-      <listitem><para> A string with possible values "r", "c" or "m" giving the dimension along which the peak2rms value is to be calculated.</para></listitem></varlistentry>
-   <varlistentry><term>out:</term>
-      <listitem><para>A scalar with real value when input is a vector.When input is a matrix, out is the peak magnitude to RMS  value along the orientation specified or the default one when not specified.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>in:</term>
+            <listitem><para>Vector or Matrix of real or complex elements.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>orientation:</term>
+            <listitem><para> A string with possible values "r", "c" or "m" giving the dimension along which the peak2rms value is to be calculated.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>out:</term>
+            <listitem><para>A scalar with real value when input is a vector.When input is a matrix, out is the peak magnitude to RMS  value along the orientation specified or the default one when not specified.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -46,24 +52,12 @@
    <title>Description</title>
    <para>
 For vector as input, the output is the ratio of peak value to the RMS value. The RMS value can be calculated by taking the square root of mean value of the squared sum of the elements.
-   </para>
-   <para>
 When a matrix is given as input the output is peak to RMS ratio in the orientation specified.
 The orientation can be given as  string with values "r","c" or "m".
-   </para>
-   <para>
 peak2rms(in, 1) calculates the values of ratio of peak to RMS  of columns of matrix. The output in this case is a row vector with peak2rms value of each column of in.
-   </para>
-   <para>
 peak2rms(in, 2) calculates the  values of ratio of peak to RMS of rows of   matrix, where the output would be a column vector having peak2rms value of each row of in.
-   </para>
-   <para>
 The default orientation is chosen to be the index of first dimension of input greater than 1.Hence peak2rms(in) is equivalent to peak2rms(in, "m").
-   </para>
-   <para>
 For an N dimensional array the orientation is the index of first non singleton dimension of the array.
-   </para>
-   <para>
 If the elements of matrix are complex the absolute values are considered in the calculation of RMS value.
    </para>
    <para>
@@ -73,25 +67,37 @@ If the elements of matrix are complex the absolute values are considered in the 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-To calculate peak2rms of a vector:
+// To calculate peak2rms of a vector:
 IN=[6 19 10 25]
 OUT=peak2rms(IN)
-The output is OUT=
-1.4927036
+
+// To calculate peak2rms of rows of matrix:
+IN=[1 3 5;2 4 6;7 8 9]
+OUT=peak2rms(IN,2)
+
+// To calculate peak magnitude to RMS value of sinusoid:
+t=0:0.6:9
+IN=cos(6*%pi*t)
+OUT= peak2rms(IN)
 
    ]]></programlisting>
 </refsection>
 
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="abs">abs</link></member>
+   <member><link linkend="mean">mean</link></member>
+   <member><link linkend="max">max</link></member>
+   <member><link linkend="sqrt">sqrt</link></member>
+   <member><link linkend="isempty">isempty</link></member>
+   </simplelist>
+</refsection>
+
 <refsection>
-   <title>Examples</title>
-   <programlisting role="example"><![CDATA[
-//To calculate peak2rms of rows of matrix:
-IN=[1 3 5;2 4 6;7 8 9]
-OUT=peak2rms(IN,2)
-The output is
-OUT= 1.4638501
-1.3887301
-1.119186
-   ]]></programlisting>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Indira Askaukar</member>
+   </simplelist>
 </refsection>
 </refentry>

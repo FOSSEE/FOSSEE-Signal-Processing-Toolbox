@@ -1,37 +1,22 @@
 function [rmsx, w] =  movingrms(x, width, risetime, varargin)
 // Find moving RMS value of signal in x
-// Calling Sequence
-//[rmsx,w]=movingrms(x,width,risetime)
-//[rmsx,w]=movingrms(x,width,risetime,Fs)
-// Parameters
+//
+//  Syntax
+// [rmsx,w]=movingrms(x,width,risetime)
+// [rmsx,w]=movingrms(x,width,risetime,Fs)
+//
+//  Parameters
 //	x: (Real or complex valued vector or matrix) Input Signal
 //	width: Real or complex scalar value
 //	risetime: Real or complex scalar value
 //	Fs: (Real or complex scalar value) Sampling frequency
+// 
 // Description
 //	In this function signal is convoluted against a sigmoid window of width w and risetime rc with the units of these parameters relative to the value of the sampling frequency given in Fs (Default value=1).
-// Example : 1
-//[a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2)
-// Output:
-// b  =
-//
-//    0.1887703
-//    0.1887703
-// a  =
-//
-//    0.9123683    17.719291    0.9625436
-//    0.9123683    17.719291    0.9625436
-//Example : 2
-// [a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2,2)
-//Output :
-// b  =
-//
-//    1.
-//    1.
-// a  =
-//
-//    4.8332184    93.866927    5.0990195
-//    4.8332184    93.866927    5.0990195
+// 
+// Examples
+// [a,b]=movingrms ([4.4 94 1;-2 5*%i 5],1,-2)
+// 
 
 funcprot(0);
 if  argn(2) > 4 | argn(2) < 3 then

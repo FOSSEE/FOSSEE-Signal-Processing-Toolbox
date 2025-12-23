@@ -11,16 +11,29 @@
 // Email: toolbox@scilab.in
 
 function res = postpad(x,l,c,dim)
-// Calling Sequence :
-//     postpad (x, l)
-//     postpad (x, l, c)
-//     postpad (x, l, c, dim)
-// Append the scalar value c to the vector x until it is of length l. If c is not given, a value of 0 is used.
-// If length (x) > l, elements from the end of x are removed until a vector of length l is obtained.
-// If x is a matrix, elements are appended or removed from each row.
-// If the optional argument dim is given, operate along this dimension.
-// If dim is larger than the dimensions of x, the result will have dim dimensions.
-    
+// Append or truncate a vector or matrix to a specified length.
+//
+// Syntax
+//   res = postpad(x, l)
+//   res = postpad(x, l, c)
+//   res = postpad(x, l, c, dim)
+//
+// Parameters
+// x: Input vector or matrix.
+// l: Desired length (scalar).
+// c: (optional) Scalar value to append. Default is 0.
+// dim: (optional) Dimension along which to operate. Default is 2.
+//
+// Description
+// The `postpad` function appends the scalar value `c` to the vector or matrix `x` until it reaches the specified length `l`. 
+// If `c` is not provided, a value of 0 is used. If the length of `x` exceeds `l`, elements are removed from the end of `x` 
+// to match the desired length. If `x` is a matrix, the operation is performed along rows or columns based on the `dim` parameter.
+//
+// Examples
+// // Append -1 to a column vector to make its length 6
+// res2 = postpad([1; 2; 3; 4], 6, -1)
+
+  
     if nargin < 2 then 
         error("Usage :  postpad(x,l,c(optional),dim(optional))")
     end

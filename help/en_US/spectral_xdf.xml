@@ -17,38 +17,68 @@
 
   <refnamediv>
     <refname>spectral_xdf</refname>
-    <refpurpose>Return the spectral density estimator given a data vector X, window name WIN, and bandwidth, B.</refpurpose>
+    <refpurpose>Compute the spectral density estimator using a data vector.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   spectral_xdf(X)
-   spectral_xdf(X, WIN)
-   spectral_xdf(X, WIN, B)
+   sde = spectral_xdf(x)
+   sde = spectral_xdf(x, win)
+   sde = spectral_xdf(x, win, b)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X:</term>
-      <listitem><para> Data Vector</para></listitem></varlistentry>
-   <varlistentry><term>WIN:</term>
-      <listitem><para> Window names</para></listitem></varlistentry>
-   <varlistentry><term>B:</term>
-      <listitem><para> Bandwidth</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Data vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>win:</term>
+            <listitem><para> (optional) The window name. Default is "triangle". Supported values are "triangle" and "rectangle".</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> (optional) Bandwidth. Default is 1 / sqrt(length(x)).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sde:</term>
+            <listitem><para> Spectral density estimator.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Return the spectral density estimator given a data vector X, window name WIN, and bandwidth, B.
-The window name, e.g., "triangle" or "rectangle" is used to search for a function called 'WIN_lw'.
-If WIN is omitted, the triangle window is used.
-If B is omitted, '1 / sqrt (length (X))' is used.
+The `spectral_xdf` function computes the spectral density estimator given a data vector `x`, a window name `win`, and a bandwidth `b`.
+The window name is used to search for a function called `win_sw` (e.g., "triangle" or "rectangle"). If `win` is omitted, the triangle window is used.
+If `b` is omitted, 1 / sqrt(length(x)) is used.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute the spectral density estimator with default parameters:
+x = [1, 2, 3, 4, 5]
+sde = spectral_xdf(x)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft1">fft1</link></member>
+   <member><link linkend="ifft1">ifft1</link></member>
+   </simplelist>
 </refsection>
 </refentry>

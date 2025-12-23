@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>phaseInputParseAs_ab</refname>
-    <refpurpose>fs=0;</refpurpose>
+    <refpurpose>Internal function to parse the input arguments for phase delay</refpurpose>
   </refnamediv>
 
 </refentry>

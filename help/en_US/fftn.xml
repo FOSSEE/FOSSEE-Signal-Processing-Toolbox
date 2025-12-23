@@ -17,39 +17,51 @@
 
   <refnamediv>
     <refname>fftn</refname>
-    <refpurpose>This function computes the N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm.</refpurpose>
+    <refpurpose>Compute the N-dimensional discrete Fourier transform.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    Y = fftn(A)
-   Y = fftn(A, size)
+   Y = fftn(A, SIZE)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>A:</term>
-      <listitem><para> Matrix</para></listitem></varlistentry>
+        <varlistentry>
+            <term>A:</term>
+            <listitem><para> Matrix, the input data for which the FFT is computed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>SIZE:</term>
+            <listitem><para> (optional) Vector specifying the dimensions of the output array.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function computes the N-dimensional discrete Fourier transform of A using a Fast Fourier Transform (FFT) algorithm. The optional vector argument SIZE may be used specify the dimensions of the array to be used.  If an element of SIZE is smaller than the corresponding dimension of A, then the dimension of A is truncated prior to performing the FFT.  Otherwise, if an element of SIZE is larger than the corresponding dimension then A is resized and padded with zeros.
+The `fftn` function computes the N-dimensional discrete Fourier transform of the input matrix `A`
+using a Fast Fourier Transform (FFT) algorithm. The optional `SIZE` parameter allows specifying
+the dimensions of the output array.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-fftn([2,3,4])
-ans =
-9.  - 1.5 + 0.8660254i  - 1.5 - 0.8660254i
+// Example 1: Compute the FFT of a matrix
+A = [6 9 7; 2 9 9; 0 3 1]
+Y = fftn(A)
+
    ]]></programlisting>
 </refsection>
 </refentry>

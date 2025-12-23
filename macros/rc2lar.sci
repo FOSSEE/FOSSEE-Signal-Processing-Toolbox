@@ -1,16 +1,20 @@
 function g=rc2lar(k)
-//rc2lar convert  reflection coefficient to log area ratios.
-// Calling Sequence
+// Convert  reflection coefficient to log area ratios.
+// 
+// Syntax
 // g = rc2lar(k)
+//
 // Parameters
 // k: define the reflection coefficients.
 // g: returns log area ratios.
+// 
 // Examples
-//X = [0.5 0.3 0.8 0.9 0.4 0.05];
+// X = [0.5 0.3 0.8 0.9 0.4 0.05]
 // g = rc2lar(X)
+// 
 // See also
 //
-// Author
+// Authors
 // Jitendra Singh
 //  
 

@@ -1,19 +1,30 @@
 function sde = spectral_adf (c, win, b)
-// spectral_adf  
-//   Calling Sequence
-//       spectral_adf (c)
-//       spectral_adf (c, win)
-//       spectral_adf (c, win, b)
-//   Parameters
-//       c : Vector of autocovariances
-//       win : The window name . Default window is "triangle"
-//       b : Bandwidth. Default is 1/sqrt(length(c))
-//   Description
-//       Return the spectral density estimator given a vector of autocovariances c, window name win, and bandwidth, b.
-//       The window name, e.g., "triangle" or "rectangle" is used to search for a function called win_lw.
-//       If win is omitted, the triangle window is used.
-//       If b is omitted, 1 / sqrt (length (c)) is used.
-//   Dependencies: fft1  
+// Compute the spectral density estimator using autocovariances.
+//
+// Syntax
+//   sde = spectral_adf(c)
+//   sde = spectral_adf(c, win)
+//   sde = spectral_adf(c, win, b)
+//
+// Parameters
+// c: Vector of autocovariances.
+// win: (optional) The window name. Default is "triangle". Supported values are "triangle" and "rectangle".
+// b: (optional) Bandwidth. Default is 1 / sqrt(length(c)).
+//
+// Outputs
+// sde: Spectral density estimator.
+//
+// Description
+// The `spectral_adf` function computes the spectral density estimator given a vector of autocovariances `c`, 
+// a window name `win`, and a bandwidth `b`. The window name is used to search for a function called `win_lw` 
+// (e.g., "triangle" or "rectangle"). If `win` is omitted, the triangle window is used. If `b` is omitted, 
+// 1 / sqrt(length(c)) is used.
+//
+// Examples
+// // Compute the spectral density estimator with default parameters:
+//    c = [1, 0.8, 0.6, 0.4, 0.2]
+//    sde = spectral_adf(c)
+//
 
   //c should be a vector
     if ~isvector(c)

@@ -17,7 +17,50 @@
 
   <refnamediv>
     <refname>cheb</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Compute the Chebyshev polynomial of the first kind.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   T = cheb(n, x)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Non-negative integer. Order of the Chebyshev polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Scalar or array. Input values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>T:</term>
+            <listitem><para> Scalar or array. Values of the Chebyshev polynomial of the first kind.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the Chebyshev polynomial of the first kind of order `n` for the input values `x`. The function supports both scalar and array inputs for `x`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+T = cheb(3, 0.5)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

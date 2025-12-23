@@ -13,6 +13,7 @@
 // Supporting function
 
 function validate_filter_bands (func, wp, ws)
+  // Internal helper function to validate filter bands
     funcprot();
     nargin = argn(2);
 

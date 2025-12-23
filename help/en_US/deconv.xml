@@ -17,7 +17,69 @@
 
   <refnamediv>
     <refname>deconv</refname>
-    <refpurpose>calling sequence:</refpurpose>
+    <refpurpose>Deconvolve two vectors (polynomial division)</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   b = deconv(y, a)
+   [b, r] = deconv(y, a)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector or scalar. The dividend polynomial coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector or scalar. The divisor polynomial coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The quotient polynomial coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> Vector. The remainder polynomial coefficients.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+[b, r] = deconv(y, a) solves for b and r such that y = conv(a, b) + r.
+   </para>
+   <para>
+If y and a are polynomial coefficient vectors, b will contain the coefficients of the polynomial quotient, and r will be a remainder polynomial of the lowest order.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[b, r] = deconv([3, 6, 9, 9], [1, 2, 3])
+b = [3, 0]
+r = [0, 0, 0, 9]
+
+[b, r] = deconv([3, 6], [1, 2, 3])
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="filter">filter</link></member>
+   </simplelist>
+</refsection>
 </refentry>

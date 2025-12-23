@@ -17,39 +17,62 @@
 
   <refnamediv>
     <refname>fht</refname>
-    <refpurpose>The Function calculates the Fast Hartley Transform of real input.</refpurpose>
+    <refpurpose>Fast Hartley transform of real input D</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   M = fht (D)
-   M = fht (D, N)
-   M = fht (D, N, DIM)
+   M = fht(D)
+   M = fht(D, N)
+   M = fht(D, N, DIM)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>D:</term>
+            <listitem><para> Input data (real matrix or vector).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N:</term>
+            <listitem><para> Number of elements of D to be used for the transform (optional).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>DIM:</term>
+            <listitem><para> Dimension along which the transform is to be computed (optional).</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function calculates the Fast Hartley transform of real input D. If D is a matrix, the Hartley transform is calculated along the columns by default.
+This function computes the Fast Hartley Transform (FHT) of the input signal `D`.
+If D is a matrix, the Hartley transform is calculated along the columns by default.
+If N is specified, the first N elements along the specified dimension are used for the transform.
+If DIM is specified, the transform is calculated along the specified dimension.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-fht(1:4)
-ans =
-10   -4   -2   0
-This function is being called from Octave.
+M = fht(1:4)
+
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft">fft</link></member>
+   </simplelist>
 </refsection>
 </refentry>

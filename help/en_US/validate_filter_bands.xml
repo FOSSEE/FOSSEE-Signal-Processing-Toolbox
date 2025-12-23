@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>validate_filter_bands</refname>
-    <refpurpose>funcprot();</refpurpose>
+    <refpurpose>Internal helper function to validate filter bands</refpurpose>
   </refnamediv>
 
 </refentry>

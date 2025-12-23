@@ -1,24 +1,24 @@
-function w=bartlett(L)
-//Generates a Bartlett window
-//Calling Sequence
-//w=bartlett(L)
-//Parameters
-//L
-//A positive integer describing the length of the bartlett window
-//Description
-//w=bartlett(L) returns an L-point Bartlett window in a column vector w
-//Example
-//w=bartlett(4)
-// w  =
-// 
-//    0.         
-//    0.6666667  
-//    0.6666667  
-//    0.
-//Author
-//Ankur Mallick
-//References
-//[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
+function w = bartlett(L)
+// Generate a Bartlett window.
+//
+// Syntax
+//   w = bartlett(L)
+//
+// Parameters
+// L: Positive integer. Length of the Bartlett window.
+//
+// Description
+// This function generates an L-point Bartlett window and returns it as a column vector `w`.
+//
+// Examples
+// w = bartlett(4)
+//
+// Authors
+// Ankur Mallick
+//
+// Bibliography
+// [1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
+
     funcprot(0);
     if(argn(2)~=1)
         error('Incorrect number of input arguments.');

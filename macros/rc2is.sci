@@ -1,7 +1,7 @@
 function isin = rc2is(k)
 // Convert reflection coefficients to inverse sine parameters
 // 
-// Calling Sequence
+// Syntax
 // isin = rc2is(K) 
 // 
 // Parameters
@@ -12,8 +12,8 @@ function isin = rc2is(k)
 // This function returns the inverse sine parameters corresponding to the input reflection coefficients K.
 // output array has isin(i) = 2/pi*asin(k(i))
 //
-// Example
-// k = [0.3090 0.9801 0.0031 0.0082 -0.0082];
+// Examples
+// k = [0.3090 0.9801 0.0031 0.0082 -0.0082]
 // isin = rc2is(k)      //Gives inverse sine parameters
 //
 // See also 
@@ -27,6 +27,7 @@ function isin = rc2is(k)
 //
 // Bibliography
 // J.R. Deller, J.G. Proakis, J.H.L. Hansen, "Discrete-Time Processing of Speech Signals", Prentice Hall, Section 7.4.5
+
 //modified function to handle char i/p and also changed error statements to match those of MATLAB by Debdeep Dey
 //convert char i/p to their respective ascii values
 

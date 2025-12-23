@@ -1,31 +1,30 @@
-function w =  triang (m)
-//This function returns the filter coefficients of a triangular window.
-//Calling Sequence
-//w =  triang (m)
-//Parameters
-//m: positive integer value
-//w: output variable, vector of real numbers
-//Description
-//This function returns the filter coefficients of a triangular window of length m supplied as input, to the output vector y.
-//Examples
-//triang(5)
-//ans  =
-//    0.3333333
-//    0.6666667
-//    1.
-//    0.6666667
-//    0.3333333
+function w = triang(n)
+// This function returns the filter coefficients of a triangular window.
+//
+// Syntax
+//   w = triang(n)
+//
+// Parameters
+// n: Window length.
+// w: Triangular window.
+//
+// Description
+// This function generates a triangular window of length `n`.
+//
+// Examples
+// w = triang(64)
+//
 
 funcprot(0);
 rhs = argn(2)
 
   if(rhs~=1)
     error("Wrong number of input arguments.")
-  elseif (~ (isscalar (m) & (m == fix (m)) & (m > 0)))
+  elseif (~ (isscalar (n) & (n == fix (n)) & (n > 0)))
     error ("parzenwin: M must be a positive integer");
   end
 
-    w = 1 - abs ([-(m-1):2:(m-1)]' / (m+modulo(m,2)));
+    w = 1 - abs ([-(n-1):2:(n-1)]' / (n+modulo(n,2)));
 
 endfunction
 

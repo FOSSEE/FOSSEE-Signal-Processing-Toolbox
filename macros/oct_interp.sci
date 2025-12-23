@@ -1,6 +1,3 @@
-//function already exists in scilab -- doesnt work like this one (I guess)
-//This function is built with the referrence of interp function (taken from interp.m file).
-//Octave license:
 // Copyright (C) 2000 Paul Kienzle <pkienzle@users.sf.net>
 //
 // This program is free software; you can redistribute it and/or modify it under
@@ -17,24 +14,46 @@
 // this program; if not, see <http://www.gnu.org/licenses/>.
 
 function y = oct_interp(x, q, varargin)
-//This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
-//Calling Sequence
-//y = interp(x, q)
-//y = interp(x, q, n)
-//y = interp(x, q, n, Wc)
-//Parameters
-//x: scalar or vector of complex or real numbers
-//q: positive integer value, or logical
-//n: positive integer, default value 4
-//Wc: non decreasing vector or scalar, starting from 0 uptill 1, default value 0.5
-//Description
-//This is an Octave function.
-//This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
-//The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
-//Examples
-//interp(1,2)
-//ans  =
-//    0.4792743    0.3626016
+// This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
+//
+//  Syntax
+// y = oct_interp(x, q)
+// y = oct_interp(x, q, n)
+// y = oct_interp(x, q, n, Wc)
+//
+// Parameters
+// x: scalar or vector of complex or real numbers
+// q: positive integer value, or logical
+// n: positive integer, default value 4
+// Wc: non decreasing vector or scalar, starting from 0 uptill 1, default value 0.5
+//
+// Description
+// This function upsamples the signal x by a factor of q, using an order 2*q*n+1 FIR filter.
+// The second argument q must be an integer. The default values of the third and fourth arguments (n, Wc) are 4 and 0.5 respectively.
+//
+// Examples
+// // Generate 5 random bits and map to BPSK symbols
+// bits = [1 0 1 1 0]
+// symbols = 2 * bits - 1  // BPSK mapping: 1 -> +1, 0 -> -1
+// // Upsample by factor of 4 using oct_interp (defined elsewhere)
+// y = oct_interp(symbols, 4)
+// // Plot original symbols (using plot2d3 to simulate stem)
+// n1 = 0:length(symbols)-1;
+// scf(0);
+// subplot(2,1,1);
+// plot2d3(n1', symbols');
+// title("Original BPSK Symbols");
+// xlabel("Symbol index");
+// ylabel("Amplitude");
+// 
+// // Plot upsampled signal
+// n2 = 0:length(y)-1;
+// subplot(2,1,2);
+// plot(n2, y);
+// title("Upsampled Signal (q=4)");
+// xlabel("Sample index");
+// ylabel("Amplitude");
+
 
  funcprot(0);
     [nargout,nargin]=argn();

@@ -1,23 +1,29 @@
 function [psi,x]=shanwavf(lb,ub,n,fb,fc)
-    // Description
-//     Compute the Complex Shannon wavelet.
-//     The complex Shannon wavelet is defined by a bandwidth parameter fb, a wavelet center frequency fc, and the expression
-//     psi(x) = f * b^{1/2}sinc(fb . x) e^{2 pi i f c x}
-//     on an n-point regular grid in the interval of lb to ub.
-// Calling Sequence
-//     [psi, x]= shanwavf(lb, ub, n, fb, fc)
-// Input  Parameters
-//     lb, ub (Real valued scalers) : Interval endpoints lb ≤ ub, specified as a pair of real-valued scalars.
-//     n (Real valued integer strictly positive)` : Number of regularly spaced points in the interval [lb,ub], specified as a positive integer.
-//     fb	: Time-decay parameter of the wavelet (bandwidth in the frequency domain). Must be a positive scalar.
-//     fc	: Center frequency of the complex Shannon wavelet, specified as a positive scalar.
-// Output Parameters
-//      psi : Complex Shannon wavelet evaluated on the n point regular grid x in the interval [lb,ub], returned as a 1-by-n vector.
-//      x   : Grid where the complex Shannon wavelet is evaluated, returned as a 1-by-n vector. The sample points are evenly distributed between lb and ub.
+// Compute the Complex Shannon wavelet.
+//
+// Syntax
+//   [psi, x] = shanwavf(lb, ub, n, fb, fc)
+//
+// Parameters
+// lb, ub: Interval endpoints (real-valued scalars). Specifies the range [lb, ub] where the wavelet is evaluated. Must satisfy lb ≤ ub.
+// n: Number of regularly spaced points in the interval [lb, ub] (positive integer).
+// fb: Time-decay parameter of the wavelet (bandwidth in the frequency domain). Must be a positive scalar.
+// fc: Center frequency of the complex Shannon wavelet. Must be a positive scalar.
+//
+// Outputs
+// psi: Complex Shannon wavelet evaluated on the n-point regular grid `x` in the interval [lb, ub]. Returned as a 1-by-n vector.
+// x: Grid where the complex Shannon wavelet is evaluated. Returned as a 1-by-n vector. The sample points are evenly distributed between lb and ub.
+//
+// Description
+// The `shanwavf` function computes the Complex Shannon wavelet on a regular grid in the interval [lb, ub]. 
+// The wavelet is defined by the expression:
+//   psi(x) = fb^(1/2) * sinc(fb * x) * exp(2 * %i * %pi * fc * x)
+// where `sinc(x) = sin(%pi * x) / (%pi * x)`.
+//
 // Examples
-//       1.[a,b]=shanwavf (2,8,3,1,6)
-//            a =   [-3.8982e-17 + 1.1457e-31i   3.8982e-17 - 8.4040e-31i  -3.8982e-17 + 4.5829e-31i]
-//            b =   [2   5   8]   
+// // Compute the Complex Shannon wavelet:
+//    [psi, x] = shanwavf(2, 8, 3, 1, 6)
+//
 
     funcprot(0);
     rhs=argn(2);

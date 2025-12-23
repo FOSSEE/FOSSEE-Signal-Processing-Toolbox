@@ -1,11 +1,28 @@
 
 function [ydb]=pow2db(y)
-    //POW2DB   Power to dB conversion
-//YDB = POW2DB(Y) convert the data Y into its corresponding dB value YDB
-//Example:
-//Calculate ratio of 2000W to 2W in decibels
-//y1 = pow2db(2000/2)     //Answer in db
-//Author : Debdeep Dey
+// Convert power values to decibels (dB).
+//
+// Syntax
+//   ydb = pow2db(y)
+//
+// Parameters
+// y: Input power values (scalar, vector, or matrix). Must be non-negative.
+//
+// Description
+// The `pow2db` function converts power values specified in `y` to decibels (dB) using the formula:  
+// ydb = 10 * log10(y).  
+// If `y` contains zeros, the corresponding `ydb` values are set to -Inf.  
+// If `y` contains negative values, an error is raised.
+//
+// Examples
+// // Convert a single power value to dB:
+//    y = 2000;
+//    ydb = pow2db(y)
+// 
+// Authors
+// Debdeep Dey
+// 
+
 rhs = argn(2)
 if(rhs~=1)
 error("Wrong number of input arguments.")

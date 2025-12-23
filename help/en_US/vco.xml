@@ -22,16 +22,33 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    y=vco(x,fc,fs)
    y=vco(x,[fmin fmax],fs)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector or a matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fc :</term>
+            <listitem><para> Carrier frequency</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fmin :</term>
+            <listitem><para> Minimum frequency of the frequency range</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fmax :</term>
+            <listitem><para> Maximum frequency of the frequency range</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -47,19 +64,24 @@ Scales the frequency range so that x=-1 corresponds to a frequency of fmin and
 x=1 corresponds to a frequency of fmax
 If x is a matrix the same operation is performed on the columns on x
 Size of y is the same as the size of x
-Example
-x=rand()
-x  =
    </para>
    <para>
-0.2113249
-y=vco(x,2000,8000)
-y  =
-   </para>
-   <para>
-0.9454092
-Author
-Ankur Mallick
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=rand()
+y=vco(x,2000,8000)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
 </refsection>
 </refentry>

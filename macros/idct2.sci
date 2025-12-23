@@ -1,17 +1,21 @@
 function y = idct2 (x, m, n)
-// Description
-//     This function computes the inverse 2-D discrete cosine transform of matrix X. If M and N are specified, the input is either padded or truncated to have M rows and N columns.
-// Calling Sequence
-//         Y = idct2(X)
-//         Y = idct2(X, M, N)
-//         Y = idct2(X, [M, N])
+// Compute the inverse 2-D discrete cosine transform.
+//
+// Syntax
+//   Y = idct2(X)
+//   Y = idct2(X, M, N)
+//   Y = idct2(X, [M, N])
+//
 // Parameters
-//         X: Matrix or integer
-//         M, N: If specified Matrix X is padded with M rows and N columns.
+// X: Input matrix or integer.
+// M, N: (optional) If specified, the input matrix X is padded or truncated to have M rows and N columns.
+//
+// Description
+// Computes the inverse 2-D discrete cosine transform of the input matrix X. If M and N are specified, the input is either padded or truncated to match the specified dimensions.
+//
 // Examples
-//      idct2(3, 4, 6)
-//      ans =
-//          2.811261   0.612372  -0.525856   0.250601   0.612372  -0.086516 */
+// idct2(3, 4, 6)
+// 
 
    funcprot(0);
    rhs=argn(2);

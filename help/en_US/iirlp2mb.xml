@@ -17,51 +17,76 @@
 
   <refnamediv>
     <refname>iirlp2mb</refname>
-    <refpurpose>This function does IIR Low Pass Filter to Multiband Filter Transformation.</refpurpose>
+    <refpurpose>IIR Low Pass Filter to Multiband Filter Transformation</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [Num, Den, AllpassNum, AllpassDen] = iirlp2mb(B, A, Wo, Wt)
-   [Num, Den, AllpassNum, AllpassDen] = iirlp2mb(B, A, Wo, Wt, Pass)
+   [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt)
+   [Num,Den,AllpassNum,AllpassDen] = iirlp2mb(B,A,Wo,Wt,Pass)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>B:</term>
-      <listitem><para> real or complex value</para></listitem></varlistentry>
-   <varlistentry><term>A:</term>
-      <listitem><para> real or complex value</para></listitem></varlistentry>
-   <varlistentry><term>Wo:</term>
-      <listitem><para> scalar or vector</para></listitem></varlistentry>
-   <varlistentry><term>Wt:</term>
-      <listitem><para> scalar or vector, elements must be monotonically increasing and &gt;= 0 and &lt;= 1.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>Num,Den:</term>
+            <listitem><para>               numerator,denominator of the transformed filter</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>AllpassNum,AllpassDen:</term>
+            <listitem><para> numerator,denominator of allpass transform,</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>B,A:</term>
+            <listitem><para>                   numerator,denominator of prototype low pass filter</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wo:</term>
+            <listitem><para>                    normalized_angular_frequency/pi to be transformed</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wt:</term>
+            <listitem><para>                    [phi=normalized_angular_frequencies]/pi target vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Pass:</term>
+            <listitem><para>                  This parameter may have values 'pass' or 'stop'.  If</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function does IIR Low Pass Filter to Multiband Filter Transformation.
-The first two parameters give the numerator and denominator of the prototype low pass filter.
-The third parameter is the normalized angular frequency/pi to be transformed.
-The fourth parameter is the normalized angular frequency/pi target vector.
-The first two output variables are the numerator and denominator of the transformed filter.
-The third and fourth output variables are the numerator and denominator of the allpass transform.
-The fifth parameter can have values pass or stop, default value is pass.
+With normalized ang. freq. targets 0 &lt; phi(1) &lt;  ... &lt; phi(n) &lt; pi radians
+   </para>
+   <para>
+for Pass == 'pass', the target multiband magnitude will be:
+--------       ----------        -----------...
+/        \     /          \      /            .
+0   phi(1) phi(2)  phi(3)   phi(4)   phi(5)   (phi(6))    pi
+   </para>
+   <para>
+for Pass == 'stop', the target multiband magnitude will be:
+-------      ---------        ----------...
+\    /         \      /           .
+0   phi(1) phi(2)  phi(3)   phi(4)  (phi(5))              pi
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-iirlp2mb(5,9,0.3,0.4)
-ans =  0.55556
+[B, A] = butter(6, 0.5)
+[Num, Den] = iirlp2mb(B, A, 0.5, [.2 .4 .6 .8])
+
    ]]></programlisting>
 </refsection>
 </refentry>

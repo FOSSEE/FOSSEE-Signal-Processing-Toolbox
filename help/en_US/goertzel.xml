@@ -22,15 +22,28 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    Y = goertzel(X,INDVEC,DIM)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>X :</term>
+            <listitem><para> A vector matrix or n-dimensional array</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>INDVEC :</term>
+            <listitem><para> The indices at which the DFT is to be computed</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>DIM :</term>
+            <listitem><para> The dimension along which the algorithm is to be implemented</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -47,21 +60,24 @@ Implements the algorithm along dimension DIM
 In general goertzel is slower than fft when computing the DFT for all indices
 along a particular dimension. However it is computationally more efficient when
 the DFT at only a subset of indices is desired
-Example
-x=rand(1,5)
-x  =
    </para>
    <para>
-0.6283918    0.8497452    0.6857310    0.8782165    0.0683740
-y=goertzel(x,2);
-y  =
-   </para>
-   <para>
-- 0.3531539 - 0.6299881i
-Author
-Ankur Mallick
-References
-Goertzel, G. (January 1958), "An Algorithm for the Evaluation of Finite Trigonometric Series", American Mathematical Monthly 65 (1): 34–35, doi:10.2307/2310304
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=rand(1,5)
+y=goertzel(x,2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
 </refsection>
 </refentry>

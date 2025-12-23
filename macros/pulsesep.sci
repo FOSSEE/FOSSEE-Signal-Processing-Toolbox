@@ -1,6 +1,7 @@
 function [s, initialcross, finalcross, nextcross, midreference]= pulsesep(x, varargin)
     // This function estimate pulse  separation between bilevel waveform pulses.
-    // Calling Sequence
+    //
+    // Syntax
     // s=pulsesep(x)
     // s=pulsesep(x, Fs)
     // s=pulsesep(x, t)
@@ -31,17 +32,16 @@ function [s, initialcross, finalcross, nextcross, midreference]= pulsesep(x, var
     // finalcross: returns a vector of final cross values of bilevel waveform transitions X
     // nextcross: returns a vector of next cross values of bilevel waveform transitions X
     // midreference: return mid reference value corrosponding to mid percenr reference value.
-    // Examples
-    //x = fscanfMat("macros/pulsedata_x.txt");
-    //t = fscanfMat("macros/pulsedata_t.txt");
-    //clf
-    //p = pulsesep(x,t,'fig','ON')
-    //Output
-    // p  =
     //
-    //    0.3501425
-    //also it generates a plot of pulse with pulse separation
-    // See also
+    //  Examples
+    // x = fscanfMat("macros/pulsedata_x.txt");
+    // t = fscanfMat("macros/pulsedata_t.txt");
+    // clf
+    // p = pulsesep(x,t,'fig','ON')
+    // // also it generates a plot of pulse with pulse separation
+    //
+    //  See also
+    // 
     // Authors
     // Jitendra Singh
 

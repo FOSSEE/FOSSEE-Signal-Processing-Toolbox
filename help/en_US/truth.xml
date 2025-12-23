@@ -17,7 +17,7 @@
 
   <refnamediv>
     <refname>truth</refname>
-    <refpurpose>y = %t</refpurpose>
+    <refpurpose>Internal helper function</refpurpose>
   </refnamediv>
 
 </refentry>

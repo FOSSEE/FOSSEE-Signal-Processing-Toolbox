@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from ols.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="ols" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>ols</refname>
+    <refpurpose>Ordinary least squares estimation.</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Description</title>
+   <para>
+OLS applies to the multivariate model y = x*b + e with mean (e) = 0 and
+cov (vec (e)) = kron (s, I). where y is a t by p matrix, x is a t by k matrix, b is a k by p matrix, and e is a t by p matrix.
+Each row of y and x is an observation and each column a variable.
+The return values beta, sigma, and r are defined as follows.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [beta, sigma, r] = ols (y, x)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>beta :</term>
+            <listitem><para> The OLS estimator for b. beta is calculated directly via inv (x'*x) * x' * y if the matrix x'*x is of full rank. Otherwise, beta = pinv (x) * y where pinv (x) denotes the pseudoinverse of x.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sigma :</term>
+            <listitem><para> The OLS estimator for the matrix s, sigma = (y-x*beta)'* (y-x*beta) / (t-rank(x))</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r :</term>
+            <listitem><para> The matrix of OLS residuals, r = y - x*beta.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Simulated data
+t = 100;                       // Number of observations
+x = [ones(t, 1), rand(t, 1)];  // Design matrix: intercept + one regressor
+b_true = [2; 3]               // True coefficients: intercept = 2, slope = 3
+// Generate response variable with noise
+y = x * b_true + rand(t, 1,'normal');  // y = 2 + 3*x + noise
+// Perform OLS estimation
+[beta, sigma, r] = ols(y, x)
+   ]]></programlisting>
+</refsection>
+</refentry>

@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>peak2peak</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>Compute the maximum-to-minimum difference (peak-to-peak).</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   Y = peak2peak(X)
+   Y = peak2peak(X, dim)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>X:</term>
+            <listitem><para> Real or complex-valued input vector or matrix.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which to compute the maximum-to-minimum difference.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `peak2peak` function computes the difference between the maximum and minimum values in `X`.
+By default, it operates along the first non-singleton dimension of `X`. If the `dim` parameter is provided,
+the computation is performed along the specified dimension.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Compute peak-to-peak difference for a vector:
+t = 0:0.001:1-0.001;
+x = cos(2 * %pi * 100 * t);
+y = peak2peak(x)
+
+// Compute peak-to-peak difference along a specific dimension:
+t = 0:0.001:1-0.001;
+x = (1:4)' * cos(2 * %pi * 100 * t);
+y = peak2peak(x, 2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Rahul Dalmia</member>
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
 </refentry>

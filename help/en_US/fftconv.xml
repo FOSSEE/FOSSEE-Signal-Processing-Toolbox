@@ -17,30 +17,40 @@
 
   <refnamediv>
     <refname>fftconv</refname>
-    <refpurpose>Convolve two vectors using the FFT for computation.</refpurpose>
+    <refpurpose>Convolve two vectors using the FFT for computation</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   Y = fftconv(X, Y)
-   Y = fftconv(X, Y, N)
+   y = fftconv(X, Y)
+   Y = fftconv(X, Y, n)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X, Y:</term>
-      <listitem><para> Vectors</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x ,y :</term>
+            <listitem><para> Input signal vectors.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Convolution result.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Convolve two vectors using the FFT for computation. 'c' = fftconv (X, Y)' returns a vector of length equal to 'length(X) + length (Y) - 1'.  If X and Y are the coefficient vectors of two polynomials, the returned value is the coefficient vector of the product polynomial.
+Convolve two vectors using the FFT for computation. c = fftconv (X, Y) returns a vector of length equal to 'length(X) + length (Y) - 1'.  If X and Y are the coefficient vectors of two polynomials, the returned value is the coefficient vector of the product polynomial.
+If the optional argument n is specified, an N-point FFT is used.
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -48,8 +58,21 @@ Convolve two vectors using the FFT for computation. 'c' = fftconv (X, Y)' return
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 fftconv([1,2,3], [3,4,5])
-ans =
-3.    10.    22.    22.    15.
+
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft">fft</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abinash Singh (abinashlalotra@gmail.com)</member>
+   </simplelist>
 </refsection>
 </refentry>

@@ -1,83 +1,75 @@
 function [S,f,v,e] = peig(varargin)
-    // Psuedospectrum using the eigenvector method.
-    //
-    // Calling Sequence
-    // [S,w] = peig(x,p)
-    // [S,w] = peig(x,p,w)
-    // [S,w] = peig(x,p,nfft)
-    // [S,w] = peig(x,p,nfft,fs)
-    // [S,w] = peig(x,p,f,fs)
-    // [S,f] = peig(...,'corr')
-    // [S,f] = peig(x,p,nfft,fs,nwin,noverlap)
-    // [...] = peig(...,freqrange)
-    // [...,v,e] = peig(...)
-    //
-    // Parameters:
-    // x - int|double - vector|matrix
-    //      Input signal. In case of a matrix, each row of x represents a
-    //      seperate observation of the signal. If 'corr' flag is specified,
-    //      then x is the correlation matrix.
-    //      If w is not specified in the input, it is determined by the
-    //      algorithm. If x is real valued, then range of w is [0, pi].
-    //      Otherwise, the range of w is [0, 2pi)
-    // p - int|double - scalar|vector
-    //      p(1) is the dimension of the signal subspace
-    //      p(2), if specified, represents a threshold that is multiplied by
-    //      the smallest estimated eigenvalue of the signal's correlation matrix.
-    // w - int|double - vector
-    //      w is the vector of normalized frequencies over which the
-    //      pseuspectrogram is to be computed.
-    // nfft - int - scalar (Default = 256)
-    //      Length of the fft used to compute pseudospectrum. The length of S
-    //      (and hence w/f) depends on the type of values in x and nfft.
-    //      If x is real, length of s is (nfft/2 + 1) {Range of w = [0, pi]} if
-    //      nfft is even and (nfft+1)/2 {Range of w = [0, pi)} otherwise.
-    //      If x is complex, length of s is nfft.
-    // fs - int|double - scalar (Default = 1)
-    //      Sampling rate. Used to convert the normalized frequencies (w) to
-    //      actual values (f) and vice-versa.
-    // nwin - int|double - scalar (int only)|vector (Default = 2*p(1))
-    //      If nwin is scalar, it is the length of the rectangular window.
-    //      Otherwise, the vector input is considered as the window coefficients.
-    //      Not used if 'corr' flag present.
-    //      If x is a vector, windowing not done in nwin in scalar. If x is a
-    //      matrix,
-    // noverlap - int - scalar (Default = nwin-1)
-    //      number of points by which successive windows overlap. noverlap not
-    //      used if x is a matrix
-    // freqrange - string
-    //      The range of frequencies over which the pseudospetrogram is
-    //      computed. Three possible values - 'onesided', 'twosided', 'centered'
-    // 'corr' flag
-    //      Presence indicates that the primary input x is actually a
-    //      correlation matrix
-    //
-    // Examples:
-//1.
-//       fs = 100;
-//       t = 0:1/fs:1-1/fs;
-//       s = 2*sin(2*%pi*25*t)+sin(2*%pi*35*t)+rand(1,100,"normal");
-//       [S,w]=peig(s,2,512,fs,'half');
-//       plot(w,S);
-    //OUTPUT:   gives the plot of power vs normalised frequencies
-////2.
-// fs = 100;
-//t = 0:1/fs:1-1/fs;
-//s = 2*sin(2*%pi*25*t)+sin(2*%pi*35*t);
-//[S,w]=peig(s,2,512,fs,'half');
-//plot(w,S);
-    //EXECUTE  FUNCTIONS subspaceMethodsInputPars.sci, musicBase.sci PRIOR  THE EXECUTION OF THIS FUNCTION
-    // See also
-    // rooteig | pmusic | pmtm | pcov | pmcov | pburg | pyulear | pwelch | corrmtx
-    //
-    // Authors
-    // Ayush Baid
-    //
-    // References
-    // [1] Petre Stoica and Randolph Moses, Introduction To Spectral
-    //     Analysis, Prentice-Hall, 1997, pg. 15
-    // [2] S. J. Orfanidis, Optimum Signal Processing. An Introduction.
-    //     2nd Ed., Macmillan, 1988.
+  // Pseudospectrum using the eigenvector method.
+//
+// Syntax
+//   [S, w] = peig(x, p)
+//   [S, w] = peig(x, p, w)
+//   [S, w] = peig(x, p, nfft)
+//   [S, w] = peig(x, p, nfft, fs)
+//   [S, w] = peig(x, p, f, fs)
+//   [S, f] = peig(..., 'corr')
+//   [S, f] = peig(x, p, nfft, fs, nwin, noverlap)
+//   [...] = peig(..., freqrange)
+//   [..., v, e] = peig(...)
+//
+// Parameters
+// x: int|double - vector|matrix
+//    Input signal. In case of a matrix, each row of `x` represents a separate observation of the signal. 
+//    If the 'corr' flag is specified, `x` is treated as the correlation matrix. If `w` is not specified, 
+//    it is determined by the algorithm. If `x` is real-valued, the range of `w` is [0, π]. Otherwise, 
+//    the range of `w` is [0, 2π).
+//
+// p: int|double - scalar|vector
+//    `p(1)` is the dimension of the signal subspace. `p(2)`, if specified, represents a threshold that 
+//    is multiplied by the smallest estimated eigenvalue of the signal's correlation matrix.
+//
+// w: int|double - vector
+//    Vector of normalized frequencies over which the pseudospectrum is computed.
+//
+// nfft: int - scalar (Default = 256)
+//    Length of the FFT used to compute the pseudospectrum. The length of `S` (and hence `w` or `f`) depends 
+//    on the type of values in `x` and `nfft`. If `x` is real, the length of `S` is (nfft/2 + 1) for even `nfft` 
+//    and (nfft+1)/2 for odd `nfft`. If `x` is complex, the length of `S` is `nfft`.
+//
+// fs: int|double - scalar (Default = 1)
+//    Sampling rate. Used to convert the normalized frequencies (`w`) to actual values (`f`) and vice versa.
+//
+// nwin: int|double - scalar (int only)|vector (Default = 2*p(1))
+//    If `nwin` is scalar, it specifies the length of the rectangular window. If `nwin` is a vector, it is 
+//    treated as the window coefficients. Not used if the 'corr' flag is present.
+//
+// noverlap: int - scalar (Default = nwin-1)
+//    Number of points by which successive windows overlap. Not used if `x` is a matrix.
+//
+// freqrange: string
+//    Specifies the range of frequencies for the pseudospectrum. Possible values are 'onesided', 'twosided', 
+//    and 'centered'.
+//
+// 'corr' flag:
+//    Indicates that the primary input `x` is a correlation matrix.
+//
+// Description
+// The `peig` function computes the pseudospectrum of a signal using the eigenvector method. It supports 
+// various input configurations, including signal subspace dimension, FFT length, sampling rate, and 
+// frequency range.
+//
+// Examples
+// // Compute pseudospectrum for a signal:
+//    fs = 100
+//    t = 0:1/fs:1-1/fs;
+//    s = 2*sin(2*%pi*25*t) + sin(2*%pi*35*t) + rand(1, 100, "normal");
+//    [S, w] = peig(s, 2, 512, fs, 'half');
+//    plot(w, S)
+//
+// See also
+// rooteig, pmusic, pmtm, pcov, pmcov, pburg, pyulear, pwelch, corrmtx
+//
+// Authors
+// Ayush Baid
+//
+// References
+// [1] Petre Stoica and Randolph Moses, Introduction To Spectral Analysis, Prentice-Hall, 1997, pg. 15
+// [2] S. J. Orfanidis, Optimum Signal Processing. An Introduction. 2nd Ed., Macmillan, 1988.
 
     funcprot(0);
 

@@ -22,26 +22,54 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   y= dst1(x)
-   y= dst1(x,n)
+   y = dst1(x)
+   y = dst1(x, n)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> real or complex valued vector</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> real or complex valued vector</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Length to which x is trimmed before transform</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Discrete sine transform of the input signal.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-Computes the type I discrete sine transform of x. If n is given, then x is padded or trimmed to length n before computing the transform. If x is a matrix, compute the transform along the columns of the the matrix.
+Computes the type 1 discrete sine transform of x. If n is given, then x is padded or trimmed to length n before computing the transform.
+If x is a matrix, compute the transform along the columns of the the matrix.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = dst1([1, 2, 3, 4])
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft">fft</link></member>
+   </simplelist>
 </refsection>
 </refentry>

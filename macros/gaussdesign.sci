@@ -1,14 +1,32 @@
 function filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb)
-// GAUSSDESIGN designs a Gaussian pulse-shaping filter which is a low pass FIR 
-// filter
-// Inputs: 
-//      BwSt_prod: it stands for 3 dB bandwidth symbol-time product. 
-//                 Bandwidth is the one-sided and in hertz. Symbol-time is 
-//                 in seconds.
-//      num_of_symb: filter truncated to these many number of symbols
-//      samp_per_symb: each symbol represented by these many samples
-// Output: 
-//      filter_coeffs: returned filter coefficients
+// Design a Gaussian pulse-shaping filter.
+//
+// Syntax
+//   filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb)
+//
+// Parameters
+// BwSt_prod: Scalar. The 3 dB bandwidth-symbol time product. Bandwidth is one-sided and in hertz, and symbol time is in seconds.
+// num_of_symb: Positive integer. The number of symbols to which the filter is truncated. Default is 3.
+// samp_per_symb: Positive integer. The number of samples representing each symbol. Default is 2.
+// filter_coeffs: Vector. The coefficients of the designed Gaussian filter.
+//
+// Description
+// This function designs a Gaussian pulse-shaping filter, which is a low-pass FIR filter. The filter is defined by the 3 dB bandwidth-symbol time product (`BwSt_prod`), the number of symbols (`num_of_symb`), and the number of samples per symbol (`samp_per_symb`). The filter coefficients are normalized such that their sum equals 1.
+//
+// Examples
+// // Design a Gaussian pulse-shaping filter
+// // Parameters
+// BwSt_prod = 0.3;          // Bandwidth-symbol time product
+// num_of_symb = 5;          // Number of symbols
+// samp_per_symb = 4;        // Samples per symbol
+// // Design the filter
+// filter_coeffs = gaussdesign(BwSt_prod, num_of_symb, samp_per_symb);
+// // Plot the filter coefficients
+// plot(filter_coeffs);
+// xlabel("Sample Index");
+// ylabel("Amplitude");
+// title("Gaussian Pulse-Shaping Filter Coefficients");
+// xgrid;
 
     // Check validity of number of inout arguments
     checkNArgin(1, 3, argn(2));

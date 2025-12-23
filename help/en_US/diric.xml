@@ -17,30 +17,53 @@
 
   <refnamediv>
     <refname>diric</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Calculates the dirichlet function</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [y]=diric(x,n)
+   y = diric(x, n)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> Real valued vector or matrix</para></listitem></varlistentry>
-   <varlistentry><term>n:</term>
-      <listitem><para> Real positive integer or complex integer</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Real valued vector or matrix</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Real positive integer or complex integer</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Dirichlet function values.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
+This function computes the Dirichlet function values for the input array `x` and number of harmonics `n`.
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+f = linspace(-%pi, %pi, 100)  // frequency range
+y = diric(f, 7)
+
+plot(f, y)
+xtitle("Dirichlet Function - Frequency Response of 7-Harmonic Pulse Train", "Frequency (rad)", "Amplitude")
+   ]]></programlisting>
 </refsection>
 </refentry>

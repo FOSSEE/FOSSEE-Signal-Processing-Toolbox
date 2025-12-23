@@ -17,7 +17,65 @@
 
   <refnamediv>
     <refname>digitrevorder</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Returns input data in digit-reversed order.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [y, i] = digitrevorder(x, r)
+   y = digitrevorder(x, r)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector of real or complex values. The input data to be reordered.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> Scalar. The radix/base for digit reversal. Must be an integer between 2 and 36.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector. The input vector reordered in digit-reversed order.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>i:</term>
+            <listitem><para> Vector. The indices corresponding to the digit-reversed order.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns the input data after reversing the digits of the indices and reordering the elements of the input array.
+The radix `r` determines the base for digit reversal.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [%i, 1, 3, 6*%i]
+r = 2
+[y, i] = digitrevorder(x, r)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="base2dec,">dec2base</link></member>
+   </simplelist>
+</refsection>
 </refentry>

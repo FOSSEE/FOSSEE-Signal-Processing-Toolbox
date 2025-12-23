@@ -17,7 +17,62 @@
 
   <refnamediv>
     <refname>arParEst</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Estimate AR model parameters using covariance or modified covariance method.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [model_est, var_est, msg_strg] = arParEst(data_in, order, method)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>data_in:</term>
+            <listitem><para> Input data (vector or matrix).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>order:</term>
+            <listitem><para> Order of the AR model.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>method:</term>
+            <listitem><para> Estimation method ('covariance' or 'modified').</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>model_est:</term>
+            <listitem><para> Estimated AR model coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>var_est:</term>
+            <listitem><para> Variance estimate of the white noise input.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>msg_strg:</term>
+            <listitem><para> Error message string (empty if no error).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function arParEst() estimates the parameters of an autoregressive (AR) model using the specified method ('covariance' or 'modified').
+It validates the input data and computes the AR coefficients and variance estimate.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[model_est, var_est, msg_strg] = arParEst([1, 2, 3, 4, 5], 2, 'covariance')
+   ]]></programlisting>
+</refsection>
 </refentry>

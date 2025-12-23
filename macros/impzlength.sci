@@ -1,51 +1,39 @@
 
 function len = impzlength (b, varargin)
-// Impulse response length
-// 
-// Calling Sequence
-// len = impzlength(b, a, tol)
-// 		returns the impulse response length for the causal discrete-time filter 
-//		with the transfer function coefficients for numerator and denominator in 
-//		b and a respectively. For stable IIR filters, len is the effective length
-//		impulse response length, i.e. the length after which the response is
-//		essentially zero
-// len = impzlength(sos)
-//		returns the impulse response length of the filter specified by second 
-//		order sections matrix. sos is a Kx6 matrix, where K is the number of 
-//		sections. Each row of the sos matrix corresponds to a second order 
-//		biquad filter
-// len = impzlength(__, tol)
-//		specifies a tolerance for estimating the effective impulse response 
-//		length in case of an IIR filter. By default, tol is 5e-5. Increasing tol
-//		leads to shorter len and vice-versa
+// Compute the impulse response length.
+//
+// Syntax
+//   len = impzlength(b, a, tol)
+//   len = impzlength(sos)
+//   len = impzlength(__, tol)
 //
 // Parameters
-// b - real|complex - vector|scalar
-//		Numerator coefficients
-// a - real|complex - vector|scalar
-//		Denominator coefficients
-// sos - real|complex - matrix (K-by-6)
-//		Second order estimates
-// tol - positive real - scalar
-//		Tolerance for estimating the effective length of an IIR filter impulse
-//		response
+// b: Numerator coefficients (real|complex, vector|scalar).
+// a: Denominator coefficients (real|complex, vector|scalar).
+// sos: Second-order estimates (real|complex, matrix K-by-6).
+// tol: Tolerance for estimating the effective length (positive real, scalar).
+//
+// Description
+// The `impzlength` function computes the impulse response length for a causal discrete-time filter. 
+// For stable IIR filters, it returns the effective length, i.e., the length after which the response 
+// is essentially zero. It supports transfer function coefficients or second-order section matrices.
 //
 // Examples
-// 1) Low pass IIR filter with pole at 0.9
-// 		b = 1;
-//		a = [1 -0.9];
-//		len = impzlength(b,a)
-//OUTPUT :
-//                   len=93
-// 
-//2) High pass IIR filter with pole at -0.5
-// 		b = 1;
-//		a = [1 0.5];
-//		len = impzlength(b,a)
-//OUTPUT :
-//                   len=14
+// // Low pass IIR filter with pole at 0.9
+// b = 1
+// a = [1 -0.9]
+// len = impzlength(b, a)
+//
+// // High pass IIR filter with pole at -0.5
+// b = 1
+// a = [1 0.5]
+// len = impzlength(b, a)
+//
 // See also
-// designfilt | digitalFilter | impz | zp2sos
+// designfilt
+// digitalFilter
+// impz,
+// zp2sos
 //
 // Authors
 // Ayush Baid

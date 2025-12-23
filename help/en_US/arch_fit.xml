@@ -17,46 +17,88 @@
 
   <refnamediv>
     <refname>arch_fit</refname>
-    <refpurpose>This functions fits an ARCH regression model to the time series Y using the scoring algorithm in Engle's original ARCH paper.</refpurpose>
+    <refpurpose>Fit an ARCH regression model to the time series y using the scoring algorithm in Engle’s original ARCH paper.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [A, B] = arch_fit (Y, X, P, ITER, GAMMA, A0, B0)
+   [a, b] = arch_fit(y, x, p)
+   [a, b] = arch_fit(y, x, p, iter, gamma, a0, b0)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> A time-series data vector up to time t-1.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> A matrix of (ordinary) regressors x up to t.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> The order of the regression of the residual variance.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>iter:</term>
+            <listitem><para> Number of iterations (optional).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>gamma:</term>
+            <listitem><para> Updating factor (optional).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a0:</term>
+            <listitem><para> Initial values for the scoring algorithm (optional).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b0:</term>
+            <listitem><para> Initial values for the scoring algorithm (optional).</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Fit an ARCH regression model to the time series Y using the scoring algorithm in Engle's original ARCH paper.
+Function arch_fit() fits an ARCH regression model to the time series `y` using the scoring algorithm in Engle’s original ARCH paper.
+The model is:
+y(t) = b(1) * x(t,1) + … + b(k) * x(t,k) + e(t),
+h(t) = a(1) + a(2) * e(t-1)^2 + … + a(p+1) * e(t-p)^2
+where `e(t)` is N(0, h(t)). The function allows specifying the number of iterations, updating factor, and initial values for the scoring algorithm.
    </para>
    <para>
-The model is
-   </para>
-   <para>
-y(t) = b(1) * x(t,1) + ... + b(k) * x(t,k) + e(t),
-h(t) = a(1) + a(2) * e(t-1)^2 + ... + a(p+1) * e(t-p)^2
-   </para>
-   <para>
-in which e(t) is N(0, h(t)), given a time-series vector Y up to time t-1 and a matrix of (ordinary) regressors X up to t. The order of the regression of the residual variance is specified by P.
-   </para>
-   <para>
-If invoked as 'arch_fit (Y, K, P)' with a positive integer K, fit an ARCH(K, P) process, i.e., do the above with the t-th row of X given by
-   </para>
-   <para>
-[1, y(t-1), ..., y(t-k)]
-   </para>
-   <para>
-Optionally, one can specify the number of iterations ITER, the updating factor GAMMA, and initial values a0 and b0 for the scoring algorithm.
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Fit an ARCH regression model to a time series
+
+// Define the time series data (y) and regressors (x)
+y = [1.2, 2.3, 1.8, 2.5, 3.1, 2.9, 3.5, 3.8, 4.2, 4.5] // Time-series data
+x = [1, 2; 2, 3; 3, 4; 4, 5; 5, 6; 6, 7; 7, 8; 8, 9; 9, 10; 10, 11] // Regressors
+
+// Define the order of the regression of the residual variance
+p = 2
+
+// Fit the ARCH model
+[a, b] = arch_fit(y, x, p)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="autoreg_matrix">autoreg_matrix</link></member>
+   </simplelist>
 </refsection>
 </refentry>

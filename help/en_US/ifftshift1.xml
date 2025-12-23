@@ -22,31 +22,43 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   ifftshift1 (X)
-   ifftshift1 (X, DIM)
+   y = ifftshift1(x)
+   y = ifftshift1(x, dim)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>X:</term>
-      <listitem><para>It is a vector of N elements corresponding to time samples</para></listitem></varlistentry>
-   <varlistentry><term>DIM:</term>
-      <listitem><para> The optional DIM argument can be used to limit the dimension along which the permutation occurs</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Input vector or matrix corresponding to time samples.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim:</term>
+            <listitem><para> (optional) Dimension along which the permutation occurs. Default is the first non-singleton dimension.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-Undo the action of the 'fftshift1' function.
+Undoes the action of the 'fftshift1' function. For inputs of even length, 'fftshift1' is its own inverse, but odd lengths differ slightly.
    </para>
    <para>
-For even length X, 'fftshift1' is its own inverse, but odd lengths differ slightly.
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [1, 2, 3, 4];
+ifftshift1(fftshift1(x))
+
+   ]]></programlisting>
 </refsection>
 </refentry>

@@ -17,7 +17,105 @@
 
   <refnamediv>
     <refname>ellip</refname>
-    <refpurpose>Elliptic or Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.</refpurpose>
+    <refpurpose>Design an elliptic or Cauer filter with specified passband ripple and stopband attenuation.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = ellip(n, rp, rs, wp)
+   [b, a] = ellip(n, rp, rs, wp, "high")
+   [b, a] = ellip(n, rp, rs, [wl, wh])
+   [b, a] = ellip(n, rp, rs, [wl, wh], "stop")
+   [z, p, g] = ellip(...)
+   [...] = ellip(..., "s")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. The order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rp:</term>
+            <listitem><para> Non-negative scalar. The passband ripple in decibels (dB).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>rs:</term>
+            <listitem><para> Non-negative scalar. The stopband attenuation in decibels (dB).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>wp:</term>
+            <listitem><para> Positive real value. Specifies the passband edge(s):</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>wl, wh:</term>
+            <listitem><para> Positive real values. Specify the lower and upper band edges for bandpass or bandstop filters.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Vector. The zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Vector. The poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Scalar. The gain of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector. The numerator coefficients of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector. The denominator coefficients of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates an elliptic or Cauer filter with `rp` dB of passband ripple and `rs` dB of stopband attenuation.
+- [b, a] = ellip(n, rp, rs, wp) designs a lowpass filter with order `n`, passband ripple `rp`, stopband attenuation `rs`, and cutoff frequency `pi*wp` radians.
+- [b, a] = ellip(n, rp, rs, wp, "high") designs a highpass filter.
+- [b, a] = ellip(n, rp, rs, [wl, wh]) designs a bandpass filter with edges `pi*wl` and `pi*wh`.
+- [b, a] = ellip(n, rp, rs, [wl, wh], "stop") designs a bandstop filter.
+- [z, p, g] = ellip(...) returns the filter in zero-pole-gain form.
+- [...] = ellip(..., "s") returns an analog filter in Laplace space.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Lowpass filter:
+[b, a] = ellip(6, 3, 50, 0.6)
+// Highpass filter:
+[b, a] = ellip(6, 3, 50, 0.6, "high")
+// Bandpass filter:
+[b, a] = ellip(5, 1, 90, [0.1, 0.2])
+// Bandstop filter:
+[b, a] = ellip(5, 1, 90, [0.1, 0.2], "stop")
+// Zero-pole-gain form:
+[z, p, g] = ellip(6, 3, 50, 0.6)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ellipap,">sftrans, bilinear, zp2tf</link></member>
+   </simplelist>
+</refsection>
 </refentry>

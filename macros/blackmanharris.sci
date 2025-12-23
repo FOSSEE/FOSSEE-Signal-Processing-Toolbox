@@ -1,4 +1,20 @@
-function w = blackmanharris (m, opt)
+function w = blackmanharris(m, opt)
+// Generate a Blackman-Harris window.
+//
+// Syntax
+//   w = blackmanharris(m)
+//   w = blackmanharris(m, opt)
+//
+// Parameters
+// m: Positive integer. Length of the Blackman-Harris window.
+// opt: String. Specifies the type of Blackman-Harris window ('symmetric' or 'periodic'). Default is 'symmetric'.
+//
+// Description
+// This function generates an m-point Blackman-Harris window. By default, it returns a symmetric Blackman-Harris window. If `opt` is set to 'periodic', the function generates a periodic Blackman-Harris window, which is useful in spectral analysis.
+//
+// Examples
+// w = blackmanharris(5)
+// 
 
  funcprot(0);
     rhs= argn(2);

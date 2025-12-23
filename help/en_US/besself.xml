@@ -17,7 +17,73 @@
 
   <refnamediv>
     <refname>besself</refname>
-    <refpurpose>Bessel filter design.</refpurpose>
+    <refpurpose>Design a Bessel filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [b, a] = besself(n, Wc)
+   [b, a] = besself(n, Wc, "high")
+   [b, a] = besself(n, [Wl, Wh])
+   [b, a] = besself(n, [Wl, Wh], "stop")
+   [z, p, g] = besself(...)
+   [...] = besself(..., "z")
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Positive integer. Order of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wc:</term>
+            <listitem><para> Positive real value. Analog or normalized digital 3dB cutoff frequency/frequencies.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>z:</term>
+            <listitem><para> Zeros of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Poles of the filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Gain of the filter.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a Bessel filter. The default is an analog filter in Laplace space (s). If the second argument is scalar, the third parameter specifies "high" or "low" (default is "low"). If the second argument is a vector of length 2 ([Wl, Wh]), the third parameter specifies "pass" (default) or "stop" for bandpass and band reject filters, respectively.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[b, a] = besself(2, 0.3, "high", "z")
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="besselap">besselap</link></member>
+   <member><link linkend="bilinear">bilinear</link></member>
+   <member><link linkend="sftrans">sftrans</link></member>
+   <member><link linkend="zp2tf">zp2tf</link></member>
+   </simplelist>
+</refsection>
 </refentry>

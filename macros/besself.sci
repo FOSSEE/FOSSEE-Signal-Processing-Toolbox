@@ -9,39 +9,36 @@
 // Date of Modification: 3 Feb 2024
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
-function [a, b, c, d] = besself (n, w, varargin)
-    //Bessel filter design.
-    //Canding Sequence
-    //[b, a] = besself(n, Wc)
-    //[b, a] = besself (n, Wc, "high")
-    //[b, a] = besself (n, [Wl, Wh])
-    //[b, a] = besself (n, [Wl, Wh], "stop")
-    //[z, p, g] = besself (…)
-    //[…] = besself (…, "z")
-    //Parameters
-    //n: positive integer value (order of filter)
-    //Wc: positive real value,
-    //    1).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
-    //    2).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
-    //Description
-    //This function generates a Bessel filter. The default is a Laplace space (s)  or analog filter.
-    //If second argument is scalar the third parameter takes in high or low, the default value being low. The cutoff is Wc rad/sec.
-    //If second argument is vector of length 2 ie [Wl Wh] then third parameter may be pass or stop default is pass for bandpass and band reject filter respectively
-    //[z,p,g] = besself(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
-    //[...] = besself(...,’z’) returns a discrete space (Z) filter. Wc must be less than 1 {dimensionless}.
-    //Examples
-    //[b, a]=besself(2,.3,"high","z")
-    //Output :
-    // a  =
-    //
-    //    1.  - 0.6912562    0.1760353
-    // b  =
-    //
-    //    0.4668229  - 0.9336457    0.4668229
-    //
-    // Dependencies
-    // besselap bilinear  sftrans  zp2tf
-    
+function [a, b, c, d] = besself(n, w, varargin)
+// Design a Bessel filter.
+//
+// Syntax
+//   [b, a] = besself(n, Wc)
+//   [b, a] = besself(n, Wc, "high")
+//   [b, a] = besself(n, [Wl, Wh])
+//   [b, a] = besself(n, [Wl, Wh], "stop")
+//   [z, p, g] = besself(...)
+//   [...] = besself(..., "z")
+//
+// Parameters
+// n: Positive integer. Order of the filter.
+// Wc: Positive real value. Analog or normalized digital 3dB cutoff frequency/frequencies.
+// z: Zeros of the filter.
+// p: Poles of the filter.
+// g: Gain of the filter.
+//
+// Description
+// This function generates a Bessel filter. The default is an analog filter in Laplace space (s). If the second argument is scalar, the third parameter specifies "high" or "low" (default is "low"). If the second argument is a vector of length 2 ([Wl, Wh]), the third parameter specifies "pass" (default) or "stop" for bandpass and band reject filters, respectively.
+//
+// Examples
+// [b, a] = besself(2, 0.3, "high", "z")
+//
+// See also
+// besselap
+// bilinear
+// sftrans
+// zp2tf
+
     funcprot(0);
     [nargout nargin] = argn();
 

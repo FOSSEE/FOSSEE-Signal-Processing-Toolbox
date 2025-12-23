@@ -1,7 +1,7 @@
 function L = filternorm(b,a,varargin)
 // Calculates the L-2 norm or L-infinity norm of a digital filter
 //
-// Calling Sequence
+// Syntax
 // L = filternorm(b,a)
 // L = filternorm(b,a,pnorm)
 // L = filternorm(b,a,2,tol)
@@ -15,10 +15,12 @@ function L = filternorm(b,a,varargin)
 //
 //
 // Examples
-// // 1) L-2 norm of an IIR filter with tol = 10^(-10)
-//      b = [-3 2];
-//      a = [1 -0.5];
-//      L = filternorm(b, a, 2, 10d-10);
+// // low-pass filter
+// b = [0.1, 0.15, 0.5, 0.15, 0.1] // Symmetric FIR filter
+// a = [1] // FIR => denominator is 1
+//
+// L = filternorm(b, a, %inf) // Maximum gain across all frequencies
+//
 //
 //
 // See also
@@ -28,7 +30,7 @@ function L = filternorm(b,a,varargin)
 // Authors
 // Ayush Baid
 
-exec('impz.sci', -1);
+// exec('impz.sci', -1);
 
 // ** Check on number of input, output arguments
 [numOutArgs, numInArgs] = argn(0);

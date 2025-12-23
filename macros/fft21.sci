@@ -1,28 +1,31 @@
-
 function res = fft21 (A, m, n)
+// Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
+//
+// Syntax
+//   y = fft21(A)
+//   y = fft21(A, m,n)
+//
+// Parameters
+// x: Input signal.
+// m: Number of rows of A to be used
+// n: Number of columns of A to be used
+//
 // Description
-//         Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
-//         It performs two-dimentional FFT on the matrix A. You can use the variables m and n to specify the number of rows and columns
-//         of A that you want to use. If either of these variables is larger than the size of A,
-//         then A will be resized, and zeros will be added as padding.
-//         If A is a multi-dimensional matrix, the function will treat each two-dimensional sub-matrix of A separately.
-//     Calling Sequence
-//         fft21 (A)
-//         fft21 (A, m, n)
-//     Parameters 
-//         A: input matrix
-//         m: number of rows of A to be used
-//         n: number of columns of A to be used
-//     Examples
-//         A = [1 2 3; 4 5 6; 7 8 9]
-//         m = 4
-//         n = 4
-//         fft21 (A, m, n)
-//         ans =
-//             45 +  0i   -6 - 15i   15 +  0i   -6 + 15i
-//             -18 - 15i   -5 +  8i   -6 -  5i    5 -  4i
-//             15 +  0i   -2 -  5i    5 +  0i   -2 +  5i
-//             -18 + 15i    5 +  4i   -6 +  5i   -5 -  8i 
+//Calculates the two-dimensional discrete Fourier transform of A using a Fast Fourier Transform algorithm.
+//It performs two-dimentional FFT on the matrix A. You can use the variables m and n to specify the number of rows and columns
+//of A that you want to use. If either of these variables is larger than the size of A,
+//then A will be resized, and zeros will be added as padding.
+//If A is a multi-dimensional matrix, the function will treat each two-dimensional sub-matrix of A separat// Examples
+//
+// Examples
+// A = [1 2 3; 4 5 6; 7 8 9]
+// m = 4
+// n = 4
+// fft21 (A, m, n)
+//
+// See also
+// fft
+//
 
     funcprot(0);
     lhs = argn(1)

@@ -17,17 +17,67 @@
 
   <refnamediv>
     <refname>rlevinson</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>It Computes the autocorrelation coefficients using prediction polynomial.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    a = rlevinson(a, efinal)
    [a, U] = rlevinson(a, efinal)
    [a, U, kr] = rlevinson(a, efinal)
    [a, U, kr, e] = rlevinson(a, efinal)
+   
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> input argument prediction polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>efinal:</term>
+            <listitem><para> input argument 'final prediction error'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> returns the autocorrelation coefficients.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>U:</term>
+            <listitem><para> return a upper triangular matrox of order (length(a)*length(a))</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>kr:</term>
+            <listitem><para> return refelection coefficient.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e:</term>
+            <listitem><para> Return the vector of prediction error.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+X = [7 6 5 8 3 6]     //make the first prediction polynomial coefficient unity and check for standard Auto regressive model
+X=[1 6/7 5/7 8/7 3/7 6/7];
+
+[R U kr e] = rlevinson(X, 0.3)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

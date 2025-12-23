@@ -22,30 +22,50 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   w = window(f, m)
-   w = window(f, m, opts)
+   w = wind(f, m)
+   w = wind(f, m, opts)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>f:</term>
-      <listitem><para> string value/window name</para></listitem></varlistentry>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>opts:</term>
-      <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>f:</term>
+            <listitem><para> string value/window name</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> positive integer value</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>opts:</term>
+            <listitem><para> string value, takes in "periodic" or "symmetric"</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> output variable, vector of real numbers</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
+This function creates an m-point window from the function f given as input, in the output vector w.
+f can take any valid function as a string, for example "blackmanharris".
+   </para>
+   <para>
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+wind("hanning",5)
+   ]]></programlisting>
 </refsection>
 </refentry>

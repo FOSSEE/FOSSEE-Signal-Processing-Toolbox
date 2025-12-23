@@ -1,20 +1,28 @@
 function ismax=ismaxphase(varargin)
-//ismaxphase Determine whether filter is maximum phase or not
-// Description : It determines whether the given system function is maximum phase system or not . Maximum phase system means all zeros of transfer function will be outside the unit circle in z-plane also poles mustbe within unit circle for stability and causality
-//Syntax
-//flag = ismaxphase(b,a)
-//flag = ismaxphase(sos)
-//flag = ismaxphase(...,tol)
-// b and a are the vectors containing numerator and denumerator coefficients respectively
-//tol, tolerance is used to determine when two numbers are close enough to be considered equal.
-//Example : of maximum phase system
-//flag = ismaxphase([1 -5 6],1)
-//Output
-// flag =
+// Determine whether a filter is maximum phase.
 //
-// 1.
-//Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
+// Syntax
+//   flag = ismaxphase(b, a)
+//   flag = ismaxphase(sos)
+//   flag = ismaxphase(..., tol)
+//
+// Parameters
+// b: Numerator coefficients of the filter.
+// a: Denominator coefficients of the filter.
+// sos: K x 6 second-order section matrix.
+// tol: (optional) Tolerance used to determine when two numbers are close enough to be considered equal.
+//
+// Description
+// The `ismaxphase` function determines whether the given system function is a maximum phase system. 
+// A maximum phase system means all zeros of the transfer function are outside the unit circle in the z-plane, 
+// and all poles must be within the unit circle for stability and causality.
+//
+// Examples
+// flag = ismaxphase([1 -5 6], 1)
+//
+// Authors
+// Parthasarathi Panda ( parthasarathipanda314@gmail.com )
+//
 
     [nargout,nargin]=argn();
     if (nargin==2) then

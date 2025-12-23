@@ -17,54 +17,72 @@
 
   <refnamediv>
     <refname>hilbert1</refname>
-    <refpurpose>Analytic extension of real valued signal.</refpurpose>
+    <refpurpose>Compute the analytic extension of a real-valued signal.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   h= hilbert1(f)
-   h= hilbert1(f,N)
-   h= hilbert1(f,N,dim)
+   h = hilbert1(f)
+   h = hilbert1(f, N)
+   h = hilbert1(f, N, dim)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>f:</term>
-      <listitem><para> real or complex valued scalar or vector</para></listitem></varlistentry>
-   <varlistentry><term>N:</term>
-      <listitem><para> The result will have length N</para></listitem></varlistentry>
-   <varlistentry><term>dim :</term>
-      <listitem><para> It analyses the input in this dimension</para></listitem></varlistentry>
+        <varlistentry>
+            <term>f :</term>
+            <listitem><para> real-valued input signal. Can be a vector, matrix, or N-D array.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>N :</term>
+            <listitem><para> (optional) length of the Hilbert transform. Must be a positive integer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>dim :</term>
+            <listitem><para> (optional) dimension along which the Hilbert transform is applied. Must be a scalar.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-h = hilbert1 (f) computes the extension of the real valued signal f to an analytic signal. If f is a matrix, the transformation is applied to each column. For N-D arrays, the transformation is applied to the first non-singleton dimension.
+Compute the analytic extension of a real-valued signal.
    </para>
    <para>
-real (h) contains the original signal f. imag (h) contains the Hilbert transform of f.
+- h = hilbert1(f) computes the analytic signal of the real-valued input signal f.
+If f is a matrix, the transformation is applied to each column. For N-D arrays,
+the transformation is applied to the first non-singleton dimension.
+- real(h) contains the original signal f.
+- imag(h) contains the Hilbert transform of f.
+- hilbert1(f, N) computes the Hilbert transform with a length N. The result will also have length N.
+- hilbert1(f, [], dim) or hilbert1(f, N, dim) applies the transformation along the specified dimension.
    </para>
    <para>
-hilbert1 (f, N) does the same using a length N Hilbert transform. The result will also have length N.
-   </para>
-   <para>
-hilbert1 (f, [], dim) or hilbert1 (f, N, dim) does the same along dimension dim.
 </para>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fft1">fft1</link></member>
+   <member><link linkend="ifft1">ifft1</link></member>
+   <member><link linkend="ipermute">ipermute</link></member>
+   </simplelist>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-## notice that the imaginary signal is phase-shifted 90 degrees
-t=linspace(0,10,256);
-z = hilbert1(sin(2*pi*0.5*t));
-grid on; plot(t,real(z),';real;',t,imag(z),';imag;');
+// The magnitude of the Hilbert transform eliminates the carrier
+t = linspace(0, 10, 1024);
+x = 5 * cos(0.2 * t) .* sin(100 * t);
+plot(t, x, t, abs(hilbert1(x)));
    ]]></programlisting>
 </refsection>
 </refentry>

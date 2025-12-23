@@ -12,7 +12,7 @@
 function y = fftfilt(b, x, varargin)
     // Performs FFT-based FIR filtering using overlap-add method
     // 
-    // Calling sequence
+    // Syntax
     // y = fftfilt(b,x)
     // y = fftfilt(b,x,n)   
     // 
@@ -34,14 +34,15 @@ function y = fftfilt(b, x, varargin)
     // y = fftfilt(b,x,n) uses n to determine the length of the FFT.
     //
     // Examples
-    // 1) Filtering a sine wave
-//          x = sin(1:2000);
-//          b = [1 1/2];
-//          y = fftfilt(b,x);
-    // 2) Multiple filters (1,1/3) and (1/4,1/5);
-    //      x = sin(1:2000);
-    //      b = [1 1/4;1/3 1/5];
-    //      y = fftfilt(b,x);
+    // fs = 360
+    // t = 0:1/fs:2;
+    // x = sin(2 * %pi * 5 * t) + 0.2 * rand(1, length(t)); // Simulated ECG with noise
+    // // Low-pass filter coefficients (example FIR LPF)
+    // b = [0.1, 0.15, 0.5, 0.15, 0.1]
+    // y = fftfilt(b, x);
+    // plot(t, x, 'r--');
+    // plot(t, y, 'g');
+    // legend(["Original ECG", "Filtered ECG"]);
     
     [numOutArgs,numInArgs] = argn(0);
     

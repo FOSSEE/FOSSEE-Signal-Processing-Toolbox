@@ -1,18 +1,22 @@
 function [v, rg] = schtrig (x, lvl, rst)
-//This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
-//Calling Sequence:
-//x = schtrig(x, lvl)
-//lvl = schtrig(x, lvl, rst)
-//Parameters:
-//x: Vector or matrix of real numbers
-//lvl: Real number
-//rst: Boolean, default value is 'true'
-//Description:
-//This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
-//The argument 1 is a matrix (or a vector) and this trigger works along its first dimension.
-//Examples:
-//schtrig([0.2,-3,5], -4)
-//ans = [0, 0, 1]
+// This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
+//
+// Syntax
+// x = schtrig(x, lvl)
+// lvl = schtrig(x, lvl, rst)
+//
+// Parameters
+// x: Vector or matrix of real numbers
+// lvl: Real number
+// rst: Boolean, default value is 'true'
+//
+// Description
+// This function implements a multisignal Schmitt triggers with 'lvl' levels supplied as input.
+// The argument 1 is a matrix (or a vector) and this trigger works along its first dimension.
+// 
+// Examples
+// schtrig([0.2,-3,5], -4)
+// 
 
   funcprot(0);
   warning('off');

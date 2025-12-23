@@ -17,7 +17,55 @@
 
   <refnamediv>
     <refname>mag2db</refname>
-    <refpurpose>funcprot(0);</refpurpose>
+    <refpurpose>Convert magnitude to decibels.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   ydb = mag2db(y)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Input magnitude values (vector or matrix).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `mag2db` function converts magnitude measurements specified in `y` to decibels (dB)
+using the formula: ydb = 20 * log10(y).
+   </para>
+   <para>
+- If `y` contains negative real values, the corresponding `ydb` values are set to NaN.
+- If `y` contains zeros, the corresponding `ydb` values are set to -Inf.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = [1, 10, 0.1, 0, -5]
+ydb = mag2db(y)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Debdeep Dey</member>
+   </simplelist>
+</refsection>
 </refentry>

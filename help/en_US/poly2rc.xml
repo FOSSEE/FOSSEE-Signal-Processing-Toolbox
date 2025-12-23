@@ -17,15 +17,60 @@
 
   <refnamediv>
     <refname>poly2rc</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Converts prediction polynomial to reflection coefficients.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    kr = poly2rc(a)
    [kr, R0] = rc2poly(a, efinal)
+   
    </synopsis>
 </refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> prediction polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>efinal:</term>
+            <listitem><para> final prediction error.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>kr:</term>
+            <listitem><para> Return refelection coefficient.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R0:</term>
+            <listitem><para> Return the  zero lag autocorrelation, R0.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+X = [7 6 5 8 3 6]
+[kr, R0] = poly2rc(X)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

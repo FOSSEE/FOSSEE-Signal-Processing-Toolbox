@@ -1,25 +1,22 @@
 function w = welchwin (m, opt)
-//This function returns the filter coefficients of a Welch window.
-//Calling Sequence
-//w = welchwin (m)
-//w = welchwin (m, opt)
-//Parameters 
-//m: positive integer value
-//opt: string value, takes "periodic" or "symmetric"
-//w: output variable, vector of real numbers 
-//Description
-//This is an Octave function.
-//This function returns the filter coefficients of a Welch window of length m supplied as input, to the output vector w.
-//The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
-//For symmetric, the length should be an integer>2. For periodic, the length should be an integer>1.
-//Examples
-//welchwin(4,"symmetric")
-//ans  =
-//    0.         
-//    0.8888889  
-//    0.8888889  
-//    0.         
- 
+// This function returns the filter coefficients of a Welch window.
+//
+// Syntax
+// w = welchwin (m)
+// w = welchwin (m, opt)
+//
+// Parameters 
+// m: positive integer value
+// opt: string value, takes "periodic" or "symmetric"
+// w: output variable, vector of real numbers 
+//
+// Description
+// This function returns the filter coefficients of a Welch window of length m supplied as input, to the output vector w.
+// The second parameter can take the values "periodic" or "symmetric", depending on which the corresponding form of window is returned. The default is symmetric.
+// For symmetric, the length should be an integer>2. For periodic, the length should be an integer>1.
+// 
+// Examples
+// welchwin(4,"symmetric")
 
 
 rhs = argn(2)

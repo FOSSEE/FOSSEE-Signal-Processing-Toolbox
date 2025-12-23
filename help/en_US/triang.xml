@@ -22,40 +22,41 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   w =  triang (m)
+   w = triang(n)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>m:</term>
-      <listitem><para> positive integer value</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> output variable, vector of real numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Window length.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Triangular window.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This is an Octave function.
-This function returns the filter coefficients of a triangular window of length m supplied as input, to the output vector y.
+This function generates a triangular window of length `n`.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-triang(5)
-ans  =
-0.3333333
-0.6666667
-1.
-0.6666667
-0.3333333
+w = triang(64)
+
    ]]></programlisting>
 </refsection>
 </refentry>

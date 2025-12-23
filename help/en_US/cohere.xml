@@ -17,48 +17,79 @@
 
   <refnamediv>
     <refname>cohere</refname>
-    <refpurpose>Estimate (mean square) coherence of signals "x" and "y"</refpurpose>
+    <refpurpose>Estimate the coherence of signals using the Welch method.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   [Pxx,freqs] = cohere(x,y,Nfft,Fs,win,overlap,ran,plot_type,detrends)
+   [Pxx, freq] = cohere(x, y, Nfft, Fs, window, overlap, range, plot_type, detrend)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> [non-empty vector] system-input time-series data</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
-      <listitem><para> [non-empty vector] system-output time-series data</para></listitem></varlistentry>
-   <varlistentry><term>win:</term>
-      <listitem><para>[real vector] of window-function values between 0 and 1; the data segment has the same length as the window. Default window shape is Hamming. [integer scalar] length of each data segment.  The default value is window=sqrt(length(x)) rounded up to the nearest integer power of 2; see 'sloppy' argument.</para></listitem></varlistentry>
-   <varlistentry><term>overlap:</term>
-      <listitem><para>[real scalar] segment overlap expressed as a multiple of window or segment length.   0 &lt;= overlap &lt; 1, The default is overlap=0.5 .</para></listitem></varlistentry>
-   <varlistentry><term>Nfft:</term>
-      <listitem><para>[integer scalar] Length of FFT.  The default is the length of the "window" vector or has the same value as the scalar "window" argument.  If Nfft is larger than the segment length, "seg_len", the data segment is padded with "Nfft-seg_len" zeros.  The default is no padding. Nfft values smaller than the length of the data segment (or window) are ignored silently.</para></listitem></varlistentry>
-   <varlistentry><term>Fs:</term>
-      <listitem><para>[real scalar] sampling frequency (Hertz); default=1.0</para></listitem></varlistentry>
-   <varlistentry><term>range:</term>
-      <listitem><para>'half',  'onesided' : frequency range of the spectrum is zero up to but not including Fs/2.  Power from negative frequencies is added to the positive side of the spectrum, but not at zero or Nyquist (Fs/2) frequencies.  This keeps power equal in time and spectral domains.  See reference [2]. 'whole', 'twosided' : frequency range of the spectrum is-Fs/2 to Fs/2, with negative frequenciesstored in "wrap around" order after the positivefrequencies; e.g. frequencies for a 10-point 'twosided'spectrum are 0 0.1 0.2 0.3 0.4 0.5 -0.4 -0.3 -0.2 -0.1 'shift', 'centerdc' : same as 'whole' but with the first half of the spectrum swapped with second half to put the zero-frequency value in the middle. (See "help fftshift". If data (x and y) are real, the default range is 'half', otherwise default range is 'whole'.</para></listitem></varlistentry>
-   <varlistentry><term>plot_type:</term>
-      <listitem><para> 'plot', 'semilogx', 'semilogy', 'loglog', 'squared' or 'db': specifies the type of plot.  The default is 'plot', which means linear-linear axes. 'squared' is the same as 'plot'. 'dB' plots "10*log10(psd)".  This argument is ignored and a spectrum is not plotted if the caller requires a returned value.</para></listitem></varlistentry>
-   <varlistentry><term>detrends:</term>
-      <listitem><para>'no-strip', 'none' -- do NOT remove mean value from the data'short', 'mean' -- remove the mean value of each segment from each segment of the data. 'linear',-- remove linear trend from each segment of the data.'long-mean'-- remove the mean value from the data before splitting it into segments. This is the default.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x, y:</term>
+            <listitem><para> Vectors. Input signals for coherence estimation.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Nfft:</term>
+            <listitem><para> Integer. Number of FFT points.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> Real scalar. Sampling frequency.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>window:</term>
+            <listitem><para> Vector. Windowing function applied to each segment.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>overlap:</term>
+            <listitem><para> Integer. Number of overlapping samples between segments.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>range:</term>
+            <listitem><para> String. Frequency range for the analysis.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>plot_type:</term>
+            <listitem><para> String. Type of plot to generate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>detrend:</term>
+            <listitem><para> String. Method for removing trends from the data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Pxx:</term>
+            <listitem><para> Vector. Coherence estimate.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>freq:</term>
+            <listitem><para> Vector. Frequency values corresponding to the coherence estimate.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-Estimate (mean square) coherence of signals "x" and "y".
+This function estimates the coherence (mean square) of signals `x` and `y` using the Welch periodogram/FFT method. It is compatible with Matlab R11 `cohere` and earlier versions.
    </para>
    <para>
-Use the Welch (1967) periodogram/FFT method.
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+t = linspace(1,10,1000);
+x =filter(0.3245,cos(t),t); y = filter(0.0034,x,sin(t));
+cohere(x,y,700,1000,4,0.67,"half")
+   ]]></programlisting>
 </refsection>
 </refentry>

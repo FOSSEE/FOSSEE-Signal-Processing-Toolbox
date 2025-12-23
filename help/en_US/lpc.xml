@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [a,g] = lpc(x)
    [a,g] = lpc(x,p)
@@ -46,14 +46,22 @@ default value of length(x)-1 is used.
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> double</para></listitem></varlistentry>
-   <varlistentry><term>p:</term>
-      <listitem><para> int, natural number, scalar</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para> double</para></listitem></varlistentry>
-   <varlistentry><term>g:</term>
-      <listitem><para> double</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> double</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> int, natural number, scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> double</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> double</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -70,9 +78,30 @@ e = x-est_x;
 plot(1:97,x(4001:4097),1:97,est_x(4001:4097),'--');
 a = gca();
 a.grid = [1,1];
-title 'Original Signal vs. LPC Estimate';
-xlabel 'Sample number', ylabel 'Amplitude';
+title('Original Signal vs. LPC Estimate');
+xlabel ('Sample number', ylabel 'Amplitude');
 legend('Original signal','LPC estimate');
+
    ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Hayes, Monson H. Statistical digital signal processing and modeling.</para>
+   <para>John Wiley &amp; Sons, 2009, pg. 220</para>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="aryule">| levinson | prony | pyulear | stmcb</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ayush Baid</member>
+   </simplelist>
 </refsection>
 </refentry>

@@ -10,33 +10,28 @@
 // Email: toolbox@scilab.in
 
 function [z, p, g] = ellipap (n, Rp, Rs)
-    //Produces a lowpass analog prototype elliptic filter.
-    //Calling Sequence
-    //[z, p, g] = ellipap (n, Rp, Rs)
-    //Parameters
-    //n: Filter Order
-    //Rp: Peak-to-peak passband ripple (in dB)
-    //Rs: Stopband attenuation (in dB)
-    //Description
-    //It gives a lowpass analog elliptic prototype filter of nth order, with a Peak-to-peak passband ripple of Rp dB and a stopband attenuation of Rs dB.
-    //Examples
-    //[z, p, g] = ellipap (4, 3,10)
-    //Output :
-    // g  =
-    //
-    //    0.3162
-    // p  =
-    //
-    //  - 0.2071 - 0.8587i
-    //  - 0.0042 - 0.9990i
-    //  - 0.2071 + 0.8587i
-    //  - 0.0042 + 0.9990i
-    // z  =
-    //
-    //  - 1.3121i
-    //  - 1.0063i
-    //    1.3121i
-    //    1.0063i
+    // Produces a lowpass analog prototype elliptic filter.
+//
+// Syntax
+//   [z, p, g] = ellipap(n, Rp, Rs)
+//
+// Parameters
+// n: Positive integer. The order of the filter.
+// Rp: Non-negative scalar. The peak-to-peak passband ripple in decibels (dB).
+// Rs: Non-negative scalar. The stopband attenuation in decibels (dB).
+// z: Vector. The zeros of the filter.
+// p: Vector. The poles of the filter.
+// g: Scalar. The gain of the filter.
+//
+// Description
+// This function produces a lowpass analog elliptic prototype filter of order `n`, with a peak-to-peak passband ripple of `Rp` dB and a stopband attenuation of `Rs` dB.
+//
+// Examples
+// [z, p, g] = ellipap(4, 3, 10)
+//
+// See also
+//  analpf
+//
 
     funcprot(0);
     lhs = argn(1)

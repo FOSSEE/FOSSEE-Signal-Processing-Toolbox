@@ -17,7 +17,42 @@
 
   <refnamediv>
     <refname>polyreduce</refname>
-    <refpurpose>Calling sequence</refpurpose>
+    <refpurpose>This function reduces a polynomial by removing leading zero coefficients.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   p = polyreduce(c)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>c:</term>
+            <listitem><para> Polynomial coefficients.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function reduces a polynomial by removing leading zero coefficients.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+p = polyreduce([0, 0, 1, 2, 3])
+
+   ]]></programlisting>
+</refsection>
 </refentry>

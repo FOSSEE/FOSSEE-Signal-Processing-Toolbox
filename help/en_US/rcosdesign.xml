@@ -17,7 +17,78 @@
 
   <refnamediv>
     <refname>rcosdesign</refname>
-    <refpurpose>RCOSDESIGN computes the raised cosine FIR filter</refpurpose>
+    <refpurpose>RCOSDESIGN computes the raised cosine FIR filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   h = rcosdesign(rollof_factor, num_of_symb, samp_per_symb)
+   h = rcosdesign(rollof_factor, num_of_symb, samp_per_symb, shape)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>rollof_factor:</term>
+            <listitem><para> Roll-off factor of the designed filter (scalar, 0 &lt;= rollof_factor &lt;= 1).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>num_of_symb:</term>
+            <listitem><para> Filter truncated to these many number of symbols (positive scalar).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>samp_per_symb:</term>
+            <listitem><para> Each symbol represented by these many samples (positive integer).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>shape:</term>
+            <listitem><para> (optional) Specifies the filter type. Options are:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'normal':</term>
+            <listitem><para> Returns a normal raised-cosine FIR filter.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>- 'sqrt':</term>
+            <listitem><para> Returns a square-root raised cosine filter (default).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>h:</term>
+            <listitem><para> Filter coefficients (vector).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `rcosdesign` function computes the coefficients of a raised cosine FIR filter. It supports both normal
+raised cosine and square-root raised cosine filters. The filter is truncated to `num_of_symb` symbols, with
+each symbol represented by `samp_per_symb` samples.
+   </para>
+   <para>
+Notes
+- The output for the 'normal' shape may differ from MATLAB due to differences in the `sinc` function implementation.
+- The product of `num_of_symb` and `samp_per_symb` must be even.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Design a square-root raised cosine filter:
+rolloff = 0.25
+span = 3
+sps = 2 // Samples per symbol
+b = rcosdesign(rolloff, span, sps)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

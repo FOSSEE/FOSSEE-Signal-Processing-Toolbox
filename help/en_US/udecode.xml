@@ -22,15 +22,32 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    y=uencode(u,n,v,'saturatemode')
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>u :</term>
+            <listitem><para> A vector, matrix or n-dimensional array of integers</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n :</term>
+            <listitem><para> An integer between 2 and 32</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>v :</term>
+            <listitem><para> A positive real scalar</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>saturatemode :</term>
+            <listitem><para> A string which can take only 2 values 'saturate' or 'wrap'</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -43,20 +60,30 @@ If u has positive and negative values the range of integers is assumed to be [-2
 If v is not specified, its default value is 1
 If saturatemode='wrap' the output is wrapped using modulo arithmetic if overflow occurs
 If saturatemode='saturate' the output is saturated if overflow accors
-Example
-u = int8([-1 1 2 -5]);
-ysat = udecode(u,3)
-ysat  =
    </para>
    <para>
-- 0.25    0.25    0.5  - 1.
-Author
-Ankur Mallick
-[1] International Telecommunication Union. General Aspects of Digital Transmission Systems: Vocabulary of Digital Transmission and Multiplexing, and Pulse Code Modulation (PCM) Terms. ITU-T Recommendation G.701. March, 1993.
 </para>
 </refsection>
 
 <refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+u = int8([-1 1 2 -5])
+ysat = udecode(u,3)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   <member>Biblography</member>
+   <member>[1] International Telecommunication Union. General Aspects of Digital Transmission Systems: Vocabulary of Digital Transmission and Multiplexing, and Pulse Code Modulation (PCM) Terms. ITU-T Recommendation G.701. March, 1993.</member>
+   </simplelist>
+</refsection>
+
+<refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
    <member><link linkend="uencode">uencode</link></member>

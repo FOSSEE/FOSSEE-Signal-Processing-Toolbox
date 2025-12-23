@@ -17,34 +17,57 @@
 
   <refnamediv>
     <refname>rceps</refname>
-    <refpurpose>Produce the cepstrum of the signal x, and if desired, the minimum phase reconstruction of the signal x.</refpurpose>
+    <refpurpose>Real cepstrum and minimum-phase reconstruction</refpurpose>
   </refnamediv>
 
 
-<refsynopsisdiv>
-   <title>Calling Sequence</title>
-   <synopsis>
-   [y, xm] = rceps(x)
-   </synopsis>
-</refsynopsisdiv>
+<refsection>
+   <title>Description</title>
+   <para>
+Real cepstrum and minimum-phase reconstruction
+If  called with two output arguments,
+the minimum phase reconstruction of the signal x is returned in ym.Calling Sequence
+[y,ym] = rceps(x)
+   </para>
+   <para>
+</para>
+</refsection>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> real or complex vector input</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> A vector or a Matirx</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y :</term>
+            <listitem><para> Real cepstrum</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ym :</term>
+            <listitem><para> Minimum-phase reconstruction</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-f0 = 70; Fs = 10000;                   # 100 Hz fundamental, 10kHz sampling rate
-a = poly (0.985 * exp (1i*pi*[0.1, -0.1, 0.3, -0.3])); # two formants
-s = 0.005 * randn (1024, 1);           # Noise excitation signal
-s(1:Fs/f0:length(s)) = 1;              # Impulse glottal wave
-x = filter (1, a, s);                  # Speech signal in x
-[y, xm] = rceps (x .* hanning (1024)); # cepstrum and min phase reconstruction
+// create a 45 Hz sine wave sampled at 100 Hz.
+t = 0:0.01:1.27;
+s1 = sin(2*%pi*45*t);
+s2 = s1 + 0.5*[zeros(1,20) s1(1:108)]; //Add an echo of the signal, with half the amplitude, 0.2 seconds after the beginning of the signal.
+c = rceps(s2); // real cepstrum of signal
+plot(t,c)
+
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="ifft1">ifft1</link></member>
+   </simplelist>
 </refsection>
 </refentry>

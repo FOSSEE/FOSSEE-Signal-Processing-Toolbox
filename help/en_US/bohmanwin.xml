@@ -17,7 +17,42 @@
 
   <refnamediv>
     <refname>bohmanwin</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generate a Bohman window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = bohmanwin(m)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Length of the Bohman window.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a Bohman window of length `m`. The Bohman window tapers smoothly to zero at both ends and is symmetric.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = bohmanwin(5)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

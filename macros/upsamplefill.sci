@@ -1,22 +1,33 @@
 function y = upsamplefill (x, v, c)
-//This function upsamples a vector interleaving given values or copies of the vector elements.
-//Calling Sequence
+// Upsample a vector by interleaving given values or copies of the vector elements.
 //
-//y = upsamplefill (x, w, cpy)
-//Parameters
-//x: scalar, vector or matrix of real or complex numbers
-//w: scalar or vector of real or complex values
-//cpy: can take in "true" or "false", default is false
-//Description
-//This is an Octave function.
-//This function upsamples a vector interleaving given values or copies of the vector elements.
-//The second argument has the values in the vector w that are placed in between the elements of x.
-//The third argument, if true, means that w should be scalar and that each value in x repeated w times.
-//Examples
-//1.upsamplefill([1,3,5],2,%f)
-//ans:1.    1.    1.    3.    3.    3.    5.    5.    5.
-//2.upsamplefill([1,3,5],2,%t)
-//ans:1.    2.    3.    2.    5.    2.
+// Syntax
+//   y = upsamplefill(x, w, cpy)
+//
+// Parameters
+// x: Scalar, vector, or matrix of real or complex numbers.
+// w: Scalar or vector of real or complex values. Specifies the values to be interleaved between the elements of `x`.
+// cpy: Boolean (`%t` or `%f`). If `%t`, `w` must be scalar, and each value in `x` is repeated `w` times. Default is `%f`.
+//
+// Outputs
+// y: Upsampled vector or matrix with interleaved values or repeated elements.
+//
+// Description
+// The `upsamplefill` function upsamples a vector or matrix by interleaving specified values or repeating elements. 
+// If `cpy` is `%f`, the values in `w` are interleaved between the elements of `x`. If `cpy` is `%t`, each value in `x` 
+// is repeated `w` times.
+//
+// Examples
+// // Upsample a vector by repeating elements:
+//    x = [1, 3, 5]
+//    y = upsamplefill(x, 2, %f)
+//    // Output: y = [1, 1, 1, 3, 3, 3, 5, 5, 5]
+//
+// // Upsample a vector by interleaving values:
+//    x = [1, 3, 5]
+//    y = upsamplefill(x, 2, %t)
+//    // Output: y = [1, 2, 3, 2, 5, 2]
+//
 
 
 

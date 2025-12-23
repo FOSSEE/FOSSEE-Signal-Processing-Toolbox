@@ -17,7 +17,73 @@
 
   <refnamediv>
     <refname>cheb2ord</refname>
-    <refpurpose>Minimum filter order of a digital Chebyshev type II filter with the desired response characteristics.</refpurpose>
+    <refpurpose>Compute the minimum filter order of a digital Chebyshev type II filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   n = cheb2ord(Wp, Ws, Rp, Rs)
+   [n, Ws] = cheb2ord(Wp, Ws, Rp, Rs)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>Wp:</term>
+            <listitem><para> Scalar or vector of length 2. Passband edge(s) in the range [0, 1].</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Ws:</term>
+            <listitem><para> Scalar or vector of length 2. Stopband edge(s) in the range [0, 1].</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rp:</term>
+            <listitem><para> Passband ripple in dB.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Rs:</term>
+            <listitem><para> Stopband attenuation in dB.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Minimum order of filter satisfying the given specifications.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Wc:</term>
+            <listitem><para> Stopband edge(s).</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics.
+Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
+Frequencies are normalized to the Nyquist frequency in the range [0,1].
+Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
+If ws>wp then the filter is a low pass filter. If wp>ws, then the filter is a high pass filter.
+If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
+If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+Wp = 40/500;
+Ws = 150/500;
+Rp = 3;
+Rs = 60;
+[n, Ws] = cheb2ord(Wp, Ws, Rp, Rs)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

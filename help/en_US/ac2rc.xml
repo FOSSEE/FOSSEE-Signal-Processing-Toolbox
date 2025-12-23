@@ -22,7 +22,7 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    k = ac2rc(R)
    [k,R0] = ac2rc(R)
@@ -33,26 +33,52 @@
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>R:</term>
-      <listitem><para> The input autocorrelation sequence. If r is a matrix, each column of r is treated as a separate signal.</para></listitem></varlistentry>
-   <varlistentry><term>k:</term>
-      <listitem><para> Returns the reflection coefficients</para></listitem></varlistentry>
-   <varlistentry><term>R0:</term>
-      <listitem><para> the zero lag autocorrelation, R0, based on the autocorrelation sequence, R.</para></listitem></varlistentry>
+        <varlistentry>
+            <term>R:</term>
+            <listitem><para> The input autocorrelation sequence. If R is a matrix, each column of R is treated as a separate signal.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>k:</term>
+            <listitem><para> Reflection coefficients derived from the autocorrelation sequence.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>R0:</term>
+            <listitem><para> The zero-lag autocorrelation, based on the autocorrelation sequence R.</para></listitem>
+        </varlistentry>
    </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function ac2rc() computes the reflection coefficients `k` and the zero-lag autocorrelation `R0`
+from the given autocorrelation sequence `R`. If `R` is a matrix, the function processes each column
+as a separate signal.
+   </para>
+   <para>
+</para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-X = [7 6 5 8 3 6 8 7 5 2 4 7 4 3 2 5 4 9 5 3 5 7 3 9 4 1 2 0 5 4 8 6 4 6 5 3];
-[k,R0] = ac2rc(X)
-or t=[2 5 6; 8 6 5; 8 9 4]
+t = [2 5 6; 8 6 5; 8 9 4]
 [k,R0] = ac2rc(t)
 
-Author
-Jitendra Singh
-
    ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="levin">levin</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
 </refsection>
 </refentry>

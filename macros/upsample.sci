@@ -14,25 +14,30 @@
 
 
 function y = upsample (x,n,phase )
-  //Calling sequence:
-//  y = upsample (x, n)
-//  y = upsample (x, n, offset)
-// Upsample the signal, inserting n-1 zeros between every element.
+// Upsample the signal by inserting zeros between elements.
 //
-// If x is a matrix, upsample every column.
+// Syntax
+//   y = upsample(x, n)
+//   y = upsample(x, n, phase)
 //
-// If offset is specified, control the position of the inserted sample in
-// the block of n zeros.
+// Parameters
+// x: Input signal (vector or matrix).
+// n: Upsampling factor (positive integer). Specifies the number of samples in the upsampled signal for each input sample.
+// phase (optional): Offset specifying the position of the original sample in the block of `n` samples. Default is 0.
+// y: Upsampled signal (vector or matrix).
 //
-//Testcases:
-//1.upsample([1,3,5],2)
-//EXPECTED OUTPUT:[1,0,3,0,5,0]
-//2.upsample([1;3;5],2)
-//EXPECTED OUTPUT:[1;0;3;0;5;0]
-//3.upsample([1,2;5,6;9,10],2)
-//EXPECTED OUTPUT:[1,2;0,0;5,6;0,0;9,10;0,0]
+// Description
+// The `upsample` function increases the sampling rate of the input signal `x` by inserting `n-1` zeros between every element. 
+// If `x` is a matrix, the function upsamples every column independently. The optional `phase` parameter controls the position 
+// of the original sample in the block of `n` samples.
 //
-//
+// Examples
+// // Upsample a row vector by a factor of 2:
+//    x = [1, 3, 5]
+//    y = upsample(x, 2)
+// Authors
+// FOSSEE Team
+// toolbox@scilab.in
 
   [nargout,nargin]=argn()
 

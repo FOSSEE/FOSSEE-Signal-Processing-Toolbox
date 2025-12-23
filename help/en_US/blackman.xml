@@ -17,44 +17,59 @@
 
   <refnamediv>
     <refname>blackman</refname>
-    <refpurpose>Generates a Blackman window</refpurpose>
+    <refpurpose>Generate a Blackman window.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   w=blackman(N)
-   w=blackman(N,sflag)
+   w = blackman(N)
+   w = blackman(N, sflag)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
+        <varlistentry>
+            <term>N:</term>
+            <listitem><para> Positive integer. Length of the Blackman window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>sflag:</term>
+            <listitem><para> String. Specifies the type of Blackman window ('symmetric' or 'periodic'). Default is 'symmetric'.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-w=blackman(N) returns an N-point symmetric Blackman window in a column vector w
-w=blackman(N,sflag)
-Returns an N point Blackman window using the type of sampling specified by sflag
-sflag can be either 'symmetric' (default) or 'periodic' (used in spectral analysis)
-Example
-w=blackman(4)
-w  =
+This function generates an N-point Blackman window. By default, it returns a symmetric Blackman window. If `sflag` is set to 'periodic', the function generates a periodic Blackman window, which is useful in spectral analysis.
    </para>
    <para>
-- 1.388D-17
-0.63
-0.63
-- 1.388D-17
-Author
-Ankur Mallick
-References
-[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.
 </para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = blackman(4)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ankur Mallick</member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Bibliography</title>
+   <para>[1] Oppenheim, Alan V., Ronald W. Schafer, and John R. Buck. Discrete-Time Signal Processing. Upper Saddle River, NJ: Prentice Hall, 1999.</para>
 </refsection>
 </refentry>

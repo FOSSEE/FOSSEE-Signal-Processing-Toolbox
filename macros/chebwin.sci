@@ -1,4 +1,21 @@
-function w = chebwin (m, at)
+function w = chebwin(m, at)
+// Generate a Chebyshev window.
+//
+// Syntax
+//   w = chebwin(m)
+//   w = chebwin(m, at)
+//
+// Parameters
+// m: Positive integer. Length of the Chebyshev window.
+// at: Real scalar. Attenuation in decibels. Default is 100 dB.
+// w: Vector. The Chebyshev window.
+//
+// Description
+// This function generates a Chebyshev window of length `m` with a specified attenuation `at`. If `at` is not provided, it defaults to 100 dB.
+//
+// Examples
+// w = chebwin(5, 60)
+// 
 
  funcprot(0);
     rhs= argn(2);

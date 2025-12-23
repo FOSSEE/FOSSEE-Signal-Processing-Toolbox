@@ -1,26 +1,27 @@
 function [A,B,C,D]=sos2ss(sos,g)
-//Convert digital filter second-order section parameters to state-space form
-//Calling Sequence
-//[A,B,C,D] = sos2ss(sos)
-//[A,B,C,D] = sos2ss(sos,g)
+// Convert digital filter second-order section parameters to state-space form
 //
-//sos2ss converts a second-order section representation of a digital filter to an equivalent state-space representation.
-//A,B,C,D:Steady state parameters
-//sos:6 column second order section matrix
-//g:gain
-//EXAMPLES:
-//sos = [1  1  1  1   0  -1 ;
-//         -2  3  1  1  10   1];
-//[A,B,C,D] = sos2ss(sos,2);
+// Syntax
+// [A,B,C,D] = sos2ss(sos)
+// [A,B,C,D] = sos2ss(sos,g)
 //
-//EXPECTED OUTPUT:
-//D  =- 4.
- //C  =42.    4.  - 32.  - 2.
- //B  =[1.  0.  0.    0.    0.]'
- //A  =[- 10.    0.    10.    1. ; 1.     0.    0.     0.  ; 0.     1.    0.     0.  ;  0.     0.    1.     0.  ]
- //Author: Parthasarathi Panda
-//parthasarathipanda314@gmail.com
- [nargout,nargin]=argn();
+// Descriotion
+// sos2ss converts a second-order section representation of a digital filter to an equivalent state-space representation.
+//
+// Parameters
+// A,B,C,D:Steady state parameters
+// sos:6 column second order section matrix
+// g:gain
+// 
+// Examples
+// sos = [1  1  1  1   0  -1 ; -2  3  1  1  10   1]
+// [A,B,C,D] = sos2ss(sos,2)
+//
+// Authors
+// Parthasarathi Panda
+// parthasarathipanda314@gmail.com
+ 
+[nargout,nargin]=argn();
     if nargin==1 then
         g=1;
     end

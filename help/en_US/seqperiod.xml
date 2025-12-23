@@ -22,17 +22,20 @@
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
    [p,num]=seqperiod(x)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>x:</term>
-      <listitem><para> A vector matrix or n-dimensional array</para></listitem></varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> A vector matrix or n-dimensional array</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -45,6 +48,8 @@ The number of times the subsequence repeats is returned in num (may not be an in
 Repetitions may be incomplete at the end of the sequence but no breaks are permitted between repetitions
 If there is no subsequence that repeats in x then p=length(x)
 If x is a matrix or n-dimesnional array, the function operates along the first non-singleton dimension of x
+   </para>
+   <para>
 </para>
 </refsection>
 
@@ -54,28 +59,9 @@ If x is a matrix or n-dimesnional array, the function operates along the first n
 x = [4 0 1 5;
 1 1 2 5;
 2 0 3 5;
-3 1 1 5];
+3 1 1 5]
 p = seqperiod(x)
-p  =
 
-4.    2.    3.    1.
-A=zeros(4,1,4);
-A(:,1,:)=x;
-p1=seqperiod(A);
-p1  =
-
-(:,:,1)
-
-4.
-(:,:,2)
-
-2.
-(:,:,3)
-
-3.
-(:,:,4)
-
-1.
    ]]></programlisting>
 </refsection>
 

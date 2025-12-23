@@ -17,7 +17,64 @@
 
   <refnamediv>
     <refname>pchip</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Compute the piecewise cubic Hermite interpolating polynomial.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   v = pchip(x, y)
+   v = pchip(x, y, xx)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> A vector of input data points.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> A vector or matrix of function values at the points in `x`. If `y` is a vector, it must have the same length as `x`. If `y` is a matrix, the last dimension of `y` must equal the length of `x`.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>xx:</term>
+            <listitem><para> (optional) Points for interpolation.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `pchip` function computes the piecewise cubic Hermite interpolating polynomial for the given data points `x` and `y`.
+If the optional parameter `xx` is provided, the function evaluates the interpolating polynomial at the points in `xx`.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x = [0, 1, 2, 3, 4, 5]
+y = [1, 0, 1, 0, 1, 0]
+xx = linspace(0, 5, 800)
+v1 = pchip(x, y)
+v2 = pchip(x, y, xx)
+plot(x, y, 'o', xx, v2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

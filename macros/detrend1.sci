@@ -1,18 +1,22 @@
 function y = detrend1 (x, p)
-//Remove the best fit of a polynomial of order p from the data x.
-//Calling Sequence:
-//detrend1(x,p)
-//Parameters: 
-//x: Input vecor or matrix
-//p: The order of polnomial
-//Description:
+//Remove the best fit of a polynomial of order p from the data x
+// Syntax
+//   [z] = detrend1(x,p)
+//
+// Parameters
+// x: Input vecor or matrix
+// y: The order of polnomial
+//
+// Description
 //If X is a vector, 'detrend1(X, P)' removes the best fit of apolynomial of order P from the data X.
 //If X is a matrix, 'detrend1(X, P)' does the same for each column in X.
 //The second argument p is optional.  If it is not specified, a value of 1 is assumed.  This corresponds to removing a linear trend.
 //The order of the polynomial can also be given as a string, in which case p must be either "constant" (corresponds to 'P=0') or "linear" (corresponds to 'P=1')
-//Example:
+//
+// Examples
 //detrend1([1, 6, 9])
-//ans = [ -0.3333, 0.6667, -0.3333]
+//
+
 
   funcprot(0);
   rhs = argn(2);

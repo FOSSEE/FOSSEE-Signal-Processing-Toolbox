@@ -17,7 +17,62 @@
 
   <refnamediv>
     <refname>sosbreak</refname>
-    <refpurpose>function for breaking a polynomial in second order polynomials and an extra linear term (g)</refpurpose>
+    <refpurpose>Function for breaking a polynomial into second-order polynomials and an extra linear term.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [zerosort, g] = sosbreak(p)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>p:</term>
+            <listitem><para> Input polynomial (vector or symbolic polynomial).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zerosort:</term>
+            <listitem><para> List of broken polynomials. Contains second-order polynomials and possibly one linear polynomial.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>g:</term>
+            <listitem><para> Integer multiple obtained after breaking the polynomial.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The `sosbreak` function factors the input polynomial `p` into real-coefficient polynomials. It segregates the factors
+into second-order polynomials and linear polynomials. If the polynomial degree is odd, the last linear polynomial is left as is.
+For even-degree polynomials, linear factors are combined into second-order polynomials.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Break a polynomial into second-order polynomials and a linear term:
+v = [1 + 4 * %s + 6 * %s^2 + 4 * %s^3 + %s^4]
+[zerosort, g] = sosbreak(v)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Parthasarathi Panda</member>
+   <member>parthasarathipanda314@gmail.com</member>
+   </simplelist>
+</refsection>
 </refentry>

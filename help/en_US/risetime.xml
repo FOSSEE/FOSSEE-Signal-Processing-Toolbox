@@ -17,7 +17,104 @@
 
   <refnamediv>
     <refname>risetime</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>This function estimate risetime values of real vector X.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   r=risetime(x)
+   r=risetime(x, Fs)
+   r=risetime(x, t)
+   r=risetime(x, t, 'PercentReferenceLevels', N )
+   r=risetime(x, t, 'Tolerance', M)
+   r=risetime(x, t,'StateLevels', O)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=risetime(x)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=risetime(x, Fs)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=risetime(x, t)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]=risetime(x, t, 'PercentReferenceLevels', N )
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= risetime(x, t, 'Tolerance', M)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= risetime(x, t,'StateLevels', O)
+   [r lowercrossvalue uppercrossvalue lowerreference upperreference]= risetime(x, t,'StateLevels', O, 'fig', on or off)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Fs:</term>
+            <listitem><para> specifies the sample rate, Fs, as a positive   scalar, where the first sample instant corresponds to a time of zero.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>t:</term>
+            <listitem><para> defiene instant sample time t as vector with same length of x, or specifies the sample rate, t, as a positive scalar.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>PercentReferenceLevels:</term>
+            <listitem><para> specify the percentreferenceleves as a percentage, default value of N is [10 90].</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>Tolerance:</term>
+            <listitem><para> define the tolerance value as real scaler value, where default value of M is 2.0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>StateLevels:</term>
+            <listitem><para>  define the lower and upper state levels as two element real vector.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>fig:</term>
+            <listitem><para> specify the logical input value to display figure as one of 'on' or 'off', where the default input in 'off'.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>r:</term>
+            <listitem><para> return rise time of positive-going bilevel waveform transitions X.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lowercrossvalue:</term>
+            <listitem><para> return the lowerc cross value.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>uppercrossvalue:</term>
+            <listitem><para> return the upper cross value.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>lowerreference:</term>
+            <listitem><para> return lower reference value corrosponding to lower percenr reference value.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>upperreference:</term>
+            <listitem><para> return lower reference value corrosponding to upper percenr reference value.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+x=[1.2, 5, 10, -20, 12]
+t=1:length(x)
+r=risetime(x, t)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Jitendra Singh</member>
+   </simplelist>
+</refsection>
 </refentry>

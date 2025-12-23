@@ -17,7 +17,50 @@
 
   <refnamediv>
     <refname>impz</refname>
-    <refpurpose>It gives Impulse response of digital filter</refpurpose>
+    <refpurpose>Generate impulse-response characteristics of the filter.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   [x, t] = impz (b)
+   [x, t] = impz (b, a)
+   [x, t] = impz (b, a, n)
+   [x, t] = impz (b, a, n, fs)
+   impz (…)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The filter coefficients correspond to the the z-plane rational function with numerator b and denominator a. If a is not specified, it defaults to 1.
+If n is not specified, or specified as [], it will be chosen such that the signal has a chance to die down to -120dB, or to not explode beyond 120dB, or to show five periods if there is no significant damping.
+If no return arguments are requested, plot the results.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Define filter coefficients
+b = [0.2]               // Numerator (feedforward)
+a = [1, -0.8]           // Denominator (feedback)
+// Compute impulse response
+[x, t] = impz(b, a, 50)  // 50 samples of impulse response
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="fftfilt">fftfilt</link></member>
+   <member><link linkend="filter">filter</link></member>
+   </simplelist>
+</refsection>
 </refentry>

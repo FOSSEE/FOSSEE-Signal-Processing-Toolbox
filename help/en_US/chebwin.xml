@@ -17,7 +17,51 @@
 
   <refnamediv>
     <refname>chebwin</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Generate a Chebyshev window.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   w = chebwin(m)
+   w = chebwin(m, at)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>m:</term>
+            <listitem><para> Positive integer. Length of the Chebyshev window.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>at:</term>
+            <listitem><para> Real scalar. Attenuation in decibels. Default is 100 dB.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>w:</term>
+            <listitem><para> Vector. The Chebyshev window.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function generates a Chebyshev window of length `m` with a specified attenuation `at`. If `at` is not provided, it defaults to 100 dB.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+w = chebwin(5, 60)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

@@ -10,34 +10,29 @@
 // Email: toolbox@scilab.in
 
 function  r  = zerocrossing (x,y)
-//This function estimates the points at which a given waveform crosses the x-axis.
-//Estimates the points at which a given waveform y=y(x) crosses the
-//x-axis using linear interpolation.
-//Calling Sequence
-//r = zerocrossing (w, y)
-//Parameters
-//r: zero crossing points
-//y:function y=y(x)...the dependant variable
-//x:the independant variable
-//Description
-//This function estimates the points at which a given waveform y = y(w) crosses the x-axis. It uses linear interpolation.
-//Examples
-////1.
-//x = linspace(0,1,100);
+// Estimates the points at which a given waveform y=y(x) crosses the x-axis using linear interpolation.
+//
+// Syntax
+// r = zerocrossing (w, y)
+//
+// Parameters
+// r: zero crossing points
+// y:function y=y(x)...the dependant variable
+// x:the independant variable
+//
+// Description
+// This function estimates the points at which a given waveform y = y(w) crosses the x-axis. It uses linear interpolation.
+//
+// Examples
+//
+// x = linspace(0,1,100);
 // y = rand(1,100)-0.5;
 // x0= zerocrossing(x,y);
-//y0=interp1(x,y,x0)
-//plot(x,y,x0,y0,'x')
+// y0=interp1(x,y,x0)
+// plot(x,y,x0,y0,'x')
 //
-////////2.
-//x = linspace(0,1,100);
-// y = 2*sin(2*%pi*x);
-// x0= zerocrossing(x,y);
-//ans:
-//// x0  =  0.    0.5
-//y0=interp1(x,y,x0)
-//plot(x,y,x0,y0,'x')
 //
+
 
 
   x = x(:);y = y(:);

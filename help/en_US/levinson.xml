@@ -17,7 +17,53 @@
 
   <refnamediv>
     <refname>levinson</refname>
-    <refpurpose></refpurpose>
+    <refpurpose>Levinson- Durbin Recurssion Algorithm</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   a = levinson(r)
+   a = levinson(r,n)
+   [a,e] = levinson(r,n)
+   [a,e,k] = levinson(r,n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>a :</term>
+            <listitem><para>  the coefficients of a length(r)-1 order autoregressive linear process</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>e :</term>
+            <listitem><para>  the prediction error when order is n</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>k :</term>
+            <listitem><para>  a column vector containing the reflection coefficients of length n</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+a = [1 0.1 -0.8]       //Estimate the coefficients of an autoregressive process given by    x(n) = 0.1x(n-1) - 0.8x(n-2) + w(n)
+
+v = 0.4
+w = sqrt(v)*rand(15000,1,"normal")
+x = filter(1,a,w)
+
+[r,lg] = xcorr(x,'biased')
+r(lg<0) = []
+
+ar = levinson(r,length(a)-1)
+
+   ]]></programlisting>
+</refsection>
 </refentry>

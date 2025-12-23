@@ -1,23 +1,28 @@
-function y = var(x,w,dim)
-    // This function var estimate the variance of the values in X.
-    // Calling Sequence
-    // y=var(x)
-    // y=var(x,w)
-    // y=var(x,w,dim)    
-    // Parameters
-    // x: a vector or matrix.
-    // w: weight vector W of length X, or may take the value of 0 and 1. The default value is 0. Consider only non-negative values.
-    // dim: consider the variance along the dimension of X. 1 for clumun wise variamce and 2 for row wise variance.
-    // y: returns the variance of the values in X.
-    // Examples
-    // x=[1.2, 5, 10, -20, 12,10,5,20,32,20];
-    // w=1:10;
-    // dim=2;
-    // y=var(x, w, dim) ;
-    // See also
-    // Authors
-    // Jitendra Singh
-  
+function v = var(x, w, dim)
+// Estimate the variance of the values in X
+//
+// Syntax
+//   v = var(x)
+//   v = var(x, w)
+//   v = var(x, w, dim)
+//
+// Parameters
+// x: Input data array.
+// w: weight vector W of length X, or may take the value of 0 and 1. The default value is 0. Consider only non-negative values.
+// dim: consider the variance along the dimension of X. 1 for clumun wise variamce and 2 for row wise variance.
+// y: returns the variance of the values in X.
+//
+// Description
+// This function calculates the variance of the input data array `x`.
+//
+// Examples
+// x=[1.2, 5, 10, -20, 12,10,5,20,32,20]
+// w=1:10
+// dim=2
+// y=var(x, w, dim)
+//
+
+
     if argn(2)==1 then
         
         if type(x)==10 then
@@ -168,4 +173,4 @@ end
         end
         end
 
-    endfunction
+endfunction

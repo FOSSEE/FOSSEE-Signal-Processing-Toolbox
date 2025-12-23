@@ -10,42 +10,44 @@
 // Organization: FOSSEE, IIT Bombay
 // Email: toolbox@scilab.in
 function [M ,iM ]= cummin(varargin)
-    // Cumulative minimum
-    //
-    // Calling Sequence
-    // M = cummin(A)
-    //      returns the cumulative minimum of the arguments of A. The dimension 
-    //      of M is same as the dimension of A. If A is a 2D matrix, the operation
-    //      is performed along the columns. For a hypermatrix, the operation is
-    //      performed along the first non-zero dimension
-    // M = cummin(A,dim)
-    //      The operation is performed along the dimension specified by dim
-    // M = cummin(_,direction)
-    //      direction specifies as the direction of operation
-    //
-    // [M , iM] = cummin(..) 
-    //      If called with two output arguments the index of the minimum value is also returned.
-    // Parameters
-    // A - real|complex numbers - vector|matrix
-    //     Input Array
-    //     For complex elements, cummin compares the magnitude of elements. If
-    //     the magnitude are same, phase angles are compared.
-    // dim - positive integer - scalar  
-    //     Dimension to operate along
-    //     If no dimension is specified, then the default value is the first 
-    //     array dimension whose value is greater than 1
-    // direction - string flag - 'forward' (default) or 'reverse'
-    //     Direction of cumulation
-    //     If the direction is forward, cummin works from 1 to end of the active
-    //     dimension. Otherwise, it works in the opposite sense
-    //
-    // Examples
-    // 1) Cumulative minimum values in a vector
-    //     v = [8 9 1 10 6 1 3 6 10 10]
-    //     M = cummin(v)
-    //        
-    // Expected output: [8 8 1 1 1 1 1 1 1 1]
-    //
+// Compute the cumulative minimum.
+//
+// Syntax
+//   M = cummin(A)
+//   M = cummin(A, dim)
+//   M = cummin(_, direction)
+//   [M, iM] = cummin(..)
+//
+// Parameters
+// A: Real or complex numbers - vector or matrix.
+//    Input array. For complex elements, `cummin` compares the magnitude of elements. 
+//    If the magnitudes are the same, phase angles are compared.
+// dim: Positive integer - scalar (optional).
+//    Dimension to operate along. If no dimension is specified, the default is the first 
+//    array dimension whose size is greater than 1.
+// direction: String flag - 'forward' (default) or 'reverse' (optional).
+//    Direction of cumulation. If the direction is 'forward', `cummin` works from the 
+//    first to the last element of the active dimension. Otherwise, it works in the opposite direction.
+//
+// Description
+// The `cummin` function computes the cumulative minimum of the elements of the input array `A`. 
+// The operation is performed along the specified dimension or the first non-singleton dimension by default. 
+// If called with two output arguments, the index of the minimum value is also returned.
+//
+// Examples
+// // 1) Cumulative minimum values in a vector
+// v = [8 9 1 10 6 1 3 6 10 10];
+// M = cummin(v)
+//
+// // 2) Cumulative minimum along a specific dimension
+// x = [1 2 3; 4 1 2; 3 5 1];
+// M = cummin(x, 2)
+//
+// // 3) Cumulative minimum with indices
+// [M, iM] = cummin(x, 2)
+//
+// // 4) Cumulative minimum in reverse direction
+// M = cummin(v, 'reverse')
     
     [numOutArgs,numInArgs] = argn(0);
     

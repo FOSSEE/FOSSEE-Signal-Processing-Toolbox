@@ -17,29 +17,42 @@
 
   <refnamediv>
     <refname>filtic</refname>
-    <refpurpose>This function finds the initial conditions for the delays in the transposed direct-form II filter implementation</refpurpose>
+    <refpurpose>Find the initial conditions for the delays in the transposed direct-form II filter implementation.</refpurpose>
   </refnamediv>
 
 
 <refsynopsisdiv>
-   <title>Calling Sequence</title>
+   <title>Syntax</title>
    <synopsis>
-   zf = filtic (b, a, y)
-   zf = filtic (b, a, y, x)
+   zf = filtic(b, a, y)
+   zf = filtic(b, a, y, x)
+   
    </synopsis>
 </refsynopsisdiv>
 
 <refsection>
    <title>Parameters</title>
    <variablelist>
-   <varlistentry><term>b:</term>
-      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
-   <varlistentry><term>a:</term>
-      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
-   <varlistentry><term>y:</term>
-      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
-   <varlistentry><term>x:</term>
-      <listitem><para> vector of real or complex numbers</para></listitem></varlistentry>
+        <varlistentry>
+            <term>b:</term>
+            <listitem><para> Vector of real or complex numbers. Represents the numerator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>a:</term>
+            <listitem><para> Vector of real or complex numbers. Represents the denominator coefficients of the filter's transfer function.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector of real or complex numbers. Represents the initial output values.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector of real or complex numbers (optional). Represents the initial input values. Defaults to an empty vector if not provided.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>zf:</term>
+            <listitem><para> Vector. The initial conditions for the delays in the transposed direct-form II filter implementation.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
@@ -47,18 +60,17 @@
    <title>Description</title>
    <para>
 This function finds the initial conditions for the delays in the transposed direct-form II filter implementation.
-The vectors b and a represent the numerator and denominator coefficients of the filter's transfer function.
+The vectors `b` and `a` represent the numerator and denominator coefficients of the filter's transfer function.
+   </para>
+   <para>
 </para>
 </refsection>
 
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-filtic([%i,1,-%i,5], [1,2,3*%i], [0.8*%i,7,9])
-ans =
-0.00000 - 22.60000i
-2.40000 +  0.00000i
-0.00000 +  0.00000i
+zf = filtic([%i, 1, -%i, 5], [1, 2, 3*%i], [0.8*%i, 7, 9])
+
    ]]></programlisting>
 </refsection>
 </refentry>

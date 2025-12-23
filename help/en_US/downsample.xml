@@ -17,7 +17,56 @@
 
   <refnamediv>
     <refname>downsample</refname>
-    <refpurpose>[nargout,nargin]=argn();</refpurpose>
+    <refpurpose>Downsample the signal, selecting every nth element.</refpurpose>
   </refnamediv>
 
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   y = downsample(x, n)
+   y = downsample(x, n, phase)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>x:</term>
+            <listitem><para> Vector or matrix. The input signal to be downsampled.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>n:</term>
+            <listitem><para> Scalar. The downsampling factor. Selects every nth element.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>phase:</term>
+            <listitem><para> Scalar (optional). The starting offset for downsampling. Defaults to 0.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>y:</term>
+            <listitem><para> Vector or matrix. The downsampled signal.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function downsamples the input signal `x` by selecting every nth element. If `x` is a matrix, the function downsamples every column.
+If the optional `phase` parameter is provided, the function starts downsampling at the specified offset.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+downsample([1, 2, 3, 4, 5], 2)
+
+   ]]></programlisting>
+</refsection>
 </refentry>
